@@ -11,7 +11,8 @@ This guide describes:
   - The steps to set up dev env, and build, test and deploy AB Webapp
   - The pipline
   - The Magic
- ##### This guide gets updated accordingly.
+ 
+##### This guide gets updated accordingly.
 
 ## Get Started
 
