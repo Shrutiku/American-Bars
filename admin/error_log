@@ -1,0 +1,80 @@
+[15-Jul-2015 10:23:11 UTC] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE) in /home/americanbars/public_html/ADBCI/application/admin/config/database.php on line 63
+[15-Jul-2015 10:24:21 UTC] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE) in /home/americanbars/public_html/ADBCI/application/admin/config/database.php on line 63
+[16-Jul-2015 06:09:14 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/americanbars/public_html/ADBCI/application/admin/helpers/custom_helper.php on line 988
+[16-Jul-2015 06:09:16 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/americanbars/public_html/ADBCI/application/admin/helpers/custom_helper.php on line 988
+[16-Jul-2015 06:09:16 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/americanbars/public_html/ADBCI/application/admin/helpers/custom_helper.php on line 988
+[16-Jul-2015 06:38:06 UTC] PHP Fatal error:  Call to undefined method Beer_model::getBeerSlug_new() in /home/americanbars/public_html/ADBCI/application/admin/controllers/beer.php on line 942
+[16-Jul-2015 06:38:08 UTC] PHP Fatal error:  Call to undefined method Beer_model::getBeerSlug_new() in /home/americanbars/public_html/ADBCI/application/admin/controllers/beer.php on line 942
+[21-Jul-2015 09:05:07 UTC] PHP Fatal error:  Call to undefined function getsuperadminemail() in /home/americanbars/public_html/ADBCI/application/admin/models/bar_model.php on line 121
+[27-Jul-2015 11:57:10 UTC] PHP Fatal error:  Call to undefined method Bar_model::get_bar_report() in /home/americanbars/public_html/ADBCI/application/admin/controllers/report.php on line 593
+[31-Jul-2015 10:40:38 UTC] PHP Parse error:  syntax error, unexpected ''suggest_ba' (T_ENCAPSED_AND_WHITESPACE) in /home/americanbars/public_html/ADBCI/application/admin/helpers/custom_helper.php on line 1338
+[22-Sep-2015 09:02:42 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/americanbars/public_html/application/admin/controllers/bar.php on line 623
+[22-Sep-2015 09:05:20 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/americanbars/public_html/application/admin/controllers/bar.php on line 712
+[22-Sep-2015 09:27:17 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/americanbars/public_html/system/database/DB_utility.php on line 226
+[22-Sep-2015 09:29:26 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/americanbars/public_html/system/database/DB_utility.php on line 226
+[22-Sep-2015 09:36:12 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/americanbars/public_html/system/database/DB_utility.php on line 226
+[22-Sep-2015 09:37:26 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/americanbars/public_html/system/database/DB_utility.php on line 226
+[22-Sep-2015 12:35:09 UTC] PHP Warning:  POST Content-Length of 132847523 bytes exceeds the limit of 67108864 bytes in Unknown on line 0
+[03-Dec-2015 13:14:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/americanbars/public_html/application/admin/models/banner_pages_model.php on line 1833
+[30-Dec-2015 04:41:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/americanbars/public_html/application/admin/controllers/site_setting.php on line 582
+[30-Dec-2015 04:41:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/americanbars/public_html/application/admin/controllers/site_setting.php on line 582
+[30-Dec-2015 04:46:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/americanbars/public_html/application/admin/controllers/site_setting.php on line 653
+[04-Jan-2016 10:57:37 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/americanbars/public_html/application/admin/views/default/layout/banner_pages/add_banner_pages.php on line 130
+[06-Jan-2016 10:24:39 Europe/London] PHP Fatal error:  Cannot use object of type stdClass as array in /home/americanbars/public_html/application/admin/models/message_model.php on line 103
+[06-Jan-2016 10:24:42 Europe/London] PHP Fatal error:  Cannot use object of type stdClass as array in /home/americanbars/public_html/application/admin/models/message_model.php on line 103
+[22-Jan-2016 11:01:19 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/americanbars/public_html/application/admin/helpers/custom_helper.php on line 1725
+[22-Jan-2016 11:07:14 Europe/London] PHP Fatal error:  Using $this when not in object context in /home/americanbars/public_html/application/admin/helpers/custom_helper.php on line 1808
+[08-Feb-2016 11:56:24 UTC] PHP Fatal error:  Call to undefined method Adbstore_model::getOneImageGallery() in /home/americanbars/public_html/application/admin/controllers/adbstore.php on line 542
+[15-Feb-2016 05:42:24 UTC] PHP Fatal error:  Call to undefined method Adbstore_model::getOneImageGallery() in /home/americanbars/public_html/application/admin/controllers/adbstore.php on line 542
+[23-Feb-2016 10:54:36 UTC] PHP Fatal error:  Call to undefined method Bar_model::getBarSlug() in /home/americanbars/public_html/application/admin/models/bar_model.php on line 44
+[23-Feb-2016 10:54:41 UTC] PHP Fatal error:  Call to undefined method Bar_model::getBarSlug() in /home/americanbars/public_html/application/admin/models/bar_model.php on line 44
+[23-Feb-2016 10:56:54 UTC] PHP Fatal error:  Call to undefined method Bar_model::getBarSlug() in /home/americanbars/public_html/application/admin/models/bar_model.php on line 44
+[23-Feb-2016 10:57:00 UTC] PHP Fatal error:  Call to undefined method Bar_model::getBarSlug() in /home/americanbars/public_html/application/admin/models/bar_model.php on line 44
+[23-Feb-2016 12:42:50 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/views/default/layout/form_category/list_form_category.php on line 3
+[23-Feb-2016 12:42:52 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/views/default/layout/form_category/list_form_category.php on line 3
+[23-Feb-2016 12:42:54 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/views/default/layout/form_category/list_form_category.php on line 3
+[23-Feb-2016 13:05:23 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_page_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 31
+[23-Feb-2016 13:05:26 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_page_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 31
+[23-Feb-2016 13:08:36 UTC] PHP Fatal error:  Call to undefined method CI_Output::get_cache_URI() in /home/americanbars/public_html/system/core/Output.php on line 573
+[24-Feb-2016 05:17:17 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 05:17:20 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 05:17:43 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 05:18:04 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 05:18:06 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 05:18:09 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 05:20:13 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 05:26:57 UTC] PHP Fatal error:  Call to undefined method CI_Output::clear_all_cache() in /home/americanbars/public_html/application/admin/controllers/form_category.php on line 323
+[24-Feb-2016 07:23:46 UTC] PHP Fatal error:  Using $this when not in object context in /home/americanbars/public_html/application/admin/core/MY_Output.php on line 2
+[24-Feb-2016 07:23:52 UTC] PHP Fatal error:  Using $this when not in object context in /home/americanbars/public_html/application/admin/core/MY_Output.php on line 2
+[24-Feb-2016 07:38:31 UTC] PHP Fatal error:  Call to a member function clean() on a non-object in /home/americanbars/public_html/application/admin/views/default/layout/form_category/add_form_category.php on line 2
+[04-Mar-2016 22:41:27 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 96
+[04-Mar-2016 22:41:28 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 96
+[17-Jun-2016 12:12:46 CST6CDT] PHP Warning:  POST Content-Length of 12977808 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[19-Jun-2016 09:18:18 CST6CDT] PHP Warning:  Unterminated comment starting line 98 in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[19-Jun-2016 09:18:18 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[19-Jun-2016 09:18:22 CST6CDT] PHP Warning:  Unterminated comment starting line 98 in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[19-Jun-2016 09:18:22 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:40:45 CST6CDT] PHP Warning:  Unterminated comment starting line 98 in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:40:45 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:40:49 CST6CDT] PHP Warning:  Unterminated comment starting line 98 in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:40:49 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:40:52 CST6CDT] PHP Warning:  Unterminated comment starting line 98 in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:40:52 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:41:20 CST6CDT] PHP Warning:  Unterminated comment starting line 98 in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 01:41:20 CST6CDT] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/americanbars/public_html/application/admin/models/payment_record_model.php on line 98
+[20-Jun-2016 18:41:02 CST6CDT] PHP Warning:  POST Content-Length of 9971602 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[20-Jun-2016 18:43:14 CST6CDT] PHP Warning:  POST Content-Length of 9971580 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[20-Jun-2016 18:44:09 CST6CDT] PHP Warning:  POST Content-Length of 9971580 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[20-Jun-2016 18:46:08 CST6CDT] PHP Warning:  POST Content-Length of 9971580 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[22-Jun-2016 18:18:03 CST6CDT] PHP Warning:  POST Content-Length of 15576488 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 12:30:58 CST6CDT] PHP Warning:  POST Content-Length of 9044358 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 12:40:46 CST6CDT] PHP Warning:  POST Content-Length of 9044367 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 12:54:33 CST6CDT] PHP Warning:  POST Content-Length of 9044352 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[28-Jun-2016 13:02:25 CST6CDT] PHP Warning:  POST Content-Length of 9044334 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[30-Jun-2016 18:42:33 CST6CDT] PHP Warning:  POST Content-Length of 11095815 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[05-Jul-2016 11:23:25 CST6CDT] PHP Warning:  POST Content-Length of 18148205 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[05-Jul-2016 11:26:18 CST6CDT] PHP Warning:  POST Content-Length of 18148215 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[05-Jul-2016 11:36:27 CST6CDT] PHP Warning:  POST Content-Length of 18148207 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[05-Jul-2016 11:46:39 CST6CDT] PHP Warning:  POST Content-Length of 18148206 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 16:16:08 CST6CDT] PHP Warning:  POST Content-Length of 12462490 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[08-Jul-2016 16:20:38 CST6CDT] PHP Warning:  POST Content-Length of 12462566 bytes exceeds the limit of 8388608 bytes in Unknown on line 0

@@ -1,0 +1,13 @@
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  fopen(resources/words/en.php): failed to open stream: No such file or directory in /home/americanbars/public_html/captcha/captcha.php on line 342
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  fgets() expects parameter 1 to be resource, boolean given in /home/americanbars/public_html/captcha/captcha.php on line 343
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  imagettftext(): Could not find/open font in /home/americanbars/public_html/captcha/captcha.php on line 412
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  imagettftext(): Could not find/open font in /home/americanbars/public_html/captcha/captcha.php on line 412
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  imagettftext(): Could not find/open font in /home/americanbars/public_html/captcha/captcha.php on line 412
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  imagettftext(): Could not find/open font in /home/americanbars/public_html/captcha/captcha.php on line 412
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  imagettftext(): Could not find/open font in /home/americanbars/public_html/captcha/captcha.php on line 412
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  imagettftext(): Could not find/open font in /home/americanbars/public_html/captcha/captcha.php on line 412
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  imagettftext(): Could not find/open font in /home/americanbars/public_html/captcha/captcha.php on line 412
+[20-Jul-2016 06:46:23 CST6CDT] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/americanbars/public_html/captcha/captcha.php:342) in /home/americanbars/public_html/captcha/captcha.php on line 475
+[20-Jul-2016 06:46:28 CST6CDT] PHP Warning:  fopen(resources/words/en.php): failed to open stream: No such file or directory in /home/americanbars/public_html/captcha/captcha.php on line 342
+[20-Jul-2016 06:46:28 CST6CDT] PHP Warning:  fgets() expects parameter 1 to be resource, boolean given in /home/americanbars/public_html/captcha/captcha.php on line 343
+[20-Jul-2016 06:46:28 CST6CDT] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/americanbars/public_html/captcha/captcha.php:342) in /home/americanbars/public_html/captcha/captcha.php on line 475

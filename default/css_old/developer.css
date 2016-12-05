@@ -1,0 +1,58 @@
+.error{color:#F4264A;font-weight:bold;font-size: 12px;}
+.error p{font-size: 12px;}
+.success{color:#44AF7B !important; font-weight:bold !important;}
+.hide1 {display: none;}
+.show1 {display: block;}
+/* star rating*/
+.starrating {background-image:url(../images/star-rating.png); background-position:0px 2px; background-repeat:no-repeat; height:26px; width:112px;}
+.starrating1 {background-image:url(../images/star-rating.png); background-position:0px -21px; background-repeat:no-repeat; height:26px; width:112px;}
+.starrating2 {background-image:url(../images/star-rating.png); background-position:0px -44px; background-repeat:no-repeat; height:26px; width:112px;}
+.starrating3 {background-image:url(../images/star-rating.png); background-position:0px -67px; background-repeat:no-repeat; height:26px; width:112px;}
+.starrating4 {background-image:url(../images/star-rating.png); background-position:0px -90px; background-repeat:no-repeat; height:26px; width:112px;}
+.starrating5 {background-image:url(../images/star-rating.png); background-position:0px -114px; background-repeat:no-repeat; height:26px; width:112px;}
+.pull-left.mar_right20 {
+    list-style: none outside none;
+    padding: 0;
+}
+.strip.dislike{
+	background:url(../images/like_gold.png) no-repeat;
+	margin-top:4px;
+	height:25px;
+	width:25px;
+}
+.strip.dislike:hover{
+	background:url(../images/like2.png) no-repeat;
+}
+.cocktaildirectory{
+	padding:0px;
+}
+.cocktaildirectory > li{
+	padding:5px 0 !important;
+	margin-bottom:0px !important;
+}
+ul.cocktaildirectory li:hover,ul.cocktaildirectory li{
+	border:medium none;
+}
+
+/**** ajax loader css ***/
+ #dvLoading
+{
+   background:url(../images/black_bg.png) repeat ;
+   position: fixed;
+   z-index: 1000000;
+   height: 100%;
+   width: 100%;
+   display: none;
+   
+}
+.dvLoading{
+	 /*background:url(../images/page_loader2.gif) no-repeat center center;*/
+	  background:url(../images/page_loader2.gif) no-repeat center center;
+	 height: 55px;
+  	 width: 54px;;
+   margin: 25% 50%;
+}
+.cocktail_details .btn-primary {
+    padding: 5px 10px;
+}
+/** end of AJX loader CSS**/

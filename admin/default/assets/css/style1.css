@@ -1,0 +1,27 @@
+.t1
+{
+	width:100%;
+	border:0px;
+	cellspacing:25;
+	cellpadding:0;
+	align:center;
+}
+.h1
+{
+	padding: 6px 5px;
+	color:#000;
+	font-size: 16px;
+	letter-spacing: 0.8px;
+	 border-bottom:  1px double #3D3D3D;"
+}
+.pad3{
+	padding: 3px 0;
+	font-size: 13px;
+}
+.fnt-siz{
+	font-size: 13px;
+}
+.tr1
+{
+	 border-bottom: double 4px #816f46;
+}

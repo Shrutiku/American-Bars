@@ -1,0 +1,56 @@
+.inner_popup .modal-dialog{width: 100%;}
+.inner_popup .modal-body {color: #fff;}
+.inner_popup .modal-title {color: #fff;}
+.inner_popup .close {color: #fff;opacity: 1; background-image: url("../img/remove-icon-small2.png") !important; width: 15px; height: 20px;}
+.inner_popup .modal-content{border-radius: 6px!important;}
+.inner_popup .modal-header {background-color: #3d3954; border-bottom: solid 1px #3d3954; border-top-left-radius: 5px!important; border-top-right-radius: 5px!important;}
+.inner_popup .modal-footer {background-color: #3D3954; border-radius: 0 0 5px 5px; /*margin: 25px -15px -35px;*/}
+.inner_popup ul.book_processlist{margin: 0; padding: 0;}
+.inner_popup ul.book_processlist li{list-style: none; display: inline-block; background-color: #ff8598; border-radius: 3px!important; padding: 7px 10px;}
+.inner_popup ul.book_processlist li a{font-family: 'nunitoregular'; font-size: 17px; color: #fff;}
+.inner_popup ul.book_processlist li.gift{background-color: #932aa8;}
+.inner_popup .process_left_block{float: left; width: 45%; margin-right: 15px;}
+.inner_popup .process_right_block{float: right; width: 52%;}
+.inner_popup ul.location_list {
+    margin: 0;
+    max-height: 420px;
+    overflow: scroll;
+    padding: 0;
+}
+.inner_popup ul.location_list li{list-style: none; border-bottom: solid 1px #ccc; padding: 10px 5px; font-family: 'roboto_slablight'; font-size: 14px; color: #000;}
+.inner_popup ul.location_list li.last{border-bottom: none;}
+.inner_popup .popservice_block{max-height: 500px; overflow-y: scroll;}
+.inner_popup .text_block{font-family: 'roboto_slablight'; font-size: 14px; color: #000;}
+.inner_popup .modal-body .text_block .form-control{border: solid 1px #ccc; font-family: 'roboto_slablight'; color: #000; font-size: 14px;}
+.inner_popup .error_block{border: solid 1px #F8B0BB; padding: 10px; border-radius: 3px; background-color: #F6D3D8;}
+.inner_popup .modal-body .user_name{font-size: 18px;}
+.inner_popup .modal-body .popservice_block .label_check input, .label_radio input{margin-top: 8px;}
+.inner_popup .badge{color: #ff8598; background-color: #ff8598;}
+.inner_popup .navig{border-radius:3px; border:none; font-size:15px; font-family: 'nunitoregular'; padding: 5px 20px; font-weight:normal; text-decoration:none; display:inline-block; color: #fff; background-color: #ff8598;}
+.inner_popup .navig:hover,  .navig:focus,  .navig:active,  .navig.active, .open .dropdown-toggle.btn-primary {}
+.inner_popup .time_list{max-height: 200px; border: solid 1px #ccc; overflow-y: scroll; padding: 10px;}
+.inner_popup .modal-body .text_block input[type=radio]{margin-right: 5px; margin-top: 4px; float: left;}
+.inner_popup .modal-body .text_block input[type=checkbox]{margin-right: 5px;}
+.chk_cart{margin-right: 5px; margin-top: 20px !important;}
+.inner_popup .modal-body .col-md-6{padding-left: 0;}
+.inner_popup .modal-body .col-sm-4{padding-left: 0;}
+.inner_popup .br_img_pink{border: solid 3px #ff8598; /*width: 208px; height: 132px;*/ position: relative; margin-bottom: 15px;}
+.inner_popup .img_caption{padding: 5px 10px; position: absolute; bottom: -1px; width: 100%; background: #ff8598; opacity: 0.8; color: #000; text-align: center;}
+.inner_popup .img_caption1{padding: 5px 10px; position: absolute; bottom: -1px; width: 100%; background: #000000; opacity: 0.8; color: #ffffff; text-align: left;}
+.inner_popup .modal-footer .send{font-size: 16px; border-radius: 3px !important;}
+.inner_popup .col-sm-3{width: 25%; float: left;}
+.inner_popup .col-md-6{width: 47%; margin-right: 15px;}
+/*label{font-weight: 700;}*/
+.inner_popup .col-sm-8{width: 60%; float: left;}
+.inner_popup form{margin-bottom: 0;}
+.marlt20{margin-left: 20px !important; margin-right: 20px !important;}
+@media (max-width: 767px) 
+{
+	.process_left_block{width: 100%;}
+	.inner_popup .process_left_block{width: 100%;}
+	ul.book_processlist li{margin-bottom: 10px;}
+	.process_right_block{float: none; width: 100%;}
+	.inner_popup .process_right_block{float: left; width: 100%;}
+	.popup_dailog_block .modal-dialog{width: auto!important;}
+	.inner_popup .col-md-6 {width: 100%;}
+}

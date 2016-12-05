@@ -32,7 +32,7 @@ $ brew install git
 ```
 
 ### Step #2
-[Add public key to your GitHub account][sshkey]
+[Add a public key to your GitHub account][sshkey]
 
 ### Step #3
 Clone the webapp repo to your local directory by running:
