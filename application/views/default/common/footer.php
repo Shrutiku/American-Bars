@@ -91,7 +91,7 @@
 		    		 		<label class="copy br_top padt8">Copyright © 2016 American Bars, All Rights Reserved.</label>
 		    		 	</div>
 						<div class="margin-top-10"> 
-								<a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/Android-app-store_button.png" /></a>
+								<a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/google_play_button.png" /></a>
 		  <a href="https://itunes.apple.com/in/app/american-bars/id1090377977?mt=8" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/app-store-logo.png" /></a>
 						 </div>
 		    		 </div>
