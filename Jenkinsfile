@@ -1,7 +1,9 @@
 
 node {
-	stage 'Build Sandbox'
+	stage 'Pull Sandbox'
 		checkout scm
+
+	stage 'Build Sandbox'
 		sh './build-all.sh'
 
 	stage 'Deploy Sandbox'
