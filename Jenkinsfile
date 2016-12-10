@@ -1,7 +1,7 @@
 
 node {
 	stage 'Checkout'
-		checkout webapp
+		checkout scm
 
 	stage 'Build'
 		sh './build-all.sh'
