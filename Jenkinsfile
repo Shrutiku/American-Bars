@@ -4,5 +4,5 @@ node {
 		checkout scm
 
 	stage 'Build'
-		sh '/webapp/build-all.sh'
+		sh 'build-all.sh'
 }
