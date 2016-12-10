@@ -1,11 +1,9 @@
 
 node {
-	stage 'Checkout Sandbox'
+	stage 'Build Sandbox'
 		checkout scm
-
-	stage 'Build    Sandbox'
 		sh './build-all.sh'
 
-	stage 'Deploy   Sandbox'
+	stage 'Deploy Sandbox'
 		sh './deploy_sandbox.sh'
 }
