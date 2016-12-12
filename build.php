@@ -11,7 +11,7 @@ $SED = '/bin/sed';
 // Find the changes...
 $REMOTE_BRANCH=`git rev-parse --abbrev-ref --symbolic-full-name @{u}`;
 $REMOTE_BRANCH=str_replace(array(PHP_EOL, "\r"), ' ', $REMOTE_BRANCH);
-$CHANGED=`$GITDIFF --diff-filter=AMRC --name-status $REMOTE_BRANCH | $AWK '{print $2}'`; 
+$CHANGED=`$GITDIFF --diff-filter=AMC --name-status $REMOTE_BRANCH | $AWK '{print $2}'`; 
 // ...as an array
 $CHANGED = split(PHP_EOL,$CHANGED);  
 $errors = Array();
