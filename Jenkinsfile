@@ -4,7 +4,7 @@ node {
 		checkout scm
 
 	stage 'Build Sandbox'
-		sh './build-all.php'
+		sh './build-all'
 
 	stage 'Deploy Sandbox'
 		sh './deploy-sandbox.sh'
