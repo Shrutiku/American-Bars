@@ -11,13 +11,14 @@ $SED = '/bin/sed';
 // Find the changes...
 $REMOTE_BRANCH=`git rev-parse --abbrev-ref --symbolic-full-name @{u}`;
 $REMOTE_BRANCH=str_replace(array(PHP_EOL, "\r"), ' ', $REMOTE_BRANCH);
-$CHANGED=`$GITDIFF --name-status $REMOTE_BRANCH | $AWK '{print $2}'`; 
+$CHANGED=`$GITDIFF --diff-filter=AMRC --name-status $REMOTE_BRANCH | $AWK '{print $2}'`; 
 // ...as an array
 $CHANGED = split(PHP_EOL,$CHANGED);  
 $errors = Array();
 
 // Perform specific actions based on the file extension 
-foreach($CHANGED as $FILE){ 
+foreach($CHANGED as $FILE){
+      error_log($FILE); 
  switch(pathinfo($FILE,PATHINFO_EXTENSION)){ 
  case 'php': 
     // Get just the error/no error message from php -l
@@ -48,5 +49,7 @@ if(count($errors) > 0){
  
  exit(-1); 
 } 
+
+error_log("Succeeded.");
  
 exit(0);

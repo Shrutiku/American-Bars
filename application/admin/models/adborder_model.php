@@ -366,7 +366,7 @@ class Adborder_model extends CI_Model {
 				);
 			$this->db->where('order_id', $order_id);
 			$this->db->update('order_master', $data);	
-		//}		
+		}		
 		
 		
     }

@@ -153,4 +153,8 @@ class Video_model extends CI_Model {
 			
 			$config["file_name"] = $this->input->post('file_up_video').$rand;
 		 
-            $config['upload_path'
+		 	// TODO: fix the dunction, it was incomplete
+            //$config['upload_path'
+		}
+	}
+}
