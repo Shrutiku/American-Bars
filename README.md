@@ -31,6 +31,14 @@ $ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.profile
 $ brew install git
 ```
 
+* Download php 7.1.0:
+```sh
+$ brew tap homebrew/dupes
+$ brew tap homebrew/versions
+$ brew tap homebrew/homebrew-php
+$ brew install php71
+```
+
 ### Step #2
 [Add a public key to your GitHub account][sshkey]
 
@@ -38,6 +46,8 @@ $ brew install git
 Clone the webapp repo to your local directory by running:
 ```sh
 $ git clone git@github.com:americanbars/webapp.git $/Projects/americanbars/apps/webapp/
+$ git config --global user.name [your name]
+$ git config --global user.email [your email address]
 ```
 
 ## Set up your Dev Env
