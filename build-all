@@ -10,7 +10,7 @@ $SED = '/bin/sed';
 // Find all files...
 $FILES=`find . -type f`;   
 // ...as an array
-$FILES = split(PHP_EOL,$FILES);  
+$FILES = explode(PHP_EOL,$FILES);  
 $PHPVERSION=`php -v`;
 $errors = Array();
 
