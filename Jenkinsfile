@@ -7,5 +7,5 @@ node {
 		sh './build-all'
 
 	stage 'Deploy Sandbox'
-		sh './deploy_sandbox.sh'
+		sh '/var/lib/jenkins/userContent/devops/deploy_sandbox_webapp.sh'
 }
