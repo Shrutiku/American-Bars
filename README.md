@@ -17,59 +17,45 @@ This guide describes:
 ## Get Started
 
 ### Step #1
-* Download [homebrew][homebrew], a package manager for Mac, by running:
-```sh
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-* To work with the newest versions of homebrew apps, run:
-```sh
-$ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.profile
-```
+* Download [NetBeans][netbeans], our IDE.
 
-* Download git:
-```sh
-$ brew install git
-```
+### Step 2
+* Download [Mamp][mamp], our local server environment.
+* Click Preferences to open the Preferences panel, then select the Ports tab.
+* Click Set to Default Apache and MySQL ports. Apache port is reset to 80 and MySQL to 3306. 
+* Click PHP and choose version 7.0.12.
 
-* Download php 7.1.0:
+### Step #3
+[Add a public key to your GitHub account][sshkey]
+
+## Set up your Dev Enviornment
+
+### Step #1
+* Install our dev enviornment by running:
 ```sh
-$ brew tap homebrew/dupes
-$ brew tap homebrew/versions
-$ brew tap homebrew/homebrew-php
-$ brew install php71
+$ ./install [name] [email_address] [working_dir]
 ```
 
 ### Step #2
-[Add a public key to your GitHub account][sshkey]
+* Open NetBeans and create a new PHP project
+* Choose our working dir as source and choose PHP version 7.0
+* In Run Configuration choose run as Local and check "Copy files to another location" [/Applicatio/MAMP/htdocs/webapp]
 
-### Step #3
-Clone the webapp repo to your local directory by running:
+## Build
+
+* To build changes run:
 ```sh
-$ git clone git@github.com:americanbars/webapp.git $/Projects/americanbars/apps/webapp/
-$ git config --global user.name [your name]
-$ git config --global user.email [your email address]
+$ ./build
 ```
 
-## Set up your Dev Env
-
-Install the following:
-
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [keymaster.js] - awesome keyboard handler lib by [@thomasfuchs]
-* [jQuery] - duh
-
-### Build
+* To build all files run:
+```sh
+$ ./build-all
+```
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-
-   [@thomasfuchs]: <http://twitter.com/thomasfuchs>
    [sshkey]: <http://daringfireball.net/projects/markdown/>
-   [homebrew]: <http://brew.sh>
+   [netbeans]: <https://netbeans.org/downloads/start.html?platform=macosx&lang=en&option=php>
+   [mamp]: <http://downloads6.mamp.info/MAMP-PRO/releases/4.0.6/MAMP_MAMP_PRO_4.0.6.pkg>
