@@ -21,9 +21,6 @@ This guide describes:
 
 ### Step #2
 * Download [Mamp][mamp], our local server environment.
-* Open Mamp, click Preferences to open the Preferences panel, then select the Ports tab.
-* Click 'Set to Default Apache and MySQL ports'. Apache port is reset to 80 and MySQL to 3306. 
-* Click PHP and choose version 7.0.12.
 
 ### Step #3
 [Add a public key to your GitHub account][sshkey]
@@ -42,6 +39,11 @@ $ ./install [name] [email_address] [working_dir]
 * Open NetBeans and create a new PHP project
 * Choose our working dir as source and choose PHP version 7.0
 * In Run Configuration choose run "as Local" and check "Copy files to another location" [/Applicatio/MAMP/htdocs/webapp]
+
+### Step #3
+* Open Mamp, click Preferences to open the Preferences panel, then select the Ports tab.
+* Click 'Set to Default Apache and MySQL ports'. Apache port is reset to 80 and MySQL to 3306. 
+* Click PHP and choose version 7.0.12.
 
 ## Build
 
