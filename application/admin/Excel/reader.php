@@ -258,7 +258,7 @@ class Spreadsheet_Excel_Reader
      */ 
     function Spreadsheet_Excel_Reader()
     {
-        $this->_ole =& new OLERead();
+        $this->_ole = new OLERead();
         $this->setUTFEncoder('iconv');
     }
 
@@ -1011,7 +1011,7 @@ class Spreadsheet_Excel_Reader
 
     }
 
-
+dsd
     function _GetIEEE754($rknum)
     {
         if (($rknum & 0x02) != 0) {
