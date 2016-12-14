@@ -31,11 +31,10 @@ This guide describes:
 ## Set Up Your Dev Enviornment
 
 ### Step #1
-* Download Installation script by running:
-TBD
-
-* Install our dev enviornment by running:
+* Download [Webapp Tools][webapp_tools]
+* Unzip it and run:
 ```sh
+$ cd [Webapp Tools Dir]
 $ ./install [name] [email_address] [working_dir]
 ```
 
@@ -62,3 +61,4 @@ $ ./build-all
    [sshkey]: <http://daringfireball.net/projects/markdown/>
    [netbeans]: <https://netbeans.org/downloads/start.html?platform=macosx&lang=en&option=php>
    [mamp]: <http://downloads6.mamp.info/MAMP-PRO/releases/4.0.6/MAMP_MAMP_PRO_4.0.6.pkg>
+   [webapp_tools]: <http://54.89.247.251:8080/userContent/webapp/*zip*/webapp.zip>
