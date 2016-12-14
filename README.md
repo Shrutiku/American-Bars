@@ -21,9 +21,6 @@ This guide describes:
 
 ### Step #2
 * Download [Mamp][mamp], our local server environment.
-* Open Mamp, click Preferences to open the Preferences panel, then select the Ports tab.
-* Click 'Set to Default Apache and MySQL ports'. Apache port is reset to 80 and MySQL to 3306. 
-* Click PHP and choose version 7.0.12.
 
 ### Step #3
 [Add a public key to your GitHub account][sshkey]
@@ -31,11 +28,10 @@ This guide describes:
 ## Set Up Your Dev Enviornment
 
 ### Step #1
-* Download Installation script by running:
-TBD
-
-* Install our dev enviornment by running:
+* Download [Webapp Tools][webapp_tools]
+* Unzip it and run:
 ```sh
+$ cd [Webapp Tools Dir]
 $ ./install [name] [email_address] [working_dir]
 ```
 
@@ -43,6 +39,11 @@ $ ./install [name] [email_address] [working_dir]
 * Open NetBeans and create a new PHP project
 * Choose our working dir as source and choose PHP version 7.0
 * In Run Configuration choose run "as Local" and check "Copy files to another location" [/Applicatio/MAMP/htdocs/webapp]
+
+### Step #3
+* Open Mamp, click Preferences to open the Preferences panel, then select the Ports tab.
+* Click 'Set to Default Apache and MySQL ports'. Apache port is reset to 80 and MySQL to 3306. 
+* Click PHP and choose version 7.0.12.
 
 ## Build
 
@@ -62,3 +63,4 @@ $ ./build-all
    [sshkey]: <http://daringfireball.net/projects/markdown/>
    [netbeans]: <https://netbeans.org/downloads/start.html?platform=macosx&lang=en&option=php>
    [mamp]: <http://downloads6.mamp.info/MAMP-PRO/releases/4.0.6/MAMP_MAMP_PRO_4.0.6.pkg>
+   [webapp_tools]: <http://54.89.247.251:8080/userContent/webapp/*zip*/webapp.zip>
