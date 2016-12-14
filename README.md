@@ -31,6 +31,9 @@ This guide describes:
 ## Set Up Your Dev Enviornment
 
 ### Step #1
+* Download Installation script by running:
+TBD
+
 * Install our dev enviornment by running:
 ```sh
 $ ./install [name] [email_address] [working_dir]
