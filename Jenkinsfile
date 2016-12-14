@@ -7,5 +7,5 @@ node {
 		sh './build-all'
 
 	stage 'Deploy Sandbox'
-		sh './deploy-sandbox.sh'
+		sh './deploy_sandbox.sh'
 }
