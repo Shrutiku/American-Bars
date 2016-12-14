@@ -585,8 +585,7 @@ class Spreadsheet_Excel_Reader
                     break;
 
                 case SPREADSHEET_EXCEL_READER_TYPE_FILEPASS:
-                    return false;
-                    break;
+                    return false;            
                 case SPREADSHEET_EXCEL_READER_TYPE_NAME:
                     //echo "Type_NAME\n";
                     break;
