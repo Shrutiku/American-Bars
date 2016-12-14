@@ -8,7 +8,6 @@ $GREP = '/usr/bin/egrep';
 $SED = '/bin/sed'; 
   
 // Find all files...
-$REMOTE_BRANCH=str_replace(array(PHP_EOL, "\r"), ' ', $REMOTE_BRANCH);
 $FILES=`find . -type f`;   
 // ...as an array
 $FILES = split(PHP_EOL,$FILES);  
