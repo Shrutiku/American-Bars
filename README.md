@@ -21,8 +21,8 @@ This guide describes:
 
 ### Step #2
 * Download [Mamp][mamp], our local server environment.
-* Click Preferences to open the Preferences panel, then select the Ports tab.
-* Click Set to Default Apache and MySQL ports. Apache port is reset to 80 and MySQL to 3306. 
+* Open Mamp, click Preferences to open the Preferences panel, then select the Ports tab.
+* Click 'Set to Default Apache and MySQL ports'. Apache port is reset to 80 and MySQL to 3306. 
 * Click PHP and choose version 7.0.12.
 
 ### Step #3
