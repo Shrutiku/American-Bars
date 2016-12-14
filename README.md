@@ -19,7 +19,7 @@ This guide describes:
 ### Step #1
 * Download [NetBeans][netbeans], our IDE.
 
-### Step 2
+### Step #2
 * Download [Mamp][mamp], our local server environment.
 * Click Preferences to open the Preferences panel, then select the Ports tab.
 * Click Set to Default Apache and MySQL ports. Apache port is reset to 80 and MySQL to 3306. 
@@ -28,7 +28,7 @@ This guide describes:
 ### Step #3
 [Add a public key to your GitHub account][sshkey]
 
-## Set up your Dev Enviornment
+## Set Up Your Dev Enviornment
 
 ### Step #1
 * Install our dev enviornment by running:
