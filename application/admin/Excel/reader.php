@@ -1011,7 +1011,6 @@ class Spreadsheet_Excel_Reader
 
     }
 
-dsd
     function _GetIEEE754($rknum)
     {
         if (($rknum & 0x02) != 0) {
