@@ -39,7 +39,7 @@ $ ./install [name] [email_address] [working_dir]
 ### Step #2
 * Open NetBeans and create a new PHP project
 * Choose our working dir as source and choose PHP version 7.0
-* In Run Configuration choose run as Local and check "Copy files to another location" [/Applicatio/MAMP/htdocs/webapp]
+* In Run Configuration choose run "as Local" and check "Copy files to another location" [/Applicatio/MAMP/htdocs/webapp]
 
 ## Build
 
