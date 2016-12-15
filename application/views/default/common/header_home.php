@@ -82,7 +82,7 @@ $(function(){
 	        <li><a href="<?php echo site_url("home/logout"); ?>" class="yellowlink">Logout</a></li>
 			<?php
 			}else{ ?>
-                <li ><a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/google_play_button.png" style="max-width:100%;max-height:100%;"/></a></li>
+                <li ><a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/google_play_button.png" style="width:100%;max-height:100%;"/></a></li>
 		  <li><a href="https://itunes.apple.com/in/app/american-bars/id1090377977?mt=8" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/app-store-logo.png" /></a></li>
             <li><a href="#loginmodal" data-toggle='modal' class="yellowlink">Login or Register</a></li>
 			<?php } ?>
