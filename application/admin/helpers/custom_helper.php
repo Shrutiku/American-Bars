@@ -1852,7 +1852,7 @@ function totalbarcomment($id)
 					$ctx = stream_context_create();
 					
 					
-					if($_SERVER['HTTP_HOST']=='test.americanbars.com')
+					if($_SERVER['HTTP_HOST']=='sandbox.americanbars.com')
 					{
 						//ab_ck.pem	
 						// adb_dist_ck.pem

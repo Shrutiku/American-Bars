@@ -6413,7 +6413,7 @@ function socialshare($msg='',$scrname='')
 			
 			$publishStream = $this->fb_connect->publish($this->input->post('fbid'),array(
 								'message' =>  "have post new pin on" ,
-								'link'    => "http://test.americanbars.com",
+								'link'    => "http://sandbox.americanbars.com",
 								'picture' => $comment_image,
 								'name'    => "DSfa",
 								'description'=> $this->input->post('comment')
@@ -6508,7 +6508,7 @@ else {
 		
 	function shareontwitter()
 	{
-			$image = 'http://test.americanbars.com/default/images/americanbars.png';
+			$image = 'http://sandbox.americanbars.com/default/images/americanbars.png';
 		//print_r(file_get_contents($image));
 		//die;
 		$this->load->library('twconnect');
@@ -6521,7 +6521,7 @@ else {
 	      
 		$status_message = 'Attaching an image to a tweet';
 		//$status = $connection->request('statuses/update_with_media', array('status' => $status_message, 'media' =>  "{$image}"));
-		$content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment'). " -Posted through http://test.americanbars.com"));
+		$content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment'). " -Posted through http://sandbox.americanbars.com"));
 		
 		
 		if($content1 && !isset($content1->errors))
@@ -6592,7 +6592,7 @@ else {
 		
 			
 			}
-			$caption = $this->input->post('comment_insta'). " -Posted through http://test.americanbars.com";   // caption
+			$caption = $this->input->post('comment_insta'). " -Posted through http://sandbox.americanbars.com";   // caption
 			//////////////////////
 			
 			$i = new Instagram($username, $password, $debug);
@@ -6607,7 +6607,7 @@ else {
 			try {
 				if($photo)
 				{	
-					$photo = 'http://test.americanbars.com/upload/temp/'.$photo;
+					$photo = 'http://sandbox.americanbars.com/upload/temp/'.$photo;
 				}
 				
 				
@@ -6833,25 +6833,25 @@ if($this->input->post('page_id')=='')
 {			
 			if($photo)
 			{
-				$photo = "http://test.americanbars.com/upload/temp/".$photo;
+				$photo = "http://sandbox.americanbars.com/upload/temp/".$photo;
 			}
 			 if($photo)
 	 {
 		
 	    $param = array(
-    'message' => $caption ." - Posted through http://test.americanbars.com",
+    'message' => $caption ." - Posted through http://sandbox.americanbars.com",
     'description' => ' ',
     'caption' =>' ',
     'name' => '  ',
     'title' => ' ',
      'picture' => $photo,
-     'link' => "http://test.americanbars.com",
+     'link' => "http://sandbox.americanbars.com",
    );
 	 }
 			 else
 			 	{
 			 		$param = array(
-    'message' => $caption ." - Posted through http://test.americanbars.com",
+    'message' => $caption ." - Posted through http://sandbox.americanbars.com",
      'description' => ' ',
     'caption' =>' ',
     'name' => '  ',
@@ -6878,7 +6878,7 @@ else
 		$datatick['page_id']=$this->input->post('page_id');
 		if($photo)
 			{
-				$photo = "http://test.americanbars.com/upload/temp/".$photo;
+				$photo = "http://sandbox.americanbars.com/upload/temp/".$photo;
 			}
 		 if( isset( $datatick['page_id'] ) && is_array( $datatick['page_id'] ) ){
 			foreach( $datatick['page_id'] as $key => $each ){
@@ -6891,14 +6891,14 @@ else
 	 	
 			$publish = $facebook->api('/'.$page_id.'/feed', 'post',
             array('access_token' => $page_token,
-             'message' => $caption ." - Posted through http://test.americanbars.com",
+             'message' => $caption ." - Posted through http://sandbox.americanbars.com",
             'from' =>'322878041237170',
             'to' => $page_id,
             'description' => ' ',
     'caption' =>' ',
     'name' => '  ',
     'title' => ' ',
-             'link' => "http://test.americanbars.com",
+             'link' => "http://sandbox.americanbars.com",
             'picture' => $photo,
             ));
             }
@@ -6906,7 +6906,7 @@ else
 			 	{
 			 		$publish = $facebook->api('/'.$page_id.'/feed', 'post',
             array('access_token' => $page_token,
-             'message' => $caption ." - Posted through http://test.americanbars.com",
+             'message' => $caption ." - Posted through http://sandbox.americanbars.com",
             'from' =>'322878041237170',
              'description' => ' ',
     'caption' =>' ',

@@ -1963,7 +1963,7 @@ class Api extends REST_Controller
 				$data['result'][$k]['total_number'] = $v['total_number'];	
 				
 				//die;
-				// $g = "<img src='http://test.americanbars.com/upload/blog_thumb/'".$r[$i]->blog_image." />";
+				// $g = "<img src='http://sandbox.americanbars.com/upload/blog_thumb/'".$r[$i]->blog_image." />";
 				// $data['blog_description'] =  $g ." ". $r[$i]->blog_description;
 				// $data['blog_id'] =  $r[$i]->blog_id;
 				// $data['blog_title'] =  $r[$i]->blog_title;
@@ -1986,7 +1986,7 @@ class Api extends REST_Controller
    	    $blog_id = $this->input->post('article_id');
 		$blog_detail = $this->api_model->get_one_blog($blog_id);
 		//echo $data["blog_detail"]['blog_image'];
-		$g = "<img src='http://test.americanbars.com/upload/blog_thumb/'".$blog_detail['blog_image']." />";
+		$g = "<img src='http://sandbox.americanbars.com/upload/blog_thumb/'".$blog_detail['blog_image']." />";
 		
 		$data['blog_description'] =  $g ." ". $blog_detail['blog_description'];
 		$data['blog_id'] =  $blog_detail['blog_id'];

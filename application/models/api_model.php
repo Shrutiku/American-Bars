@@ -3366,7 +3366,7 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 	 function get_one_blog($id = 0)
 	{
 			//`	$this->db->_protect_identifiers=false; 
-		$g = "http://test.americanbars.com/upload/blog_thumb/";	
+		$g = "http://sandbox.americanbars.com/upload/blog_thumb/";	
 	//	echo $g; die;
 	
 		//$this->db->select("CONCAT(user_firstname, '.', user_surname) AS name) AS name");

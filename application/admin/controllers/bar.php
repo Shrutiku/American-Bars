@@ -1334,7 +1334,7 @@ if($action=='archived')
 		{
 			$slug = getBarSlug_new($b->bar_slug,$b->bar_id);
 			$data_insert["bar_slug"] = $slug;
-			$data_insert["linkurl"] = "http://test.americanbars.com/bar/details/$slug";
+			$data_insert["linkurl"] = "http://sandbox.americanbars.com/bar/details/$slug";
 			
 			$this->db->where("bar_id",$b->bar_id);
 			$this->db->update('bars',$data_insert);
