@@ -17,6 +17,8 @@
 
 //require_once "base_facebook.php";
 require_once(APPPATH.'libraries/facebook/base_facebook.php');
+
+if (!class_exists('Facebook')) {
 /**
  * Extends the BaseFacebook class with the intent of using
  * PHP sessions to store user ids and access tokens.
@@ -90,4 +92,5 @@ class Facebook extends BaseFacebook
                               $this->getAppId(),
                               $key));
   }
+}
 }

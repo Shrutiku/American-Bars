@@ -70,7 +70,7 @@
      					<li class="<?php echo $this->uri->segment(2)=='socialmedialink' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/socialmedialink')?>">
      							<i class="strip social_url"></i>
-     							Social Url
+     							Social Media Settings
      						</a>
      					</li>
      					

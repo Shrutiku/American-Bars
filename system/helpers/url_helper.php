@@ -68,6 +68,15 @@ if ( ! function_exists('base_url'))
 	}
 }
 
+if ( ! function_exists('app_bower_url'))
+{
+	function app_bower_url()
+	{		
+		$CI =& get_instance();
+		return $app_bower_url = $CI->config->base_url()."/application/bower_components/";
+	}
+}
+
 // ------------------------------------------------------------------------
 
 /**

@@ -567,16 +567,69 @@ class Home extends SPACULLUS_Controller {
 
                 if ($this->input->post('temp_id') == "") {
                     $barid = $this->home_model->register_bar_owner($type);
-                    redirect('home/registration_step3/' . base64_encode($barid) . '/' . $type);
+                    redirect('home/registration_step_test/' . base64_encode($barid) . '/' . $type);
                 } else {
                     $barid = $this->home_model->register_bar_owner_update($type);
-                    redirect('home/registration_step3/' . base64_encode($barid) . '/' . $type);
+                    redirect('home/registration_step_test/' . base64_encode($barid) . '/' . $type);
                 }
             }
         }
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/home/bar_owner_register', $data, TRUE);
+        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+        $this->template->render();
+    }
+
+    function registration_step_test($bar_id = '', $type = '') {
+        if ($bar_id != "") {
+            $bar_id = base64_decode($bar_id);
+            $this->session->set_userdata(array('viewid' => $bar_id));
+            $bar_id = $this->session->userdata('viewid');
+        } elseif ($this->session->userdata('viewid') != "") {
+            $bar_id = $this->session->userdata('viewid');
+        }
+
+
+        if ($bar_id == '' && $type == '') {
+            redirect('home/bar_owner_register');
+        }
+
+        $theme = getThemeName();
+        $data['error'] = '';
+        $data['bar_id'] = $bar_id;
+        $data['type'] = $type;
+        $data["active_menu"] = '';
+        $data['site_setting'] = site_setting();
+        $theme = getThemeName();
+        $this->template->set_master_template($theme . '/template.php');
+
+        $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
+
+
+        $data['count'] = 0;
+        if (base64_decode($type) == 1) {
+            $data['count'] = 6;
+            //$count = count(explode(',',$count));
+        }
+        $data['type'] = $type;
+        $page_detail = meta_setting();
+        $pageTitle = $page_detail->title;
+        $metaDescription = $page_detail->meta_description;
+        $metaKeyword = $page_detail->meta_keyword;
+        $this->template->write('pageTitle', $pageTitle, TRUE);
+        $this->template->write('metaDescription', $metaDescription, TRUE);
+        $this->template->write('metaKeyword', $metaKeyword, TRUE);
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('choise_bar', 'Choise Bar', 'required');
+
+        if ($_POST) {
+            redirect('home/registration_step3');
+        }
+
+        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/registration_step_test', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
@@ -4373,10 +4426,10 @@ class Home extends SPACULLUS_Controller {
 
         $data['page_name'] = "credit_card_update";
         $data['msg'] = $msg; //login fail message
-        $this->form_validation->set_rules('facebook_link', 'Facebook Link', 'valid_url');
-        $this->form_validation->set_rules('twitter_link', 'Twitter Tink', 'valid_url');
+        //$this->form_validation->set_rules('facebook_link', 'Facebook Link', 'valid_url');
+        //$this->form_validation->set_rules('twitter_link', 'Twitter Tink', 'valid_url');
         $this->form_validation->set_rules('linkedin_link', 'Linkedin Link', 'valid_url');
-        $this->form_validation->set_rules('instagram_link', 'Instagram Link', 'valid_url');
+        //$this->form_validation->set_rules('instagram_link', 'Instagram Link', 'valid_url');
         $this->form_validation->set_rules('google_plus_link', 'Google Plus Link', 'valid_url');
         $this->form_validation->set_rules('dribble_link', 'Dribble Link', 'valid_url');
         $this->form_validation->set_rules('pinterest_link', 'Pinterest Link', 'valid_url');
@@ -5696,6 +5749,10 @@ class Home extends SPACULLUS_Controller {
         if (!check_user_authentication()) {
             redirect('home');
         }
+        if ($this->session->userdata('user_type') != 'bar_owner') {
+            redirect('home');
+        }
+        
         // cho "Fdsa";
         $this->load->library('fb_connect');
         $this->load->library('facebook');
@@ -5707,6 +5764,15 @@ class Home extends SPACULLUS_Controller {
             'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
         );
 
+        $this->db->where('owner_id', get_authenticateUserID());
+        $this->db->limit(1);
+        $bar_info = $this->db->get('bars')->row();
+        if ($bar_info != NULL){
+            $data['facebook_link'] = end(explode('/',$bar_info->facebook_link));
+            $data['twitter_link'] = end(explode('/',$bar_info->twitter_link));
+            $data['instagram_link'] = end(explode('/',$bar_info->instagram_link));
+        }
+        
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
         $data['fb_usr'] = $this->fb_connect->user;
@@ -5730,9 +5796,9 @@ class Home extends SPACULLUS_Controller {
         $data['msg'] = $msg; //login fail message
         $this->form_validation->set_rules('comment', 'Comment');
         // print_r($data['getbar']); 
-        // $data['facebook_link']=$data['getbar']['facebook_link'];
-        // $data['twitter_link']=$data['getbar']['twitter_link'];
-        // $data['instagram_link']=$data['getbar']['instagram_link'];
+        //$data['facebook_link']=$data['getbar']['facebook_link'];
+        //$data['twitter_link']=$data['getbar']['twitter_link'];
+        //$data['instagram_link']=$data['getbar']['instagram_link'];
         // $data['linkedin_link']=$data['getbar']['linkedin_link'];
         // $data['google_plus_link']=$data['getbar']['google_plus_link'];
         // $data['dribble_link']=$data['getbar']['dribble_link'];
@@ -5749,7 +5815,7 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
 
-                // $data['facebook_link']=$this->input->post('facebook_link');
+                //data['facebook_link'];
                 // $data['twitter_link']=$this->input->post('twitter_link');
                 // $data['linkedin_link']=$this->input->post('linkedin_link');
                 // $data['instagram_link']=$this->input->post('instagram_link');
@@ -5833,7 +5899,7 @@ class Home extends SPACULLUS_Controller {
 
                 $publishStream = $this->fb_connect->publish($this->input->post('fbid'), array(
                     'message' => "have post new pin on",
-                    'link' => "http://sandbox.americanbars.com",
+                    'link' => "http://test.americanbars.com",
                     'picture' => $comment_image,
                     'name' => "DSfa",
                     'description' => $this->input->post('comment')
@@ -5922,7 +5988,7 @@ class Home extends SPACULLUS_Controller {
     }
 
     function shareontwitter() {
-        $image = 'http://sandbox.americanbars.com/default/images/americanbars.png';
+        $image = 'http://test.americanbars.com/default/images/americanbars.png';
         //print_r(file_get_contents($image));
         //die;
         $this->load->library('twconnect');
@@ -5935,7 +6001,7 @@ class Home extends SPACULLUS_Controller {
 
         $status_message = 'Attaching an image to a tweet';
         //$status = $connection->request('statuses/update_with_media', array('status' => $status_message, 'media' =>  "{$image}"));
-        $content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment') . " -Posted through http://sandbox.americanbars.com"));
+        $content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment') . " -Posted through http://test.americanbars.com"));
 
 
         if ($content1 && !isset($content1->errors)) {
@@ -5998,7 +6064,7 @@ class Home extends SPACULLUS_Controller {
 
             $photo = $picture['file_name'];
         }
-        $caption = $this->input->post('comment_insta') . " -Posted through http://sandbox.americanbars.com";   // caption
+        $caption = $this->input->post('comment_insta') . " -Posted through http://test.americanbars.com";   // caption
         //////////////////////
 
         $i = new Instagram($username, $password, $debug);
@@ -6012,7 +6078,7 @@ class Home extends SPACULLUS_Controller {
 
         try {
             if ($photo) {
-                $photo = 'http://sandbox.americanbars.com/upload/temp/' . $photo;
+                $photo = 'http://test.americanbars.com/upload/temp/' . $photo;
             }
 
 
@@ -6219,22 +6285,22 @@ class Home extends SPACULLUS_Controller {
 
         if ($this->input->post('page_id') == '') {
             if ($photo) {
-                $photo = "http://sandbox.americanbars.com/upload/temp/" . $photo;
+                $photo = "http://test.americanbars.com/upload/temp/" . $photo;
             }
             if ($photo) {
 
                 $param = array(
-                    'message' => $caption . " - Posted through http://sandbox.americanbars.com",
+                    'message' => $caption . " - Posted through http://test.americanbars.com",
                     'description' => ' ',
                     'caption' => ' ',
                     'name' => '  ',
                     'title' => ' ',
                     'picture' => $photo,
-                    'link' => "http://sandbox.americanbars.com",
+                    'link' => "http://test.americanbars.com",
                 );
             } else {
                 $param = array(
-                    'message' => $caption . " - Posted through http://sandbox.americanbars.com",
+                    'message' => $caption . " - Posted through http://test.americanbars.com",
                     'description' => ' ',
                     'caption' => ' ',
                     'name' => '  ',
@@ -6257,7 +6323,7 @@ class Home extends SPACULLUS_Controller {
         } else {
             $datatick['page_id'] = $this->input->post('page_id');
             if ($photo) {
-                $photo = "http://sandbox.americanbars.com/upload/temp/" . $photo;
+                $photo = "http://test.americanbars.com/upload/temp/" . $photo;
             }
             if (isset($datatick['page_id']) && is_array($datatick['page_id'])) {
                 foreach ($datatick['page_id'] as $key => $each) {
@@ -6268,19 +6334,19 @@ class Home extends SPACULLUS_Controller {
                     if ($photo) {
 
                         $publish = $facebook->api('/' . $page_id . '/feed', 'post', array('access_token' => $page_token,
-                            'message' => $caption . " - Posted through http://sandbox.americanbars.com",
+                            'message' => $caption . " - Posted through http://test.americanbars.com",
                             'from' => '322878041237170',
                             'to' => $page_id,
                             'description' => ' ',
                             'caption' => ' ',
                             'name' => '  ',
                             'title' => ' ',
-                            'link' => "http://sandbox.americanbars.com",
+                            'link' => "http://test.americanbars.com",
                             'picture' => $photo,
                         ));
                     } else {
                         $publish = $facebook->api('/' . $page_id . '/feed', 'post', array('access_token' => $page_token,
-                            'message' => $caption . " - Posted through http://sandbox.americanbars.com",
+                            'message' => $caption . " - Posted through http://test.americanbars.com",
                             'from' => '322878041237170',
                             'description' => ' ',
                             'caption' => ' ',
@@ -6983,36 +7049,6 @@ class Home extends SPACULLUS_Controller {
 
         $this->template->write_view('header', $theme . '/common/header', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/home/domainmanagement', $data, TRUE);
-        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
-        $this->template->render();
-    }
-
-    function barlistings($msg = "") {
-        $data = array();
-        $user_info = get_user_info(get_authenticateUserID());
-        if (get_authenticateUserID() == '') {
-            redirect('home');
-        }
-        if ($this->session->userdata('user_type') != 'bar_owner') {
-            redirect('home');
-        }
-
-        $theme = getThemeName();
-        $data['error'] = '';
-        $data["active_menu"] = '';
-        $data['site_setting'] = site_setting();
-        $theme = getThemeName();
-        $this->template->set_master_template($theme . '/template.php');
-
-        $data['getbardata'] = $this->home_model->get_bar_info(get_authenticateUserID());
-
-        $theme = getThemeName();
-        $this->template->set_master_template($theme . '/template.php');
-
-        $data['page_name'] = "barlistings";
-
-        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/bar_listings', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }

@@ -4,7 +4,7 @@ $theme_url = base_url().getThemeName();
 $site_setting=site_setting();  
 $meta_setting=meta_setting();  
 $uri = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
+        
 if($uri == 'https://americanbars.com/'){
     $img = "http://americanbars.com/images/ab-fb-og.jpg";
 }
@@ -48,12 +48,12 @@ else{
 	<meta name="description" content="<?php echo $meta_setting->meta_description;?>" />
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta name="keyword" content="<?php echo $meta_setting->meta_keyword;?>"  />
-		<title> <?php echo $meta_setting->title;?></title>
+		<title><?php echo $meta_setting->title;?></title>
 <?php } else {
 	?>		
 	<meta name="description" content="<?php echo $metaDescription;?>" />
 	<meta name="keyword" content="<?php echo $metaKeyword;?>" />
-	<title> <?php echo $pageTitle;?></title>
+	<title><?php echo $pageTitle;?></title>
 	
 	<?php } ?>
  	 <!-- Bootstrap -->
@@ -91,8 +91,12 @@ else{
 <link href="<?php echo base_url().getThemeName(); ?>/css/alertify.default.css" rel="stylesheet" />
 <link href="<?php echo base_url().getThemeName(); ?>/css/alertify.core.css" rel="stylesheet" />
 <link href="<?php echo base_url().getThemeName(); ?>/css/jquery-ui.css" rel="stylesheet" />
+   <!-- Social-feed css -->
+    <link href="<?php echo app_bower_url();?>/social-feed/css/jquery.socialfeed.css" rel="stylesheet" type="text/css">
+    <!-- font-awesome for social network icons -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-    
+
 	<script type="application/javascript">
 		var baseUrl='<?php echo base_url(); ?>';
 		

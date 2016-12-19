@@ -4,7 +4,7 @@
      		<div class="margin-top-50 bg_brown">
      			<?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
      			<div class="dashboard_detail">
-     				<div class="result_search event"><div class="result_search_text"><i class="strip social_url"></i> Update social URL</div></div>
+     				<div class="result_search event"><div class="result_search_text"><i class="strip social_url"></i> Update social media settings</div></div>
 		     		<div class="dashboard_subblock">
 		     			<div>
      					
@@ -24,7 +24,7 @@
 	                       	
 	                       	  <div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Facebook Url :</label>
+	        				 		<label class="control-label">Facebook Account (ex. "americanbars"):</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="facebook_link" name="facebook_link" value="<?php echo $facebook_link;?>">
@@ -34,7 +34,7 @@
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Twitter Url :</label>
+	        				 		<label class="control-label">Twitter Account (ex. "americanbars"):</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="twitter_link" name="twitter_link" value="<?php echo $twitter_link;?>">
@@ -54,7 +54,7 @@
 	                       	
 	                       		<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Instagram Url :</label>
+	        				 		<label class="control-label">Instagram Account (e.x americanbars) :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="instagram_link" name="instagram_link" value="<?php echo $instagram_link;?>">
@@ -120,10 +120,10 @@
         $('#form').validate({
 		rules: {			
 			facebook_link: {
-				url: true,
+				url: false,
 			},
 			twitter_link: {
-				url: true,
+				url: false,
 			},			
 			linkedin_link: {
 				url: true,
@@ -132,7 +132,7 @@
 				url: true,
 			},
 			instagram_link: {
-				url: true,
+				url: false,
 			},
 			dribble_link: {
 				url: true,
