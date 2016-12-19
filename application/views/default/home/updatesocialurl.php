@@ -118,21 +118,12 @@
   
     $(document).ready(function(){
         $('#form').validate({
-		rules: {			
-			facebook_link: {
-				url: false,
-			},
-			twitter_link: {
-				url: false,
-			},			
+		rules: {						
 			linkedin_link: {
 				url: true,
 			},
 			google_plus_link: {
 				url: true,
-			},
-			instagram_link: {
-				url: false,
 			},
 			dribble_link: {
 				url: true,
