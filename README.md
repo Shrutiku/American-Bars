@@ -43,7 +43,7 @@ $ ./install [name] [email_address] [working_dir]
 ### Step #3
 * Open Mamp, click Preferences to open the Preferences panel, then select the Ports tab.
 * Click 'Set to Default Apache and MySQL ports'. Apache port is reset to 80 and MySQL to 3306. 
-* Click PHP and choose version 7.0.12.
+* Click PHP and choose version 5.6.27.
 
 ## Build
 
