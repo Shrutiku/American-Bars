@@ -88,7 +88,7 @@
 	<div class="wrapper row5 beer-list" style="border:<?php echo $v==0 ? 'none':'';?>">
      	<div class="container">
      		<div class="result_box clearfix mar_top30bot20">
-     			<div class="login_block br_green_yellow" style="width:870px">
+     			<div class="login_block br_green_yellow">
      				<div class="result_search">
 	     				<i class="strip login_icon"></i><div class="result_search_text">Registration</div>
      				</div>
