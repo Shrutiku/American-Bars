@@ -604,12 +604,12 @@ class Home extends SPACULLUS_Controller {
 				if($this->input->post('temp_id')=="")
 				{
 					$barid= $this->home_model->register_bar_owner($type);
-					redirect('home/registration_step_test/'.base64_encode($barid).'/'.$type);
+					redirect('home/registration_step3/'.base64_encode($barid).'/'.$type);
 				}	
 				else
 				{
 					$barid= $this->home_model->register_bar_owner_update($type);
-					redirect('home/registration_step_test/'.base64_encode($barid).'/'.$type);
+					redirect('home/registration_step3/'.base64_encode($barid).'/'.$type);
 				}
 				
 			}
@@ -621,66 +621,7 @@ class Home extends SPACULLUS_Controller {
 		$this->template->render();
 		
 	
-	}
-
-	function registration_step_test($bar_id='',$type='')
-	{
-		if($bar_id!="")
-		{
-			$bar_id = base64_decode($bar_id);
-			$this->session->set_userdata(array('viewid' => $bar_id));
-			$bar_id = $this->session->userdata('viewid');
-		}
-		elseif($this->session->userdata('viewid')!="") {
-			$bar_id = $this->session->userdata('viewid');
-			
-		}
-		
-
-		if($bar_id=='' && $type=='')
-		{
-			redirect ('home/bar_owner_register');
-		}
-
-		$theme = getThemeName ();
-		$data['error'] = '';
-		$data['bar_id'] = $bar_id;
-		$data['type'] = $type;
-        $data["active_menu"]='';
-        $data['site_setting'] = site_setting ();
-		$theme = getThemeName ();
-		$this->template->set_master_template ($theme.'/template.php');
-		
-		$data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
-		
-		
-		$data['count'] = 0;
-		if(base64_decode($type)==1)
-		{
-			 $data['count'] = 6;
-		//$count = count(explode(',',$count));
-		}
-		 $data['type'] = $type;
-		$page_detail=meta_setting();
-		$pageTitle=$page_detail->title;
-		$metaDescription=$page_detail->meta_description;
-		$metaKeyword=$page_detail->meta_keyword;
-		$this->template->write ('pageTitle', $pageTitle, TRUE);
-		$this->template->write ('metaDescription', $metaDescription, TRUE);
-		$this->template->write ('metaKeyword', $metaKeyword, TRUE);
-		$this->load->library ('form_validation');
-
-		$this->form_validation->set_rules('choise_bar','Choise Bar','required');
-
-		if ($_POST) { 
-			redirect ('home/registration_step3');
-		}
-
-		$this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
-		$this->template->write_view ('content_center', $theme.'/home/registration_step_test', $data, TRUE);
-		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
-		$this->template->render();
-	}
+        }
 
     function registration_step3($bar_id='',$type='')
 	{
@@ -6413,7 +6354,7 @@ function socialshare($msg='',$scrname='')
 			
 			$publishStream = $this->fb_connect->publish($this->input->post('fbid'),array(
 								'message' =>  "have post new pin on" ,
-								'link'    => "http://test.americanbars.com",
+								'link'    => "http://sandbox.americanbars.com",
 								'picture' => $comment_image,
 								'name'    => "DSfa",
 								'description'=> $this->input->post('comment')
@@ -6508,7 +6449,7 @@ else {
 		
 	function shareontwitter()
 	{
-			$image = 'http://test.americanbars.com/default/images/americanbars.png';
+			$image = 'http://sandbox.americanbars.com/default/images/americanbars.png';
 		//print_r(file_get_contents($image));
 		//die;
 		$this->load->library('twconnect');
@@ -6521,7 +6462,7 @@ else {
 	      
 		$status_message = 'Attaching an image to a tweet';
 		//$status = $connection->request('statuses/update_with_media', array('status' => $status_message, 'media' =>  "{$image}"));
-		$content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment'). " -Posted through http://test.americanbars.com"));
+		$content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment'). " -Posted through http://sandbox.americanbars.com"));
 		
 		
 		if($content1 && !isset($content1->errors))
@@ -6592,7 +6533,7 @@ else {
 		
 			
 			}
-			$caption = $this->input->post('comment_insta'). " -Posted through http://test.americanbars.com";   // caption
+			$caption = $this->input->post('comment_insta'). " -Posted through http://sandbox.americanbars.com";   // caption
 			//////////////////////
 			
 			$i = new Instagram($username, $password, $debug);
@@ -6607,7 +6548,7 @@ else {
 			try {
 				if($photo)
 				{	
-					$photo = 'http://test.americanbars.com/upload/temp/'.$photo;
+					$photo = 'http://sandbox.americanbars.com/upload/temp/'.$photo;
 				}
 				
 				
@@ -6833,25 +6774,25 @@ if($this->input->post('page_id')=='')
 {			
 			if($photo)
 			{
-				$photo = "http://test.americanbars.com/upload/temp/".$photo;
+				$photo = "http://sandbox.americanbars.com/upload/temp/".$photo;
 			}
 			 if($photo)
 	 {
 		
 	    $param = array(
-    'message' => $caption ." - Posted through http://test.americanbars.com",
+    'message' => $caption ." - Posted through http://sandbox.americanbars.com",
     'description' => ' ',
     'caption' =>' ',
     'name' => '  ',
     'title' => ' ',
      'picture' => $photo,
-     'link' => "http://test.americanbars.com",
+     'link' => "http://sandbox.americanbars.com",
    );
 	 }
 			 else
 			 	{
 			 		$param = array(
-    'message' => $caption ." - Posted through http://test.americanbars.com",
+    'message' => $caption ." - Posted through http://sandbox.americanbars.com",
      'description' => ' ',
     'caption' =>' ',
     'name' => '  ',
@@ -6878,7 +6819,7 @@ else
 		$datatick['page_id']=$this->input->post('page_id');
 		if($photo)
 			{
-				$photo = "http://test.americanbars.com/upload/temp/".$photo;
+				$photo = "http://sandbox.americanbars.com/upload/temp/".$photo;
 			}
 		 if( isset( $datatick['page_id'] ) && is_array( $datatick['page_id'] ) ){
 			foreach( $datatick['page_id'] as $key => $each ){
@@ -6891,14 +6832,14 @@ else
 	 	
 			$publish = $facebook->api('/'.$page_id.'/feed', 'post',
             array('access_token' => $page_token,
-             'message' => $caption ." - Posted through http://test.americanbars.com",
+             'message' => $caption ." - Posted through http://sandbox.americanbars.com",
             'from' =>'322878041237170',
             'to' => $page_id,
             'description' => ' ',
     'caption' =>' ',
     'name' => '  ',
     'title' => ' ',
-             'link' => "http://test.americanbars.com",
+             'link' => "http://sandbox.americanbars.com",
             'picture' => $photo,
             ));
             }
@@ -6906,7 +6847,7 @@ else
 			 	{
 			 		$publish = $facebook->api('/'.$page_id.'/feed', 'post',
             array('access_token' => $page_token,
-             'message' => $caption ." - Posted through http://test.americanbars.com",
+             'message' => $caption ." - Posted through http://sandbox.americanbars.com",
             'from' =>'322878041237170',
              'description' => ' ',
     'caption' =>' ',
@@ -7580,7 +7521,7 @@ if (isset($response['RESULT']) && $response['RESULT'] == 0) {
 }
 	}
 
-	function domainmanagement($msg="")
+        function domainmanagement($msg="")
 	{
 		$data = array();
 		$user_info = get_user_info(get_authenticateUserID());
@@ -7668,6 +7609,39 @@ if (isset($response['RESULT']) && $response['RESULT'] == 0) {
 		$this->template->write_view ('content_center', $theme.'/home/domainmanagement', $data, TRUE);
 		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
 		$this->template->render ();
+	}
+        
+	function barlistings($msg="")
+	{
+		$data = array();
+		$user_info = get_user_info(get_authenticateUserID());
+		if(get_authenticateUserID()=='')
+		{
+			redirect('home');
+		}
+		if($this->session->userdata('user_type')!='bar_owner')
+		{
+			redirect('home');
+		}
+
+		$theme = getThemeName ();
+		$data['error'] = '';
+                $data["active_menu"]='';
+                $data['site_setting'] = site_setting ();
+		$theme = getThemeName ();
+		$this->template->set_master_template ($theme.'/template.php');
+		
+                $data['getbardata'] = $this->home_model->get_bar_info(get_authenticateUserID());
+
+		$theme = getThemeName();
+		$this->template->set_master_template($theme .'/template.php');
+
+		$data['page_name']="barlistings";
+
+		$this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
+		$this->template->write_view ('content_center', $theme.'/home/bar_listings', $data, TRUE);
+		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+		$this->template->render();
 	}
 }
 ?>
