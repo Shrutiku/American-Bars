@@ -23,9 +23,10 @@
 //echo getcwd();die;
 //$config['base_url']    = 'http://test.americanbars.com/';
 
-//$config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'https') . "://{$_SERVER['HTTP_HOST']}/";
-$config['base_url']    = 'http://localhost/webapp/';
-$config['base_path']="/Applications/MAMP/htdocs/webapp/";//"/var/www/html/";
+$config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'https') . "://{$_SERVER['HTTP_HOST']}/";
+//$config['base_url']    = 'http://localhost/webapp/';
+//$config['base_path']="/Applications/MAMP/htdocs/webapp/";//"/var/www/html/";
+$config['base_path']="/var/www/html/";
 /*
  * RewriteEngine on
 RewriteRule ^check_rewrite.php$ mod_rewrite.php
