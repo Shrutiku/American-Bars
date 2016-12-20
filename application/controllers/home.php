@@ -4373,10 +4373,10 @@ class Home extends SPACULLUS_Controller {
 
         $data['page_name'] = "credit_card_update";
         $data['msg'] = $msg; //login fail message
-        $this->form_validation->set_rules('facebook_link', 'Facebook Link', 'valid_url');
-        $this->form_validation->set_rules('twitter_link', 'Twitter Tink', 'valid_url');
+        //$this->form_validation->set_rules('facebook_link', 'Facebook Link', 'valid_url');
+        //$this->form_validation->set_rules('twitter_link', 'Twitter Tink', 'valid_url');
         $this->form_validation->set_rules('linkedin_link', 'Linkedin Link', 'valid_url');
-        $this->form_validation->set_rules('instagram_link', 'Instagram Link', 'valid_url');
+        //$this->form_validation->set_rules('instagram_link', 'Instagram Link', 'valid_url');
         $this->form_validation->set_rules('google_plus_link', 'Google Plus Link', 'valid_url');
         $this->form_validation->set_rules('dribble_link', 'Dribble Link', 'valid_url');
         $this->form_validation->set_rules('pinterest_link', 'Pinterest Link', 'valid_url');
@@ -5706,6 +5706,15 @@ class Home extends SPACULLUS_Controller {
             'fileUpload' => true,
             'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
         );
+        
+        $this->db->where('owner_id', get_authenticateUserID());
+        $this->db->limit(1);
+        $bar_info = $this->db->get('bars')->row();
+        if ($bar_info != NULL){
+            $data['facebook_link'] = end(explode('/',$bar_info->facebook_link));
+            $data['twitter_link'] = end(explode('/',$bar_info->twitter_link));
+            $data['instagram_link'] = end(explode('/',$bar_info->instagram_link));
+        }
 
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
