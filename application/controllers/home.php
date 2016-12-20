@@ -7580,7 +7580,7 @@ if (isset($response['RESULT']) && $response['RESULT'] == 0) {
 }
 	}
 
-	function domainmanagement($msg="")
+        function domainmanagement($msg="")
 	{
 		$data = array();
 		$user_info = get_user_info(get_authenticateUserID());
@@ -7668,6 +7668,39 @@ if (isset($response['RESULT']) && $response['RESULT'] == 0) {
 		$this->template->write_view ('content_center', $theme.'/home/domainmanagement', $data, TRUE);
 		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
 		$this->template->render ();
+	}
+        
+	function barlistings($msg="")
+	{
+		$data = array();
+		$user_info = get_user_info(get_authenticateUserID());
+		if(get_authenticateUserID()=='')
+		{
+			redirect('home');
+		}
+		if($this->session->userdata('user_type')!='bar_owner')
+		{
+			redirect('home');
+		}
+
+		$theme = getThemeName ();
+		$data['error'] = '';
+                $data["active_menu"]='';
+                $data['site_setting'] = site_setting ();
+		$theme = getThemeName ();
+		$this->template->set_master_template ($theme.'/template.php');
+		
+                $data['getbardata'] = $this->home_model->get_bar_info(get_authenticateUserID());
+
+		$theme = getThemeName();
+		$this->template->set_master_template($theme .'/template.php');
+
+		$data['page_name']="barlistings";
+
+		$this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
+		$this->template->write_view ('content_center', $theme.'/home/bar_listings', $data, TRUE);
+		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+		$this->template->render();
 	}
 }
 ?>

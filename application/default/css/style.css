@@ -3591,6 +3591,14 @@ ul.beerdirectory li .yellow_text h2 {
 	display: block;
 }
 
+.bar-listings {
+	display: inline-block;
+	background: url(../images/bar_listings_icon.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	display: block;
+}
+
 .notify-icon {
 	position: absolute;
 	right: 5px;

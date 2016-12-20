@@ -236,5 +236,13 @@
 								Domain Management
 							</a>
 						</li>
+						<li style="position: relative;" class="<?php echo $this->uri->segment(2)=='barlistings' ? 'active':'';?>">
+							<a href="<?php echo site_url('home/barlistings')?>">
+								<p>
+									<i class="bar-listings"></i>
+								</p>
+								Bar Listings
+							</a>
+						</li>
      				</ul>
      			</div>
