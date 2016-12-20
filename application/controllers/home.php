@@ -604,12 +604,12 @@ class Home extends SPACULLUS_Controller {
 				if($this->input->post('temp_id')=="")
 				{
 					$barid= $this->home_model->register_bar_owner($type);
-					redirect('home/registration_step_test/'.base64_encode($barid).'/'.$type);
+					redirect('home/registration_step3/'.base64_encode($barid).'/'.$type);
 				}	
 				else
 				{
 					$barid= $this->home_model->register_bar_owner_update($type);
-					redirect('home/registration_step_test/'.base64_encode($barid).'/'.$type);
+					redirect('home/registration_step3/'.base64_encode($barid).'/'.$type);
 				}
 				
 			}
@@ -621,66 +621,7 @@ class Home extends SPACULLUS_Controller {
 		$this->template->render();
 		
 	
-	}
-
-	function registration_step_test($bar_id='',$type='')
-	{
-		if($bar_id!="")
-		{
-			$bar_id = base64_decode($bar_id);
-			$this->session->set_userdata(array('viewid' => $bar_id));
-			$bar_id = $this->session->userdata('viewid');
-		}
-		elseif($this->session->userdata('viewid')!="") {
-			$bar_id = $this->session->userdata('viewid');
-			
-		}
-		
-
-		if($bar_id=='' && $type=='')
-		{
-			redirect ('home/bar_owner_register');
-		}
-
-		$theme = getThemeName ();
-		$data['error'] = '';
-		$data['bar_id'] = $bar_id;
-		$data['type'] = $type;
-        $data["active_menu"]='';
-        $data['site_setting'] = site_setting ();
-		$theme = getThemeName ();
-		$this->template->set_master_template ($theme.'/template.php');
-		
-		$data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
-		
-		
-		$data['count'] = 0;
-		if(base64_decode($type)==1)
-		{
-			 $data['count'] = 6;
-		//$count = count(explode(',',$count));
-		}
-		 $data['type'] = $type;
-		$page_detail=meta_setting();
-		$pageTitle=$page_detail->title;
-		$metaDescription=$page_detail->meta_description;
-		$metaKeyword=$page_detail->meta_keyword;
-		$this->template->write ('pageTitle', $pageTitle, TRUE);
-		$this->template->write ('metaDescription', $metaDescription, TRUE);
-		$this->template->write ('metaKeyword', $metaKeyword, TRUE);
-		$this->load->library ('form_validation');
-
-		$this->form_validation->set_rules('choise_bar','Choise Bar','required');
-
-		if ($_POST) { 
-			redirect ('home/registration_step3');
-		}
-
-		$this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
-		$this->template->write_view ('content_center', $theme.'/home/registration_step_test', $data, TRUE);
-		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
-		$this->template->render();
-	}
+        }
 
     function registration_step3($bar_id='',$type='')
 	{

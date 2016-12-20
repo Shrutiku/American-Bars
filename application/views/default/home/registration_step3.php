@@ -138,7 +138,7 @@
 	                       	<input type="hidden" name="bar_id" id="bar_id" value="<?php echo $bar_id; ?>" />
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-12 padding5 mart10">
-                                <a class="btn btn-lg btn-primary btn-next pull-left" href="<?php echo site_url('home/registration_step_test/'.$type.'/'.base64_encode($bar_id))?>"><i class="previous-arrow-icon"></i> Back</a>
+                                <a class="btn btn-lg btn-primary btn-next pull-left" href="<?php echo site_url('home/registration_step2/'.$type.'/'.base64_encode($bar_id))?>"><i class="previous-arrow-icon"></i> Back</a>
 	                       			<button type="submit" name="step2" id="step2" class="btn btn-lg btn-primary btn-next next-right">Next <i class="next-arrow-icon"></i></button>
 	                       			
 	                       		</div>
