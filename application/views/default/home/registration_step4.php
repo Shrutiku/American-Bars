@@ -126,7 +126,6 @@
      					<ul class="registration_steplist">
      						<li><a >Step 1</a></li>
      						<li ><a>Step 2</a></li>
-     						<li> <a>Step Test</a></li>
      						<li ><a >Step 3</a></li>
      						<li class="active last" ><a >Step 4</a></li>
      						<div class="clearfix"></div>
