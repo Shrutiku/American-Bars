@@ -40,8 +40,8 @@ class Home extends SPACULLUS_Controller {
         $this->load->helper("cookie");
         $this->load->library('fb_connect');
         $this->config->load('facebook');
-// 		
-// 	
+//
+//
         $getpaypalsetting = paypalsetting();
 
         $this->apiContext = new ApiContext(
@@ -567,69 +567,16 @@ class Home extends SPACULLUS_Controller {
 
                 if ($this->input->post('temp_id') == "") {
                     $barid = $this->home_model->register_bar_owner($type);
-                    redirect('home/registration_step_test/' . base64_encode($barid) . '/' . $type);
+                    redirect('home/registration_step3/' . base64_encode($barid) . '/' . $type);
                 } else {
                     $barid = $this->home_model->register_bar_owner_update($type);
-                    redirect('home/registration_step_test/' . base64_encode($barid) . '/' . $type);
+                    redirect('home/registration_step3/' . base64_encode($barid) . '/' . $type);
                 }
             }
         }
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/home/bar_owner_register', $data, TRUE);
-        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
-        $this->template->render();
-    }
-
-    function registration_step_test($bar_id = '', $type = '') {
-        if ($bar_id != "") {
-            $bar_id = base64_decode($bar_id);
-            $this->session->set_userdata(array('viewid' => $bar_id));
-            $bar_id = $this->session->userdata('viewid');
-        } elseif ($this->session->userdata('viewid') != "") {
-            $bar_id = $this->session->userdata('viewid');
-        }
-
-
-        if ($bar_id == '' && $type == '') {
-            redirect('home/bar_owner_register');
-        }
-
-        $theme = getThemeName();
-        $data['error'] = '';
-        $data['bar_id'] = $bar_id;
-        $data['type'] = $type;
-        $data["active_menu"] = '';
-        $data['site_setting'] = site_setting();
-        $theme = getThemeName();
-        $this->template->set_master_template($theme . '/template.php');
-
-        $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
-
-
-        $data['count'] = 0;
-        if (base64_decode($type) == 1) {
-            $data['count'] = 6;
-            //$count = count(explode(',',$count));
-        }
-        $data['type'] = $type;
-        $page_detail = meta_setting();
-        $pageTitle = $page_detail->title;
-        $metaDescription = $page_detail->meta_description;
-        $metaKeyword = $page_detail->meta_keyword;
-        $this->template->write('pageTitle', $pageTitle, TRUE);
-        $this->template->write('metaDescription', $metaDescription, TRUE);
-        $this->template->write('metaKeyword', $metaKeyword, TRUE);
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('choise_bar', 'Choise Bar', 'required');
-
-        if ($_POST) {
-            redirect('home/registration_step3');
-        }
-
-        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/registration_step_test', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
@@ -713,7 +660,7 @@ class Home extends SPACULLUS_Controller {
                 $this->db->insert('user_master', $data_insert);
                 $uid = mysql_insert_id();
                 $data['user_id'] = $uid;
-                // 		
+                //
 
                 if (($this->session->userdata('viewid_orig') != '' && $this->session->userdata('viewid_orig') != 0 ) || ( $this->session->userdata('claim_bar_id') != '' && $this->session->userdata('claim_bar_id') != '0')) {
                     $getlat = getCoordinatesFromAddress($data['getbardata']['address'], $data['getbardata']['city'], $data['getbardata']['state']);
@@ -1002,7 +949,7 @@ class Home extends SPACULLUS_Controller {
                 }
             } else {
                 //	print_r($getpaypalsetting);
-                //$PayFlow = new PayFlow('aDbaDmin', 'PayPal', 'aDbaDmin', 'AmericanBars2016', 'test');	
+                //$PayFlow = new PayFlow('aDbaDmin', 'PayPal', 'aDbaDmin', 'AmericanBars2016', 'test');
                 $PayFlow = new PayFlow($getpaypalsetting->vendor, $getpaypalsetting->partner_name, $getpaypalsetting->paypal_username, $getpaypalsetting->paypal_password, 'recurring');
 
                 $PayFlow->setEnvironment($getpaypalsetting->site_status);                           // test or live
@@ -1551,7 +1498,7 @@ class Home extends SPACULLUS_Controller {
                 // elseif($user_id['confirm_code']=='') {
                 // $this->session->unset_userdata('userid_sess');
                 // redirect('home/index/reg_link_expire');
-// 					
+//
                 // }
                 else {
                     $data["error"] = "<p>Please Enter Correct Confirmation Code .</p>";
@@ -2281,7 +2228,7 @@ class Home extends SPACULLUS_Controller {
             $this->session->set_userdata($data);
 
             //04/18/1990
-            //$data["countrylist"]=get_all_country();	
+            //$data["countrylist"]=get_all_country();
             /* Mail Send */
             $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Sign up with Facebook'");
             $email_temp = $email_template->row();
@@ -2382,7 +2329,7 @@ class Home extends SPACULLUS_Controller {
                 $data["nick_name"] = $this->input->post('nick_name');
                 $data["custpassword"] = $this->input->post('custpassword');
                 $data["confirm_password"] = $this->input->post('confirm_password');
-                //$data["phone_no"] = $this->input->post('phone_no');		
+                //$data["phone_no"] = $this->input->post('phone_no');
                 //$data["mobile_no"] = $this->input->post('mobile_no');
                 $data["number"] = $this->input->post('number');
                 $data['msg'] = 'notsuccess';
@@ -2775,7 +2722,7 @@ class Home extends SPACULLUS_Controller {
         $data['result'] = $this->home_model->getnewsletterresult($offset, $limit);
         $data['latest_mews'] = $this->home_model->latestmews($limit = 2, '');
 
-        //	$data['result'] = $this->bar_model->getAllComments($bar_id,$offset,$limit);	
+        //	$data['result'] = $this->bar_model->getAllComments($bar_id,$offset,$limit);
         $data['offset'] = $offset;
         $data['limit'] = $limit;
         $data['redirect_page'] = 'newsletterevent';
@@ -2883,7 +2830,7 @@ class Home extends SPACULLUS_Controller {
                         $payment->create(getApiContext());
 
                         /*
-                         * 	transaction_id = $res->id will look like "PAY-4YW24830U2864994WKM6UZ4Q"
+                         * transaction_id = $res->id will look like "PAY-4YW24830U2864994WKM6UZ4Q"
                          */
                     } catch (Exception $ex) {
 
@@ -2921,7 +2868,7 @@ class Home extends SPACULLUS_Controller {
                         if ($email_temp->status == 'active') {
                             email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
                         }
-                        //var_dump($ex->getData());	
+                        //var_dump($ex->getData());
                         exit(1);
                     }
 
@@ -3001,8 +2948,8 @@ class Home extends SPACULLUS_Controller {
 
                 // else if($row->credit_card_id =="" && $row->expire_date<date('Y-m-d'))
                 // {
-// 				
-// 		
+//
+//
                 // $chargeAmount = "0";
                 // $userplan = $row->user_plan;
                 // $countAccounts = getTotalAccountsByuserID($row->user_id);
@@ -3036,7 +2983,7 @@ class Home extends SPACULLUS_Controller {
                 // $chargeAmount = $row->plan_amt/500;
                 // $total_account = $countAccounts-500;
                 // }
-// 			
+//
                 // }
                 // if($total_account>0)
                 // {
@@ -3048,13 +2995,13 @@ class Home extends SPACULLUS_Controller {
                 // $usr_status=array('staus'=>4);
                 // $this->db->where('user_id',$row->user_id);
                 // $this->db->update('user_master',$usr_status);
-// 	                		
-// 			
+//                
+//
                 // $email_template=$this->db->query("select * from ".$this->db->dbprefix('email_template')." where task='Payment Failure Email'");
-                // $email_temp=$email_template->row();				
+                // $email_temp=$email_template->row();
                 // $email_address_from=$email_temp->from_address;
                 // $email_address_reply=$email_temp->reply_address;
-                // $email_subject=$email_temp->subject;				
+                // $email_subject=$email_temp->subject;
                 // $email_message=$email_temp->message;
                 // $email = $row->email;
                 // $user_name = ucwords($row->first_name." ".$row->last_name);
@@ -3066,13 +3013,13 @@ class Home extends SPACULLUS_Controller {
                 // $email_message=str_replace('{link}',$link,$email_message);
                 // $str=$email_message;
                 // email_send($email_address_from,$email_address_reply,$email_to,$email_subject,$str);
-// 		
-// 		
+//
+//
                 // $email_template=$this->db->query("select * from ".$this->db->dbprefix('email_template')." where task='Payment Failure Email To Admin'");
-                // $email_temp=$email_template->row();				
+                // $email_temp=$email_template->row();
                 // $email_address_from=$email_temp->from_address;
                 // $email_address_reply=$email_temp->reply_address;
-                // $email_subject=$email_temp->subject;				
+                // $email_subject=$email_temp->subject;
                 // $email_message=$email_temp->message;
                 // $email = $email_temp->from_address;
                 // $user_name = ucwords($row->first_name." ".$row->last_name);
@@ -3096,7 +3043,7 @@ class Home extends SPACULLUS_Controller {
         // $email_to = "qa@spaculus.com,php.viral@spaculus.info";
         // $email_subject = "cronjob";
         // $str = "cronjob";
-        // email_send($email_address_from,$email_address_reply,$email_to,$email_subject,$str);	
+        // email_send($email_address_from,$email_address_reply,$email_to,$email_subject,$str);
 
         $site_setting = site_setting();
         if ($getUsers) {
@@ -3540,12 +3487,12 @@ class Home extends SPACULLUS_Controller {
 
     function add_clcik() {
         // $getad = getadvertisementByIDSec($this->input->post('id'),'click');
-// 		
+//
         // if($getad==0)
         // {
         $getad = $this->geta($this->input->post('id'));
 
-        //echo 	$getad['number_click'];
+        //echo $getad['number_click'];
         $getad_newsec = getadvertisementByID_new(@$getad['advertisement_id'], 'click');
 
         if (($getad_newsec < 5 || $getad_newsec == 0) && $getad['total_click'] < $getad['number_click']) {
@@ -3562,12 +3509,12 @@ class Home extends SPACULLUS_Controller {
 
     function add_clcik_banner() {
         // $getad = getadvertisementByIDSec($this->input->post('id'),'click');
-// 		
+//
         // if($getad==0)
         // {
         $getad = $this->geta_banner($this->input->post('id'));
 
-        //echo 	$getad['number_click'];
+        //echo $getad['number_click'];
         $getad_newsec = getadvertisementBannerByID_new(@$getad['banner_pages_id'], 'click');
 
 
@@ -4096,13 +4043,13 @@ class Home extends SPACULLUS_Controller {
             // 'height' => '320',
             // 'x_axis' => $this->input->post('pos'),
             // ));
-// 			
-// 			
+//
+//
             // if(!$this->image_lib->crop())
             // {
             // $error = $this->image_lib->display_errors();
             // }
-// 			
+//
             $bar_banner_img = $picture['file_name'];
 
 
@@ -4178,7 +4125,7 @@ class Home extends SPACULLUS_Controller {
                 $bar_banner_img = $this->input->post('prev_bar_banner');
             }
         }
-        //$bar_detail = $this->bar_model->get_one_bar($this->input->post('bar_id'));	
+        //$bar_detail = $this->bar_model->get_one_bar($this->input->post('bar_id'));
 
         $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
         $data1 = array('bar_banner' => $bar_banner_img);
@@ -4323,13 +4270,13 @@ class Home extends SPACULLUS_Controller {
             // 'height' => '320',
             // 'x_axis' => $this->input->post('pos'),
             // ));
-// 			
-// 			
+//
+//
             // if(!$this->image_lib->crop())
             // {
             // $error = $this->image_lib->display_errors();
             // }
-// 			
+//
             $bar_banner_img = $picture['file_name'];
 
 
@@ -4406,7 +4353,7 @@ class Home extends SPACULLUS_Controller {
                 $bar_banner_img = $this->input->post('prev_bar_banner');
             }
         }
-        //$bar_detail = $this->bar_model->get_one_bar($this->input->post('bar_id'));	
+        //$bar_detail = $this->bar_model->get_one_bar($this->input->post('bar_id'));
         //$data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
         $data1 = array('user_banner' => $bar_banner_img);
         $this->db->where("user_id", get_authenticateUserID());
@@ -4426,10 +4373,10 @@ class Home extends SPACULLUS_Controller {
 
         $data['page_name'] = "credit_card_update";
         $data['msg'] = $msg; //login fail message
-        //$this->form_validation->set_rules('facebook_link', 'Facebook Link', 'valid_url');
-        //$this->form_validation->set_rules('twitter_link', 'Twitter Tink', 'valid_url');
+        $this->form_validation->set_rules('facebook_link', 'Facebook Link', 'valid_url');
+        $this->form_validation->set_rules('twitter_link', 'Twitter Tink', 'valid_url');
         $this->form_validation->set_rules('linkedin_link', 'Linkedin Link', 'valid_url');
-        //$this->form_validation->set_rules('instagram_link', 'Instagram Link', 'valid_url');
+        $this->form_validation->set_rules('instagram_link', 'Instagram Link', 'valid_url');
         $this->form_validation->set_rules('google_plus_link', 'Google Plus Link', 'valid_url');
         $this->form_validation->set_rules('dribble_link', 'Dribble Link', 'valid_url');
         $this->form_validation->set_rules('pinterest_link', 'Pinterest Link', 'valid_url');
@@ -4665,7 +4612,7 @@ class Home extends SPACULLUS_Controller {
             redirect('user/profile/' . base64_encode(get_authenticateUserID()));
             //redirect('home/dashboard');
             //redirect('home/facebook_login');
-        } elseif ($bQry) { // if the user's credentials validated...	
+        } elseif ($bQry) { // if the user's credentials validated...
             //$this->session->set_flashdata('msg', 'login');
             $this->session->set_flashdata('successmsg', "loginSuccess");
             redirect('user/profile/' . base64_encode(get_authenticateUserID()));
@@ -4916,7 +4863,7 @@ class Home extends SPACULLUS_Controller {
 
 
         if ($bar_id_orig != '') {
-            //echo base64_decode($bar_id_orig);	
+            //echo base64_decode($bar_id_orig);
             $bar_id_orig = base64_decode($bar_id_orig);
             $this->session->set_userdata(array('viewid_orig' => $bar_id_orig));
             $data['getbardata'] = $this->home_model->getBarData($bar_id_orig);
@@ -5191,7 +5138,7 @@ class Home extends SPACULLUS_Controller {
                 $this->db->insert('user_master', $data_insert);
                 $uid = mysql_insert_id();
                 $data['user_id'] = $uid;
-                // 		
+                //
 
                 if ($this->input->post('new_bar_id') != '') {
                     $getlat = getCoordinatesFromAddress($data['getbardata']['address'], $data['getbardata']['city'], $data['getbardata']['state']);
@@ -5710,7 +5657,7 @@ class Home extends SPACULLUS_Controller {
                 // elseif($user_id['confirm_code']=='') {
                 // $this->session->unset_userdata('userid_sess');
                 // redirect('home/index/reg_link_expire');
-// 					
+//
                 // }
                 else {
                     $data["error"] = "<p>Please Enter Correct Confirmation Code .</p>";
@@ -5749,10 +5696,6 @@ class Home extends SPACULLUS_Controller {
         if (!check_user_authentication()) {
             redirect('home');
         }
-        if ($this->session->userdata('user_type') != 'bar_owner') {
-            redirect('home');
-        }
-        
         // cho "Fdsa";
         $this->load->library('fb_connect');
         $this->load->library('facebook');
@@ -5764,15 +5707,6 @@ class Home extends SPACULLUS_Controller {
             'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
         );
 
-        $this->db->where('owner_id', get_authenticateUserID());
-        $this->db->limit(1);
-        $bar_info = $this->db->get('bars')->row();
-        if ($bar_info != NULL){
-            $data['facebook_link'] = end(explode('/',$bar_info->facebook_link));
-            $data['twitter_link'] = end(explode('/',$bar_info->twitter_link));
-            $data['instagram_link'] = end(explode('/',$bar_info->instagram_link));
-        }
-        
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
         $data['fb_usr'] = $this->fb_connect->user;
@@ -5784,7 +5718,7 @@ class Home extends SPACULLUS_Controller {
         //  if(get_authenticateUserID()=='')
         //{
         //	redirect('home');
-        //}		
+        //}
         //if($this->session->userdata('user_type')!='bar_owner')
         //{
         //	redirect('home');
@@ -5796,9 +5730,9 @@ class Home extends SPACULLUS_Controller {
         $data['msg'] = $msg; //login fail message
         $this->form_validation->set_rules('comment', 'Comment');
         // print_r($data['getbar']); 
-        //$data['facebook_link']=$data['getbar']['facebook_link'];
-        //$data['twitter_link']=$data['getbar']['twitter_link'];
-        //$data['instagram_link']=$data['getbar']['instagram_link'];
+        // $data['facebook_link']=$data['getbar']['facebook_link'];
+        // $data['twitter_link']=$data['getbar']['twitter_link'];
+        // $data['instagram_link']=$data['getbar']['instagram_link'];
         // $data['linkedin_link']=$data['getbar']['linkedin_link'];
         // $data['google_plus_link']=$data['getbar']['google_plus_link'];
         // $data['dribble_link']=$data['getbar']['dribble_link'];
@@ -5815,7 +5749,7 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
 
-                //data['facebook_link'];
+                // $data['facebook_link']=$this->input->post('facebook_link');
                 // $data['twitter_link']=$this->input->post('twitter_link');
                 // $data['linkedin_link']=$this->input->post('linkedin_link');
                 // $data['instagram_link']=$this->input->post('instagram_link');
@@ -5899,7 +5833,7 @@ class Home extends SPACULLUS_Controller {
 
                 $publishStream = $this->fb_connect->publish($this->input->post('fbid'), array(
                     'message' => "have post new pin on",
-                    'link' => "http://test.americanbars.com",
+                    'link' => "http://sandbox.americanbars.com",
                     'picture' => $comment_image,
                     'name' => "DSfa",
                     'description' => $this->input->post('comment')
@@ -5916,7 +5850,7 @@ class Home extends SPACULLUS_Controller {
         // echo json_encode($response);
         // die;
         // }
-// 		
+//
         // if($data["msg"] == "success")
         // {
         // $response = array("status"=>"success");
@@ -5943,7 +5877,7 @@ class Home extends SPACULLUS_Controller {
         // //print_r($ok); die;
         // if (!$ok) {
         // //echo 'Could not connect to Twitter. Refresh the page or try again later.';
-        // $this->session->set_flashdata('errormsg', 'nottoken');	
+        // $this->session->set_flashdata('errormsg', 'nottoken');
         // //redirect('home/index/'. base64_encode('login'));
         // redirect('home/login/');
         // }
@@ -5979,8 +5913,8 @@ class Home extends SPACULLUS_Controller {
             //print_r($conte); die;
             //$success_respose=$this->twconnect->tw_user_info;
             //	//redirect('http://google.com');
-            //	 $this->session->set_userdata('screen_name', $success_respose->screen_name);
-            //	 redirect('home/socialshare/tweeter/'.$this->session->userdata('screen_name'));
+            //	$this->session->set_userdata('screen_name', $success_respose->screen_name);
+            //	redirect('home/socialshare/tweeter/'.$this->session->userdata('screen_name'));
             //redirect('home/socialshare/tweeter/'.$this->session->userdata('screen_name')); 
         } else {
             redirect('home/socialshare/tw_wrong');
@@ -5988,7 +5922,7 @@ class Home extends SPACULLUS_Controller {
     }
 
     function shareontwitter() {
-        $image = 'http://test.americanbars.com/default/images/americanbars.png';
+        $image = 'http://sandbox.americanbars.com/default/images/americanbars.png';
         //print_r(file_get_contents($image));
         //die;
         $this->load->library('twconnect');
@@ -6001,7 +5935,7 @@ class Home extends SPACULLUS_Controller {
 
         $status_message = 'Attaching an image to a tweet';
         //$status = $connection->request('statuses/update_with_media', array('status' => $status_message, 'media' =>  "{$image}"));
-        $content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment') . " -Posted through http://test.americanbars.com"));
+        $content1 = $this->twconnect->tw_post('statuses/update', array('status' => $this->input->post('comment') . " -Posted through http://sandbox.americanbars.com"));
 
 
         if ($content1 && !isset($content1->errors)) {
@@ -6064,7 +5998,7 @@ class Home extends SPACULLUS_Controller {
 
             $photo = $picture['file_name'];
         }
-        $caption = $this->input->post('comment_insta') . " -Posted through http://test.americanbars.com";   // caption
+        $caption = $this->input->post('comment_insta') . " -Posted through http://sandbox.americanbars.com";   // caption
         //////////////////////
 
         $i = new Instagram($username, $password, $debug);
@@ -6078,7 +6012,7 @@ class Home extends SPACULLUS_Controller {
 
         try {
             if ($photo) {
-                $photo = 'http://test.americanbars.com/upload/temp/' . $photo;
+                $photo = 'http://sandbox.americanbars.com/upload/temp/' . $photo;
             }
 
 
@@ -6148,7 +6082,7 @@ class Home extends SPACULLUS_Controller {
 
             // if($message=="success")
             // {
-            // $data['msg'] = 	"success";			
+            // $data['msg'] = "success";
             // }
             // else if($message=="inactive")
             // {
@@ -6192,10 +6126,10 @@ class Home extends SPACULLUS_Controller {
         // 'fileUpload' => true,
         // 'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
         // );
-// 		
+//
         // $facebook = new Facebook($config);
         // $user_id = $facebook->getUser();
-// 		  
+//  
         // $loginUrl = $facebook->getLoginUrl();
         // header('Location:' . $loginUrl . '&scope=user_photos,publish_actions');
         $theme = getThemeName();
@@ -6285,22 +6219,22 @@ class Home extends SPACULLUS_Controller {
 
         if ($this->input->post('page_id') == '') {
             if ($photo) {
-                $photo = "http://test.americanbars.com/upload/temp/" . $photo;
+                $photo = "http://sandbox.americanbars.com/upload/temp/" . $photo;
             }
             if ($photo) {
 
                 $param = array(
-                    'message' => $caption . " - Posted through http://test.americanbars.com",
+                    'message' => $caption . " - Posted through http://sandbox.americanbars.com",
                     'description' => ' ',
                     'caption' => ' ',
                     'name' => '  ',
                     'title' => ' ',
                     'picture' => $photo,
-                    'link' => "http://test.americanbars.com",
+                    'link' => "http://sandbox.americanbars.com",
                 );
             } else {
                 $param = array(
-                    'message' => $caption . " - Posted through http://test.americanbars.com",
+                    'message' => $caption . " - Posted through http://sandbox.americanbars.com",
                     'description' => ' ',
                     'caption' => ' ',
                     'name' => '  ',
@@ -6313,7 +6247,7 @@ class Home extends SPACULLUS_Controller {
 
 
             $posted = $facebook->api('/me/feed/', 'post', $param);
-// 	
+//
 // $facebook->setFileUploadSupport(true); 
 // $args = array('message' => 'My Friend\'s'); $args['image'] = '@' . $photo;
             // $data = $facebook->api('/me/photos', 'post', $args);
@@ -6323,7 +6257,7 @@ class Home extends SPACULLUS_Controller {
         } else {
             $datatick['page_id'] = $this->input->post('page_id');
             if ($photo) {
-                $photo = "http://test.americanbars.com/upload/temp/" . $photo;
+                $photo = "http://sandbox.americanbars.com/upload/temp/" . $photo;
             }
             if (isset($datatick['page_id']) && is_array($datatick['page_id'])) {
                 foreach ($datatick['page_id'] as $key => $each) {
@@ -6334,19 +6268,19 @@ class Home extends SPACULLUS_Controller {
                     if ($photo) {
 
                         $publish = $facebook->api('/' . $page_id . '/feed', 'post', array('access_token' => $page_token,
-                            'message' => $caption . " - Posted through http://test.americanbars.com",
+                            'message' => $caption . " - Posted through http://sandbox.americanbars.com",
                             'from' => '322878041237170',
                             'to' => $page_id,
                             'description' => ' ',
                             'caption' => ' ',
                             'name' => '  ',
                             'title' => ' ',
-                            'link' => "http://test.americanbars.com",
+                            'link' => "http://sandbox.americanbars.com",
                             'picture' => $photo,
                         ));
                     } else {
                         $publish = $facebook->api('/' . $page_id . '/feed', 'post', array('access_token' => $page_token,
-                            'message' => $caption . " - Posted through http://test.americanbars.com",
+                            'message' => $caption . " - Posted through http://sandbox.americanbars.com",
                             'from' => '322878041237170',
                             'description' => ' ',
                             'caption' => ' ',
@@ -6359,8 +6293,8 @@ class Home extends SPACULLUS_Controller {
             }
         }
         // $facebook->setFileUploadSupport(true);
-// 		
-// 		
+//
+//
         // $post_url = '/'.$user_id.'/photos';
         // //posts message on page statues
         // $msg_body = array(
@@ -6368,7 +6302,7 @@ class Home extends SPACULLUS_Controller {
         // 'message' => "Fdsa"
         // );
         // $postResult = $facebook->api($post_url, 'post', $msg_body );
-// 		
+//
         // die;
 
 
@@ -6995,7 +6929,7 @@ class Home extends SPACULLUS_Controller {
         $this->form_validation->set_rules('pw', 'PW', 'required');
         $this->form_validation->set_rules('agree', "agree", 'required');
 
-        $data['companies'] = array("1&1 Internet SE", "101domain Discovery Limited", "101domain GRS Limited", "10dencehispahard, S.L.", "123-Reg Limited", "123domainrenewals, LLC", "1800-website, LLC", "1API GmbH", "1st-for-domain-names, LLC", "2030138 Ontario Inc. dba NamesBeyond.com and dba GoodLuckDomain.com", "22net, Inc.", "24x7domains, LLC", "35 Technology Co., Ltd.", "4X", "995discountdomains, LLC", "Aahwed, Inc.", "AB Name ISP", "AB RIKTAD", "Abansys & Hostytec, S.L.", "Aboss Technology Limited", "Above.com Pty Ltd.", "Abraham Lincoln, LLC", "Abu-Ghazaleh Intellectual Property dba TAGIdomains.com", "AccentDomains LLC", "Acens Technologies, S.L.U.", "Achilles 888, LLC", "AcquiredNames LLC", "Active Registrar, Inc.", "Ad Valorem Domains, LLC", "Address Creation, LLC", "Addressontheweb, LLC", "Adomainofyourown.com LLC", "Advanced Internet Technologies, Inc. (AIT)", "Aerotek Bilisim Sanayi ve Ticaret AS", "Aetrion LLC dba DNSimple", "AFRIREGISTER S.A.", "Afterdark Domains, Incorporated", "Agrinoon Inc", "Aim High!, Inc.", "Akamai Technologies, Inc.", "Alantron Bilisim Ltd Sti.", "Alethia Domains, LLC", "Alexander the Great, LLC", "Alfena, LLC", "Alibaba Cloud Computing Ltd. d/b/a HiChina (www.net.cn)", "Alibrother Technology Limited", "Alice's Registry, Inc.", "All Domains LLC", "Allaccessdomains, LLC", "Alldomains, LLC", "Allearthdomains.com LLC", "AllGlobalNames, S.A. dba Cyberegistro.com", "Allworldnames.com LLC", "Alpine Domains Inc.", "Alpnames Limited", "Amazon Registrar, Inc.", "Anessia Inc.", "Annam, LLC", "Annulet LLC", "Anytime Sites, Inc.", "Apollo 888, LLC", "April Sea Information Technology Company Limited", "Aquarius Domains, LLC", "Arab Internet Names, Incorporated", "Arcanes Technologies", "Arctic Names, Inc.", "Ares 888, LLC", "Aristotle 888, LLC", "Arsys Internet, S.L. dba NICLINE.COM", "Arthur Pendragon, LLC", "Aruba SpA", "Ascio Technologies, Inc. Danmark – Filial af Ascio technologies, Inc. USA", "AsiaDomains, Incorporated", "AsiaRegister, Inc.", "Astutium Limited", "Atak Domain Hosting Internet ve Bilgi Teknolojileri Limited Sirketi d/b/a Atak Teknoloji", "ATI", "AtlanticDomains, LLC", "AtlanticFriendNames.com LLC", "Atomicdomainnames.com LLC", "Attila the Hun, LLC", "Austriadomains, LLC", "Austriandomains, LLC", "Authentic Web Inc.", "Automattic Inc.", "AvidDomain LLC", "AXC BV", "Azdomainz, LLC", "Azprivatez, LLC", "Backslap Domains, Inc.", "Backstop Names LLC", "Baracuda Domains, LLC", "Baronofdomains.com LLC", "BatDomains.com Ltd.", "BB-Online UK Limited ", "BDL Systemes SAS dba ProDomaines", "Beartrapdomains.com LLC", "Beijing Brandma International Networking Technology Ltd.", "Beijing Guoxu Network Technology Co., Ltd.", "Beijing HuaRui Wireless Technology Co., Ltd", "Beijing Innovative Linkage Technology Ltd. dba dns.com.cn", "Beijing Lanhai Jiye Technology Co.,Ltd", "Beijing Midwest Taian Technology Services Ltd.", "Beijing RITT - Net Technology Development Co., Ltd", "Beijing Sanfront Information Technology Co., Ltd", "Beijing Tong Guan Xin Tian Technology Ltd (Novaltel)", "Beijing Wangzun Technology Co., Ltd.", "Beijing ZhongWan Network Technology Co Ltd", "Beijing Zhuoyue Shengming Technologies Company Ltd.", "Beijing Zihai Technology Co., Ltd", "Belmontdomains.com LLC", "Benjamin Franklin 888, LLC", "Best Drop Names LLC", "Betterthanaveragedomains.com LLC", "Bidfordomainnames, LLC", "Big Dipper Domains, LLC", "Big Domain Shop, Inc.", "Big House Services, Inc.", "Biglizarddomains.com LLC", "BigRock Solutions Ltd.", "Billy the Kid, LLC", "Binero AB", "Bizcn.com, Inc.", "Blacknight Internet Solutions Ltd.", "BlastDomains LLC", "Blisternet, Incorporated", "BlockHost LLC", "Blue Angel Domains LLC", "Blue Fractal, Inc.", "Blue Hi Interconnect (Beijing) Technology Limited Company", "Blue Razor Domains, LLC", "Bombora Technologies Pty Ltd.", "Bonam Fortunam Domains, LLC", "Bonzai Domains, LLC", "BoteroSolutions.com S.A.", "Bottle Domains, Inc.", "Bounce Pass Domains LLC", "BR domain Inc. dba namegear.co", "Brandma.co Limited", "BrandNames.com SARL", "BRANDON GRAY INTERNET SERVICES INC. (dba \"NameJuice.com\")", "BraveNames Inc.", "Brennercom Limited", "BRS, LLC", "Buddha, LLC", "BullRunDomains.com LLC", "Burnsidedomains.com LLC", "camPoint AG", "Capitaldomains, LLC", "Catalog.com", "Catch Deleting Names LLC", "Catch Domains LLC", "CCI REG S.A.", "Center of Ukrainian Internet Names (UKRNAMES)", "Century Oriental International Co., Ltd.", "Charlemagne 888, LLC", "Charles Darwin, LLC", "Chengdu Fly-Digital Technology Co., Ltd.", "Chengdu West Dimension Digital Technology Co., Ltd.", "China Springboard, Inc.", "ChinaNet Technology (SuZhou) CO., LTD", "Chinesedomains, LLC", "Chipshot Domains LLC", "ChocolateChipDomains, LLC", "Chocolatecovereddomains,LLC", "Circle of Domains LLC", "Claimeddomains, LLC", "Click Registrar, Inc. d/b/a publicdomainregistry.com", "Cloud Bamboo, LLC", "Cloud Beauty, LLC", "Cloud Boom, LLC", "Cloud City, LLC", "Cloud Diamond, LLC", "Cloud Orchid, LLC", "Cloud Plum, LLC", "Cloud Seed, LLC", "Cloud Shark, LLC", "Cloud Sun, LLC", "Cloud Super, LLC", "Cloud System, LLC", "CloudBreakDomains, LLC", "CloudFlare, Inc.", "CloudNineDomain, LLC", "Cocosislandsdomains, LLC", "Columbiadomains, LLC", "Columbianames.com LLC", "ComfyDomains LLC", "Commerce Island, Inc.", "CommuniGal Communication Ltd.", "Compuglobalhypermega.com LLC", "Confucius, LLC", "Constantine the Great, LLC", "Cool Breeze Domains, LLC", "Cool Ocean, Inc.", "Cool River Names, LLC", "Copper Domain Names LLC", "Coral Reef Domains LLC", "COREhub, S.R.L.", "Corporation Service Company (DBS) INC.", "CORPORATION SERVICE COMPANY (UK) LIMITED", "Cosmotown, Inc.", "CPS-Datensysteme GmbH", "Crazy Domains FZ-LLC", "Crisp Names, Inc.", "Cronon AG", "Crystal Coal, Inc.", "CSC Corporate Domains, Inc.", "CSL Computer Service Langenbach GmbH d/b/a joker.com", "CT CORPORATION SYSTEM", "Curious Net, Inc.", "Curveball Domains LLC", "CV. Jogjacamp", "CV. Rumahweb Indonesia", "CyanDomains, Inc.", "Cyrus the Great, LLC", "Dagnabit, Incorporated", "Dainam, LLC", "Dalai Lama, LLC", "DanCue Inc.", "DanDomain A/S", "Danesco Trading Ltd.", "Dattatec.com SRL", "Decentdomains, LLC", "Deep Dive Domains, LLC", "Deep Sea Domains LLC", "Deep Water Domains LLC", "Deleting Name Zone LLC", "Deluxe Small Business Sales, Inc. d/b/a Aplus.net", "Demys Limited", "Department-of-domains, LLC", "Deschutesdomains.com LLC", "Desert Devil, Inc.", "Desert Sand Domains, LLC", "Deutchdomains, LLC", "Deutsche Telekom AG", "DevilDogDomains.com, LLC", "Diamatrix C.C.", "Diggitydot, LLC", "Dinahosting s.l.", "Discount Domains Ltd.", "Discountdomainservices, LLC", "DNC Holdings, Inc.", "DNS:NET Internet Service GmbH", "DNSPod, Inc.", "Domain Ala Carte, LLC", "Domain Band, Inc.", "Domain Bazaar LLC", "Domain Central Australia Pty Ltd.", "Domain Collage, LLC", "Domain Esta Aqui, LLC", "Domain Gold Zone LLC", "Domain Grabber LLC", "Domain Guardians, Inc.", "Domain Jamboree, LLC", "Domain Landing Zone LLC", "Domain Lifestyle, LLC", "Domain Locale, LLC", "Domain Mantra, Inc.", "Domain Monkeys, LLC", "DOMAIN NAME NETWORK PTY LTD", "Domain Name Origin, LLC", "Domain Name Root, LLC", "Domain Name Services (Pty) Ltd", "Domain Original, LLC", "Domain Pickup LLC", "Domain Pro, LLC", "Domain Registration Services, Inc. dba dotEarth.com", "Domain Research, LLC", "Domain Rouge, Inc.", "Domain Secure LLC", "Domain Source LLC", "Domain Stopover LLC", "Domain Success LLC", "Domain The Net Technologies Ltd.", "DOMAIN TRAIN, INC.", "Domain Vault Limited", "Domain-A-Go-Go, LLC", "Domain-It!, Inc.", "Domain.com, LLC", "DomainAdministration.com, LLC", "DomainAhead LLC", "DomainAllies.com, Inc.", "Domainamania.com LLC", "Domainarmada.com LLC", "Domainbox Limited", "Domainbulkregistration, LLC", "Domainbusinessnames, LLC", "Domaincamping, LLC", "Domaincapitan.com LLC", "Domaincatcher LLC", "Domaincircle LLC", "Domainclip Domains, Inc.", "Domainclub.com, LLC", "Domaincomesaround.com LLC", "DomainContext, Inc.", "DomainCraze LLC", "DomainCreek LLC", "DomainCritics LLC", "DomainDelights LLC", "Domaindrop LLC", "Domainducks, LLC", "Domainer Names LLC", "DomainExtreme LLC", "domainfactory GmbH", "DomainFalcon LLC", "Domaingazelle.com LLC", "DomainGetter LLC", "Domainhawks.net LLC", "DomainHood LLC", "Domainhostingweb, LLC", "Domainhysteria.com LLC", "Domainia Inc.", "Domaining Oro, LLC", "Domaininternetname, LLC", "Domaininthebasket.com LLC", "Domaininthehole.com LLC", "Domainjungle.net LLC", "DomainLadder LLC", "DomainLocal LLC", "Domainmonster Limited", "Domainmonster.com, Inc.", "DOMAINNAME BLVD, INC.", "DomainName Bridge, Inc.", "DomainName Driveway, Inc.", "DOMAINNAME FWY, INC.", "DomainName Highway LLC", "DomainName Parkway, Inc.", "DomainName Path, Inc.", "DomainName, Inc.", "Domainnamebidder, LLC", "Domainnamelookup, LLC", "Domainnovations, Incorporated", "DOMAINOO SAS", "DomainParkBlock.com LLC", "DomainPeople, Inc.", "DomainPicking LLC", "Domainplace LLC", "DomainPrime.com LLC", "Domainraker.net LLC", "DomainRegistry.com Inc.", "Domainroyale.com LLC", "Domains Etc LLC", "Domains Express LLC", "Domains of Origin, LLC", "Domains.coop Limited", "DomainSails.net LLC", "Domainsalsa.com LLC", "Domainsareforever.net LLC", "Domainshop LLC", "Domainshype.com, Inc.", "Domainsinthebag.com LLC", "DomainSite, Inc.", "DomainSnap, LLC", "Domainsnapper LLC", "Domainsofcourse.com LLC", "Domainsoftheday.net LLC", "Domainsoftheworld.net LLC", "Domainsofvalue.com LLC", "Domainsouffle.com LLC", "Domainsoverboard.com LLC", "Domainsovereigns.com LLC", "DomainSprouts.com LLC", "Domainstreetdirect.com LLC", "Domainsurgeon.com LLC", "DomainTact LLC", "Domaintimemachine.com LLC", "DomaintoOrder, LLC", "Domainwards.com LLC", "Domainyeti.com LLC", "Domainz Limited", "Domdrill.com, Inc.", "Domeneshop AS dba domainnameshop.com", "Domerati, Inc.", "Dominion Domains, LLC", "DomReg Ltd. d/b/a LIBRIS.COM", "Domus Enterprises LLC dba DOMUS", "Dot Holding Inc.", "DotAlliance Inc.", "DotArai Co., Ltd.", "DotMedia Limited", "Dotname Korea Corp.", "DotNamed LLC", "DotRoll Kft.", "DOTSERVE INC.", "Douglas MacArthur, LLC", "Draftpick Domains LLC", "DreamHost, LLC", "DreamScape Networks FZ-LLC", "Drop Catch Mining LLC", "Dropcatch Auction LLC", "Dropcatch Landing Spot LLC", "Dropcatch Marketplace LLC", "DropCatch.com 1000 LLC", "Dropcatching Names LLC", "DropExtra.com, Inc.", "DropFall.com Inc.", "DropHub.com, Inc.", "DropJump.com Inc.", "Dropoutlet, Incorporated", "DropSave.com, Inc.", "DropWalk.com, Inc.", "DropWeek.com, Inc.", "DuckBilledDomains.com LLC", "Dwight D. Eisenhower, LLC", "Dynadot, LLC", "Dynamic Network Services, Inc.", "DynaNames.com Inc.", "Eagle Eye Domains, LLC", "EastEndDomains, LLC", "EastNames Inc.", "Easy Street Domains, LLC", "easyDNS Technologies Inc.", "Easyspace Limited", "eBrand Services S.A.", "eBrandSecure, LLC", "EchoDomain LLC", "Ednit Software Private Limited", "EIMS (Shenzhen) Culture & Technology Co., Ltd", "Ejee Group Beijing Limited", "EJEE Group Holdings Limited", "Ekados, Inc., d/b/a groundregistry.com", "ELB Group Inc", "Emerald Registrar Limited", "Emirates Telecommunications Corporation - Etisalat", "EmpireStateDomains Inc.", "eName Technology Co., Ltd.", "Enameco, LLC", "EnCirca, Inc.", "EndeavourDomains, LLC", "Enetica Pty Ltd", "Enom Corporate, Inc.", "EnomAU, Inc.", "eNombre Corporation", "EnomEU, Inc.", "Enomfor, Inc.", "EnomMX, Inc.", "Enomnz, Inc.", "eNomsky, Inc.", "EnomTen, Inc.", "EnomToo, Inc.", "EnomV, Inc.", "EnomX, Inc.", "Enset", "Entertainment Names, Incorporated", "Entorno Digital, S.A.", "Entrust Domains, LLC", "EPAG Domainservices GmbH", "Epik, Inc.", "Eranet International Limited", "Eric the Red, LLC", "Erwin Rommel, LLC", "Ethos Domains, LLC", "EU Technology (HK) Limited", "EUNameFlood.com LLC", "EunamesOregon.com LLC", "EuroDNS S.A.", "EuropeanConnectiononline.com LLC", "EurotrashNames.com LLC", "EUTurbo.com LLC", "Ever Ready Names, Inc.", "Everyones Internet, Ltd. dba SoftLayer", "Excalibur, LLC", "Exclusive Domain Find LLC", "Experinom Inc.", "Extend Names, Inc.", "Extra Threads Corporation", "Extremely Wild", "EZ Times Domains, LLC", "Fabulous.com Pty Ltd", "Fair Trade Domains, LLC", "Fan Domains Ltd", "Fastball Domains LLC", "FastDomain Inc.", "FBS Inc.", "Fenominal, Inc.", "Fetch Registrar, LLC", "Fiducia LLC, Latvijas Parstavnieciba", "Find Good Domains, Inc.", "FindUAName.com LLC", "FindYouADomain.com LLC", "FindYouAName.com LLC", "Fine Grain Domains, LLC", "Firstround Names LLC", "Firstserver, Inc.", "Flancrestdomains.com LLC", "FLAPPY DOMAIN, INC.", "Focus IP, Inc. dba AppDetex", "Foshan YiDong Network Co., LTD", "Free Dive Domains, LLC", "Free Drop Zone LLC", "Free Spirit Domains, LLC", "Freefall Domains LLC", "Freeparking Domain Registrars, Inc.", "French Connexion SARL dba Domaine.fr", "Freshbreweddomains.com LLC", "FrontStreetDomains.com LLC", "Fujian Domains, Inc.", "Fujian Litian Network Technology Co.,Ltd", "Funpeas Media Ventures, LLC dba DomainProcessor.com", "Fushi Tarazu, Incorporated", "Gabia C&S", "Gabia, Inc.", "Galileo Galilei, LLC", "Game For Names, Inc.", "Gandi SAS", "GateKeeperDomains.net LLC", "Genghis Khan, LLC", "Genious Communications SARL/AU", "George S. Patton, LLC", "George Washington 888, LLC", "Gesloten Domain N.V.", "Ghana Dot Com Ltd.", "GKG.NET, INC.", "GlamDomains LLC", "Glide Slope Domains, LLC", "Global Domains International, Inc. DBA DomainCostClub.com", "Global Village GmbH", "GMO Brights Consulting Inc.", "GMO Internet, Inc. d/b/a Onamae.com", "GMO-Z.com Pte. Ltd.", "Go Australia Domains, LLC", "Go Canada Domains, LLC", "Go China Domains, LLC", "Go France Domains, LLC", "Go Full House, Inc.", "Go Montenegro Domains, LLC", "GoDaddy.com, LLC", "Godomaingo.com LLC", "Gold Domain Names LLC", "Goldenfind Domains LLC", "Goldmine Domains LLC", "GoName-FL.com, Inc.", "GoName-HI.com, Inc.", "GoName-TN.com, Inc.", "GoName-TX.com, Inc.", "GoName-WA.com, Inc.", "GoName.com, Inc", "Good Domain Registry Pvt Ltd.", "Good Luck Internet Services PVT, LTD.", "Google Inc.", "GoServeYourDomain.com LLC", "Goto Domains LLC", "Gozerdomains.com LLC", "Gradeadomainnames.com LLC", "Gransy, s.r.o. d/b/a subreg.cz", "Green Destiny, LLC", "GreenZoneDomains Inc.", "Ground Internet, Inc.", "Guangdong HUYI Internet & IP Services Co., Ltd", "Guangdong JinWanBang Technology Investment Co., Ltd.", "GuangDong NaiSiNiKe Information Technology Co Ltd.", "Guangzhou Domains, Inc.", "Guangzhou Ehost Tech. Co. Ltd.", "Guangzhou Ming Yang Information Technology Co., Ltd", "Gunga Galunga Corporation", "Hang Ten Domains, LLC", "HANGANG Systems, Inc. dba Doregi.com", "Hanging Curve Domains LLC", "Hangzhou AiMing Network Co., Ltd.", "Hangzhou Dianshang Internet Technology Co., LTD.", "Hangzhou Duomai E-Commerce Co., Ltd", "Hangzhou Midaizi Network Co., Ltd.", "Hannibal Barca, LLC", "Haveaname, LLC", "Hawthornedomains.com LLC", "HazelDomains, Inc.", "Heavens Will, LLC", "Heavydomains.net LLC", "Hebei Guoji Maoyi (Shanghai) LTD dba HebeiDomains.com", "Hello Internet Corp.", "Henan Weichuang Network Technology Co. Ltd.", "Hercules 888, LLC", "Hetzner Online GmbH", "Hezhong Liancheng Beijing Technology Co., Ltd", "HiChina Zhicheng Technology Limited", "HLJ E-Link Network Co., Ltd", "HOAPDI INC.", "Hogan Lovells International LLP", "HongKong Di En Si International Co., Limited", "Hongkong Domain Name Information Management Co., Ltd.", "Honjo Masamune, LLC", "HooYoo Information Technology Co. Ltd.", "Hosteur SARL", "Hosting Concepts B.V. d/b/a Openprovider", "Hosting Ukraine LLC", "Hostinger, UAB", "Hostlane, LLC", "Hostnet bv", "Hostpoint AG", "Hostserver GmbH", "Hotdomaintrade.com, Inc.", "House of Domains, LLC", "Hrunting, LLC", "http.net Internet GmbH", "Hu Yi Global Information Hong Kong Limited", "Humeia Corporation", "Iconicnames LLC", "Ignitela, LLC", "IHS Telekom, Inc.", "Ilait AB", "Imminentdomains.net LLC", "Imperial Registrations, Inc.", "In2net Network Inc.", "Inames Co., Ltd.", "Indirection Identity Corporation", "iNET CORPORATION", "Infocom Network Ltd.", "Infomaniak Network SA", "Ingenit GmbH & Co. KG", "Inic GmbH", "InlandDomains, LLC", "InsaneNames LLC", "INSTANTNAMES LLC", "Instinct Solutions, Inc.", "Instra Corporation Pty Ltd.", "Interdominios, Inc.", "Interlakenames.com LLC", "Interlink Co., Ltd.", "Internet Domain Name System Beijing Engineering Research Center LLC (ZDNS)", "Internet Domain Service BS Corp", "Internet Internal Affairs Corporation", "Internet Invest, Ltd. dba Imena.ua", "Internet NAYANA Inc.", "Internetters Limited", "Intersolved-FL.com, Inc.", "Intersolved-HI.com, Inc.", "Intersolved-TN.com, Inc.", "Intersolved-TX.com, Inc.", "Intersolved-WA.com Inc.", "Interweb Advertising D.B.A. Profile Builder", "Intracom Middle East FZE", "INWX GmbH & Co. KG", "IP Mirror Pte Ltd dba IP MIRROR", "IP Twins SAS", "Isaac Newton, LLC", "IServeYourDomain.com LLC", "Isoroku Yamamoto, LLC", "James Madison, LLC", "Japan Registry Services Co., Ltd.", "JARHEADDOMAINS.COM, LLC", "Jiangsu Bangning Science & technology Co. Ltd.", "Joan of Arc, LLC", "Joyeuse, LLC", "JPRS Registrar Co., Ltd.", "JSC Registrar R01", "Julius Caesar, LLC", "Jumbo Name, Inc.", "Jumpshot Domains LLC", "Kagoya Japan Inc.", "Karl Von Clausewitz, LLC", "Kaunas University of Technology, Department of Information Technologies dba Domreg.lt", "Key Registrar, Inc.", "Key-Systems GmbH", "Key-Systems, LLC", "Kheweul.com SA", "Kingdomains, Incorporated", "KINX Co., Ltd.", "Klaatudomains.com LLC", "Knet Registrar Co., Ltd.", "Kontent GmbH", "Korea Server Hosting Inc.", "Koreacenter.com co., Ltd.", "KQW, Inc.", "KuwaitNET General Trading Co.", "La Tizone, LLC", "Ladas Domains LLC", "Lakeodomains.com LLC", "Larsen Data ApS", "Launchpad.com Inc.", "Layup Domains LLC", "LCN.COM Ltd.", "Leatherneckdomains.com, LLC", "Ledl.net GmbH", "Leif Ericson, LLC", "LEMARIT GmbH", "Lemon Shark Domains, LLC", "Leonardo da Vinci, LLC", "Leonidas, LLC", "Lexsynergy Limited", "Ligne Web Services SARL dba LWS", "Line Drive Domains, LLC", "Lionshare Domains, LLC", "LiquidNet Ltd.", "LiteDomains LLC", "LogicBoxes Naming Services Ltd", "Long Drive Domains LLC", "Lucky Elephant Domains, LLC", "MAFF AVENUE, INC.", "MAFF Inc.", "Magic Friday, Inc.", "Magnate Domains, LLC", "Magnolia Domains, LLC", "Mahatma Gandhi, LLC", "Mailinh, LLC", "MainReg Inc.", "Major League Domains, LLC", "Maoming QunYing Network Co., Ltd.", "Marcaria.com International, Inc.", "Mark Barker, Incorporated", "MarkMonitor Inc.", "Masterofmydomains.net LLC", "Mat Bao Trading & Services Joint Stock Company d/b/a Mat Bao", "Maximus, LLC", "Mayi Information Co., Limited", "Media Elite Holdings Limited", "Meganames LLC", "Megazone Corp., dba HOSTING.KR", "Melbourne IT Ltd", "Mesh Digital Limited", "Metaregistrar BV", "Microbreweddomains.com LLC", "Microsoft Corporation", "MidWestDomains, LLC", "Mighty Bay, Inc.", "Mijn InternetOplossing B.V.", "Mijndomein.nl BV", "Millennial Names LLC", "Minds and Machines LLC", "Minds and Machines Registrar UK Limited", "Misk.com, Inc.", "MISTERNIC LLC", "Mobile Name Services, Inc.", "Moniker Online Services LLC", "Moon Shot Domains, LLC", "Mps Infotecnics Limited", "Mvpdomainnames.com LLC", "MyManager, Inc.", "Mypreciousdomain.com LLC", "Nakazawa Trading Co.,Ltd.", "Name Connection Area LLC", "Name Connection Spot LLC", "Name Find Source LLC", "Name Icon LLC", "Name Nelly Corporation", "Name Perfections, Inc.", "Name Share, Inc.", "Name Thread Corporation", "Name To Fame, Inc.", "Name Trance LLC", "Name.cc Inc", "Namearsenal.com LLC", "NameBake LLC", "Namebay SAM", "NameBrew LLC", "NameCamp Limited", "Namecatch LLC", "Namecatch Zone LLC", "NameCentral, Inc.", "NameCheap, Inc.", "NameChild LLC", "Namecroc.com LLC", "Nameemperor.com LLC", "Namefinger.com LLC", "NameForward LLC", "Namegrab LLC", "NameJolt.com LLC", "NameKing.com Inc.", "Nameling.com LLC", "Namemaster RC GmbH", "Namepanther.com LLC", "Names Express LLC", "Names In Motion, Inc.", "Names On The Drop LLC", "Names Stop Here LLC", "Namesalacarte.com LLC", "Namesaplenty LLC", "NameSay LLC", "NameScout Corp.", "NameSector LLC", "NameSecure L.L.C.", "Nameselite, LLC", "NamesHere LLC", "Nameshield SAS", "NameSilo, LLC", "Namesnap LLC", "NameSnapper LLC", "Namesource LLC", "Namesourcedomains, LLC", "Namespro Solutions Inc.", "Namestop LLC", "NameStrategies LLC", "NameStream.com, Inc.", "NameTell.com LLC", "NameTurn LLC", "Namevolcano.com LLC", "NameWeb BVBA", "Namewinner LLC", "Namezero, LLC", "Namware.com, Inc.", "Nanjing Imperiosus Technology Co. Ltd.", "Napoleon Bonaparte, LLC", "Naugus Limited LLC", "NCC Group Secure Registrar, Inc.", "Need Servers, Inc.", "Neen Srl", "NeoNIC OY", "Nerd Names Corporation", "Net 4 India Limited", "Net Juggler, Inc.", "Net Logistics Pty Ltd.", "Net-Chinese Co., Ltd.", "NetArt Sp z o.o", "Netdorm, Inc. dba DnsExit.com", "NetEarth One Inc. d/b/a NetEarth", "Netestate, LLC", "NETIM SARL", "Netistrar Limited", "Netnames Pty Ltd.", "Netowl, Inc.", "Netpia.com, Inc.", "NetraCorp LLC dba Global Internet", "NetRegistry Pty Ltd.", "NetTuner Corp. dba Webmasters.com", "Network Information Center Mexico, S.C.", "Network Savior, Inc.", "Network Solutions, LLC", "Networking4all B.V.", "Netzadresse.at Domain Service GmbH", "NetZone AG", "Neubox Internet S.A. de C.V.", "NEUDOMAIN LLC", "New Great Domains, Inc.", "New Order Domains, LLC", "Nhan Hoa Software Company Ltd.", "NHN Techorus Corp.", "Nicco Ltd.", "NICREG LLC", "Nics Telekomünikasyon Tic Ltd. Şti.", "Nictrade Internet Identity Provider AB", "Niuedomains, LLC", "Nom Infinitum, Incorporated", "Nom-iq Ltd. dba COM LAUDE", "Nominalia Internet S.L.", "Nominet Registrar Services Limited", "NordNet SA", "Nordreg AB", "NorthNames Inc.", "Noteworthydomains, LLC", "NoticedDomains LLC", "NotSoFamousNames.com LLC", "Number One Web Hosting Limited", "NUXIT", "Octopusdomains.net LLC", "Odysseus 888, LLC", "Oi Internet S/A", "Old Tyme Domains, LLC", "OldTownDomains.com LLC", "OldWorldAliases.com LLC", "Omni 888, LLC", "Omnis Network, LLC", "One Putt, Inc.", "One.com A/S", "Onlide Inc", "Online Data Services Joint Stock Company", "Online SAS", "OnlineNIC, Inc.", "Only Domains Limited", "Open System Ltda - Me", "OPENNAME LLC", "OpenTLD B.V.", "ORANGE SA", "OregonEU.com LLC", "OregonURLs.com LLC", "Ourdomains Limited", "OVH sas", "Own Identity, Inc.", "P.A. Viet Nam Company Limited", "PacificDomains, LLC", "Paimi Inc", "Painted Pony Names, LLC", "pair Networks, Inc.d/b/a pairNIC", "Paknic (Private) Limited", "Papaki Ltd", "Paragon Internet Group Ltd t/a Paragon Names", "Pararescuedomains.com, LLC", "PDR Ltd. d/b/a PublicDomainRegistry.com", "PDXPrivateNames.com LLC", "PE Overseas Limited", "PearlNamingService.com LLC", "Perseus 888, LLC", "Peter the Great, LLC", "Pheenix, Inc.", "PierX, Inc", "Pink Elephant Domains, LLC", "Pipeline Domains, LLC", "PlanetDomain Pty Ltd", "PlanetHoster Inc.", "Platinum Registrar, Inc.", "Plato 888, LLC", "PocketDomain.com Inc.", "Porkbun LLC", "Porting Access B.V.", "PortlandNames.com LLC", "Ports Group AB", "Poseidon 888, LLC", "PostalDomains, Incorporated", "Power Carrier, Inc.", "Power Namers, Inc.", "Powered by Domain.com LLC", "Premierename.ca Inc.", "PresidentialDomains LLC", "PrivacyPost, LLC", "Private Domains, Incorporated", "Promo People, Inc.", "ProNamed LLC", "Protocol Internet Technology Limited T/A Hosting Ireland", "Protondomains.com LLC", "PSI-Japan, Inc.", "PSI-USA, Inc. dba Domain Robot", "PT Ardh Global Indonesia", "Purenic Japan Inc.", "Purity Names Incorporated", "Rabbitsfoot.com LLC d/b/a Oxygen.nyc", "Radu Damian, LLC", "Rainydaydomains.com LLC", "Rally Cry Domains, LLC", "Ramses II, LLC", "Rank USA, Inc.", "Rare Gem Domains LLC", "Realtime Register B.V.", "Rebel Ltd", "Rebel.ca Corp.", "ReclaimDomains LLC", "REG.BG OOD", "Reg2C.com Inc.", "Regional Network Information Center, JSC dba RU-CENTER", "Register Names, LLC", "Register NV dba Register.eu", "Register.ca Inc.", "Register.com, Inc.", "REGISTER.IT SPA", "Register4Less, Inc.", "Registrar Manager Inc.", "Registrar of Domain Names REG.RU LLC", "Registrar Services LLC", "RegistrarDirect LLC`", "RegistrarSafe, LLC", "RegistrarSEC LLC", "RegistrarTrust, LLC", "Registration Technologies, Inc.", "Registrator Domenov LLC", "RegistryGate GmbH", "Regtime Ltd.", "Reliable Software", "Reseller Services, Inc. dba ResellServ.com", "Retail Domains, Inc.", "Rethem Hosting LLC", "Richard the Lionheart 888, LLC", "Ripcord Domains, LLC", "Ripcurl Domains, LLC", "Riptide Domains, LLC", "Robert E. Lee 888, LLC", "rockenstein AG", "SafeBrands SAS", "SafeNames Ltd.", "SALENAMES LTD", "Samjung Data Service Co., Ltd", "Sammamishdomains.com LLC", "Samoandomains, LLC", "Santiamdomains.com LLC", "SaveMoreNames.com Inc.", "Savethename.com LLC", "SBSNames, Incorporated", "Scipio Africanus, LLC", "Searchnresq, Inc.", "Secondround Names LLC", "Secura GmbH", "Sedo.com LLC", "Server Plan Srl", "Service Development Center of the State Commission Office for Public Sector Reform", "Seymour Domains, LLC", "Shanghai Best Oray Information S&T Co., Ltd.", "Shanghai Meicheng Technology Information Development Co., Ltd.", "Shanghai Oweb Network Co., Ltd", "Shanghai Yovole Networks, Inc.", "Sharkweek Domains LLC", "Shenzhen Esin Technology Co., Ltd", "Shenzhen HuLianXianFeng Technology Co.,LTD", "Shenzhen Internet Works Online Technology Co., Ltd. (62.com)", "Shining Star Domains, LLC", "Shinjiru MSC Sdn Bhd", "Sibername Internet and Software Technologies Inc.", "SicherRegister, Incorporated", "SiliconHouse.Net Pvt Ltd.", "Silver Domain Names LLC", "Silverbackdomains.com LLC", "Sipence, Inc.", "Sir Lancelot du Lac, LLC", "Sitefrenzy.com LLC", "SiteName Ltd.", "Sksa Technology Co., Limited", "Skykomishdomains.com LLC", "Slamdunk Domains LLC", "Sliceofheaven Domains, LLC", "Slow Motion Domains LLC", "Slow Putt Domains LLC", "Small Business Names and Certs, Incorporated", "Small World Communications, Inc.", "Snag Your Name LLC", "Snappyregistrar.com LLC", "Snapsource LLC", "Snoqulamiedomains.com LLC", "Soaring Eagle Domains, LLC", "Socrates 888, LLC", "SoftLayer Technologies, Inc.", "Soldierofonedomains.com, LLC", "Soluciones Corporativas IP, SL", "Sourced Domains, LLC", "SouthNames Inc.", "Soyouwantadomain.com LLC", "Spartacus, LLC", "SQUIDSAILERDOMAINS.COM, LLC", "Sssasss, Incorporated", "Sterling Domains LLC", "Stichting Registrar of Last Resort Foundation", "Stork Registry Inc.", "Stormbringer, LLC", "Straight 8 Domains, LLC", "Streamline Domains, LLC", "Sugar Cube Domains, LLC", "Sun Tzu 888, LLC", "Super Name World, Inc.", "Super Registry Ltd", "SW Hosting & Communications Technologies SL dba Serveisweb", "Swedish Domains AB", "Switchplus Ltd", "Swordfish Domains LLC", "Synergy Wholesale Pty Ltd", "Taiwan Network Information Center", "Taka Enterprise Ltd", "Tan Tran, LLC", "Targeted Drop Catch LLC", "Tech Tyrants, Inc.", "Tecnocrática Centro de Datos, S.L.", "Tecnologia, Desarrollo Y Mercado S. de R.L. de C.V.", "The Domains LLC", "The Registrar Company B.V.", "The Registrar Service, Inc.", "The Registry at Info Avenue, LLC d/b/a Spirit Communications", "TheNameCo LLC", "Theseus 888, LLC", "ThirdFloorDNS.com LLC", "Thirdroundnames LLC", "Thomas Edison, LLC", "Thomas Jefferson, LLC", "Threadagent.com, Inc.", "Threadwalker.com, Inc.", "Threadwatch.com, Inc.", "Threadwise.com, Inc.", "Threepoint Domains LLC", "Tianjin Zhuiri Science and Technology Development Co Ltd.", "TierraNet Inc. d/b/a DomainDiscover", "Tiger Shark Domains, LLC", "Tiger Technologies LLC", "Tirupati Domains and Hosting Pvt Ltd.", "Titanic Hosting, Inc.", "Titus 888, LLC", "TLD Registrar Pty Ltd", "TLD Registrar Solutions Ltd.", "TLDS L.L.C. d/b/a SRSPlus", "Tname Group Inc.", "Todaynic.com, Inc.", "TOGLODO S.A.", "Tong Ji Ming Lian (Beijing) Technology Corporation Ltd. (Trename)", "Top Level Domains LLC", "Top Pick Names LLC", "Top Shelf Domains LLC", "Top Tier Domains LLC", "Topsystem, LLC", "Total Web Solutions Limited trading as TotalRegistrations", "TotallyDomain LLC", "Touchdown Domains LLC", "TPP Domains Pty Ltd. dba TPP Internet", "TPP Wholesale Pty Ltd", "Trade Starter, Inc.", "TradeNamed LLC", "Tradewinds Names, LLC", "Traffic Names, Incorporated", "TransIP B.V.", "TravelDomains, Incorporated", "Treasure Trove Domains LLC", "Tropic Management Systems, Inc.", "Trunkoz Technologies Pvt Ltd. d/b/a OwnRegistrar.com", "Tucows Domains Inc.", "Tuonome.it Srl d/b/a APIsrs.com", "Turbonames LLC", "TurnCommerce, Inc. DBA NameBright.com", "Tuvaludomains, LLC", "TWT S.p.A.", "Udamain.com LLC", "UdomainName.com LLC", "UK-2 Limited", "Ulfberht, LLC", "Ultra Registrar, Inc.", "Ulysses S. Grant, LLC", "Unified Servers, Inc.", "Uniregistrar Corp", "united-domains AG", "Unitedkingdomdomains, LLC", "Universal Registration Services, Inc. dba NewDentity.com", "Universo Online S/A (UOL)", "Unpower, Inc.", "Upperlink Limited", "URL Solutions, Inc.", "V12 Domains, LLC", "Variomedia AG dba puredomain.com", "Vautron Rechenzentrum AG", "Vedacore.com, Inc.", "VentraIP Australia Pty Ltd", "Verelink, Inc.", "Veritas Domains, LLC", "Vertex names.com, Inc.", "Victorynames LLC", "Vigson, Inc.", "Virtual Registrar, Inc.", "Virtucom Networks S.A.", "Visual Monster, Inc.", "VisualNames LLC", "Vitalwerks Internet Solutions, LLC DBA No-IP", "Vivid Domains, Inc.", "Vlad the Impaler, LLC", "Vo Nguyen Giap, LLC", "Vodien Internet Solutions Pte Ltd", "Web Business, LLC", "Web Commerce Communications Limited dba WebNic.cc", "Web Drive Ltd.", "Web Site Source, Inc.", "Web Werks India Pvt. Ltd d/b/a ZenRegistry.com", "Web4Africa Inc.", "Webagentur.at Internet Services GmbH d/b/a domainname.at", "Webair Internet Development, Inc.", "Webnames Limited", "Webnames.ca Inc.", "West263 International Limited", "WhatIsYourDomain LLC", "White Alligator Domains, LLC", "White Rhino Domains, LLC", "Whiteglove Domains, Incorporated", "Whois Networks Co., Ltd.", "WHT Co., Ltd", "Wide Left Domains LLC", "Wide Right Domains LLC", "Wild Bill Hickok, LLC", "Wild Bunch Domains, LLC", "Wild West Domains, LLC", "Wildzebradomains, LLC", "WillametteNames.com LLC", "William the Conqueror, LLC", "William Wallace, LLC", "Win Names LLC", "Wingu Networks, S.A. de C.V.", "Winston Churchill, LLC", "WIXI Incorporated", "World Biz Domains, LLC", "World4You Internet Services GmbH", "WorthyDomains LLC", "Xiamen ChinaSource Internet Service Co., Ltd", "Xiamen Dianmei Network Technology Co., Ltd.", "Xiamen Domains, Inc.", "Xiamen Nawang Technology Co., Ltd", "Xiamen Niucha Technology Co., Ltd.", "Xiamen Xin click Network Polytron Technologies Inc", "Xiamen Yuwang Technology Co., LTD", "Xin Net Technology Corporation", "Yellow Start, Inc.", "yenkos, LLC", "YouDamain.com LLC", "Your Domain Casa, LLC", "Your Domain King, Inc.", "Your Domain LLC", "Zeus 888, LLC", "Zhengzhou Business Technology Co., Ltd.", "Zhengzhou Century Connect Electronic Technology Development Co., Ltd", "Zhengzhou Zitian Network Technology Co., Ltd.", "Zhenjiang Aimingwang Information and Technology Co., Ltd", "Zhong Yu Network Technology Company Limited", "Zhuimi Inc", "ZigZagNames.com LLC", "Zinc Domain Names LLC", "ZNet Technologies Pvt Ltd.", "Zone Casting, Inc.", "Zone of Domains LLC", "ZoomRegistrar LLC", "Zulfigar, LLC");
+        $data['companies'] = array("1&1 Internet SE", "101domain Discovery Limited", "101domain GRS Limited", "10dencehispahard, S.L.", "123-Reg Limited", "123domainrenewals, LLC", "1800-website, LLC", "1API GmbH", "1st-for-domain-names, LLC", "2030138 Ontario Inc. dba NamesBeyond.com and dba GoodLuckDomain.com", "22net, Inc.", "24x7domains, LLC", "35 Technology Co., Ltd.", "4X", "995discountdomains, LLC", "Aahwed, Inc.", "AB Name ISP", "AB RIKTAD", "Abansys & Hostytec, S.L.", "Aboss Technology Limited", "Above.com Pty Ltd.", "Abraham Lincoln, LLC", "Abu-Ghazaleh Intellectual Property dba TAGIdomains.com", "AccentDomains LLC", "Acens Technologies, S.L.U.", "Achilles 888, LLC", "AcquiredNames LLC", "Active Registrar, Inc.", "Ad Valorem Domains, LLC", "Address Creation, LLC", "Addressontheweb, LLC", "Adomainofyourown.com LLC", "Advanced Internet Technologies, Inc. (AIT)", "Aerotek Bilisim Sanayi ve Ticaret AS", "Aetrion LLC dba DNSimple", "AFRIREGISTER S.A.", "Afterdark Domains, Incorporated", "Agrinoon Inc", "Aim High!, Inc.", "Akamai Technologies, Inc.", "Alantron Bilisim Ltd Sti.", "Alethia Domains, LLC", "Alexander the Great, LLC", "Alfena, LLC", "Alibaba Cloud Computing Ltd. d/b/a HiChina (www.net.cn)", "Alibrother Technology Limited", "Alice's Registry, Inc.", "All Domains LLC", "Allaccessdomains, LLC", "Alldomains, LLC", "Allearthdomains.com LLC", "AllGlobalNames, S.A. dba Cyberegistro.com", "Allworldnames.com LLC", "Alpine Domains Inc.", "Alpnames Limited", "Amazon Registrar, Inc.", "Anessia Inc.", "Annam, LLC", "Annulet LLC", "Anytime Sites, Inc.", "Apollo 888, LLC", "April Sea Information Technology Company Limited", "Aquarius Domains, LLC", "Arab Internet Names, Incorporated", "Arcanes Technologies", "Arctic Names, Inc.", "Ares 888, LLC", "Aristotle 888, LLC", "Arsys Internet, S.L. dba NICLINE.COM", "Arthur Pendragon, LLC", "Aruba SpA", "Ascio Technologies, Inc. Danmark – Filial af Ascio technologies, Inc. USA", "AsiaDomains, Incorporated", "AsiaRegister, Inc.", "Astutium Limited", "Atak Domain Hosting Internet ve Bilgi Teknolojileri Limited Sirketi d/b/a Atak Teknoloji", "ATI", "AtlanticDomains, LLC", "AtlanticFriendNames.com LLC", "Atomicdomainnames.com LLC", "Attila the Hun, LLC", "Austriadomains, LLC", "Austriandomains, LLC", "Authentic Web Inc.", "Automattic Inc.", "AvidDomain LLC", "AXC BV", "Azdomainz, LLC", "Azprivatez, LLC", "Backslap Domains, Inc.", "Backstop Names LLC", "Baracuda Domains, LLC", "Baronofdomains.com LLC", "BatDomains.com Ltd.", "BB-Online UK Limited ", "BDL Systemes SAS dba ProDomaines", "Beartrapdomains.com LLC", "Beijing Brandma International Networking Technology Ltd.", "Beijing Guoxu Network Technology Co., Ltd.", "Beijing HuaRui Wireless Technology Co., Ltd", "Beijing Innovative Linkage Technology Ltd. dba dns.com.cn", "Beijing Lanhai Jiye Technology Co.,Ltd", "Beijing Midwest Taian Technology Services Ltd.", "Beijing RITT - Net Technology Development Co., Ltd", "Beijing Sanfront Information Technology Co., Ltd", "Beijing Tong Guan Xin Tian Technology Ltd (Novaltel)", "Beijing Wangzun Technology Co., Ltd.", "Beijing ZhongWan Network Technology Co Ltd", "Beijing Zhuoyue Shengming Technologies Company Ltd.", "Beijing Zihai Technology Co., Ltd", "Belmontdomains.com LLC", "Benjamin Franklin 888, LLC", "Best Drop Names LLC", "Betterthanaveragedomains.com LLC", "Bidfordomainnames, LLC", "Big Dipper Domains, LLC", "Big Domain Shop, Inc.", "Big House Services, Inc.", "Biglizarddomains.com LLC", "BigRock Solutions Ltd.", "Billy the Kid, LLC", "Binero AB", "Bizcn.com, Inc.", "Blacknight Internet Solutions Ltd.", "BlastDomains LLC", "Blisternet, Incorporated", "BlockHost LLC", "Blue Angel Domains LLC", "Blue Fractal, Inc.", "Blue Hi Interconnect (Beijing) Technology Limited Company", "Blue Razor Domains, LLC", "Bombora Technologies Pty Ltd.", "Bonam Fortunam Domains, LLC", "Bonzai Domains, LLC", "BoteroSolutions.com S.A.", "Bottle Domains, Inc.", "Bounce Pass Domains LLC", "BR domain Inc. dba namegear.co", "Brandma.co Limited", "BrandNames.com SARL", "BRANDON GRAY INTERNET SERVICES INC. (dba \"NameJuice.com\")", "BraveNames Inc.", "Brennercom Limited", "BRS, LLC", "Buddha, LLC", "BullRunDomains.com LLC", "Burnsidedomains.com LLC", "camPoint AG", "Capitaldomains, LLC", "Catalog.com", "Catch Deleting Names LLC", "Catch Domains LLC", "CCI REG S.A.", "Center of Ukrainian Internet Names (UKRNAMES)", "Century Oriental International Co., Ltd.", "Charlemagne 888, LLC", "Charles Darwin, LLC", "Chengdu Fly-Digital Technology Co., Ltd.", "Chengdu West Dimension Digital Technology Co., Ltd.", "China Springboard, Inc.", "ChinaNet Technology (SuZhou) CO., LTD", "Chinesedomains, LLC", "Chipshot Domains LLC", "ChocolateChipDomains, LLC", "Chocolatecovereddomains,LLC", "Circle of Domains LLC", "Claimeddomains, LLC", "Click Registrar, Inc. d/b/a publicdomainregistry.com", "Cloud Bamboo, LLC", "Cloud Beauty, LLC", "Cloud Boom, LLC", "Cloud City, LLC", "Cloud Diamond, LLC", "Cloud Orchid, LLC", "Cloud Plum, LLC", "Cloud Seed, LLC", "Cloud Shark, LLC", "Cloud Sun, LLC", "Cloud Super, LLC", "Cloud System, LLC", "CloudBreakDomains, LLC", "CloudFlare, Inc.", "CloudNineDomain, LLC", "Cocosislandsdomains, LLC", "Columbiadomains, LLC", "Columbianames.com LLC", "ComfyDomains LLC", "Commerce Island, Inc.", "CommuniGal Communication Ltd.", "Compuglobalhypermega.com LLC", "Confucius, LLC", "Constantine the Great, LLC", "Cool Breeze Domains, LLC", "Cool Ocean, Inc.", "Cool River Names, LLC", "Copper Domain Names LLC", "Coral Reef Domains LLC", "COREhub, S.R.L.", "Corporation Service Company (DBS) INC.", "CORPORATION SERVICE COMPANY (UK) LIMITED", "Cosmotown, Inc.", "CPS-Datensysteme GmbH", "Crazy Domains FZ-LLC", "Crisp Names, Inc.", "Cronon AG", "Crystal Coal, Inc.", "CSC Corporate Domains, Inc.", "CSL Computer Service Langenbach GmbH d/b/a joker.com", "CT CORPORATION SYSTEM", "Curious Net, Inc.", "Curveball Domains LLC", "CV. Jogjacamp", "CV. Rumahweb Indonesia", "CyanDomains, Inc.", "Cyrus the Great, LLC", "Dagnabit, Incorporated", "Dainam, LLC", "Dalai Lama, LLC", "DanCue Inc.", "DanDomain A/S", "Danesco Trading Ltd.", "Dattatec.com SRL", "Decentdomains, LLC", "Deep Dive Domains, LLC", "Deep Sea Domains LLC", "Deep Water Domains LLC", "Deleting Name Zone LLC", "Deluxe Small Business Sales, Inc. d/b/a Aplus.net", "Demys Limited", "Department-of-domains, LLC", "Deschutesdomains.com LLC", "Desert Devil, Inc.", "Desert Sand Domains, LLC", "Deutchdomains, LLC", "Deutsche Telekom AG", "DevilDogDomains.com, LLC", "Diamatrix C.C.", "Diggitydot, LLC", "Dinahosting s.l.", "Discount Domains Ltd.", "Discountdomainservices, LLC", "DNC Holdings, Inc.", "DNS:NET Internet Service GmbH", "DNSPod, Inc.", "Domain Ala Carte, LLC", "Domain Band, Inc.", "Domain Bazaar LLC", "Domain Central Australia Pty Ltd.", "Domain Collage, LLC", "Domain Esta Aqui, LLC", "Domain Gold Zone LLC", "Domain Grabber LLC", "Domain Guardians, Inc.", "Domain Jamboree, LLC", "Domain Landing Zone LLC", "Domain Lifestyle, LLC", "Domain Locale, LLC", "Domain Mantra, Inc.", "Domain Monkeys, LLC", "DOMAIN NAME NETWORK PTY LTD", "Domain Name Origin, LLC", "Domain Name Root, LLC", "Domain Name Services (Pty) Ltd", "Domain Original, LLC", "Domain Pickup LLC", "Domain Pro, LLC", "Domain Registration Services, Inc. dba dotEarth.com", "Domain Research, LLC", "Domain Rouge, Inc.", "Domain Secure LLC", "Domain Source LLC", "Domain Stopover LLC", "Domain Success LLC", "Domain The Net Technologies Ltd.", "DOMAIN TRAIN, INC.", "Domain Vault Limited", "Domain-A-Go-Go, LLC", "Domain-It!, Inc.", "Domain.com, LLC", "DomainAdministration.com, LLC", "DomainAhead LLC", "DomainAllies.com, Inc.", "Domainamania.com LLC", "Domainarmada.com LLC", "Domainbox Limited", "Domainbulkregistration, LLC", "Domainbusinessnames, LLC", "Domaincamping, LLC", "Domaincapitan.com LLC", "Domaincatcher LLC", "Domaincircle LLC", "Domainclip Domains, Inc.", "Domainclub.com, LLC", "Domaincomesaround.com LLC", "DomainContext, Inc.", "DomainCraze LLC", "DomainCreek LLC", "DomainCritics LLC", "DomainDelights LLC", "Domaindrop LLC", "Domainducks, LLC", "Domainer Names LLC", "DomainExtreme LLC", "domainfactory GmbH", "DomainFalcon LLC", "Domaingazelle.com LLC", "DomainGetter LLC", "Domainhawks.net LLC", "DomainHood LLC", "Domainhostingweb, LLC", "Domainhysteria.com LLC", "Domainia Inc.", "Domaining Oro, LLC", "Domaininternetname, LLC", "Domaininthebasket.com LLC", "Domaininthehole.com LLC", "Domainjungle.net LLC", "DomainLadder LLC", "DomainLocal LLC", "Domainmonster Limited", "Domainmonster.com, Inc.", "DOMAINNAME BLVD, INC.", "DomainName Bridge, Inc.", "DomainName Driveway, Inc.", "DOMAINNAME FWY, INC.", "DomainName Highway LLC", "DomainName Parkway, Inc.", "DomainName Path, Inc.", "DomainName, Inc.", "Domainnamebidder, LLC", "Domainnamelookup, LLC", "Domainnovations, Incorporated", "DOMAINOO SAS", "DomainParkBlock.com LLC", "DomainPeople, Inc.", "DomainPicking LLC", "Domainplace LLC", "DomainPrime.com LLC", "Domainraker.net LLC", "DomainRegistry.com Inc.", "Domainroyale.com LLC", "Domains Etc LLC", "Domains Express LLC", "Domains of Origin, LLC", "Domains.coop Limited", "DomainSails.net LLC", "Domainsalsa.com LLC", "Domainsareforever.net LLC", "Domainshop LLC", "Domainshype.com, Inc.", "Domainsinthebag.com LLC", "DomainSite, Inc.", "DomainSnap, LLC", "Domainsnapper LLC", "Domainsofcourse.com LLC", "Domainsoftheday.net LLC", "Domainsoftheworld.net LLC", "Domainsofvalue.com LLC", "Domainsouffle.com LLC", "Domainsoverboard.com LLC", "Domainsovereigns.com LLC", "DomainSprouts.com LLC", "Domainstreetdirect.com LLC", "Domainsurgeon.com LLC", "DomainTact LLC", "Domaintimemachine.com LLC", "DomaintoOrder, LLC", "Domainwards.com LLC", "Domainyeti.com LLC", "Domainz Limited", "Domdrill.com, Inc.", "Domeneshop AS dba domainnameshop.com", "Domerati, Inc.", "Dominion Domains, LLC", "DomReg Ltd. d/b/a LIBRIS.COM", "Domus Enterprises LLC dba DOMUS", "Dot Holding Inc.", "DotAlliance Inc.", "DotArai Co., Ltd.", "DotMedia Limited", "Dotname Korea Corp.", "DotNamed LLC", "DotRoll Kft.", "DOTSERVE INC.", "Douglas MacArthur, LLC", "Draftpick Domains LLC", "DreamHost, LLC", "DreamScape Networks FZ-LLC", "Drop Catch Mining LLC", "Dropcatch Auction LLC", "Dropcatch Landing Spot LLC", "Dropcatch Marketplace LLC", "DropCatch.com 1000 LLC", "Dropcatching Names LLC", "DropExtra.com, Inc.", "DropFall.com Inc.", "DropHub.com, Inc.", "DropJump.com Inc.", "Dropoutlet, Incorporated", "DropSave.com, Inc.", "DropWalk.com, Inc.", "DropWeek.com, Inc.", "DuckBilledDomains.com LLC", "Dwight D. Eisenhower, LLC", "Dynadot, LLC", "Dynamic Network Services, Inc.", "DynaNames.com Inc.", "Eagle Eye Domains, LLC", "EastEndDomains, LLC", "EastNames Inc.", "Easy Street Domains, LLC", "easyDNS Technologies Inc.", "Easyspace Limited", "eBrand Services S.A.", "eBrandSecure, LLC", "EchoDomain LLC", "Ednit Software Private Limited", "EIMS (Shenzhen) Culture & Technology Co., Ltd", "Ejee Group Beijing Limited", "EJEE Group Holdings Limited", "Ekados, Inc., d/b/a groundregistry.com", "ELB Group Inc", "Emerald Registrar Limited", "Emirates Telecommunications Corporation - Etisalat", "EmpireStateDomains Inc.", "eName Technology Co., Ltd.", "Enameco, LLC", "EnCirca, Inc.", "EndeavourDomains, LLC", "Enetica Pty Ltd", "Enom Corporate, Inc.", "EnomAU, Inc.", "eNombre Corporation", "EnomEU, Inc.", "Enomfor, Inc.", "EnomMX, Inc.", "Enomnz, Inc.", "eNomsky, Inc.", "EnomTen, Inc.", "EnomToo, Inc.", "EnomV, Inc.", "EnomX, Inc.", "Enset", "Entertainment Names, Incorporated", "Entorno Digital, S.A.", "Entrust Domains, LLC", "EPAG Domainservices GmbH", "Epik, Inc.", "Eranet International Limited", "Eric the Red, LLC", "Erwin Rommel, LLC", "Ethos Domains, LLC", "EU Technology (HK) Limited", "EUNameFlood.com LLC", "EunamesOregon.com LLC", "EuroDNS S.A.", "EuropeanConnectiononline.com LLC", "EurotrashNames.com LLC", "EUTurbo.com LLC", "Ever Ready Names, Inc.", "Everyones Internet, Ltd. dba SoftLayer", "Excalibur, LLC", "Exclusive Domain Find LLC", "Experinom Inc.", "Extend Names, Inc.", "Extra Threads Corporation", "Extremely Wild", "EZ Times Domains, LLC", "Fabulous.com Pty Ltd", "Fair Trade Domains, LLC", "Fan Domains Ltd", "Fastball Domains LLC", "FastDomain Inc.", "FBS Inc.", "Fenominal, Inc.", "Fetch Registrar, LLC", "Fiducia LLC, Latvijas Parstavnieciba", "Find Good Domains, Inc.", "FindUAName.com LLC", "FindYouADomain.com LLC", "FindYouAName.com LLC", "Fine Grain Domains, LLC", "Firstround Names LLC", "Firstserver, Inc.", "Flancrestdomains.com LLC", "FLAPPY DOMAIN, INC.", "Focus IP, Inc. dba AppDetex", "Foshan YiDong Network Co., LTD", "Free Dive Domains, LLC", "Free Drop Zone LLC", "Free Spirit Domains, LLC", "Freefall Domains LLC", "Freeparking Domain Registrars, Inc.", "French Connexion SARL dba Domaine.fr", "Freshbreweddomains.com LLC", "FrontStreetDomains.com LLC", "Fujian Domains, Inc.", "Fujian Litian Network Technology Co.,Ltd", "Funpeas Media Ventures, LLC dba DomainProcessor.com", "Fushi Tarazu, Incorporated", "Gabia C&S", "Gabia, Inc.", "Galileo Galilei, LLC", "Game For Names, Inc.", "Gandi SAS", "GateKeeperDomains.net LLC", "Genghis Khan, LLC", "Genious Communications SARL/AU", "George S. Patton, LLC", "George Washington 888, LLC", "Gesloten Domain N.V.", "Ghana Dot Com Ltd.", "GKG.NET, INC.", "GlamDomains LLC", "Glide Slope Domains, LLC", "Global Domains International, Inc. DBA DomainCostClub.com", "Global Village GmbH", "GMO Brights Consulting Inc.", "GMO Internet, Inc. d/b/a Onamae.com", "GMO-Z.com Pte. Ltd.", "Go Australia Domains, LLC", "Go Canada Domains, LLC", "Go China Domains, LLC", "Go France Domains, LLC", "Go Full House, Inc.", "Go Montenegro Domains, LLC", "GoDaddy.com, LLC", "Godomaingo.com LLC", "Gold Domain Names LLC", "Goldenfind Domains LLC", "Goldmine Domains LLC", "GoName-FL.com, Inc.", "GoName-HI.com, Inc.", "GoName-TN.com, Inc.", "GoName-TX.com, Inc.", "GoName-WA.com, Inc.", "GoName.com, Inc", "Good Domain Registry Pvt Ltd.", "Good Luck Internet Services PVT, LTD.", "Google Inc.", "GoServeYourDomain.com LLC", "Goto Domains LLC", "Gozerdomains.com LLC", "Gradeadomainnames.com LLC", "Gransy, s.r.o. d/b/a subreg.cz", "Green Destiny, LLC", "GreenZoneDomains Inc.", "Ground Internet, Inc.", "Guangdong HUYI Internet & IP Services Co., Ltd", "Guangdong JinWanBang Technology Investment Co., Ltd.", "GuangDong NaiSiNiKe Information Technology Co Ltd.", "Guangzhou Domains, Inc.", "Guangzhou Ehost Tech. Co. Ltd.", "Guangzhou Ming Yang Information Technology Co., Ltd", "Gunga Galunga Corporation", "Hang Ten Domains, LLC", "HANGANG Systems, Inc. dba Doregi.com", "Hanging Curve Domains LLC", "Hangzhou AiMing Network Co., Ltd.", "Hangzhou Dianshang Internet Technology Co., LTD.", "Hangzhou Duomai E-Commerce Co., Ltd", "Hangzhou Midaizi Network Co., Ltd.", "Hannibal Barca, LLC", "Haveaname, LLC", "Hawthornedomains.com LLC", "HazelDomains, Inc.", "Heavens Will, LLC", "Heavydomains.net LLC", "Hebei Guoji Maoyi (Shanghai) LTD dba HebeiDomains.com", "Hello Internet Corp.", "Henan Weichuang Network Technology Co. Ltd.", "Hercules 888, LLC", "Hetzner Online GmbH", "Hezhong Liancheng Beijing Technology Co., Ltd", "HiChina Zhicheng Technology Limited", "HLJ E-Link Network Co., Ltd", "HOAPDI INC.", "Hogan Lovells International LLP", "HongKong Di En Si International Co., Limited", "Hongkong Domain Name Information Management Co., Ltd.", "Honjo Masamune, LLC", "HooYoo Information Technology Co. Ltd.", "Hosteur SARL", "Hosting Concepts B.V. d/b/a Openprovider", "Hosting Ukraine LLC", "Hostinger, UAB", "Hostlane, LLC", "Hostnet bv", "Hostpoint AG", "Hostserver GmbH", "Hotdomaintrade.com, Inc.", "House of Domains, LLC", "Hrunting, LLC", "http.net Internet GmbH", "Hu Yi Global Information Hong Kong Limited", "Humeia Corporation", "Iconicnames LLC", "Ignitela, LLC", "IHS Telekom, Inc.", "Ilait AB", "Imminentdomains.net LLC", "Imperial Registrations, Inc.", "In2net Network Inc.", "Inames Co., Ltd.", "Indirection Identity Corporation", "iNET CORPORATION", "Infocom Network Ltd.", "Infomaniak Network SA", "Ingenit GmbH & Co. KG", "Inic GmbH", "InlandDomains, LLC", "InsaneNames LLC", "INSTANTNAMES LLC", "Instinct Solutions, Inc.", "Instra Corporation Pty Ltd.", "Interdominios, Inc.", "Interlakenames.com LLC", "Interlink Co., Ltd.", "Internet Domain Name System Beijing Engineering Research Center LLC (ZDNS)", "Internet Domain Service BS Corp", "Internet Internal Affairs Corporation", "Internet Invest, Ltd. dba Imena.ua", "Internet NAYANA Inc.", "Internetters Limited", "Intersolved-FL.com, Inc.", "Intersolved-HI.com, Inc.", "Intersolved-TN.com, Inc.", "Intersolved-TX.com, Inc.", "Intersolved-WA.com Inc.", "Interweb Advertising D.B.A. Profile Builder", "Intracom Middle East FZE", "INWX GmbH & Co. KG", "IP Mirror Pte Ltd dba IP MIRROR", "IP Twins SAS", "Isaac Newton, LLC", "IServeYourDomain.com LLC", "Isoroku Yamamoto, LLC", "James Madison, LLC", "Japan Registry Services Co., Ltd.", "JARHEADDOMAINS.COM, LLC", "Jiangsu Bangning Science & technology Co. Ltd.", "Joan of Arc, LLC", "Joyeuse, LLC", "JPRS Registrar Co., Ltd.", "JSC Registrar R01", "Julius Caesar, LLC", "Jumbo Name, Inc.", "Jumpshot Domains LLC", "Kagoya Japan Inc.", "Karl Von Clausewitz, LLC", "Kaunas University of Technology, Department of Information Technologies dba Domreg.lt", "Key Registrar, Inc.", "Key-Systems GmbH", "Key-Systems, LLC", "Kheweul.com SA", "Kingdomains, Incorporated", "KINX Co., Ltd.", "Klaatudomains.com LLC", "Knet Registrar Co., Ltd.", "Kontent GmbH", "Korea Server Hosting Inc.", "Koreacenter.com co., Ltd.", "KQW, Inc.", "KuwaitNET General Trading Co.", "La Tizone, LLC", "Ladas Domains LLC", "Lakeodomains.com LLC", "Larsen Data ApS", "Launchpad.com Inc.", "Layup Domains LLC", "LCN.COM Ltd.", "Leatherneckdomains.com, LLC", "Ledl.net GmbH", "Leif Ericson, LLC", "LEMARIT GmbH", "Lemon Shark Domains, LLC", "Leonardo da Vinci, LLC", "Leonidas, LLC", "Lexsynergy Limited", "Ligne Web Services SARL dba LWS", "Line Drive Domains, LLC", "Lionshare Domains, LLC", "LiquidNet Ltd.", "LiteDomains LLC", "LogicBoxes Naming Services Ltd", "Long Drive Domains LLC", "Lucky Elephant Domains, LLC", "MAFF AVENUE, INC.", "MAFF Inc.", "Magic Friday, Inc.", "Magnate Domains, LLC", "Magnolia Domains, LLC", "Mahatma Gandhi, LLC", "Mailinh, LLC", "MainReg Inc.", "Major League Domains, LLC", "Maoming QunYing Network Co., Ltd.", "Marcaria.com International, Inc.", "Mark Barker, Incorporated", "MarkMonitor Inc.", "Masterofmydomains.net LLC", "Mat Bao Trading & Services Joint Stock Company d/b/a Mat Bao", "Maximus, LLC", "Mayi Information Co., Limited", "Media Elite Holdings Limited", "Meganames LLC", "Megazone Corp., dba HOSTING.KR", "Melbourne IT Ltd", "Mesh Digital Limited", "Metaregistrar BV", "Microbreweddomains.com LLC", "Microsoft Corporation", "MidWestDomains, LLC", "Mighty Bay, Inc.", "Mijn InternetOplossing B.V.", "Mijndomein.nl BV", "Millennial Names LLC", "Minds and Machines LLC", "Minds and Machines Registrar UK Limited", "Misk.com, Inc.", "MISTERNIC LLC", "Mobile Name Services, Inc.", "Moniker Online Services LLC", "Moon Shot Domains, LLC", "Mps Infotecnics Limited", "Mvpdomainnames.com LLC", "MyManager, Inc.", "Mypreciousdomain.com LLC", "Nakazawa Trading Co.,Ltd.", "Name Connection Area LLC", "Name Connection Spot LLC", "Name Find Source LLC", "Name Icon LLC", "Name Nelly Corporation", "Name Perfections, Inc.", "Name Share, Inc.", "Name Thread Corporation", "Name To Fame, Inc.", "Name Trance LLC", "Name.cc Inc", "Namearsenal.com LLC", "NameBake LLC", "Namebay SAM", "NameBrew LLC", "NameCamp Limited", "Namecatch LLC", "Namecatch Zone LLC", "NameCentral, Inc.", "NameCheap, Inc.", "NameChild LLC", "Namecroc.com LLC", "Nameemperor.com LLC", "Namefinger.com LLC", "NameForward LLC", "Namegrab LLC", "NameJolt.com LLC", "NameKing.com Inc.", "Nameling.com LLC", "Namemaster RC GmbH", "Namepanther.com LLC", "Names Express LLC", "Names In Motion, Inc.", "Names On The Drop LLC", "Names Stop Here LLC", "Namesalacarte.com LLC", "Namesaplenty LLC", "NameSay LLC", "NameScout Corp.", "NameSector LLC", "NameSecure L.L.C.", "Nameselite, LLC", "NamesHere LLC", "Nameshield SAS", "NameSilo, LLC", "Namesnap LLC", "NameSnapper LLC", "Namesource LLC", "Namesourcedomains, LLC", "Namespro Solutions Inc.", "Namestop LLC", "NameStrategies LLC", "NameStream.com, Inc.", "NameTell.com LLC", "NameTurn LLC", "Namevolcano.com LLC", "NameWeb BVBA", "Namewinner LLC", "Namezero, LLC", "Namware.com, Inc.", "Nanjing Imperiosus Technology Co. Ltd.", "Napoleon Bonaparte, LLC", "Naugus Limited LLC", "NCC Group Secure Registrar, Inc.", "Need Servers, Inc.", "Neen Srl", "NeoNIC OY", "Nerd Names Corporation", "Net 4 India Limited", "Net Juggler, Inc.", "Net Logistics Pty Ltd.", "Net-Chinese Co., Ltd.", "NetArt Sp z o.o", "Netdorm, Inc. dba DnsExit.com", "NetEarth One Inc. d/b/a NetEarth", "Netestate, LLC", "NETIM SARL", "Netistrar Limited", "Netnames Pty Ltd.", "Netowl, Inc.", "Netpia.com, Inc.", "NetraCorp LLC dba Global Internet", "NetRegistry Pty Ltd.", "NetTuner Corp. dba Webmasters.com", "Network Information Center Mexico, S.C.", "Network Savior, Inc.", "Network Solutions, LLC", "Networking4all B.V.", "Netzadresse.at Domain Service GmbH", "NetZone AG", "Neubox Internet S.A. de C.V.", "NEUDOMAIN LLC", "New Great Domains, Inc.", "New Order Domains, LLC", "Nhan Hoa Software Company Ltd.", "NHN Techorus Corp.", "Nicco Ltd.", "NICREG LLC", "Nics Telekomünikasyon Tic Ltd. Şti.", "Nictrade Internet Identity Provider AB", "Niuedomains, LLC", "Nom Infinitum, Incorporated", "Nom-iq Ltd. dba COM LAUDE", "Nominalia Internet S.L.", "Nominet Registrar Services Limited", "NordNet SA", "Nordreg AB", "NorthNames Inc.", "Noteworthydomains, LLC", "NoticedDomains LLC", "NotSoFamousNames.com LLC", "Number One Web Hosting Limited", "NUXIT", "Octopusdomains.net LLC", "Odysseus 888, LLC", "Oi Internet S/A", "Old Tyme Domains, LLC", "OldTownDomains.com LLC", "OldWorldAliases.com LLC", "Omni 888, LLC", "Omnis Network, LLC", "One Putt, Inc.", "One.com A/S", "Onlide Inc", "Online Data Services Joint Stock Company", "Online SAS", "OnlineNIC, Inc.", "Only Domains Limited", "Open System Ltda - Me", "OPENNAME LLC", "OpenTLD B.V.", "ORANGE SA", "OregonEU.com LLC", "OregonURLs.com LLC", "Ourdomains Limited", "OVH sas", "Own Identity, Inc.", "P.A. Viet Nam Company Limited", "PacificDomains, LLC", "Paimi Inc", "Painted Pony Names, LLC", "pair Networks, Inc.d/b/a pairNIC", "Paknic (Private) Limited", "Papaki Ltd", "Paragon Internet Group Ltd t/a Paragon Names", "Pararescuedomains.com, LLC", "PDR Ltd. d/b/a PublicDomainRegistry.com", "PDXPrivateNames.com LLC", "PE Overseas Limited", "PearlNamingService.com LLC", "Perseus 888, LLC", "Peter the Great, LLC", "Pheenix, Inc.", "PierX, Inc", "Pink Elephant Domains, LLC", "Pipeline Domains, LLC", "PlanetDomain Pty Ltd", "PlanetHoster Inc.", "Platinum Registrar, Inc.", "Plato 888, LLC", "PocketDomain.com Inc.", "Porkbun LLC", "Porting Access B.V.", "PortlandNames.com LLC", "Ports Group AB", "Poseidon 888, LLC", "PostalDomains, Incorporated", "Power Carrier, Inc.", "Power Namers, Inc.", "Powered by Domain.com LLC", "Premierename.ca Inc.", "PresidentialDomains LLC", "PrivacyPost, LLC", "Private Domains, Incorporated", "Promo People, Inc.", "ProNamed LLC", "Protocol Internet Technology Limited T/A Hosting Ireland", "Protondomains.com LLC", "PSI-Japan, Inc.", "PSI-USA, Inc. dba Domain Robot", "PT Ardh Global Indonesia", "Purenic Japan Inc.", "Purity Names Incorporated", "Rabbitsfoot.com LLC d/b/a Oxygen.nyc", "Radu Damian, LLC", "Rainydaydomains.com LLC", "Rally Cry Domains, LLC", "Ramses II, LLC", "Rank USA, Inc.", "Rare Gem Domains LLC", "Realtime Register B.V.", "Rebel Ltd", "Rebel.ca Corp.", "ReclaimDomains LLC", "REG.BG OOD", "Reg2C.com Inc.", "Regional Network Information Center, JSC dba RU-CENTER", "Register Names, LLC", "Register NV dba Register.eu", "Register.ca Inc.", "Register.com, Inc.", "REGISTER.IT SPA", "Register4Less, Inc.", "Registrar Manager Inc.", "Registrar of Domain Names REG.RU LLC", "Registrar Services LLC", "RegistrarDirect LLC`", "RegistrarSafe, LLC", "RegistrarSEC LLC", "RegistrarTrust, LLC", "Registration Technologies, Inc.", "Registrator Domenov LLC", "RegistryGate GmbH", "Regtime Ltd.", "Reliable Software", "Reseller Services, Inc. dba ResellServ.com", "Retail Domains, Inc.", "Rethem Hosting LLC", "Richard the Lionheart 888, LLC", "Ripcord Domains, LLC", "Ripcurl Domains, LLC", "Riptide Domains, LLC", "Robert E. Lee 888, LLC", "rockenstein AG", "SafeBrands SAS", "SafeNames Ltd.", "SALENAMES LTD", "Samjung Data Service Co., Ltd", "Sammamishdomains.com LLC", "Samoandomains, LLC", "Santiamdomains.com LLC", "SaveMoreNames.com Inc.", "Savethename.com LLC", "SBSNames, Incorporated", "Scipio Africanus, LLC", "Searchnresq, Inc.", "Secondround Names LLC", "Secura GmbH", "Sedo.com LLC", "Server Plan Srl", "Service Development Center of the State Commission Office for Public Sector Reform", "Seymour Domains, LLC", "Shanghai Best Oray Information S&T Co., Ltd.", "Shanghai Meicheng Technology Information Development Co., Ltd.", "Shanghai Oweb Network Co., Ltd", "Shanghai Yovole Networks, Inc.", "Sharkweek Domains LLC", "Shenzhen Esin Technology Co., Ltd", "Shenzhen HuLianXianFeng Technology Co.,LTD", "Shenzhen Internet Works Online Technology Co., Ltd. (62.com)", "Shining Star Domains, LLC", "Shinjiru MSC Sdn Bhd", "Sibername Internet and Software Technologies Inc.", "SicherRegister, Incorporated", "SiliconHouse.Net Pvt Ltd.", "Silver Domain Names LLC", "Silverbackdomains.com LLC", "Sipence, Inc.", "Sir Lancelot du Lac, LLC", "Sitefrenzy.com LLC", "SiteName Ltd.", "Sksa Technology Co., Limited", "Skykomishdomains.com LLC", "Slamdunk Domains LLC", "Sliceofheaven Domains, LLC", "Slow Motion Domains LLC", "Slow Putt Domains LLC", "Small Business Names and Certs, Incorporated", "Small World Communications, Inc.", "Snag Your Name LLC", "Snappyregistrar.com LLC", "Snapsource LLC", "Snoqulamiedomains.com LLC", "Soaring Eagle Domains, LLC", "Socrates 888, LLC", "SoftLayer Technologies, Inc.", "Soldierofonedomains.com, LLC", "Soluciones Corporativas IP, SL", "Sourced Domains, LLC", "SouthNames Inc.", "Soyouwantadomain.com LLC", "Spartacus, LLC", "SQUIDSAILERDOMAINS.COM, LLC", "Sssasss, Incorporated", "Sterling Domains LLC", "Stichting Registrar of Last Resort Foundation", "Stork Registry Inc.", "Stormbringer, LLC", "Straight 8 Domains, LLC", "Streamline Domains, LLC", "Sugar Cube Domains, LLC", "Sun Tzu 888, LLC", "Super Name World, Inc.", "Super Registry Ltd", "SW Hosting & Communications Technologies SL dba Serveisweb", "Swedish Domains AB", "Switchplus Ltd", "Swordfish Domains LLC", "Synergy Wholesale Pty Ltd", "Taiwan Network Information Center", "Taka Enterprise Ltd", "Tan Tran, LLC", "Targeted Drop Catch LLC", "Tech Tyrants, Inc.", "Tecnocrática Centro de Datos, S.L.", "Tecnologia, Desarrollo Y Mercado S. de R.L. de C.V.", "The Domains LLC", "The Registrar Company B.V.", "The Registrar Service, Inc.", "The Registry at Info Avenue, LLC d/b/a Spirit Communications", "TheNameCo LLC", "Theseus 888, LLC", "ThirdFloorDNS.com LLC", "Thirdroundnames LLC", "Thomas Edison, LLC", "Thomas Jefferson, LLC", "Threadagent.com, Inc.", "Threadwalker.com, Inc.", "Threadwatch.com, Inc.", "Threadwise.com, Inc.", "Threepoint Domains LLC", "Tianjin Zhuiri Science and Technology Development Co Ltd.", "TierraNet Inc. d/b/a DomainDiscover", "Tiger Shark Domains, LLC", "Tiger Technologies LLC", "Tirupati Domains and Hosting Pvt Ltd.", "Titanic Hosting, Inc.", "Titus 888, LLC", "TLD Registrar Pty Ltd", "TLD Registrar Solutions Ltd.", "TLDS L.L.C. d/b/a SRSPlus", "Tname Group Inc.", "Todaynic.com, Inc.", "TOGLODO S.A.", "Tong Ji Ming Lian (Beijing) Technology Corporation Ltd. (Trename)", "Top Level Domains LLC", "Top Pick Names LLC", "Top Shelf Domains LLC", "Top Tier Domains LLC", "Topsystem, LLC", "Total Web Solutions Limited trading as TotalRegistrations", "TotallyDomain LLC", "Touchdown Domains LLC", "TPP Domains Pty Ltd. dba TPP Internet", "TPP Wholesale Pty Ltd", "Trade Starter, Inc.", "TradeNamed LLC", "Tradewinds Names, LLC", "Traffic Names, Incorporated", "TransIP B.V.", "TravelDomains, Incorporated", "Treasure Trove Domains LLC", "Tropic Management Systems, Inc.", "Trunkoz Technologies Pvt Ltd. d/b/a OwnRegistrar.com", "Tucows Domains Inc.", "Tuonome.it Srl d/b/a APIsrs.com", "Turbonames LLC", "TurnCommerce, Inc. DBA NameBright.com", "Tuvaludomains, LLC", "TWT S.p.A.", "Udamain.com LLC", "UdomainName.com LLC", "UK-2 Limited", "Ulfberht, LLC", "Ultra Registrar, Inc.", "Ulysses S. Grant, LLC", "Unified Servers, Inc.", "Uniregistrar Corp", "united-domains AG", "Unitedkingdomdomains, LLC", "Universal Registration Services, Inc. dba NewDentity.com", "Universo Online S/A (UOL)", "Unpower, Inc.", "Upperlink Limited", "URL Solutions, Inc.", "V12 Domains, LLC", "Variomedia AG dba puredomain.com", "Vautron Rechenzentrum AG", "Vedacore.com, Inc.", "VentraIP Australia Pty Ltd", "Verelink, Inc.", "Veritas Domains, LLC", "Vertex names.com, Inc.", "Victorynames LLC", "Vigson, Inc.", "Virtual Registrar, Inc.", "Virtucom Networks S.A.", "Visual Monster, Inc.", "VisualNames LLC", "Vitalwerks Internet Solutions, LLC DBA No-IP", "Vivid Domains, Inc.", "Vlad the Impaler, LLC", "Vo Nguyen Giap, LLC", "Vodien Internet Solutions Pte Ltd", "Web Business, LLC", "Web Commerce Communications Limited dba WebNic.cc", "Web Drive Ltd.", "Web Site Source, Inc.", "Web Werks India Pvt. Ltd d/b/a ZenRegistry.com", "Web4Africa Inc.", "Webagentur.at Internet Services GmbH d/b/a domainname.at", "Webair Internet Development, Inc.", "Webnames Limited", "Webnames.ca Inc.", "West263 International Limited", "WhatIsYourDomain LLC", "White Alligator Domains, LLC", "White Rhino Domains, LLC", "Whiteglove Domains, Incorporated", "Whois Networks Co., Ltd.", "WHT Co., Ltd", "Wide Left Domains LLC", "Wide Right Domains LLC", "Wild Bill Hickok, LLC", "Wild Bunch Domains, LLC", "Wild West Domains, LLC", "Wildzebradomains, LLC", "WillametteNames.com LLC", "William the Conqueror, LLC", "William Wallace, LLC", "Win Names LLC", "Wingu Networks, S.A. de C.V.", "Winston Churchill, LLC", "WIXI Incorporated", "World Biz Domains, LLC", "World4You Internet Services GmbH", "WorthyDomains LLC", "Xiamen ChinaSource Internet Service Co., Ltd", "Xiamen Dianmei Network Technology Co., Ltd.", "Xiamen Domains, Inc.", "Xiamen Nawang Technology Co., Ltd", "Xiamen Niucha Technology Co., Ltd.", "Xiamen Xin click Network Polytron Technologies Inc", "Xiamen Yuwang Technology Co., LTD", "Xin Net Technology Corporation", "Yellow Start, Inc.", "yenkos, LLC", "YouDamain.com LLC", "Your Domain Casa, LLC", "Your Domain King, Inc.", "Your Domain LLC", "Zeus 888, LLC", "Zhengzhou Business Technology Co., Ltd.", "Zhengzhou Century Connect Electronic Technology Development Co., Ltd", "Zhengzhou Zitian Network Technology Co., Ltd.", "Zhenjiang Aimingwang Information and Technology Co., Ltd", "Zhong Yu Network Technology Company Limited", "Zhuimi Inc", "ZigZagNames.com LLC", "Zinc Domain Names LLC", "ZNet Technologies Pvt Ltd.", "Zone Casting, Inc.", "Zone of Domains LLC", "ZoomRegistrar LLC", "Zulfigar, LLC");
         $data['error'] = '';
         $user_info = get_user_info(get_authenticateUserID());
         $data['domain_registrar'] = $user_info->domain_registrar;
@@ -7049,6 +6983,36 @@ class Home extends SPACULLUS_Controller {
 
         $this->template->write_view('header', $theme . '/common/header', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/home/domainmanagement', $data, TRUE);
+        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+        $this->template->render();
+    }
+
+    function barlistings($msg = "") {
+        $data = array();
+        $user_info = get_user_info(get_authenticateUserID());
+        if (get_authenticateUserID() == '') {
+            redirect('home');
+        }
+        if ($this->session->userdata('user_type') != 'bar_owner') {
+            redirect('home');
+        }
+
+        $theme = getThemeName();
+        $data['error'] = '';
+        $data["active_menu"] = '';
+        $data['site_setting'] = site_setting();
+        $theme = getThemeName();
+        $this->template->set_master_template($theme . '/template.php');
+
+        $data['getbardata'] = $this->home_model->get_bar_info(get_authenticateUserID());
+
+        $theme = getThemeName();
+        $this->template->set_master_template($theme . '/template.php');
+
+        $data['page_name'] = "barlistings";
+
+        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/bar_listings', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
