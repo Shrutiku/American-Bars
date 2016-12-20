@@ -712,7 +712,10 @@ if(file_exists(base_path().'upload/barlogo_225/'.$this->input->post('prev_bar_lo
 		$this->db->from('bars b');
 		$this->db->join('user_master u','u.user_id=b.owner_id','left');
 		
-		if($bar_type != "all" && $bar_type!='managed_bar' )
+                if ($bar_type == "claimed_bar") {
+                    $this->db->where("claim", "claimed");
+                }
+		else if($bar_type != "all" && $bar_type!='managed_bar' )
 		{
 			$this->db->where("bar_type",$bar_type);
 		}
