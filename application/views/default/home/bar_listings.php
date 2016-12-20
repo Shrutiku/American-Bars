@@ -27,7 +27,7 @@
                                 <p class="bar_add">Bar Address : <?php echo @$getbardata['address']; ?></p>
                                 <p class="bar_add">Bar City : <?php echo @$getbardata['city']; ?></p>
                                 <p class="bar_add">Bar State : <?php echo @$getbardata['state']; ?></p>
-                                <p class="bar_add">Bar Zip Code : <?php echo @$getbardata['zip']; ?></p>
+                                <p class="bar_add">Bar Zip Code : <?php echo @$getbardata['zipcode']; ?></p>
                                 <div class="col-sm-3">
                                     <label class="control-label">Bar Phone Number: <span class="aestrick"> * </span></label>
                                     </div>
