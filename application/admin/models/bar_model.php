@@ -683,7 +683,15 @@ if(file_exists(base_path().'upload/barlogo_225/'.$this->input->post('prev_bar_lo
 		$this->db->from('bars b');
 		$this->db->join('user_master u','u.user_id=b.owner_id','left');
 		
-		if($bar_type != "all" && $bar_type!='managed_bar' )
+                if ($bar_type == "half_mug_claimed_bar") {
+                    $where = "(b.bar_type='half_mug' AND ((b.owner_id IS NOT NULL AND b.owner_id!=0 AND u.status='active') OR (b.claim='claimed')))";
+                    $this->db->where($where);
+                }
+                else if ($bar_type == "half_mug_unclaimed_bar") {
+                    $where = "(b.bar_type='half_mug' AND (b.owner_id IS NULL OR u.status!='active') OR (b.owner_id=0 AND b.claim='unclaimed'))";
+                    $this->db->where($where);  
+                }
+		else if($bar_type != "all" && $bar_type!='managed_bar' )
 		{
 			$this->db->where("bar_type",$bar_type);
 		}
@@ -713,13 +721,12 @@ if(file_exists(base_path().'upload/barlogo_225/'.$this->input->post('prev_bar_lo
 		$this->db->join('user_master u','u.user_id=b.owner_id','left');
 		
                 if ($bar_type == "half_mug_claimed_bar") {
-                    $fields = array('b.bar_type' => 'half_mug', 'u.status' => 'active', 'b.owner_id !=' => 'NULL');
-                    $this->db->where($fields);
-                    $this->db->or_where('b.claim', 'claimed');
+                    $where = "(b.bar_type='half_mug' AND ((b.owner_id IS NOT NULL AND b.owner_id!=0 AND u.status='active') OR (b.claim='claimed')))";
+                    $this->db->where($where);
                 }
                 else if ($bar_type == "half_mug_unclaimed_bar") {
-                    $fields = array('b.bar_type' => 'half_mug', 'b.owner_id' => 'NULL', 'b.claim' => 'unclaimed');
-                    $this->db->where($fields);  
+                    $where = "(b.bar_type='half_mug' AND (b.owner_id IS NULL OR u.status!='active') OR (b.owner_id=0 AND b.claim='unclaimed'))";
+                    $this->db->where($where);  
                 }
 		else if($bar_type != "all" && $bar_type!='managed_bar' )
 		{
