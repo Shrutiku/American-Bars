@@ -712,10 +712,14 @@ if(file_exists(base_path().'upload/barlogo_225/'.$this->input->post('prev_bar_lo
 		$this->db->from('bars b');
 		$this->db->join('user_master u','u.user_id=b.owner_id','left');
 		
-                if ($bar_type == "claimed_bar") {
-                    $fields = array('u.status' => 'active', 'b.owner_id !=' => 'NULL');
+                if ($bar_type == "half_mug_claimed_bar") {
+                    $fields = array('b.bar_type' => 'half_mug', 'u.status' => 'active', 'b.owner_id !=' => 'NULL');
                     $this->db->where($fields);
                     $this->db->or_where('b.claim', 'claimed');
+                }
+                else if ($bar_type == "half_mug_unclaimed_bar") {
+                    $fields = array('b.bar_type' => 'half_mug', 'b.owner_id' => 'NULL', 'b.claim' => 'unclaimed');
+                    $this->db->where($fields);  
                 }
 		else if($bar_type != "all" && $bar_type!='managed_bar' )
 		{

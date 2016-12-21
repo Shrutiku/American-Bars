@@ -148,8 +148,13 @@ $(document).ready(function(){
 								</a>			
 							</li>
                                                         <li>
-								<a href="<?php echo site_url('bar/list_bar/claimed_bar') ?>" <?php echo (isset($uri[2]) && $uri[2]=='claimed_bar')?'class="active"':''; ?>>
-									<span class="title">Claimed bars</span>
+								<a href="<?php echo site_url('bar/list_bar/half_mug_claimed_bar') ?>" <?php echo (isset($uri[2]) && $uri[2]=='claimed_bar')?'class="active"':''; ?>>
+									<span class="title">Half Mug Claimed bars</span>
+								</a>			
+							</li>
+                                                                                        <li>
+								<a href="<?php echo site_url('bar/list_bar/half_mug_unclaimed_bar') ?>" <?php echo (isset($uri[2]) && $uri[2]=='claimed_bar')?'class="active"':''; ?>>
+									<span class="title">Half Mug Unclaimed bars</span>
 								</a>			
 							</li>
 							
