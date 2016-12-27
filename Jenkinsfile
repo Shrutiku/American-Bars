@@ -1,10 +1,10 @@
 
 node {
 	if (env.ENV_NAME == 'sandbox') {
-            build '/var/lib/jenkins/userContent/devops/Jenkinsfile.sandbox'
+            build job: '/var/lib/jenkins/userContent/devops/Jenkinsfile.sandbox'
         } else if (env.ENV_NAME == 'stage') {
-            build '/var/lib/jenkins/userContent/devops/Jenkinsfile.stage'
+            build job: '/var/lib/jenkins/userContent/devops/Jenkinsfile.stage'
         } else if (env.ENV_NAME == 'prod') {
-            build '/var/lib/jenkins/userContent/devops/Jenkinsfile.prod'
+            build job: '/var/lib/jenkins/userContent/devops/Jenkinsfile.prod'
         }
 }
