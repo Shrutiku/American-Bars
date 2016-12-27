@@ -1,0 +1,14 @@
+
+node {
+	stage 'Pull Stage'
+		checkout scm
+
+	stage 'Rebase Stage'
+		sh '/var/lib/jenkins/userContent/devops/rebase_stage_webapp.sh'
+
+	stage 'Build Stage'
+		sh './build-all'
+
+	stage 'Deploy Stage'
+		sh '/var/lib/jenkins/userContent/devops/deploy_sandbox_webapp.sh'
+}
