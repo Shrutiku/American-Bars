@@ -15,30 +15,6 @@
     }
 </style>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $('#bar_category').select2({
-            placeholder: "Select Bar Type Categories",
-            allowClear: true
-        });
-//===== Usual validation engine=====//
-        $("#step_1").validate({
-            rules: {
-                // bar_meta_title: {
-                // required: true,
-                // },
-                // bar_meta_keyword: {
-                // required: true,
-                // },
-                // bar_meta_description: {
-                // required: true,
-                // },					
-                errorClass: 'error fl_right'
-            }
-        });
-    });
-</script>
 <!-- ########################################################################################### -->
 <!-- content -->
 <?php
@@ -127,7 +103,7 @@ if ($msg != "" && $msg != "1V1" && !is_numeric($msg)) {
                                     <p class="bar_add">Bar Name : <?php echo @$bar_title; ?></p>
                                 <div class="clearfix"></div>
                                     <p class="bar_add">Bar Address : <?php echo @$address; ?></p>
-                                    <p class="bar_add">City : <?php echo $city; ?></p>
+                                    <p class="bar_add">City : <?php echo @$city; ?></p>
                                 <div class="clearfix"></div>
                                     <p class="bar_add">State : <?php echo @$state; ?></p>
                                 <div class="clearfix"></div>
@@ -137,16 +113,16 @@ if ($msg != "" && $msg != "1V1" && !is_numeric($msg)) {
                                 <div class="clearfix"></div>
                                 <p class="bar_add col-sm-12"</p>
                                 
-                                <p class="bar_add yellow_title">We're almost done. We'll send an activation code via SMS to your mobile phone.</p>
+                                <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
 
                                 <div class="clearfix"></div>
                                 <div class="col-sm-3" style="text-align: left;">
                                     <label class="control-label">Phone Number: <span class="aestrick"> * </span></label>
                                     </div>
                                     <div class="input_box col-sm-3">
-                                        <input type="text" class="form-control form-pad" id="phone" name="phone" style="width:150px">
+                                        <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
                                     </div>    
-                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Send</button>
+                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Verify</button>
                                     <!-- </div> -->
                                     <div class="clearfix"></div>  
                                 </div>
@@ -156,14 +132,13 @@ if ($msg != "" && $msg != "1V1" && !is_numeric($msg)) {
                                 <!-- <div class="col-sm-7 mart10"> -->
 
                                 <a class="btn btn-lg btn-primary btn-next pull-left" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
-                                <button class="btn btn-lg btn-primary btn-next next-right"  type="submit" name="submit"  id="submit" />Next <i class="next-arrow-icon"></i></button>
                                 <!-- </div> -->
                                 <div class="clearfix"></div>
                             </div>
 
                             <input type="hidden" name="temp_id" id="temp_id" value="<?php echo @$getbardata['temp_id'] ?>" />
                             <input type="hidden" name="user_id" id="user_id" value="" />
-                            <input type="hidden" name="bar_id" id="bar_id" value="<?php echo $bar_id; ?>" />
+                            <input type="hidden" name="bar_id" id="bar_id" value="<?php echo @$bar_id; ?>" />
                             <input type="hidden" name="new_bar_id" id="new_bar_id" value="<?php echo $new_bar_id; ?>" />
 
                         </form>
@@ -174,130 +149,3 @@ if ($msg != "" && $msg != "1V1" && !is_numeric($msg)) {
     </div>
 </div>
 <!-- ************************************************************************ -->
-
-
-<script>
-    $(document).ready(function () {
-        $('.tags').autocomplete({
-
-            source: function (request, response) {
-                $.ajax({
-                    url: '<?php echo site_url('bar/auto_suggest_bar_lab/'); ?>',
-                    dataType: "json",
-                    data: {
-                        em: request.term,
-                    },
-                    success: function (data) {
-                        if (data == '')
-                        {
-                            $("#first_name1").val('');
-                            $("#last_name1").val('');
-                            $("#email1").val('');
-                            $("#address1").val('');
-                            $("#city1").val('');
-                            $("#state1").val('');
-                            $("#zipcode1").val('');
-                            $("#desc").val('');
-                            //$("#submit").removeattr('disabled','disabled');
-                            $('#submit').prop("disabled", false);
-                            if ($("#first_name1").val('') != '')
-                            {
-                                $("#first_name1").prop("disabled", false);
-                            }
-                            if ($("#last_name1").val('') != '')
-                            {
-                                $("#last_name1").prop("disabled", false);
-                            }
-
-                            //  $("#email1").prop("disabled", false); 
-                            if ($("#address1").val('') != '')
-                            {
-                                $("#address1").prop("disabled", false);
-                            }
-                            if ($("#city1").val('') != '')
-                            {
-                                $("#city1").prop("disabled", false);
-                            }
-                            if ($("#state1").val('') != '')
-                            {
-                                $("#state1").prop("disabled", false);
-                            }
-                            //  $("#desc").prop("disabled", false); 
-
-                            if ($("#zipcode1").val('') != '')
-                            {
-                                $("#zipcode1").prop("disabled", false);
-                            }
-
-                            //$("#submit").attr('enabled','enabled');
-                        }
-                        response($.map(data, function (item) {
-                            return {
-                                label: item.label,
-                                id: item.id,
-                                value: item.value
-                            }
-                        }));
-                    }
-                });
-            },
-            select: function (event, ui) {
-                //	alert(ui.item.id);
-
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url('bar/getbarinfoByID') ?>",
-                    data: {id: ui.item.id},
-                    dataType: 'JSON',
-                    success: function (response) {
-
-                        $("#first_name1").val(response.bar_first_name);
-                        $("#last_name1").val(response.bar_last_name);
-                        $("#email1").val(response.email);
-                        $("#address1").val(response.address);
-                        $("#city1").val(response.city);
-                        $("#state1").val(response.state);
-                        $("#desc").val(response.bar_desc);
-                        $("#zipcode1").val(response.zipcode);
-                        if (response.bar_first_name != '')
-                        {
-                            $("#first_name1").attr('disabled', 'disabled');
-                        }
-                        if (response.bar_last_name != '')
-                        {
-                            $("#last_name1").attr('disabled', 'disabled');
-                        }
-
-                        //  $("#email1").prop("disabled", false); 
-                        if (response.address != '')
-                        {
-                            $("#address1").attr('disabled', 'disabled');
-                        }
-                        if (response.city != '')
-                        {
-                            $("#city1").attr('disabled', 'disabled');
-                        }
-                        if (response.state != '')
-                        {
-                            $("#state1").attr('disabled', 'disabled');
-                        }
-                        //  $("#desc").prop("disabled", false); 
-
-                        if (response.zipcode != '')
-                        {
-                            $("#zipcode1").attr('disabled', 'disabled');
-                        }
-                        //$("#submit").attr('disabled','disabled');
-
-                    }
-                });
-
-                //  $("#to_user_id1").val(ui.item.id);  // ui.item.value contains the id of the selected label
-            },
-            autoFocus: true,
-            minLength: 0
-        });
-
-
-    });
-</script>	

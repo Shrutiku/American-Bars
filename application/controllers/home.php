@@ -1,6 +1,9 @@
 <?php
 
 require(APPPATH . 'PayPal-PHP-SDK/paypal/rest-api-sdk-php/sample/bootstrap.php');
+require_once(APPPATH . 'libraries/Twilio/autoload.php');
+require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
+
 
 // require(APPPATH.'Paypal/bootstrap.php');
 // //require(APPPATH.'PayPal/vendor/autoload.php');
@@ -18,6 +21,8 @@ use PayPal\Api\Payer;
 use PayPal\Api\Payment;
 use PayPal\Api\FundingInstrument;
 use PayPal\Api\Transaction;
+
+use Twilio\Rest\Client as TwilioClient;
 
 require(APPPATH . 'Paypal-PayFlow-API-Wrapper-Class-master/Class.PayFlow.php');
 
@@ -4868,26 +4873,15 @@ class Home extends SPACULLUS_Controller {
             $this->session->set_userdata(array('viewid_orig' => $bar_id_orig));
             $data['getbardata'] = $this->home_model->getBarData($bar_id_orig);
 
-            //echo $this->session->userdata('viewid_orig');
-            //print_r($data['getbardata']);
-
-            $data["email"] = $data['getbardata']['email'];
             $data["bar_id"] = $data['getbardata']['bar_id'];
             $data["bar_title"] = $data['getbardata']['bar_title'];
-            //$data["first_name"] = $data['getbardata']['first_name'];
-            //$data["last_name"] = $data['getbardata']['last_name'];
             $data["address"] = $data['getbardata']['address'];
             $data["city"] = $data['getbardata']['city'];
             $data["zip"] = $data['getbardata']['zipcode'];
-            $data["bar_category"] = $data['getbardata']['bar_category'];
             $data["state"] = $data['getbardata']['state'];
             $data["bar_meta_title"] = $data['getbardata']['bar_meta_title'];
             $data["bar_meta_keyword"] = $data['getbardata']['bar_meta_keyword'];
             $data["bar_meta_description"] = $data['getbardata']['bar_meta_description'];
-            //$data["zip"] = $data['getbardata']['zip'];
-            //$data["desc"] = $data['getbardata']['desc'];
-            //$bar_id = $this->session->userdata('viewid_orig');
-            //$barid= $this->home_model->register_bar_owner($bar_id);
         } else {
             $bar_id = $this->session->userdata('viewid');
         }
@@ -4898,12 +4892,8 @@ class Home extends SPACULLUS_Controller {
 
             $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
             $data["email"] = $data['getbardata']['email'];
-            $data["bar_title"] = $data['getbardata']['bar_title'];
-            $data["first_name"] = $data['getbardata']['first_name'];
-            $data["last_name"] = $data['getbardata']['last_name'];
+            $data["bar_title"] = $data['getbardata']['bar_title'];   
             $data["address"] = $data['getbardata']['address'];
-            $data["bar_category"] = $data['getbardata']['bar_category'];
-
             $data["city"] = $data['getbardata']['city'];
             $data["state"] = $data['getbardata']['state'];
             $data["zip"] = $data['getbardata']['zip'];
@@ -4921,19 +4911,8 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('email', 'Email', 'required|callback_email_check_baruser');
-        $this->form_validation->set_rules('bar_title', 'Bar Title', 'required|callback_bartitle_check');
-        $this->form_validation->set_rules('first_name', 'First Name', 'required');
-        $this->form_validation->set_rules('last_name', 'Last Name', 'required');
-        $this->form_validation->set_rules('address', 'Address', 'required');
-        $this->form_validation->set_rules('city', 'City', 'required');
-        $this->form_validation->set_rules('state', 'State', 'required');
-        $this->form_validation->set_rules('zip', 'Zip Code', 'required|numeric');
-        //$this->form_validation->set_rules('desc', 'Description', 'required');
-        //$this->form_validation->set_rules('bar_meta_title', 'Meta Title', 'required');
-        //$this->form_validation->set_rules('bar_meta_keyword', 'Meta Keyword', 'required');
-        //$this->form_validation->set_rules('bar_meta_description', 'Meta Description', 'required');
+        
+        $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
 
         if ($_POST) {
             if ($this->form_validation->run() == FALSE) {
@@ -4941,33 +4920,41 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = validation_errors();
                 } else {
                     $data["error"] = "";
-                }
-
-
+                }           
+                
                 $data["email"] = $this->input->post('email');
                 $data["bar_id"] = $this->input->post('bar_id');
-                $data["new_bar_id"] = $this->input->post('new_bar_id');
-                $data["bar_title"] = $this->input->post('bar_title');
-                $data["first_name"] = $this->input->post('first_name');
-                $data["last_name"] = $this->input->post('last_name');
-                $data["address"] = $this->input->post('address');
-                $data["city"] = $this->input->post('city');
-                $data["state"] = $this->input->post('state');
-                $data["bar_category"] = $this->input->post('bar_category');
-
-                $data["zip"] = $this->input->post('zip');
-                $data["desc"] = $this->input->post('desc');
-                $data["bar_meta_title"] = $this->input->post('bar_meta_title');
-                $data["bar_meta_keyword"] = $this->input->post('bar_meta_keyword');
-                $data["bar_meta_description"] = $this->input->post('bar_meta_description');
+                $data["phone_number"] = $this->input->post('phone_number');
+                
+                 $data["bar_meta_title"] = $this->input->post('bar_meta_title');
+-                $data["bar_meta_keyword"] = $this->input->post('bar_meta_keyword');
+-                $data["bar_meta_description"] = $this->input->post('bar_meta_description');
             } else {
+                
+                $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
+                $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
+                $client = new TwilioClient($account_sid, $auth_token);
+                $phone_number = $this->input->post('phone_number');
+                $claim_code = rand(100000, 999999);
+                $claim_code_update = array('claim_code' => $this->input->post('facebook_link'));
+
+                $this->db->where('bar_id', $this->input->post('bar_id'));
+                $this->db->update('bars', $claim_code_update);
+                $client->account->messages->create($phone_number,
+                    array(  
+                        'from' => '+14243321657',
+                        'body' => $claim_code,
+                    )
+                );
+                
                 if ($this->input->post('temp_id') == "") {
-                    $barid = $this->home_model->claim_register_bar_owner();
-                    redirect('home/claimbar_registration_step2/' . $this->input->post('new_bar_id') . "/" . base64_encode($barid));
+                    $barid = $this->input->post('bar_id');
+                    redirect('home/claimbar_verify_code/' . "/" . base64_encode($barid));
                 } else {
-                    $barid = $this->home_model->register_bar_owner_update();
-                    redirect('home/claimbar_registration_step2/' . $this->input->post('new_bar_id') . "/" . base64_encode($this->input->post('temp_id')));
-                }
+                    $barid = $this->input->post('temp_id');
+                    redirect('home/claimbar_verify_code/' . "/" . base64_encode($barid));
+
+                }                
             }
         }
         //echo $data["bar_category"];
@@ -4977,15 +4964,11 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function claimbar_registration_step2($new_bar_id = '', $bar_id = '') {
-
-
-        if (check_user_authentication() != '' || $new_bar_id == '') {
+    function claimbar_verify_code($bar_id = '') {
+        if (check_user_authentication() != '') {
             redirect('home');
         }
-
-        $data['new_bar_id'] = $new_bar_id;
-
+        
         if ($bar_id != "") {
             //echo "fsa";
             $bar_id = base64_decode($bar_id);
@@ -4994,10 +4977,6 @@ class Home extends SPACULLUS_Controller {
         } elseif ($this->session->userdata('viewid') != "") {
             $bar_id = $this->session->userdata('viewid');
         }
-        // print_r($this->session->all_userdata());
-        // echo $this->session->userdata('viewid')."fsd";
-        // die;
-
 
         $theme = getThemeName();
         $data['error'] = '';
@@ -5017,8 +4996,6 @@ class Home extends SPACULLUS_Controller {
             $data['getbardatafeature_new'] = $data['getbardatafeature']['feature_id'];
         }
 
-
-
         $page_detail = meta_setting();
         $pageTitle = $page_detail->title;
         $metaDescription = $page_detail->meta_description;
@@ -5029,8 +5006,14 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('btype', 'Free Listing Or Paid Listing', 'required');
-
+        $this->db->where('bar_id', $bar_id);
+        $bar_info = $this->db->get('bars')->row();
+        if ($bar_info != NULL)
+        {
+            $code = $bar_info->claim_code;
+        }
+        
+        $this->form_validation->set_rules('code', 'Verification Code is invalid', 'required|matches[' . $code . ']');
 
         if ($_POST) {
             if ($this->form_validation->run() == FALSE) {
@@ -5040,23 +5023,12 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
             } else {
-                if ($this->input->post('bar_feature_id') == "") {
-                    // print_r($this->session->all_userdata());
-                    // echo $this->session->userdata('viewid')."fsd";
-                    // die;
-
-                    $barid_new = $this->home_model->register_bar_owner_features();
-                    redirect('home/claimbar_registration_step3/' . $this->input->post('new_bar_id'));
-                } else {
-
-                    $barid_new = $this->home_model->register_bar_owner_features_update();
-                    redirect('home/claimbar_registration_step3/' . $this->input->post('new_bar_id'));
-                }
+                 redirect('home/claimbar_registration_email/' . $this->input->post('new_bar_id'));
             }
         }
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/claimbar_registration_step2', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/claim_bar_owner_verify_code', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
