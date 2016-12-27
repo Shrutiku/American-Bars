@@ -1,0 +1,15 @@
+a:15:{i:0;d:1.3794E+5;i:1;s:18:"beer/detail/legend";i:2;i:0;i:3;i:42229;i:4;i:501312862;i:5;i:72;i:6;s:11:"16,781.4 Kb";i:7;i:41855;i:8;i:0;i:9;d:10592;i:10;d:10.311;i:11;i:4762;i:12;a:0:{}i:13;s:280:"[9.02s] pre1 = 0.00s 
+ pre2a = 0.00s 
+ pre2b = 0.00s 
+ extract = 5.22s 
+ analyze = 0.76s 
+ parse = 0.00s 
+ llist = 0.01s 
+ post = 0.00s 
+ post-save1 = 0.00s 
+ post-save2 = 0.00s 
+ post-progress1 = 0.00s 
+ post-progress2 = 0.00s 
+ post-progress3 = 0.00s 
+ post-progress4 = 3.03s 
+ ";i:14;a:1:{s:8:"smcreate";a:3:{i:0;s:4:"html";i:1;i:32801;i:2;i:41855;}}}

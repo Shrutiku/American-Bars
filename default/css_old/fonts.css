@@ -1,0 +1,180 @@
+/*@font-face {
+	font-family: 'FuturaLT-CondensedLight';
+	src: url('FuturaLT-CondensedLight.eot?') format('eot'), 
+	     url('FuturaLT-CondensedLight.woff') format('woff'), 
+	     url('FuturaLT-CondensedLight.ttf')  format('truetype'),
+	     url('FuturaLT-CondensedLight.svg#FuturaLT-CondensedLight') format('svg');
+}*/
+
+@font-face {
+        font-family: "Futura LT CondensedLight";
+        src: url('438110352-Futura-LT-Condensed-Light.eot');
+        src: url('438110352-Futura-LT-Condensed-Light.eot?#iefix') format('embedded-opentype'),
+        url('438110352-Futura-LT-Condensed-Light.svg#Futura LT CondensedLight') format('svg'),
+        url('438110352-Futura-LT-Condensed-Light.woff') format('woff'),
+        url('438110352-Futura-LT-Condensed-Light.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: "Futura LT CondensedLight";
+       url('FuturaLT-CondensedLight.woff') format('woff')
+       
+    }
+    
+@font-face {
+    font-family: 'futura_md_btmedium';
+    src: url('tt0142m-webfont.eot');
+    src: url('tt0142m-webfont.eot?#iefix') format('embedded-opentype'),
+         url('tt0142m-webfont.woff') format('woff'),
+         url('tt0142m-webfont.ttf') format('truetype'),
+         url('tt0142m-webfont.svg#futura_md_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('opensans-light_0-webfont.eot');
+    src: url('opensans-light_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-light_0-webfont.woff') format('woff'),
+         url('opensans-light_0-webfont.ttf') format('truetype'),
+         url('opensans-light_0-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('opensans-regular_1-webfont.eot');
+    src: url('opensans-regular_1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-regular_1-webfont.woff2') format('woff2'),
+         url('opensans-regular_1-webfont.woff') format('woff'),
+         url('opensans-regular_1-webfont.ttf') format('truetype'),
+         url('opensans-regular_1-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('opensans-semibold_0-webfont.eot');
+    src: url('opensans-semibold_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-semibold_0-webfont.woff2') format('woff2'),
+         url('opensans-semibold_0-webfont.woff') format('woff'),
+         url('opensans-semibold_0-webfont.ttf') format('truetype'),
+         url('opensans-semibold_0-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanscondensed_light';
+    src: url('opensans-condlight-webfont.eot');
+    src: url('opensans-condlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-condlight-webfont.woff2') format('woff2'),
+         url('opensans-condlight-webfont.woff') format('woff'),
+         url('opensans-condlight-webfont.ttf') format('truetype'),
+         url('opensans-condlight-webfont.svg#open_sanscondensed_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'scadaregular';
+    src: url('scada-regular-webfont.eot');
+    src: url('scada-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('scada-regular-webfont.woff2') format('woff2'),
+         url('scada-regular-webfont.woff') format('woff'),
+         url('scada-regular-webfont.ttf') format('truetype'),
+         url('scada-regular-webfont.svg#scadaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'scadabold';
+    src: url('scada-bold-webfont.eot');
+    src: url('scada-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('scada-bold-webfont.woff2') format('woff2'),
+         url('scada-bold-webfont.woff') format('woff'),
+         url('scada-bold-webfont.ttf') format('truetype'),
+         url('scada-bold-webfont.svg#scadabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'abelregular';
+    src: url('abel-regular-webfont.eot');
+    src: url('abel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('abel-regular-webfont.woff2') format('woff2'),
+         url('abel-regular-webfont.woff') format('woff'),
+         url('abel-regular-webfont.ttf') format('truetype'),
+         url('abel-regular-webfont.svg#abelregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'new_academynew_academy';
+    src: url('new_academy-webfont.eot');
+    src: url('new_academy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('new_academy-webfont.woff2') format('woff2'),
+         url('new_academy-webfont.woff') format('woff'),
+         url('new_academy-webfont.ttf') format('truetype'),
+         url('new_academy-webfont.svg#new_academynew_academy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dosisregular';
+    src: url('dosis-regular-webfont.eot');
+    src: url('dosis-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dosis-regular-webfont.woff2') format('woff2'),
+         url('dosis-regular-webfont.woff') format('woff'),
+         url('dosis-regular-webfont.ttf') format('truetype'),
+         url('dosis-regular-webfont.svg#dosisregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'dosismedium';
+    src: url('dosis-medium-webfont.eot');
+    src: url('dosis-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dosis-medium-webfont.woff2') format('woff2'),
+         url('dosis-medium-webfont.woff') format('woff'),
+         url('dosis-medium-webfont.ttf') format('truetype'),
+         url('dosis-medium-webfont.svg#dosismedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dosissemibold';
+    src: url('dosis-semibold-webfont.eot');
+    src: url('dosis-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dosis-semibold-webfont.woff2') format('woff2'),
+         url('dosis-semibold-webfont.woff') format('woff'),
+         url('dosis-semibold-webfont.ttf') format('truetype'),
+         url('dosis-semibold-webfont.svg#dosissemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

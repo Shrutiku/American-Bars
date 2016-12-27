@@ -1,0 +1,136 @@
+﻿<html>
+<head><title>
+	Sign Up form
+</title><meta charset="UTF-8">
+    <style type="text/css">
+        .ErrorMessageArea { padding: 10px 0 10px 10px; color: Red; font-family: Times New Roman, Arial, Sans-Serif; font-size: large; }
+        .formContainer { margin: 0 auto !important; width: 480px !important; }
+        form { display: block; overflow: auto; margin-left:0; padding: 0 12px 5px 0; }
+        #gridContainer { overflow:auto; }
+        .MailingListSection { margin-left:13px; margin-top:5px; }
+        #FormFieldsTable label { width: 10em;}
+        label.error { white-space:nowrap; display:block; color: red; padding-left: .5em; vertical-align: top; padding:2px }
+        .submit { margin-left: 12em; }
+        em { font-weight: bold; padding-right: 1em; vertical-align: top; }
+        .ui-datepicker-trigger { margin-left: 4px;}
+        .MailingListSection { text-align:left; padding:8px 1px 1px 0; }
+        .MailingListSection div { padding: 0 0 0 7px; }
+        .MailingListHeader { margin-bottom:5px; }
+        .LanguageDropdown { width: 480px !important; margin: 0 auto !important; height: 30px;}
+        .LanguageDropdownList { float:right; }
+    </style>
+    <link href="https://media.campaigner.com/csb/styles/jqueryui/themes/redmond/jquery-ui-1.8.2.css" rel="stylesheet" type="text/css">
+        <script src="https://media.campaigner.com/csb/scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<!-- Library that ensure jQuery backword compability  -->
+		<script src="https://media.campaigner.com/csb/scripts/jquery-migrate-1.2.min.js" type="text/javascript"></script>
+        <script src="https://media.campaigner.com/csb/scripts/jquery.validate.js" type="text/javascript"></script>
+        <script src="https://media.campaigner.com/csb/scripts/jquery-ui-1.8.23.min.js" type="text/javascript"></script>
+    
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //
+            $("#previewForm").validate({
+                errorPlacement: function (error, element) {
+                    if (element.next(".ui-datepicker-trigger").length > 0)
+                        error.insertAfter(element.next(".ui-datepicker-trigger"));
+                    else
+                        error.insertAfter(element);
+                },
+                rules:
+                {
+                    confirmEmail: {
+                        equalTo: "#4798718"
+                    }
+                },
+                messages:
+                {
+                    confirmEmail: "Email addresses do not match."
+                }
+            })
+
+            //Localize validation message
+            $.validator.messages.email = "Please enter a valid email address";
+            $.validator.messages.required = "This field is required";
+            $.validator.messages.date = "Please enter a valid date.";
+            $.validator.messages.number = "Please enter a valid number.";
+            //
+            $(".datepicker").datepicker({ showOn: 'button', buttonImage: 'https://secure.campaigner.com/CSB/images/Toolbar/newAppointment.gif', buttonImageOnly: true, dateFormat: 'yy-mm-dd', constrainInput: true, changeMonth: true, changeYear: true, yearRange: "1900:+10", onSelect: function (dateText, inst) { inst.input.trigger("focus"); } });
+            var dateFormat = "yyyy-mm-dd";
+            $(".datepicker").attr("title", dateFormat).attr("format", dateFormat);
+
+            // Force the calender to stay hidden till it's being invoked through the calendar icon
+            $(".ui-helper-clearfix").css("display", "none");
+        });
+    </script>
+    </head>
+<body>
+    <form name="previewForm" method="post" action="https://secure.campaigner.com/CSB/Public/ProcessHostedForm.aspx" id="previewForm" enctype="multipart/form-data" target="_blank" novalidate="novalidate">
+
+
+<script type="text/javascript">
+//<![cdata[
+var theForm = document.forms['previewForm'];
+if (!theForm) {
+    theForm = document.previewForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+<style type="text/css">
+.radgrid {  color:#FFFFFF; font-family:Arial; font-size:14px; font-weight:normal; text-decoration:none; font-style:Bold; margin-left:25px;; }
+.SignupFormPreview { padding: 10px 0 0 10px; font-size:14px; color:#FFFFFF; font-family:Arial; font-weight:normal; text-align:center; font-style:Bold; text-decoration:none; }
+.btnStyle{background-color:#CA6919; color:#000000; }
+#PopupMasterContentArea{ width:380px; }
+</style>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5523BD75">
+</div>
+        <div id="previewWrapper" style="text-align:center">
+            
+            
+            
+
+            <div id="LanguageDropdown" class="LanguageDropdown">
+                    
+            </div>
+
+            <div id="formContainer" class="formContainer" style="margin:0 auto;border:3px solid #000000;background-color:#0c0c0c;">
+
+                <div id="SignupFormPreview" class="SignupFormPreview"><div id="1headerFormatedText"><p id="headerFormatedTextheaderText"></p><p style="text-align: center;"><img style="width: 100%; height: auto;" src="https://media.campaigner.com/media/51/511930/AB-black-v2.png?g=1440175130539" alt="AB-black-v2.png"></p>
+<h2 style="text-align: center;"><span style="color: #ffffff; background: none;">Join the American Bars Mailing List</span></h2><p></p></div><table id="FormFieldsTable" cellspacing="0" cellpadding="0"><tr id="Email4798718" align="left"><td valign="top"><span id="EmailLabel" class="SignupFormPreview" style="display:inline-block;width:100px;text-align:;display:inline;">Email:&nbsp;</span></td><td width="15px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAMAAABVLlSxAAAAXVBMVEUAAAD////////////////////////////////////////////////////////////////////zyrbxwKjvtZnsq4vqoHzli1/jgVHhdkLebDTcYSX21cX66uL99PBc6P2aAAAAEXRSTlMADhEiMERSVWN0d4WIlpm73UeV3VUAAABdSURBVHjaJcmJDoAgDAPQinjiCfNgk/3/ZzrjS5q0KUw172uLj3MjybWitqoaSM5lKzW6yBSFUj4mLKf88gavD7HIEcsAeHuy3NoDsMp62XBA83AKhWmECRq+VHgBhe4G4go4D1gAAAAASUVORK5CYII=" style="border-width:0px;"></td><td><input name="4798718" type="text" maxlength="500" id="4798718" class="required email" contactattributeid="4798718" style="width:200px;"></td></tr><tr><td></td><td></td></tr></table></div>
+
+                
+                
+                <div id="FooterPreview" class="SignupFormPreview"></div>
+                
+                <div id="btnSection" style="padding-bottom: 10px;">
+                    <span id="Label1" style="display:inline-block;width:105px;"></span>
+                        <div style="text-align:center;">
+                            <input type="submit" name="SubmitButton" value="Join now" id="SubmitButton" class="btnStyle">
+                        </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="FormInfo" id="FormInfo" value="87b4345f-776c-4298-b7e7-c6c7cb5b82c7">
+    
+
+
+</form>
+
+
+</body>
+</html>
