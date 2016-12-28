@@ -28,7 +28,7 @@
   <?php } */
 $v = 0;
 $getad_banner = '';
-$getad_banner = getadvertisementBannerSearchBar('bar_owner_verify_code');
+$getad_banner = getadvertisementBannerSearchBar('bar_owner_info');
 
 if ($getad_banner) {
     ?>
@@ -87,7 +87,7 @@ if ($getad_banner) {
                     <i class="strip login_icon"></i><div class="result_search_text">Registration</div>
                 </div>
                 <div>
-                    <h1 class="yellow_title padb10 br_bott_gray text-center padding-bottom-15">Verify Your Phone Number</h1>
+                    <h1 class="yellow_title padb10 br_bott_gray text-center padding-bottom-15">Account Information</h1>
                     
                     <div class="pad20">
 <?php
@@ -95,24 +95,38 @@ if ($error != "") {
     echo "<div class='error1 text-center'>" . $error . "</div>";
 }
 ?>
-                        <form class="form-horizontal" role="form" name="step_1" id="step_1" action="<?php echo site_url("home/claim_bar_owner_verify_code/" . $bar_id); ?>" method="post">
+                        <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("home/claimbar_owner_info/" . base64_encode($bar_id)); ?>" method="post">
                             <div class="padtb" style="text-align: left">
-                                <p class="bar_add">Please enter the code sent to your mobile phone:</p>
+                                <p class="bar_add">You're verified! We're are almost done!</p>
+                                <p class="bar_add">We're about to send you your account information.</p>
                                 <div class="clearfix"></div>
                                 <div class="col-sm-3" style="text-align: left;">
-                                    </div>
-                                    <div class="input_box col-sm-3">
-                                        <input type="text" class="form-control form-pad" id="code" name="code" style="width:150px">
-                                    </div>    
-                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Enter</button>
-                                    <!-- </div> -->
-                                    <div class="clearfix"></div>  
+                                <label class="control-label">Email: <span class="aestrick"> * </span></label>
                                 </div>
+                                <div class="input_box col-sm-3 padding-bottom-15">
+                                    <input type="text" class="form-control form-pad" id="email" name="email" style="width:150px">
+                                </div> 
+                                <div class="clearfix"></div>
+                                <div class="col-sm-3" style="text-align: left;">
+                                <label class="control-label">First Name: <span class="aestrick"> * </span></label>
+                                </div>
+                                <div class="input_box col-sm-3 padding-bottom-15">
+                                    <input type="text" class="form-control form-pad" id="firstname" name="firstname" style="width:150px">
+                                </div> 
+                                <div class="clearfix"></div>
+                                <div class="col-sm-3" style="text-align: left;">
+                                <label class="control-label">Last Name: <span class="aestrick"> * </span></label>
+                                </div>
+                                <div class="input_box col-sm-3">
+                                    <input type="text" class="form-control form-pad" id="lastname" name="lastname" style="width:150px">
+                                </div> 
                             </div>
-                            <div class="padtb8">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="padtb8">    
                                 <!-- <div class="col-sm-3"></div> -->
                                 <!-- <div class="col-sm-7 mart10"> -->
-
+                                <button class="btn btn-lg btn-primary btn-next pull-right"  type="submit" name="submit"  id="submit" />Send</button>
                                 <a class="btn btn-lg btn-primary btn-next pull-left" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
                                 <!-- </div> -->
                                 <div class="clearfix"></div>

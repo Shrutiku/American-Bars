@@ -4886,7 +4886,7 @@ class Home extends SPACULLUS_Controller {
             $bar_id = $this->session->userdata('viewid');
         }
 
-        if ($this->session->userdata('viewid') != '' || $bar_id != '') {
+        /*if ($this->session->userdata('viewid') != '' || $bar_id != '') {
             $bar_id = $this->session->userdata('viewid');
             $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
 
@@ -4901,7 +4901,7 @@ class Home extends SPACULLUS_Controller {
             $data["bar_meta_title"] = $data['getbardata']['bar_meta_title'];
             $data["bar_meta_keyword"] = $data['getbardata']['bar_meta_keyword'];
             $data["bar_meta_description"] = $data['getbardata']['bar_meta_description'];
-        }
+        }*/
         $page_detail = meta_setting();
         $pageTitle = $page_detail->title;
         $metaDescription = $page_detail->meta_description;
@@ -4931,30 +4931,36 @@ class Home extends SPACULLUS_Controller {
 -                $data["bar_meta_description"] = $this->input->post('bar_meta_description');
             } else {
                 
+                $bar_id = $this->input->post('bar_id');
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $this->input->post('phone_number');
                 $claim_code = rand(100000, 999999);
-                $claim_code_update = array('claim_code' => $this->input->post('facebook_link'));
-
-                $this->db->where('bar_id', $this->input->post('bar_id'));
-                $this->db->update('bars', $claim_code_update);
-                $client->account->messages->create($phone_number,
-                    array(  
-                        'from' => '+14243321657',
-                        'body' => $claim_code,
-                    )
-                );
+                $claim_code_update = array('claim_code' => $claim_code);
                 
-                if ($this->input->post('temp_id') == "") {
-                    $barid = $this->input->post('bar_id');
-                    redirect('home/claimbar_verify_code/' . "/" . base64_encode($barid));
-                } else {
-                    $barid = $this->input->post('temp_id');
-                    redirect('home/claimbar_verify_code/' . "/" . base64_encode($barid));
-
-                }                
+                try {
+                    $client->account->messages->create($phone_number,
+                        array(  
+                            'from' => '+14243321657',
+                            'body' => $claim_code,
+                        )
+                    );
+                                    
+                    $this->db->where('bar_id', $bar_id);
+                    $this->db->update('bars', $claim_code_update);
+                } catch (Exception $e) {
+                    $data["error"] = "Connectivity Error";
+                }
+                
+                if ($data["error"] == null) {
+                    if ($this->input->post('temp_id') == "") {
+                        redirect('home/claim_bar_owner_verify_code/' . "/" . base64_encode($bar_id));
+                    } else {
+                        $barid = $this->input->post('temp_id');
+                        redirect('home/claim_bar_owner_verify_code/' . "/" . base64_encode($bar_id));
+                    }       
+                }
             }
         }
         //echo $data["bar_category"];
@@ -4964,7 +4970,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function claimbar_verify_code($bar_id = '') {
+    function claim_bar_owner_verify_code($bar_id = '') {
         if (check_user_authentication() != '') {
             redirect('home');
         }
@@ -4990,12 +4996,6 @@ class Home extends SPACULLUS_Controller {
         $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
         $data['one_user'] = $this->home_model->get_availability($bar_id);
 
-
-        //echo $data['getbardatafeature']['feature_id'];
-        if ($data['getbardatafeature']) {
-            $data['getbardatafeature_new'] = $data['getbardatafeature']['feature_id'];
-        }
-
         $page_detail = meta_setting();
         $pageTitle = $page_detail->title;
         $metaDescription = $page_detail->meta_description;
@@ -5005,15 +5005,8 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-
-        $this->db->where('bar_id', $bar_id);
-        $bar_info = $this->db->get('bars')->row();
-        if ($bar_info != NULL)
-        {
-            $code = $bar_info->claim_code;
-        }
         
-        $this->form_validation->set_rules('code', 'Verification Code is invalid', 'required|matches[' . $code . ']');
+        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
 
         if ($_POST) {
             if ($this->form_validation->run() == FALSE) {
@@ -5023,7 +5016,21 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
             } else {
-                 redirect('home/claimbar_registration_email/' . $this->input->post('new_bar_id'));
+                $this->db->where('bar_id', $bar_id);
+                $bar_info = $this->db->get('bars')->row();
+                if ($bar_info != NULL) {
+                    $code = $bar_info->claim_code;
+                    
+                    if ($code == $this->input->post('code')) {
+                        redirect('home/claimbar_owner_info/' . base64_encode($bar_id));
+                    }
+                    else {
+                        $data["error"] = "Invalid verification code.";
+                    }  
+                }
+                else {
+                    $data["error"] = "Internal Error";   
+                }
             }
         }
 
@@ -5033,22 +5040,16 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function claimbar_registration_step3($new_bar_id = '') {
-
-        // print_r($this->session->all_userdata());
-        // echo $this->session->userdata('viewid')."fsd";
-        // die;
+    function claimbar_owner_info($bar_id = '') {
         $bar_id = $this->session->userdata('viewid');
 
-
-        if ($bar_id == '' || $new_bar_id == '') {
+        if ($bar_id == '') {
             redirect('home/bar_owner_register');
         }
 
         $theme = getThemeName();
         $data['error'] = '';
-        $data['bar_id'] = $bar_id;
-        $data['new_bar_id'] = $new_bar_id;
+        $data['bar_id'] = base64_decode($bar_id);
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
         $theme = getThemeName();
@@ -5056,13 +5057,6 @@ class Home extends SPACULLUS_Controller {
 
         $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
         $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
-
-
-        $count = 0;
-        if ($data['getbardatafeature']) {
-            $count = $data['getbardatafeature']['feature_id'];
-            //$count = count(explode(',',$count));
-        }
 
         $page_detail = meta_setting();
         $pageTitle = $page_detail->title;
@@ -5072,37 +5066,33 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-        $data['count'] = $count;
 
-
-        $this->form_validation->set_rules('choise_bar', 'Choise Bar', 'required');
+        $this->form_validation->set_rules('email', 'Email Address', 'required');
+        $this->form_validation->set_rules('firstname', 'First Name', 'required');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'required');
 
         if ($_POST) {
-
-            //$barid_new = $this->home_model->register_bar_owner_features();
-            if ($count > 0) {
-
-
-                redirect('home/claimbar_registration_step4/' . $this->input->post('new_bar_id'));
-            } else {
-
-                $slug = getBarSlug($data['getbardata']['bar_title']);
+            if ($this->form_validation->run() == FALSE) {
+                if (validation_errors()) {
+                    $data["error"] = validation_errors();
+                } else {
+                    $data["error"] = "";
+                }
+            } else {        
+                $firstname = $this->input->post('firstname');
+                $lastname = $this->input->post('lastname');
+                $email = $this->input->post('email');
                 $bar_id = $this->session->userdata('viewid');
                 $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
                 $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
                 $pass = randomCode();
                 $conf = rand('11111111', '99999999');
-                $data_insert['first_name'] = $data['getbardata']['first_name'];
-                $data_insert['last_name'] = $data['getbardata']['last_name'];
-                $data_insert['email'] = $data['getbardata']['email'];
-                $data_insert['gender'] = $data['getbardata']['gender'];
-                $data_insert['address'] = $data['getbardata']['address'];
-
-
+                $data_insert['first_name'] = $firstname;
+                $data_insert['last_name'] = $lastname;
+                $data_insert['email'] = $email;
                 $data_insert['status'] = 'inactive';
                 $data_insert['is_deleted'] = 'no';
                 $data_insert['user_type'] = 'bar_owner';
-
                 $data_insert['password'] = md5($pass);
                 $data_insert['confirm_code'] = $conf;
                 $data_insert['sign_up_ip'] = $_SERVER['REMOTE_ADDR'];
@@ -5110,174 +5100,96 @@ class Home extends SPACULLUS_Controller {
                 $this->db->insert('user_master', $data_insert);
                 $uid = mysql_insert_id();
                 $data['user_id'] = $uid;
-                //
 
-                if ($this->input->post('new_bar_id') != '') {
-                    $getlat = getCoordinatesFromAddress($data['getbardata']['address'], $data['getbardata']['city'], $data['getbardata']['state']);
-                    $data_insert_new["lat"] = $getlat['lat'];
-                    $data_insert_new["lang"] = $getlat['lng'];
+                $getlat = getCoordinatesFromAddress($data['getbardata']['address'], $data['getbardata']['city'], $data['getbardata']['state']);
+                $data_insert_new["lat"] = $getlat['lat'];
+                $data_insert_new["lang"] = $getlat['lng'];
 
-                    $data_insert_new['bar_title'] = $data['getbardata']['bar_title'];
-                    $data_insert_new['owner_name'] = $data['getbardata']['first_name'] . " " . $data['getbardata']['last_name'];
-                    $data_insert_new['email'] = $data['getbardata']['email'];
-                    $data_insert_new['owner_id'] = $uid;
-                    $data_insert_new['address'] = $data['getbardata']['address'];
-                    $data_insert_new['bar_desc'] = nl2br($data['getbardata']['desc']);
-                    $data_insert_new['city'] = $data['getbardata']['city'];
-                    $data_insert_new['bar_type'] = 'half_mug';
-                    //$datype
-                    $data_insert_new['owner_type'] = 'bar_owner';
-                    $data_insert_new['bar_slug'] = $slug;
-                    $data_insert_new['state'] = $data['getbardata']['state'];
-                    $data_insert_new['zipcode'] = $data['getbardata']['zip'];
-                    //$data_insert_new['status'] = 'inactive';
-                    $data_insert_new['bar_meta_title'] = $data['getbardata']['bar_meta_title'];
-                    $data_insert_new['bar_meta_keyword'] = $data['getbardata']['bar_meta_keyword'];
-                    $data_insert_new['date_added'] = date('Y-m-d H:i:s');
-                    $data_insert_new['bar_meta_description'] = $data['getbardata']['bar_meta_description'];
-                    $this->db->where('bar_id', $this->session->userdata('viewid_orig'));
+                $data_insert_new['owner_name'] = $firstname . " " . $lastname;
+                $data_insert_new['email'] = $email;
+                $data_insert_new['owner_id'] = $uid;       
+                $data_insert_new['owner_type'] = 'bar_owner';
+                $data_insert_new['bar_meta_title'] = $data['getbardata']['bar_meta_title'];
+                $data_insert_new['bar_meta_keyword'] = $data['getbardata']['bar_meta_keyword'];
+                $data_insert_new['date_added'] = date('Y-m-d H:i:s');
+                $data_insert_new['bar_meta_description'] = $data['getbardata']['bar_meta_description'];
+                $this->db->where('bar_id', $this->session->userdata('viewid_orig'));
 
-                    $this->db->update('bars', $data_insert_new);
-                    $bar_id = $this->session->userdata('viewid_orig');
+                $this->db->update('bars', $data_insert_new);
+                $bar_id = $this->session->userdata('viewid_orig');
 
-                    $data['one_user'] = $this->home_model->get_availability($bar_id);
-
-
-
-                    /* --------- E-mail To Super Admin ---- */
-
-                    $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Claim Bar'");
-                    $email_temp = $email_template->row();
-
-                    $email_address_from = $email_temp->from_address;
-                    $email_address_reply = $email_temp->reply_address;
-
-                    $email_subject = $email_temp->subject;
-                    $email_message = $email_temp->message;
-
-                    $email = getsuperadminemail();
-
-                    $barname = ucwords($data['getbardata']['bar_title']);
-                    $type = 'Half Mug';
-                    $username = ucwords($data['getbardata']['first_name']) . " " . ucwords($data['getbardata']['last_name']);
-                    $email_to = $email;
-
-                    $email_message = str_replace('{break}', '<br/>', $email_message);
-                    $email_message = str_replace('{barname}', $barname, $email_message);
-                    $email_message = str_replace('{type}', $type, $email_message);
-                    $email_message = str_replace('{username}', $username, $email_message);
-                    $str = $email_message;
-                    $getemail = explode(',', $email);
-                    if ($email_temp->status == 'active') {
-                        foreach ($getemail as $r) {
-                            email_send($email_address_from, $email_address_reply, $r, $email_subject, $str);
-                        }
-                    }
-                    //email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
-
-
-                    /* --------- E-mail To Super Admin ---- */
-
-                    if ($data['one_user']) {
-                        foreach ($data['one_user'] as $os) {
-
-                            if ($os->start_from != '') {
-                                $f = $os->start_from;
-                            } else {
-                                $f = '';
-                            }
-                            if ($os->start_to != '') {
-                                $t = $os->start_to;
-                            } else {
-                                $t = '';
-                            }
-                            if ($os->is_closed != '') {
-                                $c = $os->is_closed;
-                            } else {
-                                $c = '';
-                            }
-                            $ava_arr = array("bar_id" => $this->input->post('new_bar_id'),
-                                "days_id" => $os->days_id,
-                                "start_from" => $f,
-                                "start_to" => $t,
-                                "is_closed" => $c,
-                                "date_added" => date("Y-m-d H:i:s")
-                            );
-                            $this->db->insert("bar_hours", $ava_arr);
-                        }
-                    }
-                }
-
-                $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='SIGNUP BAR'");
-                $email_temp = $email_template->row();
-
-                $email_address_from = $email_temp->from_address;
-                $email_address_reply = $email_temp->reply_address;
-                $email_subject = $email_temp->subject;
-                $email_message = $email_temp->message;
-                $email = $data['getbardata']['email'];
-                $user_name = $data['getbardata']['first_name'] . " " . $data['getbardata']['last_name'];
-                //$activation_link = "<a href='".base_url()."home/activation/".$data_pass."'>here</a>";
-                $email_to = $email;
-                $email_message = str_replace('{break}', '<br/>', $email_message);
-                $email_message = str_replace('{user_name}', $user_name, $email_message);
-                //$email_message = str_replace('{email}', $email, $email_message);
-                //$email_message = str_replace('{password}', $pass, $email_message);
-                $email_message = str_replace('{activation_link}', $conf, $email_message);
-                $str = $email_message;
-                if ($email_temp->status == 'active') {
-                    email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
-                }
-                $getfull = gethalmugfeature('fullmug');
-
-
-                $getrecord = '';
-                $i = 1;
-                foreach ($getfull as $sct) {
-
-                    $getrecord .= $i . ") " . ucwords($sct->fullmug) . "<br>";
-                    $i++;
-                }
-
-
-
-                $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Reminding Of Full Mug Features'");
-                $email_temp = $email_template->row();
-
-                $email_address_from = $email_temp->from_address;
-                $email_address_reply = $email_temp->reply_address;
-                $email_subject = $email_temp->subject;
-                $email_message = $email_temp->message;
-                $email = $data['getbardata']['email'];
-                $user_name = $data['getbardata']['first_name'] . " " . $data['getbardata']['last_name'];
-                //$activation_link = "<a href='".base_url()."home/activation/".$data_pass."'>here</a>";
-                $email_to = $email;
-                $email_message = str_replace('{break}', '<br/>', $email_message);
-                $email_message = str_replace('{username}', $user_name, $email_message);
-                $email_message = str_replace('{featurelist}', $getrecord, $email_message);
-                //$email_message = str_replace('{email}', $email, $email_message);
-                //$email_message = str_replace('{password}', $pass, $email_message);
-                //$email_message = str_replace('{activation_link}', $conf, $email_message);
-                $str = $email_message;
-
-                if ($email_temp->status == 'active') {
-                    email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
-                }
-
+                $data['one_user'] = $this->home_model->get_availability($bar_id);
+                
                 $uid = base64_encode($uid);
                 $this->session->set_userdata(array('userid_sess' => $uid));
                 $this->session->unset_userdata('viewid_orig');
                 $this->session->unset_userdata('viewid');
-                //	$bar_id = $this->session->userdata('viewid');
+                
+                $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Successfully Registration'");
+                $email_temp = $email_template->row();
+                $email_address_from = $email_temp->from_address;
+                $email_address_reply = $email_temp->reply_address;
+                $email_subject = $email_temp->subject;
+                $email_message = $email_temp->message;
+                $user_name = $firstname . " " . $lastname;
+                $email_to = $email;
+                $email_message = str_replace('{break}', '<br/>', $email_message);
+                $email_message = str_replace('{user_name}', $user_name, $email_message);
+                $email_message = str_replace('{email}', $email, $email_message);
+                $email_message = str_replace('{password}', $pass, $email_message);
+                $str = $email_message;
+                if ($email_temp->status == 'active') {
+                    email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
+                }
+                $data_up = array('status' => "active", 'confirm_code' => '', 'password' => md5($pass));
+                $this->db->where('user_id', $this->input->post('user_id'));
+                $this->db->update('user_master', $data_up);
 
-                redirect('home/registration_step5/' . $uid);
+                $data_up12 = array('status' => "active");
+                $this->db->where('taxi_owner_id', $this->input->post('user_id'));
+                $this->db->update('taxi_directory', $data_up12);
+
+                $data_up1 = array('status' => "active");
+                $this->db->where('owner_id', $this->input->post('user_id'));
+                $this->db->update('bars', $data_up1);
+                $this->session->unset_userdata('userid_sess');
+                
+                /* --------- E-mail To Super Admin ---- */
+
+                $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Claim Bar'");
+                $email_temp = $email_template->row();
+
+                $email_address_from = $email_temp->from_address;
+                $email_address_reply = $email_temp->reply_address;
+
+                $email_subject = $email_temp->subject;
+                $email_message = $email_temp->message;
+
+                $email = getsuperadminemail();
+
+                $barname = ucwords($data['getbardata']['bar_title']);
+                $type = 'Half Mug';
+                $username = ucwords($firstname) . " " . ucwords($lastname);
+                $email_to = $email;
+
+                $email_message = str_replace('{break}', '<br/>', $email_message);
+                $email_message = str_replace('{barname}', $barname, $email_message);
+                $email_message = str_replace('{type}', $type, $email_message);
+                $email_message = str_replace('{username}', $username, $email_message);
+                $str = $email_message;
+                $getemail = explode(',', $email);
+                if ($email_temp->status == 'active') {
+                    foreach ($getemail as $r) {
+                        email_send($email_address_from, $email_address_reply, $r, $email_subject, $str);
+                    }
+                }
+
+                redirect('home/success_page/' . base64_encode($uid));
             }
         }
-        //$data['type'] = $type;
-
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/claimbar_registration_step3', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/claim_bar_owner_info', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }

@@ -98,7 +98,7 @@ if ($msg != "" && $msg != "1V1" && !is_numeric($msg)) {
     echo "<div class='success text-center'>" . $msg . "</div>";
 }
 ?>
-                        <form class="form-horizontal" role="form" name="step_1" id="step_1" action="<?php echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
+                        <form class="form-horizontal" role="form" name="register" id="register" action="<?php echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
                             <div class="padtb" style="text-align: left">
                                     <p class="bar_add">Bar Name : <?php echo @$bar_title; ?></p>
                                 <div class="clearfix"></div>

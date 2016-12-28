@@ -95,7 +95,7 @@ if ($error != "") {
     echo "<div class='error1 text-center'>" . $error . "</div>";
 }
 ?>
-                        <form class="form-horizontal" role="form" name="step_1" id="step_1" action="<?php echo site_url("home/claim_bar_owner_verify_code/" . $bar_id); ?>" method="post">
+                        <form class="form-horizontal" role="form" name="verify_code" id="verify_code" action="<?php echo site_url("home/claim_bar_owner_verify_code/" . base64_encode($bar_id)); ?>" method="post">
                             <div class="padtb" style="text-align: left">
                                 <p class="bar_add">Please enter the code sent to your mobile phone:</p>
                                 <div class="clearfix"></div>
@@ -107,9 +107,8 @@ if ($error != "") {
                                     <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Enter</button>
                                     <!-- </div> -->
                                     <div class="clearfix"></div>  
-                                </div>
                             </div>
-                            <div class="padtb8">
+                            <div class="padtb8">    
                                 <!-- <div class="col-sm-3"></div> -->
                                 <!-- <div class="col-sm-7 mart10"> -->
 
