@@ -3389,10 +3389,6 @@ function getallliquorbybar_new()
 		$this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('bar_name', 'Bar Name', 'required|callback_bartitle_check_suggest');
-		$this->form_validation->set_rules('address', 'Address', 'required');
-		$this->form_validation->set_rules('state', 'State', 'required');
-		$this->form_validation->set_rules('city', 'City', 'required');
-		$this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
 		$this->form_validation->set_rules('zip_code', 'Zip Code', 'required');
 		$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
 		

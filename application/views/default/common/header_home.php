@@ -49,9 +49,12 @@ $(function(){
         <div class="navbar-collapse collapse" id="b-menu-1">
         	
           <ul class="nav navbar-nav">
-          	  <?php 
+               <?php 
 		  if(check_user_authentication ()== ''){ ?>
-            <li><a href="<?php echo site_url('home/bar_owner_register')?>" class="yellowlink">Bar Owner? Add or Claim Your Bar Now!</a></li>
+              <form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
+                			<div class="pull-left"><input type="text" name="bar_title_new" id="bar_title_new" class="form-control bar_title_new" placeholder="By Name, City Or Zip"></div>
+                    			<div class="pull-left"><button class="btn btn-lg btn-primary btn-block yellowlink   " type="submit">Claim Your Bar Now!</button></div>
+              </form>
             <?php } ?>
             <?php if($this->session->userdata('user_type')=='bar_owner' && check_user_authentication()){?>
             <li><a href="<?php echo site_url('home/dashboard')?>" class="yellowlink">Profile</a></li>
