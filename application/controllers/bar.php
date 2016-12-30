@@ -2766,7 +2766,7 @@ function getallliquorbybar_new()
 		$this->form_validation->set_rules('city', 'City', 'required');
 		$this->form_validation->set_rules('state', 'State', 'required');
 		$this->form_validation->set_rules('zip', 'Zip Code', 'required|numeric');
-		$this->form_validation->set_rules('desc', 'Description', 'required');
+		//$this->form_validation->set_rules('desc', 'Description', 'required');
 		//$this->form_validation->set_rules('bar_meta_title', 'Meta Title', 'required');
 		//$this->form_validation->set_rules('bar_meta_keyword', 'Meta Keyword', 'required');
 		//$this->form_validation->set_rules('bar_meta_description', 'Meta Description', 'required');
