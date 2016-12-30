@@ -4922,13 +4922,8 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }           
                 
-                $data["email"] = $this->input->post('email');
                 $data["bar_id"] = $this->input->post('bar_id');
                 $data["phone_number"] = $this->input->post('phone_number');
-                
-                 $data["bar_meta_title"] = $this->input->post('bar_meta_title');
--                $data["bar_meta_keyword"] = $this->input->post('bar_meta_keyword');
--                $data["bar_meta_description"] = $this->input->post('bar_meta_description');
             } else {
                 
                 $bar_id = $this->input->post('bar_id');
@@ -4937,13 +4932,13 @@ class Home extends SPACULLUS_Controller {
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $this->input->post('phone_number');
                 $claim_code = rand(100000, 999999);
-                $claim_code_update = array('claim_code' => $claim_code);
+                $bar_update = array('claim_code' => $claim_code, 'mobile_no' => $phone_number);
                 
                 try {
                     $client->account->messages->create($phone_number,
                         array(  
                             'from' => '+13102725642',
-                            'body' => $claim_code,
+                            'body' => 'Here is your verification code for American Bars: ' . $bar_update,
                         )
                     );
                                     
@@ -5029,7 +5024,7 @@ class Home extends SPACULLUS_Controller {
                     }  
                 }
                 else {
-                    $data["error"] = "Internal Error";   
+                    $data["error"] = "Internal Error";
                 }
             }
         }
@@ -5141,18 +5136,24 @@ class Home extends SPACULLUS_Controller {
                 if ($email_temp->status == 'active') {
                     email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
                 }
-                $data_up = array('status' => "active", 'confirm_code' => '', 'password' => md5($pass));
-                $this->db->where('user_id', $this->input->post('user_id'));
-                $this->db->update('user_master', $data_up);
 
-                $data_up12 = array('status' => "active");
-                $this->db->where('taxi_owner_id', $this->input->post('user_id'));
-                $this->db->update('taxi_directory', $data_up12);
-
-                $data_up1 = array('status' => "active");
-                $this->db->where('owner_id', $this->input->post('user_id'));
-                $this->db->update('bars', $data_up1);
                 $this->session->unset_userdata('userid_sess');
+                
+                
+                $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
+                $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
+                $client = new TwilioClient($account_sid, $auth_token);
+                $phone_number = $data['getbardata']->mobile_no;
+                
+                try {
+                    $client->account->messages->create($phone_number,
+                        array(  
+                            'from' => '+13102725642',
+                            'body' => 'Your American Bars Account Info:/nemail: ' . $email . "pass: " . $pass,
+                        )
+                    );                           
+                } catch (Exception $e) {
+                }
                 
                 /* --------- E-mail To Super Admin ---- */
 
