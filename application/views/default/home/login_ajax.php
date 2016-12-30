@@ -359,7 +359,7 @@ $(document).ready(function(){
 	        				<?php $attributes = array('id'=>'frmlogin_ajax','name'=>'frmlogin_ajax','class'=>'form-horizontal','rolde'=>'form');
 							echo form_open('home/login',$attributes); ?>
 							<div id="ajax_msg_error"></div>	
-							<input type="hidden" class="type" id="type" value="user" name="type">
+							<input type="hidden" class="type" id="type" value="bar_owner" name="type">
 	        				 <div class="mar_top20">
 	    						<div class="padtb8">
 	        				 	<div class="col-sm-3">
