@@ -5086,15 +5086,13 @@ class Home extends SPACULLUS_Controller {
                 $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
                 $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
                 $pass = randomCode();
-                $conf = rand('11111111', '99999999');
                 $data_insert['first_name'] = $firstname;
                 $data_insert['last_name'] = $lastname;
                 $data_insert['email'] = $email;
-                $data_insert['status'] = 'inactive';
+                $data_insert['status'] = 'active';
                 $data_insert['is_deleted'] = 'no';
                 $data_insert['user_type'] = 'bar_owner';
                 $data_insert['password'] = md5($pass);
-                $data_insert['confirm_code'] = $conf;
                 $data_insert['sign_up_ip'] = $_SERVER['REMOTE_ADDR'];
                 $data_insert['sign_up_date'] = date('Y-m-d H:i:s');
                 $this->db->insert('user_master', $data_insert);
@@ -5104,7 +5102,6 @@ class Home extends SPACULLUS_Controller {
                 $getlat = getCoordinatesFromAddress($data['getbardata']['address'], $data['getbardata']['city'], $data['getbardata']['state']);
                 $data_insert_new["lat"] = $getlat['lat'];
                 $data_insert_new["lang"] = $getlat['lng'];
-
                 $data_insert_new['owner_name'] = $firstname . " " . $lastname;
                 $data_insert_new['email'] = $email;
                 $data_insert_new['owner_id'] = $uid;       
@@ -5141,16 +5138,9 @@ class Home extends SPACULLUS_Controller {
                 if ($email_temp->status == 'active') {
                     email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
                 }
-                $data_up = array('status' => "active", 'confirm_code' => '', 'password' => md5($pass));
-                $this->db->where('user_id', $this->input->post('user_id'));
-                $this->db->update('user_master', $data_up);
-
-                $data_up12 = array('status' => "active");
-                $this->db->where('taxi_owner_id', $this->input->post('user_id'));
-                $this->db->update('taxi_directory', $data_up12);
 
                 $data_up1 = array('status' => "active");
-                $this->db->where('owner_id', $this->input->post('user_id'));
+                $this->db->where('owner_id', $uid);
                 $this->db->update('bars', $data_up1);
                 $this->session->unset_userdata('userid_sess');
                 
