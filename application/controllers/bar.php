@@ -2809,7 +2809,7 @@ function getallliquorbybar_new()
                                 
                                 $data['facebook_link'] = $this->input->post('facebook_link');
                                 $data['twitter_link'] = $this->input->post('twitter_link');
-                                $data['linkedin_link'] = $this->input->post('linkedin_link');
+                                $data['instagram_link'] = $this->input->post('instagram_link');
                 }
 		else {
 			    $this->bar_model->bar_update();			
