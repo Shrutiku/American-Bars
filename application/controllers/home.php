@@ -4933,17 +4933,18 @@ class Home extends SPACULLUS_Controller {
                 $phone_number = $this->input->post('phone_number');
                 $claim_code = rand(100000, 999999);
                 $bar_update = array('claim_code' => $claim_code, 'mobile_no' => $phone_number);
+                $body = 'Here is your verification code for American Bars: ' . $claim_code;
                 
                 try {
                     $client->account->messages->create($phone_number,
                         array(  
                             'from' => '+13102725642',
-                            'body' => 'Here is your verification code for American Bars: ' . $bar_update,
+                            'body' => $body,
                         )
                     );
                                     
                     $this->db->where('bar_id', $bar_id);
-                    $this->db->update('bars', $claim_code_update);
+                    $this->db->update('bars', $bar_update);
                 } catch (Exception $e) {
                     $data["error"] = "Connectivity Error";
                 }
@@ -5141,12 +5142,13 @@ class Home extends SPACULLUS_Controller {
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $data['getbardata']->mobile_no;
+                $body = 'Your American Bars Account Info:/nemail: ' . $email . "pass: " . $pass;
                 
                 try {
                     $client->account->messages->create($phone_number,
                         array(  
                             'from' => '+13102725642',
-                            'body' => 'Your American Bars Account Info:/nemail: ' . $email . "pass: " . $pass,
+                            'body' => $body,
                         )
                     );                           
                 } catch (Exception $e) {
