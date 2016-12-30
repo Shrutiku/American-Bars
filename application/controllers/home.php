@@ -5141,7 +5141,7 @@ class Home extends SPACULLUS_Controller {
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
-                $phone_number = $data['getbardata']->phone;
+                $phone_number = $data['getbardata']['phone'];
                 $body = 'Your American Bars Account Info:/nemail: ' . $email . "pass: " . $pass;
                 
                 try {

@@ -570,7 +570,7 @@ $(document).ready(function(){
 	        				
 	                 <form name="frmforget_ajax" method="post" id="frmforget_ajax" class="form-horizontal login-form" action="<?php echo base_url();?>home/login" target="_blank">
 	                	<div id="ajax_msg_error2"></div>	
-	                	<input type="hidden" class="type" id="type1" value="<?php echo $type!='' ? $type:'user'; ?>" name="type">
+	                	<input type="hidden" class="type" id="type1" value="<?php echo $type!='' ? $type:'bar_owner'; ?>" name="type">
 	                  
 	        				
 	                   <div class="padtb8">
