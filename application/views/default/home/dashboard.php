@@ -390,7 +390,7 @@ B.show();
 	                       	</div>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Description : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Description :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<textarea rows="5" placeholder="Description" name="desc" id="desc" class="form-control ckeditor form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
@@ -1054,7 +1054,7 @@ B.show();
 					
 					email: { required: true },
 					desc: { required: true },
-					to_1: {required: function(){  return $('#closed_1').is(":checked")==true?false:true;  }},
+					/*to_1: {required: function(){  return $('#closed_1').is(":checked")==true?false:true;  }},
 
                     from_1: {required: function(){ return (!$('#closed_1').is(":checked")); }},
 
@@ -1109,7 +1109,7 @@ B.show();
 					// to_7: {
 						// required: function(){ return (!$('#closed_7').is(":checked")); },
 					  	// greaterThan: '#from_7'
-					// },
+					// },*/
 					state: {
 						required: true,
 					},
