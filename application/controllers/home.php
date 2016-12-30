@@ -5081,15 +5081,13 @@ class Home extends SPACULLUS_Controller {
                 $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
                 $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
                 $pass = randomCode();
-                $conf = rand('11111111', '99999999');
                 $data_insert['first_name'] = $firstname;
                 $data_insert['last_name'] = $lastname;
                 $data_insert['email'] = $email;
-                $data_insert['status'] = 'inactive';
+                $data_insert['status'] = 'active';
                 $data_insert['is_deleted'] = 'no';
                 $data_insert['user_type'] = 'bar_owner';
                 $data_insert['password'] = md5($pass);
-                $data_insert['confirm_code'] = $conf;
                 $data_insert['sign_up_ip'] = $_SERVER['REMOTE_ADDR'];
                 $data_insert['sign_up_date'] = date('Y-m-d H:i:s');
                 $this->db->insert('user_master', $data_insert);
@@ -5099,7 +5097,6 @@ class Home extends SPACULLUS_Controller {
                 $getlat = getCoordinatesFromAddress($data['getbardata']['address'], $data['getbardata']['city'], $data['getbardata']['state']);
                 $data_insert_new["lat"] = $getlat['lat'];
                 $data_insert_new["lang"] = $getlat['lng'];
-
                 $data_insert_new['owner_name'] = $firstname . " " . $lastname;
                 $data_insert_new['email'] = $email;
                 $data_insert_new['owner_id'] = $uid;       
