@@ -2806,7 +2806,11 @@ function getallliquorbybar_new()
 				$data["paypal_p"] = $this->input->post('paypal_p');
 				$data["bitcoin_p"] = $this->input->post('bitcoin_p');
 				$data["apple_p"] = $this->input->post('apple_p');
-		}
+                                
+                                $data['facebook_link'] = $this->input->post('facebook_link');
+                                $data['twitter_link'] = $this->input->post('twitter_link');
+                                $data['linkedin_link'] = $this->input->post('linkedin_link');
+                }
 		else {
 			    $this->bar_model->bar_update();			
 				$data["msg"] = "success";	

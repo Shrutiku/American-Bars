@@ -4942,7 +4942,7 @@ class Home extends SPACULLUS_Controller {
                 try {
                     $client->account->messages->create($phone_number,
                         array(  
-                            'from' => '+14243321657',
+                            'from' => '+13102725642',
                             'body' => $claim_code,
                         )
                     );

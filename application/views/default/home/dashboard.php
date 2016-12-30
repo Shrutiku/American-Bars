@@ -530,6 +530,35 @@ B.show();
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
+                                 <div class="padtb">
+	        				 	<div class="col-sm-3 text-right">
+	        				 		<label class="control-label">Facebook Account (ex. "americanbars"):</label>
+	        				 	</div>
+	                       		<div class="input_box col-sm-7">
+	                           		<input type="text" class="form-control form-pad" id="facebook_link" name="facebook_link" value="<?php echo @$getalldata->facebook_link;?>">
+	                       		</div>
+	                       		<div class="clearfix"></div>
+	                       	</div>
+	                       	
+	                       	<div class="padtb">
+	        				 	<div class="col-sm-3 text-right">
+	        				 		<label class="control-label">Twitter Account (ex. "americanbars"):</label>
+	        				 	</div>
+	                       		<div class="input_box col-sm-7">
+	                           		<input type="text" class="form-control form-pad" id="twitter_link" name="twitter_link" value="<?php echo @$getalldata->twitter_link;?>">
+	                       		</div>
+	                       		<div class="clearfix"></div>
+	                       	</div>
+	                       	
+	                       		<div class="padtb">
+	        				 	<div class="col-sm-3 text-right">
+	        				 		<label class="control-label">Instagram Account (e.x americanbars) :</label>
+	        				 	</div>
+	                       		<div class="input_box col-sm-7">
+	                           		<input type="text" class="form-control form-pad" id="instagram_link" name="instagram_link" value="<?php echo @$getalldata->instagram_link;?>">
+	                       		</div>
+	                       		<div class="clearfix"></div>
+	                       	</div>
 	                       	
 	                       </div>	
 	                       		

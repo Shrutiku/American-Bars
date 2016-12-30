@@ -67,13 +67,6 @@
      						</a>
      					</li>
      					
-     					<li class="<?php echo $this->uri->segment(2)=='socialmedialink' ? 'active':'';?>">
-     						<a href="<?php echo site_url('home/socialmedialink')?>">
-     							<i class="strip social_url"></i>
-     							Social Media Settings
-     						</a>
-     					</li>
-     					
      					
      					
      					<li class="<?php echo $this->uri->segment(2)=='socialshare' || $this->uri->segment(2)=='twitterpost' || $this->uri->segment(2)=='facebookpost' || $this->uri->segment(2)=='instagrampost' ? 'active':'';?>">
