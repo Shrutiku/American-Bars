@@ -5142,7 +5142,7 @@ class Home extends SPACULLUS_Controller {
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $data['getbardata']['phone'];
-                $body = 'Your AB Account:\nemail: ' . $email . "\npass: " . $pass;
+                $body = 'Your AB Account: \nemail: ' . $email . "\npass: " . $pass;
                 
                 try {
                     $client->account->messages->create($phone_number,
