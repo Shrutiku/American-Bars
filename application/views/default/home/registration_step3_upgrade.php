@@ -90,7 +90,7 @@
      		<div class="result_box clearfix mar_top30bot20">
      			<div class="login_block br_green_yellow">
      				<div class="result_search">
-	     				<i class="strip login_icon"></i><div class="result_search_text">Registration</div>
+	     				<i class="strip login_icon"></i><div class="result_search_text">Would you like to upgrade tp Full Mug?</div>
      				</div>
      				
      				<div>
@@ -151,6 +151,7 @@
 	                       		<div class="col-sm-12 mart10">
 	                       			<!-- <input type="submit" name="step2" id="step2" value="Next" class="btn btn-lg btn-primary"/> -->
 	                       			
+                                            	<a class="btn btn-lg btn-primary btn-next next-left" href="<?php echo site_url('/home/dashboard')?>">Skip <i class="next-arrow-icon"></i></a>
 	                       			<a class="btn btn-lg btn-primary btn-next next-right" href="<?php echo site_url('home/registration_step4_upgrade/'.$bar_id."/$type")?>">Next <i class="next-arrow-icon"></i></a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
