@@ -5079,7 +5079,7 @@ class Home extends SPACULLUS_Controller {
                 $lastname = $this->input->post('lastname');
                 $email = $this->input->post('email');
                 $bar_id = $this->session->userdata('viewid');
-                $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
+                $data['getbardata'] = $this->home_model->getBardata ($bar_id);
                 $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
                 $pass = randomCode();
                 $data_insert['first_name'] = $firstname;
@@ -5142,7 +5142,7 @@ class Home extends SPACULLUS_Controller {
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $data['getbardata']['phone'];
-                $body = 'Your American Bars Account Info:/nemail: ' . $email . "pass: " . $pass;
+                $body = 'Your AB Account:/nemail: ' . $email . "\npass: " . $pass;
                 
                 try {
                     $client->account->messages->create($phone_number,
@@ -5184,7 +5184,7 @@ class Home extends SPACULLUS_Controller {
                     }
                 }
 
-                redirect('home/success_page/' . base64_encode($uid));
+                redirect('home/upgrade/' . base64_encode($bar_id));
             }
         }
 
