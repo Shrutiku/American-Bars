@@ -357,7 +357,6 @@
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-12 padding5 mart10">
 	                       			<!--<input type="submit" name="step2" id="step2" value="Next" class="btn btn-lg btn-primary btn-next pull-right"/>-->
-                                            <a class="btn btn-lg btn-primary btn-next next-left" href="<?php echo site_url('/home/success_page/') . @$uid?>">Skip</a>
                                             <button type="submit" name="step2" id="step2" value="Next" class="btn btn-lg btn-primary btn-next pull-right margin-top-30">Next <i class="next-arrow-icon"></i></button>
 	                       			<!-- <a class="btn btn-lg btn-primary" href="<?php echo site_url('home/bar_owner_register')?>">Back</a> -->
 	                       		</div>

@@ -5230,9 +5230,17 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
             } else {
+                $btype = $this->input->post('btype');
+                $uid = $this->session->userdata('userid_sess');
                 $this->session->unset_userdata('viewid');
                 $this->session->unset_userdata('userid_sess');
-                redirect('home/registration_step3_upgrade/' . base64_encode($bar_id) . "/" . $this->input->post('btype'));
+                
+                if ($btype == "halfmug") {
+                    redirect('/home/success_page/' . @$uid);
+                }
+               
+                
+                redirect('home/registration_step3_upgrade/' . base64_encode($bar_id) . "/" . $btype);
             }
         }
 
