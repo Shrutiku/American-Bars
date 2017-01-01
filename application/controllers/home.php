@@ -5241,7 +5241,7 @@ class Home extends SPACULLUS_Controller {
                     redirect('/home/success_page/' . $uid);
                 }
 
-                redirect('home/registration_step3_upgrade/' . base64_encode($bar_id) . "/" . $btype);
+                redirect('home/registration_step3_upgrade/' . $bar_id . "/" . $btype);
             }
         }
 
