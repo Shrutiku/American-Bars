@@ -5195,7 +5195,7 @@ class Home extends SPACULLUS_Controller {
         $bar_id = $this->session->userdata('viewid');
         $uid = $this->session->userdata("userid_sess");
 
-        if ($bar_id == '' || $uid == '') {
+        if ($bar_id == '') {
             redirect('home/');
         }
         
@@ -5238,8 +5238,7 @@ class Home extends SPACULLUS_Controller {
                 if ($btype == "halfmug") {
                     redirect('/home/success_page/' . $uid);
                 }
-               
-                
+
                 redirect('home/registration_step3_upgrade/' . base64_encode($bar_id) . "/" . $btype);
             }
         }
