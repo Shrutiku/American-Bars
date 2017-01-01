@@ -90,7 +90,7 @@
      		<div class="result_box clearfix mar_top30bot20">
      			<div class="login_block br_green_yellow">
      				<div class="result_search">
-	     				<i class="strip login_icon"></i><div class="result_search_text">Would you like to upgrade tp Full Mug?</div>
+	     				<i class="strip login_icon"></i><div class="result_search_text">Upgrade</div>
      				</div>
      				
      				<div>
