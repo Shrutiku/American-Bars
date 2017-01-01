@@ -393,6 +393,8 @@
         $('#halfmug-button').click(function(){
             $("#halfmugtext").modal('show');
         });
+        
+        changeblock("fullmug");
     });
 </script>
 
