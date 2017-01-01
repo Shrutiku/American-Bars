@@ -5192,9 +5192,7 @@ class Home extends SPACULLUS_Controller {
     }
 
     function claimbar_type($bar_id = '') {
-        if ($bar_id == '') {
-            $bar_id = $this->session->userdata('viewid');
-        }
+        $bar_id = $this->session->userdata('viewid');
         $uid = $this->session->userdata("userid_sess");
 
         if ($bar_id == '') {
@@ -5203,7 +5201,6 @@ class Home extends SPACULLUS_Controller {
         
         $theme = getThemeName();
         $data['error'] = '';
-        $data['bar_id'] = $bar_id;
         $data["active_menu"] = '';
         $data["uid"] = $uid;
         $data["type"] = "fullmug";
@@ -5233,15 +5230,27 @@ class Home extends SPACULLUS_Controller {
                 }
             } else {
                 $btype = $this->input->post('btype');
+                $btypestr = 'halfmug';
+                if ($btype == 0)
+                {
+                    $btypestr = "halfmug";
+                } else if ($btype == 1)
+                {
+                    $btypestr = "fullmug";
+                } else if ($btype == 2)
+                {
+                    $btypestr = "managed";
+                }
                 $uid = $this->session->userdata('userid_sess');
                 $this->session->unset_userdata('viewid');
                 $this->session->unset_userdata('userid_sess');
                 
-                if ($btype == "halfmug") {
+                if ($btypestr == "halfmug") {
                     redirect('/home/success_page/' . $uid);
                 }
+                
 
-                redirect('home/registration_step3_upgrade/' . $bar_id . "/" . $btype);
+                redirect('home/registration_step3_upgrade/' . $bar_id . "/" . $btypestr);
             }
         }
 
