@@ -113,7 +113,7 @@
      	<div class="container">	
      		<div class="result_box clearfix mar_top15 margin-bottom-20">
                 <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
-							echo form_open('home/bar_owner_register',$attributes); ?>	
+							echo form_open('home/claimbar_type',$attributes); ?>	
                 <!-- <div class="promo-left">
                     <div class="<?php echo @$getbardatafeature['feature_id']==1 ? 'active':'';?>" onclick="changeblock('full');">
                         <img src="<?php echo base_url()."default/images/promo6.jpg"?>" alt="Upgrade to a Full Mug Today" />
