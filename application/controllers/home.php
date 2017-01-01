@@ -5203,7 +5203,7 @@ class Home extends SPACULLUS_Controller {
         $data['error'] = '';
         $data["active_menu"] = '';
         $data["uid"] = $uid;
-        $data["type"] = "fullmug";
+        $data["type"] = 1;
         $data['site_setting'] = site_setting();
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
