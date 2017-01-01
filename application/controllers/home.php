@@ -5115,8 +5115,8 @@ class Home extends SPACULLUS_Controller {
                 
                 $uid = base64_encode($uid);
                 $this->session->set_userdata(array('userid_sess' => $uid));
-                $this->session->unset_userdata('viewid_orig');
-                $this->session->unset_userdata('viewid');
+                //$this->session->unset_userdata('viewid_orig');
+                //$this->session->unset_userdata('viewid');
                 
                 $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Successfully Registration'");
                 $email_temp = $email_template->row();
@@ -5133,16 +5133,13 @@ class Home extends SPACULLUS_Controller {
                 $str = $email_message;
                 if ($email_temp->status == 'active') {
                     email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
-                }
-
-                $this->session->unset_userdata('userid_sess');
-                
+                }                
                 
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $data['getbardata']['phone'];
-                $body = 'Your AB Account: \nemail: ' . $email . "\npass: " . $pass;
+                $body = "Your American Bars profile login is\nUsername: " . $email . "\nPassword: " . $pass . "\nWelcome to American Bar, the largest bar customer network in the US.";
                 
                 try {
                     $client->account->messages->create($phone_number,
@@ -5184,7 +5181,7 @@ class Home extends SPACULLUS_Controller {
                     }
                 }
 
-                redirect('home/claimbar_type/' . base64_encode($bar_id) . "/" . $uid);
+                redirect('home/claimbar_type/' . base64_encode($bar_id));
             }
         }
 
@@ -5194,14 +5191,14 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function claimbar_type($bar_id = '', $uid = '') {
+    function claimbar_type($bar_id = '') {
         $bar_id = $this->session->userdata('viewid');
+        $uid = $this->session->userdata("userid_sess");
 
         if ($bar_id == '' || $uid == '') {
             redirect('home/');
         }
         
-        $uid = base64_decode($uid);
         $theme = getThemeName();
         $data['error'] = '';
         //$data['bar_id'] = $bar_id;
@@ -5233,6 +5230,8 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
             } else {
+                $this->session->unset_userdata('viewid');
+                $this->session->unset_userdata('userid_sess');
                 redirect('home/registration_step4/' . base64_encode($bar_id) . "/" . $this->input->post('btype'));
             }
         }
