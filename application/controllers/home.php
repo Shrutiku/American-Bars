@@ -5236,7 +5236,7 @@ class Home extends SPACULLUS_Controller {
                 $this->session->unset_userdata('userid_sess');
                 
                 if ($btype == "halfmug") {
-                    redirect('/home/success_page/' . @$uid);
+                    redirect('/home/success_page/' . $uid);
                 }
                
                 
