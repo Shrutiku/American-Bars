@@ -120,7 +120,7 @@
 	                       		$exp = explode(',',@$getbardatafeature['feature_id']);
 	                       		 ?>
 	                       		<!-- <h1 class="step_title">You have Selected a Full Mug Bar</h1> -->
-	                       		<p class="bar_add">Bar Owner Name : <?php echo @$getbardata['bar_first_name']." ".$getbardata['bar_last_name']; ?></p>
+	                       		<p class="bar_add">Bar Owner Name : <?php echo @$getbardata['owner_name']." ".$getbardata['bar_last_name']; ?></p>
 	                       		<p class="bar_add">Bar Owner Email : <?php echo @$getbardata['email']; ?></p>
 	                       		<p class="bar_add">Bar Type : <b><?php
 	                       			 if($type=='fullmug')
