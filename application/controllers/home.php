@@ -5139,7 +5139,7 @@ class Home extends SPACULLUS_Controller {
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $data['getbardata']['phone'];
-                $body = "Your American Bars profile login is\nUsername: " . $email . "\nPassword: " . $pass . "\nWelcome to American Bar, the largest bar customer network in the US.";
+                $body = "Your American Bars profile login is\nUsername: " . $email . "\nPassword: " . $pass . "\nWelcome to American Bars, the largest bar customer network in the US.";
                 
                 try {
                     $client->account->messages->create($phone_number,
@@ -5232,7 +5232,7 @@ class Home extends SPACULLUS_Controller {
             } else {
                 $this->session->unset_userdata('viewid');
                 $this->session->unset_userdata('userid_sess');
-                redirect('home/registration_step4/' . base64_encode($bar_id) . "/" . $this->input->post('btype'));
+                redirect('home/registration_step3_upgrade/' . base64_encode($bar_id) . "/" . $this->input->post('btype'));
             }
         }
 
