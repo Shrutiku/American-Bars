@@ -5040,7 +5040,7 @@ class Home extends SPACULLUS_Controller {
         $bar_id = $this->session->userdata('viewid');
 
         if ($bar_id == '') {
-            redirect('home/bar_owner_register');
+            redirect('home/');
         }
 
         $theme = getThemeName();
@@ -5184,7 +5184,7 @@ class Home extends SPACULLUS_Controller {
                     }
                 }
 
-                redirect('home/registration_step3_upgrade/' . base64_encode($bar_id) . "/fullmug");
+                redirect('home/claimbar_type/' . base64_encode($bar_id) . "/" . $uid);
             }
         }
 
@@ -5194,48 +5194,36 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function claimbar_registration_step4($new_bar_id = '') {
-        $getpaypalsetting = paypalsetting();
-
+    function claimbar_type($bar_id = '', $uid = '') {
         $bar_id = $this->session->userdata('viewid');
 
-
-        if ($bar_id == '' || $new_bar_id == '') {
-            redirect('home/bar_owner_register');
+        if ($bar_id == '' || $uid == '') {
+            redirect('home/');
         }
-
-        $res = '';
-
+        
+        $uid = base64_decode($uid);
         $theme = getThemeName();
         $data['error'] = '';
-        $data['bar_id'] = $bar_id;
-        $data['new_bar_id'] = $new_bar_id;
+        //$data['bar_id'] = $bar_id;
         $data["active_menu"] = '';
+        $data["uid"] = $uid;
+        $data["type"] = "fullmug";
         $data['site_setting'] = site_setting();
-        $site_setting = site_setting();
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
 
-        $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
-        $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
-        $count = 0;
-        if ($data['getbardatafeature']) {
-            $count = $data['getbardatafeature']['feature_id'];
-            //$count = count(explode(',',$count));
-        }
+        $page_detail = meta_setting();
+        $pageTitle = $page_detail->title;
+        $metaDescription = $page_detail->meta_description;
+        $metaKeyword = $page_detail->meta_keyword;
 
+        $this->template->write('pageTitle', $pageTitle, TRUE);
+        $this->template->write('metaDescription', $metaDescription, TRUE);
+        $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('cc_type', 'Credit Card Type', 'required');
-        $this->form_validation->set_rules('card_number', 'Card Number', 'required');
-        $this->form_validation->set_rules('ex_month', 'Month', 'required');
-        $this->form_validation->set_rules('ex_year', 'Year', 'required');
-        $this->form_validation->set_rules('cvv', 'Cvv', 'required');
-        $this->form_validation->set_rules('billing_address1', 'Address1', 'required');
-        //$this->form_validation->set_rules('billing_address2', 'Address1', 'required');
-        $this->form_validation->set_rules('billing_city', 'City', 'required');
-        $this->form_validation->set_rules('billing_state', 'State', 'required');
-        $this->form_validation->set_rules('billing_country', 'Country', 'required');
-        $this->form_validation->set_rules('billing_zipcode', 'Zipcode', 'required');
+
+        $this->form_validation->set_rules('btype', 'Free Listing Or Paid Listing', 'required');
+
 
         if ($_POST) {
             if ($this->form_validation->run() == FALSE) {
@@ -5245,227 +5233,16 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
             } else {
-
-                $PayFlow = new PayFlow($getpaypalsetting->vendor, $getpaypalsetting->partner_name, $getpaypalsetting->paypal_username, $getpaypalsetting->paypal_password, 'recurring');
-
-                $PayFlow->setEnvironment($getpaypalsetting->site_status);                           // test or live
-                $PayFlow->setTransactionType('R');                          // S = Sale transaction, R = Recurring, C = Credit, A = Authorization, D = Delayed Capture, V = Void, F = Voice Authorization, I = Inquiry, N = Duplicate transaction
-                $PayFlow->setPaymentMethod('C');                            // A = Automated clearinghouse, C = Credit card, D = Pinless debit, K = Telecheck, P = PayPal.
-                $PayFlow->setPaymentCurrency('USD');                        // 'USD', 'EUR', 'GBP', 'CAD', 'JPY', 'AUD'.
-                // Only used for recurring transactions
-                $PayFlow->setProfileAction('A');
-                $PayFlow->setProfileName('RegularSubscription');
-                $PayFlow->setProfileStartDate(date('mdY', strtotime("+1 day")));
-                //$PayFlow->setProfileStartDate(date('mdY'));
-                $PayFlow->setProfilePayPeriod('MONT');
-                $PayFlow->setProfileTerm(0);
-                $amount = $site_setting->amount;
-                if ($count == 2) {
-                    $amount = $site_setting->managed_account_amount;
-                }
-                $PayFlow->setAmount($amount, FALSE);
-                $PayFlow->setCCNumber($this->input->post('card_number'));
-                $PayFlow->setCVV($this->input->post('cvv'));
-                $PayFlow->setExpiration($this->input->post('ex_month') . substr($this->input->post('ex_year'), 2, 4));
-
-                if ($PayFlow->processTransaction()) {
-                    //print_r($PayFlow->getResponse());
-                    //	print_r($PayFlow->getResponse())."SD";
-                    //die;
-                    $res = $PayFlow->getResponse();
-
-                    $slug = getBarSlug($data['getbardata']['bar_title']);
-                    $bar_id = $this->session->userdata('viewid');
-                    $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
-                    $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
-                    $pass = randomCode();
-                    $conf = rand('11111111', '99999999');
-                    $data_insert['first_name'] = $data['getbardata']['first_name'];
-                    $data_insert['last_name'] = $data['getbardata']['last_name'];
-                    $data_insert['email'] = $data['getbardata']['email'];
-                    $data_insert['gender'] = $data['getbardata']['gender'];
-                    $data_insert['address'] = $data['getbardata']['address'];
-                    $data_insert['status'] = 'inactive';
-                    $data_insert['is_deleted'] = 'no';
-                    $data_insert['user_type'] = 'bar_owner';
-                    $data_insert['password'] = md5($pass);
-                    $data_insert['confirm_code'] = $conf;
-                    $data_insert['billing_address1'] = $this->input->post('billing_address1');
-                    $data_insert['billing_address2'] = $this->input->post('billing_address2');
-                    $data_insert['billing_city'] = $this->input->post('billing_city');
-                    $data_insert['billing_state'] = $this->input->post('billing_state');
-                    $data_insert['billing_zipcode'] = $this->input->post('billing_zipcode');
-                    $data_insert['billing_country'] = $this->input->post('billing_country');
-                    $data_insert['sign_up_ip'] = $_SERVER['REMOTE_ADDR'];
-                    $data_insert['sign_up_date'] = date('Y-m-d H:i:s');
-                    $data_insert['expire_date'] = date('Y-m-d', strtotime("+30 days"));
-                    $data_insert['credit_card_id'] = $res['PROFILEID'];
-                    $data_insert['PNREF'] = $res['RPREF'];
-                    $this->db->insert('user_master', $data_insert);
-                    $uid = mysql_insert_id();
-                    $data['user_id'] = $uid;
-
-                    if ($this->input->post('new_bar_id') != '') {
-
-                        //print_r($_POST);
-                        $getlat = getCoordinatesFromAddress($data['getbardata']['address'], $data['getbardata']['city'], $data['getbardata']['state']);
-                        $data_insert_new["lat"] = $getlat['lat'];
-                        $data_insert_new["lang"] = $getlat['lng'];
-                        $data_insert_new['bar_title'] = $data['getbardata']['bar_title'];
-                        $data_insert_new['bar_first_name'] = $data['getbardata']['first_name'];
-                        $data_insert_new['bar_last_name'] = $data['getbardata']['last_name'];
-                        $data_insert_new['email'] = $data['getbardata']['email'];
-                        $data_insert_new['owner_id'] = $uid;
-                        $data_insert_new['address'] = $data['getbardata']['address'];
-                        $data_insert_new['bar_desc'] = nl2br($data['getbardata']['desc']);
-                        $data_insert_new['city'] = $data['getbardata']['city'];
-                        if ($count == 2) {
-                            $data_insert_new['is_mangaged'] = 'yes';
-                        }
-
-                        $data_insert_new['bar_type'] = 'full_mug';
-                        $data_insert_new['bar_slug'] = $slug;
-                        $data_insert_new['owner_type'] = 'bar_owner';
-                        //$data_insert_new['status'] = 'inactive';
-                        $data_insert_new['state'] = $data['getbardata']['state'];
-                        $data_insert_new['zipcode'] = $data['getbardata']['zip'];
-                        $data_insert_new['bar_meta_title'] = $data['getbardata']['bar_meta_title'];
-                        $data_insert_new['bar_meta_keyword'] = $data['getbardata']['bar_meta_keyword'];
-                        $data_insert_new['date_added'] = date('Y-m-d h:i:s');
-                        $data_insert_new['bar_meta_description'] = $data['getbardata']['bar_meta_description'];
-                        $this->db->where('bar_id', base64_decode($this->input->post('new_bar_id')));
-                        $this->db->update('bars', $data_insert_new);
-
-
-                        $bar_id = base64_decode($this->input->post('new_bar_id'));
-
-                        $data['one_user'] = $this->home_model->get_availability($bar_id);
-                        /* --------- E-mail To Super Admin ---- */
-
-                        $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Claim Bar'");
-                        $email_temp = $email_template->row();
-
-                        $email_address_from = $email_temp->from_address;
-                        $email_address_reply = $email_temp->reply_address;
-
-                        $email_subject = $email_temp->subject;
-                        $email_message = $email_temp->message;
-
-                        $email = getsuperadminemail();
-
-                        $barname = ucwords($data['getbardata']['bar_title']);
-                        $type = 'Full Mug';
-                        $username = ucwords($data['getbardata']['first_name']) . " " . ucwords($data['getbardata']['last_name']);
-                        $email_to = $email;
-
-                        $email_message = str_replace('{break}', '<br/>', $email_message);
-                        $email_message = str_replace('{barname}', $barname, $email_message);
-                        $email_message = str_replace('{type}', $type, $email_message);
-                        $email_message = str_replace('{username}', $username, $email_message);
-                        $str = $email_message;
-                        $getemail = explode(',', $email);
-                        if ($email_temp->status == 'active') {
-                            foreach ($getemail as $r) {
-                                email_send($email_address_from, $email_address_reply, $r, $email_subject, $str);
-                            }
-                        }
-                        //email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
-
-
-                        /* --------- E-mail To Super Admin ---- */
-
-                        if ($data['one_user']) {
-                            foreach ($data['one_user'] as $os) {
-
-                                if ($os->start_from != '') {
-                                    $f = $os->start_from;
-                                } else {
-                                    $f = '';
-                                }
-                                if ($os->start_to != '') {
-                                    $t = $os->start_to;
-                                } else {
-                                    $t = '';
-                                }
-                                if ($os->is_closed != '') {
-                                    $c = $os->is_closed;
-                                } else {
-                                    $c = '';
-                                }
-                                $ava_arr = array("bar_id" => $bar_id1,
-                                    "days_id" => $os->days_id,
-                                    "start_from" => $f,
-                                    "start_to" => $t,
-                                    "is_closed" => $c,
-                                    "date_added" => date("Y-m-d H:i:s")
-                                );
-                                $this->db->insert("bar_hours", $ava_arr);
-                            }
-                        }
-                    }
-
-                    //echo "Fdsa";
-                    //die;
-                    $transar = array('txn_id' => $res['PROFILEID'], 'user_id' => $uid, 'price' => $site_setting->amount, 'transaction_date' => date('Y-m-d H:i:s'), 'is_deleted' => 'no');
-                    $this->db->insert('transaction', $transar);
-
-                    $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='SIGNUP BAR'");
-                    $email_temp = $email_template->row();
-                    $email_address_from = $email_temp->from_address;
-                    $email_address_reply = $email_temp->reply_address;
-                    $email_subject = $email_temp->subject;
-                    $email_message = $email_temp->message;
-                    $email = $data['getbardata']['email'];
-                    $user_name = $data['getbardata']['first_name'] . " " . $data['getbardata']['last_name'];
-                    $email_to = $email;
-                    $email_message = str_replace('{break}', '<br/>', $email_message);
-                    $email_message = str_replace('{user_name}', $user_name, $email_message);
-                    //$email_message = str_replace('{email}', $email, $email_message);
-                    //$email_message = str_replace('{password}', $pass, $email_message);
-                    $email_message = str_replace('{activation_link}', $conf, $email_message);
-                    $str = $email_message;
-                    if ($email_temp->status == 'active') {
-                        email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
-                    }
-                    $uid = base64_encode($uid);
-
-
-
-                    $this->session->set_userdata(array('userid_sess' => $uid));
-                    $this->session->unset_userdata('viewid_orig');
-                    $this->session->unset_userdata('viewid');
-                    redirect('home/registration_step5');
-                } else {
-                    //die;
-                    $data["error"] = "Please Enter proper credit card details.";
-
-                    $data['cc_type'] = $this->input->post('cc_type');
-                    $data['card_number'] = $this->input->post('card_number');
-                    $data['ex_month'] = $this->input->post('ex_month');
-                    $data['ex_year'] = $this->input->post('ex_year');
-                    $data['cvv'] = $this->input->post('cvv');
-                    $data['billing_address1'] = $this->input->post('billing_address1');
-                    $data['billing_address2'] = $this->input->post('billing_address2');
-                    $data['billing_city'] = $this->input->post('billing_city');
-                    $data['billing_state'] = $this->input->post('billing_state');
-                    $data['billing_country'] = $this->input->post('billing_country');
-                    $data['billing_zipcode'] = $this->input->post('billing_zipcode');
-                }
+                redirect('home/registration_step4/' . base64_encode($bar_id) . "/" . $this->input->post('btype'));
             }
         }
-        $page_detail = meta_setting();
-        $pageTitle = $page_detail->title;
-        $metaDescription = $page_detail->meta_description;
-        $metaKeyword = $page_detail->meta_keyword;
-        $this->template->write('pageTitle', $pageTitle, TRUE);
-        $this->template->write('metaDescription', $metaDescription, TRUE);
-        $this->template->write('metaKeyword', $metaKeyword, TRUE);
+
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/claimbar_registration_step4', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/registration_step2', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
-
+    
     function claimbar_registration_step5($uid) {
 
         if ($uid == '') {
