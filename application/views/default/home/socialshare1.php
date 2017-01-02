@@ -198,7 +198,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
             <div class="dashboard_detail">
                 <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Share</div></div>
                 <div class="dashboard_subblock">
-                    <p class="bar_add">Click Here to Post:</p>
+                    <p class="bar_add" style="align-text: center;">Click Here to Post:</p>
 
                     <div class="social-icons-new">
                         <?php //if($user_id){ ?>
