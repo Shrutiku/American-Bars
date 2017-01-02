@@ -241,9 +241,8 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                         <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
                         <!-- <form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_event/' . base64_encode($getbar['bar_id'])); ?>"> -->
 
-
                     </div>
-                    <div class="container" style="max-width: 60%">
+                    <div class="container" style="max-width: 60%; padding-top: 5px">
                         <div class="social-feed-container"></div>
                     </div>
                 </div>                                                                        
