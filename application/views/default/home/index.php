@@ -21,7 +21,7 @@
    				
    				<div id="container">
         <section>
-            <video style="width: 100%; height: 100%;" autoplay="true" class="video">
+            <video style="width: 100%; height: 100%;" autoplay="true" class="video" loop>
                 <source src="<?php echo base_url()?>upload/1.mp4" type="video/mp4">
             </video>
             <div class="preloader">

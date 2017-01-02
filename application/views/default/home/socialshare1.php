@@ -198,6 +198,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
             <div class="dashboard_detail">
                 <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Share</div></div>
                 <div class="dashboard_subblock">
+                    <p class="bar_add" style="text-align: center;">Click Here to Post:</p>
 
                     <div class="social-icons-new">
                         <?php //if($user_id){ ?>
@@ -241,9 +242,8 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                         <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
                         <!-- <form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_event/' . base64_encode($getbar['bar_id'])); ?>"> -->
 
-
                     </div>
-                    <div class="container" style="max-width: 60%">
+                    <div class="container" style="max-width: 60%; padding-top: 5px">
                         <div class="social-feed-container"></div>
                     </div>
                 </div>                                                                        
