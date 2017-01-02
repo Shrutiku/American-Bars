@@ -3088,8 +3088,10 @@ if(file_exists(base_path().'upload/bar_eventgallery_thumb_250by150/'.$preImg[$ke
 		$data_insert_new['serve_as'] = $this->input->post('serve_as');
 		$data_insert_new['bar_meta_title'] = $this->input->post('bar_meta_title');
 		$data_insert_new['bar_slug'] = $slug;
-		
-		
+                
+                $data_insert_new['facebook_link'] = $this->input->post('facebook_link');                
+                $data_insert_new['twitter_link'] = $this->input->post('twitter_link');
+                $data_insert_new['instagram_link'] = $this->input->post('instagram_link');
 		
 		$this->db->where('bar_id',$this->input->post('b_id'));
 		$this->db->update('bars',$data_insert_new);

@@ -30,22 +30,22 @@ jQuery(document).ready(function() {
 				required: true,
 			},	
 			address: {
-				required: true,
+				required: false,
 			},	
 			state: {
-				required: true,
+				required: false,
 			},	
 			city: {
-				required: true,
+				required: false,
 			},	
 			phone_number: {
-				required: true,
+				required: false,
 			},
 			// description:{
 			    // required: true,
 			// },
 			zip_code: {
-				required: true,
+				required: false,
 				number:true,
 			},
 			recaptcha_response_field: {
@@ -151,7 +151,7 @@ jQuery(document).ready(function() {
 	                       	</div> -->
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Street : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Street :</label>
 	        				 	</div>
 	                       		<div class=" col-sm-7">
 	                           		<textarea rows="5" placeholder="Address" class="form-control form-pad" name="address"  id="address"><?php echo @$address; ?></textarea>
@@ -160,7 +160,7 @@ jQuery(document).ready(function() {
 	                       	</div>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">City : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">City :</label>
 	        				 	</div>
 	        				 	<div class=" col-sm-7">
 	                       		<input type="text" class="form-control form-pad" value="<?php echo @$city; ?>" id="city" name="city">
@@ -169,7 +169,7 @@ jQuery(document).ready(function() {
 	                       	</div>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">State : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">State :</label>
 	        				 	</div>
 	                       		<div class=" col-sm-7">
 	                           		<input type="text" class="form-control form-pad" value="<?php echo @$state; ?>" id="state" name="state">
@@ -179,7 +179,7 @@ jQuery(document).ready(function() {
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Phone Number : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Phone Number :</label>
 	        				 	</div>
 	                       		<div class=" col-sm-7">
 	                           		<input type="text" class="form-control form-pad" value="<?php echo @$phone_number; ?>" id="phone_number" name="phone_number">

@@ -2766,7 +2766,7 @@ function getallliquorbybar_new()
 		$this->form_validation->set_rules('city', 'City', 'required');
 		$this->form_validation->set_rules('state', 'State', 'required');
 		$this->form_validation->set_rules('zip', 'Zip Code', 'required|numeric');
-		$this->form_validation->set_rules('desc', 'Description', 'required');
+		//$this->form_validation->set_rules('desc', 'Description', 'required');
 		//$this->form_validation->set_rules('bar_meta_title', 'Meta Title', 'required');
 		//$this->form_validation->set_rules('bar_meta_keyword', 'Meta Keyword', 'required');
 		//$this->form_validation->set_rules('bar_meta_description', 'Meta Description', 'required');
@@ -2806,7 +2806,11 @@ function getallliquorbybar_new()
 				$data["paypal_p"] = $this->input->post('paypal_p');
 				$data["bitcoin_p"] = $this->input->post('bitcoin_p');
 				$data["apple_p"] = $this->input->post('apple_p');
-		}
+                                
+                                $data['facebook_link'] = $this->input->post('facebook_link');
+                                $data['twitter_link'] = $this->input->post('twitter_link');
+                                $data['instagram_link'] = $this->input->post('instagram_link');
+                }
 		else {
 			    $this->bar_model->bar_update();			
 				$data["msg"] = "success";	
@@ -3389,10 +3393,6 @@ function getallliquorbybar_new()
 		$this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('bar_name', 'Bar Name', 'required|callback_bartitle_check_suggest');
-		$this->form_validation->set_rules('address', 'Address', 'required');
-		$this->form_validation->set_rules('state', 'State', 'required');
-		$this->form_validation->set_rules('city', 'City', 'required');
-		$this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
 		$this->form_validation->set_rules('zip_code', 'Zip Code', 'required');
 		$this->form_validation->set_rules('g-recaptcha-response', 'Captcha', 'required');
 		

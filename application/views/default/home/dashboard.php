@@ -390,7 +390,7 @@ B.show();
 	                       	</div>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Description : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Description :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<textarea rows="5" placeholder="Description" name="desc" id="desc" class="form-control ckeditor form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
@@ -527,6 +527,35 @@ B.show();
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<textarea rows="5" placeholder="Description" name="bar_meta_description" id="bar_meta_description" class="form-control form-pad"><?php echo @$getalldata->bar_meta_description!='' && @$getalldata->bar_meta_description!='0' ? @$getalldata->bar_meta_description:'' ; ?></textarea>
+	                       		</div>
+	                       		<div class="clearfix"></div>
+	                       	</div>
+                                 <div class="padtb">
+	        				 	<div class="col-sm-3 text-right">
+	        				 		<label class="control-label">Facebook Account (ex. "americanbars"):</label>
+	        				 	</div>
+	                       		<div class="input_box col-sm-7">
+	                           		<input type="text" class="form-control form-pad" id="facebook_link" name="facebook_link" value="<?php echo @$getalldata->facebook_link;?>">
+	                       		</div>
+	                       		<div class="clearfix"></div>
+	                       	</div>
+	                       	
+	                       	<div class="padtb">
+	        				 	<div class="col-sm-3 text-right">
+	        				 		<label class="control-label">Twitter Account (ex. "americanbars"):</label>
+	        				 	</div>
+	                       		<div class="input_box col-sm-7">
+	                           		<input type="text" class="form-control form-pad" id="twitter_link" name="twitter_link" value="<?php echo @$getalldata->twitter_link;?>">
+	                       		</div>
+	                       		<div class="clearfix"></div>
+	                       	</div>
+	                       	
+	                       		<div class="padtb">
+	        				 	<div class="col-sm-3 text-right">
+	        				 		<label class="control-label">Instagram Account (e.x americanbars) :</label>
+	        				 	</div>
+	                       		<div class="input_box col-sm-7">
+	                           		<input type="text" class="form-control form-pad" id="instagram_link" name="instagram_link" value="<?php echo @$getalldata->instagram_link;?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -1025,7 +1054,7 @@ B.show();
 					
 					email: { required: true },
 					desc: { required: true },
-					to_1: {required: function(){  return $('#closed_1').is(":checked")==true?false:true;  }},
+					/*to_1: {required: function(){  return $('#closed_1').is(":checked")==true?false:true;  }},
 
                     from_1: {required: function(){ return (!$('#closed_1').is(":checked")); }},
 
@@ -1080,7 +1109,7 @@ B.show();
 					// to_7: {
 						// required: function(){ return (!$('#closed_7').is(":checked")); },
 					  	// greaterThan: '#from_7'
-					// },
+					// },*/
 					state: {
 						required: true,
 					},

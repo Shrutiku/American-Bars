@@ -20,10 +20,10 @@
 /*$config['base_url']	= '{re_admin_base_url}';
 $config['base_url_site']	= "{re_base_url}";
 $config['base_path']="{re_base_path}";*/
-$config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'https') . "://{$_SERVER['HTTP_HOST']}/admin";
-//$config['base_url']	= 'http://sandbox.americanbars.com/admin/';
-$config['base_url_site'] = "http://sandbox.americanbars.com/";
-$config['base_path']="/var/www/html/";
+//$config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'https') . "://{$_SERVER['HTTP_HOST']}/admin";
+$config['base_url']	= 'http://localhost/webapp/admin/';
+$config['base_url_site'] = "http://localhost/webapp/";
+$config['base_path']="http://localhost/webapp/";
 
 
 /*

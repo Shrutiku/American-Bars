@@ -289,7 +289,7 @@ $(document).ready(function(){
 	collapsible:true,							// allow all accordions to collapse 
 	useCookie: false,							// remember last active tab using cookie
 	openOnhover: false,		
-	initialTab: 1,			
+	initialTab: 2,			
 	
 	tabClass:'tabs',							// class of the tabs
 	headerClass:'accordion_tabs',	// class of the header of accordion on smaller screens
@@ -349,10 +349,9 @@ $(document).ready(function(){
 					
 	     				
 	        				<div class=" tabs">
-	        					<ul class="tabs active">
-	        						<li class="tab_btn display-inline divr <?php //echo $type=='user' ? 'active':''; ?>"><a onclick="changetype('user')" id="enthusiast-tab" href="#tab1" data-id="tab1">Enthusiast</a></li>
-	        						<li class="tab_btn display-inline divr <?php //echo $type=='bar_owner' ? 'active':''; ?>"><a onclick="changetype('bar_owner')" id="bar-owner-tab" href="#tab2" data-id="tab2">Bar Owner</a></li>
-	        						<li class="tab_btn display-inline divr <?php //echo $type=='taxi_owner' ? 'active':''; ?>"><a onclick="changetype('taxi_owner')" id="taxi-owner-tab" href="#tab3" data-id="tab3">Taxi Owner</a></li>
+                                                    <ul class="tabs active" style="justify-content: center; display: flex;">
+                                                        <li class="tab_btn display-inline divr <?php //echo $type=='user' ? 'active':''; ?>"><a onclick="changetype('user')" id="enthusiast-tab" href="#tab1" data-id="tab1">Enthusiast</a></li>
+	        					<li class="tab_btn display-inline divr <?php //echo $type=='bar_owner' ? 'active':''; ?>"><a onclick="changetype('bar_owner')" id="bar-owner-tab" href="#tab2" data-id="tab2">Bar Owner</a></li>
 	        					</ul>
 	        				</div>
 	        				<!-- <a class="accordion_tabs active" href="#tab1">Enthusiast</a> -->
@@ -360,7 +359,7 @@ $(document).ready(function(){
 	        				<?php $attributes = array('id'=>'frmlogin_ajax','name'=>'frmlogin_ajax','class'=>'form-horizontal','rolde'=>'form');
 							echo form_open('home/login',$attributes); ?>
 							<div id="ajax_msg_error"></div>	
-							<input type="hidden" class="type" id="type" value="user" name="type">
+							<input type="hidden" class="type" id="type" value="bar_owner" name="type">
 	        				 <div class="mar_top20">
 	    						<div class="padtb8">
 	        				 	<div class="col-sm-3">
@@ -421,7 +420,6 @@ $(document).ready(function(){
 					<?php $attributes = array('id'=>'custreg_ajax','name'=>'custreg_ajax','class'=>'form-horizontal','rolde'=>'form');
 							echo form_open('home/customersignup',$attributes); ?>	
 							<!-- <div class="padb10 text-center padt10">
-								<a href="<?php echo site_url('home/bar_owner_register')?>" class="btn btn-lg btn-primary">Bar Owner Rgister</a>
 								<a href="<?php echo site_url('home/taxi_owner_register')?>" class="btn btn-lg btn-primary">Taxi Owner Rgister</a>
 							</div> -->
 	     					
@@ -538,7 +536,6 @@ $(document).ready(function(){
 	                       		<div class="clearfix"></div>
 	                       	</div>
 	                       	<!-- <div class="padb10 text-center padt10 mar_top20">
-								<a href="<?php echo site_url('home/bar_owner_register')?>" class="btn btn-lg btn-primary">Bar Owner Rgister</a>
 								<a href="<?php echo site_url('home/taxi_owner_register')?>" class="btn btn-lg btn-primary">Taxi Owner Rgister</a>
 							</div> -->
 	                      </div> 	
@@ -553,10 +550,7 @@ $(document).ready(function(){
 					    	<!-- <a class="accordion_tabs" href="#tab2">Bar Owner</a> -->
 	        				<div class="tab_block tabContent" id="tab2">
 	        					
-		                      <div class="mart10 text-center br-top-yellow">
-		                      		<p class="notyet">Not Yet Register</p>
-		                      		<a href="<?php echo site_url('home/bar_owner_register')?>"  class="btn btn-lg btn-primary">Register Now</a>	
-		                      </div>
+	
 					    	</div>
 					    	<!-- <a class="accordion_tabs" href="#tab3">Taxi Owner</a> -->
 	        				<div class="tab_block tabContent" id="tab3">
@@ -576,7 +570,7 @@ $(document).ready(function(){
 	        				
 	                 <form name="frmforget_ajax" method="post" id="frmforget_ajax" class="form-horizontal login-form" action="<?php echo base_url();?>home/login" target="_blank">
 	                	<div id="ajax_msg_error2"></div>	
-	                	<input type="hidden" class="type" id="type1" value="<?php echo $type!='' ? $type:'user'; ?>" name="type">
+	                	<input type="hidden" class="type" id="type1" value="<?php echo $type!='' ? $type:'bar_owner'; ?>" name="type">
 	                  
 	        				
 	                   <div class="padtb8">

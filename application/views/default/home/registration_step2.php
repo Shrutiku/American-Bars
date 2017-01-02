@@ -111,18 +111,9 @@
   <?php } ?>
 	<div class="wrapper row5 beer-list" style="border:<?php echo $v==0 ? 'none':'';?>">
      	<div class="container">	
-     		<div class="new-reg-step">
-     					<ul class="registration_steplist" style="display:inline-flex;width:1150px">
-     						<li class="active" ><a >Step 1</a></li>
-     						<li><a >Step 2</a></li>
-     						<li><a >Step 3</a></li>
-     						<li class="last"><a >Step 4</a></li>
-     						<div class="clearfix"></div>
-     					</ul>
-     				</div>
      		<div class="result_box clearfix mar_top15 margin-bottom-20">
                 <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
-							echo form_open('home/bar_owner_register',$attributes); ?>	
+							echo form_open('home/claimbar_type',$attributes); ?>	
                 <!-- <div class="promo-left">
                     <div class="<?php echo @$getbardatafeature['feature_id']==1 ? 'active':'';?>" onclick="changeblock('full');">
                         <img src="<?php echo base_url()."default/images/promo6.jpg"?>" alt="Upgrade to a Full Mug Today" />
@@ -366,8 +357,8 @@
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-12 padding5 mart10">
 	                       			<!--<input type="submit" name="step2" id="step2" value="Next" class="btn btn-lg btn-primary btn-next pull-right"/>-->
-                                    <button type="submit" name="step2" id="step2" value="Next" class="btn btn-lg btn-primary btn-next pull-right margin-top-30">Next <i class="next-arrow-icon"></i></button>
-	                       			<!-- <a class="btn btn-lg btn-primary" href="<?php echo site_url('home/bar_owner_register')?>">Back</a> -->
+                                            <button type="submit" name="step2" id="step2" value="Next" class="btn btn-lg btn-primary btn-next pull-right margin-top-30">Next <i class="next-arrow-icon"></i></button>
+	                       			<!-- <a class="btn btn-lg btn-primary" href="<?php echo site_url('home/claimbar_type') . $bar_id?>">Back</a> -->
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -402,6 +393,8 @@
         $('#halfmug-button').click(function(){
             $("#halfmugtext").modal('show');
         });
+        
+        changeblock("fullmug");
     });
 </script>
 
