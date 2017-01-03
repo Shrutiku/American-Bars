@@ -4932,7 +4932,7 @@ class Home extends SPACULLUS_Controller {
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $this->input->post('phone_number');
                 $claim_code = rand(100000, 999999);
-                $bar_update = array('claim_code' => $claim_code, 'phone' => $phone_number);
+                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
                 $body = 'Here is your verification code for American Bars: ' . $claim_code;
                 
                 try {
@@ -5082,6 +5082,7 @@ class Home extends SPACULLUS_Controller {
                 $data['getbardata'] = $this->home_model->getBardata ($bar_id);
                 $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
                 $pass = randomCode();
+                $data_insert['mobile_no'] = $data['getbardata']['claim_phone'];
                 $data_insert['first_name'] = $firstname;
                 $data_insert['last_name'] = $lastname;
                 $data_insert['email'] = $email;
@@ -5138,7 +5139,7 @@ class Home extends SPACULLUS_Controller {
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
-                $phone_number = $data['getbardata']['phone'];
+                $phone_number = $data['getbardata']['claim_phone'];
                 $body = "Your American Bars profile login is\nUsername: " . $email . "\nPassword: " . $pass . "\nWelcome to American Bars, the largest bar customer network in the US.";
                 
                 try {
