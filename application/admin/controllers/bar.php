@@ -163,7 +163,7 @@ class Bar extends  CI_Controller {
 		}
 		
 		$keyword=str_replace('"','',str_replace(array(",","%","$","&","*","#","(",")",":",";",">","<","/"),'',trim($keyword)));
-                $keyword=str_replace("'", "\\'");
+                $keyword=str_replace("'", "\\'", trim($keyword));
 	
 		$config['uri_segment']='7';
 		$config['base_url'] = base_url().'bar/search_list_bar'.'/'.$bar_type."/".$limit.'/'.$option.'/'.$keyword.'/';
