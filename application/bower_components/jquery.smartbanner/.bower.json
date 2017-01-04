@@ -1,0 +1,26 @@
+{
+  "name": "jquery.smartbanner",
+  "main": "jquery.smartbanner.js",
+  "homepage": "https://github.com/jmmerino/jquery.smartbanner",
+  "authors": [
+    "Arnold Daniels <arnold@jasny.net>"
+  ],
+  "description": "Smart Banner support for iOS and Android",
+  "keywords": [
+    "jquery",
+    "smartbanner",
+    "ios",
+    "android"
+  ],
+  "license": "LICENSE",
+  "_release": "c39e8642f5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c39e8642f58ae8cbae5d15a6952eea6502b2ff9e"
+  },
+  "_source": "https://github.com/jmmerino/jquery.smartbanner.git",
+  "_target": "*",
+  "_originalSource": "jquery.smartbanner",
+  "_direct": true
+}
