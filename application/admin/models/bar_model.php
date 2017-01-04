@@ -913,7 +913,7 @@ if(file_exists(base_path().'upload/barlogo_225/'.$this->input->post('prev_bar_lo
 	function get_search_bar_result($bar_type,$option,$keyword,$offset, $limit)
 	{
 	
-	   $keyword=str_replace('"','',str_replace(array("'",",","%","$","&","*","#","(",")",":",";",">","<","/","-"),' ',$keyword));
+	   $keyword=str_replace('"','',str_replace(array(",","%","$","&","*","#","(",")",":",";",">","<","/","-"),' ',$keyword));
 	   
 	   //$this->db->select('b.*');
 	   $this->db->select('b.*,u.user_id,u.status as ustatus');
