@@ -162,7 +162,7 @@ class Bar extends  CI_Controller {
 		
 		}
 		
-		$keyword=str_replace('"','',str_replace(array("'",",","%","$","&","*","#","(",")",":",";",">","<","/"),'',trim($keyword)));
+		$keyword=str_replace('"','',str_replace(array(",","%","$","&","*","#","(",")",":",";",">","<","/"),'',trim($keyword)));
 
 	
 		$config['uri_segment']='7';
