@@ -40,6 +40,13 @@ else{
 <!DOCTYPE html>
 <html lang="en">  
 <head>
+        <meta name="apple-itunes-app" content="app-id=1090377977">
+    <meta name="google-play-app" content="app-id=com.spaculus.americanbars">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="<?php echo app_bower_url();?>/jquery.smartbanner/jquery.smartbanner.css" type="text/css" media="screen">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -56,14 +63,6 @@ else{
 	<title><?php echo $pageTitle;?></title>
 	
 	<?php } ?>
-        
-    <meta name="author" content="Google, Inc.">
-    <meta name="apple-itunes-app" content="app-id=1090377977">
-    <meta name="google-play-app" content="app-id=com.spaculus.americanbars">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="<?php echo app_bower_url();?>/jquery.smartbanner/jquery.smartbanner.css" type="text/css" media="screen">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
  	 <!-- Bootstrap -->
     <!-- Bootstrap core CSS -->
@@ -141,7 +140,6 @@ else{
 </head>  
 <?php $getlastmessage = getLatestMessage();?>
 	<body class="<?php if($getlastmessage){ echo "modal-open" ;}?>">
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
             <script src="<?php echo app_bower_url();?>/jquery.smartbanner/jquery.smartbanner.js"></script>
             <script type="text/javascript">
               $(function() { $.smartbanner(); } );
