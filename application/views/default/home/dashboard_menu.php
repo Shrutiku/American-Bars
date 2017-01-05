@@ -121,7 +121,7 @@
      					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
      						<a href="<?php echo site_url('bar/bar_special_hours')?>">
      							<i class="strip bar-special"></i>
-     							Bar Special Hours
+     							Happy Hours
      						</a>
      					</li>
      					
