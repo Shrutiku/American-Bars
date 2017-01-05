@@ -1931,7 +1931,7 @@ function validate(){
             });
 		jQuery(document).ready(function() {       
 				<?php if($msg=='update'){?>
-  		$.growlUI('Your bar special hours updated successfully .');
+  		$.growlUI('Your bar happy hours updated successfully .');
     <?php } ?>		
 		
 		  // FormComponents.init();
