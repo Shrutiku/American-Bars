@@ -1250,7 +1250,7 @@ class Home extends SPACULLUS_Controller {
     }
 
     function registration_step4_upgrade($bar_id = '', $type = '') {
-        if (check_user_authentication() != '') {
+        if (check_user_authentication() == '') {
             redirect('home');
         }
         
