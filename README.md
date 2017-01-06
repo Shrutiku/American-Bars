@@ -60,7 +60,7 @@ $ ./build-all
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [sshkey]: <http://daringfireball.net/projects/markdown/>
+   [sshkey]: <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>
    [netbeans]: <https://netbeans.org/downloads/start.html?platform=macosx&lang=en&option=php>
    [mamp]: <http://downloads6.mamp.info/MAMP-PRO/releases/4.0.6/MAMP_MAMP_PRO_4.0.6.pkg>
    [webapp_tools]: <http://54.89.247.251:8080/userContent/webapp/*zip*/webapp.zip>
