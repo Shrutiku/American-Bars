@@ -905,7 +905,10 @@ class Home extends SPACULLUS_Controller {
     }
 
     function registration_step4($bar_id = '', $type = '') {
-
+        if (check_user_authentication() != '') {
+            redirect('home');
+        }
+        
         $bar_id = $this->session->userdata('viewid');
 
         if ($bar_id == '') {
@@ -1247,10 +1250,13 @@ class Home extends SPACULLUS_Controller {
     }
 
     function registration_step4_upgrade($bar_id = '', $type = '') {
-
+        if (check_user_authentication() == '') {
+            redirect('home');
+        }
+        
         $getpaypalsetting = paypalsetting();
         if ($bar_id == '') {
-            redirect('home/bar_owner_register');
+            redirect('home/claim_bar_owner_register');
         }
 
         if ($type != 'managed' && $type != 'fullmug') {
@@ -5113,7 +5119,8 @@ class Home extends SPACULLUS_Controller {
                 $bar_id = $this->session->userdata('viewid_orig');
 
                 $data['one_user'] = $this->home_model->get_availability($bar_id);
-                
+
+                $this->session->set_userdata(array('user_id' => $uid));                
                 $uid = base64_encode($uid);
                 $this->session->set_userdata(array('userid_sess' => $uid));
                 //$this->session->unset_userdata('viewid_orig');
