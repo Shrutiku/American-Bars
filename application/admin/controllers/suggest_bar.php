@@ -199,6 +199,8 @@ class Suggest_bar extends  CI_Controller {
 				 $slug=getBarSlug($get_bar_info['bar_name']);	
 				$dataarr = array('bar_title'=>$get_bar_info['bar_name'],
 				                 'bar_desc'=>$get_bar_info['description'],
+                                                 'lang'=>$get_bar_info['lang'],
+                                                 'lat'=>$get_bar_info['lat'],
 								 'address'=>$get_bar_info['address'],
 								 'state'=>$get_bar_info['state'],
 								 'phone'=>$get_bar_info['phone_number'],

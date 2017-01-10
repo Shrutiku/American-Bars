@@ -345,6 +345,10 @@ class Bar extends  CI_Controller {
 			$data["bar_meta_title"] = $this->input->post('bar_meta_title');
 			$data["bar_meta_keyword"] = $this->input->post('bar_meta_keyword');
 			$data["bar_meta_description"] = $this->input->post('bar_meta_description');
+                        
+                        $getlat = getCoordinatesFromAddress($data['address'], $data['city'], $data['state']);
+                        $data["lat"] = $getlat['lat'];
+                        $data["lang"] = $getlat['lng'];
 			
 			$data["cash_p"] = $this->input->post('cash_p');
 			$data["master_p"] = $this->input->post('master_p');

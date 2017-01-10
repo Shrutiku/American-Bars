@@ -3297,14 +3297,14 @@ if(file_exists(base_path().'upload/bar_eventgallery_thumb_250by150/'.$preImg[$ke
     	 $path = explode("/", $keys['path']); // splitting the path
     	 $last = end($path);
 		 
-		 $getlat = getCoordinatesFromAddress($this->input->post('address'),$this->input->post('city'),$this->input->post('state'));
+		$getlat = getCoordinatesFromAddress($this->input->post('address'),$this->input->post('city'),$this->input->post('state'));
 		$data_insert1["bar_name"] = $this->input->post('bar_name');
 		$data_insert1["address"] = $this->input->post('address');
 		$data_insert1["state"] = $this->input->post('state');
 		$data_insert1["city"] = $this->input->post('city');
-		$data_insert1["phone_number"] = $this->input->post('phone_number');
-		$data_insert1["lat"] = $getlat['lat'];
+                $data_insert1["lat"] = $getlat['lat'];
 		$data_insert1["lang"] = $getlat['lng'];
+		$data_insert1["phone_number"] = $this->input->post('phone_number');
 		$data_insert1["zip_code"] = $this->input->post('zip_code');
 		$data_insert1["description"] = $this->input->post('description');
 		$data_insert1["sugget_by_user"] = get_authenticateUserID();
