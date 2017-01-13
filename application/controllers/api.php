@@ -126,14 +126,15 @@ class Api extends REST_Controller
 		$bar_title = $this->input->post('title');
 		$lat = $this->input->post('lat');
 		$lang = $this->input->post('lang');
+                $category = $this->input->post('category');
 	
 		$address_j = $this->input->post("address_j");
 			$days = $this->input->post("days"); 
 		
-		$data['barlist'] = $this->api_model->getAllBar($sort_by,$sort_type,$limit,$offset,$state,$city,$zipcode,$bar_title,$lat,$lang,$address_j,$days,'result');
+		$data['barlist'] = $this->api_model->getAllBar($sort_by,$sort_type,$limit,$offset,$state,$city,$zipcode,$bar_title,$lat,$lang,$category,$address_j,$days,'result');
 		
 		
-		$data['barlist_total'] = $this->api_model->getAllBar($sort_by,$sort_type,$limit,$offset,$state,$city,$zipcode,$bar_title,$lat,$lang,$address_j,$days,'total');
+		$data['barlist_total'] = $this->api_model->getAllBar($sort_by,$sort_type,$limit,$offset,$state,$city,$zipcode,$bar_title,$lat,$lang,$category,$address_j,$days,'total');
 		$data['bar_happy_hours'] = $this->api_model->getAllBarHappyHours($sort_by,$sort_type,$limit,$offset,$state,$city,$zipcode,$bar_title,$lat,$lang,$address_j,$days,'result');
 		$data['bar_events'] = $this->api_model->getAllbarEvents($sort_by,$sort_type,$limit,$offset,$state,$city,$zipcode,$bar_title,$lat,$lang,$address_j,$days,'result');
 		

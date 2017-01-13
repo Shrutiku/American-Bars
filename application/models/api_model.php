@@ -447,7 +447,7 @@ if($email_temp->status=='active'){
 		
 	}
 	
-	function getAllBar($sort_by,$sort_type,$limit=0,$offset=0,$state='',$city='',$zipcode='',$bar_title='',$lat,$lang,$address_j,$days,$type='')	{
+	function getAllBar($sort_by,$sort_type,$limit=0,$offset=0,$state='',$city='',$zipcode='',$bar_title='',$lat,$lang,$category='',$address_j,$days,$type='')	{
 			$this->db->_protect_identifiers=false; 
 		$result = array();
 		$R = 6371;
@@ -572,6 +572,11 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 		if($city != '0' && $city != "")
 		{
 			$this->db->like("city",$city);
+		}
+                if($category != '0' && $category != "")
+		{
+			$this->db->join("bar_category",'FIND_IN_SET(bar_category.bar_category_id, sss_bars.bar_category) != 0');
+                        $this->db->where("bar_category.bar_category_name", $category);
 		}
 		if($zipcode != '0' && $zipcode != "")
 		{
