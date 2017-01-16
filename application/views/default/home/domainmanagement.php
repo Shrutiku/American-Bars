@@ -63,7 +63,7 @@
                                     <label class="control-label">Password: </label>
                                 </div>
                                 <div class="input_box col-sm-7">
-                                    <input type="text" class="form-control form-pad" id="pw" name="pw"
+                                    <input type="password" class="form-control form-pad" id="pw" name="pw"
                                            value="<?php echo $pw; ?>">
                                 </div>
                                 <div class="clearfix"></div>
