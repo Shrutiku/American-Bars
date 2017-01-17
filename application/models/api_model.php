@@ -417,6 +417,11 @@ if($email_temp->status=='active'){
 	
 		
 	}
+        
+        function getAllBarCategories() {
+            $this->db->select("bar_category.bar_category_name");
+            return $this->db->get("bar_category")->result_array();
+        }
 
 	function change_password($password1='',$new_password1='')
 	{

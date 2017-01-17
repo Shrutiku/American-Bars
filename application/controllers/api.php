@@ -86,7 +86,14 @@ class Api extends REST_Controller
 			
 		}
 	
-	 function forget_password_post()
+	 function bar_categories_post()
+    {
+        $data = $this->api_model->getAllBarCategories();
+		
+        $this->response($data ,200);
+    }
+    
+    function forget_password_post()
     {
     	$email = $this->input->post('email');
         $data = $this->api_model->forgot_password($email);
