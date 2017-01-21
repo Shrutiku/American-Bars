@@ -958,6 +958,8 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 		//if($days!= "")
 		//{
 			$this->db->join("event_time",'event_time.event_id=events.event_id');
+                        $this->db->join("event_images",'event_images.bar_eventgallery_id=events.event_id');
+
 		//}
 		//$this->db->join("sss_bar_comment",'sss_bar_comment.bar_id=bars.bar_id','left');
 		
