@@ -5122,7 +5122,7 @@ class Home extends SPACULLUS_Controller {
 
                 $this->session->set_userdata(array('user_id' => $uid));                
                 $uid = base64_encode($uid);
-                $this->session->set_userdata(array('userid_sess' => $uid));
+                $this->session->set_userdata(array('userid_sess' => $uid, 'user_type' => 'bar_owner'));
                 //$this->session->unset_userdata('viewid_orig');
                 //$this->session->unset_userdata('viewid');
                 
