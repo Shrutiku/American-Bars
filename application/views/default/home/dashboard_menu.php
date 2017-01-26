@@ -53,13 +53,6 @@
      						</a>
      					</li>
      					
-     					<li class="<?php echo $this->uri->segment(2)=='barlikers' ? 'active':'';?> ">
-     						<a href="<?php echo site_url('bar/barlikers')?>">
-     							<i class="strip bar"></i>
-     							My Bar Likers
-     						</a>
-     					</li>
-     					
      					<li class="<?php echo $this->uri->segment(2)=='updatecard' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/updatecard')?>">
      							<i class="strip update_creditcard"></i>
@@ -75,6 +68,24 @@
      							Be Social
      						</a>
      					</li>
+                                        
+                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='domainmanagement' ? 'active':'';?>">
+                                                <a href="<?php echo site_url('home/domainmanagement')?>">
+                                                        <p>
+                                                                <i class="domain-settings"></i>
+                                                        </p>
+                                                        Domain Management
+                                                </a>
+                                        </li>
+                                        
+                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='barlistings' ? 'active':'';?>">
+                                                <a href="<?php echo site_url('home/barlistings')?>">
+                                                        <p>
+                                                                <i class="bar-listings"></i>
+                                                        </p>
+                                                        Bar Listings
+                                                </a>
+                                        </li>
      					
      					<!-- <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='product_logo' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
      						<a href="<?php echo site_url('bar/product_logo')?>">
@@ -82,13 +93,6 @@
      							Product Logo
      						</a>
      					</li> -->
-     					
-     					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='product_logo' || $this->uri->segment(2)=='all_orders' || $this->uri->segment(2)=='product_setting' || $this->uri->segment(2)=='paypal_setting' || $this->uri->segment(2)=='myproduct' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-     						<a href="<?php echo site_url('bar/all_orders')?>">
-     							<i class="strip market-place"></i>
-     							Market Place
-     						</a>
-     					</li>
      					
      					<!-- <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='product_setting' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
      						<a href="<?php echo site_url('bar/product_setting')?>">
@@ -211,31 +215,6 @@
      							Update Banner
      						</a>
      					</li>
-     					
-     					<li style="position: relative;" class="<?php echo $this->uri->segment(2)=='list_user_message'  || $this->uri->segment(2)=='viewconversation_user' ? 'active':'';?>">
-     						<a href="<?php echo site_url('message/list_user_message')?>">
-     							<p>
-     							<i class="strip message new-add"></i>
-     							<?php if(unread_message()!=0){?><i class="glyphicon glyphicon-bell notify-icon"></i><?php } ?>
-     							</p>
-     							Message to others
-     						</a>
-     					</li>
-						<li style="position: relative;" class="<?php echo $this->uri->segment(2)=='domainmanagement' ? 'active':'';?>">
-							<a href="<?php echo site_url('home/domainmanagement')?>">
-								<p>
-									<i class="domain-settings"></i>
-								</p>
-								Domain Management
-							</a>
-						</li>
-						<li style="position: relative;" class="<?php echo $this->uri->segment(2)=='barlistings' ? 'active':'';?>">
-							<a href="<?php echo site_url('home/barlistings')?>">
-								<p>
-									<i class="bar-listings"></i>
-								</p>
-								Bar Listings
-							</a>
-						</li>
+     							
      				</ul>
      			</div>
