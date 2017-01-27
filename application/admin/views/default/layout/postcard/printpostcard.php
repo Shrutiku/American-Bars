@@ -41,10 +41,9 @@ $html .='<div style="float: left;padding: 10px; border-right: solid 1px #996E13;
   			<div style="font-family: Calibri; text-align: center; margin-top:20px; font-size: 11px;">
 	     							'.$one_order['bar_title'].' <br/>
 	     							'.$one_order['address'].' <br/>
-	     							'.$one_order['city']." ".$one_order['state']." ".$one_order['zipcode'].' 
-                        <label style="font-family: Calibri; margin-top:25px; font-size: 11px; 	font-weight: bold; float:left;">Enter your code: '.$code.'</label>
-	     	
+	     							'.$one_order['city']." ".$one_order['state']." ".$one_order['zipcode'].' 	     	
   		</div>
+                <label style="font-family: Calibri; margin-top:25px; font-size: 11px; 	font-weight: bold; float:left;">Enter your code: '.$code.'</label>
   		</div></td></tr></table>';
 $html .= '</div>';
 // 
