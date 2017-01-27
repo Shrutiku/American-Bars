@@ -14,7 +14,9 @@ if(file_exists(base_path().'upload/postcard_thumb_70by70/'.$one_order['image']))
 
 $img1 = front_base_url()."upload/postcard_thumb_70by70/".$one_order['image'];
 					}
-
+$code = base64_encode($one_order['postcard_id']);
+                                   
+                                        
 //http://192.168.1.27/ADB/admin/default/images/post_bg1.jpg
 $html = '';
 // $html .= '<table width="100%" bgcolor="rgb(255,255,255)" border="0" cellspacing="0" cellpadding="0" align="center" style=" padding-right:30px;background-color:rgb(255,255,255);">
@@ -40,6 +42,7 @@ $html .='<div style="float: left;padding: 10px; border-right: solid 1px #996E13;
 	     							'.$one_order['bar_title'].' <br/>
 	     							'.$one_order['address'].' <br/>
 	     							'.$one_order['city']." ".$one_order['state']." ".$one_order['zipcode'].' 
+                        <label style="font-family: Calibri; margin-top:25px; font-size: 11px; 	font-weight: bold; float:left;">Enter your code: '.$code.'</label>
 	     	
   		</div>
   		</div></td></tr></table>';

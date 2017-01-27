@@ -37,7 +37,7 @@ class Postcard extends SPACULLUS_Controller {
                 $this->load->library ('form_validation');
 
 		$this->form_validation->set_rules ('code', 'Code', 'required');
-                
+    
                 if ($_POST) { 
                     if ($this->form_validation->run ()== FALSE) {
 				if (validation_errors ()) {
@@ -46,10 +46,15 @@ class Postcard extends SPACULLUS_Controller {
 					$data["error"] = "";
 				}
 				
-			
-				$data["email"] = $this->input->post ('code');	
+				$data["code"] = $this->input->post ('code');	
 			} else {
-                		redirect('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.$this->input->post('code'));
+                                $postcard = $this->home_model->get_postcard_by_id(base64_encode($this->input->post('code')));
+                                
+                                if ($postcard == '') {
+                                    $data["error"] = "Invalid code.";
+                                } else {
+                                    redirect('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.$postcard->bar_id);
+                                }
                         }
                 }
                 
