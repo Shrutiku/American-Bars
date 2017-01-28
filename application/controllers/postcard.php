@@ -67,6 +67,10 @@ class Postcard extends SPACULLUS_Controller {
 	
 	function view($id = '',$msg='') 
 	{
+            if (check_user_authentication() != '') {
+                redirect('/bar/postcard');
+            }
+        
 		if ($id== '') {
 			redirect ('home');
 		}
