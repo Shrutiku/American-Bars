@@ -51,7 +51,7 @@
 	                       		<div class="col-sm-7">
 		                       		
 		        					<div class="mar_top4">
-                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Claim Bar</button>
+                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Enter</button>
 		        					</div>
 		        					<div class="clearfix"></div>
 		        				</div>
