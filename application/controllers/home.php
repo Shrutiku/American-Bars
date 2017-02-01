@@ -300,8 +300,6 @@ class Home extends SPACULLUS_Controller {
         $data['getpostcard'] = $this->home_model->get_bar_postcard($data['getbar']['bar_id'], '4');
         $data['getorder'] = $this->home_model->get_bar_order($data['getbar']['bar_id'], '4');
         $data['get_cat'] = $this->home_model->barCategory();
-
-
         $data['one_user'] = $this->home_model->get_availability_time($data['getbar']['bar_id']);
         $data['albumgallery'] = $this->bar_model->getAllBarGal($data['getbar']['bar_id']);
         $data['result'] = $this->bar_model->getAllComments($data['getbar']['bar_id'], $offset = 0, $limit = 4);
@@ -5444,6 +5442,19 @@ class Home extends SPACULLUS_Controller {
         $data['getposttw'] = $this->home_model->getAllPost('twitter');
         $data['getpostin'] = $this->home_model->getAllPost('instagram');
         $data['screener_name'] = $scrname;
+        
+        $this->load->library('HybridAuthLib');
+        $data['providers'] = $this->hybridauthlib->getProviders();
+		foreach($data['providers'] as $provider=>$d) {
+			if ($d['connected'] == 1) {
+                                try {
+				$data['providers'][$provider]['user_profile'] = $this->hybridauthlib->authenticate($provider)->getUserProfile();
+                                } catch (Exception $e) {
+                                $data["error"] = "Couldn't authenticate with ".$provider;
+                            }
+			}
+		}
+        
         if ($_POST) {
             if ($this->form_validation->run() == FALSE) {
                 if (validation_errors()) {
