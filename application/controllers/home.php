@@ -2549,7 +2549,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function registration_step3_upgrade($bar_id = '', $type = '') {
+    function registration_step3_upgrade($bar_id = '', $type = '', $coupon='') {
 
         $theme = getThemeName();
         $data['error'] = '';
@@ -2589,11 +2589,19 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
+                
+        if ($coupon == "Cheers25") {
+            if ($type == 'fullmug') {
+                $data['site_setting']->amount = (string)((int)$data['site_setting']->amount * 0.5);
+            }
+            else if ($type == 'managed') {
+                $data['site_setting']->managed_account_amount = (string)((int)$data['site_setting']->managed_account_amount * 0.5);
+            }
+        }
 
         //$this->form_validation->set_rules('btype','Free Listing Or Paid Listing','required');
 
         if ($_POST) {
-
             redirect('home/registration_step4_upgrade/' . $this->input->post('bar_id') . "/$type");
         }
 
