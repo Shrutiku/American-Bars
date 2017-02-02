@@ -4,7 +4,7 @@
 
 American Bars Webapp is the client–server software application, in which the client runs in a web browser. In addition, American Bars API for native apps is stored in this repo and runs on the same server as AB Webapp. 
 
-For convinience, AB Webapp refers to both the webapp and API.
+For convenience, AB Webapp refers to both the webapp and API.
 
 This guide describes:
 
