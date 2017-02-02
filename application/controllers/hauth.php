@@ -226,17 +226,18 @@ class HAuth extends CI_Controller {
 		log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
 		require_once APPPATH.'/third_party/hybridauth/index.php';
 	}
-        public function post($status='', $webpage='', $picture='')
+        public function post($message='', $link='', $picture='')
 	{
-		log_message('debug', 'controllers.HAuth.endpoint called.');
-		log_message('info', 'controllers.HAuth.endpoint: $_REQUEST: '.print_r($_REQUEST, TRUE));
-		if ($_SERVER['REQUEST_METHOD'] === 'GET')
-		{
-			log_message('debug', 'controllers.HAuth.endpoint: the request method is GET, copying REQUEST array into GET array.');
-			$_GET = $_REQUEST;
+                $status = array('message' => $status, 'link'=>$link, 'picture'=>$picture);
+		// Send to the view all permitted services as a user profile if authenticated
+		$providers = $this->hybridauthlib->getProviders();
+		foreach($providers as $provider=>$d) {
+			if ($d['connected'] == 1) {
+				$providers[$provider]->setUserStatus($status);
+			}
 		}
-		log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
-		require_once APPPATH.'/third_party/hybridauth/index.php';
+               
+                $this->load->view('/home/socialshare', $data);
 	}
 }
 /* End of file hauth.php */

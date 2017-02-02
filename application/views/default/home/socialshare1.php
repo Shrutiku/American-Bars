@@ -272,10 +272,10 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                     <p class="bar_add" style="text-align: center;">Click Here to Post:</p>
                                 <div class="padtb">
 	        		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Status :</label>
+	        				 		<label class="control-label">Message :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="facebook_link" name="status">
+	                           		<input type="text" class="form-control form-pad" id="message" name="message">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -285,7 +285,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 	        				 		<label class="control-label">Webpage Link :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="twitter_link" name="webpage_link">
+	                           		<input type="text" class="form-control form-pad" id="link" name="link">
 	                       		</div>
 	                       		<div class="clearfix"></div> 
 	                       	</div>
@@ -295,13 +295,13 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 	        				 		<label class="control-label">Picture Link :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="instagram_link" name="picture_link">
+	                           		<input type="text" class="form-control form-pad" id="picture" name="picture">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
                     	        <div class="padtb" style="text-align: center;">
 
-                                <a href="<?php echo site_url('home/hauth/post').'status='.$status->value?>" class="btn btn-lg btn-primary marr_10" >Post</a> 
+                                <a name="post" id="post" onclick="appendPostParams();" href="<?php echo site_url('home/hauth/post')?>" class="btn btn-lg btn-primary marr_10" >Post</a> 
                                 </div>
                     
                     <div class="container" style="max-width: 60%; padding-top: 5px">
@@ -425,6 +425,14 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 
 <?php } ?>
 
+        }
+        
+        function appendPostParams()
+        {
+            document.getElementById('post').href = document.getElementById('post').href 
+                    + "/" + document.getElementById('message').value 
+                    + "/" + document.getElementById('link').value
+                    + "/" + document.getElementById('picture').value;    
         }
 
         function showfacebook()
