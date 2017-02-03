@@ -32,9 +32,9 @@
                         
                      
      				<div class="pad20">
-     				<h1 class="yellow_title padb10 br_bott_gray"><?php echo "Congratulations, ".$bar_info['bar_title']."! ";?>You have received a Comment Post Card from one of your customers. If you have 
-     					    already claimed your bar, please login to read the Postcard comments. If you have not claimed your bar, please claim it
-     					    immediately.  </h1>
+     				<h1 class="yellow_title padb10 br_bott_gray">Congratulations, you have received a Comment Post Card from one of your customers. If you have 
+     					    already claimed your bar, please login to read the Postcard comments. If you have no claimed your bar, please claim it
+     					    immidiatly.  </h1>
 					<?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
 							echo form_open('postcard/view/'.$postcardid,$attributes); ?>	
 	     						<input type="hidden" name="type" value="bar_owner" id="type" />
@@ -201,7 +201,7 @@
 	                       		<div class="col-sm-7">
 		                       		
 		        					<div class="mar_top4">
-		        						Not Registered: <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode(@$postcard->bar_id));?>" class="yellow_text">Claim Your Bar Now!</a>
+		        						Not Registered: <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($postcard->bar_id));?>" class="yellow_text">Claim you Bar Now</a>
 		        					</div>
 		        					<div class="clearfix"></div>
 		        				</div>
