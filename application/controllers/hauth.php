@@ -1,5 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 require_once(APPPATH . 'libraries/facebook-sdk-v5/autoload.php');
+
 class HAuth extends CI_Controller {
 	public function __construct()
 	{
