@@ -142,7 +142,7 @@
 		$CI->email->initialize($config);	
 				
 		
-		$CI->email->from($email_address_from,"American Dive Bar Team");
+		$CI->email->from($email_address_from,"American Bars Team");
 		$CI->email->reply_to($email_address_reply);
 		$CI->email->to($email_to);
 		$CI->email->subject($email_subject);
