@@ -30,7 +30,7 @@ $config =
 			),
 
 			"Google" => array (
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" ),
 			),
 

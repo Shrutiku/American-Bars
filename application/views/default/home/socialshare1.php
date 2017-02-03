@@ -196,10 +196,10 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
         <div class="margin-top-50 bg_brown">
             <?php echo $this->load->view(getThemeName() . '/home/dashboard_menu'); ?>
             <div class="dashboard_detail">
-                <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Share</div></div>
+                <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                 <div id="container">
                     
-	<h1>Login to all your Social Medias</h1>
+	<h1>Login to your Social Media:</h1>
 
 	<div id="body">
             <?php

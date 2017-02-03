@@ -3,6 +3,7 @@
 require(APPPATH . 'PayPal-PHP-SDK/paypal/rest-api-sdk-php/sample/bootstrap.php');
 require_once(APPPATH . 'libraries/Twilio/autoload.php');
 require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
+require_once(APPPATH . 'libraries/facebook-sdk-v5/autoload.php');
 
 
 // require(APPPATH.'Paypal/bootstrap.php');
