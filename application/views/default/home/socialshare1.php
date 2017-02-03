@@ -539,7 +539,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                 length: 400, //Integer: For posts with text longer than this length, show an ellipsis.
                 show_media: true, //Boolean: if false, doesn't display any post images
                 media_min_width: 0, //Integer: Only get posts with images larger than this value
-                update_period: 5, //Integer: Number of seconds before social-feed will attempt to load new posts.
+                update_period: 100, //Integer: Number of seconds before social-feed will attempt to load new posts.
                 template: "<?php echo app_bower_url(); ?>/social-feed/template.html", //String: Filename used to get the post template.
                 date_format: "ll", //String: Display format of the date attribute (see http://momentjs.com/docs/#/displaying/format/)
                 date_locale: "en", //String: The locale of the date (see: http://momentjs.com/docs/#/i18n/changing-locale/)
