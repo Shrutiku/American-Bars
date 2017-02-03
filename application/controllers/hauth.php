@@ -8,14 +8,7 @@ class HAuth extends CI_Controller {
 	}
 	public function index()
 	{
-		// Send to the view all permitted services as a user profile if authenticated
-		$data['providers'] = $this->hybridauthlib->getProviders();
-		foreach($data['providers'] as $provider=>$d) {
-			if ($d['connected'] == 1) {
-				$data['providers'][$provider]['user_profile'] = $this->hybridauthlib->authenticate($provider)->getUserProfile();
-			}
-		}
-		$this->load->view('/home/socialshare', $data);
+            redirect('/home/socialshare');
 	}
 	public function login($provider)
 	{

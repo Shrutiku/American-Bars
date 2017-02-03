@@ -1,265 +1,301 @@
 <?php
-/*!
-* HybridAuth
-* http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
-* (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html 
-*/
+
+use Facebook\Exceptions\FacebookSDKException;
+use Facebook\Facebook as FacebookSDK;
+
+/* !
+ * HybridAuth
+ * http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
+ * (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html
+ */
 
 /**
  * Hybrid_Providers_Facebook provider adapter based on OAuth2 protocol
- * 
  * Hybrid_Providers_Facebook use the Facebook PHP SDK created by Facebook
- * 
  * http://hybridauth.sourceforge.net/userguide/IDProvider_info_Facebook.html
  */
-class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
-{
-	// default permissions, and alot of them. You can change them from the configuration by setting the scope to what you want/need
-	public $scope = "email, user_about_me, user_birthday, user_hometown, user_website, read_stream, offline_access, publish_stream, read_friendlists";
+class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
 
-	/**
-	* IDp wrappers initializer 
-	*/
-	function initialize() 
-	{
-		if ( ! $this->config["keys"]["id"] || ! $this->config["keys"]["secret"] ){
-			throw new Exception( "Your application id and secret are required in order to connect to {$this->providerId}.", 4 );
-		}
+    /**
+     * Default permissions, and a lot of them. You can change them from the configuration by setting the scope to what you want/need.
+     * For a complete list see: https://developers.facebook.com/docs/facebook-login/permissions
+     *
+     * @link https://developers.facebook.com/docs/facebook-login/permissions
+     * @var array $scope
+     */
+    public $scope = ['email', 'user_about_me', 'user_birthday', 'user_hometown', 'user_location', 'user_website', 'publish_actions', 'read_custom_friendlists'];
 
-		if ( ! class_exists('FacebookApiException') ) {
-			require_once Hybrid_Auth::$config["path_libraries"] . "Facebook/base_facebook.php";
-			require_once Hybrid_Auth::$config["path_libraries"] . "Facebook/facebook.php";
-		}
+    /**
+     * Provider API client
+     *
+     * @var \Facebook\Facebook
+     */
+    public $api;
 
-		$this->api = new Facebook( ARRAY( 'appId' => $this->config["keys"]["id"], 'secret' => $this->config["keys"]["secret"] ) ); 
+    public $useSafeUrls = true;
 
-		if ( $this->token("access_token") ) { 
-			$access_token = $this->api->extendedAccessToken( $this->token("access_token") );
+    /**
+     * {@inheritdoc}
+     */
+    function initialize() {
+        if (!$this->config["keys"]["id"] || !$this->config["keys"]["secret"]) {
+            throw new Exception("Your application id and secret are required in order to connect to {$this->providerId}.", 4);
+        }
 
-			if( $access_token ){
-				$this->token("access_token", $access_token );
-				$this->api->setAccessToken( $access_token );
-			}
+        if (isset($this->config['scope'])) {
+            $scope = $this->config['scope'];
+            if (is_string($scope)) {
+                $scope = explode(",", $scope);
+            }
+            $scope = array_map('trim', $scope);
+            $this->scope = $scope;
+        }
 
-			$this->api->setAccessToken( $this->token("access_token") );
-		}
+        $trustForwarded = isset($this->config['trustForwarded']) ? (bool)$this->config['trustForwarded'] : false;
 
-		$this->api->getUser();
-	}
+        $this->api = new FacebookSDK([
+            'app_id' => $this->config["keys"]["id"],
+            'app_secret' => $this->config["keys"]["secret"],
+            'default_graph_version' => 'v2.8',
+            'trustForwarded' => $trustForwarded,
+        ]);
+    }
 
-	/**
-	* begin login step
-	* 
-	* simply call Facebook::require_login(). 
-	*/
-	function loginBegin()
-	{
-		$parameters = array("scope" => $this->scope, "redirect_uri" => $this->endpoint, "display" => "page");
-		$optionals  = array("scope", "redirect_uri", "display");
+    /**
+     * {@inheritdoc}
+     */
+    function loginBegin() {
 
-		foreach ($optionals as $parameter){
-			if( isset( $this->config[$parameter] ) && ! empty( $this->config[$parameter] ) ){
-				$parameters[$parameter] = $this->config[$parameter];
-			}
-		}
+        $this->endpoint = $this->params['login_done'];
+        $helper = $this->api->getRedirectLoginHelper();
 
-		// get the login url 
-		$url = $this->api->getLoginUrl( $parameters );
+        // Use re-request, because this will trigger permissions window if not all permissions are granted.
+        $url = $helper->getReRequestUrl($this->endpoint, $this->scope);
 
-		// redirect to facebook
-		Hybrid_Auth::redirect( $url );
-	}
+        // Redirect to Facebook
+        Hybrid_Auth::redirect($url);
+    }
 
-	/**
-	* finish login step 
-	*/
-	function loginFinish()
-	{ 
-		// in case we get error_reason=user_denied&error=access_denied
-		if ( isset( $_REQUEST['error'] ) && $_REQUEST['error'] == "access_denied" ){ 
-			throw new Exception( "Authentification failed! The user denied your request.", 5 );
-		}
+    /**
+     * {@inheritdoc}
+     */
+    function loginFinish() {
 
-		// try to get the UID of the connected user from fb, should be > 0 
-		if ( ! $this->api->getUser() ){
-			throw new Exception( "Authentification failed! {$this->providerId} returned an invalide user id.", 5 );
-		}
+        $helper = $this->api->getRedirectLoginHelper();
+        try {
+            $accessToken = $helper->getAccessToken();
+        } catch (Facebook\Exceptions\FacebookResponseException $e) {
+            throw new Hybrid_Exception('Facebook Graph returned an error: ' . $e->getMessage());
+        } catch (Facebook\Exceptions\FacebookSDKException $e) {
+            throw new Hybrid_Exception('Facebook SDK returned an error: ' . $e->getMessage());
+        }
 
-		// set user as logged in
-		$this->setUserConnected();
+        if (!isset($accessToken)) {
+            if ($helper->getError()) {
+                throw new Hybrid_Exception(sprintf("Could not authorize user, reason: %s (%d)", $helper->getErrorDescription(), $helper->getErrorCode()));
+            } else {
+                throw new Hybrid_Exception("Could not authorize user. Bad request");
+            }
+        }
 
-		// store facebook access token 
-		$this->token( "access_token", $this->api->getAccessToken() );
-	}
+        try {
+            // Validate token
+            $oAuth2Client = $this->api->getOAuth2Client();
+            $tokenMetadata = $oAuth2Client->debugToken($accessToken);
+            $tokenMetadata->validateAppId($this->config["keys"]["id"]);
+            $tokenMetadata->validateExpiration();
 
-	/**
-	* logout
-	*/
-	function logout()
-	{ 
-		$this->api->destroySession();
+            // Exchanges a short-lived access token for a long-lived one
+            if (!$accessToken->isLongLived()) {
+                $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
+            }
+        } catch (FacebookSDKException $e) {
+            throw new Hybrid_Exception($e->getMessage(), 0, $e);
+        }
 
-		parent::logout();
-	}
+        $this->setUserConnected();
+        $this->token("access_token", $accessToken->getValue());
+    }
 
-	/**
-	* load the user profile from the IDp api client
-	*/
-	function getUserProfile()
-	{
-		// request user profile from fb api
-		try{ 
-			$data = $this->api->api('/me'); 
-		}
-		catch( FacebookApiException $e ){
-			throw new Exception( "User profile request failed! {$this->providerId} returned an error: $e", 6 );
-		} 
+    /**
+     * {@inheritdoc}
+     */
+    function logout() {
+        parent::logout();
+    }
 
-		// if the provider identifier is not recived, we assume the auth has failed
-		if ( ! isset( $data["id"] ) ){ 
-			throw new Exception( "User profile request failed! {$this->providerId} api returned an invalid response.", 6 );
-		}
+    /**
+     * {@inheritdoc}
+     */
+    function getUserProfile() {
+        try {
+            $fields = [
+                'id',
+                'name',
+                'first_name',
+                'last_name',
+                'link',
+                'website',
+                'gender',
+                'locale',
+                'about',
+                'email',
+                'hometown',
+                'location',
+                'birthday'
+            ];
+            $response = $this->api->get('/me?fields=' . implode(',', $fields), $this->token('access_token'));
+            $data = $response->getDecodedBody();
+        } catch (FacebookSDKException $e) {
+            throw new Exception("User profile request failed! {$this->providerId} returned an error: {$e->getMessage()}", 6, $e);
+        }
 
-		# store the user profile.
-		$this->user->profile->identifier    = (array_key_exists('id',$data))?$data['id']:"";
-		$this->user->profile->displayName   = (array_key_exists('name',$data))?$data['name']:"";
-		$this->user->profile->firstName     = (array_key_exists('first_name',$data))?$data['first_name']:"";
-		$this->user->profile->lastName      = (array_key_exists('last_name',$data))?$data['last_name']:"";
-		$this->user->profile->photoURL      = "https://graph.facebook.com/" . $this->user->profile->identifier . "/picture?type=square";
-		$this->user->profile->profileURL    = (array_key_exists('link',$data))?$data['link']:""; 
-		$this->user->profile->webSiteURL    = (array_key_exists('website',$data))?$data['website']:""; 
-		$this->user->profile->gender        = (array_key_exists('gender',$data))?$data['gender']:"";
-		$this->user->profile->description   = (array_key_exists('bio',$data))?$data['bio']:"";
-		$this->user->profile->email         = (array_key_exists('email',$data))?$data['email']:"";
-		$this->user->profile->emailVerified = (array_key_exists('email',$data))?$data['email']:"";
-		$this->user->profile->region        = (array_key_exists("hometown",$data)&&array_key_exists("name",$data['hometown']))?$data['hometown']["name"]:"";
+        // Store the user profile.
+        $this->user->profile->identifier = (array_key_exists('id', $data)) ? $data['id'] : "";
+        $this->user->profile->displayName = (array_key_exists('name', $data)) ? $data['name'] : "";
+        $this->user->profile->firstName = (array_key_exists('first_name', $data)) ? $data['first_name'] : "";
+        $this->user->profile->lastName = (array_key_exists('last_name', $data)) ? $data['last_name'] : "";
+        $this->user->profile->photoURL = !empty($this->user->profile->identifier) ? "https://graph.facebook.com/" . $this->user->profile->identifier . "/picture?width=150&height=150" : '';
+        $this->user->profile->profileURL = (array_key_exists('link', $data)) ? $data['link'] : "";
+        $this->user->profile->webSiteURL = (array_key_exists('website', $data)) ? $data['website'] : "";
+        $this->user->profile->gender = (array_key_exists('gender', $data)) ? $data['gender'] : "";
+        $this->user->profile->language = (array_key_exists('locale', $data)) ? $data['locale'] : "";
+        $this->user->profile->description = (array_key_exists('about', $data)) ? $data['about'] : "";
+        $this->user->profile->email = (array_key_exists('email', $data)) ? $data['email'] : "";
+        $this->user->profile->emailVerified = (array_key_exists('email', $data)) ? $data['email'] : "";
+        $this->user->profile->region = (array_key_exists("location", $data) && array_key_exists("name", $data['location'])) ? $data['location']["name"] : "";
 
-		if( array_key_exists('birthday',$data) ) {
-			list($birthday_month, $birthday_day, $birthday_year) = explode( "/", $data['birthday'] );
+        if (!empty($this->user->profile->region)) {
+            $regionArr = explode(',', $this->user->profile->region);
+            if (count($regionArr) > 1) {
+                $this->user->profile->city = trim($regionArr[0]);
+                $this->user->profile->country = trim($regionArr[1]);
+            }
+        }
 
-			$this->user->profile->birthDay   = (int) $birthday_day;
-			$this->user->profile->birthMonth = (int) $birthday_month;
-			$this->user->profile->birthYear  = (int) $birthday_year;
-		}
+        if (array_key_exists('birthday', $data)) {
+            $birtydayPieces = explode('/', $data['birthday']);
 
-		return $this->user->profile;
- 	}
+            if (count($birtydayPieces) == 1) {
+                $this->user->profile->birthYear = (int)$birtydayPieces[0];
+            } elseif (count($birtydayPieces) == 2) {
+                $this->user->profile->birthMonth = (int)$birtydayPieces[0];
+                $this->user->profile->birthDay = (int)$birtydayPieces[1];
+            } elseif (count($birtydayPieces) == 3) {
+                $this->user->profile->birthMonth = (int)$birtydayPieces[0];
+                $this->user->profile->birthDay = (int)$birtydayPieces[1];
+                $this->user->profile->birthYear = (int)$birtydayPieces[2];
+            }
+        }
 
-	/**
-	* load the user contacts
-	*/
-	function getUserContacts()
-	{
-		try{ 
-			$response = $this->api->api('/me/friends'); 
-		}
-		catch( FacebookApiException $e ){
-			throw new Exception( "User contacts request failed! {$this->providerId} returned an error: $e" );
-		} 
- 
-		if( ! $response || ! count( $response["data"] ) ){
-			return ARRAY();
-		}
+        return $this->user->profile;
+    }
 
-		$contacts = ARRAY();
- 
-		foreach( $response["data"] as $item ){
-			$uc = new Hybrid_User_Contact();
+    /**
+     * Since the Graph API 2.0, the /friends endpoint only returns friend that also use your Facebook app.
+     * {@inheritdoc}
+     */
+    function getUserContacts() {
+        $apiCall = '?fields=link,name';
+        $returnedContacts = [];
+        $pagedList = true;
 
-			$uc->identifier  = (array_key_exists("id",$item))?$item["id"]:"";
-			$uc->displayName = (array_key_exists("name",$item))?$item["name"]:"";
-			$uc->profileURL  = "https://www.facebook.com/profile.php?id=" . $uc->identifier;
-			$uc->photoURL    = "https://graph.facebook.com/" . $uc->identifier . "/picture?type=square"; 
+        while ($pagedList) {
+            try {
+                $response = $this->api->get('/me/friends' . $apiCall, $this->token('access_token'));
+                $response = $response->getDecodedBody();
+            } catch (FacebookSDKException $e) {
+                throw new Hybrid_Exception("User contacts request failed! {$this->providerId} returned an error {$e->getMessage()}", 0, $e);
+            }
 
-			$contacts[] = $uc;
-		}
+            // Prepare the next call if paging links have been returned
+            if (array_key_exists('paging', $response) && array_key_exists('next', $response['paging'])) {
+                $pagedList = true;
+                $next_page = explode('friends', $response['paging']['next']);
+                $apiCall = $next_page[1];
+            } else {
+                $pagedList = false;
+            }
 
-		return $contacts;
- 	}
+            // Add the new page contacts
+            $returnedContacts = array_merge($returnedContacts, $response['data']);
+        }
 
-	/**
-	* update user status
-	*/
-	function setUserStatus( $status )
-	{
-		$parameters = array();
+        $contacts = [];
 
-		if( is_array( $status ) ){
-			$parameters = $status;
-		}
-		else{
-			$parameters["message"] = $status; 
-		}
+        foreach ($returnedContacts as $item) {
 
-		try{ 
-			$response = $this->api->api( "/me/feed", "post", $parameters );
-		}
-		catch( FacebookApiException $e ){
-			throw new Exception( "Update user status failed! {$this->providerId} returned an error: $e" );
-		}
- 	}
+            $uc = new Hybrid_User_Contact();
+            $uc->identifier = (array_key_exists("id", $item)) ? $item["id"] : "";
+            $uc->displayName = (array_key_exists("name", $item)) ? $item["name"] : "";
+            $uc->profileURL = (array_key_exists("link", $item)) ? $item["link"] : "https://www.facebook.com/profile.php?id=" . $uc->identifier;
+            $uc->photoURL = "https://graph.facebook.com/" . $uc->identifier . "/picture?width=150&height=150";
 
-	/**
-	* load the user latest activity  
-	*    - timeline : all the stream
-	*    - me       : the user activity only  
-	*/
-	function getUserActivity( $stream )
-	{
-		try{
-			if( $stream == "me" ){
-				$response = $this->api->api( '/me/feed' ); 
-			}
-			else{
-				$response = $this->api->api('/me/home'); 
-			}
-		}
-		catch( FacebookApiException $e ){
-			throw new Exception( "User activity stream request failed! {$this->providerId} returned an error: $e" );
-		} 
+            $contacts[] = $uc;
+        }
 
-		if( ! $response || ! count(  $response['data'] ) ){
-			return ARRAY();
-		}
+        return $contacts;
+    }
 
-		$activities = ARRAY();
+    /**
+     * Load the user latest activity, needs 'read_stream' permission
+     *
+     * @param string $stream Which activity to fetch:
+     *      - timeline : all the stream
+     *      - me       : the user activity only
+     * {@inheritdoc}
+     */
+    function getUserActivity($stream = 'timeline') {
+        try {
+            if ($stream == "me") {
+                $response = $this->api->get('/me/feed', $this->token('access_token'));
+            } else {
+                $response = $this->api->get('/me/home', $this->token('access_token'));
+            }
+        } catch (FacebookSDKException $e) {
+            throw new Hybrid_Exception("User activity stream request failed! {$this->providerId} returned an error: {$e->getMessage()}", 0, $e);
+        }
 
-		foreach( $response['data'] as $item ){
-			if( $stream == "me" && $item["from"]["id"] != $this->api->getUser() ){
-				continue;
-			}
+        if (!$response || !count($response['data'])) {
+            return [];
+        }
 
-			$ua = new Hybrid_User_Activity();
+        $activities = [];
 
-			$ua->id                 = (array_key_exists("id",$item))?$item["id"]:"";
-			$ua->date               = (array_key_exists("created_time",$item))?strtotime($item["created_time"]):"";
+        foreach ($response['data'] as $item) {
 
-			if( $item["type"] == "video" ){
-				$ua->text           = (array_key_exists("link",$item))?$item["link"]:"";
-			}
+            $ua = new Hybrid_User_Activity();
 
-			if( $item["type"] == "link" ){
-				$ua->text           = (array_key_exists("link",$item))?$item["link"]:"";
-			}
+            $ua->id = (array_key_exists("id", $item)) ? $item["id"] : "";
+            $ua->date = (array_key_exists("created_time", $item)) ? strtotime($item["created_time"]) : "";
 
-			if( empty( $ua->text ) && isset( $item["story"] ) ){
-				$ua->text           = (array_key_exists("link",$item))?$item["link"]:"";
-			}
+            if ($item["type"] == "video") {
+                $ua->text = (array_key_exists("link", $item)) ? $item["link"] : "";
+            }
 
-			if( empty( $ua->text ) && isset( $item["message"] ) ){
-				$ua->text           = (array_key_exists("message",$item))?$item["message"]:"";
-			}
+            if ($item["type"] == "link") {
+                $ua->text = (array_key_exists("link", $item)) ? $item["link"] : "";
+            }
 
-			if( ! empty( $ua->text ) ){
-				$ua->user->identifier   = (array_key_exists("id",$item["from"]))?$item["from"]["id"]:"";
-				$ua->user->displayName  = (array_key_exists("name",$item["from"]))?$item["from"]["name"]:"";
-				$ua->user->profileURL   = "https://www.facebook.com/profile.php?id=" . $ua->user->identifier;
-				$ua->user->photoURL     = "https://graph.facebook.com/" . $ua->user->identifier . "/picture?type=square";
+            if (empty($ua->text) && isset($item["story"])) {
+                $ua->text = (array_key_exists("link", $item)) ? $item["link"] : "";
+            }
 
-				$activities[] = $ua;
-			}
-		}
+            if (empty($ua->text) && isset($item["message"])) {
+                $ua->text = (array_key_exists("message", $item)) ? $item["message"] : "";
+            }
 
-		return $activities;
- 	}
+            if (!empty($ua->text)) {
+                $ua->user->identifier = (array_key_exists("id", $item["from"])) ? $item["from"]["id"] : "";
+                $ua->user->displayName = (array_key_exists("name", $item["from"])) ? $item["from"]["name"] : "";
+                $ua->user->profileURL = "https://www.facebook.com/profile.php?id=" . $ua->user->identifier;
+                $ua->user->photoURL = "https://graph.facebook.com/" . $ua->user->identifier . "/picture?type=square";
+
+                $activities[] = $ua;
+            }
+        }
+
+        return $activities;
+    }
+
 }
