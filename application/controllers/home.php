@@ -5398,15 +5398,6 @@ class Home extends SPACULLUS_Controller {
             'fileUpload' => true,
             'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
         );
-        
-        $this->db->where('owner_id', get_authenticateUserID());
-        $this->db->limit(1);
-        $bar_info = $this->db->get('bars')->row();
-        if ($bar_info != NULL){
-            $data['facebook_link'] = end(explode('/',$bar_info->facebook_link));
-            $data['twitter_link'] = end(explode('/',$bar_info->twitter_link));
-            $data['instagram_link'] = end(explode('/',$bar_info->instagram_link));
-        }
 
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
@@ -5448,7 +5439,7 @@ class Home extends SPACULLUS_Controller {
 		foreach($data['providers'] as $provider=>$d) {
 			if ($d['connected'] == 1) {
                                 try {
-				$data['providers'][$provider]['user_profile'] = $this->hybridauthlib->authenticate($provider)->getUserProfile();
+				$data['providers'][$provider]['user_profile'] = $this->hybridauthlib->getAdapter($provider)->getUserProfile();
                                 } catch (Exception $e) {
                                 $data["error"] = "Couldn't authenticate with ".$provider;
                             }

@@ -190,7 +190,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
     //window.close();
 </script>
 
-
+                        <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
 <div class="wrapper row6 padtb10 has-js">
     <div class="container">
         <div class="margin-top-50 bg_brown">
@@ -198,9 +198,20 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
             <div class="dashboard_detail">
                 <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Share</div></div>
                 <div id="container">
+                    
 	<h1>Login to all your Social Medias</h1>
 
 	<div id="body">
+            <?php
+				if(@$error != "")
+				{
+					echo "<div class='error1 text-center'>".$error."</div>";
+				}			
+				if(@$msg != "" && $msg != "1V1")
+				{
+					echo "<div class='success text-center'>".$msg."</div>";
+				}	
+              ?>
 		<p>Select a service to authenticate with. If you have previously authenticated, it will be denoted below.</p>
 		<h4>Select a service:</h4>
 		<ul id="provider-list">
@@ -219,7 +230,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 		<br style="clear: both;"/>
 
 	</div>
-	<p class="footer">
+	<p class="footer">       
 	<?
 	// Output the profiles of each logged in service
 	foreach ($providers as $provider => $d) :
@@ -301,7 +312,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 	                       	</div>
                     	        <div class="padtb" style="text-align: center;">
 
-                                <a name="post" id="post" onclick="appendPostParams();" href="<?php echo site_url('home/hauth/post')?>" class="btn btn-lg btn-primary marr_10" >Post</a> 
+                                <button type="submit" class="btn btn-lg btn-primary marr_10" >Post</button>
                                 </div>
                     
                     <div class="container" style="max-width: 60%; padding-top: 5px">
@@ -313,7 +324,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 
         </div>             
     </div>
-
+                        </form>
 
     <script>
 
@@ -430,9 +441,9 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
         function appendPostParams()
         {
             document.getElementById('post').href = document.getElementById('post').href 
-                    + "/" + document.getElementById('message').value 
-                    + "/" + document.getElementById('link').value
-                    + "/" + document.getElementById('picture').value;    
+                    + "/\"" + document.getElementById('message').value + "\""
+                    + "/\"" + document.getElementById('link').value + "\""
+                    + "/\"" + document.getElementById('picture').value + "\"";    
         }
 
         function showfacebook()
@@ -528,7 +539,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                 length: 400, //Integer: For posts with text longer than this length, show an ellipsis.
                 show_media: true, //Boolean: if false, doesn't display any post images
                 media_min_width: 0, //Integer: Only get posts with images larger than this value
-                update_period: 2000, //Integer: Number of seconds before social-feed will attempt to load new posts.
+                update_period: 1, //Integer: Number of seconds before social-feed will attempt to load new posts.
                 template: "<?php echo app_bower_url(); ?>/social-feed/template.html", //String: Filename used to get the post template.
                 date_format: "ll", //String: Display format of the date attribute (see http://momentjs.com/docs/#/displaying/format/)
                 date_locale: "en", //String: The locale of the date (see: http://momentjs.com/docs/#/i18n/changing-locale/)

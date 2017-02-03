@@ -226,18 +226,31 @@ class HAuth extends CI_Controller {
 		log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
 		require_once APPPATH.'/third_party/hybridauth/index.php';
 	}
-        public function post($message='', $link='', $picture='')
+        public function postall()
 	{
-                $status = array('message' => $status, 'link'=>$link, 'picture'=>$picture);
-		// Send to the view all permitted services as a user profile if authenticated
-		$providers = $this->hybridauthlib->getProviders();
-		foreach($providers as $provider=>$d) {
-			if ($d['connected'] == 1) {
-				$providers[$provider]->setUserStatus($status);
-			}
-		}
-               
-                $this->load->view('/home/socialshare', $data);
+            $message = $this->input->post('message');
+            $link = $this->input->post('link');
+            $picture = $this->input->post('picture');
+            
+            $status = array_filter(array('message' => $message, 'link'=>$link, 'picture'=>$picture));
+            // Send to the view all permitted services as a user profile if authenticated
+            $connected = $this->hybridauthlib->getConnectedProviders();
+            
+            foreach($connected as $provider) {
+		if ($this->hybridauthlib->providerEnabled($provider)) {
+                    try {
+                        //$service = $this->hybridauthlib->authenticate($provider);
+
+                        //if ($service->isUserConnected()) {
+                                $this->hybridauthlib->getAdapter($provider)->setUserStatus($status);
+                        //}
+                    } catch (Exception $e) {
+                        continue;
+                    }
+                }
+            }
+            
+            redirect('/home/socialshare');
 	}
 }
 /* End of file hauth.php */
