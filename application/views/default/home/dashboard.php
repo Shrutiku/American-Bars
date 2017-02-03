@@ -211,8 +211,7 @@ B.show();
 		     			<div class="result_search margin-top-20">
 		     				<h1 class="dashboard_smalltitle pull-left">Bar Information</h1>
 		     				 <a href="<?php echo site_url('user/profile/'.base64_encode(get_authenticateUserID()));?>" class="review pull-right" target="_blank">Preview My Profile</a>
-		     				 <a href="javascript://" class="review pull-right mar_r15"  onclick="editbarinfo()">Edit Bar Information</a>
-		     				
+		     				 <a href="javascript://" class="review pull-right mar_r15"  onclick="editbarinfo()">Edit Bar Information</a>		     				
 		     				<div class="clearfix"></div>
 		     			</div>
 		     			<div>
@@ -529,36 +528,7 @@ B.show();
 	                           		<textarea rows="5" placeholder="Description" name="bar_meta_description" id="bar_meta_description" class="form-control form-pad"><?php echo @$getalldata->bar_meta_description!='' && @$getalldata->bar_meta_description!='0' ? @$getalldata->bar_meta_description:'' ; ?></textarea>
 	                       		</div>
 	                       		<div class="clearfix"></div>
-	                       	</div>
-                                 <div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Facebook Account (ex. "americanbars"):</label>
-	        				 	</div>
-	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="facebook_link" name="facebook_link" value="<?php echo @$getalldata->facebook_link;?>">
-	                       		</div>
-	                       		<div class="clearfix"></div>
-	                       	</div>
-	                       	
-	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Twitter Account (ex. "americanbars"):</label>
-	        				 	</div>
-	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="twitter_link" name="twitter_link" value="<?php echo @$getalldata->twitter_link;?>">
-	                       		</div>
-	                       		<div class="clearfix"></div>
-	                       	</div>
-	                       	
-	                       		<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Instagram Account (e.x americanbars) :</label>
-	        				 	</div>
-	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="instagram_link" name="instagram_link" value="<?php echo @$getalldata->instagram_link;?>">
-	                       		</div>
-	                       		<div class="clearfix"></div>
-	                       	</div>
+	                       	</div>         
 	                       	
 	                       </div>	
 	                       		
@@ -745,31 +715,7 @@ B.show();
 			     			<div class="clearfix"></div>
 		     			</div>
 		     			<div class="margin-top-30">
-		     				<div class="full_mugblock margin-right-30">
-			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Orders</h1>
-		     						<ul class="latest_block_list">
-		     							<?php if($getorder){
-		     								  foreach($getorder as $rows){
-										
-		     							?>
-		     							<li>
-		     								<a href="<?php echo site_url('shopping/productdetails/'.$rows->product_slug);?>"><?php echo $rows->product_name>20 ? substr(ucwords($rows->product_name),0,20).'...':ucwords($rows->product_name);?></a>
-		     								<p class="latest_date"><?php echo date($site_setting->date_format,strtotime($rows->order_date));?></p>
-		     								<div class="clearfix"></div>
-		     								<p class="result_desc"><?php if(strlen($rows->description)>197) { echo substr($rows->description,0,197)."..."; } else { echo $rows->description; }?></p>
-		     							</li>
-		     							<?php } ?>
-		     							<div class="text-right pad_lr10 padtb10">
-		     								<a href="<?php echo site_url('bar/orderhistory')?>" class="">View More</a>
-		     							</div>
-		     						<?php } else { ?>
-		     							  <li>No orders found.</li>
-		     							<?php } ?>
-		     						</ul>
-								</div>
-			     			</div>
-			     			<div class="full_mugblock">
+		     			<div class="full_mugblock">
 			     				<div class="img_br_yellow height-515">
 		     						<h1 class="productbar_title">Latest Messages</h1>
 		     						<ul class="latest_block_list">
@@ -964,6 +910,7 @@ B.show();
   	 $("#see_time").slideUp();
   	 $("#hd_t").slideDown();
   }
+  
   function editbarinfo()
   {  
   	$("#cm-err-main1").hide();
