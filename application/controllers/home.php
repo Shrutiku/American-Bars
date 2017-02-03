@@ -1249,7 +1249,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function registration_step4_upgrade($bar_id = '', $type = '') {
+    function registration_step4_upgrade($bar_id = '', $type = '', $coupon='') {
         if (check_user_authentication() == '') {
             redirect('home');
         }
@@ -1281,7 +1281,14 @@ class Home extends SPACULLUS_Controller {
         }
         $getuserinfo = get_user_info(get_authenticateUserID());
 
-
+        if ($coupon == "Cheers25") {
+            if ($type == 'fullmug') {
+                $site_setting->amount = (string)((int)$site_setting->amount * 0.5);
+            }
+            else if ($type == 'managed') {
+                $site_setting->managed_account_amount = (string)((int)$site_setting->managed_account_amount * 0.5);
+            }
+        }
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('cc_type', 'Credit Card Type', 'required');
@@ -2602,7 +2609,7 @@ class Home extends SPACULLUS_Controller {
         //$this->form_validation->set_rules('btype','Free Listing Or Paid Listing','required');
 
         if ($_POST) {
-            redirect('home/registration_step4_upgrade/' . $this->input->post('bar_id') . "/$type");
+            redirect('home/registration_step4_upgrade/' . $this->input->post('bar_id') . "/$type" . "/$coupon");
         }
 
 
