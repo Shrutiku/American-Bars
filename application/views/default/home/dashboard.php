@@ -745,31 +745,7 @@ B.show();
 			     			<div class="clearfix"></div>
 		     			</div>
 		     			<div class="margin-top-30">
-		     				<div class="full_mugblock margin-right-30">
-			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Orders</h1>
-		     						<ul class="latest_block_list">
-		     							<?php if($getorder){
-		     								  foreach($getorder as $rows){
-										
-		     							?>
-		     							<li>
-		     								<a href="<?php echo site_url('shopping/productdetails/'.$rows->product_slug);?>"><?php echo $rows->product_name>20 ? substr(ucwords($rows->product_name),0,20).'...':ucwords($rows->product_name);?></a>
-		     								<p class="latest_date"><?php echo date($site_setting->date_format,strtotime($rows->order_date));?></p>
-		     								<div class="clearfix"></div>
-		     								<p class="result_desc"><?php if(strlen($rows->description)>197) { echo substr($rows->description,0,197)."..."; } else { echo $rows->description; }?></p>
-		     							</li>
-		     							<?php } ?>
-		     							<div class="text-right pad_lr10 padtb10">
-		     								<a href="<?php echo site_url('bar/orderhistory')?>" class="">View More</a>
-		     							</div>
-		     						<?php } else { ?>
-		     							  <li>No orders found.</li>
-		     							<?php } ?>
-		     						</ul>
-								</div>
-			     			</div>
-			     			<div class="full_mugblock">
+		     			<div class="full_mugblock">
 			     				<div class="img_br_yellow height-515">
 		     						<h1 class="productbar_title">Latest Messages</h1>
 		     						<ul class="latest_block_list">
