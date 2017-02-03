@@ -27,7 +27,8 @@
                         
                      
      				<div class="pad20">
-     				<h1 class="yellow_title padb10 br_bott_gray">Congratulations, you have received a Post Card from American Bars. Please enter the code printed on your postcard.  </h1>
+     				<h1 class="yellow_title padb10 br_bott_gray">Congratulations, you have received a Post Card from American Bars. If you have 
+     					    already claimed your bar, please login. If you have not claimed your bar, let's claim it now!  </h1>
 					<?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
 							echo form_open('postcard/',$attributes); ?>	
 	     						<input type="hidden" name="type" value="bar_owner" id="type" />
@@ -51,7 +52,7 @@
 	                       		<div class="col-sm-7">
 		                       		
 		        					<div class="mar_top4">
-                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Enter</button>
+                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Claim Bar</button>
 		        					</div>
 		        					<div class="clearfix"></div>
 		        				</div>

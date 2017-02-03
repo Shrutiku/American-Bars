@@ -14,25 +14,26 @@
      							My Profile
      						</a>
      					</li>
-                                        <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-     						<a href="<?php echo site_url('bar/bar_special_hours')?>">
-     							<i class="strip bar-special"></i>
-     							Happy Hours
-     						</a>
-     					</li>
-                                        <li class="<?php echo $this->uri->segment(2)=='socialshare' || $this->uri->segment(2)=='twitterpost' || $this->uri->segment(2)=='facebookpost' || $this->uri->segment(2)=='instagrampost' ? 'active':'';?>">
-     						<a href="<?php echo site_url('home/socialshare')?>">
-     							<i class="strip social_share"></i>
-     							Be Social
-     						</a>
-     					</li>
-                                        <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_events' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
+     					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_events' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
      						<a href="<?php echo site_url('bar/bar_events')?>">
      							<i class="strip events"></i>
      							Events
      						</a>
      					</li>
-                                        <li title="" class="<?php echo $this->uri->segment(2)=='bar_beer' ? 'active':'';?> ">
+     					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_gallery' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
+     						<a href="<?php echo site_url('bar/bar_gallery')?>">
+     							<i class="strip gallery"></i>
+     							My Albums
+     						</a>
+     					</li>
+     					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='comments' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
+     						<a href="<?php echo site_url('bar/comments')?>">
+     							<i class="strip comments"></i>
+     							Comments
+     						</a>
+     					</li>
+     					
+     					<li title="" class="<?php echo $this->uri->segment(2)=='bar_beer' ? 'active':'';?> ">
      						<a href="<?php echo site_url('bar/bar_beer')?>">
      							<i class="strip beers"></i>
      							Beers
@@ -51,26 +52,22 @@
      							Liquors
      						</a>
      					</li>
-     					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_gallery' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-     						<a href="<?php echo site_url('bar/bar_gallery')?>">
-     							<i class="strip gallery"></i>
-     							My Albums
+     					
+     					<li class="<?php echo $this->uri->segment(2)=='updatecard' ? 'active':'';?>">
+     						<a href="<?php echo site_url('home/updatecard')?>">
+     							<i class="strip update_creditcard"></i>
+     							Update Credit Card
      						</a>
      					</li>
-     					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='comments' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-     						<a href="<?php echo site_url('bar/comments')?>">
-     							<i class="strip comments"></i>
-     							Comments
+     					
+     					
+     					
+     					<li class="<?php echo $this->uri->segment(2)=='socialshare' || $this->uri->segment(2)=='twitterpost' || $this->uri->segment(2)=='facebookpost' || $this->uri->segment(2)=='instagrampost' ? 'active':'';?>">
+     						<a href="<?php echo site_url('home/socialshare')?>">
+     							<i class="strip social_share"></i>
+     							Be Social
      						</a>
      					</li>
-                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='barlistings' ? 'active':'';?>">
-                                                <a href="<?php echo site_url('home/barlistings')?>">
-                                                        <p>
-                                                                <i class="bar-listings"></i>
-                                                        </p>
-                                                        Bar Listings
-                                                </a>
-                                        </li>
                                         
                                         <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='domainmanagement' ? 'active':'';?>">
                                                 <a href="<?php echo site_url('home/domainmanagement')?>">
@@ -80,16 +77,15 @@
                                                         Domain Management
                                                 </a>
                                         </li>
-     					
-     					<li class="<?php echo $this->uri->segment(2)=='updatecard' ? 'active':'';?>">
-     						<a href="<?php echo site_url('home/updatecard')?>">
-     							<i class="strip update_creditcard"></i>
-     							Update Credit Card
-     						</a>
-     					</li>
                                         
-                                        
-
+                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='barlistings' ? 'active':'';?>">
+                                                <a href="<?php echo site_url('home/barlistings')?>">
+                                                        <p>
+                                                                <i class="bar-listings"></i>
+                                                        </p>
+                                                        Bar Listings
+                                                </a>
+                                        </li>
      					
      					<!-- <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='product_logo' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
      						<a href="<?php echo site_url('bar/product_logo')?>">
@@ -125,6 +121,13 @@
      							All Orders
      						</a>
      					</li>-->
+     					
+     					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
+     						<a href="<?php echo site_url('bar/bar_special_hours')?>">
+     							<i class="strip bar-special"></i>
+     							Happy Hours
+     						</a>
+     					</li>
      					
      					<?php } else {?>
      						<li class="<?php echo $this->uri->segment(2)=='user_dashboard' ? 'active':'';?>">

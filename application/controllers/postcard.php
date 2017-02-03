@@ -37,7 +37,7 @@ class Postcard extends SPACULLUS_Controller {
                 $this->load->library ('form_validation');
 
 		$this->form_validation->set_rules ('code', 'Code', 'required');
-    
+                
                 if ($_POST) { 
                     if ($this->form_validation->run ()== FALSE) {
 				if (validation_errors ()) {
@@ -46,16 +46,10 @@ class Postcard extends SPACULLUS_Controller {
 					$data["error"] = "";
 				}
 				
-				$data["code"] = $this->input->post ('code');	
+			
+				$data["email"] = $this->input->post ('code');	
 			} else {
-                                $postcard = $this->home_model->get_postcard_by_id($this->input->post('code'));
-                                
-                                if ($postcard == '') {
-                                    $data["code"] = $this->input->post ('code');	
-                                    $data["error"] = "Invalid code.";
-                                } else {
-                                    redirect('postcard/view/'.base64_encode($postcard->postcard_id));
-                                }
+                		redirect('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.$this->input->post('code'));
                         }
                 }
                 
@@ -67,10 +61,6 @@ class Postcard extends SPACULLUS_Controller {
 	
 	function view($id = '',$msg='') 
 	{
-            if (check_user_authentication() != '') {
-                redirect('/bar/postcard');
-            }
-        
 		if ($id== '') {
 			redirect ('home');
 		}
@@ -84,8 +74,6 @@ class Postcard extends SPACULLUS_Controller {
 		$data["maximum_attemp_cond"] = '';
 
         $data['postcard'] = $this->home_model->get_postcard_by_id($id);
-        $data['bar_info'] = $this->home_model->getBardata($data['postcard']->bar_id);
-
 		
 		//print_r($data['postcard']);
 		$this->template->set_master_template ($theme.'/template.php');
