@@ -234,11 +234,11 @@ class HAuth extends CI_Controller {
             foreach($connected as $provider) {
 		if ($this->hybridauthlib->providerEnabled($provider)) {
                     try {
-                        //$service = $this->hybridauthlib->authenticate($provider);
+                        $service = $this->hybridauthlib->authenticate($provider);
 
-                        //if ($service->isUserConnected()) {
-                                $this->hybridauthlib->getAdapter($provider)->setUserStatus($status);
-                        //}
+                        if ($service->isUserConnected()) {
+                                $service->setUserStatus($status);
+                        }
                     } catch (Exception $e) {
                         continue;
                     }

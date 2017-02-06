@@ -5447,7 +5447,10 @@ class Home extends SPACULLUS_Controller {
 		foreach($data['providers'] as $provider=>$d) {
 			if ($d['connected'] == 1) {
                                 try {
-				$data['providers'][$provider]['user_profile'] = $this->hybridauthlib->getAdapter($provider)->getUserProfile();
+                                $service = $this->hybridauthlib->authenticate($provider);
+				if ($service->isUserConnected()) {
+				$data['providers'][$provider]['user_profile'] = $service->getUserProfile();
+                                }
                                 } catch (Exception $e) {
                                 $data["error"] = "Couldn't authenticate with ".$provider;
                             }
