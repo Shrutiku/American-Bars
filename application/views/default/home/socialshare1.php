@@ -232,7 +232,7 @@ foreach ($providers as $provider => $data) {
 <?
 // Output the profiles of each logged in service
 foreach ($providers as $provider => $d) :
-    if ($d != null && $d['user_profile'] != null && !empty($d['user_profile'])) :
+    if (!$d && !$d['user_profile'] && !empty($d['user_profile'])) :
         $profile[$provider] = (array) $d['user_profile'];
         ?>
                                 <fieldset>
