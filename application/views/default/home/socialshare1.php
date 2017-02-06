@@ -229,7 +229,7 @@ foreach ($providers as $provider => $data) {
 
                         </div>
                         <p class="footer">       
-<?
+<?php
 // Output the profiles of each logged in service
 foreach ($providers as $provider => $d) {
     if ($d && $d['user_profile'] && !empty($d['user_profile'])) {
@@ -254,7 +254,7 @@ foreach ($providers as $provider => $d) {
                                             </td>
                                             <td align="left"><table width="100%" cellspacing="0" cellpadding="3" border="0">
                                                     <tbody>
-        <?
+        <?php
         foreach ($d['user_profile'] as $key => $value) {
             if ($value == "") {
                 continue;
