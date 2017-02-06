@@ -231,7 +231,7 @@ foreach ($providers as $provider => $data) {
                         <p class="footer">       
 <?
 // Output the profiles of each logged in service
-foreach ($providers as $provider => $d) :
+foreach ($providers as $provider => $d) {
     if ($d && $d['user_profile'] && !empty($d['user_profile'])) {
         $profile[$provider] = (array) $d['user_profile'];
         ?>
@@ -255,7 +255,7 @@ foreach ($providers as $provider => $d) :
                                             <td align="left"><table width="100%" cellspacing="0" cellpadding="3" border="0">
                                                     <tbody>
         <?
-        foreach ($d['user_profile'] as $key => $value) :
+        foreach ($d['user_profile'] as $key => $value) {
             if ($value == "") {
                 continue;
             }
@@ -263,7 +263,7 @@ foreach ($providers as $provider => $d) :
                                                             <tr>
                                                                 <td class="pItem"><strong><?= ucfirst($key) ?>:</strong> <?= (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
                                                             </tr>
-        <? endforeach; ?>
+    <? } ?>
                                                     </tbody>
                                                 </table>
                                             </td>
@@ -272,7 +272,7 @@ foreach ($providers as $provider => $d) :
                                 </fieldset>
         <?
     }
-endforeach;
+}
 ?>
                         </p>
                     </div>                
