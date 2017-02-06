@@ -232,7 +232,7 @@ foreach ($providers as $provider => $data) {
 <?
 // Output the profiles of each logged in service
 foreach ($providers as $provider => $d) :
-    if (!empty(@$d['user_profile'])) :
+    if ($d != null && !empty($d['user_profile'])) :
         $profile[$provider] = (array) $d['user_profile'];
         ?>
                                 <fieldset>
@@ -247,7 +247,7 @@ foreach ($providers as $provider => $d) :
                                                     <?php
                                                 } else {
                                                     ?>
-                                                    <img src="public/avatar.png" title="<?php echo @$d['user_profile']->displayName; ?>" border="0" >
+                                                    <img src="public/avatar.png" title="<?php echo $d['user_profile']->displayName; ?>" border="0" >
                                                     <?php
                                                 }
                                                 ?>
@@ -261,7 +261,7 @@ foreach ($providers as $provider => $d) :
             }
             ?>
                                                             <tr>
-                                                                <td class="pItem"><strong><?= ucfirst(@$key) ?>:</strong> <?= (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
+                                                                <td class="pItem"><strong><?= ucfirst($key) ?>:</strong> <?= (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
                                                             </tr>
         <? endforeach; ?>
                                                     </tbody>
