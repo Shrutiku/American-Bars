@@ -41,6 +41,7 @@ $config =
 
 			"Twitter" => array (
 				"enabled" => true,
+                                "scope" => "manage_pages,publish_pages",
 				"keys"    => array ( "key" => "cu7KN3VKR9fqyPzVxaPpUEaVi", "secret" => "3B6uwOEyAMeCEXcKA0lIJCyhwCdQrvM0aSIATeWkUSPtAtXofZ" )
 			),
 

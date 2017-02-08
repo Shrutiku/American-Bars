@@ -128,66 +128,34 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */
     function getUserProfile() {
-        try {
-            $fields = [
-                'id',
-                'name',
-                'first_name',
-                'last_name',
-                'link',
-                'website',
-                'gender',
-                'locale',
-                'about',
-                'email',
-                'hometown',
-                'location',
-                'birthday'
-            ];
-            $response = $this->api->get('/me?fields=' . implode(',', $fields), $this->token('access_token'));
-            $data = $response->getDecodedBody();
-        } catch (FacebookSDKException $e) {
-            throw new Exception("User profile request failed! {$this->providerId} returned an error: {$e->getMessage()}", 6, $e);
+        // ask facebook api for the user accounts
+        $accounts = $this->api->get('/me/accounts', $this->token('access_token'));
+
+        foreach( $accounts['data'] as $account ){
+            try {
+                $fields = [
+                    'id',
+                    'name',
+                    'link',
+                    'website',
+                    'about',
+                    'location',
+                ];
+                $response = $this->api->get("/" . $account['id'] . implode(',', $fields), $this->token('access_token'));
+                $data = $response->getDecodedBody();
+            } catch (FacebookSDKException $e) {
+                throw new Exception("User profile request failed! {$this->providerId} returned an error: {$e->getMessage()}", 6, $e);
+            }
         }
 
         // Store the user profile.
         $this->user->profile->identifier = (array_key_exists('id', $data)) ? $data['id'] : "";
         $this->user->profile->displayName = (array_key_exists('name', $data)) ? $data['name'] : "";
-        $this->user->profile->firstName = (array_key_exists('first_name', $data)) ? $data['first_name'] : "";
-        $this->user->profile->lastName = (array_key_exists('last_name', $data)) ? $data['last_name'] : "";
-        $this->user->profile->photoURL = !empty($this->user->profile->identifier) ? "https://graph.facebook.com/" . $this->user->profile->identifier . "/picture?width=150&height=150" : '';
+        $this->user->profile->photoURL = !empty($this->user->profile->identifier) ? "https://graph.facebook.com/" . $this->user->profile->identifier . "/" . array_key_exists('picture', $data) . "?width=150&height=150" : '';
         $this->user->profile->profileURL = (array_key_exists('link', $data)) ? $data['link'] : "";
         $this->user->profile->webSiteURL = (array_key_exists('website', $data)) ? $data['website'] : "";
-        $this->user->profile->gender = (array_key_exists('gender', $data)) ? $data['gender'] : "";
-        $this->user->profile->language = (array_key_exists('locale', $data)) ? $data['locale'] : "";
         $this->user->profile->description = (array_key_exists('about', $data)) ? $data['about'] : "";
-        $this->user->profile->email = (array_key_exists('email', $data)) ? $data['email'] : "";
-        $this->user->profile->emailVerified = (array_key_exists('email', $data)) ? $data['email'] : "";
-        $this->user->profile->region = (array_key_exists("location", $data) && array_key_exists("name", $data['location'])) ? $data['location']["name"] : "";
-
-        if (!empty($this->user->profile->region)) {
-            $regionArr = explode(',', $this->user->profile->region);
-            if (count($regionArr) > 1) {
-                $this->user->profile->city = trim($regionArr[0]);
-                $this->user->profile->country = trim($regionArr[1]);
-            }
-        }
-
-        if (array_key_exists('birthday', $data)) {
-            $birtydayPieces = explode('/', $data['birthday']);
-
-            if (count($birtydayPieces) == 1) {
-                $this->user->profile->birthYear = (int)$birtydayPieces[0];
-            } elseif (count($birtydayPieces) == 2) {
-                $this->user->profile->birthMonth = (int)$birtydayPieces[0];
-                $this->user->profile->birthDay = (int)$birtydayPieces[1];
-            } elseif (count($birtydayPieces) == 3) {
-                $this->user->profile->birthMonth = (int)$birtydayPieces[0];
-                $this->user->profile->birthDay = (int)$birtydayPieces[1];
-                $this->user->profile->birthYear = (int)$birtydayPieces[2];
-            }
-        }
-
+        
         return $this->user->profile;
     }
 
@@ -297,5 +265,19 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
 
         return $activities;
     }
+    
+    function setUserStatus($status) { 
+        // ask facebook api for the user accounts
+        $accounts = $this->api->get('/me/accounts', $this->token('access_token'));
 
+        foreach( $accounts['data'] as $account ){
+           $params = array_merge(
+             array('access_token' => $account['access_token']),
+             $status
+           );
+
+           // ask facebook api to post the message to the selected account
+           $this->api->post( "/" . $account['id'] . "/feed", $params); 
+        }
+    }
 }
