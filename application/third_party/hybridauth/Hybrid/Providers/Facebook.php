@@ -128,7 +128,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */
     function getUserProfile() {
-        $response = $this->api->get('/me/accounts', $this->token('access_token'));
+            $response = $this->api->get('/me/accounts', $this->token('access_token'));
         $accounts = $response->getDecodedBody();
         
         foreach( $accounts['data'] as $account ){
@@ -143,19 +143,19 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
                 ];
                 $response = $this->api->get("/" . $account['id'] . implode(',', $fields), $this->token('access_token'));
                 $data = $response->getDecodedBody();
+                
+                // Store the user profile.
+                $this->user->profile->identifier = (array_key_exists('id', $data)) ? $data['id'] : "";
+                $this->user->profile->displayName = (array_key_exists('name', $data)) ? $data['name'] : "";
+                $this->user->profile->photoURL = !empty($this->user->profile->identifier) ? "https://graph.facebook.com/" . $this->user->profile->identifier . "/" . array_key_exists('picture', $data) . "?width=150&height=150" : '';
+                $this->user->profile->profileURL = (array_key_exists('link', $data)) ? $data['link'] : "";
+                $this->user->profile->webSiteURL = (array_key_exists('website', $data)) ? $data['website'] : "";
+                $this->user->profile->description = (array_key_exists('about', $data)) ? $data['about'] : "";
             } catch (FacebookSDKException $e) {
                 throw new Exception("User profile request failed! {$this->providerId} returned an error: {$e->getMessage()}", 6, $e);
             }
         }
 
-        // Store the user profile.
-        $this->user->profile->identifier = (array_key_exists('id', $data)) ? $data['id'] : "";
-        $this->user->profile->displayName = (array_key_exists('name', $data)) ? $data['name'] : "";
-        $this->user->profile->photoURL = !empty($this->user->profile->identifier) ? "https://graph.facebook.com/" . $this->user->profile->identifier . "/" . array_key_exists('picture', $data) . "?width=150&height=150" : '';
-        $this->user->profile->profileURL = (array_key_exists('link', $data)) ? $data['link'] : "";
-        $this->user->profile->webSiteURL = (array_key_exists('website', $data)) ? $data['website'] : "";
-        $this->user->profile->description = (array_key_exists('about', $data)) ? $data['about'] : "";
-        
         return $this->user->profile;
     }
 
