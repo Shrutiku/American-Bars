@@ -5449,9 +5449,13 @@ class Home extends SPACULLUS_Controller {
                 if ($d['connected'] == 1) {
                         try {
                             $service = $this->hybridauthlib->authenticate($provider);
-                            if (!$service->isUserConnected()) {
-                                throw new Exception("not connected");
-                            }
+                            if ($service->isUserConnected()) {
+                                if (!Hybrid_Auth::storage()->get("hauth_session.$provider.account")) {
+                                        $profile = $service->getUserProfile();
+                                        Hybrid_Auth::storage()->set("hauth_session.$provider.account", $profile->displayName);                    
+                                    }
+                                }      
+                             $data['providers'][$provider]['account'] = Hybrid_Auth::storage()->get("hauth_session.$provider.account");               
                         } catch (Exception $e) {
                         $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
                     }

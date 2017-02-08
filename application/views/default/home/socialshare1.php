@@ -513,20 +513,20 @@ foreach ($providers as $provider => $d) {
         $('.social-feed-container').socialfeed({
             // FACEBOOK
             facebook: {
-                accounts: ["<?php echo!empty($profile['Facebook']) ? "@" . $profile['Facebook']['displayName'] : ''; ?>"], //Array: Specify a list of accounts from which to pull wall posts
+                accounts: ["<?php echo!empty($providers['Facebook']['account']) ? "@" . $providers['Facebook']['account'] : ''; ?>"], //Array: Specify a list of accounts from which to pull wall posts
                 limit: 20, //Integer: max number of posts to load
                 access_token: <?php echo json_encode($config['appId'] . "|" . $config['secret']); ?>  //String: "APP_ID|APP_SECRET"
             },
             // TWITTER
             twitter: {
-                accounts: ['<?php echo!empty($profile['Twitter']) ? "@" . $profile['Twitter']['displayName'] : ''; ?>'], //Array: Specify a list of accounts from which to pull tweets
+                accounts: ['<?php echo!empty($providers['Twitter']['account']) ? "@" . $providers['Twitter']['account'] : ''; ?>'], //Array: Specify a list of accounts from which to pull tweets
                 limit: 20, //Integer: max number of tweets to load
                 consumer_key: 'cu7KN3VKR9fqyPzVxaPpUEaVi', //String: consumer key. make sure to have your app read-only
                 consumer_secret: '3B6uwOEyAMeCEXcKA0lIJCyhwCdQrvM0aSIATeWkUSPtAtXofZ' //String: consumer secret key. make sure to have your app read-only
             },
             /*// INSTAGRAM
              instagram:{
-             accounts: ['<?php echo!empty($profile['Instagram']) ? "#" . $profile['Instagram']['displayName'] : ''; ?>'],  //Array: Specify a list of accounts from which to pull posts
+             accounts: ['<?php echo!empty($providers['Instagram']['account']) ? "#" . $providers['Instagram']['account'] : ''; ?>'],  //Array: Specify a list of accounts from which to pull posts
              limit: 10,                                   //Integer: max number of posts to load
              client_id: '3089866516',       //String: Instagram client id (option if using access token)
              access_token: '' //String: Instagram access token
