@@ -5452,7 +5452,7 @@ class Home extends SPACULLUS_Controller {
 				$data['providers'][$provider]['user_profile'] = $service->getUserProfile();
                                 }
                                 } catch (Exception $e) {
-                                $data["error"] = "Couldn't authenticate with ".$provider;
+                                $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
                             }
 			}
 		}
