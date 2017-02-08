@@ -128,9 +128,9 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */
     function getUserProfile() {
-        // ask facebook api for the user accounts
-        $accounts = $this->api->get('/me/accounts', $this->token('access_token'));
-
+        $response = $this->api->get('/me/accounts', $this->token('access_token'));
+        $accounts = $response->getDecodedBody();
+        
         foreach( $accounts['data'] as $account ){
             try {
                 $fields = [
