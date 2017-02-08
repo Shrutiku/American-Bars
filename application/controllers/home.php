@@ -5444,18 +5444,19 @@ class Home extends SPACULLUS_Controller {
         
         $this->load->library('HybridAuthLib');
         $data['providers'] = $this->hybridauthlib->getProviders();
-		foreach($data['providers'] as $provider=>$d) {
-			if ($d['connected'] == 1) {
-                                try {
-                                $service = $this->hybridauthlib->authenticate($provider);
-				if ($service->isUserConnected()) {
-				$data['providers'][$provider]['user_profile'] = $service->getUserProfile();
-                                }
-                                } catch (Exception $e) {
-                                $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
+        
+        foreach($data['providers'] as $provider=>$d) {
+                if ($d['connected'] == 1) {
+                        try {
+                            $service = $this->hybridauthlib->authenticate($provider);
+                            if (!$service->isUserConnected()) {
+                                throw new Exception("not connected");
                             }
-			}
-		}
+                        } catch (Exception $e) {
+                        $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
+                    }
+                }
+        }
         
         if ($_POST) {
             if ($this->form_validation->run() == FALSE) {
