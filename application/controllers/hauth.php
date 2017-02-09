@@ -240,12 +240,13 @@ class HAuth extends CI_Controller {
                                 $service->setUserStatus($status);
                         }
                     } catch (Exception $e) {
+                        $error = "$provider: $e";
                         continue;
                     }
                 }
             }
             
-            redirect('/home/socialshare');
+            redirect('/home/socialshare/'.$error);
 	}
 }
 /* End of file hauth.php */
