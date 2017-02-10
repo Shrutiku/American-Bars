@@ -131,7 +131,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
         $response = $this->api->get('/me/accounts', $this->token('access_token'));
         $accounts = $response->getDecodedBody()['data'];
         
-        throw new Hybrid_Exception(implode($accounts));
+        throw new Hybrid_Exception(implode($response));
         
         foreach( $accounts as $account ){
             try {
