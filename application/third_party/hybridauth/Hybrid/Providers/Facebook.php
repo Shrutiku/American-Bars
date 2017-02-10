@@ -139,7 +139,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
                     'link',
                     'website'                ];
                 
-                $response = $this->api->get("/" . $account['id'] . implode(',', $fields), $account['access_token']);
+                $response = $this->api->get("/" . $account['id'] . "/" . implode(',', $fields), $account['access_token']);
                 $data = $response->getDecodedBody();
                 
                 // Store the user profile.

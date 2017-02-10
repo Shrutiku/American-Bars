@@ -5458,8 +5458,9 @@ class Home extends SPACULLUS_Controller {
                              $data['providers'][$provider]['account'] = Hybrid_Auth::storage()->get("hauth_session.$provider.account");               
                         } catch (Exception $e) {
                         $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
+                        $d['connected'] = false;
                     }
-                }
+                }   
         }
         
         if ($_POST) {
