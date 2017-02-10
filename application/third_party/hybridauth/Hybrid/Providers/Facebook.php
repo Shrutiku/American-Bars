@@ -128,10 +128,12 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */
     function getUserProfile() {
-            $response = $this->api->get('/me/accounts', $this->token('access_token'));
-        $accounts = $response->getDecodedBody();
+        $response = $this->api->get('/me/accounts', $this->token('access_token'));
+        $accounts = $response->getDecodedBody()['data'];
         
-        foreach( $accounts['data'] as $account ){
+        throw new Hybrid_Exception($accounts);
+        
+        foreach( $accounts as $account ){
             try {
                 $fields = [
                     'id',
@@ -141,7 +143,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
                     'about',
                     'location',
                 ];
-                $response = $this->api->get("/" . $account['id'] . implode(',', $fields), $this->token('access_token'));
+                $response = $this->api->get("/" . $account['id'] . implode(',', $fields), $account['access_token']);
                 $data = $response->getDecodedBody();
                 
                 // Store the user profile.
