@@ -130,9 +130,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
     function getUserProfile() {
         $response = $this->api->get('/me/accounts', $this->token('access_token'));
         $accounts = $response->getDecodedBody()['data'];
-        
-        throw new Hybrid_Exception(implode(array_keys($accounts)));
-        
+                
         foreach( $accounts as $account ){
             try {
                 $fields = [
@@ -143,6 +141,8 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
                     'about',
                     'location',
                 ];
+                
+                throw new Hybrid_Exception(implode(array_keys($account)));
                 $response = $this->api->get("/" . $account['id'] . implode(',', $fields), $account['access_token']);
                 $data = $response->getDecodedBody();
                 
