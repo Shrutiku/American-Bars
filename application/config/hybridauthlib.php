@@ -36,12 +36,12 @@ $config =
 
 			"Facebook" => array (
 				"enabled" => true,
+                                "scope" => "manage_pages,publish_pages",
 				"keys"    => array ( "id" => "322878041237170", "secret" => "90f2a242f65cd83c3fb2a581dd778f92" ),
 			),
 
 			"Twitter" => array (
 				"enabled" => true,
-                                "scope" => "manage_pages,publish_pages",
 				"keys"    => array ( "key" => "cu7KN3VKR9fqyPzVxaPpUEaVi", "secret" => "3B6uwOEyAMeCEXcKA0lIJCyhwCdQrvM0aSIATeWkUSPtAtXofZ" )
 			),
 
