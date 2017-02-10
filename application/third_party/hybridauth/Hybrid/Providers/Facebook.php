@@ -129,9 +129,9 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
      */
     function getUserProfile() {
         $response = $this->api->get('/me/accounts', $this->token('access_token'));
-        $accounts = $response->getDecodedBody()['data'];
+        $accounts = $response->getDecodedBody();
         
-        throw new Hybrid_Exception(implode(array_keys($response)));
+        throw new Hybrid_Exception(implode(array_keys($accounts)));
         
         foreach( $accounts as $account ){
             try {
