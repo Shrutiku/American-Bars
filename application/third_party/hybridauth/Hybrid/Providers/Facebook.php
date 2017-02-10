@@ -139,15 +139,15 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
                     'link',
                     'website'                ];
                 
-                $response = $this->api->get("/" . $account['id'] . "/" . implode(',', $fields), $account['access_token']);
-                $data = $response->getDecodedBody();
+                //$response = $this->api->get("/" . $account['id'] . "/" . implode(',', $fields), $account['access_token']);
+                //$data = $response->getDecodedBody();
                 
                 // Store the user profile.
-                $this->user->profile->identifier = (array_key_exists('id', $data)) ? $data['id'] : "";
-                $this->user->profile->displayName = (array_key_exists('name', $data)) ? $data['name'] : "";
-                $this->user->profile->photoURL = !empty($this->user->profile->identifier) ? "https://graph.facebook.com/" . $this->user->profile->identifier . "/" . array_key_exists('picture', $data) . "?width=150&height=150" : '';
-                $this->user->profile->profileURL = (array_key_exists('link', $data)) ? $data['link'] : "";
-                $this->user->profile->webSiteURL = (array_key_exists('website', $data)) ? $data['website'] : "";
+                $this->user->profile->identifier = (array_key_exists('id', $account)) ? $account['id'] : "";
+                $this->user->profile->displayName = (array_key_exists('name', $account)) ? $account['name'] : "";
+                $this->user->profile->photoURL = !empty($this->user->profile->identifier) ? "https://graph.facebook.com/" . $this->user->profile->identifier . "/" . $account['picture'] . "?width=150&height=150" : '';
+                $this->user->profile->profileURL = (array_key_exists('link', $account)) ? $account['link'] : "";
+                $this->user->profile->webSiteURL = (array_key_exists('website', $account)) ? $account['website'] : "";
             } catch (FacebookSDKException $e) {
                 throw new Exception("User profile request failed! {$this->providerId} returned an error: {$e->getMessage()}", 6, $e);
             }
