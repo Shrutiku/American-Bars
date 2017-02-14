@@ -5452,7 +5452,7 @@ class Home extends SPACULLUS_Controller {
                             if ($service->isUserConnected()) {
                                 if (!Hybrid_Auth::storage()->get("hauth_session.$provider.account")) {
                                         $profile = $service->getUserProfile();
-                                        $account_name = end(explode('/', $profile->profileURL));
+                                        $account_name = end(explode('/', $profile->identifier));
                                         Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name);                    
                                     }
                                 }      
