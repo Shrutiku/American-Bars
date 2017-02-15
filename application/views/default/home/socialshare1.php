@@ -219,10 +219,10 @@ $this->load->helper('url');
 $theme_url = $urls= base_url().getThemeName();
 foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
-        echo "<li>" . anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:1 0%;
+        echo "<li>" . anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;')), array('class' => 'connected')) . "</li>";
     } else {
-        echo "<li>" . anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:1 0%;
+        echo "<li>" . anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;')), array('class' => 'login')) . "</li>";
     }
 }
