@@ -279,9 +279,9 @@ foreach ($providers as $provider => $d) {
                         </p>
                     </div>                
                     <div class="dashboard_subblock">              
-                        <div class="padtb" style="text-align: center;">
-                            <div class="input_box col-sm-5" style="text-align: center;">                               
-                                <textarea type="text" class="form-control form-pad" id="message" name="message" style="height: 200px;" placeholder="What's on your mind?"></textarea>
+                        <div class="padtb">
+                            <div class="input_box col-sm-7" style="text-align: center;">                               
+                                <textarea type="text" class="form-control form-pad" id="message" name="message" style="width: 200px; height: 100px;" placeholder="What's on your mind?"></textarea>
                             </div>
                             <div class="clearfix"></div>
                         </div>
