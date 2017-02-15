@@ -201,7 +201,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 
                         <h1>Login to your Social Media:</h1>
 
-                        <div id="body">
+                        <div id="body" style="display : inline-block; text-align: center;">
                             <?php
                             if (@$error != "") {
                                 echo "<div class='error1 text-center'>" . $error . "</div>";
