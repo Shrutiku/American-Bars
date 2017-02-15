@@ -212,18 +212,18 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                             ?>
                             <p>Select a service to authenticate with. If you have previously authenticated, it will be denoted below.</p>
                             <h4>Select a service:</h4>
-                            <ul id="provider-list">
+                            <ul id="provider-list" style="display : inline-block;">
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
 $theme_url = $urls= base_url().getThemeName();
 foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
-        echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:1 0%;
-   max-height:10%;')), array('class' => 'connected'));
+        echo "<li>" . anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:1 0%;
+   max-height:10%;')), array('class' => 'connected')) . "</li>";
     } else {
-        echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:1 0%;
-   max-height:10%;')), array('class' => 'login'));
+        echo "<li>" . anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:1 0%;
+   max-height:10%;')), array('class' => 'login')) . "</li>";
     }
 }
 ?>
