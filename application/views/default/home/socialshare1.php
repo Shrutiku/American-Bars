@@ -282,10 +282,10 @@ foreach ($providers as $provider => $d) {
                         <p class="bar_add" style="text-align: center;">Click Here to Post:</p>
                         <div class="padtb">
                             <div class="col-sm-3 text-right">
-                                <label class="control-label" style="line-height: 100px;">Message :</label>
+                                <label class="control-label">Message :</label>
                             </div>
-                            <div class="input_box col-sm-7">
-                                <input type="text" class="form-control form-pad" id="message" name="message">
+                            <div class="input_box col-sm-7">                               
+                                <input type="text" class="form-control form-pad" id="message" name="message" style="height: 100px;">
                             </div>
                             <div class="clearfix"></div>
                         </div>
