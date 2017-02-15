@@ -278,9 +278,9 @@ foreach ($providers as $provider => $d) {
 ?>
                         </p>
                     </div>                
-                    <div class="dashboard_subblock" style="text-align: center;">              
-                        <div class="padtb">
-                            <div class="input_box col-sm-5">                               
+                    <div class="dashboard_subblock">              
+                        <div class="padtb" style="text-align: center;">
+                            <div class="input_box col-sm-5" style="text-align: center;">                               
                                 <input type="text" class="form-control form-pad wideInput" id="message" name="message" style="height: 200px;" placeholder="What's on your mind?">
                             </div>
                             <div class="clearfix"></div>
