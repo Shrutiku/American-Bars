@@ -212,7 +212,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                             ?>
                             <p>Select a service to authenticate with. If you have previously authenticated, it will be denoted below.</p>
                             <h4>Select a service:</h4>
-                            <ul id="provider-list" style="display : inline-block;">
+                            <ul id="provider-list" style="display : inline-block; align-items: center;">
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
