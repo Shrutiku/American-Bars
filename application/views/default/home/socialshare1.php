@@ -217,10 +217,10 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
 foreach ($providers as $provider => $data) {
-    if ($data['connected']) {
-        echo "<li>" . anchor('hauth/logout/' . $provider, 'Logout of ' . $provider, array('class' => 'connected')) . "</li>";
+    if ($data['connected']) {        
+        echo "<li>" . anchor('hauth/logout/' . $provider, img(array('src'=>"<?php echo $theme_url; ?>/images/logout_$provider.png",'border'=>'0','alt'=>'$provider')), array('class' => 'connected')) . "</li>";
     } else {
-        echo "<li>" . anchor('hauth/login/' . $provider, $provider, array('class' => 'login')) . "</li>";
+        echo "<li>" . anchor('hauth/login/' . $provider, img(array('src'=>"<?php echo $theme_url; ?>/images/login_$provider.png",'border'=>'0','alt'=>'$provider')), array('class' => 'login')) . "</li>";
     }
 }
 ?>
