@@ -219,10 +219,10 @@ $theme_url = $urls= base_url().getThemeName();
 foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
-   max-height:10%;')), array('class' => 'connected'));
+   max-height:10%;padding-top: 5px;')), array('class' => 'connected'));
     } else {
         echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
-   max-height:10%;')), array('class' => 'login'));
+   max-height:10%;padding-top: 5px;')), array('class' => 'login'));
     }
 }
 ?>
@@ -282,7 +282,7 @@ foreach ($providers as $provider => $d) {
                         <p class="bar_add" style="text-align: center;">Click Here to Post:</p>
                         <div class="padtb">
                             <div class="col-sm-3 text-right">
-                                <label class="control-label" style="max-width: 30%; max-height: 20%;">Message :</label>
+                                <label class="control-label" style="width: 30%; height: 20%;">Message :</label>
                             </div>
                             <div class="input_box col-sm-7">
                                 <input type="text" class="form-control form-pad" id="message" name="message">
