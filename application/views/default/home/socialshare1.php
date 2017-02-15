@@ -197,7 +197,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                 <?php echo $this->load->view(getThemeName() . '/home/dashboard_menu'); ?>
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
-                    <div id="container">
+                    <div id="container" style="display : inline-block; align-items: center;">
 
                         <h1>Login to your Social Media:</h1>
 
@@ -212,7 +212,7 @@ $linkToOauthDialog = $this->facebook->getLoginUrl(
                             ?>
                             <p>Select a service to authenticate with. If you have previously authenticated, it will be denoted below.</p>
                             <h4>Select a service:</h4>
-                            <ul id="provider-list" style="display : inline-block; align-items: center;">
+                            <ul id="provider-list">
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
