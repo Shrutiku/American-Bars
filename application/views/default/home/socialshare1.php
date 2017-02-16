@@ -30,7 +30,7 @@ $config = array(
         sharelink = "https://plus.google.com/share?url=" + url;
         newwindow = window.open(sharelink, 'name', 'height=400,width=600');
         if (window.focus) {
-            newwindow.focus()
+            newwindow.focus();
         }
         return false;
     }
@@ -276,7 +276,7 @@ foreach ($providers as $provider => $d) {
 
     function change_url()
     {
-        window.location = '<?php echo site_url('home/socialshare/'); ?>'
+        window.location = '<?php echo site_url('home/socialshare/'); ?>';
     }
 </script>
 <!--------------End Scroll ------------------->
