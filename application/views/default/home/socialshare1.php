@@ -263,7 +263,7 @@ foreach ($providers as $provider => $d) {
             }
             ?>
                                                             <tr>
-                                                                <td class="pItem"><strong><?php= ucfirst($key) ?>:</strong> <?php= (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
+                                                                <td class="pItem"><strong><?php echo ucfirst($key); ?>:</strong> <?php echo (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
                                                             </tr>
     <?php } ?>
                                                     </tbody>
