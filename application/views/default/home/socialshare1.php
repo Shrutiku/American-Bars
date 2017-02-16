@@ -1,5 +1,4 @@
 <?php
-$theme_url = base_url() . getThemeName();
 $data = array(
     'facebook' => $this->fb_connect->fb,
     'fbSession' => $this->fb_connect->fbSession,
@@ -10,6 +9,7 @@ $data = array(
     'base_url' => site_url('home/facebook'),
     'appkey' => $this->fb_connect->appkey,
 );
+$theme_url = base_url() . getThemeName();
 ?>
 
 <script src="<?php echo base_url() . getThemeName(); ?>/js/jquery.oauthpopup.js"></script>
@@ -263,7 +263,7 @@ foreach ($providers as $provider => $d) {
             }
             ?>
                                                             <tr>
-                                                                <td class="pItem"><strong><?= ucfirst($key) ?>:</strong> <?= (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
+                                                                <td class="pItem"><strong><?php= ucfirst($key) ?>:</strong> <?php= (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
                                                             </tr>
     <?php } ?>
                                                     </tbody>
