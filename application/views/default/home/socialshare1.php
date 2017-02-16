@@ -427,7 +427,7 @@ foreach ($providers as $provider => $d) {
     {
         document.getElementById('post').href = document.getElementById('post').href
                 + "/\"" + document.getElementById('message').value + "\""
-                + "/\"" + document.getElementById('picture').value + "\"";
+                + "/" + document.getElementById('picture').value;
     }
 
     function showfacebook()
