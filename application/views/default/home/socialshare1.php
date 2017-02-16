@@ -24,20 +24,6 @@ $config = array(
     'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
 );
 ?>
-<script>
-
-    function googleplusbtn(url) {
-        sharelink = "https://plus.google.com/share?url=" + url;
-        newwindow = window.open(sharelink, 'name', 'height=400,width=600');
-        if (window.focus) {
-            newwindow.focus();
-        }
-        return false;
-    }
-</script>
-<script type="text/javascript">
-    //window.close();
-</script>
 
 <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
     <div class="wrapper row6 padtb10 has-js">
@@ -46,11 +32,11 @@ $config = array(
                 <?php echo $this->load->view(getThemeName() . '/home/dashboard_menu'); ?>
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
-                    <div id="container" style="display : inline-block; text-align: center;">
+                    <div id="container" style="display:inline-block; text-align: center;">
 
                         <h1>Login to your Social Media:</h1>
 
-                        <div id="body" style="display : inline-block; text-align: center;">
+                        <div id="body" style="display: inline-block; text-align: center;">
                             <?php
                             if (@$error != "") {
                                 echo "<div class='error1 text-center'>" . $error . "</div>";
@@ -64,7 +50,6 @@ $config = array(
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
-$theme_url = $urls= base_url().getThemeName();
 foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;

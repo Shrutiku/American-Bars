@@ -230,7 +230,7 @@ class HAuth extends CI_Controller {
             $status = array_filter(array('message' => $message, 'link'=>$link, 'picture'=>$picture));
             // Send to the view all permitted services as a user profile if authenticated
             $connected = $this->hybridauthlib->getConnectedProviders();
-            $error = '';
+            $msg = '';
             
             foreach($connected as $provider) {
 		if ($this->hybridauthlib->providerEnabled($provider)) {
@@ -239,15 +239,16 @@ class HAuth extends CI_Controller {
 
                         if ($service->isUserConnected()) {
                                 $service->setUserStatus($status);
-                        }
+                                $msg = "success";
+                        }                       
                     } catch (Exception $e) {
-                        $error = "$provider: $e";
-                        continue;
+                        $msg = "$provider: $e";
+                        break;
                     }
                 }
             }
             
-            redirect('/home/socialshare/'.$error);
+            redirect('/home/socialshare/'.$msg);
 	}
 }
 /* End of file hauth.php */
