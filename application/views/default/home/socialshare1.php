@@ -72,7 +72,7 @@ foreach ($providers as $provider => $d) {
         $profile[$provider] = (array) $d['user_profile'];
         ?>
                                 <fieldset>
-                                    <legend><strong><?= $provider ?></strong> Profile</legend>
+                                    <legend><strong><?php echo $provider; ?></strong> Profile</legend>
                                     <table width="100%">
                                         <tr>
                                             <td width="150" valign="top" align="center">
@@ -143,6 +143,7 @@ foreach ($providers as $provider => $d) {
 
             </div>             
         </div>
+    </div>
 </form>
 
 <script>
@@ -153,6 +154,10 @@ foreach ($providers as $provider => $d) {
 <?php } ?>
 
 <?php if ($msg == 'logout') { ?>
+            $.growlUI('<?php echo "You have successfully log out."; ?>');
+
+<?php } ?>
+<?php if ($msg == 'login') { ?>
             $.growlUI('<?php echo "You have successfully log out."; ?>');
 
 <?php } ?>
