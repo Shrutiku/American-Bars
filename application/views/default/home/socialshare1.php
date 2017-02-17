@@ -1,4 +1,5 @@
 <?php
+$theme_url = base_url() . getThemeName();
 $data = array(
     'facebook' => $this->fb_connect->fb,
     'fbSession' => $this->fb_connect->fbSession,
@@ -9,7 +10,6 @@ $data = array(
     'base_url' => site_url('home/facebook'),
     'appkey' => $this->fb_connect->appkey,
 );
-$theme_url = base_url() . getThemeName();
 ?>
 
 <script src="<?php echo base_url() . getThemeName(); ?>/js/jquery.oauthpopup.js"></script>
@@ -62,54 +62,7 @@ foreach ($providers as $provider => $data) {
 ?>
                             </ul>
                             <br style="clear: both;"/>
-
                         </div>
-                        <p class="footer">       
-<?php
-// Output the profiles of each logged in service
-foreach ($providers as $provider => $d) {
-    if ($d && !empty($d['user_profile'])) {
-        $profile[$provider] = (array) $d['user_profile'];
-        ?>
-                                <fieldset>
-                                    <legend><strong><?php echo $provider; ?></strong> Profile</legend>
-                                    <table width="100%">
-                                        <tr>
-                                            <td width="150" valign="top" align="center">
-        <?php
-        if (!empty($d['user_profile']->profileURL)) {
-            ?>
-                                                    <a href="<?php echo $d['user_profile']->profileURL; ?>"><img src="<?php echo $d['user_profile']->photoURL; ?>" title="<?php echo $d['user_profile']->displayName; ?>" border="0" style="height: 120px;"></a>
-                                                    <?php
-                                                } else {
-                                                    ?>
-                                                    <img src="public/avatar.png" title="<?php echo $d['user_profile']->displayName; ?>" border="0" >
-                                                    <?php
-                                                }
-                                                ?>
-                                            </td>
-                                            <td align="left"><table width="100%" cellspacing="0" cellpadding="3" border="0">
-                                                    <tbody>
-        <?php
-        foreach ($d['user_profile'] as $key => $value) {
-            if ($value == "") {
-                continue;
-            }
-            ?>
-                                                            <tr>
-                                                                <td class="pItem"><strong><?php echo ucfirst($key); ?>:</strong> <?php echo (filter_var($value, FILTER_VALIDATE_URL) !== false) ? '<a href="' . $value . '" target="_blank">' . $value . '</a>' : $value; ?></td>
-                                                            </tr>
-    <?php } ?>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </fieldset>
-        <?php
-    }
-}
-?>
                     </div>                
                     <div class="dashboard_subblock">              
                         <div class="padtb" style="text-align: center;">
