@@ -148,7 +148,7 @@ foreach ($providers as $provider => $d) {
 <script>
     $(document).ready(function () {
 <?php if ($msg == 'success') { ?>
-            $.growlUI('<?php echo "Post send successfully."; ?>');
+            $.growlUI('<?php echo "Post sent successfully."; ?>');
 
 <?php } ?>
 
