@@ -38,27 +38,27 @@ $config = array(
 
                         <div id="body" style="display: inline-block; text-align: center;">
                             <?php
-                            if (@$error != "") {
+                            /*if (@$error != "") {
                                 echo "<div class='error1 text-center'>" . $error . "</div>";
                             }
                             if (@$msg != "" && $msg != "1V1") {
                                 echo "<div class='success text-center'>" . $msg . "</div>";
-                            }
+                            }*/
                             ?>
                             <p>Select a service to authenticate with. If you have previously authenticated, it will be denoted below.</p>
                             <ul id="provider-list" style="text-align: center;">
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 //$this->load->helper('url');
-foreach ($providers as $provider => $data) {
-    /*if ($data['connected']) {        
+/*foreach ($providers as $provider => $data) {
+    if ($data['connected']) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;padding-right: 5px;', 'class' => 'connected')));
     } else {
         echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;padding-right: 5px;', 'class' => 'login')));
-    }*/
-}
+    }
+}*/
 ?>
                             </ul>
                             <br style="clear: both;"/>
@@ -67,7 +67,7 @@ foreach ($providers as $provider => $data) {
                         <p class="footer">       
 <?php
 // Output the profiles of each logged in service
-foreach ($providers as $provider => $d) {
+/*foreach ($providers as $provider => $d) {
     if ($d && !empty($d['user_profile'])) {
         $profile[$provider] = (array) $d['user_profile'];
         ?>
@@ -108,7 +108,7 @@ foreach ($providers as $provider => $d) {
                                 </fieldset>
         <?php
     }
-}
+}*/
 ?>
                     </div>                
                     <div class="dashboard_subblock">              
