@@ -53,10 +53,10 @@ $this->load->helper('url');
 foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
-   max-height:10%;padding-right: 5px;')), array('class' => 'connected'));
+   max-height:10%;padding-right: 5px;', 'class' => 'connected')));
     } else {
         echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
-   max-height:10%;padding-right: 5px;')), array('class' => 'login'));
+   max-height:10%;padding-right: 5px;', 'class' => 'login')));
     }
 }
 ?>
