@@ -177,7 +177,7 @@ foreach ($providers as $provider => $d) {
 </script>
 
 <!-- Codebird.js - required for TWITTER -->
-<!--<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>-->
+<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
 <!-- doT.js for rendering templates -->
 <script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>
 <!-- Moment.js for showing "time ago" and/or "date"-->
