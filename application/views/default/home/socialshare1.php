@@ -29,7 +29,7 @@ $config = array(
     <div class="wrapper row6 padtb10 has-js">
         <div class="container">
             <div class="margin-top-50 bg_brown">
-                <?php /*echo $this->load->view(getThemeName() . '/home/dashboard_menu');*/ ?>
+                <?php echo $this->load->view(getThemeName() . '/home/dashboard_menu'); ?>
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
@@ -38,18 +38,18 @@ $config = array(
 
                         <div id="body" style="display: inline-block; text-align: center;">
                             <?php
-                            /*if (@$error != "") {
+                            if (@$error != "") {
                                 echo "<div class='error1 text-center'>" . $error . "</div>";
                             }
                             if (@$msg != "" && $msg != "1V1") {
                                 echo "<div class='success text-center'>" . $msg . "</div>";
-                            }*/
+                            }
                             ?>
                             <ul id="provider-list" style="text-align: center;">
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 //$this->load->helper('url');
-/*foreach ($providers as $provider => $data) {
+foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;padding-right: 5px;', 'class' => 'connected')));
@@ -57,7 +57,7 @@ $config = array(
         echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;padding-right: 5px;', 'class' => 'login')));
     }
-}*/
+}
 ?>
                             </ul>
                             <br style="clear: both;"/>
@@ -66,7 +66,7 @@ $config = array(
                         <p class="footer">       
 <?php
 // Output the profiles of each logged in service
-/*foreach ($providers as $provider => $d) {
+foreach ($providers as $provider => $d) {
     if ($d && !empty($d['user_profile'])) {
         $profile[$provider] = (array) $d['user_profile'];
         ?>
@@ -107,10 +107,10 @@ $config = array(
                                 </fieldset>
         <?php
     }
-}*/
+}
 ?>
                     </div>                
-                    <!--<div class="dashboard_subblock">              
+                    <div class="dashboard_subblock">              
                         <div class="padtb" style="text-align: center;">
                             <div class="input_box text-center">                               
                                 <textarea class="form-control form-pad" id="message" name="message" style="width: 400px ; height: 100px;display: block; margin-left: auto; margin-right: auto;" placeholder="What's on your mind?"></textarea>
@@ -135,7 +135,7 @@ $config = array(
                         <div class="container" style="max-width: 60%; padding-top: 5px">
                             <div class="social-feed-container"></div>
                         </div>
-                    </div>-->                                                                        
+                    </div>                                                                      
                     <div class="clearfix"></div>
                 </div>
 
@@ -145,7 +145,7 @@ $config = array(
 </form>
 
 <script>
-    /*$(document).ready(function () {
+    $(document).ready(function () {
 <?php if ($msg == 'success') { ?>
             $.growlUI('<?php echo "Post sent successfully."; ?>');
 
@@ -173,13 +173,13 @@ $config = array(
 <?php } ?>
 
 
-    });*/
+    });
 </script>
 
 <!-- Codebird.js - required for TWITTER -->
 <script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
 <!-- doT.js for rendering templates -->
-<script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>-->
 <!-- Moment.js for showing "time ago" and/or "date"-->
 <script src="<?php echo app_bower_url(); ?>/moment/min/moment.min.js"></script>
 <!-- Moment Locale to format the date to your language (eg. italian lang)-->
