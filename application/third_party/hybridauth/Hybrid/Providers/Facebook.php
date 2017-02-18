@@ -266,8 +266,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
     function setUserStatus($status) { 
         // ask facebook api for the user accounts
         $response = $this->api->get('/me/accounts', $this->token('access_token'));
-        $response = $response->getDecodedBody();
-        $accounts = $response['data'];
+        $accounts = $response->getDecodedBody()['data'];
                 
         foreach( $accounts as $account ){
             throw new Exception(implode(array_keys($account)));

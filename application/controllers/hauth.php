@@ -242,7 +242,7 @@ class HAuth extends CI_Controller {
                                 $msg = "success";
                         }                       
                     } catch (Exception $e) {
-                        $msg = "$provider: $e";
+                        $msg = "'$provider: $e'";
                         break;
                     }
                 }
