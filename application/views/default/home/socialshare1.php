@@ -110,7 +110,7 @@ $config = array(
 }*/
 ?>
                     </div>                
-                    <div class="dashboard_subblock">              
+                    <!--<div class="dashboard_subblock">              
                         <div class="padtb" style="text-align: center;">
                             <div class="input_box text-center">                               
                                 <textarea class="form-control form-pad" id="message" name="message" style="width: 400px ; height: 100px;display: block; margin-left: auto; margin-right: auto;" placeholder="What's on your mind?"></textarea>
@@ -135,7 +135,7 @@ $config = array(
                         <div class="container" style="max-width: 60%; padding-top: 5px">
                             <div class="social-feed-container"></div>
                         </div>
-                    </div>                                                                        
+                    </div>-->                                                                        
                     <div class="clearfix"></div>
                 </div>
 
