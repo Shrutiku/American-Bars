@@ -25,7 +25,7 @@ $config = array(
 );
 ?>
 
-<!-- <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
+<form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
     <div class="wrapper row6 padtb10 has-js">
         <div class="container">
             <div class="margin-top-50 bg_brown">
@@ -45,7 +45,6 @@ $config = array(
                                 echo "<div class='success text-center'>" . $msg . "</div>";
                             }*/
                             ?>
-                            <p>Select a service to authenticate with. If you have previously authenticated, it will be denoted below.</p>
                             <ul id="provider-list" style="text-align: center;">
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
@@ -143,7 +142,7 @@ $config = array(
             </div>             
         </div>
     </div>
-</form>-->
+</form>
 
 <script>
     $(document).ready(function () {
