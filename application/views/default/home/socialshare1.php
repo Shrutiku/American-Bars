@@ -256,7 +256,7 @@ foreach ($providers as $provider => $d) {
 
     });
     
-    function uploadimage() 
+    /*function uploadimage() 
     {
         //var img = document.getElementById("picture").toDataURL("image/png").split(',')[1];
         var img = $('#picture')[0].files[0].toDataURL("image/png").split(',')[1];
@@ -282,7 +282,7 @@ foreach ($providers as $provider => $d) {
           error: function (response) {
             console.log(response);
           }
-    }
+    }*/
 
     function change_url()
     {
