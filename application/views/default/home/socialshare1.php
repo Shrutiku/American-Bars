@@ -25,7 +25,7 @@ $config = array(
 );
 ?>
 
-<!--<form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">-->
+<!--<form class="form-horizontal" role="form" name="info" id="info" action="<?php /*echo site_url("hauth/postall");*/ ?>" method="post">-->
     <div class="wrapper row6 padtb10 has-js">
         <div class="container">
             <div class="margin-top-50 bg_brown">
