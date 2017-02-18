@@ -176,16 +176,16 @@ $config = array(
     });*/
 </script>
 
-<!-- Codebird.js - required for TWITTER -->
-<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
 <!-- doT.js for rendering templates -->
 <script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>
+<!-- Codebird.js - required for TWITTER -->
+<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
 <!-- Moment.js for showing "time ago" and/or "date"-->
 <script src="<?php echo app_bower_url(); ?>/moment/min/moment.min.js"></script>
 <!-- Moment Locale to format the date to your language (eg. italian lang)-->
 <script src="<?php echo app_bower_url(); ?>/moment/locale/en.js"></script>
 <!-- Social-feed js -->
-<script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>
+<script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>-->
 
 <script>
     /*$(document).ready(function () {
