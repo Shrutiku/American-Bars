@@ -145,7 +145,7 @@ $config = array(
 </form>
 
 <script>
-    $(document).ready(function () {
+    /*$(document).ready(function () {
 <?php if ($msg == 'success') { ?>
             $.growlUI('<?php echo "Post sent successfully."; ?>');
 
@@ -173,7 +173,7 @@ $config = array(
 <?php } ?>
 
 
-    });
+    });*/
 </script>
 
 <!-- Codebird.js - required for TWITTER -->
