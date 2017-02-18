@@ -257,7 +257,7 @@ foreach ($providers as $provider => $d) {
     });
     
     $("#picture").change(function(){
-    var img = $('#picture')[0].files[0].getAsBinary();
+    var img = document.getElementById("picture").files[0].getAsBinary();
         //console.log(img + "\n\n\n");
         //console.log($('#picture')[0].files[0]);
         
