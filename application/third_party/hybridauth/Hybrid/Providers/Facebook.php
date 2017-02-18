@@ -269,7 +269,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
         $accounts = $response->getDecodedBody()['data'];
 
         if ($status['picture']) {
-            $status['link'] = $status['picture'];
+            $status['link'] = reset(explode('/', $status['picture']));
         }
         
         foreach( $accounts as $account ){
