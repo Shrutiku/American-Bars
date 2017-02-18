@@ -25,11 +25,11 @@ $config = array(
 );
 ?>
 
-<form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
+<!--<form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">-->
     <div class="wrapper row6 padtb10 has-js">
         <div class="container">
             <div class="margin-top-50 bg_brown">
-                <?php echo $this->load->view(getThemeName() . '/home/dashboard_menu'); ?>
+                <?php /*echo $this->load->view(getThemeName() . '/home/dashboard_menu');*/ ?>
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
@@ -142,7 +142,7 @@ $config = array(
             </div>             
         </div>
     </div>
-</form>
+<!--</form>-->
 
 <script>
     /*$(document).ready(function () {
@@ -177,15 +177,15 @@ $config = array(
 </script>
 
 <!-- Codebird.js - required for TWITTER -->
-<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
 <!-- doT.js for rendering templates -->
-<script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>
 <!-- Moment.js for showing "time ago" and/or "date"-->
-<script src="<?php echo app_bower_url(); ?>/moment/min/moment.min.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/moment/min/moment.min.js"></script>
 <!-- Moment Locale to format the date to your language (eg. italian lang)-->
-<script src="<?php echo app_bower_url(); ?>/moment/locale/en.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/moment/locale/en.js"></script>
 <!-- Social-feed js -->
-<script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>-->
 
 <script>
     /*$(document).ready(function () {
