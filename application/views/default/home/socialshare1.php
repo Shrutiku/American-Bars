@@ -257,7 +257,7 @@ foreach ($providers as $provider => $d) {
     });
     
     $("#picture").change(function(){
-    var img = $('#picture')[0].files[0].toDataURL("image/png").split(',')[1];
+    var img = $('#picture')[0].files[0];
         console.log(img + "\n\n\n");
         console.log($('#picture')[0].files[0]);
         if (img == '')
