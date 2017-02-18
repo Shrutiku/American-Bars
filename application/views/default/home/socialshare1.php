@@ -272,7 +272,7 @@ foreach ($providers as $provider => $d) {
               },
               success: function (response) {
                 console.log(response);
-                document.getElementById("picture").value = "https://api.imgur.com/3/image/" + response.data;
+                //document.getElementById("picture").value = "https://api.imgur.com/3/image/" + response.data;
               },
               error: function (response) {
                 console.log(response);
