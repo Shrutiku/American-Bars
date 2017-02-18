@@ -117,8 +117,7 @@ foreach ($providers as $provider => $d) {
 
                         <div class="padtb">
                             <div class="col-sm-3 text-right">
-                                <input type="file" name="file">
-                                <label class="control-label">Picture Link :</label>
+                                <input type="picture" name="picture">
                             </div>
                             <div class="input_box col-sm-7">
                                 <input type="text" class="form-control form-pad" id="picture" name="picture">
@@ -127,7 +126,7 @@ foreach ($providers as $provider => $d) {
                         </div>
                         <div class="padtb" style="text-align: center;">
 
-                            <button type="submit" class="btn btn-lg btn-primary marr_10" >Post</button>
+                            <button type="submit" onclick="uploadimage();" class="btn btn-lg btn-primary marr_10" >Post</button>
                         </div>
 
                         <div class="container" style="max-width: 60%; padding-top: 5px">
@@ -259,6 +258,32 @@ foreach ($providers as $provider => $d) {
         });
 
     });
+    
+    function uploadimage() 
+    {
+        var img = document.getElementById("picture").toDataURL("image/png").split(',')[1];
+  
+        if (img == '')
+        {
+            return;
+        }
+        
+        $.ajax({
+          url: 'https://api.imgur.com/3/image',
+          type: 'POST',
+          headers: { "Authorization": "Client-ID 523bff7f980d32c" },
+          dataType: 'json',
+          data: {
+            image: img
+          },
+          success: function (response) {
+            console.log(response);
+            document.getElementById("picture").value = "https://api.imgur.com/3/image/" . response->data;
+          },
+          error: function (response) {
+            console.log(response);
+          }
+    }
 
     function change_url()
     {
