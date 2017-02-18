@@ -236,7 +236,7 @@ $config = array(
 <script src="<?php echo base_url() . getThemeName(); ?>/js/jquery.slimscroll.js"></script>
 <script src="<?php echo base_url() . getThemeName(); ?>/js/prettify.js"></script>
 <script type="text/javascript">
-    $(function () {
+    /*$(function () {
         $('#infinite-list').slimscroll({
             alwaysVisible: true,
             height: 410,
@@ -265,7 +265,7 @@ $config = array(
     function change_url()
     {
         window.location = '<?php echo site_url('home/socialshare/'); ?>';
-    }
+    }*/
 </script>
 <!--------------End Scroll ------------------->
 <style>
