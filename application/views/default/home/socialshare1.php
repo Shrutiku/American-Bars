@@ -118,7 +118,10 @@ foreach ($providers as $provider => $d) {
                         <div class="padtb">
                             <div class="col-sm-3 text-right">
                                 <input type="picture" name="picture">
-                            </div>                         
+                            </div>
+                            <div class="input_box col-sm-7">
+                                <input type="text" class="form-control form-pad" id="picture" name="picture">
+                            </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="padtb" style="text-align: center;">
