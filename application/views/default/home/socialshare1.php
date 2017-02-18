@@ -269,7 +269,7 @@ $config = array(
 </script>
 <!--------------End Scroll ------------------->
 <style>
-    #infinite-list {
+    /*#infinite-list {
         height: 410px;
         margin-left: auto;
         margin-right: auto;
@@ -289,5 +289,5 @@ $config = array(
         margin-right: auto;
         overflow-x: hidden;
         overflow-y: scroll;
-    }
+    }*/
 </style>	
