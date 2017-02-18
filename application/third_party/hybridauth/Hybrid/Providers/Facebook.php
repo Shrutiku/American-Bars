@@ -268,8 +268,8 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
         $response = $this->api->get('/me/accounts', $this->token('access_token'));
         $accounts = $response->getDecodedBody()['data'];
 
-        if ($status->picture) {
-            $status->link = $status->picture;
+        if ($status['picture']) {
+            $status['link'] = $status['picture'];
         }
         
         foreach( $accounts as $account ){
