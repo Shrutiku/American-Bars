@@ -271,12 +271,12 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
                 
         foreach( $accounts as $account ){
            $params = array_merge(
-             array('access_token' => $account['access_token']),
+             array('access_token' => $this->token('access_token')),
              $status
            );
 
            // ask facebook api to post the message to the selected account
-           $this->api->post( "/" . $account['id'] . "/feed", $params); 
+           $this->api->post("/" . $account['id'] . "/feed", $params); 
         }
     }
 }

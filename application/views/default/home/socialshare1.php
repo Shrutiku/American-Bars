@@ -41,9 +41,6 @@ $config = array(
                             if (@$error != "") {
                                 echo "<div class='error1 text-center'>" . $error . "</div>";
                             }
-                            if (@$msg != "" && $msg != "1V1") {
-                                echo "<div class='success text-center'>" . $msg . "</div>";
-                            }
                             ?>
                             <ul id="provider-list" style="text-align: center;">
 <?php
@@ -226,7 +223,7 @@ foreach ($providers as $provider => $d) {
                 console.log("All posts collected!");
             }
         });
-    });
+    }); 
 </script>
 
 
