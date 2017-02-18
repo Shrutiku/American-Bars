@@ -257,26 +257,31 @@ foreach ($providers as $provider => $d) {
     });
     
     $("#picture").change(function(){
-    var img = FileReader.readAsBinaryString(document.getElementById("picture").files[0]);
-        //console.log(img + "\n\n\n");
-        //console.log($('#picture')[0].files[0]);
-        
-        $.ajax({
-          url: 'https://api.imgur.com/3/image',
-          type: 'POST',
-          headers: { "Authorization": "Client-ID 523bff7f980d32c" },
-          dataType: 'json',
-          data: {
-            image: img
-          },
-          success: function (response) {
-            console.log(response);
-            document.getElementById("picture").value = "https://api.imgur.com/3/image/" + response.data;
-          },
-          error: function (response) {
-            console.log(response);
-          }
-        });
+        var reader = new FileReader();
+        reader.readAsDataURL(document.getElementById("picture").files[0]);
+        reader.onload = function () {
+            var img = reader.result;
+
+            $.ajax({
+              url: 'https://api.imgur.com/3/image',
+              type: 'POST',
+              headers: { "Authorization": "Client-ID 523bff7f980d32c" },
+              dataType: 'json',
+              data: {
+                image: img
+              },
+              success: function (response) {
+                console.log(response);
+                document.getElementById("picture").value = "https://api.imgur.com/3/image/" + response.data;
+              },
+              error: function (response) {
+                console.log(response);
+              }
+            });
+        };
+        reader.onerror = function (error) {
+          console.log('Error: ', error);
+        };
     });
     
     function uploadimage() 
