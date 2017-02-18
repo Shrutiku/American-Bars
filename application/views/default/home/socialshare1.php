@@ -256,11 +256,11 @@ foreach ($providers as $provider => $d) {
 
     });
     
-    /*function uploadimage() 
+    function uploadimage() 
     {
         //var img = document.getElementById("picture").toDataURL("image/png").split(',')[1];
         var img = $('#picture')[0].files[0].toDataURL("image/png").split(',')[1];
-        console.log(img. "\n\n\n");
+        console.log(img + "\n\n\n");
         console.log($('#picture')[0].files[0]);
         if (img == '')
         {
@@ -277,12 +277,13 @@ foreach ($providers as $provider => $d) {
           },
           success: function (response) {
             console.log(response);
-            document.getElementById("picture").value = "https://api.imgur.com/3/image/" . response->data;
+            document.getElementById("picture").value = "https://api.imgur.com/3/image/" + response.data;
           },
           error: function (response) {
             console.log(response);
           }
-    }*/
+        });
+    }
 
     function change_url()
     {
