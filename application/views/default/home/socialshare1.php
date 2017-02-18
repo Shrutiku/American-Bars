@@ -188,7 +188,7 @@ $config = array(
 <script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>-->
 
 <script>
-    /*$(document).ready(function () {
+    $(document).ready(function () {
         $('.social-feed-container').socialfeed({
             // FACEBOOK
             facebook: {
@@ -226,7 +226,7 @@ $config = array(
                 console.log("All posts collected!");
             }
         });
-    });*/
+    });
 </script>
 
 
