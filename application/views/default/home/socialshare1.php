@@ -265,7 +265,7 @@ foreach ($providers as $provider => $d) {
             $.ajax({
               url: 'https://api.imgur.com/3/image',
               type: 'POST',
-              headers: { "Authorization": "Client-ID 523bff7f980d32c" },
+              headers: { "Authorization": "Client-ID 4eca465e464ebb2" },
               dataType: 'json',
               data: {
                 type: "base64", 
