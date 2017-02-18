@@ -25,11 +25,11 @@ $config = array(
 );
 ?>
 
-<!--<form class="form-horizontal" role="form" name="info" id="info" action="<?php /*echo site_url("hauth/postall");*/ ?>" method="post">-->
+<!--<form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">-->
     <div class="wrapper row6 padtb10 has-js">
         <div class="container">
             <div class="margin-top-50 bg_brown">
-                <?php/* echo $this->load->view(getThemeName() . '/home/dashboard_menu');*/ ?>
+                <?php /*echo $this->load->view(getThemeName() . '/home/dashboard_menu');*/ ?>
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
@@ -38,19 +38,18 @@ $config = array(
 
                         <div id="body" style="display: inline-block; text-align: center;">
                             <?php
-                            if (@$error != "") {
+                            /*if (@$error != "") {
                                 echo "<div class='error1 text-center'>" . $error . "</div>";
                             }
                             if (@$msg != "" && $msg != "1V1") {
                                 echo "<div class='success text-center'>" . $msg . "</div>";
-                            }
+                            }*/
                             ?>
-                            <p>Select a service to authenticate with. If you have previously authenticated, it will be denoted below.</p>
                             <ul id="provider-list" style="text-align: center;">
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
-$this->load->helper('url');
-foreach ($providers as $provider => $data) {
+//$this->load->helper('url');
+/*foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;padding-right: 5px;', 'class' => 'connected')));
@@ -58,7 +57,7 @@ foreach ($providers as $provider => $data) {
         echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:10%;
    max-height:10%;padding-right: 5px;', 'class' => 'login')));
     }
-}
+}*/
 ?>
                             </ul>
                             <br style="clear: both;"/>
@@ -67,7 +66,7 @@ foreach ($providers as $provider => $data) {
                         <p class="footer">       
 <?php
 // Output the profiles of each logged in service
-foreach ($providers as $provider => $d) {
+/*foreach ($providers as $provider => $d) {
     if ($d && !empty($d['user_profile'])) {
         $profile[$provider] = (array) $d['user_profile'];
         ?>
@@ -108,10 +107,10 @@ foreach ($providers as $provider => $d) {
                                 </fieldset>
         <?php
     }
-}
+}*/
 ?>
                     </div>                
-                    <div class="dashboard_subblock">              
+                    <!--<div class="dashboard_subblock">              
                         <div class="padtb" style="text-align: center;">
                             <div class="input_box text-center">                               
                                 <textarea class="form-control form-pad" id="message" name="message" style="width: 400px ; height: 100px;display: block; margin-left: auto; margin-right: auto;" placeholder="What's on your mind?"></textarea>
@@ -136,7 +135,7 @@ foreach ($providers as $provider => $d) {
                         <div class="container" style="max-width: 60%; padding-top: 5px">
                             <div class="social-feed-container"></div>
                         </div>
-                    </div>                                                                        
+                    </div>-->                                                                        
                     <div class="clearfix"></div>
                 </div>
 
@@ -146,7 +145,7 @@ foreach ($providers as $provider => $d) {
 <!--</form>-->
 
 <script>
-    $(document).ready(function () {
+    /*$(document).ready(function () {
 <?php if ($msg == 'success') { ?>
             $.growlUI('<?php echo "Post sent successfully."; ?>');
 
@@ -174,22 +173,22 @@ foreach ($providers as $provider => $d) {
 <?php } ?>
 
 
-    });
+    });*/
 </script>
 
 <!-- Codebird.js - required for TWITTER -->
-<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/codebird-js/codebird.js"></script>
 <!-- doT.js for rendering templates -->
-<script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/doT/doT.min.js"></script>
 <!-- Moment.js for showing "time ago" and/or "date"-->
-<script src="<?php echo app_bower_url(); ?>/moment/min/moment.min.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/moment/min/moment.min.js"></script>
 <!-- Moment Locale to format the date to your language (eg. italian lang)-->
-<script src="<?php echo app_bower_url(); ?>/moment/locale/en.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/moment/locale/en.js"></script>
 <!-- Social-feed js -->
-<script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>
+<!--<script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>-->
 
 <script>
-    $(document).ready(function () {
+    /*$(document).ready(function () {
         $('.social-feed-container').socialfeed({
             // FACEBOOK
             facebook: {
@@ -204,13 +203,13 @@ foreach ($providers as $provider => $d) {
                 consumer_key: 'cu7KN3VKR9fqyPzVxaPpUEaVi', //String: consumer key. make sure to have your app read-only
                 consumer_secret: '3B6uwOEyAMeCEXcKA0lIJCyhwCdQrvM0aSIATeWkUSPtAtXofZ' //String: consumer secret key. make sure to have your app read-only
             },
-            /*// INSTAGRAM
+            // INSTAGRAM
              instagram:{
              accounts: ['<?php echo!empty($providers['Instagram']['account']) ? "#" . $providers['Instagram']['account'] : ''; ?>'],  //Array: Specify a list of accounts from which to pull posts
              limit: 10,                                   //Integer: max number of posts to load
              client_id: '3089866516',       //String: Instagram client id (option if using access token)
              access_token: '' //String: Instagram access token
-             },*/
+             },
 
             // GENERAL SETTINGS
             length: 400, //Integer: For posts with text longer than this length, show an ellipsis.
@@ -227,7 +226,7 @@ foreach ($providers as $provider => $d) {
                 console.log("All posts collected!");
             }
         });
-    });
+    });*/
 </script>
 
 
@@ -237,7 +236,7 @@ foreach ($providers as $provider => $d) {
 <script src="<?php echo base_url() . getThemeName(); ?>/js/jquery.slimscroll.js"></script>
 <script src="<?php echo base_url() . getThemeName(); ?>/js/prettify.js"></script>
 <script type="text/javascript">
-    $(function () {
+    /*$(function () {
         $('#infinite-list').slimscroll({
             alwaysVisible: true,
             height: 410,
@@ -266,11 +265,11 @@ foreach ($providers as $provider => $d) {
     function change_url()
     {
         window.location = '<?php echo site_url('home/socialshare/'); ?>';
-    }
+    }*/
 </script>
 <!--------------End Scroll ------------------->
 <style>
-    #infinite-list {
+    /*#infinite-list {
         height: 410px;
         margin-left: auto;
         margin-right: auto;
@@ -290,5 +289,5 @@ foreach ($providers as $provider => $d) {
         margin-right: auto;
         overflow-x: hidden;
         overflow-y: scroll;
-    }
+    }*/
 </style>	
