@@ -256,6 +256,33 @@ foreach ($providers as $provider => $d) {
 
     });
     
+    $("#picture").change(function(){
+    var img = $('#picture')[0].files[0].toDataURL("image/png").split(',')[1];
+        console.log(img + "\n\n\n");
+        console.log($('#picture')[0].files[0]);
+        if (img == '')
+        {
+            return;
+        }
+        
+        $.ajax({
+          url: 'https://api.imgur.com/3/image',
+          type: 'POST',
+          headers: { "Authorization": "Client-ID 523bff7f980d32c" },
+          dataType: 'json',
+          data: {
+            image: img
+          },
+          success: function (response) {
+            console.log(response);
+            document.getElementById("picture").value = "https://api.imgur.com/3/image/" + response.data;
+          },
+          error: function (response) {
+            console.log(response);
+          }
+        });
+    });
+    
     function uploadimage() 
     {
         //var img = document.getElementById("picture").toDataURL("image/png").split(',')[1];
