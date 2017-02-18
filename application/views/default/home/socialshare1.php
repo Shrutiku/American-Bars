@@ -117,7 +117,7 @@ foreach ($providers as $provider => $d) {
 
                         <div class="padtb">
                             <div class="col-sm-3 text-right">
-                                <input type="file" name="picture" style="display: block; margin-left: auto; margin-right: auto;">
+                                <input type="image-file" name="picture" style="display: block; margin-left: auto; margin-right: auto;">
                             </div>                           
                             <div class="clearfix"></div>
                         </div>
@@ -258,8 +258,8 @@ foreach ($providers as $provider => $d) {
     
     function uploadimage() 
     {
-        var img = document.getElementById("picture").toDataURL("image/png").split(',')[1];
-  
+        //var img = document.getElementById("picture").toDataURL("image/png").split(',')[1];
+        var img = $('#picture')[0].files[0].toDataURL("image/png").split(',')[1];
         if (img == '')
         {
             return;
