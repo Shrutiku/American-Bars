@@ -117,7 +117,7 @@ foreach ($providers as $provider => $d) {
 
                         <div class="padtb">
                             <div class="col-sm-3 text-right">
-                                <input type="file" name="picture">
+                                <input type="file" name="picture" style="display: block; margin-left: auto; margin-right: auto;">
                             </div>                           
                             <div class="clearfix"></div>
                         </div>
