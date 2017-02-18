@@ -188,7 +188,7 @@ $config = array(
 <script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>
 
 <script>
-    $(document).ready(function () {
+    /*$(document).ready(function () {
         $('.social-feed-container').socialfeed({
             // FACEBOOK
             facebook: {
@@ -203,13 +203,13 @@ $config = array(
                 consumer_key: 'cu7KN3VKR9fqyPzVxaPpUEaVi', //String: consumer key. make sure to have your app read-only
                 consumer_secret: '3B6uwOEyAMeCEXcKA0lIJCyhwCdQrvM0aSIATeWkUSPtAtXofZ' //String: consumer secret key. make sure to have your app read-only
             },
-            /*// INSTAGRAM
+            // INSTAGRAM
              instagram:{
              accounts: ['<?php echo!empty($providers['Instagram']['account']) ? "#" . $providers['Instagram']['account'] : ''; ?>'],  //Array: Specify a list of accounts from which to pull posts
              limit: 10,                                   //Integer: max number of posts to load
              client_id: '3089866516',       //String: Instagram client id (option if using access token)
              access_token: '' //String: Instagram access token
-             },*/
+             },
 
             // GENERAL SETTINGS
             length: 400, //Integer: For posts with text longer than this length, show an ellipsis.
@@ -226,7 +226,7 @@ $config = array(
                 console.log("All posts collected!");
             }
         });
-    });
+    });*/
 </script>
 
 
