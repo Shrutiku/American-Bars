@@ -260,6 +260,8 @@ foreach ($providers as $provider => $d) {
     {
         //var img = document.getElementById("picture").toDataURL("image/png").split(',')[1];
         var img = $('#picture')[0].files[0].toDataURL("image/png").split(',')[1];
+        console.log(img. "\n\n\n");
+        console.log($('#picture')[0].files[0]);
         if (img == '')
         {
             return;
