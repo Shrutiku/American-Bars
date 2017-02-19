@@ -284,7 +284,7 @@ foreach ($providers as $provider => $d) {
           console.log('Error: ', error);
         };*/
         
-        var formData = new FormData();
+        /*var formData = new FormData();
   formData.append("image", document.getElementById("picture").files[0]);
   $.ajax({
     url: "https://api.imgur.com/3/image",
@@ -300,36 +300,29 @@ foreach ($providers as $provider => $d) {
     cache: false,
     contentType: false,
     processData: false
-  });
+  });*/
     });
     
     function uploadimage() 
     {
-        var reader = new FileReader();
-        reader.readAsDataURL(document.getElementById("picture").files[0]);
-        reader.onload = function () {
-            var img = reader.result;
-
-            $.ajax({
-              url: 'https://api.imgur.com/3/image',
-              type: 'POST',
-              headers: { "Authorization": "Client-ID 523bff7f980d32c" },
-              dataType: 'json',
-              data: {
-                image: img
-              },
-              success: function (response) {
-                console.log(response);
-                document.getElementById("picture").value = "https://api.imgur.com/3/image/" + response.data;
-              },
-              error: function (response) {
-                console.log(response);
-              }
-            });
-        };
-        reader.onerror = function (error) {
-          console.log('Error: ', error);
-        };
+         var formData = new FormData();
+        formData.append("image", document.getElementById("picture").files[0]);
+        $.ajax({
+          url: "https://api.imgur.com/3/image",
+          type: "POST",
+          datatype: "json",
+          headers: {
+            "Authorization": "Client-ID 4eca465e464ebb2"
+          },
+          data: formData,
+          success: function(response) {
+            console.log(response);
+            document.getElementById("picture").value = response.data.link;
+          },
+          cache: false,
+          contentType: false,
+          processData: false
+        });
     }
 
     function change_url()
