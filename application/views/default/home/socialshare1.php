@@ -257,7 +257,7 @@ foreach ($providers as $provider => $d) {
 
     });
     
-   $("#picture").change(function(){
+   $("#file").change(function(){
      var formData = new FormData();
         formData.append("image", document.getElementById("file").files[0]);
         $.ajax({
