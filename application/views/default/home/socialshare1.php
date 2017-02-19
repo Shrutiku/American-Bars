@@ -321,6 +321,7 @@ foreach ($providers as $provider => $d) {
           },
           cache: false,
           contentType: false,
+          async: false,
           processData: false
         });
     }
