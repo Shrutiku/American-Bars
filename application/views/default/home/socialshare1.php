@@ -266,7 +266,7 @@ foreach ($providers as $provider => $d) {
               url: 'https://api.imgur.com/3/upload',
               type: 'POST',
               headers: { "Authorization": "Client-ID 4eca465e464ebb2" },
-              dataType: 'application/json',
+              "Content-Type": 'application/json',
               data: {
                 type: 'base64', 
                 image: img
