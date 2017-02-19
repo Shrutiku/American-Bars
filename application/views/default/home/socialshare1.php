@@ -257,9 +257,9 @@ foreach ($providers as $provider => $d) {
 
     });
     
-    $("#picture").change(function(){
+/*    $("#picture").change(function(){
 var formData = new FormData();
-        formData.append("image", document.getElementById("picture").files[0]);
+        formData.append("image", document.getElementById("file").files[0]);
         $.ajax({
           url: "https://api.imgur.com/3/image",
           type: "POST",
@@ -277,7 +277,7 @@ var formData = new FormData();
           async: false,
           processData: false
         });
-    });
+    });*/
     
     function uploadimage() 
     {
