@@ -263,12 +263,12 @@ foreach ($providers as $provider => $d) {
             var img = reader.result;
 
             $.ajax({
-              url: 'https://api.imgur.com/3/image',
+              url: 'https://api.imgur.com/3/upload',
               type: 'POST',
               headers: { "Authorization": "Client-ID 4eca465e464ebb2" },
               dataType: 'json',
               data: {
-                type: "base64", 
+                type: 'base64', 
                 image: img
               },
               success: function (response) {
