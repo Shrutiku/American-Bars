@@ -117,7 +117,8 @@ foreach ($providers as $provider => $d) {
 
                         <div class="padtb" style="text-align: center;">
                             <div class="col-sm-3 text-right" style="text-align: center;">
-                                <input type="file" id="picture" name="picture" style="display: block; margin-left: auto; margin-right: auto;">
+                                <input type="file" id="file" name="file" style="display: block; margin-left: auto; margin-right: auto;">
+                                <input type="hidden" id="picture" name="picture">
                             </div>                           
                             <div class="clearfix"></div>
                         </div>
@@ -281,7 +282,7 @@ var formData = new FormData();
     function uploadimage() 
     {
          var formData = new FormData();
-        formData.append("image", document.getElementById("picture").files[0]);
+        formData.append("image", document.getElementById("file").files[0]);
         $.ajax({
           url: "https://api.imgur.com/3/image",
           type: "POST",
