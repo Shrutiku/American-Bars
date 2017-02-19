@@ -286,7 +286,7 @@ foreach ($providers as $provider => $d) {
     {
          var formData = new FormData();
         formData.append("image", document.getElementById("file").files[0]);
-        $.ajax({
+        return $.ajax({
           url: "https://api.imgur.com/3/image",
           type: "POST",
           datatype: "json",
