@@ -257,8 +257,8 @@ foreach ($providers as $provider => $d) {
 
     });
     
-/*    $("#picture").change(function(){
-var formData = new FormData();
+   $("#picture").change(function(){
+     var formData = new FormData();
         formData.append("image", document.getElementById("file").files[0]);
         $.ajax({
           url: "https://api.imgur.com/3/image",
@@ -270,14 +270,14 @@ var formData = new FormData();
           data: formData,
           success: function(response) {
             console.log(response);
-            document.getElementById("picture").value = "\"" + response.data.link + "\"";
+            //document.getElementById("picture").value = "\"" + response.data.link + "\"";
           },
           cache: false,
           contentType: false,
           async: false,
           processData: false
         });
-    });*/
+    });
     
     function uploadimage() 
     {
@@ -293,7 +293,7 @@ var formData = new FormData();
           data: formData,
           success: function(response) {
             console.log(response);
-            document.getElementById("picture").value = "\"" + response.data.link + "\"";
+            document.getElementById("picture").value = response.data.link;
           },
           cache: false,
           contentType: false,
