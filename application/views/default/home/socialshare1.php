@@ -116,7 +116,7 @@ foreach ($providers as $provider => $d) {
                         </div>
 
                         <div class="padtb" style="text-align: center;">
-                            <div class="col-sm-7 text-center" style="text-align: center;">
+                            <div class="text-center" style="text-align: center;">
                                 <input type="file" id="file" name="file" style="margin: 0 auto;">
                                 <input type="hidden" id="picture" name="picture">
                             </div>                           
