@@ -257,7 +257,7 @@ foreach ($providers as $provider => $d) {
 
     });
     
-   $("#file").change(function(){
+   /*$("#file").change(function(){
      var formData = new FormData();
         formData.append("image", document.getElementById("file").files[0]);
         $.ajax({
@@ -280,7 +280,7 @@ foreach ($providers as $provider => $d) {
           async: false,
           processData: false
         });
-    });
+    });*/
     
     function uploadimage() 
     {
@@ -296,7 +296,7 @@ foreach ($providers as $provider => $d) {
           data: formData,
           success: function(response) {
             console.log(response);
-            document.getElementById("picture").value = response.data.link;
+            document.getElementById("picture").value = "\"" + response.data.link + "\"";
           },
           error: function(response) {
             console.log(response);
