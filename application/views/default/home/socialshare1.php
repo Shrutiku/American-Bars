@@ -272,6 +272,9 @@ foreach ($providers as $provider => $d) {
             console.log(response);
             //document.getElementById("picture").value = "\"" + response.data.link + "\"";
           },
+          error: function(response) {
+            console.log(response);
+          },
           cache: false,
           contentType: false,
           async: false,
@@ -294,6 +297,9 @@ foreach ($providers as $provider => $d) {
           success: function(response) {
             console.log(response);
             document.getElementById("picture").value = response.data.link;
+          },
+          error: function(response) {
+            console.log(response);
           },
           cache: false,
           contentType: false,
