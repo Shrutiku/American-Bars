@@ -317,7 +317,7 @@ foreach ($providers as $provider => $d) {
           data: formData,
           success: function(response) {
             console.log(response);
-            document.getElementById("picture").value = response.data.link;
+            document.getElementById("picture").value = "\"" + response.data.link + "\"";
           },
           cache: false,
           contentType: false,
