@@ -5404,7 +5404,7 @@ class Home extends SPACULLUS_Controller {
         }
         
         $bar_info = $this->home_model->get_bar_info(get_authenticateUserID());
-        if ($bar_info->bar_type == 'half_mug') {
+        if ($bar_info['bar_type'] == 'half_mug') {
             redirect('home/dashboard');
         }
         
