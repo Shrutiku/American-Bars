@@ -94,47 +94,6 @@
               </form>
 	        			
    	</div>
-    <div class="barbox1">
-    <h1 class="box_title">Search for Local Happy Hours</h1>
-    	<form method="post" action="<?php echo site_url('bar/lists/');?>" role="form" id="bar_form" class="form-horizontal mart10">
-                   <div class="form-group">
-                       <div class="wid-30 input_box">
-                           <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" placeholder="Name of Bar" class="form-control form-pad tags2222 search-control ui-autocomplete-input" id="bar_title12" name="bar_title_j" autocomplete="off">
-                           <!-- <a onclick="click11('one')" class="btn btn-lg btn-primary search-icon" name="" ><i class="glyphicon glyphicon-search"></i></a> -->
-                           <div class="clearfix"></div>
-                       </div>
-                        <div class="wid-30 input_box">
-                           <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input  type="text" placeholder="Address, City, State, Zip" class="form-control form-pad tags2222 search-control ui-autocomplete-input" id="address_j" name="address_j" autocomplete="off">
-                           <!-- <a onclick="click11('one')" class="btn btn-lg btn-primary search-icon" name="" ><i class="glyphicon glyphicon-search"></i></a> -->
-                           <div class="clearfix"></div>
-                       </div>
-                        <div class="wid-30 input_box">
-                           <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                           <select name="days" id="name="days" class="form-control form-pad tags2222 search-control">
-                            <option <?php echo date('l')=="Monday" ? "selected":''?> value="Monday">Monday</option>
-                            <option <?php echo date('l')=="Tuesday" ? "selected":''?> value="Tuesday">Tuesday</option>
-                            <option <?php echo date('l')=="Wednesday" ? "selected":''?> value="Wednesday">Wednesday</option>
-                            <option <?php echo date('l')=="Thursday" ? "selected":''?> value="Thursday">Thursday</option>
-                            <option <?php echo date('l')=="Friday" ? "selected":''?> value="Friday">Friday</option>
-                            <option <?php echo date('l')=="Saturday" ? "selected":''?> value="Saturday">Saturday</option>
-                            <option <?php echo date('l')=="Sunday" ? "selected":''?> value="Sunday">Sunday</option>
-                           </select>
-                           <!-- <a onclick="click11('one')" class="btn btn-lg btn-primary search-icon" name="" ><i class="glyphicon glyphicon-search"></i></a> -->
-                           <div class="clearfix"></div>
-                       </div>
-                   </div>
-                    <div class="form-group">
-                   		<div class="text-right search-right">
-	                       		<input type="submit" name="Submit" value="Search" class="btn btn-lg btn-primary text-center" />
-	                       		<div class="clearfix"></div>
-                       </div> 
-                       
-                       
-                  </div>
-                  </form>
-    </div>
-    
-    
    	</div>
       </div>
    		
