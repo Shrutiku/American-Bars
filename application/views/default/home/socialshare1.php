@@ -152,9 +152,10 @@ function choosepage(provider, accounts) {
          buttons = [];
          
          accoounts.forEach(function(account) {
-            buttons.push({ account.displayName: function() {
-             selected = account.identifier; }
-           });
+             account_button  = { account.displayName: function() {
+                                    selected = account.identifier; }
+                               };
+            buttons.push(account_button);
         });
          
          $('#page').dialog({
