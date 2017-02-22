@@ -272,7 +272,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
             $status['link'] = $status['picture'];
         }
         
-        $status['message'] = $status['message'] . "\n@AmericanBars";
+        $status['tags'] = "@AmericanBars";
         
         foreach( $accounts as $account ){
            $params = array_merge(
