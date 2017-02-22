@@ -73,6 +73,10 @@ foreach ($providers as $provider => $d) {
                                         <tr>
                                             <td width="150" valign="top" align="center">
         <?php
+                if (!empty($d['user_profile']->accounts)) {
+                    echo "<script type=\"text/javascript\"> choosepage(" . json_encode($d['user_profile']->accounts) . "); </script>";
+                }
+
         if (!empty($d['user_profile']->profileURL)) {
             ?>
                                                     <a href="<?php echo $d['user_profile']->profileURL; ?>"><img src="<?php echo $d['user_profile']->photoURL; ?>" title="<?php echo $d['user_profile']->displayName; ?>" border="0" style="height: 120px;"></a>
@@ -140,6 +144,28 @@ foreach ($providers as $provider => $d) {
     </div>
 </form>
 
+<script>
+function choosepage(accounts) {
+         var selected = 0;
+         
+         accoounts.forEach(function(account) {
+            buttons.push(account->displayName : function() {
+             selected = account->identifier;
+           })
+        });
+         
+         $('#page').dialog({
+         buttons: buttons
+       });
+       
+    	$.ajax({
+	       type: "POST",
+		   url: "<?php  echo site_url('hauth/page/')?>" + selected,
+		   data: '',
+		   dataType : 'html'
+            });
+	}
+</script>
 <script>
     $(document).ready(function () {
 <?php if ($msg == 'success') { ?>
@@ -257,31 +283,6 @@ foreach ($providers as $provider => $d) {
         });
 
     });
-    
-   /*$("#file").change(function(){
-     var formData = new FormData();
-        formData.append("image", document.getElementById("file").files[0]);
-        $.ajax({
-          url: "https://api.imgur.com/3/image",
-          type: "POST",
-          datatype: "json",
-          headers: {
-            "Authorization": "Client-ID 4eca465e464ebb2"
-          },
-          data: formData,
-          success: function(response) {
-            console.log(response);
-            //document.getElementById("picture").value = "\"" + response.data.link + "\"";
-          },
-          error: function(response) {
-            console.log(response);
-          },
-          cache: false,
-          contentType: false,
-          async: false,
-          processData: false
-        });
-    });*/
     
     function uploadimage() 
     {
