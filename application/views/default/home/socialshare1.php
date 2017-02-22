@@ -74,7 +74,9 @@ foreach ($providers as $provider => $d) {
                                             <td width="150" valign="top" align="center">
         <?php
                 if (!empty($d['user_profile']->accounts)) {
-                    echo "<script type=\"text/javascript\"> choosepage(" . json_encode($d['user_profile']->accounts) . "); </script>";
+                    ?>
+                    <script type="text/javascript"> choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>); </script>
+                 <?php
                 }
 
         if (!empty($d['user_profile']->profileURL)) {
@@ -145,7 +147,7 @@ foreach ($providers as $provider => $d) {
 </form>
 
 <script>
-function choosepage(accounts) {
+function choosepage(provider, accounts) {
          var selected = 0;
          
          accoounts.forEach(function(account) {
@@ -160,7 +162,7 @@ function choosepage(accounts) {
        
     	$.ajax({
 	       type: "POST",
-		   url: "<?php  echo site_url('hauth/page/')?>" + selected,
+		   url: "<?php  echo site_url('hauth/page/')?>" + provider + "/"+ selected,
 		   data: '',
 		   dataType : 'html'
             });

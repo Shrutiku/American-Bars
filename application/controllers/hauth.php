@@ -252,7 +252,7 @@ class HAuth extends CI_Controller {
             redirect('/home/socialshare/'.$msg);
 	}
         
-        public function page($id)
+        public function page($provider, $id)
 	{            
             Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name); 
             
