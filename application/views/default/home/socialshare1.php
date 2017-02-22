@@ -149,9 +149,10 @@ foreach ($providers as $provider => $d) {
 <script>
 function choosepage(provider, accounts) {
          var selected = 0;
+         buttons = [];
          
          accoounts.forEach(function(account) {
-            buttons.push({ account.displayName : function() {
+            buttons.push({ account.displayName: function() {
              selected = account.identifier; }
            });
         });
