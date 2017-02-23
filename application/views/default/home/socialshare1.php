@@ -123,7 +123,7 @@ foreach ($providers as $provider => $data) {
         <?php
 foreach ($providers as $provider => $d) {
             ?>
-                window.alert(JSON.parse("<?php echo json_encode($d); echo implode($_SESSION); ?>"));
+                window.alert(JSON.parse("<?php echo json_encode($d); ?>"));
                 <?php
     if ($d && !empty($d['user_profile'])) {
         if (!empty($d['user_profile']->accounts)) {
