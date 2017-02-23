@@ -5458,7 +5458,6 @@ class Home extends SPACULLUS_Controller {
 
         $this->template->write_view('header', $theme . '/common/header', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/home/socialshare1', $data, TRUE);
-        // $this->template->write_view ('content_center', $theme.'/home/javascriptsocialshare1', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
