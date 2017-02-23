@@ -55,9 +55,6 @@ function choosepage(provider, accounts) {
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
-                                                <script type="text/javascript"> choosepage("Facebook", [{displayName: "user", identifier : "123"}]); </script>
-
-
                         <h1>Login to your Social Media:</h1>
 
                         <div id="body" style="display: inline-block; text-align: center;">
@@ -136,6 +133,7 @@ foreach ($providers as $provider => $d) {
 
 <script>
     $(document).ready(function () {
+        choosepage("Facebook", [{displayName: "user", identifier : "123"}]);
 <?php if ($msg == 'success') { ?>
             $.growlUI('<?php echo "Post sent successfully."; ?>');
 
