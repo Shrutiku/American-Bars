@@ -155,8 +155,7 @@ function choosepage(provider, accounts) {
          accoounts.forEach(function(account) {
              account_button  = {};
              account_button[account.displayName] = function() {
-                                    selected = account.identifier; }
-                               };
+                                    selected = account.identifier; };
             buttons.push(account_button);
         });
          
