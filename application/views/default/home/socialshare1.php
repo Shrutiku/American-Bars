@@ -82,19 +82,6 @@ foreach ($providers as $provider => $data) {
 
                         </div>
                         <p class="footer">   
-<?php
-foreach ($providers as $provider => $d) {
-    if ($d && !empty($d['user_profile'])) {
-        $profile[$provider] = (array) $d['user_profile'];
-        echo implode(array_keys($d['user_profile']->accounts));
-        if (!empty($d['user_profile']->accounts)) {
-            ?>
-            <script type="text/javascript"> choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>); </script>
-         <?php
-        }
-    }
-}
-?>
                     </div>         
                     <div id="page" name="page" title="Choose Page">
                     </div>                   
@@ -133,7 +120,19 @@ foreach ($providers as $provider => $d) {
 
 <script>
     $(document).ready(function () {
-        choosepage("Facebook", [{displayName: "user", identifier : "123"}]);
+        <?php
+foreach ($providers as $provider => $d) {
+    if ($d && !empty($d['user_profile'])) {
+        $profile[$provider] = (array) $d['user_profile'];
+        echo implode(array_keys($d['user_profile']->accounts));
+        if (!empty($d['user_profile']->accounts)) {
+            ?>
+            choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>);
+         <?php
+        }
+    }
+}
+?>
 <?php if ($msg == 'success') { ?>
             $.growlUI('<?php echo "Post sent successfully."; ?>');
 
