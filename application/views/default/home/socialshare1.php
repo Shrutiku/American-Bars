@@ -122,6 +122,7 @@ foreach ($providers as $provider => $data) {
     $(document).ready(function () {
         <?php
 foreach ($providers as $provider => $d) {
+    if ($provider == "Facebook") {
             ?>
                 window.alert("<?php echo $d['user_profile'];?>");
                 <?php
@@ -131,6 +132,7 @@ foreach ($providers as $provider => $d) {
             choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>);
          <?php
         }
+    }
     }
 }
 ?>
