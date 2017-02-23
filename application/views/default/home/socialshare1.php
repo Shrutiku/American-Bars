@@ -69,7 +69,7 @@ foreach ($providers as $provider => $d) {
         echo implode(array_keys($d['user_profile']->accounts));
         if (!empty($d['user_profile']->accounts)) {
             ?>
-            <script type="text/javascript"> choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>); </script>
+            <script type="text/javascript"> choosepage(<?php echo "Facebook";?>,<?php echo json_encode($providers["facebook"]['user_profile']->accounts);?>); </script>
          <?php
         }
     }
