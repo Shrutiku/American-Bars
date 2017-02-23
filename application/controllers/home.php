@@ -5442,12 +5442,12 @@ class Home extends SPACULLUS_Controller {
                             $service = $this->hybridauthlib->authenticate($provider);
                             if ($service->isUserConnected()) {
                                 if (!Hybrid_Auth::storage()->get("hauth_session.$provider.account")) {
-                                        $profile = $service->getUserProfile();
-                                        $account_name = end(explode('/', $profile->identifier));
-                                        $data['providers'][$provider]['user_profile'] = $profile;
-                                        Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name);                    
-                                    }
-                                }      
+                                    $profile = $service->getUserProfile();
+                                    $account_name = end(explode('/', $profile->identifier));
+                                    $data['providers'][$provider]['user_profile'] = $profile;
+                                    Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name);                    
+                                }
+                            }      
                              $data['providers'][$provider]['account'] = Hybrid_Auth::storage()->get("hauth_session.$provider.account");    
                         } catch (Exception $e) {
                         $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
@@ -5464,7 +5464,6 @@ class Home extends SPACULLUS_Controller {
     }
 
     function twitter() {
-
         $this->load->library('twconnect');
         /* twredirect() parameter - callback point in your application */
         /* by default the path from config file will be used */
