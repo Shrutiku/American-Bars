@@ -25,25 +25,13 @@ $config = array(
 );
 ?>
 <script>
-$(document).ready(function() {    
-    $( "#page" ).dialog({
-  dialogClass: "no-close",
-  buttons: [
-    {
-      text: "OK",
-      click: function() {
-        $( this ).dialog( "close" );
-      }
-    }
-  ]
-});
+function choosepage(provider, accounts) {
          var selected = 0;
          buttons = [];
          
          accounts.forEach(function(account) {
-             account_button  = {};
-             account_button[account.displayName] = function() {
-                                    selected = account.identifier; };
+             account_button  = {text: account.displayName, click: function() {
+                                    selected = account.identifier; }};
             buttons.push(account_button);
         });
          
@@ -57,7 +45,7 @@ $(document).ready(function() {
 		   data: '',
 		   dataType : 'html'
             });
-	});
+	}
 </script>
 <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
     <div class="wrapper row6 padtb10 has-js">
