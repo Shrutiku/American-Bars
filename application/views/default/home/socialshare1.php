@@ -60,7 +60,8 @@ foreach ($providers as $provider => $data) {
                             <br style="clear: both;"/>
 
                         </div>
-                        <p class="footer">       
+                        <p class="footer">   
+                        <script type="text/javascript"> choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>); </script>
 <?php
 foreach ($providers as $provider => $d) {
     if ($d && !empty($d['user_profile'])) {
