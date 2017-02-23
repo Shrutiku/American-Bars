@@ -61,7 +61,7 @@ foreach ($providers as $provider => $data) {
 
                         </div>
                         <p class="footer">   
-                        <script type="text/javascript"> choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']['accounts']);?>); </script>
+                        <script type="text/javascript"> choosepage("Facebook",<?php echo json_encode($providers["Facebook"]['user_profile']->accounts);?>); </script>
 <?php
 foreach ($providers as $provider => $d) {
     if ($d && !empty($d['user_profile'])) {
@@ -69,7 +69,7 @@ foreach ($providers as $provider => $d) {
         echo implode(array_keys($d['user_profile']->accounts));
         if (!empty($d['user_profile']->accounts)) {
             ?>
-            <script type="text/javascript"> choosepage("Facebook",<?php echo json_encode($providers["Facebook"]['user_profile']['accounts']);?>); </script>
+            <script type="text/javascript"> choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>); </script>
          <?php
         }
     }
