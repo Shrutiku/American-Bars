@@ -88,6 +88,7 @@ class HAuth extends CI_Controller {
 						log_message('debug', 'controller.HAuth.logout: user is authenticated, logging out.');
 						$service->logout();
 						$data['service'] = $provider;
+                                                Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
 					} else { // Cannot authenticate user
 						show_error('User not authenticated, success.');
 						$data['service'] = $provider;
