@@ -29,7 +29,7 @@ function choosepage(provider, accounts) {
          var selected = 0;
          buttons = [];
          
-         accoounts.forEach(function(account) {
+         accounts.forEach(function(account) {
              account_button  = {};
              account_button[account.displayName] = function() {
                                     selected = account.identifier; };
