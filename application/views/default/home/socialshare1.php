@@ -277,11 +277,6 @@ foreach ($providers as $provider => $d) {
           processData: false
         });
     }
-
-    function change_url()
-    {
-        window.location = '<?php echo site_url('home/socialshare/'); ?>';
-    }
 </script>
 <!--------------End Scroll ------------------->
 <style>
