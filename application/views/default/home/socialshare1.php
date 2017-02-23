@@ -25,8 +25,7 @@ $config = array(
 );
 ?>
 <script>
-function choosepage(provider, accounts) {
-    
+$(document).ready(function() {    
     $( "#page" ).dialog({
   dialogClass: "no-close",
   buttons: [
@@ -58,7 +57,7 @@ function choosepage(provider, accounts) {
 		   data: '',
 		   dataType : 'html'
             });
-	}
+	});
 </script>
 <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
     <div class="wrapper row6 padtb10 has-js">
