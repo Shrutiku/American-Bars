@@ -26,6 +26,18 @@ $config = array(
 ?>
 <script>
 function choosepage(provider, accounts) {
+    
+    $( "#page" ).dialog({
+  dialogClass: "no-close",
+  buttons: [
+    {
+      text: "OK",
+      click: function() {
+        $( this ).dialog( "close" );
+      }
+    }
+  ]
+});
          var selected = 0;
          buttons = [];
          
