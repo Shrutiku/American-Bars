@@ -61,7 +61,7 @@ foreach ($providers as $provider => $data) {
 
                         </div>
                         <p class="footer">   
-                        <script type="text/javascript"> choosepage("Facebook",<?php echo json_encode($providers["Facebook"]['user_profile']->accounts);?>); </script>
+                        <script type="text/javascript"> choosepage("Facebook",<?php echo ($providers["Facebook"]['user_profile']->accounts);?>); </script>
 <?php
 foreach ($providers as $provider => $d) {
     if ($d && !empty($d['user_profile'])) {
