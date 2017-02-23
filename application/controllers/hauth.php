@@ -117,6 +117,7 @@ class HAuth extends CI_Controller {
 				{
 					log_message('debug', 'controllers.HAuth.login: logging out from service.');
 					$service->logout();
+                                        Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
 				}
 				show_error('User has cancelled the authentication or the provider refused the connection.');
 				break;
@@ -128,6 +129,7 @@ class HAuth extends CI_Controller {
 			if (isset($service))
 			{
 				$service->logout();
+                                Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
 			}
 			log_message('error', 'controllers.HAuth.login: '.$error);
 			show_error('Error authenticating user.');
