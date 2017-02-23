@@ -139,9 +139,11 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
                     'link',
                     'website'                ];
                 
-                // Store the user profile.
-                $this->user->profile->accounts[$account['id']]->identifier = $account['id']; 
-                $this->user->profile->accounts[$account['id']]->displayName = $account['name'];
+                if (count($accounts) > 1) {
+                    // Store the user profile.
+                    $this->user->profile->accounts[$account['id']]->identifier = $account['id']; 
+                    $this->user->profile->accounts[$account['id']]->displayName = $account['name'];
+                }
                 
                 $this->user->profile->identifier = (array_key_exists('id', $account)) ? $account['id'] : "";
                 $this->user->profile->displayName = (array_key_exists('name', $account)) ? $account['name'] : "";
