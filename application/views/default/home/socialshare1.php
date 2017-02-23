@@ -24,7 +24,30 @@ $config = array(
     'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
 );
 ?>
-
+<script>
+function choosepage(provider, accounts) {
+         var selected = 0;
+         buttons = [];
+         
+         accoounts.forEach(function(account) {
+             account_button  = {};
+             account_button[account.displayName] = function() {
+                                    selected = account.identifier; };
+            buttons.push(account_button);
+        });
+         
+         $('#page').dialog({
+         buttons: buttons
+       });
+       
+    	$.ajax({
+	       type: "POST",
+		   url: "<?php  echo site_url('hauth/page/')?>" + provider + "/"+ selected,
+		   data: '',
+		   dataType : 'html'
+            });
+	}
+</script>
 <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
     <div class="wrapper row6 padtb10 has-js">
         <div class="container">
@@ -111,30 +134,6 @@ foreach ($providers as $provider => $d) {
     </div>
 </form>
 
-<script>
-function choosepage(provider, accounts) {
-         var selected = 0;
-         buttons = [];
-         
-         accoounts.forEach(function(account) {
-             account_button  = {};
-             account_button[account.displayName] = function() {
-                                    selected = account.identifier; };
-            buttons.push(account_button);
-        });
-         
-         $('#page').dialog({
-         buttons: buttons
-       });
-       
-    	$.ajax({
-	       type: "POST",
-		   url: "<?php  echo site_url('hauth/page/')?>" + provider + "/"+ selected,
-		   data: '',
-		   dataType : 'html'
-            });
-	}
-</script>
 <script>
     $(document).ready(function () {
 <?php if ($msg == 'success') { ?>
