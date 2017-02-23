@@ -74,7 +74,6 @@ class HAuth extends CI_Controller {
 	public function logout($provider = "")
 	{
 		log_message('debug', "controllers.HAuth.logout($provider) called");
-                Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
 		try
 		{
 			if ($provider == "") {

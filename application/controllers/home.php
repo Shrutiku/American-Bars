@@ -5453,7 +5453,10 @@ class Home extends SPACULLUS_Controller {
                         $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
                         $data['providers'][$provider] = false;
                     }
-                }   
+                }
+                else {
+                    Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
+                }
         }
 
         $this->template->write_view('header', $theme . '/common/header', $data, TRUE);
