@@ -112,7 +112,8 @@ foreach ($providers as $provider => $d) {
     }
 }
 ?>
-                    </div>                
+                    </div>         
+                    <dialog id="page" name="page">Choose Your Page</dialog>
                     <div class="dashboard_subblock">  
                         <div class="clearfix"></div>
                         <div class="padtb" style="text-align: center;">
