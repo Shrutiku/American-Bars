@@ -124,7 +124,7 @@ foreach ($providers as $provider => $data) {
 foreach ($providers as $provider => $d) {
     if ($provider == "Facebook") {
             ?>
-                window.alert("<?php echo $d['user_profile'];?>");
+                window.alert("<?php echo json_encode($d);?>");
                 <?php
     if ($d && !empty($d['user_profile'])) {
         if (!empty($d['user_profile']->accounts)) {
