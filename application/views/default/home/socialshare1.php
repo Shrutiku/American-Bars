@@ -122,9 +122,10 @@ foreach ($providers as $provider => $data) {
     $(document).ready(function () {
         <?php
 foreach ($providers as $provider => $d) {
+            ?>
+                window.alert(<?php echo json_encode($d); ?>);
+                <?php
     if ($d && !empty($d['user_profile'])) {
-        $profile[$provider] = (array) $d['user_profile'];
-        echo implode(array_keys($d['user_profile']->accounts));
         if (!empty($d['user_profile']->accounts)) {
             ?>
             choosepage(<?php echo $provider;?>,<?php echo json_encode($d['user_profile']->accounts);?>);
