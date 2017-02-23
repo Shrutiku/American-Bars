@@ -123,7 +123,7 @@ foreach ($providers as $provider => $data) {
         <?php
 foreach ($providers as $provider => $d) {
             ?>
-                window.alert("<?php echo json_encode($d); ?>");
+                window.alert("<?php echo $_SESSION['hauth_session.Facebook.account'];?>");
                 <?php
     if ($d && !empty($d['user_profile'])) {
         if (!empty($d['user_profile']->accounts)) {
