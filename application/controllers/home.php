@@ -5441,7 +5441,6 @@ class Home extends SPACULLUS_Controller {
                         try {
                             $service = $this->hybridauthlib->authenticate($provider);
                             if ($service->isUserConnected()) {
-                                Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
                                 if (!Hybrid_Auth::storage()->get("hauth_session.$provider.account")) {
                                     $profile = $service->getUserProfile();
                                     $account_name = end(explode('/', $profile->identifier));

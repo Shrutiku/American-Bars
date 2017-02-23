@@ -88,11 +88,11 @@ class HAuth extends CI_Controller {
 						log_message('debug', 'controller.HAuth.logout: user is authenticated, logging out.');
 						$service->logout();
 						$data['service'] = $provider;
-                                                Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
 					} else { // Cannot authenticate user
 						show_error('User not authenticated, success.');
 						$data['service'] = $provider;
 					}
+                                        Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
 				} else { // This service is not enabled.
 					log_message('error', 'controllers.HAuth.login: This provider is not enabled ('.$provider.')');
 					show_404($_SERVER['REQUEST_URI']);
