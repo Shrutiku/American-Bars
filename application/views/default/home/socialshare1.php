@@ -57,7 +57,7 @@ function choosepage(provider, accounts) {
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
                         <h1>Login to your Social Media:</h1>
-
+                        <div class="clearfix"></div>
                         <div id="body" style="display: inline-block; text-align: center;">
                             <?php
                             if (@$error != "") {
@@ -65,8 +65,6 @@ function choosepage(provider, accounts) {
                             }
                             ?>
                             <ul id="provider-list" style="text-align: center;">
-                                                            <div class="clearfix"></div>
-
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
