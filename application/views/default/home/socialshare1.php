@@ -37,7 +37,8 @@ function choosepage(provider, accounts) {
                                             dataType : 'html'
                                     });
                                     
-                                    $('#page').dialog("close");}
+                                    $('#page').dialog("close");
+                                    location.reload();}
                                 };
             buttons.push(account_button);
         });
