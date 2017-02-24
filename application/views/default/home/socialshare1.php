@@ -34,11 +34,13 @@ function choosepage(provider, accounts) {
                                         type: "POST",
                                             url: "<?php  echo site_url('hauth/page/')?>" + provider + "/"+ account.identifier,
                                             data: '',
-                                            dataType : 'html'
-                                    });
-                                    
-                                    $('#page').dialog("close");
-                                    location.reload();}
+                                            dataType : 'html',
+                                            success: function() {                                         
+                                                $('#page').dialog("close");
+                                                location.reload();
+                                            }
+                                        });
+                                    }
                                 };
             buttons.push(account_button);
         });
