@@ -31,7 +31,8 @@ function choosepage(provider, accounts) {
          
          accounts.forEach(function(account) {
              account_button  = {text: account.displayName, click: function() {
-                                    selected = account.identifier; }};
+                                    selected = account.identifier;
+                                    $('#page').close();}};
             buttons.push(account_button);
         });
          
