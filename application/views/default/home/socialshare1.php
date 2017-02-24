@@ -108,7 +108,7 @@ foreach ($providers as $provider => $data) {
                         </div>
 
                         <div class="container" style="max-width: 60%; padding-top: 5px">
-                            <!--<div class="social-feed-container"></div-->
+                            <div class="social-feed-container"></div>
                         </div>
                     </div>                                                                      
                     <div class="clearfix"></div>
