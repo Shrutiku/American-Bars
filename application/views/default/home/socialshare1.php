@@ -31,7 +31,7 @@ function choosepage(provider, accounts) {
          accounts.forEach(function(account) {
              account_button  = {text: account.displayName, click: function() {
                                     $.ajax({
-                                        type: "POST",
+                                        type: "GET",
                                             url: "<?php  echo site_url('hauth/page/')?>" + provider + "/"+ account.identifier,
                                             data: '',
                                             dataType : 'html',
