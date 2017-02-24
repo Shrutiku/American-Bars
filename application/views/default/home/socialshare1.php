@@ -32,7 +32,7 @@ function choosepage(provider, accounts) {
          accounts.forEach(function(account) {
              account_button  = {text: account.displayName, click: function() {
                                     selected = account.identifier;
-                                    $('#page').close();}};
+                                    $('#page').dialog("close");}};
             buttons.push(account_button);
         });
          
