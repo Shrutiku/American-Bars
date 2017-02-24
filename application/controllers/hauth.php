@@ -254,7 +254,7 @@ class HAuth extends CI_Controller {
         
         public function page($provider, $id)
 	{            
-            Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name); 
+            Hybrid_Auth::storage()->set("hauth_session.$provider.account", $id); 
             
             redirect('/home/socialshare/');
 	}
