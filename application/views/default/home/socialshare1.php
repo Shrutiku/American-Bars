@@ -26,27 +26,26 @@ $config = array(
 ?>
 <script>
 function choosepage(provider, accounts) {
-         var selected = 0;
          buttons = [];
          
          accounts.forEach(function(account) {
              account_button  = {text: account.displayName, click: function() {
-                                    selected = account.identifier;
-                                    $('#page').dialog("close");}};
+                                    $.ajax({
+                                        type: "POST",
+                                            url: "<?php  echo site_url('hauth/page/')?>" + provider + "/"+ account.identifier,
+                                            data: '',
+                                            dataType : 'html'
+                                    });
+                                    
+                                    $('#page').dialog("close");}
+                                };
             buttons.push(account_button);
         });
          
          $('#page').dialog({
          buttons: buttons
        });
-       
-    	$.ajax({
-	       type: "POST",
-		   url: "<?php  echo site_url('hauth/page/')?>" + provider + "/"+ selected,
-		   data: '',
-		   dataType : 'html'
-            });
-	}
+      }
 </script>
 <form class="form-horizontal" role="form" name="info" id="info" action="<?php echo site_url("hauth/postall"); ?>" method="post">
     <div class="wrapper row6 padtb10 has-js">
