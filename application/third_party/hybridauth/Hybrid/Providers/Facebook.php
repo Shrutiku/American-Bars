@@ -273,13 +273,17 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
         $status['message'] = $status['message'] . "\n\nPosted via www.AmericanBars.com";
         
         foreach( $accounts as $account ){
-           $params = array_merge(
-             array('access_token' => $account['access_token']),
-             $status
-           );
+            if ($account['id'] == Hybrid_Auth::storage()->get("hauth_session.Facebook.account")) {
+                $params = array_merge(
+                  array('access_token' => $account['access_token']),
+                  $status
+                );   
+                               
+                // ask facebook api to post the message to the selected account
+                $this->api->post("/" . $account['id'] . "/feed", $params); 
 
-           // ask facebook api to post the message to the selected account
-           $this->api->post("/" . $account['id'] . "/feed", $params); 
+                break;
+            }
         }
     }
 }
