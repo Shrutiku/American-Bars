@@ -68,6 +68,8 @@ function choosepage(provider, accounts) {
                             }
                             ?>
                             <ul id="provider-list" style="text-align: center;">
+                                                    <div id="page" name="page" title="Choose Page">
+                    </div>
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
@@ -86,10 +88,7 @@ foreach ($providers as $provider => $data) {
 
                         </div>
                         <p class="footer">   
-                    </div>         
-                    <div id="page" name="page" title="Choose Page">
-                        <p>Please choose the account you want to log in to: </p>
-                    </div>                   
+                    </div>                            
                     <div class="dashboard_subblock">  
                         <div class="clearfix"></div>
                         <div class="padtb" style="text-align: center;">
