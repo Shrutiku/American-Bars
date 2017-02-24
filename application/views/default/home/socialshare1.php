@@ -88,6 +88,7 @@ foreach ($providers as $provider => $data) {
                         <p class="footer">   
                     </div>         
                     <div id="page" name="page" title="Choose Page">
+                        <p>Please choose the account you want to log in to: </p>
                     </div>                   
                     <div class="dashboard_subblock">  
                         <div class="clearfix"></div>
