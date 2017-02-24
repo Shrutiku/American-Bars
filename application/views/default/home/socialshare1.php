@@ -108,7 +108,12 @@ foreach ($providers as $provider => $data) {
                         </div>
 
                         <div class="container" style="max-width: 60%; padding-top: 5px">
+                        <?php
+                            if (empty($prociders["Facebook"]['user_profile'])) {
+                                    ?>
                             <div class="social-feed-container"></div>
+                            <?php
+                            } ?>
                         </div>
                     </div>                                                                      
                     <div class="clearfix"></div>
