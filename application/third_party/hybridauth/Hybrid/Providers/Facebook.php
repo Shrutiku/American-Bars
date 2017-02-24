@@ -135,6 +135,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
             try {
                 if (count($accounts) > 1) {
                     
+                    $profile_account = null;
                     $profile_account->identifier = $account['id'];
                     $profile_account->displayName = $account['name'];
                     // Store the user profile.
