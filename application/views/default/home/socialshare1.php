@@ -32,7 +32,7 @@ function choosepage(provider, accounts) {
              account_button  = {text: account.displayName, click: function() {
                                     $.ajax({
                                         type: "POST",
-                                            url: "<?php  echo site_url('hauth/page/')?>" + "/"+ provider + "/"+ account.identifier,
+                                            url: "<?php  echo site_url('hauth/page/')?>" + "/" + provider + "/"+ account.identifier,
                                             data: '',
                                             dataType : 'html',
                                             success: function() {                                         
