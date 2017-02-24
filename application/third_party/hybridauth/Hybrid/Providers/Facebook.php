@@ -134,9 +134,11 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model {
         foreach( $accounts as $account ){
             try {
                 if (count($accounts) > 1) {
+                    
+                    $profile_account->identifier = $account['id'];
+                    $profile_account->displayName = $account['name'];
                     // Store the user profile.
-                    $this->user->profile->accounts[$account['id']]->identifier = $account['id']; 
-                    $this->user->profile->accounts[$account['id']]->displayName = $account['name'];
+                    $this->user->profile->accounts[] = $profile_account; 
                 }
                 
                 $this->user->profile->identifier = (array_key_exists('id', $account)) ? $account['id'] : "";

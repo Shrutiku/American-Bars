@@ -124,12 +124,11 @@ foreach ($providers as $provider => $data) {
 foreach ($providers as $provider => $d) {
     if ($provider == "Facebook") {
             ?>
-                //window.alert("<?php echo json_encode($d);?>");
                 <?php
     if ($d && !empty($d['user_profile'])) {
         if (!empty($d['user_profile']->accounts)) {
             ?> 
-            choosepage("<?php echo $provider;?>",JSON.parse(<?php echo json_encode($d['user_profile']->accounts);?>));
+            choosepage("<?php echo $provider;?>",<?php echo json_encode($d['user_profile']->accounts);?>);
          <?php
         }
     }
@@ -178,7 +177,7 @@ foreach ($providers as $provider => $d) {
 <script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>
 
 <script>
-    /*$(document).ready(function () {
+    $(document).ready(function () {
         $('.social-feed-container').socialfeed({
             // FACEBOOK
             facebook: {
@@ -194,12 +193,12 @@ foreach ($providers as $provider => $d) {
                 consumer_secret: '3B6uwOEyAMeCEXcKA0lIJCyhwCdQrvM0aSIATeWkUSPtAtXofZ' //String: consumer secret key. make sure to have your app read-only
             },
             // INSTAGRAM
-             instagram:{
+             /*instagram:{
              accounts: ['<?php echo!empty($providers['Instagram']['account']) ? "#" . $providers['Instagram']['account'] : ''; ?>'],  //Array: Specify a list of accounts from which to pull posts
              limit: 10,                                   //Integer: max number of posts to load
              client_id: '3089866516',       //String: Instagram client id (option if using access token)
              access_token: '' //String: Instagram access token
-             },
+             },*/
 
             // GENERAL SETTINGS
             length: 400, //Integer: For posts with text longer than this length, show an ellipsis.
@@ -216,7 +215,7 @@ foreach ($providers as $provider => $d) {
                 console.log("All posts collected!");
             }
         });
-    }); */
+    }); 
 </script>
 
 
