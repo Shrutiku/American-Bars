@@ -57,6 +57,7 @@ function choosepage(provider, accounts) {
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
                         <h1>Login to your Social Media:</h1>
+                        <p></p>
                         <div class="clearfix"></div>
                         <div id="body" style="display: inline-block; text-align: center;">
                             <?php
@@ -70,11 +71,11 @@ function choosepage(provider, accounts) {
 $this->load->helper('url');
 foreach ($providers as $provider => $data) {
     if ($data['connected']) {        
-        echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:5%;
-   max-height:5%;padding-right: 5px;', 'class' => 'connected')));
+        echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
+   max-height:8%;padding-right: 5px;', 'class' => 'connected')));
     } else {
-        echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:5%;
-   max-height:5%;padding-right: 5px;', 'class' => 'login')));
+        echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
+   max-height:8%;padding-right: 5px;', 'class' => 'login')));
     }
 }
 ?>
