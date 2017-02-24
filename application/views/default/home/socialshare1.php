@@ -107,7 +107,7 @@ foreach ($providers as $provider => $data) {
                         </div>
 
                         <div class="container" style="max-width: 60%; padding-top: 5px">
-                            <div class="social-feed-container"></div>
+                            <!--<div class="social-feed-container"></div-->
                         </div>
                     </div>                                                                      
                     <div class="clearfix"></div>
@@ -178,7 +178,7 @@ foreach ($providers as $provider => $d) {
 <script src="<?php echo app_bower_url(); ?>/social-feed/js/jquery.socialfeed.js"></script>
 
 <script>
-    $(document).ready(function () {
+    /*$(document).ready(function () {
         $('.social-feed-container').socialfeed({
             // FACEBOOK
             facebook: {
@@ -216,7 +216,7 @@ foreach ($providers as $provider => $d) {
                 console.log("All posts collected!");
             }
         });
-    }); 
+    }); */
 </script>
 
 
