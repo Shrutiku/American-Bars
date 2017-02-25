@@ -83,7 +83,7 @@ jQuery(document).ready(function() {
 					{
 						$("#cm-err-main1").hide();
 						$("#cm-err-main1").html("");
-							$.growlUI('Your suggestion send successfully please wait for ADB approval.');
+							$.growlUI('Your suggestion send successfully please wait for American Bars approval.');
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')
 					 	.val('')
