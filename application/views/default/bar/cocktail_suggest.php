@@ -165,7 +165,7 @@ jQuery(document).ready(function() {
 	        				 		<label class="control-label">Ingredients :  </label>
 	        				 	</div>
 	                       		<div class="col-sm-7">
-	                           		<textarea rows="5" name="ingredients" id="ingredients" placeholder="Description" class="form-control form-pad"></textarea>
+	                           		<textarea rows="5" name="ingredients" id="ingredients" placeholder="Ingredients" class="form-control form-pad"></textarea>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>

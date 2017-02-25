@@ -3,6 +3,7 @@
 require(APPPATH . 'PayPal-PHP-SDK/paypal/rest-api-sdk-php/sample/bootstrap.php');
 require_once(APPPATH . 'libraries/Twilio/autoload.php');
 require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
+require_once(APPPATH . 'libraries/facebook-sdk-v5/autoload.php');
 
 
 // require(APPPATH.'Paypal/bootstrap.php');
@@ -300,8 +301,6 @@ class Home extends SPACULLUS_Controller {
         $data['getpostcard'] = $this->home_model->get_bar_postcard($data['getbar']['bar_id'], '4');
         $data['getorder'] = $this->home_model->get_bar_order($data['getbar']['bar_id'], '4');
         $data['get_cat'] = $this->home_model->barCategory();
-
-
         $data['one_user'] = $this->home_model->get_availability_time($data['getbar']['bar_id']);
         $data['albumgallery'] = $this->bar_model->getAllBarGal($data['getbar']['bar_id']);
         $data['result'] = $this->bar_model->getAllComments($data['getbar']['bar_id'], $offset = 0, $limit = 4);
@@ -1289,7 +1288,9 @@ class Home extends SPACULLUS_Controller {
                 $site_setting->managed_account_amount = (string)((int)$site_setting->managed_account_amount * 0.5);
             }
         }
-
+        
+        $data['coupon'] = $coupon;
+        
         $this->load->library('form_validation');
         $this->form_validation->set_rules('cc_type', 'Credit Card Type', 'required');
         $this->form_validation->set_rules('card_number', 'Card Number', 'required');
@@ -5397,6 +5398,16 @@ class Home extends SPACULLUS_Controller {
         if (!check_user_authentication()) {
             redirect('home');
         }
+        
+        if ($this->session->userdata('user_type') != 'bar_owner') {
+            redirect('home');
+        }
+        
+        $bar_info = $this->home_model->get_bar_info(get_authenticateUserID());
+        if ($bar_info['bar_type'] == 'half_mug') {
+            redirect('home/dashboard');
+        }
+        
         // cho "Fdsa";
         $this->load->library('fb_connect');
         $this->load->library('facebook');
@@ -5407,176 +5418,54 @@ class Home extends SPACULLUS_Controller {
             'fileUpload' => true,
             'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
         );
-        
-        $this->db->where('owner_id', get_authenticateUserID());
-        $this->db->limit(1);
-        $bar_info = $this->db->get('bars')->row();
-        if ($bar_info != NULL){
-            $data['facebook_link'] = end(explode('/',$bar_info->facebook_link));
-            $data['twitter_link'] = end(explode('/',$bar_info->twitter_link));
-            $data['instagram_link'] = end(explode('/',$bar_info->instagram_link));
-        }
 
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
         $data['fb_usr'] = $this->fb_connect->user;
         $data['user_id'] = $user_id;
 
-
-        //echo $user_id;
-        //echo $user_id;
-        //  if(get_authenticateUserID()=='')
-        //{
-        //	redirect('home');
-        //}
-        //if($this->session->userdata('user_type')!='bar_owner')
-        //{
-        //	redirect('home');
-        //}
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
 
         $data['page_name'] = "credit_card_update";
         $data['msg'] = $msg; //login fail message
         $this->form_validation->set_rules('comment', 'Comment');
-        // print_r($data['getbar']); 
-        // $data['facebook_link']=$data['getbar']['facebook_link'];
-        // $data['twitter_link']=$data['getbar']['twitter_link'];
-        // $data['instagram_link']=$data['getbar']['instagram_link'];
-        // $data['linkedin_link']=$data['getbar']['linkedin_link'];
-        // $data['google_plus_link']=$data['getbar']['google_plus_link'];
-        // $data['dribble_link']=$data['getbar']['dribble_link'];
-        // $data['pinterest_link']=$data['getbar']['pinterest_link'];
-        $data['getpostfb'] = $this->home_model->getAllPost('facebook');
-        $data['getposttw'] = $this->home_model->getAllPost('twitter');
-        $data['getpostin'] = $this->home_model->getAllPost('instagram');
+           
         $data['screener_name'] = $scrname;
-        if ($_POST) {
-            if ($this->form_validation->run() == FALSE) {
-                if (validation_errors()) {
-                    $data["error"] = validation_errors();
-                } else {
-                    $data["error"] = "";
+        
+        $this->load->library('HybridAuthLib');
+        $data['providers'] = $this->hybridauthlib->getProviders();
+        
+        foreach($data['providers'] as $provider=>$d) {
+                if ($d['connected'] == 1) {
+                        try {
+                            $service = $this->hybridauthlib->authenticate($provider);
+                            if ($service->isUserConnected()) {
+                                if (!Hybrid_Auth::storage()->get("hauth_session.$provider.account")) {
+                                    $profile = $service->getUserProfile();
+                                    $account_name = end(explode('/', $profile->identifier));
+                                    $data['providers'][$provider]['user_profile'] = $profile;
+                                    Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name);                    
+                                }
+                            }      
+                             $data['providers'][$provider]['account'] = Hybrid_Auth::storage()->get("hauth_session.$provider.account");    
+                        } catch (Exception $e) {
+                        $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
+                        $data['providers'][$provider] = false;
+                    }
                 }
-
-                // $data['facebook_link']=$this->input->post('facebook_link');
-                // $data['twitter_link']=$this->input->post('twitter_link');
-                // $data['linkedin_link']=$this->input->post('linkedin_link');
-                // $data['instagram_link']=$this->input->post('instagram_link');
-                // $data['google_plus_link']=$this->input->post('google_plus_link');
-                // $data['dribble_link']=$this->input->post('dribble_link');
-                // $data['pinterest_link']=$this->input->post('pinterest_link');
-            } else {
-                $comment_image = '';
-                if (isset($_FILES['comment_image']) && $_FILES['comment_image']["name"] != '') {
-                    $this->load->library('upload');
-                    $rand = rand(0, 100000);
-
-                    $_FILES['userfile']['name'] = $_FILES['comment_image']['name'];
-                    $_FILES['userfile']['type'] = $_FILES['comment_image']['type'];
-                    $_FILES['userfile']['tmp_name'] = $_FILES['comment_image']['tmp_name'];
-                    $_FILES['userfile']['error'] = $_FILES['comment_image']['error'];
-                    $_FILES['userfile']['size'] = $_FILES['comment_image']['size'];
-
-                    $config['file_name'] = 'comment' . $rand;
-
-                    $config['upload_path'] = base_path() . 'upload/comment_image/';
-
-                    $config['allowed_types'] = 'jpg|jpeg|gif|png|bmp';
-
-                    $this->upload->initialize($config);
-
-                    if (!$this->upload->do_upload()) {
-                        $error = $this->upload->display_errors();
-                    }
-
-
-                    $picture = $this->upload->data();
-
-                    $this->load->library('image_lib');
-
-                    $this->image_lib->clear();
-
-
-                    $gd_var = 'gd2';
-
-
-                    if ($_FILES["comment_image"]["type"] != "image/png" and $_FILES["comment_image"]["type"] != "image/x-png") {
-
-                        $gd_var = 'gd2';
-                    }
-
-
-                    if ($_FILES["comment_image"]["type"] != "image/gif") {
-
-                        $gd_var = 'gd2';
-                    }
-
-
-                    if ($_FILES["comment_image"]["type"] != "image/jpeg" and $_FILES["comment_image"]["type"] != "image/pjpeg") {
-
-                        $gd_var = 'gd2';
-                    }
-
-
-                    $this->image_lib->clear();
-
-                    $this->image_lib->initialize(array(
-                        'image_library' => $gd_var,
-                        'source_image' => base_path() . 'upload/comment_image/' . $picture['file_name'],
-                        //'new_image' => base_path().'upload/user_thumb/'.$picture['file_name'],
-                        'maintain_ratio' => FALSE,
-                        'quality' => '100%',
-                        'width' => 200, //$image_setting->user_width,
-                        'height' => 200, //$image_setting->user_height,
-                    ));
-
-
-                    if (!$this->image_lib->resize()) {
-                        $error = $this->image_lib->display_errors();
-                    }
-
-                    $comment_image = $picture['file_name'];
+                else {
+                    Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
                 }
-
-
-
-                $publishStream = $this->fb_connect->publish($this->input->post('fbid'), array(
-                    'message' => "have post new pin on",
-                    'link' => "http://sandbox.americanbars.com",
-                    'picture' => $comment_image,
-                    'name' => "DSfa",
-                    'description' => $this->input->post('comment')
-                ));
-
-                $data["msg"] = "success";
-            }
         }
-
-
-        // if($data["error"] !="")
-        // {
-        // $response = array("comment_error"=>$data["error"],"status"=>"fail");
-        // echo json_encode($response);
-        // die;
-        // }
-//
-        // if($data["msg"] == "success")
-        // {
-        // $response = array("status"=>"success");
-        // echo json_encode($response);
-        // die;
-        // }
 
         $this->template->write_view('header', $theme . '/common/header', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/home/socialshare1', $data, TRUE);
-        // $this->template->write_view ('content_center', $theme.'/home/javascriptsocialshare1', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
 
     function twitter() {
-
         $this->load->library('twconnect');
         /* twredirect() parameter - callback point in your application */
         /* by default the path from config file will be used */

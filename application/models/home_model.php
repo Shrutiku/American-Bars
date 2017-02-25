@@ -1087,7 +1087,7 @@ function claim_register_bar_owner()
 	function get_bar_info($user_id)
 	{
 		$this->db->select('*,bars.facebook_link,bars.twitter_link,bars.linkedin_link,bars.google_plus_link,
-		                 bars.dribble_link,bars.pinterest_link,bars.instagram_link');
+		                 bars.dribble_link,bars.pinterest_link,bars.instagram_link,bars.bar_type');
 		$this->db->from('bars');
 		$this->db->join('user_master','user_master.user_id=bars.owner_id');
 		$this->db->where('bars.owner_id',$user_id);
