@@ -3,6 +3,7 @@
 require(APPPATH . 'PayPal-PHP-SDK/paypal/rest-api-sdk-php/sample/bootstrap.php');
 require_once(APPPATH . 'libraries/Twilio/autoload.php');
 require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
+require_once(APPPATH . 'libraries/facebook-sdk-v5/autoload.php');
 
 
 // require(APPPATH.'Paypal/bootstrap.php');
@@ -300,8 +301,6 @@ class Home extends SPACULLUS_Controller {
         $data['getpostcard'] = $this->home_model->get_bar_postcard($data['getbar']['bar_id'], '4');
         $data['getorder'] = $this->home_model->get_bar_order($data['getbar']['bar_id'], '4');
         $data['get_cat'] = $this->home_model->barCategory();
-
-
         $data['one_user'] = $this->home_model->get_availability_time($data['getbar']['bar_id']);
         $data['albumgallery'] = $this->bar_model->getAllBarGal($data['getbar']['bar_id']);
         $data['result'] = $this->bar_model->getAllComments($data['getbar']['bar_id'], $offset = 0, $limit = 4);
@@ -5419,15 +5418,6 @@ class Home extends SPACULLUS_Controller {
             'fileUpload' => true,
             'allowSignedRequest' => false // optional but should be set to false for non-canvas apps
         );
-        
-        $this->db->where('owner_id', get_authenticateUserID());
-        $this->db->limit(1);
-        $bar_info = $this->db->get('bars')->row();
-        if ($bar_info != NULL){
-            $data['facebook_link'] = end(explode('/',$bar_info->facebook_link));
-            $data['twitter_link'] = end(explode('/',$bar_info->twitter_link));
-            $data['instagram_link'] = end(explode('/',$bar_info->instagram_link));
-        }
 
         $facebook = new Facebook($config);
         $user_id = $facebook->getUser();
