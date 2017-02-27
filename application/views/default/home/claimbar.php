@@ -11,7 +11,13 @@
      				</div>
 				<img src="<?php echo base_url() . getThemeName(); ?>/images/claimbar.jpg" border="0" style="max-width:60%;max-height:60%;">
                             
-                     
+                                                      				<h1 class="yellow_title padb10 br_bott_gray">Step 1:</h1>
+                                                                                <p>Search Your Bar Profile</p>
+                                                                                <h1 class="yellow_title padb10 br_bott_gray">Step 2:</h1>
+                                                                                <p>Click on 'Claim This Bar' Button</p>
+                                                                                <h1 class="yellow_title padb10 br_bott_gray">Step 3:</h1>
+                                                                                <p>Finish the Easy and Quick Claim Process</p>
+
      				<div class="pad20">
      				<h1 class="yellow_title padb10 br_bott_gray">Start Here With Step 1 </h1>
 					<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
