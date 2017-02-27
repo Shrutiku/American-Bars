@@ -13,7 +13,7 @@
                             
                      
      				<div class="pad20">
-     				<h1 class="yellow_title padb10 br_bott_gray">Start Here With Step 1.  </h1>
+     				<h1 class="yellow_title padb10 br_bott_gray">Start Here With Step 1 </h1>
 					<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
                 			<div class="pull-left"><input type="text" name="bar_title_new" id="bar_title_new" class="form-control bar_title_new" placeholder="By Name, City Or Zip"></div>
                     			<div class="pull-left"><button class="btn btn-lg btn-primary btn-block yellowlink   " type="submit">Claim Your Bar Now!</button></div>
