@@ -9,7 +9,7 @@
      				<div class="result_search">
 	     				<div class="result_search_text">Claim Your Bar in 3 Easy Steps</div>
      				</div>
-				<img src="<?php echo base_url() . getThemeName(); ?>/images/claimbar.jpg" border="0" style="max-width:60%;max-height:60%;">
+				<img src="<?php echo base_url() . getThemeName(); ?>/images/claimbar.jpg" border="0" style="max-width:100%;max-height:60%;">
                             
                                                       				<h1 class="yellow_title padb10 br_bott_gray">Step 1:</h1>
                                                                                 <p>Search Your Bar Profile</p>
