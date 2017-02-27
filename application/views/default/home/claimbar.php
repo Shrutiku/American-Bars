@@ -13,10 +13,10 @@
                             
                                                       				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1:</h1>
                                                                                 <p style="text-align: center">Search Your Bar Profile</p>
-                                                                                <h1 class="yellow_title padb10 br_bott_gray">Step 2:</h1>
-                                                                                <p>Click on 'Claim This Bar' Button</p>
-                                                                                <h1 class="yellow_title padb10 br_bott_gray">Step 3:</h1>
-                                                                                <p>Finish the Easy and Quick Claim Process</p>
+                                                                                <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 2:</h1>
+                                                                                <p style="text-align: center;">Click on 'Claim This Bar' Button</p>
+                                                                                <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 3:</h1>
+                                                                                <p style="text-align: center;">Finish the Easy and Quick Claim Process</p>
 
      				<div class="pad20">
      				<h1 class="yellow_title padb10 br_bott_gray">Start Here With Step 1 </h1>
