@@ -1,5 +1,5 @@
 <?php
-class Postcard extends SPACULLUS_Controller {
+class Claimbar extends SPACULLUS_Controller {
 
 	/*
 	 Function name :Home()
