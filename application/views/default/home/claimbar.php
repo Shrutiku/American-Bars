@@ -11,8 +11,8 @@
      				</div>
 				<img src="<?php echo base_url() . getThemeName(); ?>/images/claimbar.jpg" border="0" style="max-width:100%;max-height:60%;">
                             
-                                                      				<h1 class="yellow_title padb10 br_bott_gray">Step 1:</h1>
-                                                                                <p>Search Your Bar Profile</p>
+                                                      				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1:</h1>
+                                                                                <p style="text-align: center">Search Your Bar Profile</p>
                                                                                 <h1 class="yellow_title padb10 br_bott_gray">Step 2:</h1>
                                                                                 <p>Click on 'Claim This Bar' Button</p>
                                                                                 <h1 class="yellow_title padb10 br_bott_gray">Step 3:</h1>
