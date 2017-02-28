@@ -23,7 +23,7 @@
      				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Start Here With Step 1 </h1>
 					<form class=""  role="form" style="text-align: center;" action="<?php echo site_url("bar/lists") ?>" method="post">
                                             <div style="align-items: center;margin-left: auto;margin-right: auto;">
-                			<div class="pull-left"><input type="text" name="bar_title_new"  id="bar_title_new" class="form-control bar_title_new" placeholder="By Name, City Or Zip"></div>
+                			<div class="pull-left  padding-right-10"><input type="text" name="bar_title_new"  id="bar_title_new" class="form-control bar_title_new" placeholder="By Name, City Or Zip"></div>
                     			<div class="pull-left"><button class="btn btn-lg btn-primary btn-block yellowlink"  style="text-align: center;" type="submit">Claim Your Bar Now!</button></div>
                                             </div>
               </form>
