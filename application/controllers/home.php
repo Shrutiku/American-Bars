@@ -5455,7 +5455,6 @@ class Home extends SPACULLUS_Controller {
                     }
                 }
                 else {
-                    Hybrid_Auth::storage()->delete("hauth_session.$provider.account");
                 }
         }
 
