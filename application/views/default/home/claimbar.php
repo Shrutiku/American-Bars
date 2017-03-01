@@ -7,7 +7,7 @@
      		<div class="result_box clearfix mar_top30bot20">
      			<div class="login_block br_green_yellow" style="width: 90%;">
      				<div class="result_search">
-	     				<div class="result_search_text">Claim Your Bar in 3 Easy Steps</div>
+	     				<div class="result_search_text" style="text-align: center">Claim Your Bar in 3 Easy Steps</div>
      				</div>                            
                                                       				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1:</h1>
                                                                                 <p style="text-align: center">Search Your Bar Profile</p>
