@@ -8,9 +8,7 @@
      			<div class="login_block br_green_yellow" style="width: 90%;">
      				<div class="result_search">
 	     				<div class="result_search_text">Claim Your Bar in 3 Easy Steps</div>
-     				</div>
-				<img src="<?php echo base_url() . getThemeName(); ?>/images/claimbar.jpg" border="0" style="max-width:100%;max-height:40%;">
-                            
+     				</div>                            
                                                       				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1:</h1>
                                                                                 <p style="text-align: center">Search Your Bar Profile</p>
                                                                                 <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 2:</h1>
