@@ -60,6 +60,10 @@ $config =
 				"enabled" => false,
 				"keys"    => array ( "key" => "", "secret" => "" )
 			),
+                    
+                    	"PushNotifications" => array (
+				"enabled" => true,
+			),
 
 			"Foursquare" => array (
 				"enabled" => false,
