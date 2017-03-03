@@ -23,6 +23,8 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */
     function loginBegin() {
+        $this->setUserConnected();
+        redirect('home/socialshare');
     }
 
     /**
