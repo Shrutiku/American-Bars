@@ -38,6 +38,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */
     function logout() {
+        parent::logout();
     }
 
     /**
