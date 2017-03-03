@@ -14,15 +14,6 @@
 class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
 
     /**
-     * Provider API client
-     *
-     * @var \Facebook\Facebook
-     */
-    public $api;
-
-    public $useSafeUrls = true;
-
-    /**
      * {@inheritdoc}
      */
     function initialize() {
@@ -37,7 +28,8 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     /**
      * {@inheritdoc}
      */
-    function loginFinish() {    
+    function loginFinish() {   
+        $this->setUserConnected();
     }
 
     /**
