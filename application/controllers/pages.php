@@ -5,10 +5,10 @@ class Pages extends CI_Controller {
         {
             $theme = getThemeName();
             
-            if (!file_exists($theme .$page . '.php'))
+            /*if (!file_exists($theme .$page . '.php'))
             {
                 $this->redirect('home');
-            }
+            }*/
 
             $this->load->view($theme . "/pages/" . $page);
         }
