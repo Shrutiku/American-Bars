@@ -21,11 +21,6 @@ class Metrics extends REST_Controller {
 	}
 
 	public function get_get() {
-            
-                $data['error'] = '';
-                $data["active_menu"]='';
-                $data['site_setting'] = site_setting ();
-                
                 $this->load->model('bar_model');
                 $this->load->model('user_model');
 
