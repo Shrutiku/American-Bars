@@ -1,4 +1,7 @@
 <?php
+
+require(APPPATH.'/libraries/REST_Controller.php');
+
 class Metrics extends REST_Controller {
 
 	/*
