@@ -1,7 +1,7 @@
 <?php
 class Pages extends CI_Controller {
 
-        public function index($page = '')
+        public function view($page = '')
         {
             $theme = getThemeName();
             
