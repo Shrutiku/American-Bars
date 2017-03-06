@@ -40,7 +40,7 @@
             var cb = document.getElementById('cb');
 
             function countUp() {
-                $.getJSON('https://sandbox.americanbars.com/metrics/get', function(data) {
+                $.getJSON('<?php echo site_url(metrics/get);?>', function(data) {
 
                     // clears number in counter span
                     hm.innerHTML = "";
