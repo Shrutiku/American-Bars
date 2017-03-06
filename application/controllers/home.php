@@ -5123,6 +5123,7 @@ class Home extends SPACULLUS_Controller {
                 $data_insert_new["lang"] = $getlat['lng'];
                 $data_insert_new['owner_name'] = $firstname . " " . $lastname;
                 $data_insert_new['email'] = $email;
+                $data_insert_new['claim'] = 'claimed';
                 $data_insert_new['owner_id'] = $uid;       
                 $data_insert_new['owner_type'] = 'bar_owner';
                 $data_insert_new['bar_meta_title'] = $data['getbardata']['bar_meta_title'];
