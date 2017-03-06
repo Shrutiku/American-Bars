@@ -9,7 +9,7 @@ body {
 </style>
 </head>
 <body>
-<h1><img src="https://americanbars.com/default/images/americanbars.png"></h1>
+<h1><img src="https://americanbars.com/default/images/americanbars.png" style="max-width: 400px;"></h1>
 <div class="your-clock"></div>
 		
 		<script src="/assets/js/libs/jquery.js"></script>
