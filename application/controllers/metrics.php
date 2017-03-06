@@ -1,5 +1,5 @@
 <?php
-class Metrics extends SPACULLUS_Controller {
+class Metrics extends REST_Controller {
 
 	/*
 	 Function name :Home()
@@ -17,7 +17,7 @@ class Metrics extends SPACULLUS_Controller {
 	
 	}
 
-	public function index () {
+	public function get() {
             
                 $data['error'] = '';
                 $data["active_menu"]='';
