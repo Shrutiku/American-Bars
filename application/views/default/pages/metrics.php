@@ -5,16 +5,12 @@
     <style>
     div.container {
     align-items: center;
-    width: 1500px;
-    height: 600px;
+    width: 100%;
     margin: auto;
-    /*border-color: #2f2f2a;
-    border-style: dashed;
-    border-width: 2px;*/
     }
     span.counter {
         font-family: 'Anton', sans-serif;
-        width: 375px;
+        width: 33%;
         line-height: 100px;
         color:white;
         margin-left:30px;
@@ -22,7 +18,7 @@
     }
     #column {
         float: left;
-        width: 500px
+        width: 33%
     }
     h1 {
         font-family: 'Anton', sans-serif;
@@ -77,15 +73,15 @@
 <body bgcolor="#C57B00" align="center">
 
     <div align="center">
-        <img src="https://americanbars.com/default/images/americanbars.png">
+        <img src="https://americanbars.com/default/images/americanbars.png" style="width: 100%;">
         <div class="container">
             <!-- <div style="float: left; width:375px">
                 <h1>Claimed Bars</h1>
                 <span class="counter" id="cb">45000</span>
             </div> -->
             <div>
-                <h1 style="font-size: 100px;float: left; margin-left: 250px">Claimed Bars</h1>
-                <h1 style="font-size: 100px;float: right; margin-right: 150px">Users</h1>
+                <h1 style="font-size: 100px;float: left; margin-left: 21%; margin-right: 12%">Claimed Bars</h1>
+                <h1 style="font-size: 100px;float: right; margin-left:12%; margin-right: 13%">Users</h1>
             </div>
             <div id="column">
                 <h1>Half-Mugs</h1>
@@ -103,6 +99,6 @@
     </div>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.js"></script>
+    <script src="jquery.counterup.min.js"></script>
 </body>
 </html>
