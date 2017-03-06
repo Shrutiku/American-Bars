@@ -103,6 +103,6 @@
     </div>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="https://raw.githubusercontent.com/bfintal/Counter-Up/master/jquery.counterup.js"></script>
+    <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.js"></script>
 </body>
 </html>
