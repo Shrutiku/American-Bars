@@ -20,7 +20,7 @@ class Metrics extends REST_Controller {
 	
 	}
 
-	public function get() {
+	public function get_get() {
             
                 $data['error'] = '';
                 $data["active_menu"]='';
