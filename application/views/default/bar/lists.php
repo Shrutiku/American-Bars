@@ -264,7 +264,7 @@ $(document).ready(function(){
 						        	<?php 
 						        	
 						        	if(($rs->owner_id=='' || $rs->owner_id==0) && $rs->claim=='unclaimed'  && get_authenticateUserID()==''){?>
-						        		<a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($rs->bar_id));?>" class="btn btn-lg btn-primary">Claim This Bar</a>
+                                                                <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($rs->bar_id));?>" style="background-color: #4CAF50;" class="btn btn-lg btn-primary"><b>Claim This Bar</b></a>
 						        	<?php } ?>	
 						        	
 						        </div> 	
