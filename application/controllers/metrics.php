@@ -28,7 +28,7 @@ class Metrics extends SPACULLUS_Controller {
 
                 $data['hulfmug_bars'] = $this->bar_model->get_total_bar_count_by_type("half_mug");
                 $data['fullmug_bars'] = $this->bar_model->get_total_bar_count_by_type("full_mug");
-                $data['enthusiasts'] = $this->user_model->get_total_user_count("user");
+                $data['enthusiasts'] = $this->user_model->get_total_user_count("user", "active");
 		
                 $this->load->view('home/metrics', $data);
 	}
