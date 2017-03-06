@@ -6,14 +6,12 @@
     div.container {
     align-items: center;
     width: 100%;
-    margin: auto;
     }
     span.counter {
         font-family: 'Anton', sans-serif;
         width: 33%;
         line-height: 100px;
-        color:white;
-        margin-left:30px;
+        color: #FFF;
         font-size:100px;
     }
     #column {
@@ -48,13 +46,11 @@
                     hm.innerHTML = "";
                     fm.innerHTML = "";
                     en.innerHTML = "";
-                    // cb.innerHTML = "";
 
                     // set new number
                     hm.innerHTML = data.hulfmug_bars;
                     fm.innerHTML = data.fullmug_bars;
                     en.innerHTML = data.enthusiasts;
-                    // cb.innerHTML = data.hulfmug_bars + data.fullmug_bars;
                 });
 
                 // Function to count with the number in counter span
@@ -73,25 +69,19 @@
 <body bgcolor="#C57B00" align="center">
 
     <div align="center">
-        <img src="https://americanbars.com/default/images/americanbars.png" style="width: 100%;">
+        <img src="https://americanbars.com/default/images/americanbars.png" style="width: 70%; margin-bottom: -80px;">
         <div class="container">
-            <!-- <div style="float: left; width:375px">
-                <h1>Claimed Bars</h1>
-                <span class="counter" id="cb">45000</span>
-            </div> -->
-            <div>
-                <h1 style="font-size: 100px;float: left; margin-left: 21%; margin-right: 12%">Claimed Bars</h1>
-                <h1 style="font-size: 100px;float: right; margin-left:12%; margin-right: 13%">Users</h1>
-            </div>
-            <div id="column">
+                <h1 style="font-size: 100px;float: left; margin-left: 21%; margin-right: 10%">Claimed Bars</h1>
+                <h1 style="font-size: 100px;float: right; margin-right: 12%">Users</h1>
+            <div id="column" style="margin-top: -100px;">
                 <h1>Half-Mugs</h1>
                 <span class="counter" id="hm">40304</span>
             </div>
-            <div id="column">
+            <div id="column" style="margin-top: -100px;">
                 <h1>Full-Mugs</h1>
                 <span class="counter" id="fm">1234</span>
             </div>
-            <div id="column">
+            <div id="column" style="margin-top: -100px;">
                 <h1>Enthusiasts</h1>
                 <span class="counter" id="en">800367</span>
             </div>
