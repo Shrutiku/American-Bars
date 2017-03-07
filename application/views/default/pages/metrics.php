@@ -26,7 +26,6 @@
     </style>
     
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     
     <!-- JQuery for Counter -->
