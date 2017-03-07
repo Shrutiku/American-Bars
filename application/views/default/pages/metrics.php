@@ -47,7 +47,7 @@
                     if (newhm !== oldhm) {
                         $("#hm").text(''+newhm);
                         $("#hm").counterUp()
-                        $('.fireworks').fireworks({
+                        $('.demo').fireworks({
                             sound: true, // sound effect
                             opacity: 0.9,
                             width: '100%',
@@ -57,7 +57,7 @@
                     if (newfm !== oldfm) {
                         $("#fm").text(''+newfm);
                         $("#fm").counterUp();
-                        $('.fireworks').fireworks({
+                        $('.demo').fireworks({
                             sound: true, // sound effect
                             opacity: 0.9,
                             width: '100%',
@@ -97,7 +97,7 @@
                 <span class="counter" id="en"></span>
             </div>
         </div>
-        <div class="fireworks"></div>
+        <div class="demo"></div>
     </div>
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
