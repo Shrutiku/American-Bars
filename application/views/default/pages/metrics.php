@@ -54,7 +54,7 @@
                             height: '100%'
                         });
                         
-                        setTimeout(function() {$('.demo').stop(true, true);}, 3000);
+                        setTimeout(function() {$('.demo').stop();}, 3000);
                     }
                     if (newfm !== oldfm) {
                         $("#fm").text(''+newfm);
