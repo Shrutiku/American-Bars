@@ -85,7 +85,7 @@
         </div>
     </div>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-    <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min"></script>
+    <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
 </body>
 </html>
