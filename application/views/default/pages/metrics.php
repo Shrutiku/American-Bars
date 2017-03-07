@@ -30,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     
     <!-- JQuery for Counter -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             var minutes = 5;
