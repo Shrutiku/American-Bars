@@ -268,7 +268,7 @@
     // Append the canvas and start the loops
     $(fireworksField).append(canvas);
     launch();
-    loop(), 1000 / 50));
+    loop();
 
     return fireworksField;
   };
