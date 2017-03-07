@@ -43,9 +43,9 @@
                     console.log(data.hulfmug_bars)
                     console.log(data.fullmug_bars)
                     console.log(data.enthusiasts)
-                    hm.innerHTML = data.hulfmug_bars;
-                    fm.innerHTML = data.fullmug_bars;
-                    en.innerHTML = data.enthusiasts;
+                    hm.value = data.hulfmug_bars;
+                    fm.value = data.fullmug_bars;
+                    en.value = data.enthusiasts;
                 });
 
                 // Function to count with the number in counter span
