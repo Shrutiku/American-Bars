@@ -47,25 +47,20 @@
                     if (newhm !== parseInt(oldhm)) {
                         $("#hm").text(''+newhm);
                         $("#hm").counterUp()
-                        $('.demo').fireworks({
-                            sound: true, // sound effect
-                            opacity: 0.1,
-                            width: '100%',
-                            height: '100%'
-                        });
-                        
-                        setTimeout(function() {$('.demo').stop();}, 3000);
                     }
                     if (newfm !== parseInt(oldfm)) {
                         $("#fm").text(''+newfm);
                         $("#fm").counterUp();
+                    }
+                    
+                    if (newhm !== parseInt(oldhm) || newfm !== parseInt(oldfm)) {
                         $('.demo').fireworks({
                             sound: true, // sound effect
                             opacity: 0.1,
                             width: '100%',
                             height: '100%'
                         });
-
+                       
                         setTimeout(function() {$('.demo').stop();}, 3000);
                     }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
