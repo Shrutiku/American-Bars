@@ -39,14 +39,13 @@
             var en = document.getElementById('en');
             var cb = document.getElementById('cb');
 
+            // clears number in counter span
+            hm.innerHTML = 0;
+            fm.innerHTML = 0;
+            en.innerHTML = 0;
+
             function countUp() {
                 $.getJSON('<?php echo site_url(metrics/get);?>', function(data) {
-
-                    // clears number in counter span
-                    hm.innerHTML = "";
-                    fm.innerHTML = "";
-                    en.innerHTML = "";
-
                     // set new number
                     hm.innerHTML = data.hulfmug_bars;
                     fm.innerHTML = data.fullmug_bars;
