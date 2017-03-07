@@ -32,10 +32,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            var minutes = 1;
-            var hm = document.getElementById('hm');
-            var fm = document.getElementById('fm');
-            var en = document.getElementById('en');         
+            var minutes = 1;         
       
             function countUp() {
                 $.getJSON('<?php echo site_url('metrics/get');?>', function(data) {
@@ -52,7 +49,7 @@
                     });
             }
 
-            countUp();
+//            countUp();
 
             setInterval(countUp(), minutes * 60000);
         });
@@ -79,7 +76,6 @@
             </div>
         </div>
     </div>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
 </body>
