@@ -40,6 +40,9 @@
             function countUp() {
                 $.getJSON('<?php echo site_url('metrics/get');?>', function(data) {
                     // set new number
+                    console.log(data.hulfmug_bars)
+                    console.log(data.fullmug_bars)
+                    console.log(data.enthusiasts)
                     hm.innerHTML = data.hulfmug_bars;
                     fm.innerHTML = data.fullmug_bars;
                     en.innerHTML = data.enthusiasts;
