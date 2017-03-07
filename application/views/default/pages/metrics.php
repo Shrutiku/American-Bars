@@ -46,10 +46,10 @@
                 });
 
                 // Function to count with the number in counter span
-                $('.counter').counterUp({
-                        delay: 10,
-                        time: 1000
-                    });
+//                $('.counter').counterUp({
+//                        delay: 10,
+//                        time: 1000
+//                    });
             }
 
             countUp();
