@@ -270,7 +270,7 @@
     launch_int = setInterval(launch, 800);
     loop_int = setInterval(loop, 1000 / 50);
     
-    setTimeout(function () {clearInterval(launch_int); clearInterval(loop_int);}, 5000);
+    setTimeout(function () {clearInterval(launch_int); clearInterval(loop_int);}, 1000);
 
     return fireworksField;
   };
