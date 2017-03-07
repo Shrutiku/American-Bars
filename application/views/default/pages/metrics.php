@@ -66,6 +66,7 @@
                             height: '100%'
                         });
 
+                        setTimeout(function() {$('.demo').stop();}, 3000);
                     }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
                 });
