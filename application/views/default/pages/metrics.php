@@ -46,10 +46,10 @@
                 });
 
                 // Function to count with the number in counter span
-//                $('.counter').counterUp({
-//                        delay: 10,
-//                        time: 1000
-//                    });
+                $('.counter').counterUp({
+                        delay: 10,
+                        time: 1000
+                    });
             }
 
             countUp();
@@ -67,15 +67,15 @@
                 <h1 style="font-size: 100px;float: right; margin-right: 12%">Users</h1>
             <div id="column" style="margin-top: -100px;">
                 <h1>Half-Mugs</h1>
-                <span class="counter" id="hm">40304</span>
+                <span class="counter" id="hm"></span>
             </div>
             <div id="column" style="margin-top: -100px;">
                 <h1>Full-Mugs</h1>
-                <span class="counter" id="fm">1234</span>
+                <span class="counter" id="fm"></span>
             </div>
             <div id="column" style="margin-top: -100px;">
                 <h1>Enthusiasts</h1>
-                <span class="counter" id="en">800367</span>
+                <span class="counter" id="en"></span>
             </div>
         </div>
     </div>
