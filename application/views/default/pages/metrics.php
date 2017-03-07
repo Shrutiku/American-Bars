@@ -36,12 +36,25 @@
       
             function checkAndSet() {
                 $.getJSON('<?php echo site_url('metrics/get');?>', function(data) {
+                    var newhm = data.hulfmug_bars;
+                    var newfm = data.fullmug_bars;
+                    var newen = data.enthusiasts;
+
+                    var oldhm = $("#hm").value();
+                    var oldfm = $("#fm").value();
+                    var olden = $("#en").value();
+
+                    if (newhm !== oldhm) {$("#hm").text(''+newhm); $("#hm").counterUp();}
+                    if (newfm !== oldfm) {$("#fm").text(''+newfm); $("#fm").counterUp();}
+                    if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
+
                     // set new number
-                    $("#hm").text(''+data.hulfmug_bars); 
-                    $("#fm").text(''+data.fullmug_bars);                  
-                    $("#en").text(''+data.enthusiasts);
+                    // $("#hm").text(''+hm); 
+                    // $("#fm").text(''+fm);                  
+                    // $("#en").text(''+en);
+
                     // Function to count with the number in counter span
-                    $('.counter').counterUp();
+                    // $('.counter').counterUp();
                 });
             }
 
