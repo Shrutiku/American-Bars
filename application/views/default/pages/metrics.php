@@ -59,8 +59,6 @@
                             min_duration: 400,
                             complete: function() {} // callback
                         });
-
-
                     }
                     if (newfm !== oldfm) {
                         $("#fm").text(''+newfm);
