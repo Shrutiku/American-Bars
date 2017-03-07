@@ -45,19 +45,13 @@
                     var olden = $("#en").val();
 
                     if (newhm !== oldhm) {
-                        $("#hm").text(''+newfm);
+                        $("#hm").text(''+newhm);
                         $("#hm").counterUp()
-                        $(".hmstars").celebrate({
-                            particles: 7,
-                            radius: 75,
-                            color: "black",
-                            unicode: '\u2605', // star
-                            start_size: '15',
-                            min_end_size: '20',
-                            max_end_size: '75',
-                            max_duration: 500,
-                            min_duration: 400,
-                            complete: function() {} // callback
+                        $('.fireworks').fireworks({
+                            sound: true, // sound effect
+                            opacity: 0.9,
+                            width: '100%',
+                            height: '100%'
                         });
 
 
@@ -65,18 +59,13 @@
                     if (newfm !== oldfm) {
                         $("#fm").text(''+newfm);
                         $("#fm").counterUp();
-                        $(".fmstars").celebrate({
-                            particles: 7,
-                            radius: 75,
-                            color: "black",
-                            unicode: '\u2605', // star
-                            start_size: '15',
-                            min_end_size: '20',
-                            max_end_size: '75',
-                            max_duration: 500,
-                            min_duration: 400,
-                            complete: function() {} // callback
+                        $('.fireworks').fireworks({
+                            sound: true, // sound effect
+                            opacity: 0.9,
+                            width: '100%',
+                            height: '100%'
                         });
+
                     }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
                 });
@@ -110,6 +99,7 @@
                 <span class="counter" id="en"></span>
             </div>
         </div>
+        <div class="fireworks"></div>
     </div>
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
