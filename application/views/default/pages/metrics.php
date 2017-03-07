@@ -111,7 +111,6 @@
     </div>
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
-    <script src="<?php echo app_bower_url(); ?>/jquery-fireworks/jquery.fireworks.js"></script>
-    <script src="celebrate.js"></script>
+    <script src="<?php echo app_bower_url(); ?>/celebrate/celebrate.js"></script>
 </body>
 </html>
