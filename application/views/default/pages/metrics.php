@@ -49,9 +49,9 @@
                     });
             }
 
-//            countUp();
+            countUp();
 
-            setInterval(countUp(), minutes * 60000);
+            setInterval(countUp(), 60000);
         });
     </script>
 </head>
