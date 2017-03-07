@@ -32,12 +32,11 @@
     <!-- JQuery for Counter -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-        jQuery(document).ready(function($) {
+        $(document).ready(function() {
             var minutes = 5;
             var hm = document.getElementById('hm');
             var fm = document.getElementById('fm');
             var en = document.getElementById('en');
-            var cb = document.getElementById('cb');
 
             // clears number in counter span
             hm.innerHTML = 0;
