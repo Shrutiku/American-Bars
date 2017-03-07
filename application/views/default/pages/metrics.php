@@ -44,8 +44,27 @@
                     var oldfm = $("#fm").val();
                     var olden = $("#en").val();
 
-                    if (newhm !== oldhm) {$("#hm").text(''+newhm); $("#hm").counterUp();}
-                    if (newfm !== oldfm) {$("#fm").text(''+newfm); $("#fm").counterUp();}
+                    if (newhm !== oldhm) {
+                        $("#hm").text(''+newhm);
+                        $("#hm").counterUp();
+                        $('#hm').fireworks({
+                            sound: true, // sound effect
+                            opacity: 0.9,
+                            width: '100%',
+                            height: '100%'
+                        });
+
+                    }
+                    if (newfm !== oldfm) {
+                        $("#fm").text(''+newfm);
+                        $("#fm").counterUp();
+                        $('#fm').fireworks({
+                            sound: true, // sound effect
+                            opacity: 0.9,
+                            width: '100%',
+                            height: '100%'
+                        });
+                    }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
 
                     // set new number
