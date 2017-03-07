@@ -44,7 +44,7 @@
                     var oldfm = $("#fm").val();
                     var olden = $("#en").val();
 
-                    if (newhm != oldhm) {
+                    if (newhm !== parseInt(oldhm)) {
                         $("#hm").text(''+newhm);
                         $("#hm").counterUp()
                         $('.demo').fireworks({
@@ -56,7 +56,7 @@
                         
                         setTimeout(function() {$('.demo').stop();}, 3000);
                     }
-                    if (newfm != oldfm) {
+                    if (newfm !== parseInt(oldfm)) {
                         $("#fm").text(''+newfm);
                         $("#fm").counterUp();
                         $('.demo').fireworks({
