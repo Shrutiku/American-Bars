@@ -79,14 +79,6 @@
                         });
                     }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
-
-                    // set new number
-                    // $("#hm").text(''+hm); 
-                    // $("#fm").text(''+fm);                  
-                    // $("#en").text(''+en);
-
-                    // Function to count with the number in counter span
-                    // $('.counter').counterUp();
                 });
             }
 
