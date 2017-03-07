@@ -35,7 +35,7 @@
             var minutes = 1;
             var hm = document.getElementById('hm');
             var fm = document.getElementById('fm');
-            var en = document.getElementById('en');
+            var en = document.getElementById('en');         
       
             function countUp() {
                 $.getJSON('<?php echo site_url('metrics/get');?>', function(data) {
@@ -43,9 +43,9 @@
                     console.log(data.hulfmug_bars)
                     console.log(data.fullmug_bars)
                     console.log(data.enthusiasts)
-                    hm.value = data.hulfmug_bars;
-                    fm.value = data.fullmug_bars;
-                    en.value = data.enthusiasts;
+                    hm.innerHTML = document.createTextNode(data.hulfmug_bars).textContent;
+                    fm.innerHTML = document.createTextNode(data.fullmug_bars).textContent;
+                    en.innerHTML = document.createTextNode(data.enthusiasts).textContent;
                 });
 
                 // Function to count with the number in counter span
