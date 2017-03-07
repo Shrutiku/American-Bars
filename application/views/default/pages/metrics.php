@@ -47,7 +47,7 @@
                     if (newhm !== oldhm) {
                         $("#hm").text(''+newfm);
                         $("#hm").counterUp()
-                        $("#hm").celebrate({
+                        $(".hmstars").celebrate({
                             particles: 7,
                             radius: 75,
                             color: "black",
@@ -63,7 +63,7 @@
                     if (newfm !== oldfm) {
                         $("#fm").text(''+newfm);
                         $("#fm").counterUp();
-                        $("#fm").celebrate({
+                        $(".fmstars").celebrate({
                             particles: 7,
                             radius: 75,
                             color: "black",
@@ -96,10 +96,12 @@
             <div id="column" style="margin-top: -100px;">
                 <h1>Half-Mugs</h1>
                 <span class="counter" id="hm"></span>
+                <div class="hmstars"></div>
             </div>
             <div id="column" style="margin-top: -100px;">
                 <h1>Full-Mugs</h1>
                 <span class="counter" id="fm"></span>
+                <div class="fmstars"></div>
             </div>
             <div id="column" style="margin-top: -100px;">
                 <h1>Enthusiasts</h1>
