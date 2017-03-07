@@ -40,12 +40,9 @@
             function countUp() {
                 $.getJSON('<?php echo site_url('metrics/get');?>', function(data) {
                     // set new number
-                    console.log(data.hulfmug_bars);
-                    console.log(data.fullmug_bars);
-                    console.log(data.enthusiasts);
-                    hm.innerHTML = document.createTextNode(data.hulfmug_bars).textContent;
-                    fm.innerHTML = document.createTextNode(data.fullmug_bars).textContent;
-                    en.innerHTML = document.createTextNode(data.enthusiasts).textContent;
+                    $("#hm").text(''+data.hulfmug_bars); 
+                    $("#fm").text(''+data.fullmug_bars);                  
+                    $("#en").text(''+data.enthusiasts);                  
                 });
 
                 // Function to count with the number in counter span
