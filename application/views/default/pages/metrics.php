@@ -61,7 +61,7 @@
                             height: '100%'
                         });
                        
-                        setTimeout(function() {$('.demo').stop();}, 3000);
+                        setTimeout(function() {$('#demo').stop();}, 3000);
                     }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
                 });
@@ -95,7 +95,7 @@
                 <span class="counter" id="en"></span>
             </div>
         </div>
-        <div class="demo"></div>
+        <div class="demo" id="demo" name="demo"></div>
     </div>
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
