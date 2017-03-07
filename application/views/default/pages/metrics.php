@@ -34,24 +34,20 @@
         $(document).ready(function() {
             var minutes = 1;         
       
-            function countUp() {
+            function checkAndSet() {
                 $.getJSON('<?php echo site_url('metrics/get');?>', function(data) {
                     // set new number
                     $("#hm").text(''+data.hulfmug_bars); 
                     $("#fm").text(''+data.fullmug_bars);                  
-                    $("#en").text(''+data.enthusiasts);                  
+                    $("#en").text(''+data.enthusiasts);
+                    // Function to count with the number in counter span
+                    $('.counter').counterUp();
                 });
-
-                // Function to count with the number in counter span
-                $('.counter').counterUp({
-                        delay: 10,
-                        time: 1000
-                    });
             }
 
-            countUp();
+            checkAndSet();
 
-            setInterval(countUp(), 60000);
+            setInterval(checkAndSet(), 60000);
         });
     </script>
 </head>
