@@ -32,16 +32,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            var minutes = 5;
+            var minutes = 1;
             var hm = document.getElementById('hm');
             var fm = document.getElementById('fm');
             var en = document.getElementById('en');
-
-            // clears number in counter span
-            hm.innerHTML = 0;
-            fm.innerHTML = 0;
-            en.innerHTML = 0;
-
+      
             function countUp() {
                 $.getJSON('<?php echo site_url('metrics/get');?>', function(data) {
                     // set new number
@@ -59,7 +54,7 @@
 
             countUp();
 
-            setInterval(countUp(), 5000);
+            setInterval(countUp(), minutes * 60000);
         });
     </script>
 </head>
