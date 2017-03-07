@@ -270,7 +270,7 @@
     launch_int = setInterval(launch, 800);
     loop_int = setInterval(loop, 1000 / 50);
     
-    setTimeout(function () {$('canvas').remove(); audio.pause(); $('audio').remove();}, 5000);
+    setTimeout(function () {$('canvas').remove(); audio.pause(); $('audio').remove();}, 8000);
 
     return fireworksField;
   };
