@@ -106,5 +106,6 @@
     </div>
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
+    <script src="<?php echo app_bower_url(); ?>/jquery-fireworks/jquery.fireworks.js"></script>
 </body>
 </html>
