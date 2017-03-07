@@ -45,24 +45,37 @@
                     var olden = $("#en").val();
 
                     if (newhm !== oldhm) {
-                        $("#hm").text(''+newhm);
-                        $("#hm").counterUp();
-                        $('#hm').fireworks({
-                            sound: true, // sound effect
-                            opacity: 0.9,
-                            width: '100%',
-                            height: '100%'
+                        $("#hm").text(''+newfm);
+                        $("#hm").counterUp()
+                        $("#hm").celebrate({
+                            particles: 7,
+                            radius: 75,
+                            color: "black",
+                            unicode: '\u2605', // star
+                            start_size: '15',
+                            min_end_size: '20',
+                            max_end_size: '75',
+                            max_duration: 500,
+                            min_duration: 400,
+                            complete: function() {} // callback
                         });
+
 
                     }
                     if (newfm !== oldfm) {
                         $("#fm").text(''+newfm);
                         $("#fm").counterUp();
-                        $('#fm').fireworks({
-                            sound: true, // sound effect
-                            opacity: 0.9,
-                            width: '100%',
-                            height: '100%'
+                        $("#fm").celebrate({
+                            particles: 7,
+                            radius: 75,
+                            color: "black",
+                            unicode: '\u2605', // star
+                            start_size: '15',
+                            min_end_size: '20',
+                            max_end_size: '75',
+                            max_duration: 500,
+                            min_duration: 400,
+                            complete: function() {} // callback
                         });
                     }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
@@ -107,5 +120,6 @@
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/jquery-fireworks/jquery.fireworks.js"></script>
+    <script src="celebrate.js"></script>
 </body>
 </html>
