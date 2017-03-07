@@ -79,14 +79,6 @@
                         });
                     }
                     if (newen !== olden) {$("#en").text(''+newen); $("#en").counterUp();}
-
-                    // set new number
-                    // $("#hm").text(''+hm); 
-                    // $("#fm").text(''+fm);                  
-                    // $("#en").text(''+en);
-
-                    // Function to count with the number in counter span
-                    // $('.counter').counterUp();
                 });
             }
 
@@ -121,7 +113,6 @@
     </div>
     <script src="<?php echo app_bower_url(); ?>/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="<?php echo app_bower_url(); ?>/counter/jquery.counterup.min.js"></script>
-    <script src="<?php echo app_bower_url(); ?>/jquery-fireworks/jquery.fireworks.js"></script>
-    <script src="celebrate.js"></script>
+    <script src="<?php echo app_bower_url(); ?>/celebrate/celebrate.js"></script>
 </body>
 </html>
