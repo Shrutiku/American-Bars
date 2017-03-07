@@ -40,9 +40,9 @@
                     var newfm = data.fullmug_bars;
                     var newen = data.enthusiasts;
 
-                    var oldhm = $("#hm").value();
-                    var oldfm = $("#fm").value();
-                    var olden = $("#en").value();
+                    var oldhm = $("#hm").val();
+                    var oldfm = $("#fm").val();
+                    var olden = $("#en").val();
 
                     if (newhm !== oldhm) {$("#hm").text(''+newhm); $("#hm").counterUp();}
                     if (newfm !== oldfm) {$("#fm").text(''+newfm); $("#fm").counterUp();}
