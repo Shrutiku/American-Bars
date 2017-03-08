@@ -4978,6 +4978,8 @@ class Home extends SPACULLUS_Controller {
         if ($bar_id == "") {
            redirect('home');
         }
+        
+        $bar_id = base64_decode($bar_id);
 
         $theme = getThemeName();
         $data['error'] = '';
