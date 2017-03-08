@@ -5039,7 +5039,7 @@ class Home extends SPACULLUS_Controller {
 
     function claimbar_owner_info($bar_id = '') {
         if ($bar_id == '') {
-            redirect('home/');
+            redirect('home');
         }
 
         $theme = getThemeName();
