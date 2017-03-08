@@ -5163,7 +5163,7 @@ class Home extends SPACULLUS_Controller {
                 $username = ucwords($firstname) . " " . ucwords($lastname);
                 $email_to = $email;
 
-                $email_subject = str_replace('{barname}', $barname, $email_subject)
+                $email_subject = str_replace('{barname}', $barname, $email_subject);
                 $email_message = str_replace('{break}', '<br/>', $email_message);
                 $email_message = str_replace('{barname}', $barname, $email_message);
                 $email_message = str_replace('{type}', $type, $email_message);
