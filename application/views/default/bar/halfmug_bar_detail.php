@@ -254,10 +254,10 @@ function piShare()
 	            </div>
      			<div class="pull-right">
      				<div class="result_search_text full-icon marr_10"><?php if($bar_detail['claim']=='unclaimed'  && get_authenticateUserID()==''){?>
-						        		<a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" class="review text-center">Claim This Bar</a>
+                                    <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Register This Bar</b></a>
 						        	<?php } ?>Half Mug Bar</div>
      				<div class="full-icon"><i class="strip halfmug"></i></div>
-     				<div class="clearfix"></div>
+                                
 	             </div>
 	             <div class="clearfix"></div>
      		</div>
@@ -274,6 +274,8 @@ function piShare()
 		            			<img style="width: 120px; height: 120px;" src="<?php echo base_url()?>/upload/barlogo/no_image.png" alt="American Dive Bars"/>
 		            		<?php } ?>
 						    </a><div class="clearfix"></div>
+
+                                                
 						    <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
 											
 								if($cnt_like==2 && get_authenticateUserID()!=''){
@@ -290,23 +292,29 @@ function piShare()
 								<!-- <a id="total-fav" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn mart10">Add To Favoritess</a> -->
 								
 									<?php
+                                                                        		if(($bar_detail['claim']=='unclaimed')  && get_authenticateUserID()==''){?>
+                                                                <p></p>
+                                                                <div>
+                                    <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Claim This Bar</b></a>
+						        	 	</div><?php }
+                                                                
 						    		 if($this->session->userdata('user_type')!='bar_owner')
-		{
+                                                                            {
 						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
-									 
-									
+	
 											if($cnt_fav==2 && get_authenticateUserID()!=''){
 											?>
 											<a id="total-fav" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn mart10">Add to My Bar List</a>
 											<?php
 											} elseif(get_authenticateUserID()!=''){?>
-												
+                                                   
 											<a id="total-fav" href="javascript:void(0);" name="<?php if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="btn btn-lg btn-primary full-btn mart10">
 											 <?php if($cnt_fav==1){ echo 'Add to My Bar List'; } else{ echo 'Remove Favorite'; } ?></a>
 											<?php } else { ?>
 												<a id="total-fav" class="btn btn-lg btn-primary full-btn mart10" href="javascript:void(0);" name="1" >Add to My Bar List</a>
 											<?php } }?>	
 											<div class="clearfix"></div>
+                                                                 
 								<div class="rating-new mart10">
 						         		<?php echo getReviewRating($bar_id);?>
 						         		<div class="mart10"><a  class="btn btn-lg btn-primary full-btn mart10" onclick="show_popup()">Write a Review</a></div>

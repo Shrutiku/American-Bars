@@ -72,7 +72,7 @@ $data = array(
 				        		$.ajax({
 									      type: "POST",
 									      url: "<?php echo site_url('bar/checkExistPost')?>",
-									      data: {id:<?php echo $bar_id;?>},
+									      data: {id:'<?php echo $bar_id;?>'},
 									      dataType: 'json',
 									      success: function(response, textStatus, xhr) {
 									      if(response.status=="success")

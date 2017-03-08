@@ -9,10 +9,10 @@
      				<div class="result_search">
 	     				<div class="result_search_text" style="text-align: center">Claim Your Bar in 3 Easy Steps</div>
      				</div>                            
-                                                      				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1:</h1>
-                                                                                <p style="text-align: center">Search Your Bar Profile</p>
-                                                                                <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 2:</h1>
-                                                                                <p style="text-align: center;">Click on 'Claim This Bar' Button</p>
+                                                      				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1: Search Your Bar Profile</h1>
+                                                                                <br>
+                                                                                <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 2: Click on 'Claim This Bar' Button</h1>
+                                                                                <br>
                                                                                 <img src="<?php echo base_url() . getThemeName(); ?>/images/claimbar_search_result_ex.png" border="0" style="max-width:100%;max-height:20%;">
                                                                                 <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 3:</h1>
                                                                                 <p style="text-align: center;">Finish the Easy and Quick Claim Process</p>
