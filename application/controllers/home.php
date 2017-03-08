@@ -5192,8 +5192,6 @@ class Home extends SPACULLUS_Controller {
             redirect('home/');
         }
         
-        $bar_id = base64_decode($bar_id);
-        
         $theme = getThemeName();
         $data['error'] = '';
         $data["active_menu"] = '';
@@ -5208,6 +5206,8 @@ class Home extends SPACULLUS_Controller {
         $pageTitle = $page_detail->title;
         $metaDescription = $page_detail->meta_description;
         $metaKeyword = $page_detail->meta_keyword;
+        
+        $bar_id = base64_decode($bar_id);
 
         $this->template->write('pageTitle', $pageTitle, TRUE);
         $this->template->write('metaDescription', $metaDescription, TRUE);
