@@ -292,9 +292,8 @@ function piShare()
 								
 									<?php
                                                                         		if(($bar_detail['claim']=='unclaimed')  && get_authenticateUserID()==''){?>
-                                                                <div class="clearfix"></div>
                                     <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Claim This Bar</b></a>
-						        	 <div>	<?php }
+						        		<?php }
                                                                 
 						    		 if($this->session->userdata('user_type')!='bar_owner')
 		{
