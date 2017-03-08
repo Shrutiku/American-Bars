@@ -5184,10 +5184,9 @@ class Home extends SPACULLUS_Controller {
     }
 
     function claimbar_type($bar_id = '') {
-        $bar_id = $this->session->userdata('viewid');
         $uid = $this->session->userdata("userid_sess");
 
-        if ($bar_id == '') {
+        if ($bar_id == '' || $uid == '') {
             redirect('home/');
         }
         
