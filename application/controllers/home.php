@@ -5198,6 +5198,7 @@ class Home extends SPACULLUS_Controller {
         $data['error'] = '';
         $data["active_menu"] = '';
         $data["uid"] = $uid;
+        $data["bar_id"] = $bar_id;
         $data["type"] = 1;
         $data['site_setting'] = site_setting();
         $theme = getThemeName();
