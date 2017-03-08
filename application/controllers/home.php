@@ -5149,6 +5149,7 @@ class Home extends SPACULLUS_Controller {
 
                 $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Claim Bar'");
                 $email_temp = $email_template->row();
+                $barname = ucwords($data['getbardata']['bar_title']);
 
                 $email_address_from = $email_temp->from_address;
                 $email_address_reply = $email_temp->reply_address;
@@ -5158,11 +5159,11 @@ class Home extends SPACULLUS_Controller {
 
                 $email = getsuperadminemail();
 
-                $barname = ucwords($data['getbardata']['bar_title']);
                 $type = 'Half Mug';
                 $username = ucwords($firstname) . " " . ucwords($lastname);
                 $email_to = $email;
 
+                $email_subject = str_replace('{barname}', $barname, $email_subject)
                 $email_message = str_replace('{break}', '<br/>', $email_message);
                 $email_message = str_replace('{barname}', $barname, $email_message);
                 $email_message = str_replace('{type}', $type, $email_message);
