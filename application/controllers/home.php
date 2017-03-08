@@ -4872,28 +4872,21 @@ class Home extends SPACULLUS_Controller {
         }
 
         $theme = getThemeName();
-
-
         $data['error'] = '';
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
         $data["msg"] = base64_decode($msg);
-
         $data["reset_email"] = base64_decode($email);
-
-
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
         $bar_id = '';
         $data['new_bar_id'] = $bar_id_orig;
         $data['get_cat'] = $this->home_model->barCategory();
 
-
         if ($bar_id_orig != '') {
-            //echo base64_decode($bar_id_orig);
-            $bar_id_orig = base64_decode($bar_id_orig);
-            $this->session->set_userdata(array('viewid_orig' => $bar_id_orig));
-            $data['getbardata'] = $this->home_model->getBarData($bar_id_orig);
+            $bar_id = base64_decode($bar_id_orig);
+            $this->session->set_userdata(array('viewid' => $bar_id));
+            $data['getbardata'] = $this->home_model->getBarData($bar_id);
 
             $data["bar_id"] = $data['getbardata']['bar_id'];
             $data["bar_title"] = $data['getbardata']['bar_title'];
@@ -4906,24 +4899,13 @@ class Home extends SPACULLUS_Controller {
             $data["bar_meta_description"] = $data['getbardata']['bar_meta_description'];
         } else {
             $bar_id = $this->session->userdata('viewid');
+            
+            if ($bar_id == '')
+            {
+                redirect('home');
+            }
         }
-
-        /*if ($this->session->userdata('viewid') != '' || $bar_id != '') {
-            $bar_id = $this->session->userdata('viewid');
-            $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
-
-            $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
-            $data["email"] = $data['getbardata']['email'];
-            $data["bar_title"] = $data['getbardata']['bar_title'];   
-            $data["address"] = $data['getbardata']['address'];
-            $data["city"] = $data['getbardata']['city'];
-            $data["state"] = $data['getbardata']['state'];
-            $data["zip"] = $data['getbardata']['zip'];
-            $data["desc"] = $data['getbardata']['desc'];
-            $data["bar_meta_title"] = $data['getbardata']['bar_meta_title'];
-            $data["bar_meta_keyword"] = $data['getbardata']['bar_meta_keyword'];
-            $data["bar_meta_description"] = $data['getbardata']['bar_meta_description'];
-        }*/
+        
         $page_detail = meta_setting();
         $pageTitle = $page_detail->title;
         $metaDescription = $page_detail->meta_description;
@@ -4981,7 +4963,7 @@ class Home extends SPACULLUS_Controller {
                 }
             }
         }
-        //echo $data["bar_category"];
+
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/home/claim_bar_owner_register', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
@@ -4993,13 +4975,8 @@ class Home extends SPACULLUS_Controller {
             redirect('home');
         }
         
-        if ($bar_id != "") {
-            //echo "fsa";
-            $bar_id = base64_decode($bar_id);
-            $this->session->set_userdata(array('viewid' => $bar_id));
-            $bar_id = $this->session->userdata('viewid');
-        } elseif ($this->session->userdata('viewid') != "") {
-            $bar_id = $this->session->userdata('viewid');
+        if ($bar_id == "") {
+           redirect('home');
         }
 
         $theme = getThemeName();
@@ -5059,8 +5036,6 @@ class Home extends SPACULLUS_Controller {
     }
 
     function claimbar_owner_info($bar_id = '') {
-        $bar_id = $this->session->userdata('viewid');
-
         if ($bar_id == '') {
             redirect('home/');
         }
@@ -5068,11 +5043,11 @@ class Home extends SPACULLUS_Controller {
         $theme = getThemeName();
         $data['error'] = '';
         $data['bar_id'] = base64_decode($bar_id);
+        $bar_id = base64_decode($bar_id);
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
-
         $data['getbardata'] = $this->home_model->getBardataTemp($bar_id);
         $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
 
@@ -5100,9 +5075,6 @@ class Home extends SPACULLUS_Controller {
                 $firstname = $this->input->post('firstname');
                 $lastname = $this->input->post('lastname');
                 $email = $this->input->post('email');
-                $bar_id = $this->session->userdata('viewid');
-                $data['getbardata'] = $this->home_model->getBardata ($bar_id);
-                $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
                 $pass = randomCode();
                 $data_insert['mobile_no'] = $data['getbardata']['claim_phone'];
                 $data_insert['first_name'] = $firstname;
@@ -5130,18 +5102,13 @@ class Home extends SPACULLUS_Controller {
                 $data_insert_new['bar_meta_keyword'] = $data['getbardata']['bar_meta_keyword'];
                 $data_insert_new['date_added'] = date('Y-m-d H:i:s');
                 $data_insert_new['bar_meta_description'] = $data['getbardata']['bar_meta_description'];
-                $this->db->where('bar_id', $this->session->userdata('viewid_orig'));
-
+                $this->db->where('bar_id', $bar_id);
                 $this->db->update('bars', $data_insert_new);
-                $bar_id = $this->session->userdata('viewid_orig');
-
                 $data['one_user'] = $this->home_model->get_availability($bar_id);
 
                 $this->session->set_userdata(array('user_id' => $uid));                
                 $uid = base64_encode($uid);
                 $this->session->set_userdata(array('userid_sess' => $uid, 'user_type' => 'bar_owner'));
-                //$this->session->unset_userdata('viewid_orig');
-                //$this->session->unset_userdata('viewid');
                 
                 $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Successfully Registration'");
                 $email_temp = $email_template->row();

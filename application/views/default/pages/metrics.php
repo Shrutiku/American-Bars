@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="robots" content="nofollow" />
     <title>AB Metrics</title>
     <style>
     div.container {
