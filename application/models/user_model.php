@@ -931,6 +931,23 @@ function getAllFavoriteLiquor($uid='',$offset='',$limit='')
 		return '';
 		
 	}
+        
+        function get_total_user_count($type=0,$state)
+	{
+		//$this->db->where('is_deleted','no');
+		if($type!='0')
+		{
+			$query = $this->db->get_where('user_master',array('is_deleted'=>'no','user_type'=>$type,'status'=>"$state"));
+		}
+		else {
+				$query = $this->db->get_where('user_master',array('is_deleted'=>'no','status'=>"$state"));
+		}
+	
+		if ($query->num_rows() > 0) {
+			return $query->num_rows();
+		}
+		return 0;
+	}
 	
 	function bar_gallery_insert($bar_id='')
 	{

@@ -74,7 +74,7 @@ function choosepage(provider, accounts) {
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
 foreach ($providers as $provider => $data) {
-    if ($data['connected']) {        
+    if ($data['connected'] && ($provider == 'PushNotifications' || ($provider != 'PushNotifications' && !@$providers['PushNotifications']['connected']))) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
    max-height:8%;padding-right: 5px;', 'class' => 'connected')));
     } else {
@@ -99,15 +99,20 @@ foreach ($providers as $provider => $data) {
                         </div>
 
                         <div class="padtb" style="text-align: center;">
+                            <?php if (!@$providers['PushNotifications']['connected']) {
+                                    ?>
                             <div class="text-center" style="text-align: center;">
                                 <input type="file" id="file" name="file" style="margin: 0 auto;">
                                 <input type="hidden" id="picture" name="picture">
-                            </div>                           
+                            </div>  
+                                    <?php
+                            }
+                                    ?>
                             <div class="clearfix"></div>
                         </div>
                         <div class="padtb" style="text-align: center;">
 
-                            <button type="submit" onclick="uploadimage();" class="btn btn-lg btn-primary marr_10" >Post</button>
+                            <button type="submit" onclick="uploadimage();" class="btn btn-lg btn-primary marr_10" ><?php echo @$providers['PushNotifications']['connected'] ? 'Push Notification' : 'Post';?></button>
                         </div>
 
                         <div class="container" style="max-width: 60%; padding-top: 5px">

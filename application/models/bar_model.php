@@ -5,6 +5,38 @@ class Bar_model extends CI_Model
     {
         parent::__construct();	
     } 	
+    
+    /////// end of uplaod banner //////////////////////////////
+	function get_total_bar_count_by_type($bar_type = '')
+	{
+	// return $this->db->count_all('bars');
+	
+	    $this->db->select('b.*');
+		$this->db->from('bars b');
+		$this->db->join('user_master u','u.user_id=b.owner_id','left');
+		
+                if ($bar_type == "half_mug_claimed_bar") {
+                    $where = "(b.bar_type='half_mug' AND ((b.owner_id IS NOT NULL AND b.owner_id!=0 AND u.status='active') OR (b.claim='claimed')))";
+                    $this->db->where($where);
+                }
+                else if ($bar_type == "half_mug_unclaimed_bar") {
+                    $where = "(b.bar_type='half_mug' AND (b.owner_id IS NULL OR u.status!='active') OR (b.owner_id=0 AND b.claim='unclaimed'))";
+                    $this->db->where($where);  
+                }
+		else if($bar_type != "all" && $bar_type!='managed_bar' )
+		{
+			$this->db->where("bar_type",$bar_type);
+		}
+		if($bar_type=='managed_bar' )
+		{
+			$this->db->where("is_managed",'yes');
+		}
+		$this->db->where("b.status !=",'archived');
+		
+		$qry = $this->db->get();
+		
+		return $qry->num_rows();
+	}
 	
 	function get_total_bar_count($bar_title = '',$state = '',$city = '',$zipcode='',$bar_title_new='',$bar_title_j,$address_j,$days)
 	{
