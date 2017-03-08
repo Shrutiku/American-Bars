@@ -5192,6 +5192,8 @@ class Home extends SPACULLUS_Controller {
             redirect('home/');
         }
         
+        $bar_id = base64_decode($bar_id);
+        
         $theme = getThemeName();
         $data['error'] = '';
         $data["active_menu"] = '';
