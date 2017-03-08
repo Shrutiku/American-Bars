@@ -257,7 +257,7 @@ function piShare()
                                     <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Register This Bar</b></a>
 						        	<?php } ?>Half Mug Bar</div>
      				<div class="full-icon"><i class="strip halfmug"></i></div>
-     				<div class="clearfix"></div>
+                                
 	             </div>
 	             <div class="clearfix"></div>
      		</div>
@@ -273,7 +273,7 @@ function piShare()
 		            	<?php }  else { ?>
 		            			<img style="width: 120px; height: 120px;" src="<?php echo base_url()?>/upload/barlogo/no_image.png" alt="American Dive Bars"/>
 		            		<?php } ?>
-						    </a><div class="clearfix"></div>
+						    </a>
                                                 
 						    <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
 											
