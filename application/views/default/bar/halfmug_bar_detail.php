@@ -273,7 +273,8 @@ function piShare()
 		            	<?php }  else { ?>
 		            			<img style="width: 120px; height: 120px;" src="<?php echo base_url()?>/upload/barlogo/no_image.png" alt="American Dive Bars"/>
 		            		<?php } ?>
-						    </a>
+						    </a><div class="clearfix"></div>
+
                                                 
 						    <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
 											
@@ -292,13 +293,13 @@ function piShare()
 								
 									<?php
                                                                         		if(($bar_detail['claim']=='unclaimed')  && get_authenticateUserID()==''){?>
-                                                                <div class="clearfix"></div>
+                                                                <p></p>
                                                                 <div>
                                     <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Claim This Bar</b></a>
 						        	 	</div><?php }
                                                                 
 						    		 if($this->session->userdata('user_type')!='bar_owner')
-		{
+                                                                            {
 						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
 	
 											if($cnt_fav==2 && get_authenticateUserID()!=''){
