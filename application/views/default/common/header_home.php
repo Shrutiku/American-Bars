@@ -53,7 +53,7 @@ $(function(){
 		  if(check_user_authentication ()== ''){ ?>
               <form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
                 			<div class="pull-left"><input type="text" name="bar_title_new" id="bar_title_new" class="form-control bar_title_new" placeholder="By Name, City Or Zip"></div>
-                    			<div class="pull-left"><button class="btn btn-lg btn-primary btn-block   " style="background-color: #4CAF50;" type="submit">Claim Your Bar Now!</button></div>
+                    			<div class="pull-left"><button class="btn" style="background-color: #4CAF50;" type="submit">Claim Your Bar Now!</button></div>
               </form>
             <?php } ?>
             <?php if($this->session->userdata('user_type')=='bar_owner' && check_user_authentication()){?>
