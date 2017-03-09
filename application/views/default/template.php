@@ -99,6 +99,9 @@ else{
 <link href="<?php echo base_url().getThemeName(); ?>/css/alertify.default.css" rel="stylesheet" />
 <link href="<?php echo base_url().getThemeName(); ?>/css/alertify.core.css" rel="stylesheet" />
 <link href="<?php echo base_url().getThemeName(); ?>/css/jquery-ui.css" rel="stylesheet" />
+<!-- Getresponse Analytics -->
+<script type="text/javascript" src="https://ga.getresponse.com/script/ga.js?grid=sBDcDWE1ZdXsIAg%3D%3D" async></script>
+<!-- End Getresponse Analytics -->
    <!-- Social-feed css -->
     <link href="<?php echo app_bower_url();?>/social-feed/css/jquery.socialfeed.css" rel="stylesheet" type="text/css">
     <!-- font-awesome for social network icons -->

@@ -48,6 +48,27 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         return null;
     }
     
+    function getAllUser_Device_ById($user_ids)
+    {
+        $CI =& get_instance();
+        $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN_SET($user_ids)");		
+        if ($qry->num_rows() > 0) {
+                return $qry->result();
+        }
+        return '';
+    }
+
+    function getAllUser_Device_android_ById($user_ids)
+    {
+        $CI =& get_instance();
+        
+        $qry = $CI->db->query("select * from sss_registered_android where user_id IN_SET($user_ids)");		
+        if ($qry->num_rows() > 0) {
+            return $qry->result();
+        }
+        return '';
+    }
+    
     function getAllUser_Device()
     {
         $CI =& get_instance();
