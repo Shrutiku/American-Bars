@@ -5,7 +5,6 @@ require_once(APPPATH . 'libraries/Twilio/autoload.php');
 require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
 require_once(APPPATH . 'libraries/facebook-sdk-v5/autoload.php');
 
-
 // require(APPPATH.'Paypal/bootstrap.php');
 // //require(APPPATH.'PayPal/vendor/autoload.php');
 // //require ('Paypal/common.php');
@@ -22,7 +21,6 @@ use PayPal\Api\Payer;
 use PayPal\Api\Payment;
 use PayPal\Api\FundingInstrument;
 use PayPal\Api\Transaction;
-
 use Twilio\Rest\Client as TwilioClient;
 
 require(APPPATH . 'Paypal-PayFlow-API-Wrapper-Class-master/Class.PayFlow.php');
@@ -907,7 +905,7 @@ class Home extends SPACULLUS_Controller {
         if (check_user_authentication() != '') {
             redirect('home');
         }
-        
+
         $bar_id = $this->session->userdata('viewid');
 
         if ($bar_id == '') {
@@ -1248,11 +1246,11 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function registration_step4_upgrade($bar_id = '', $type = '', $coupon='') {
+    function registration_step4_upgrade($bar_id = '', $type = '', $coupon = '') {
         if (check_user_authentication() == '') {
             redirect('home');
         }
-        
+
         $getpaypalsetting = paypalsetting();
         if ($bar_id == '') {
             redirect('home/claim_bar_owner_register');
@@ -1282,15 +1280,14 @@ class Home extends SPACULLUS_Controller {
 
         if ($coupon == "Cheers25") {
             if ($type == 'fullmug') {
-                $site_setting->amount = (string)((int)$site_setting->amount * 0.5);
-            }
-            else if ($type == 'managed') {
-                $site_setting->managed_account_amount = (string)((int)$site_setting->managed_account_amount * 0.5);
+                $site_setting->amount = (string) ((int) $site_setting->amount * 0.5);
+            } else if ($type == 'managed') {
+                $site_setting->managed_account_amount = (string) ((int) $site_setting->managed_account_amount * 0.5);
             }
         }
-        
+
         $data['coupon'] = $coupon;
-        
+
         $this->load->library('form_validation');
         $this->form_validation->set_rules('cc_type', 'Credit Card Type', 'required');
         $this->form_validation->set_rules('card_number', 'Card Number', 'required');
@@ -2557,7 +2554,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
-    function registration_step3_upgrade($bar_id = '', $type = '', $coupon='') {
+    function registration_step3_upgrade($bar_id = '', $type = '', $coupon = '') {
 
         $theme = getThemeName();
         $data['error'] = '';
@@ -2582,6 +2579,7 @@ class Home extends SPACULLUS_Controller {
         }
 
         $data['getbardata'] = $this->home_model->getBardata($bar_id);
+        $data['coupon'] = $coupon;
 
 
         $data['getbardatafeature'] = $this->home_model->getBardataTempFeature($bar_id);
@@ -2597,13 +2595,12 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-                
+
         if ($coupon == "Cheers25") {
             if ($type == 'fullmug') {
-                $data['site_setting']->amount = (string)((int)$data['site_setting']->amount * 0.5);
-            }
-            else if ($type == 'managed') {
-                $data['site_setting']->managed_account_amount = (string)((int)$data['site_setting']->managed_account_amount * 0.5);
+                $data['site_setting']->amount = (string) ((int) $data['site_setting']->amount * 0.5);
+            } else if ($type == 'managed') {
+                $data['site_setting']->managed_account_amount = (string) ((int) $data['site_setting']->managed_account_amount * 0.5);
             }
         }
 
@@ -4899,13 +4896,12 @@ class Home extends SPACULLUS_Controller {
             $data["bar_meta_description"] = $data['getbardata']['bar_meta_description'];
         } else {
             $bar_id = $this->session->userdata('viewid');
-            
-            if ($bar_id == '')
-            {
+
+            if ($bar_id == '') {
                 redirect('home');
             }
         }
-        
+
         $page_detail = meta_setting();
         $pageTitle = $page_detail->title;
         $metaDescription = $page_detail->meta_description;
@@ -4915,7 +4911,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-        
+
         $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
 
         if ($_POST) {
@@ -4924,12 +4920,12 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = validation_errors();
                 } else {
                     $data["error"] = "";
-                }           
-                
+                }
+
                 $data["bar_id"] = $this->input->post('bar_id');
                 $data["phone_number"] = $this->input->post('phone_number');
             } else {
-                
+
                 $bar_id = $this->input->post('bar_id');
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
@@ -4938,28 +4934,27 @@ class Home extends SPACULLUS_Controller {
                 $claim_code = rand(100000, 999999);
                 $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
                 $body = 'Here is your verification code for American Bars: ' . $claim_code;
-                
+
                 try {
-                    $client->account->messages->create($phone_number,
-                        array(  
-                            'from' => '+13102725642',
-                            'body' => $body,
-                        )
+                    $client->account->messages->create($phone_number, array(
+                        'from' => '+13102725642',
+                        'body' => $body,
+                            )
                     );
-                                    
+
                     $this->db->where('bar_id', $bar_id);
                     $this->db->update('bars', $bar_update);
                 } catch (Exception $e) {
                     $data["error"] = "Connectivity Error";
                 }
-                
+
                 if ($data["error"] == null) {
                     if ($this->input->post('temp_id') == "") {
                         redirect('home/claim_bar_owner_verify_code/' . "/" . base64_encode($bar_id));
                     } else {
                         $barid = $this->input->post('temp_id');
                         redirect('home/claim_bar_owner_verify_code/' . "/" . base64_encode($bar_id));
-                    }       
+                    }
                 }
             }
         }
@@ -4974,11 +4969,11 @@ class Home extends SPACULLUS_Controller {
         if (check_user_authentication() != '') {
             redirect('home');
         }
-        
+
         if ($bar_id == "") {
-           redirect('home');
+            redirect('home');
         }
-        
+
         $bar_id = base64_decode($bar_id);
 
         $theme = getThemeName();
@@ -5002,7 +4997,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-        
+
         $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
 
         if ($_POST) {
@@ -5017,15 +5012,13 @@ class Home extends SPACULLUS_Controller {
                 $bar_info = $this->db->get('bars')->row();
                 if ($bar_info != NULL) {
                     $code = $bar_info->claim_code;
-                    
+
                     if ($code == $this->input->post('code')) {
                         redirect('home/claimbar_owner_info/' . base64_encode($bar_id));
-                    }
-                    else {
+                    } else {
                         $data["error"] = "Invalid verification code.";
-                    }  
-                }
-                else {
+                    }
+                } else {
                     $data["error"] = "Internal Error";
                 }
             }
@@ -5073,7 +5066,7 @@ class Home extends SPACULLUS_Controller {
                 } else {
                     $data["error"] = "";
                 }
-            } else {        
+            } else {
                 $firstname = $this->input->post('firstname');
                 $lastname = $this->input->post('lastname');
                 $email = $this->input->post('email');
@@ -5098,7 +5091,7 @@ class Home extends SPACULLUS_Controller {
                 $data_insert_new['owner_name'] = $firstname . " " . $lastname;
                 $data_insert_new['email'] = $email;
                 $data_insert_new['claim'] = 'claimed';
-                $data_insert_new['owner_id'] = $uid;       
+                $data_insert_new['owner_id'] = $uid;
                 $data_insert_new['owner_type'] = 'bar_owner';
                 $data_insert_new['bar_meta_title'] = $data['getbardata']['bar_meta_title'];
                 $data_insert_new['bar_meta_keyword'] = $data['getbardata']['bar_meta_keyword'];
@@ -5108,10 +5101,10 @@ class Home extends SPACULLUS_Controller {
                 $this->db->update('bars', $data_insert_new);
                 $data['one_user'] = $this->home_model->get_availability($bar_id);
 
-                $this->session->set_userdata(array('user_id' => $uid));                
+                $this->session->set_userdata(array('user_id' => $uid));
                 $uid = base64_encode($uid);
                 $this->session->set_userdata(array('userid_sess' => $uid, 'user_type' => 'bar_owner'));
-                
+
                 $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Successfully Registration'");
                 $email_temp = $email_template->row();
                 $email_address_from = $email_temp->from_address;
@@ -5127,24 +5120,24 @@ class Home extends SPACULLUS_Controller {
                 $str = $email_message;
                 if ($email_temp->status == 'active') {
                     email_send($email_address_from, $email_address_reply, $email_to, $email_subject, $str);
-                }                
-                
+                }
+
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $data['getbardata']['claim_phone'];
                 $body = "Your American Bars profile login is\nUsername: " . $email . "\nPassword: " . $pass . "\nWelcome to American Bars, the largest bar customer network in the US.";
-                
+
                 try {
-                    $client->account->messages->create($phone_number,
-                        array(  
-                            'from' => '+13102725642',
-                            'body' => $body,
-                        )
-                    );                           
+                    $client->account->messages->create($phone_number, array(
+                        'from' => '+13102725642',
+                        'body' => $body,
+                            )
+                    );
                 } catch (Exception $e) {
+                    
                 }
-                
+
                 /* --------- E-mail To Super Admin ---- */
 
                 $email_template = $this->db->query("select * from " . $this->db->dbprefix('email_template') . " where task='Claim Bar'");
@@ -5192,7 +5185,7 @@ class Home extends SPACULLUS_Controller {
         if ($bar_id == '' || $uid == '') {
             redirect('home/');
         }
-        
+
         $theme = getThemeName();
         $data['error'] = '';
         $data["active_menu"] = '';
@@ -5207,7 +5200,7 @@ class Home extends SPACULLUS_Controller {
         $pageTitle = $page_detail->title;
         $metaDescription = $page_detail->meta_description;
         $metaKeyword = $page_detail->meta_keyword;
-        
+
         $bar_id = base64_decode($bar_id);
 
         $this->template->write('pageTitle', $pageTitle, TRUE);
@@ -5228,24 +5221,21 @@ class Home extends SPACULLUS_Controller {
             } else {
                 $btype = $this->input->post('btype');
                 $btypestr = 'halfmug';
-                if ($btype == 0)
-                {
+                if ($btype == 0) {
                     $btypestr = "halfmug";
-                } else if ($btype == 1)
-                {
+                } else if ($btype == 1) {
                     $btypestr = "fullmug";
-                } else if ($btype == 2)
-                {
+                } else if ($btype == 2) {
                     $btypestr = "managed";
                 }
                 $uid = $this->session->userdata('userid_sess');
                 $this->session->unset_userdata('viewid');
                 $this->session->unset_userdata('userid_sess');
-                
+
                 if ($btypestr == "halfmug") {
                     redirect('/home/success_page/' . $uid);
                 }
-                
+
 
                 redirect('home/registration_step3_upgrade/' . base64_encode($bar_id) . "/" . $btypestr);
             }
@@ -5256,7 +5246,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
-    
+
     function claimbar_registration_step5($uid) {
 
         if ($uid == '') {
@@ -5371,16 +5361,16 @@ class Home extends SPACULLUS_Controller {
         if (!check_user_authentication()) {
             redirect('home');
         }
-        
+
         if ($this->session->userdata('user_type') != 'bar_owner') {
             redirect('home');
         }
-        
+
         $bar_info = $this->home_model->get_bar_info(get_authenticateUserID());
         if ($bar_info['bar_type'] == 'half_mug') {
             redirect('home/dashboard');
         }
-        
+
         // cho "Fdsa";
         $this->load->library('fb_connect');
         $this->load->library('facebook');
@@ -5403,34 +5393,34 @@ class Home extends SPACULLUS_Controller {
         $data['page_name'] = "credit_card_update";
         $data['msg'] = $msg; //login fail message
         $this->form_validation->set_rules('comment', 'Comment');
-           
+
         $data['screener_name'] = $scrname;
-        
+
         $this->load->library('HybridAuthLib');
         $data['providers'] = $this->hybridauthlib->getProviders();
-        
-        foreach($data['providers'] as $provider=>$d) {
-                if ($d['connected'] == 1) {
-                        try {
-                            $service = $this->hybridauthlib->authenticate($provider);
-                            if ($service->isUserConnected()) {
-                                if (!Hybrid_Auth::storage()->get("hauth_session.$provider.account")) {
-                                    $profile = $service->getUserProfile();
-                                    if ($profile != null) {
-                                        $account_name = end(explode('/', $profile->identifier));
-                                        $data['providers'][$provider]['user_profile'] = $profile;
-                                        Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name);  
-                                    }
-                                }
-                            }      
-                             $data['providers'][$provider]['account'] = Hybrid_Auth::storage()->get("hauth_session.$provider.account");    
-                        } catch (Exception $e) {
-                        $data["error"] = "Couldn't authenticate with ".$provider. $e->getMessage();
-                        $data['providers'][$provider] = false;
+
+        foreach ($data['providers'] as $provider => $d) {
+            if ($d['connected'] == 1) {
+                try {
+                    $service = $this->hybridauthlib->authenticate($provider);
+                    if ($service->isUserConnected()) {
+                        if (!Hybrid_Auth::storage()->get("hauth_session.$provider.account")) {
+                            $profile = $service->getUserProfile();
+                            if ($profile != null) {
+                                $account_name = end(explode('/', $profile->identifier));
+                                $data['providers'][$provider]['user_profile'] = $profile;
+                                Hybrid_Auth::storage()->set("hauth_session.$provider.account", $account_name);
+                            }
+                        }
                     }
+                    $data['providers'][$provider]['account'] = Hybrid_Auth::storage()->get("hauth_session.$provider.account");
+                } catch (Exception $e) {
+                    $data["error"] = "Couldn't authenticate with " . $provider . $e->getMessage();
+                    $data['providers'][$provider] = false;
                 }
-                else {
-                }
+            } else {
+                
+            }
         }
 
         $this->template->write_view('header', $theme . '/common/header', $data, TRUE);
