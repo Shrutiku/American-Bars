@@ -8,7 +8,7 @@
      			<div class="login_block br_green_yellow" style="width: 90%;">
      				<div class="result_search"><br/>
                                     <div class="result_search_text" style="text-align: center">Welcome to American Bars!  Claim Your Bar Profile: 3 Easy Steps</div><br>
-                                      <img src="<?php echo base_url() . getThemeName(); ?>/images/americanbars.png" style="width:722;height:180;">  
+                                      <img src="<?php echo base_url() . getThemeName(); ?>/images/americanbars.png" style="max-width:100%;max-height:25;">  
      				</div>                            
                             <br><h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1: Search Your Bar Profile</h1>
                                                                                 <br>
