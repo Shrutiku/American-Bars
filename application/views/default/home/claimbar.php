@@ -7,7 +7,7 @@
      		<div class="result_box clearfix mar_top30bot20">
      			<div class="login_block br_green_yellow" style="width: 90%;">
      				<div class="result_search"><br/>
-                                    <div class="result_search_text" style="text-align: center">Welcome to American Bars!  Claim Your Bar Profile: 3 Easy Steps</div><br><br>
+                                    <div class="result_search_text" style="text-align: center">Welcome to American Bars!  Claim Your Bar Profile: 3 Easy Steps</div><br>
                                         
      				</div>                            
                                                       				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1: Search Your Bar Profile</h1>
