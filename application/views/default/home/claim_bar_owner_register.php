@@ -107,10 +107,7 @@ if ($msg != "" && $msg != "1V1" && !is_numeric($msg)) {
                                 <div class="clearfix"></div>
                                     <p class="bar_add">State : <?php echo @$state; ?></p>
                                 <div class="clearfix"></div>
-                                    <p class="bar_add">Zip Code : <?php echo @$zip; ?></p>
-                                <div class="clearfix"></div>
-                                    <p class="bar_add">Bar Description : <?php echo @$desc; ?></p>
-                                <div class="clearfix"></div>
+                                    <p class="bar_add">Zip Code : <?php echo @$zip; ?></p>                               
                                 <p class="bar_add col-sm-12"</p>
                                 
                                 <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
