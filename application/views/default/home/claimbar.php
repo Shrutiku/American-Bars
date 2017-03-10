@@ -10,7 +10,7 @@
                                     <div class="result_search_text" style="text-align: center">Welcome to American Bars!  Claim Your Bar Profile: 3 Easy Steps</div><br>
                                         
      				</div>                            
-                                                      				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1: Search Your Bar Profile</h1>
+                            <br><h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 1: Search Your Bar Profile</h1>
                                                                                 <br>
                                                                                 <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Step 2: Click on 'Claim This Bar' Button</h1>
                                                                                 <br>
@@ -19,7 +19,7 @@
                                                                                 
 
      				<div class="pad20">
-     				<h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Start Here With Step 1: </h1>
+                                    <h1 class="yellow_title padb10 br_bott_gray" style="text-align: center;">Start Here With Step 1: </h1><br><br>
 					<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
                 			<div class=""><input type="text" name="bar_title_new"  id="bar_title_new" class="form-control bar_title_new" style="text-align: center" placeholder="Search by Bar Name, City or Zip"></div>
                     			<div class=""><button class="btn btn-lg btn-primary btn-block yellowlink" type="submit">Claim Your Bar Now!</button></div>
