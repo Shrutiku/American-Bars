@@ -30,10 +30,12 @@ $config =
 			),
 
 			"Google" => array (
-				"enabled" => false,
-				"keys"    => array ( "id" => "", "secret" => "" ),
+				"enabled" => true,
+				"keys"    => array ( "id" => "307988649375-kccgstqffmjds02p9ntb43o5f9g05607.apps.googleusercontent.com", "secret" => "XngMmE2_jRo_kFAAzL5G_3qg" ),
 			),
-
+			"Instagram" => array (
+				"enabled" => true,
+			),
 			"Facebook" => array (
 				"enabled" => true,
                                 "scope" => "manage_pages,publish_pages",
