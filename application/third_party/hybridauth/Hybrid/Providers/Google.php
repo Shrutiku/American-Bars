@@ -316,8 +316,8 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
                 "object.originalContent" => $status->message, 
                 "object.attachments[].url" => $status->picture);
 
-            $repsponse = $this->api->post("https://www.googleapis.com/plusDomains/v1/people/$user_id/activities", $params);
+            $response = $this->api->post("https://www.googleapis.com/plusDomains/v1/people/$user_id/activities", $params);
             
-            throw new Exception($response);
+            throw new Exception($response->error);
         }   
 }
