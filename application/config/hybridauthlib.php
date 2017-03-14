@@ -31,7 +31,7 @@ $config =
 
 			"Google" => array (
 				"enabled" => true,
-                                "redirect_uri" => "https://sandbox.americanbars.com/huath/?hauth.done=Google",
+                                "redirect_uri" => "https://sandbox.americanbars.com/hauth/?hauth.done=Google",
 				"keys"    => array ( "id" => "307988649375-kccgstqffmjds02p9ntb43o5f9g05607.apps.googleusercontent.com", "secret" => "XngMmE2_jRo_kFAAzL5G_3qg" ),
 			),
 			"Instagram" => array (
