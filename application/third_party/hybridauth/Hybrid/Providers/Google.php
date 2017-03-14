@@ -64,13 +64,6 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
 
 		Hybrid_Auth::redirect($this->api->authorizeUrl($parameters));
 	}
-        
-          /**
-     * {@inheritdoc}
-     */
-    function loginFinish() {
-        $this->setUserConnected();
-    }
 
     /**
      * {@inheritdoc}
