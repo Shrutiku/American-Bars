@@ -10,7 +10,292 @@
     display: none;
 }
 .morelink {
-    display: block;Usstyle="background-color: #4CAF50;" class="review text-center"><b>Claim This Bar</b></a>
+    display: block;
+}
+span.required {
+    color: #B31010;
+    vertical-align: -4px;
+}
+</style>
+<style>
+	#gmap_marker {
+    height: 322px;
+    width: 100%;
+}
+ .gm-style-iw
+ {
+ 	color:#000000;
+ }
+</style>		
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
+
+
+<?php $theme_url = $urls= base_url().getThemeName();?>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/image_script.js"></script>
+<script type="text/javascript" src="<?php echo $theme_url; ?>/js/jquery_form.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/js/rating.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/assets/plugins/jquery-validation/dist/jquery.validate.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		
+		 $('#total-fav').click(function(){
+  	<?php if($this->session->userdata('user_type')=='taxi_owner'){?>
+  	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
+  	    	   $(".growlUI strong").empty();
+  	    	  return false;
+  	    <?php } ?> 
+		var flag = this.name;
+		var bid = '<?php echo $bar_detail["bar_id"]; ?>';
+		var uid = '<?php echo get_authenticateUserID(); ?>';
+		
+		// if(uid=="")
+		// {
+			// //window.location.href='<?php //echo site_url("beer/beer_likes/".$beer_detail["beer_id"]); ?>';
+			// //return false;
+		// }
+		
+	//	alert($('#sess_id').val())
+		if($('#sess_id').val()==0)
+		{
+			<?php $this->session->set_userdata("REDIRECT_PAGE","bar/details/".$bar_detail["bar_slug"]); ?>
+			$('#loginmodal').modal('show');
+			return false;
+		}
+		
+		$.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?>bar/bar_fav",         //the script to call to get data          
+        data: {bar_id: bid, user_id: uid, fav_flag:flag},
+	    dataType: '',                //data format      
+        success: function(data)          //on receive of reply		
+            {  
+			var main = data.split('*');
+			   if(main[0]==1){
+				  $('#total-fav').attr('name','0');
+				   $('#total-fav').html('Remove Favorite');
+				   $( "#total-fav" ).addClass( "active" );
+			   }
+			   else{
+				  $('#total-fav').attr('name','1');
+				   $('#total-fav').html('Add to My Bar List');
+				   $( "#total-fav" ).removeClass( "active" );
+				}
+		    } 
+		
+        });
+	});
+	$("#preview").hide();
+    // Configure/customize these variables.
+    var showChar = 600;  // How many characters are shown by default
+    var ellipsestext = "...";
+    var moretext = "Show more";
+    var lesstext = "Show less";
+    
+    $('.more').each(function() {
+        var content = $(this).html();
+ 
+        if(content.length > showChar) {
+ 
+            var c = content.substr(0, showChar);
+            var h = content.substr(showChar, content.length - showChar);
+ 
+            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink more pull-right"><i class="strip arrow_down"></i>' + moretext + '</a></span>';
+ 
+            $(this).html(html);
+        }
+ 
+    });
+  $(".morelink").click(function(){
+         $("#myModalnew_open").modal('show');
+    });
+    // $(".morelink").click(function(){
+        // if($(this).hasClass("less")) {
+            // $(this).removeClass("less");
+            // $(this).html(moretext);
+            // $(".morelink").html("<i class='strip arrow_down more'></i>View More..");
+        // } else {
+            // $(this).addClass("less");
+            // $(this).html("<i class='strip arrow_up more'></i>View Less..");
+        // }
+        // $(this).parent().prev().toggle();
+        // $(this).prev().toggle();
+        // return false;
+    // });
+});
+</script>
+
+<script type="text/javascript">
+$('#comment_title').live('click', function(e){
+    e.preventDefault();
+ });
+   $(document).ready(function()
+   {
+	  initialize_map();
+	  $('#menu').click(function() {
+		   $('.profile_menu').slideToggle("slow");
+	  });
+		        
+	  
+	  $('.sp_reply').live('click',function() 
+	  {
+			var uid = '<?php echo $this->session->userdata("user_id"); ?>';
+			if(uid!="")
+			{
+				var pr = $(this).parent();
+		        $('.post_block1',pr).slideDown("slow");
+			}
+			else
+			{
+				window.location.href='<?php echo site_url("home/login"); ?>';
+			}
+	 });
+  });
+  
+ 
+</script>
+
+<script type="text/javascript">
+
+  
+	 $(document).ready(function () 
+	 {
+		$('#star1').rating('www.url.php', {maxvalue:5});
+		$(".cancel").hide();
+	 });
+</script>
+
+<script language="javascript" type="text/javascript">
+
+
+	function limitText(limitField, limitCount, limitNum) 
+	{
+		content = document.getElementById('desc_post_card').value.replace(/\n/g, '<br>');
+  document.getElementById('paste_cont').innerHTML = content; 
+
+		
+			//$("#paste_cont").html(limitField.value);
+	}
+
+	function gettitle(val)
+	{
+		$("#title").html(val+'!');
+	}
+	
+	
+function fbShare(){
+	window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('<?php echo site_url('bar/details/'.$bar_detail['bar_slug']); ?>'),'facebook-share-dialog','width=626,height=436');
+            return false;
+}
+
+function twShare()
+{
+	var width  = 575,
+        height = 400,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = 'http://twitter.com/share?url=<?php echo site_url('bar/details/'.$bar_detail['bar_slug']); ?>',
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+}
+function gPlusShare1(url,name)
+    		{
+		var w=480;var h=380;
+		var x=Number((window.screen.width-w)/2);
+		var y=Number((window.screen.height-h)/2);
+		window.open('https://plus.google.com/share?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(name),'','width='+w+',height='+h+',left='+x+',top='+y+',scrollbars=no');
+		  
+    	}
+    	
+    	
+function piShare()
+{
+	var width  = 600,
+        height = 500,
+         left   = ($(window).width()  - width)  / 2,
+         top    = ($(window).height() - height) / 2,
+        url    = 'http://www.pinterest.com/pin/create/button/?url=<?php echo site_url('bar/details/'.$bar_detail['bar_slug']); ?>&media=<?php echo $img; ?>&description=<?php //echo $bar_detail['bar_desc']; ?>',
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'Pinterest', opts);
+ 
+    return false;
+}
+</script>
+<input type="hidden" name="sess_id" id="sess_id" value="<?php echo check_user_authentication()==""? '0':'1';?>" />
+<input type="hidden" name="beerval" id="beerval" value="0" />
+<input type="hidden" name="cocktailval" id="cocktailval" value="0" />
+<input type="hidden" name="liquorval" id="liquorval" value="0" />
+
+<!-- ########################################################################################### -->
+    
+    <div class="wrapper row5">
+      <div class="container">
+      	<div class="full_mug">
+     		<div class="result_search">
+     			<div class="pull-left">
+	     			<div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?>	</div>
+	            </div>
+     			<div class="pull-right">
+     				<div class="result_search_text full-icon marr_10"><?php if($bar_detail['claim']=='unclaimed'  && get_authenticateUserID()==''){?>
+                                    <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Register This Bar</b></a>
+						        	<?php } ?>Half Mug Bar</div>
+     				<div class="full-icon"><i class="strip halfmug"></i></div>
+                                
+	             </div>
+	             <div class="clearfix"></div>
+     		</div>
+     		<div class="br_bott_yellow">
+     			<div class="bar_details">
+     				<div class="media">
+						    <div class="pull-left left-img">
+						    <a class="widheig120 mar_bot10" href="#">
+						      	<?php
+		          		if($bar_detail['bar_logo']!="" && file_exists(base_path().'upload/barlogo_thumb/'.@$bar_detail['bar_logo']))
+					{?>
+		            	<img src="<?php echo base_url()?>/upload/barlogo_thumb/<?php echo $bar_detail['bar_logo']; ?>" alt="American Dive Bars"/>
+		            	<?php }  else { ?>
+		            			<img style="width: 120px; height: 120px;" src="<?php echo base_url()?>/upload/barlogo/no_image.png" alt="American Dive Bars"/>
+		            		<?php } ?>
+						    </a><div class="clearfix"></div>
+
+                                                
+						    <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
+											
+								if($cnt_like==2 && get_authenticateUserID()!=''){
+								?>
+								<a id="total-like" href="javascript:void(0);" name="2" class="btn mar_top15 btn-lg btn-primary">Like This Bar</i></a>
+								<?php
+											} elseif(get_authenticateUserID()!='') {?>
+											<a id="total-like" href="javascript:void(0);" name="<?php if($cnt_like==1){ echo $cnt_like=0;} else{ echo $cnt_like=1; } ?>" class="btn mar_top15 btn-lg btn-primary">
+											<?php if($cnt_like==1){ echo 'Like This Bar'; } else{ echo 'Already Liked'; } ?></i></a>
+											<?php } else { ?> 
+											<a id="total-like" href="javascript:void(0);" name="1" class="btn mar_top15 btn-lg btn-primary">
+											Like This Bar</a>
+								<?php  } ?> -->
+								<!-- <a id="total-fav" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn mart10">Add To Favoritess</a> -->
+								
+									<?php
+                                                                        		if(($bar_detail['claim']=='unclaimed')  && get_authenticateUserID()==''){?>
+                                                                <p></p>
+                                                                <div>
+                                    <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Claim This Bar</b></a>
 						        	 	</div><?php }
                                                                 
 						    		 if($this->session->userdata('user_type')!='bar_owner')
