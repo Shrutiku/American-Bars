@@ -1287,6 +1287,7 @@ class Home extends SPACULLUS_Controller {
         }
 
         $data['coupon'] = $coupon;
+        $data['amount'] = $site_setting->amount;
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('cc_type', 'Credit Card Type', 'required');
