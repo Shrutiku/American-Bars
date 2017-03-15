@@ -322,6 +322,6 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
             $url = "https://www.googleapis.com/plusDomains/v1/people/$user_id/activities";
 
             $response = $this->api->post($url, json_encode($params));
-            throw new Exception($url);
+            throw new Exception("$url");
         }   
 }
