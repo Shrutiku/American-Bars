@@ -314,8 +314,8 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
             $user_id = Hybrid_Auth::storage()->get("hauth_session.Google.account");
             $params = array('access_token' => $this->api->access_token, 
                 "object.originalContent" => $status['message'],
-                "content-type" =>
-                "application/x-www-form-urlencoded; charset=UTF-8");
+                "Content-Type" =>
+                "application/json");
             
             /*if ($status['picture'])
             {
