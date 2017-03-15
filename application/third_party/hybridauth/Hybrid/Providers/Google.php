@@ -312,10 +312,7 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
 
         function setUserStatus($status) {
             $user_id = Hybrid_Auth::storage()->get("hauth_session.Google.account");
-            $params = array('access_token' => $this->api->access_token, 
-                "object.originalContent" => $status['message'],
-                "Content-Type" =>
-                "application/json");
+            $params = array("object.originalContent" => $status['message']);
             
             /*if ($status['picture'])
             {
