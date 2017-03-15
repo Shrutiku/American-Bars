@@ -315,12 +315,12 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
             $params = array('access_token' => $this->api->access_token, 
                 "object.originalContent" => $status['message']);
             
-            if ($status['picture'])
+            /*if ($status['picture'])
             {
                 $params = array_merge($params, array("object.attachments[].url" => $status['picture']));
-            }
+            }*/
 
             $response = $this->api->post("https://www.googleapis.com/plusDomains/v1/people/$user_id/activities", $params);
-            throw new Exception($response);
+            throw new Exception(print_r($response));
         }   
 }
