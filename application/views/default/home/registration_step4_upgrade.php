@@ -138,8 +138,8 @@
                       
      				<div class="pad20">
 					<?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
-							echo form_open('home/registration_step4_upgrade/'.$bar_id."/$type"."/$coupon",$attributes); ?>	
-	     					
+							echo form_open('home/registration_step4_upgrade/'.$bar_id."/$type/$coupon",$attributes); ?>	
+                                    <script>console.log('<?php echo $coupon;?>');</script>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3">
 	        				 		<label class="control-label">Credit Card Type : <span class="aestrick"> * </span></label>
