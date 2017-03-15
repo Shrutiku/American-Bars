@@ -249,7 +249,7 @@ class HAuth extends CI_Controller {
                 }
             }
             
-            //redirect('/home/socialshare/'.$msg);
+            redirect('/home/socialshare/');
 	}
         
         public function page($provider, $id)
