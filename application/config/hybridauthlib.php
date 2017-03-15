@@ -31,7 +31,7 @@ $config =
 
 			"Google" => array (
 				"enabled" => true,
-                                "scope" => "https://www.googleapis.com/auth/plus.stream.write ". "https://www.googleapis.com/auth/plus.media.upload",
+                                "scope" => "https://www.googleapis.com/auth/plus.stream.write ",
                                 "redirect_uri" => "https://sandbox.americanbars.com/hauth/endpoint?hauth.done=Google",
 				"keys"    => array ( "id" => "307988649375-kccgstqffmjds02p9ntb43o5f9g05607.apps.googleusercontent.com", "secret" => "XngMmE2_jRo_kFAAzL5G_3qg" ),
 			),
