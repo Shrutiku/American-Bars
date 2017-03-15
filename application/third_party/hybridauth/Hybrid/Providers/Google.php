@@ -312,11 +312,11 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
 
         function setUserStatus($status) {
             $user_id = Hybrid_Auth::storage()->get("hauth_session.Google.account");
-            $params = array("object.originalContent" => $status['message']);
+            $params['object.originalContent'] = $status['message'];
             
             /*if ($status['picture'])
             {
-                $params = array_merge($params, array("object.attachments[].url" => $status['picture']));
+                $params['object.attachments[].url'] = $status['picture'];
             }*/
 
             $response = $this->api->post("https://www.googleapis.com/plusDomains/v1/people/$user_id/activities", $params);
