@@ -37,6 +37,7 @@ $config =
 			),
 			"Instagram" => array (
 				"enabled" => true,
+                                "keys"    => array ()
 			),
 			"Facebook" => array (
 				"enabled" => true,
