@@ -29,6 +29,7 @@ class Hybrid_Providers_Instagram extends Hybrid_Provider_Model_OAuth2
         function loginBegin() 
         {
             $this->setUserConnected();
+            redirect('home/socialshare');
         }
 
 	/**
