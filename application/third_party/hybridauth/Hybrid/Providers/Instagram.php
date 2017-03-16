@@ -18,7 +18,7 @@ class Hybrid_Providers_Instagram extends Hybrid_Provider_Model_OAuth2
 	*/
 	function initialize()
 	{
-		parent::initialize();
+		//parent::initialize();
                            
 		// Provider api end-points
 		//$this->api->api_base_url  = "https://api.instagram.com/v1/";
@@ -86,6 +86,7 @@ class Hybrid_Providers_Instagram extends Hybrid_Provider_Model_OAuth2
 				$uc->webSiteURL     = @$contactInfo->data->website;
 				$uc->photoURL       = @$contact->profile_picture;
 				$uc->displayName    = @$contact->full_name;
+                                
 				$uc->description	= @$contactInfo->data->bio;
 				//$uc->email          = ;
 				//
