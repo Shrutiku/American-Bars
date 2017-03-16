@@ -246,7 +246,7 @@ class OAuth2Client
     }
     if( $type == "PATCH" ){
       curl_setopt($ch, CURLOPT_POST, 1);
-      if($params) curl_setopt( $ch, CURLOPT_POSTFIELDS, $params );
+      if($params) curl_setopt( $ch, CURLOPT_POSTFIELDS, $urlEncodedParams );
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
     }
     $response = curl_exec($ch);
