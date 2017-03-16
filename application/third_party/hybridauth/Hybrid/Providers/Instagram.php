@@ -19,17 +19,23 @@ class Hybrid_Providers_Instagram extends Hybrid_Provider_Model_OAuth2
 	function initialize()
 	{
 		parent::initialize();
-
+                           
 		// Provider api end-points
-		$this->api->api_base_url  = "https://api.instagram.com/v1/";
-		$this->api->authorize_url = "https://api.instagram.com/oauth/authorize/";
-		$this->api->token_url     = "https://api.instagram.com/oauth/access_token";
+		//$this->api->api_base_url  = "https://api.instagram.com/v1/";
+		//$this->api->authorize_url = "https://api.instagram.com/oauth/authorize/";
+		//$this->api->token_url     = "https://api.instagram.com/oauth/access_token";
 	}
+        
+        function loginBegin() 
+        {
+            $this->setUserConnected();
+        }
 
 	/**
 	* load the user profile from the IDp api client
 	*/
 	function getUserProfile(){ 
+                return null;
 		$data = $this->api->api("users/self/" ); 
 
 		if ( $data->meta->code != 200 ){
