@@ -35,7 +35,7 @@ $html = '';
 
 
 
-$html .= '<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1.03); <!--margin-top: 1in; margin-left: -1in;-->">';
+$html .= '<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; <!--transform: rotate(90deg) scale(1.03); margin-top: 1in; margin-left: -1in;-->">';
 $html .='<div  style="width:3in; float: left;">
             <div style="float: left; padding-left: 6.25%; padding-top: 31.25%">
 
