@@ -51,7 +51,7 @@ $html .= '</div>';
  // die;
 $dompdf = new DOMPDF();
 $dompdf->load_html($html);
-$dompdf->set_paper('letter', 'portrait');
+// $dompdf->set_paper('letter', 'portrait');
 $dompdf->render();
 // 
 // print_r($dompdf->render());
