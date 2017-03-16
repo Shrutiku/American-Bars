@@ -320,8 +320,8 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
             }*/
             
             $url = "https://www.googleapis.com/plusDomains/v1/people/$user_id/activities";
-            $this->api->curl_header = array_merge($this->api->curl_header, "Content-Type: application/json");
-            $response = $this->api->post($url, $params);
+            $this->api->curl_header = array_merge($this->api->curl_header, array("Content-Type: application/json"));
+            $response = $this->api->post($url,  $params);
             throw new Exception(json_encode($response));
         }   
 }
