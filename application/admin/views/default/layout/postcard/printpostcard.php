@@ -27,7 +27,7 @@ $html = '';
             // </td>';
 // <img src="'.front_base_url().'default/images/post.png" style="float:left;" />$html .= '</tr></table>';
 // $html .= '<div>testestestestestestestestest</div>';
-$html .= '<div>';
+$html .= '<divstyle="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;">';
 $html .= 'test</div>';
 
 
