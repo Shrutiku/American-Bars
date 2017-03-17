@@ -20,7 +20,7 @@ function resizePreview(){
 //    case "html": 
 //      return "test/"+file;
 //    case "pdf":
-//      return "<?php echo $html2pdf; ?>&options[Attachment]=0&input_file="+file+"#toolbar=0&view=FitH&statusbar=0&messages=0&navpanes=0";
+//      return "<--<?php //echo $html2pdf; ?>&options[Attachment]=0&input_file="+file+"#toolbar=0&view=FitH&statusbar=0&messages=0&navpanes=0";
 //  }
 //}
 
