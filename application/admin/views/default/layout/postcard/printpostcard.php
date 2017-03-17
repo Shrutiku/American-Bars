@@ -1,7 +1,7 @@
 
 <?php require_once APPPATH.'/libraries/html2pdf/html2pdf.class.php';?>
 <?php
-global $_dompdf_show_warnings, $_dompdf_debug, $_DOMPDF_DEBUG_TYPES;
+ob_start();
 
 //$img = "http://www.placehold.it/175x132/EFEFEF/AAAAAA&text=no+image";
 
