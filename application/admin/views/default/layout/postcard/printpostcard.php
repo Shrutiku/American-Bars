@@ -36,11 +36,12 @@ $html = '';
 
 
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; border: solid 1px #996E13; <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
-$html .='<div style="width:2.6875in;rotate:90;">
+$html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"><div>
+    <div style="width:2.3125in;rotate:90;">
             <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; font-size: 16px;"><br>Stamp</div>
-            <div style="float: right; padding-top: 37.5%">
+            <div style="padding-top: 37.5%">
 
-              <div style="font-family: courier; text-align: center; font-size: 14px; padding-left: 6%">
+              <div style="font-family: courier; text-align: center; font-size: 12px; padding-left: 6%">
                               '.$one_order['bar_title'].' <br/>
                               '.$one_order['address'].' <br/>
                               '.$one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'].'        
@@ -48,16 +49,18 @@ $html .='<div style="width:2.6875in;rotate:90;">
 
             </div>
           </div>
-          <div  style="width:3.3125in; height:100%; float: left; border: solid 1px #996E13;rotate:90;">
+          <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"><div>
+          <div  style="width:2.9375in; height:100%; float: left; border: solid 1px #996E13;rotate:90;">
             <div style="padding-left: 6.25%; padding-top: 31.25%">
 
-              <h1 style="font-family: courier; font-weight: bold font-size: 20px; letter-spacing: .8px;">Dear Bar Owner,</h1>
+              <h1 style="font-family: courier; font-weight: bold font-size: 14px; letter-spacing: .8px;">Dear Bar Owner,</h1>
 
-               <p style="font-family: courier; font-size: 16px; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" >'.substr(nl2br($one_order['post_message']),0,100).'.....</p>
+               <p style="font-family: courier; font-size: 12px; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" >'.substr(nl2br($one_order['post_message']),0,100).'.....</p>
 
-                 <label style="font-family: courier; font-size: 22px; font-weight: bold; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>
+                 <label style="font-family: courier; font-size: 16px; font-weight: bold; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>
               </div>
-            </div>';
+            </div>
+        <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"><div>';
 $html .= '</div>';
  
 $html2pdf = new HTML2PDF('P', 'A4', 'en');
