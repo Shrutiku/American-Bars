@@ -1,5 +1,6 @@
 
 <?php require_once APPPATH.'/dompdf-master/dompdf_config.inc.php';?>
+r<?php require_once APPPATH.'/libraries/html2pdf/html2pdf.class.php';?>
 <?php
 global $_dompdf_show_warnings, $_dompdf_debug, $_DOMPDF_DEBUG_TYPES;
 
