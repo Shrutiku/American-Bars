@@ -1,5 +1,14 @@
-4.6.1 (2016-04-05)
-    Fix lowercase check on font-family value
+@todo :
+    improve string handling for UTF8
+    PHP 5.4 compatibility
+    Using Namespaces
+    all the classes have moved
+    all the classes have been renamed
+    new tag structure : one class per tag
+    better exception management
+    add unit testing
+    fix a infinite loop case when reading a svg path
+    add support 'start' attribute for ordered list
 
 4.6.0 (2016-03-30)
     Support 'start' attribute for ordered list
@@ -77,7 +86,7 @@
     amélioration sur createIndex
     harmonisation des noms des méthodes
     correction sur la gestion des textes
-    v4.00 uniquement : HTML2PDF est maintenant écrit en PHP5 et basé sur TCPDF (=> unicode, utf8, ...)
+    v4.00 uniquement : Html2Pdf est maintenant écrit en PHP5 et basé sur TCPDF (=> unicode, utf8, ...)
     v4.00 uniquement : utilisation de TCPDF pour les formulaires et les barcodes
     v4.00 uniquement : amélioration de la partie SVG (alpha)
 
@@ -134,7 +143,7 @@
     ATTENTION : la methode d'appel de CreateIndex a changé. Regardez l'exemple About !!!!
 
 3.22a (2009-06-16)
-    redistribution de HTML2PDF sous la licence LGPL !!! (au lieu de GPL)
+    redistribution de Html2Pdf sous la licence LGPL !!! (au lieu de GPL)
 
 3.22 (2009-06-08)
     correction sur le background-color
@@ -191,7 +200,7 @@
     pour la balise table, ajout de l'interprétation de align="center" et align="right" (cf exemple 1)
     correction dans le positionnement des images
     correction de quelques bugs
-    ajout d'une fonction d'analyse des ressources HTML2PDFgetTimerDebug (cf début du fichier html2pdf.class.php)
+    ajout d'une fonction d'analyse des ressources getTimerDebug (cf début du fichier html2pdf.class.php)
 
 3.14 (2008-11-17)
     ajout d'une langue (pt : Brazilian Portuguese language) et amelioration de la methode vueHTML (merci à Rodrigo)

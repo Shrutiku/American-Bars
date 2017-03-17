@@ -1,14 +1,19 @@
 <?php
 /**
- * HTML2PDF Library - example
+ * Html2Pdf Library - example
  *
- * HTML => PDF convertor
+ * HTML => PDF converter
  * distributed under the LGPL License
  *
  * @package   Html2pdf
  * @author    Laurent MINGUET <webmaster@html2pdf.fr>
  * @copyright 2016 Laurent MINGUET
  */
+require_once dirname(__FILE__).'/../vendor/autoload.php';
+
+use Spipu\Html2Pdf\Html2Pdf;
+use Spipu\Html2Pdf\Exception\Html2PdfException;
+use Spipu\Html2Pdf\Exception\ExceptionFormatter;
 
 if (isset($_SERVER['REQUEST_URI'])) {
     $generate = isset($_GET['make_pdf']);
@@ -47,31 +52,30 @@ Ceci est un exemple de génération de PDF via un bouton :)<br>
 <img src="<?php echo $url; ?>" alt="image_php" ><br>
 <br>
 <?php
-    if ($generate) {
+if ($generate) {
 ?>
 Bonjour <b><?php echo $nom; ?></b>, ton nom peut s'écrire : <br>
 <barcode type="C39" value="<?php echo strtoupper($nom); ?>" style="color: #770000" ></barcode><hr>
 <br>
 <?php
-    }
+}
 ?>
 <br>
 <?php
-    if ($generate) {
-        $content = ob_get_clean();
-        require_once(dirname(__FILE__).'/../vendor/autoload.php');
-        try
-        {
-            $html2pdf = new HTML2PDF('P', 'A4', 'fr');
-            $html2pdf->writeHTML($content);
-            $html2pdf->Output('exemple09.pdf');
-            exit;
-        }
-        catch(HTML2PDF_exception $e) {
-            echo $e;
-            exit;
-        }
+if ($generate) {
+    $content = ob_get_clean();
+
+    try {
+        $html2pdf = new Html2Pdf('P', 'A4', 'fr');
+        $html2pdf->writeHTML($content);
+        $html2pdf->Output('exemple09.pdf');
+        exit;
+    } catch (Html2PdfException $e) {
+        $formatter = new ExceptionFormatter($e);
+        echo $formatter->getHtmlMessage();
+        exit;
     }
+}
 ?>
         <form method="get" action="">
             <input type="hidden" name="make_pdf" value="">
