@@ -36,7 +36,7 @@ $html = '';
 
 
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; border: solid 1px #996E13; <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
-$html .='<div  style="width:3.2in; height:100%; float: left; border: solid 1px #996E13;rotate:270;">
+$html .='<div  style="width:3in; height:100%; float: left; border: solid 1px #996E13;rotate:270;">
             <div style="padding-left: 6.25%; padding-top: 31.25%">
 
               <h1 style="font-family: courier; font-weight: bold font-size: 20px; letter-spacing: .8px;">Dear Bar Owner,</h1>
@@ -46,7 +46,7 @@ $html .='<div  style="width:3.2in; height:100%; float: left; border: solid 1px #
                  <label style="font-family: courier; font-size: 22px; font-weight: bold; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>
               </div>
             </div>
-          <div style="width:2.8in;rotate:270;">
+          <div style="width:2.5in;rotate:270;">
 
             <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; font-size: 16px;"><br>Stamp</div>
             <div style="float: right; padding-top: 37.5%">
