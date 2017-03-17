@@ -37,11 +37,11 @@ $html = '';
 
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; border: solid 1px #996E13; <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
 $html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
-    <div style="width:2.3125in;rotate:90;">
+    <div style="width:2.3125in;rotate:90; height:100%;">
             <div style="text-align: center; border: solid 1px #996E13; width: 100%; height: 1.5in; font-size: 12px;"></div>
             <div style="text-align: center; width: 100%;">
 
-              <div style="font-family: courier; text-align: center; font-size: 11px; width:100%;">
+              <div style="font-family: courier; text-align: center; font-size: 11px; width:100%; padding-right: 10%;">
                               '.$one_order['bar_title'].' <br/>
                               '.$one_order['address'].' <br/>
                               '.$one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'].'        
@@ -56,7 +56,7 @@ $html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E
 
               <p style="font-family: courier; font-weight: bold; font-size: 16px; letter-spacing: .8px;">Dear Bar Owner,</p>
 
-               <p style="font-family: courier; font-size: 14px; letter-spacing: .8px;text-align: justify;" >'.substr(nl2br($one_order['post_message']),0,100).'.....<br></p>
+               <p style="font-family: courier; font-size: 14px; letter-spacing: .8px;text-align: justify;" >'.substr(nl2br($one_order['post_message']),0,150).'.....<br></p>
 
                  <p style="font-family: courier; font-size: 16px; font-weight: bold; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</p>
               </div>
