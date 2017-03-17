@@ -38,7 +38,7 @@ $html = '';
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; border: solid 1px #996E13; <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
 $html .= '<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
         <div style="width:2.3125in;rotate:90; height:100%;">
-            <div style="text-align: left; border: solid 1px #996E13; width: 1.5in; height: 100%; font-size: 12px; rotate:90;"></div>
+            <div style="text-align: left; border: solid 1px #996E13; width: 1.5in; font-size: 12px; rotate:90;"></div>
               <div style="font-family: courier; text-align: center; font-size: 11px; border: solid 1px #996E13; "><p>
                               '.$one_order['bar_title'].' <br/>
                               '.$one_order['address'].' <br/>
