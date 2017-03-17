@@ -39,11 +39,13 @@ $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; 
 $html .= '<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
         <div style="width:2.3125in;rotate:90; height:100%;">
             <div style="border: solid 1px #996E13; width: 100%; height:1.5in;"></div>
-              <div style="font-family: courier; text-align: right; font-size: 11px; border: solid 1px #996E13; "><p>
+            <div style="align: left;">
+              <div style="font-family: courier; text-align: center; font-size: 11px; border: solid 1px #996E13; "><p>
                               '.$one_order['bar_title'].' <br/>
                               '.$one_order['address'].' <br/>
                               '.$one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'].'</p>
-                </div>
+                </div><
+              /div>
         </div>
           <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
           <div style="width:2.9375in; height:100%; border: solid 1px #996E13;rotate:90;">
