@@ -56,9 +56,9 @@ $html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E
 
               <p style="font-family: courier; font-weight: bold; font-size: 16px; letter-spacing: .8px;">Dear Bar Owner,</p>
 
-               <p style="font-family: courier; font-size: 14px; letter-spacing: .8px;text-align: justify;" >'.substr(nl2br($one_order['post_message']),0,150).'.....<br></p>
+               <p style="font-family: courier; font-size: 14px; letter-spacing: .8px;text-align: left;" >'.substr(nl2br($one_order['post_message']),0,150).'.....<br></p>
 
-                 <p style="font-family: courier; font-size: 16px; font-weight: bold; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</p>
+                 <p style="font-family: courier; font-size: 16px; font-weight: bold; text-align: center; color: #4CAF50;"><br>To read the rest of this message, claim your bar with this code:<br>'.$code.'</p>
               </div>
             </div>
         <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>';
