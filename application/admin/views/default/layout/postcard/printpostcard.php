@@ -36,19 +36,15 @@ $html = '';
 
 
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; border: solid 1px #996E13; <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
-$html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
-    <div style="width:2.3125in;rotate:90; height:100%;">
+$html .= '<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
+        <div style="width:2.3125in;rotate:90; height:100%;">
             <div style="text-align: center; border: solid 1px #996E13; width: 100%; height: 1.5in; font-size: 12px;"></div>
-            <div style="text-align: center; width: 100%; border: solid 1px #996E13; ">
-
               <div style="font-family: courier; text-align: center; font-size: 11px; width:100%; border: solid 1px #996E13; ">
                               '.$one_order['bar_title'].' <br/>
                               '.$one_order['address'].' <br/>
                               '.$one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'].'        
-              </div>
-
-            </div>
-          </div>
+                </div>
+        </div>
           <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
           <div  style="width:2.9375in; height:100%; float: left; border: solid 1px #996E13;rotate:90;">
             <div style="text-align: center; border: solid 1px #996E13; width: 100%; height: .75in; font-size: 16px;"></div>
