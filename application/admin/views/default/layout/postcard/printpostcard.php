@@ -36,7 +36,7 @@ $html = '';
 
 
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; border: solid 1px #996E13; <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
-$html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"><div>
+$html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
     <div style="width:2.3125in;rotate:90;">
             <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; font-size: 16px;"><br>Stamp</div>
             <div style="padding-top: 37.5%">
@@ -49,7 +49,7 @@ $html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E
 
             </div>
           </div>
-          <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"><div>
+          <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>
           <div  style="width:2.9375in; height:100%; float: left; border: solid 1px #996E13;rotate:90;">
             <div style="padding-left: 6.25%; padding-top: 31.25%">
 
@@ -60,7 +60,7 @@ $html .='<div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E
                  <label style="font-family: courier; font-size: 16px; font-weight: bold; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>
               </div>
             </div>
-        <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"><div>';
+        <div style="width:.25in; height:100%;rotate:90; border: solid 1px #996E13"></div>';
 $html .= '</div>';
  
 $html2pdf = new HTML2PDF('P', 'A4', 'en');
