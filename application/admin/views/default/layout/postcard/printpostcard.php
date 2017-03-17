@@ -35,7 +35,7 @@ $html = '';
 
 
 
-$html .= '<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; margin: 100px auto; transform: rotate(90deg) scale(1.03);">';
+$html .= '<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; margin: 100px auto; <!--transform: rotate(90deg) scale(1.03);-->">';
 $html .='<div  style="width:3in; float: left;">
             <div style="float: left; padding-left: 6.25%; padding-top: 31.25%">
 
@@ -61,18 +61,22 @@ $html .='<div  style="width:3in; float: left;">
           </div>';
 $html .= '</div>';
  
- // print_r($html);
- // die;
-$dompdf = new DOMPDF();
-$dompdf->load_html($html);
-$dompdf->set_paper('letter', 'portrait');
-$dompdf->render();
+$html2pdf = new HTML2PDF('P', 'A4', 'en');
+$html2pdf->writeHTML($html);
+$html2pdf->Output('Postcard.pdf')
+
+// print_r($html);
+// die;
+//$dompdf = new DOMPDF();
+//$dompdf->load_html($html);
+//$dompdf->set_paper('letter', 'portrait');
+//$dompdf->render();
 // 
 // print_r($dompdf->render());
 // die;
 
 
-	  $dompdf->stream("Postcard.pdf", array("Attachment"=>"1"));
+//	  $dompdf->stream("Postcard.pdf", array("Attachment"=>"1"));
 
 
 ?>
