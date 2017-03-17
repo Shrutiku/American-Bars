@@ -41,12 +41,12 @@ $html .='<div  style="width:3in; float: left;">
 
               <h1 style="font-family: courier; font-weight: bold font-size: 20px; letter-spacing: .8px;">Dear Bar Owner,</h1>
 
-               <p style="font-family: courier; font-size: 16px; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" >'.substr(nl2br($one_order['post_message']),0,100).'</p>
+               <p style="font-family: courier; font-size: 16px; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" >'.substr(nl2br($one_order['post_message']),0,100).'.....</p>
 
                  <label style="font-family: courier; font-size: 22px; font-weight: bold; float:left; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>
               </div>
             </div>
-          <div style="float: right;">
+          <div style="width:3in; float: right;">
 
             <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
             <div style="float: right; padding-top: 37.5%">
