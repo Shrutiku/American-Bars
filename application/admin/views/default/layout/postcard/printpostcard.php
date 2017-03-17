@@ -39,11 +39,11 @@ $html .= '<div style="width:6in; height:4in; font-family: courier; color: #000; 
 $html .='<div  style="width:3in; float: left;">
             <div style="float: left; padding-left: 6.25%; padding-top: 31.25%">
 
-              <h1 style="font-family: courierB;  font-size: 20px; letter-spacing: .8px;">Dear Bar Owner,</h1>
+              <h1 style="font-family: courier; font-weight: bold font-size: 20px; letter-spacing: .8px;">Dear Bar Owner,</h1>
 
                <p style="font-family: courier; font-size: 16px; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" >'.substr(nl2br($one_order['post_message']),0,100).'</p>
 
-                 <label style="font-family: courierB; font-size: 22px; float:left; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>
+                 <label style="font-family: courier; font-size: 22px; font-weight: bold; float:left; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>
               </div>
             </div>
           <div style="float: right;">
