@@ -5,24 +5,24 @@ function resizePreview(){
   preview.height($(window).height() - preview.offset().top - 2);
 }
 
-function getPath(hash) {
-  var file, type;
-  var parts = hash.split(/,/);
-  
-  file = parts[0];
-  
-  if (parts.length == 2) {
-    type = parts[1];
-  }
-  
-  switch(type) {
-    default:
-    case "html": 
-      return "test/"+file;
-    case "pdf":
-      return "<?php echo $html2pdf; ?>&options[Attachment]=0&input_file="+file+"#toolbar=0&view=FitH&statusbar=0&messages=0&navpanes=0";
-  }
-}
+//function getPath(hash) {
+//  var file, type;
+//  var parts = hash.split(/,/);
+//  
+//  file = parts[0];
+//  
+//  if (parts.length == 2) {
+//    type = parts[1];
+//  }
+//  
+//  switch(type) {
+//    default:
+//    case "html": 
+//      return "test/"+file;
+//    case "pdf":
+//      return "<?php echo $html2pdf; ?>&options[Attachment]=0&input_file="+file+"#toolbar=0&view=FitH&statusbar=0&messages=0&navpanes=0";
+//  }
+//}
 
 function setHash(hash) {
   location.hash = "#"+hash;
