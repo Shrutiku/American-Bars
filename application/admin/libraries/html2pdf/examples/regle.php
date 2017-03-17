@@ -1,30 +1,59 @@
 <?php
 /**
- * Html2Pdf Library - example
+ * HTML2PDF Librairy - example
  *
- * HTML => PDF converter
+ * HTML => PDF convertor
  * distributed under the LGPL License
  *
- * @package   Html2pdf
- * @author    Laurent MINGUET <webmaster@html2pdf.fr>
- * @copyright 2016 Laurent MINGUET
+ * @author      Laurent MINGUET <webmaster@html2pdf.fr>
+ *
+ * isset($_GET['vuehtml']) is not mandatory
+ * it allow to display the result in the HTML format
  */
-require_once dirname(__FILE__).'/../vendor/autoload.php';
 
-use Spipu\Html2Pdf\Html2Pdf;
-use Spipu\Html2Pdf\Exception\Html2PdfException;
-use Spipu\Html2Pdf\Exception\ExceptionFormatter;
+    // get the HTML
+     ob_start();
+?>
+<style type="text/css">
+<!--
+    table
+    {
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-right: solid 0.2mm black;
+    }
+    td
+    {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
 
-try {
-    ob_start();
-    include dirname(__FILE__).'/res/regle.php';
-    $content = ob_get_clean();
+    img
+    {
+        width: 10mm;
+    }
+-->
+</style>
+<page>
+<table cellpadding="0" cellspacing="0"><tr>
+<?php for($k=0; $k<28; $k++) echo '<td><img src="./res/regle.png" alt="" ><br>'.$k.'</td>'; ?>
+</tr></table>
+</page>
+<?php
+     $content = ob_get_clean();
 
-    $html2pdf = new Html2Pdf('L', 'A4', 'fr', true, 'UTF-8', 10);
-    $html2pdf->pdf->SetDisplayMode('fullpage');
-    $html2pdf->writeHTML($content);
-    $html2pdf->Output('regle.pdf');
-} catch (Html2PdfException $e) {
-    $formatter = new ExceptionFormatter($e);
-    echo $formatter->getHtmlMessage();
-}
+    // convert to PDF
+    require_once(dirname(__FILE__).'/../html2pdf.class.php');
+    try
+    {
+        $html2pdf = new HTML2PDF('L', 'A4', 'fr', true, 'UTF-8', 10);
+        $html2pdf->pdf->SetDisplayMode('fullpage');
+        $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
+        $html2pdf->Output('regle.pdf');
+    }
+    catch(HTML2PDF_exception $e) {
+        echo $e;
+        exit;
+    }

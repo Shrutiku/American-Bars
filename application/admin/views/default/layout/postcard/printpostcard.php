@@ -1,5 +1,5 @@
 
-<?php require_once APPPATH.'/libraries/html2pdf/src/Html2Pdf.php';?>
+<?php require_once APPPATH.'/libraries/html2pdf/html2pdf.class.php';?>
 <?php
 global $_dompdf_show_warnings, $_dompdf_debug, $_DOMPDF_DEBUG_TYPES;
 
@@ -61,7 +61,7 @@ $html .='<div  style="width:3in; float: left;">
           </div>';
 $html .= '</div>';
  
-$html2pdf = new Html2Pdf('P', 'A4', 'en');
+$html2pdf = new HTML2PDF('P', 'A4', 'en');
 $html2pdf->writeHTML($html);
 $html2pdf->Output('Postcard.pdf')
 

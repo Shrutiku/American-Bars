@@ -1,44 +1,3 @@
-@todo :
-    improve string handling for UTF8
-    PHP 5.4 compatibility
-    Using Namespaces
-    all the classes have moved
-    all the classes have been renamed
-    new tag structure : one class per tag
-    better exception management
-    add unit testing
-    fix a infinite loop case when reading a svg path
-    add support 'start' attribute for ordered list
-
-4.6.0 (2016-03-30)
-    Support 'start' attribute for ordered list
-    Enable RTL languages support
-    Add a fallback support for images
-
-4.5.1 (2016-03-03)
-    Support the "inherit" value for font-family
-    Allow the HTML font tag to define a color attribute
-    Support for max-width and max-height attributes for images
-    Fix "border: 0" being displayed
-
-4.5.0 (2015-12-18)
-    add tag 'end_last_page' with property 'end_height'. Update example 5 to use it
-    better composer.json file
-    update TCPDF from 5.0.002 to v6.2.12 => important changes. See the TCPDF changelogs
-
-4.4.0 (2015-12-11)
-    includes a new attribute to page tag 'hideheader' which accepts a list of pages that gonna skip header.
-    some doc fixes, rephrasing and removing french words
-    add composer management
-    Update autoload type
-    README more readable
-    add automatic generation of pdf test files
-      script ./test/generate.sh
-      You must have the html2pdf folder in http:/localhost/html2pdf/
-    fix: Set default font from PDF_FONT_NAME_MAIN constant from TCPDF, if available
-    fix: Make space-collapsing regexp Unicode-aware
-    fix: some pbs on examples to generate them automatically
-
 4.03 (2011-05-27)
     correction de l'exemple "form.php" : vulnérabilité cross-site scripting corrigée
     correction sur la gestion des retours à la ligne automatique
@@ -86,7 +45,7 @@
     amélioration sur createIndex
     harmonisation des noms des méthodes
     correction sur la gestion des textes
-    v4.00 uniquement : Html2Pdf est maintenant écrit en PHP5 et basé sur TCPDF (=> unicode, utf8, ...)
+    v4.00 uniquement : HTML2PDF est maintenant écrit en PHP5 et basé sur TCPDF (=> unicode, utf8, ...)
     v4.00 uniquement : utilisation de TCPDF pour les formulaires et les barcodes
     v4.00 uniquement : amélioration de la partie SVG (alpha)
 
@@ -143,7 +102,7 @@
     ATTENTION : la methode d'appel de CreateIndex a changé. Regardez l'exemple About !!!!
 
 3.22a (2009-06-16)
-    redistribution de Html2Pdf sous la licence LGPL !!! (au lieu de GPL)
+    redistribution de HTML2PDF sous la licence LGPL !!! (au lieu de GPL)
 
 3.22 (2009-06-08)
     correction sur le background-color
@@ -200,7 +159,7 @@
     pour la balise table, ajout de l'interprétation de align="center" et align="right" (cf exemple 1)
     correction dans le positionnement des images
     correction de quelques bugs
-    ajout d'une fonction d'analyse des ressources getTimerDebug (cf début du fichier html2pdf.class.php)
+    ajout d'une fonction d'analyse des ressources HTML2PDFgetTimerDebug (cf début du fichier html2pdf.class.php)
 
 3.14 (2008-11-17)
     ajout d'une langue (pt : Brazilian Portuguese language) et amelioration de la methode vueHTML (merci à Rodrigo)

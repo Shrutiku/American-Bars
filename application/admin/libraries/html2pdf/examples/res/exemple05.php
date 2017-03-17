@@ -25,15 +25,6 @@ td.col1
     text-align: right;
 }
 
-end_last_page div
-{
-    border: solid 1mm red;
-    height: 27mm;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-weight: bold;
-}
 -->
 </style>
 <span style="font-size: 20px; font-weight: bold">Démonstration des retour à la ligne automatique, ainsi que des sauts de page automatique<br></span>
@@ -58,16 +49,16 @@ end_last_page div
         </tr>
     </thead>
 <?php
-for ($k=0; $k<50; $k++) {
+    for ($k=0; $k<50; $k++) {
 ?>
-<tr>
-    <td><?php echo $k; ?></td>
-    <td>test de texte assez long pour engendrer des retours à la ligne automatique...</td>
-    <td>test de texte assez long pour engendrer des retours à la ligne automatique...</td>
-    <td>test de texte assez long pour engendrer des retours à la ligne automatique...</td>
-</tr>
+    <tr>
+        <td><?php echo $k; ?></td>
+        <td>test de texte assez long pour engendrer des retours à la ligne automatique...</td>
+        <td>test de texte assez long pour engendrer des retours à la ligne automatique...</td>
+        <td>test de texte assez long pour engendrer des retours à la ligne automatique...</td>
+    </tr>
 <?php
-}
+    }
 ?>
     <tfoot>
         <tr>
@@ -78,8 +69,3 @@ for ($k=0; $k<50; $k++) {
     </tfoot>
 </table>
 Cool non ?<br>
-<end_last_page end_height="30mm">
-    <div>
-        Ceci est un test de fin de page
-    </div>
-</end_last_page>
