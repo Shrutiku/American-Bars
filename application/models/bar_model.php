@@ -3873,7 +3873,25 @@ if(file_exists(base_path().'upload/bar_eventgallery_thumb_250by150/'.$preImg[$ke
 		}
 //		print_r($qry);die;
 	}
+	
+        function get_all_bar_likers_ids($id=0){
+		$this->db->select('a.user_id');
+		$this->db->from('all_likes a');		
+		$this->db->join('user_master u','u.user_id=a.user_id');
+		$this->db->where('a.bar_id',$id);
+		$this->db->where('like_flag',1);
+		$this->db->order_by('date_added','asc');
+		$this->db->group_by('user_id');
+		$qry = $this->db->get();
 		
+		// echo $this->db->last_query();
+		// die;
+		if($qry->num_rows() >0){
+			return $qry->result();
+		}
+//		print_r($qry);die;
+	}
+        
     function getBarLikersCount($keyword)
 	{
 		

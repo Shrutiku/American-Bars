@@ -30,10 +30,15 @@ $config =
 			),
 
 			"Google" => array (
-				"enabled" => false,
-				"keys"    => array ( "id" => "", "secret" => "" ),
+				"enabled" => true,
+                                "scope" => "https://www.googleapis.com/auth/plus.stream.write https://www.googleapis.com/auth/plus.login",
+                                "redirect_uri" => "https://sandbox.americanbars.com/hauth/endpoint?hauth.done=Google",
+				"keys"    => array ( "id" => "307988649375-kccgstqffmjds02p9ntb43o5f9g05607.apps.googleusercontent.com", "secret" => "XngMmE2_jRo_kFAAzL5G_3qg" ),
 			),
-
+			"Instagram" => array (
+				"enabled" => true,
+                                "keys"    => array ("id" => "", "secret" => "")
+			),
 			"Facebook" => array (
 				"enabled" => true,
                                 "scope" => "manage_pages,publish_pages",

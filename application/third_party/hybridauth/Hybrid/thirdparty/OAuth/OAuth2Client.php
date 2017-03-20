@@ -223,7 +223,7 @@ class OAuth2Client
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT , $this->curl_connect_time_out );
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER , $this->curl_ssl_verifypeer );
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST , $this->curl_ssl_verifyhost );
-    curl_setopt($ch, CURLOPT_HTTPHEADER     , $this->curl_header );
+    curl_setopt($ch, CURLOPT_HTTPHEADER     , $this->curl_header);
 
     if ($this->curl_compressed){
       curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");
@@ -246,7 +246,7 @@ class OAuth2Client
     }
     if( $type == "PATCH" ){
       curl_setopt($ch, CURLOPT_POST, 1);
-      if($params) curl_setopt( $ch, CURLOPT_POSTFIELDS, $params );
+      if($params) curl_setopt( $ch, CURLOPT_POSTFIELDS, $urlEncodedParams );
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
     }
     $response = curl_exec($ch);

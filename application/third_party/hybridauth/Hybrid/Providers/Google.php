@@ -63,7 +63,15 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
 		}
 
 		Hybrid_Auth::redirect($this->api->authorizeUrl($parameters));
-	}
+	}   
+
+    /**
+     * {@inheritdoc}
+     */
+    function logout() {
+        parent::logout();
+    }
+
 
 	/**
 	 * {@inheritdoc}
@@ -302,4 +310,18 @@ class Hybrid_Providers_Google extends Hybrid_Provider_Model_OAuth2 {
 		return $url;
 	}
 
+        function setUserStatus($status) {
+            //$user_id = Hybrid_Auth::storage()->get("hauth_session.Google.account");
+            //$params = array('object.originalContent' => $status['message']);
+            
+            /*if ($status['picture'])
+            {
+                $params['object.attachments[].url'] = $status['picture'];
+            }*/
+            
+            //$url = "https://www.googleapis.com/plusDomains/v1/people/$user_id/activities";
+            //$this->api->curl_header = array_merge($this->api->curl_header, array("Content-Type: application/json"));
+            //$response = $this->api->post($url,  $params);
+            //throw new Exception(json_encode($response));
+        }   
 }

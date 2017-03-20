@@ -206,6 +206,12 @@ foreach ($providers as $provider => $d) {
                 consumer_key: 'cu7KN3VKR9fqyPzVxaPpUEaVi', //String: consumer key. make sure to have your app read-only
                 consumer_secret: '3B6uwOEyAMeCEXcKA0lIJCyhwCdQrvM0aSIATeWkUSPtAtXofZ' //String: consumer secret key. make sure to have your app read-only
             },
+            // GOOGLEPLUS
+            google:{
+                 accounts: ['<?php echo!empty($providers['Google']['account']) ? "#" . $providers['Google']['account'] : ''; ?>'],                //Array: Specify a list of accounts from which to pull posts
+                 limit: 20,                                  //Integer: max number of posts to load
+                 access_token: 'AIzaSyAFuf13JKDdpBpeKtpGZ7rHRwSw4l052Qw'//String: G+ access token
+             },
             // INSTAGRAM
              /*instagram:{
              accounts: ['<?php echo!empty($providers['Instagram']['account']) ? "#" . $providers['Instagram']['account'] : ''; ?>'],  //Array: Specify a list of accounts from which to pull posts
