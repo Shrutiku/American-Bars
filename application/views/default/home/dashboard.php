@@ -384,7 +384,7 @@ B.show();
 	        				 		<label class="control-label">Address : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<textarea rows="5" placeholder="Address" name="address" id="address" class="form-control form-pad"><?php echo @$getalldata->address; ?></textarea>
+	                           		<textarea rows="3" placeholder="Address" name="address" id="address" class="form-control form-pad"><?php echo @$getalldata->address; ?></textarea>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -393,7 +393,7 @@ B.show();
 	        				 		<label class="control-label">Description :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<textarea rows="5" placeholder="Description" name="desc" id="desc" class="form-control ckeditor form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
+	                           		<textarea rows="10" placeholder="Description" name="desc" id="desc" class="form-control form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>

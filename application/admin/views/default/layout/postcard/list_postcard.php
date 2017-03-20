@@ -1,51 +1,51 @@
 
 <script type="text/javascript">
-function resizePreview(){
-  var preview = $("#preview");
-  preview.height($(window).height() - preview.offset().top - 2);
-}
-
-function getPath(hash) {
-  var file, type;
-  var parts = hash.split(/,/);
-  
-  file = parts[0];
-  
-  if (parts.length == 2) {
-    type = parts[1];
-  }
-  
-  switch(type) {
-    default:
-    case "html": 
-      return "test/"+file;
-    case "pdf":
-      return "<?php echo $dompdf; ?>&options[Attachment]=0&input_file="+file+"#toolbar=0&view=FitH&statusbar=0&messages=0&navpanes=0";
-  }
-}
-
-function setHash(hash) {
-  location.hash = "#"+hash;
-}
-
-$(function(){
-  var preview = $("#preview");
-  resizePreview();
-
-  $(window).scroll(function() {
-    var scrollTop = Math.min($(this).scrollTop(), preview.height()+preview.parent().offset().top) - 2;
-    preview.css("margin-top", scrollTop + "px");
-  });
-
-  $(window).resize(resizePreview);
-  
-  var hash = location.hash;
-  var type = "html";
-  if (hash) {
-    hash = hash.substr(1);
-    preview.attr("src", getPath(hash));
-  }
-});
+//function resizePreview(){
+//  var preview = $("#preview");
+//  preview.height($(window).height() - preview.offset().top - 2);
+//}
+//
+////function getPath(hash) {
+////  var file, type;
+////  var parts = hash.split(/,/);
+////  
+////  file = parts[0];
+////  
+////  if (parts.length == 2) {
+////    type = parts[1];
+////  }
+////  
+////  switch(type) {
+////    default:
+////    case "html": 
+////      return "test/"+file;
+////    case "pdf":
+////      return "<--<?php //echo $html2pdf; ?>&options[Attachment]=0&input_file="+file+"#toolbar=0&view=FitH&statusbar=0&messages=0&navpanes=0";
+////  }
+////}
+//
+//function setHash(hash) {
+//  location.hash = "#"+hash;
+//}
+//
+//$(function(){
+//  var preview = $("#preview");
+//  resizePreview();
+//
+//  $(window).scroll(function() {
+//    var scrollTop = Math.min($(this).scrollTop(), preview.height()+preview.parent().offset().top) - 2;
+//    preview.css("margin-top", scrollTop + "px");
+//  });
+//
+//  $(window).resize(resizePreview);
+//  
+//  var hash = location.hash;
+//  var type = "html";
+//  if (hash) {
+//    hash = hash.substr(1);
+//    preview.attr("src", getPath(hash));
+//  }
+//});
 </script>
 <script type="text/javascript" language="javascript">
 	function delete_rec(id,redirectpage,option,keyword,bar_id,limit,offset)

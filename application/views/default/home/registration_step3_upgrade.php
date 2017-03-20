@@ -163,7 +163,7 @@ $exp = explode(',', @$getbardatafeature['feature_id']);
                             <div class="padtb8">
                                 <div class="col-sm-12 mart10">
                                         <!-- <input type="submit" name="step2" id="step2" value="Next" class="btn btn-lg btn-primary"/> -->
-                                    <a class="btn btn-lg btn-primary btn-next next-right" href="<?php echo site_url('home/registration_step4_upgrade/' . $bar_id . "/$type") ?>">Next <i class="next-arrow-icon"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-next next-right" href="<?php echo site_url('home/registration_step4_upgrade/' . $bar_id . "/$type"."/$coupon") ?>">Next <i class="next-arrow-icon"></i></a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

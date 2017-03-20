@@ -1,7 +1,7 @@
 
-<?php require_once APPPATH.'/dompdf-master/dompdf_config.inc.php';?>
+<?php require_once APPPATH.'/libraries/html2pdf/html2pdf.class.php';?>
 <?php
-global $_dompdf_show_warnings, $_dompdf_debug, $_DOMPDF_DEBUG_TYPES;
+ob_start();
 
 //$img = "http://www.placehold.it/175x132/EFEFEF/AAAAAA&text=no+image";
 
@@ -26,39 +26,57 @@ $html = '';
 //             
             // </td>';
 // <img src="'.front_base_url().'default/images/post.png" style="float:left;" />$html .= '</tr></table>';
+// $html .= '<div>testestestestestestestestest</div>';
+//$html .= '<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden; font-size: 11px;letter-spacing: .8px;">';
+//$html .= 'test</div>';
 
-$html .= '<div style="width:600px; height:300px; font-family: Calibri; margin:130px auto; border: solid 3px #CCCCCC; color: #000; overflow:hidden;  font-size: 11px;letter-spacing: .8px;">';
-$html .= '<table><tr><td  style="width:300px">';
-$html .='<div style="float: left;padding: 10px; border-right: solid 1px #996E13;padding-top: 0px;">
-  			<h1 style="font-family: Calibri;  font-size: 11px; letter-spacing: .8px;">Dear Bar Owner,</h1>
-  			<div style="font-family: Calibri; font-size: 11px;font-weight: normal;margin-bottom: 0;letter-spacing: .8px;text-align: justify;height: 215px; " >'.substr(nl2br($one_order['post_message']),0,1000).'</div>
-  			<label style="font-family: Calibri; margin-top:25px; font-size: 11px; 	font-weight: bold; float:left;">'.$one_order['post_title'].'</label>
-  			</div></td><td style="width:300px">
-  			<div style="float: left;padding: 10px; ">
-  			
-  			<div style="border: solid 1px #996E13;width: 95px;height: 100px;float: right; margin-left:150px; margin-top:-50px; padding: 10px;font-size: 16px;">Place Stamp Here</div>
-  			<div style="clear:both;"></div><br>
-  			<div style="font-family: Calibri; text-align: center; margin-top:20px; font-size: 11px;">
-	     							'.$one_order['bar_title'].' <br/>
-	     							'.$one_order['address'].' <br/>
-	     							'.$one_order['city']." ".$one_order['state']." ".$one_order['zipcode'].' 	     	
-  		</div>
-                <label style="font-family: Calibri; margin-top:25px; font-size: 11px; 	font-weight: bold; float:left;">Enter your code: '.$code.'</label>
-  		</div></td></tr></table>';
+
+
+
+
+
+$html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; <!--border: solid 1px #996E13;--> <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
+$html .= '<div style="width:.25in; height:100%;rotate:90; <!--border: solid 1px #996E13;-->"></div>
+        <div style="width:2.3125in;rotate:90; height:100%;">
+            <div style="<!--border: solid 1px #996E13;--> width: 100%; height:2in;"></div>
+            <div style="text-align: left;">
+              <div style="font-family: courier; text-align: center; font-size: 11px; <!--border: solid 1px #996E13;-->"><p>
+                              '.$one_order['bar_title'].' <br/>
+                              '.$one_order['address'].' <br/>
+                              '.$one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'].'</p>
+                </div></div>
+        </div>
+          <div style="width:.25in; height:100%;rotate:90; <!--border: solid 1px #996E13-->"></div>
+          <div style="width:2.9375in; height:100%; <!--border: solid 1px #996E13;-->rotate:90;">
+            <div style="text-align: center; <!--border: solid 1px #996E13;--> width: 100%; height: .75in; font-size: 16px;"></div>
+            <div style="">
+
+              <p style="font-family: courier; font-weight: bold; font-size: 16px; letter-spacing: .8px;">Dear Bar Owner,</p>
+
+               <p style="font-family: courier; font-size: 14px; letter-spacing: .8px;text-align: left;" >'.substr(nl2br($one_order['post_message']),0,150).'.....<br></p>
+
+                 <p style="font-family: courier; font-size: 16px; font-weight: bold; text-align: right; color: #4CAF50;"><br>To read the rest of this message, claim your bar with this code:<br>'.$code.'</p>
+              </div>
+            </div>
+        <div style="width:.25in; height:100%;rotate:90; <!--border: solid 1px #996E13-->"></div>';
 $html .= '</div>';
-// 
- // print_r($html);
- // die;
-$dompdf = new DOMPDF();
-$dompdf->load_html($html);
-$dompdf->set_paper('letter', 'portrait');
-$dompdf->render();
+ 
+$html2pdf = new HTML2PDF('P', 'A4', 'en');
+$html2pdf->writeHTML($html);
+$html2pdf->Output('Postcard.pdf')
+
+// print_r($html);
+// die;
+//$dompdf = new DOMPDF();
+//$dompdf->load_html($html);
+//$dompdf->set_paper('letter', 'portrait');
+//$dompdf->render();
 // 
 // print_r($dompdf->render());
 // die;
 
 
-	  $dompdf->stream("Postcard.pdf", array("Attachment"=>"1"));
+//	  $dompdf->stream("Postcard.pdf", array("Attachment"=>"1"));
 
 
 ?>

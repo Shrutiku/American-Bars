@@ -251,8 +251,12 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */  
     function setUserStatus($message) { 
-	$to_id_arr 	 = $this->getAllUser_Device('user');
-        $to_id_android =  $this->getAllUser_Device_android('user');
+        $CI =& get_instance();
+        $CI->load('custom_helper');
+        $bar_info = $this->home_model->get_bar_info(get_authenticateUserID());
+        $user_ids = get_all_bar_likers_ids($bar_info->bar_id);
+	$to_id_arr 	 = $this->getAllUser_Device_ById($user_ids);
+        $to_id_android =  $this->getAllUser_Device_android_ById($user_ids);
 		
         if($to_id_android){
         foreach($to_id_android as $row){
