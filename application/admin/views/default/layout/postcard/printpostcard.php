@@ -56,7 +56,7 @@ $html .= '<div style="width: 0in; height:100%;rotate:90; <!--border: solid 1px #
             <div style="text-align: center; <!--border: solid 1px #996E13;--> width: 100%; height: .75in; font-size: 16px;"></div>
             <div style="">
 
-              <p style="font-family: courier; font-weight: bold; font-size: 20px; letter-spacing: .8px;">Dear '$barowner',</p>
+              <p style="font-family: courier; font-weight: bold; font-size: 20px; letter-spacing: .8px;">Dear '.$barowner.',</p>
 
                <p style="font-family: courier; font-size: 16px; letter-spacing: .8px;text-align: left;" >'.substr(nl2br($one_order['post_message']),0,100).'.....<br></p>
 
