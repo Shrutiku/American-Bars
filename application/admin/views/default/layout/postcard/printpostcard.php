@@ -36,7 +36,7 @@ $html = '';
 
 
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; <!--border: solid 1px #996E13;--> <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
-$html .= '<div style="width:.25in; height:100%;rotate:90; <!--border: solid 1px #996E13;-->"></div>
+$html .= '<div style="width: 0in; height:100%;rotate:90; <!--border: solid 1px #996E13;-->"></div>
         <div style="width:2.3125in;rotate:90; height:100%;">
             <div style="<!--border: solid 1px #996E13;--> width: 100%; height:2in;"></div>
             <div style="text-align: left;">
@@ -58,7 +58,7 @@ $html .= '<div style="width:.25in; height:100%;rotate:90; <!--border: solid 1px 
                  <p style="font-family: courier; font-size: 16px; font-weight: bold; text-align: right; color: #4CAF50;"><br>To read the rest of this message, claim your bar with this code:<br>'.$code.'</p>
               </div>
             </div>
-        <div style="width:.25in; height:100%;rotate:90; <!--border: solid 1px #996E13-->"></div>';
+        <div style="width:.5in; height:100%;rotate:90; <!--border: solid 1px #996E13-->"></div>';
 $html .= '</div>';
  
 $html2pdf = new HTML2PDF('P', 'A4', 'en');
