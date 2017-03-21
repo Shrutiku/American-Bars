@@ -44,7 +44,7 @@ $barowner = '';
 $html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; <!--border: solid 1px #996E13;--> <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
 $html .= '<div style="width: 0in; height:100%;rotate:90; <!--border: solid 1px #996E13;-->"></div>
         <div style="width:2in;rotate:90; height:100%;">
-            <div style="<!--border: solid 1px #996E13;--> width: 100%; height:1in;"></div>
+            <div style="<!--border: solid 1px #996E13;--> width: 100%; height:1.5in;"></div>
             <div style="text-align: left;">
               <div style="font-family: courier; text-align: left; font-size: 16px; <!--border: solid 1px #996E13;-->"><p>
                               '.$one_order['bar_first_name']." ".$one_order['bar_last_name'].' <br/>
@@ -62,7 +62,7 @@ $html .= '<div style="width: 0in; height:100%;rotate:90; <!--border: solid 1px #
 
                <p style="font-family: courier; font-size: 16px; letter-spacing: .8px;text-align: left;" >'.substr(nl2br($one_order['post_message']),0,100).'.....<br></p>
 
-                 <p style="font-family: courier; font-size: 16px; font-weight: bold; text-align: right; color: #4CAF50;"><br>To read the rest of this message, claim your bar with this code:<br>'.$code.'</p>
+                 <p style="font-family: courier; font-size: 17px; font-weight: bold; text-align: right; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</p>
               </div>
             </div>
         <div style="width:.5in; height:100%;rotate:90; <!--border: solid 1px #996E13-->"></div>';
