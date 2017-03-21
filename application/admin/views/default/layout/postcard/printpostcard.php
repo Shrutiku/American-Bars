@@ -32,10 +32,12 @@ $html = '';
 
 
 
-$barowner .= "Bar Owner";
+$barowner = '';
 
         if ($one_order['bar_first_name'] !== "") {
             $barowner = $one_order['bar_first_name'];
+        } else {
+            $barowner = 'Bar Owner'
         }
 
 
