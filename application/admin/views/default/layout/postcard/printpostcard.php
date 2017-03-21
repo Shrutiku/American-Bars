@@ -47,7 +47,7 @@ $html .= '<div style="width: 0in; height:100%;rotate:90; <!--border: solid 1px #
             <div style="<!--border: solid 1px #996E13;--> width: 100%; height:1in;"></div>
             <div style="text-align: left;">
               <div style="font-family: courier; text-align: left; font-size: 16px; <!--border: solid 1px #996E13;-->"><p>
-                              '.$one_order['bar_first_name']."* ".$one_order['bar_last_name'].' <br/>
+                              '.$one_order['bar_first_name']." ".$one_order['bar_last_name'].' <br/>
                               '.$one_order['bar_title'].' <br/>
                               '.$one_order['address'].' <br/>
                               '.$one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'].'</p>
