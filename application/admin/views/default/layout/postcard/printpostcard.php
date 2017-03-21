@@ -46,8 +46,8 @@ $html .= '<div style="width: 0in; height:100%;rotate:90; <!--border: solid 1px #
                               '.$one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'].'</p>
                 </div></div>
         </div>
-          <div style="width:.5625in; height:100%;rotate:90; <!--border: solid 1px #996E13-->"></div>
-          <div style="width:2.9375in; height:100%; <!--border: solid 1px #996E13;-->rotate:90;">
+          <div style="width:.5in; height:100%;rotate:90; <!--border: solid 1px #996E13-->"></div>
+          <div style="width:3in; height:100%; <!--border: solid 1px #996E13;-->rotate:90;">
             <div style="text-align: center; <!--border: solid 1px #996E13;--> width: 100%; height: .75in; font-size: 16px;"></div>
             <div style="">
 
