@@ -250,7 +250,7 @@ function piShare()
       	<div class="full_mug">
      		<div class="result_search">
      			<div class="pull-left">
-	     			<div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?><b style="color:#3b5998;border:3px; border-style:solid; border-color:#3b5998;"><?php echo "    ".($bar_detail['followers'] + count($bar_liker))." Followers";?></b></div>
+	     			<div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?><b style="color:#3b5998;padding-left:1em;border:2px; border-style:solid; border-color:#3b5998;"><?php echo "    ".($bar_detail['followers'] + count($bar_liker))." Followers ";?></b></div>
 	            </div>
      			<div class="pull-right">
      				<div class="result_search_text full-icon marr_10"><?php if($bar_detail['claim']=='unclaimed'  && get_authenticateUserID()==''){?>
