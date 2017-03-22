@@ -47,6 +47,7 @@
      		<div class="result_search">
      			<div class="pull-left">
 	     			<div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?></div>
+                                <div class="result_search_text"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?>	</div>
 	     			
 	            </div>
 	            
