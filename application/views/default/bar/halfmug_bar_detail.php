@@ -252,8 +252,8 @@ function piShare()
      			<div class="pull-left">
                                     <div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?>
                                         <b style="padding-left:1em;"></b>
-                                        <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="max-width: 2%;max-height: 2%;">
-                                <b style="color:black;font-weight: normal;font-size:14px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
+                                        <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="max-width: 1%;max-height: 1%;">
+                                <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
                             </div>
 	            </div>
      			<div class="pull-right">
