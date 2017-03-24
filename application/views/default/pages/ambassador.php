@@ -1,7 +1,5 @@
-<div style="padding: 100px">
+<div style="padding: 20px">
     <div class="container">
-     	<div class="beer_details">
-     		<div class="result_search">
 <h1 class="productbar_title mar_top20 padding-10"><center>Become an American Bars Ambassador</center></h1><br/>
 <h3><center>Start Making Money Today</center></h3><br/>
 <p>You can earn hundreds or thousands of dollars a month.  Really, you can!</p>
@@ -23,4 +21,4 @@ And, if you sign up 100 bars, $2500 a month!<br/>
 </ol>
 <p>It’s that easy!  Interested?  Click here!</p>
 
-</div></div></div></div>
+</div></div></div>
