@@ -46,9 +46,9 @@
      	<div class="container">
      		<div class="result_search">
      			<div class="pull-left">
-                            <div class="result_search_text">
+                            <div class="result_search_text review text-center full-icon marr_10">
                                 <?php echo "Welcome to " .$bar_detail['bar_title'];?><b style="padding-left:1em;"></b>
-                                <div style="white-space:nowrap;display: inline-block;"><img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 2%;height: 2%;display: inline-block;white-space:nowrap;"></div>
+                                <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 2%;height: 2%;">
                                 <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
                             </div>	     			
 	            </div>
