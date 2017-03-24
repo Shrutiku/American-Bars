@@ -6,11 +6,11 @@
 <p>Let me show you how.</p>
 <p>For every bar you recruit as a full mug, paying member to American Bars, you get paid $50.  Then, you get paid $25 a month, for the life of the account if you do the following:</p>
 <p>Contact the bar and make sure they update their events, specials, and beverage list and photo gallery.  All of this can be done in less than 15 min.  That is an hourly rate of $100 per hour on average.</p>
-<h2><center><b>If you recruit 10 bars, you can make $250 a month.<br/>
+<h3><center><b>If you recruit 10 bars, you can make $250 a month.<br/>
 20 Bars makes you $500 a month.<br/>
 50 Bars makes you $1250 a month.<br/>
 And, if you sign up 100 bars, $2500 a month!<br/>
-</center></b></h2>
+</center></b></h3><br/>
 <p>How do you get started?  It is easy:</p>
 <ol type="1">
     <li>Fill out our application online.</li>
