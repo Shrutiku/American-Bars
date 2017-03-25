@@ -49,7 +49,7 @@
                             <div class="result_search_text">
                                 <?php echo "Welcome to " .$bar_detail['bar_title'];?>
                                 <b style="padding-left:1em;"></b>
-                                <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 1.5%;height: 1.5%;margin-top: -5px;">
+                                <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 1.5%;height: 1.5%;text-align: left;">
                                 <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
                             </div>	     			
 	            </div>
