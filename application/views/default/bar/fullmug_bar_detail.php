@@ -48,7 +48,7 @@
      			<div class="pull-left">
                             <div class="result_search_text">
                                 <b style="font-size: 30px;"><?php echo "Welcome to " .$bar_detail['bar_title'];?></b>
-                                <b style="padding-left:20em;"></b>
+                                <b style="padding-left:18em;"></b>
                                 <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 1.5%;height: 1.5%;margin-top: -5px;">
                                 <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
                             </div>	     			
