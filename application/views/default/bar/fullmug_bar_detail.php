@@ -68,7 +68,6 @@
 											<a id="total-like" href="javascript:void(0);" name="1" class="review text-center full-icon marr_10">
 											Like This Bar</a>
 								<?php  } ?>
-                    <a style="text-decoration: none;" id="view-all" href="javascript://" class="review text-center full-icon marr_10">Who Likes This Bar</a>
                     
      				<div class="result_search_text full-icon marr_10">Full Mug Bar</div>
      				<div class="full-icon"><i class="strip fullmug"></i></div>
