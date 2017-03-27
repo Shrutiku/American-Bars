@@ -42,8 +42,8 @@ class Home extends SPACULLUS_Controller {
         $this->load->model('bar_model');
         $this->load->model('user_model');
         $this->load->helper("cookie");
-        $this->load->library('fb_connect');
         $this->config->load('facebook');
+        $this->load->library('fb_connect');
 //
 //
         $getpaypalsetting = paypalsetting();
@@ -68,7 +68,7 @@ class Home extends SPACULLUS_Controller {
 
     public function index($msg = '') {
 
-        //echo "<script language=\"javascript\">alert('test');</script>";
+        //echo "<script l$this->fb_connectanguage=\"javascript\">alert('test');</script>";
         //$this->cart->destroy();
         $data = array();
         $data['msg'] = $msg;
@@ -4651,15 +4651,12 @@ class Home extends SPACULLUS_Controller {
     }
 
     function facebook() {
-                        show_error("facebook starts", 200);
         //  $this->load->library('upload');
         if (!$this->fb_connect->fbSession) {
             redirect('home');
         } else {
             $fb_uid = $this->fb_connect->user_id;
             $fb_usr = $this->fb_connect->user;
-
-                show_error("fb_Connected", 200);
 
             $accessToken = '';
 
@@ -4675,8 +4672,6 @@ class Home extends SPACULLUS_Controller {
                 }
 
                 $usr = $this->home_model->get_user_by_fb_uid($fb_uid, $email);
-
-                show_error(json_encode($usr), 200);
 
                 if ($usr) {
                     $this->_facebook_validate($fb_uid, $email, $accessToken);
