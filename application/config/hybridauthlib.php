@@ -67,7 +67,7 @@ $config =
 			),
                     
                     	"PushNotifications" => array (
-				"enabled" => false,
+				"enabled" => true,
 			),
 
 			"Foursquare" => array (

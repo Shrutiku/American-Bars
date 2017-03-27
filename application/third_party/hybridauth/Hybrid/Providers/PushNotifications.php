@@ -257,6 +257,8 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         $user_ids = get_all_bar_likers_ids($bar_info->bar_id);
 	$to_id_arr 	 = $this->getAllUser_Device_ById($user_ids);
         $to_id_android =  $this->getAllUser_Device_android_ById($user_ids);
+        
+        throw new Exception(json_encode($to_id_arr));
 		
         if($to_id_android){
         foreach($to_id_android as $row){
