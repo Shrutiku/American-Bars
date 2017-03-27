@@ -4651,6 +4651,7 @@ class Home extends SPACULLUS_Controller {
     }
 
     function facebook() {
+                        show_error("facebook starts", 200);
         //  $this->load->library('upload');
         if (!$this->fb_connect->fbSession) {
             redirect('home');
