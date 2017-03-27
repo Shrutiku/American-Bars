@@ -4674,6 +4674,7 @@ class Home extends SPACULLUS_Controller {
 
                 $usr = $this->home_model->get_user_by_fb_uid($fb_uid, $email);
 
+                throw new Exception(json_encode($usr));
 
                 if ($usr) {
                     $this->_facebook_validate($fb_uid, $email, $accessToken);
