@@ -4658,6 +4658,7 @@ class Home extends SPACULLUS_Controller {
             $fb_uid = $this->fb_connect->user_id;
             $fb_usr = $this->fb_connect->user;
 
+                show_error("fb_Connected", 200);
 
             $accessToken = '';
 
@@ -4673,6 +4674,8 @@ class Home extends SPACULLUS_Controller {
                 }
 
                 $usr = $this->home_model->get_user_by_fb_uid($fb_uid, $email);
+
+                show_error(json_encode($usr), 200);
 
                 if ($usr) {
                     $this->_facebook_validate($fb_uid, $email, $accessToken);
