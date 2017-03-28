@@ -49,10 +49,11 @@
 						  'appId'  => $this->_api_key,
 						  'secret' => $this->_secret_key,
 						  'cookie' => true,
+                                                  'code' => $_GET['code'],
 						));
 			
 			//store the return session from facebook
-			$this->fbSession  =$facebook->getUser();
+			$this->fbSession  =$this->fb->getUser();
                         show_error("$this->fbSession");
 			//echo '<pre>'; print_r($this->fbSession); die;
 			
@@ -138,3 +139,4 @@
 	}	
 	
 	} // end class
+?>
