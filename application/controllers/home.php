@@ -1338,6 +1338,7 @@ class Home extends SPACULLUS_Controller {
                     //	print_r($PayFlow->getResponse())."SD";
                     //die;
                     $res = $PayFlow->getResponse();
+                    show_error(json_encode($res), 200);
                     $is_managed = 'no';
                     if ($type == 'managed') {
                         $is_managed = 'yes';
