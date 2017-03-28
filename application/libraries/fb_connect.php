@@ -94,7 +94,7 @@
             array(
                 //'scope'         => 'email,user_birthday,user_location,user_work_history,user_hometown',
                 'scope'         => 'email,user_friends, public_profile',
-                'redirect_uri'  =>  site_url("/home/facebook/")
+                'redirect_uri'  =>  site_url("/home/facebook")
             )
     );
 				$this->fbLoginURL =  $loginUrl   ;
