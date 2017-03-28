@@ -168,7 +168,7 @@
 										<td><?php 
                                                                                 if (strlen($postcard_message) > 75) {
                                                                                     $postcard_message_short = substr($postcard_message, 0, 75);
-                                                                                    echo '<p class="shorttext">'.$postcard_message_short.'....</p><a href="#" class="readmore">Read More</a><span class="alltext" style="display:none;">'.$postcard_message.'</span>';
+                                                                                    echo '<p id="#shorttext">'.$postcard_message_short.'....<a href="#" id="#readmore">Read More</a></p><span id="#alltext" style="display:none;">'.$postcard_message.'</span>';
                                                                                 }
                                                                                 if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }
                                                                                 
@@ -656,7 +656,6 @@ $(document).ready(function(){
             
             document.getElementById("alltext").style.display = "inline";
             document.getElementById("shorttext").style.display = "none";
-            document.getElementById("readmore").style.display = "none";
 //            $(this).find('span.alltext').show();
 //            $(this).find('p.shorttext').hide();
 //            $(this).find('a.readmore').hide();
