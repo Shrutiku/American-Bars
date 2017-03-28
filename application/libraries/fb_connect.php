@@ -49,7 +49,8 @@
 						  'appId'  => $this->_api_key,
 						  'secret' => $this->_secret_key,
 						  'cookie' => true,
-                                                  'code' => $_GET['code'],
+                                                  'default_graph_version' => 'v2.2',
+                                                  // 'code' => $_GET['code'],
 						));
 			
 			//store the return session from facebook
