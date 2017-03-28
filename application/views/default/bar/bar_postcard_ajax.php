@@ -14,8 +14,8 @@
 									<th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
 									<th>Title</th>
 									<th>Description</th>
-									<th>First</th>
-									<th>Last</th>
+									<th>First Name</th>
+									<th>Last Name</th>
 									<!-- <th>Barname</th> -->
 									<!-- <th>Email</th> -->
 									<th>Download</th>
