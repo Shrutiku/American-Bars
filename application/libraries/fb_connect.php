@@ -31,7 +31,6 @@
 		//constructor method.
 		function Fb_connect()
 		{
-                    show_error("fuck");
 			//Using the CodeIgniter object, rather than creating a copy of it
 			$this->_obj =& get_instance();
 			
