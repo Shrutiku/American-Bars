@@ -96,10 +96,10 @@ $barowner = '';
 
 ?>
 
-<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1.05); margin-top: 1in; margin-left: -1in;">
+<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1); margin-top: 1in; margin-left: -1in;">
 
   <div  style="width:3.25in; float: left;">
-    <div style="float: left; padding-left: 2%; padding-top: 25%">
+    <div style="float: left; padding-left: 3%; padding-top: 25%">
       <h1 style="font-family: Calibri;  font-size: 20px; letter-spacing: .8px;">Dear <?php echo $barowner;?>,</h1>
       <p style="font-family: Calibri; font-size: 16px; font-weight: normal; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" ><?php echo substr(nl2br($one_order['post_message']),0,100);?><!--Max 100 Characters-->
       </p>
