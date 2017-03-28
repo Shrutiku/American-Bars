@@ -99,7 +99,7 @@ $barowner = '';
 <div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1.03); margin-top: 1in; margin-left: -1in;">
 
   <div  style="width:3.25in; float: left;">
-    <div style="float: left; padding-left: 6.25%; padding-top: 31.25%">
+    <div style="float: left; padding-left: 1%; padding-top: 25%">
       <h1 style="font-family: Calibri;  font-size: 20px; letter-spacing: .8px;">Dear <?php echo $barowner;?>,</h1>
       <p style="font-family: Calibri; font-size: 16px; font-weight: normal; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" ><?php echo substr(nl2br($one_order['post_message']),0,100);?><!--Max 100 Characters-->
       </p>
@@ -116,7 +116,7 @@ $barowner = '';
             <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
             <?php echo $one_order['bar_title'];?><br/>
             <?php echo $one_order['address'];?><br/>
-            <?php echo $one_order['city']." ".$one_order['state'].", ".$one_order['zipcode'];?>       
+            <?php echo $one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'];?>       
       </div>
     </div>
   </div>
