@@ -7,6 +7,7 @@
     #i2{ background:#000000; padding:100px;}
 </style>
 <div id="i2" style="border-radius: 50px 50px 50px 50px;">
+    <img src="sm-logo.gif" style=" border:1px solid black">
 <div id="i1" style=" width:800px;margin:0 auto; padding: 80pt;border-radius: 30px 30px 30px 30px;">
 <script data-startup="american-bars" src="https://angel.co/javascripts/embed_jobs.js" id="angellist_embed" async></script>
 </div>
