@@ -4652,9 +4652,10 @@ class Home extends SPACULLUS_Controller {
 
     function facebook() {
         //  $this->load->library('upload');
-        show_error("FUCK");
         if (!$this->fb_connect->fbSession) {
             redirect('home');
+show_error("FUCK");
+
         } else {
             $fb_uid = $this->fb_connect->user_id;
             $fb_usr = $this->fb_connect->user;
