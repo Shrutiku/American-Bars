@@ -2,9 +2,9 @@
 <style>
     #i1{background:#F5ECCE; border-radius: 30px 30px 30px 30px;}
     .productbar_title mar_top20 padding-10{
-        background-image:url('C:\Users\SHRUTI\Documents\images');
+        background-image:url('C:\Users\SHRUTI\Documents\images.jpg');
     }
-    #i2{ background-image:url('images'); padding:100px;}
+    #i2{ background-image:url('C:\Users\SHRUTI\Documents\images'); padding:100px;}
 </style>
 <div id="i2">
 <div id="i1" style=" width:800px;margin:0 auto; padding: 80pt;border-radius: 30px 30px 30px 30px;">
