@@ -107,7 +107,7 @@ $barowner = '';
     </div>
   </div>
     
-    <div style="width:0.25in;"></div> <!-- Padding for divider -->
+    <div style="width:0.2in;"></div> <!-- Padding for divider -->
 
   <div style="width:2.5in; float: right;">
     <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
