@@ -7,7 +7,7 @@
     #i2{ background:#000000; padding:100px;}
 </style>
 <div id="i2" style="border-radius: 50px 50px 50px 50px;">
-    <img  src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" style=" border:1px solid black">
+    <img src="http://engineeredtaxservices.com/wp-content/uploads/2011/07/Job-Opportunities-Engineered-Tax-Services.jpg" style="align:center;width:504px;height:252px;">
 <div id="i1" style=" width:800px;margin:0 auto; padding: 80pt;border-radius: 30px 30px 30px 30px;">
 <script data-startup="american-bars" src="https://angel.co/javascripts/embed_jobs.js" id="angellist_embed" async></script>
 </div>
