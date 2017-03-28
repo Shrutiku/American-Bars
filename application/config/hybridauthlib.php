@@ -42,7 +42,7 @@ $config =
 			"Facebook" => array (
 				"enabled" => true,
                                 "scope" => "manage_pages,publish_pages",
-				"keys"    => array ( "id" => "322878041237170", "secret" => "90f2a242f65cd83c3fb2a581dd778f92" ),
+				"keys"    => array ( "id" => "1701973756705217", "secret" => "4ff05d99e4c0264d3df574bf9f44d033" ),
 			),
 
 			"Twitter" => array (
