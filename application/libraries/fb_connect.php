@@ -49,11 +49,11 @@
 						  'appId'  => $this->_api_key,
 						  'secret' => $this->_secret_key,
 						  'cookie' => true,
+                                                  'default_graph_version' => 'v2.4',
 						));
 			
 			//store the return session from facebook
-			$this->fbSession  =$this->fb->getUser(); 
-			
+			$this->fbSession  =$this->fb->getUser();
 			//echo '<pre>'; print_r($this->fbSession); die;
 			
 			$me = null;
@@ -94,7 +94,7 @@
             array(
                 //'scope'         => 'email,user_birthday,user_location,user_work_history,user_hometown',
                 'scope'         => 'email,user_friends, public_profile',
-                'redirect_uri'  =>  site_url("/home/facebook/")
+                'redirect_uri'  =>  site_url("/home/facebook")
             )
     );
 				$this->fbLoginURL =  $loginUrl   ;
@@ -138,3 +138,4 @@
 	}	
 	
 	} // end class
+?>
