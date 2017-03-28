@@ -138,12 +138,13 @@
 										<td><?php if($event->post_title=='Your Bar is Awesome'){ echo "Awesome"; } else { echo "Sucks"; }?></td>
 										<td><?php 
                                                                                 
-                                                                                if (strlen($postcard_message) > 75) {
-                                                                                    $postcard_message_short = substr($postcard_message, 0, 75);
-                                                                                    echo '<p class="shorttext">'.$postcard_message_short.'....</p><a href="#" class="readmore">Read More</a><span class="alltext">'.$postcard_message.'</span>';
-                                                                                }
+//                                                                                if (strlen($postcard_message) > 75) {
+//                                                                                    $postcard_message_short = substr($postcard_message, 0, 75);
+//                                                                                    echo '<p class="shorttext">'.$postcard_message_short.'....</p><a href="#" class="readmore">Read More</a><span class="alltext">'.$postcard_message.'</span>';
+//                                                                                }
                                                                                 
-                                                                                // if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }
+//                                                                                 if(strlen($postcard_message)>50) { echo substr($postcard_message, 0,50)."...."; } else { echo $postcard_message; }
+                                                                                echo $postcard_message;
                                                                                 
                                                                                 ?></td>
 										<td><?php echo ucwords($event->first_name);?></td>
@@ -166,12 +167,12 @@
 										<td><?php if($event->post_title=='Your Bar is Awesome'){ echo "Awesome"; } else { echo "Sucks"; }?></td>
 										<td><?php echo ucwords($event->bar_title);?></td>
 										<td><?php 
-                                                                                if (strlen($postcard_message) > 75) {
-                                                                                    $postcard_message_short = substr($postcard_message, 0, 75);
-                                                                                    echo '<p id="#shorttext">'.$postcard_message_short.'....<a href="#" id="#readmore">Read More</a></p><span id="#alltext" style="display:none;">'.$postcard_message.'</span>';
-                                                                                }
-                                                                                if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }
-                                                                                
+//                                                                                if (strlen($postcard_message) > 75) {
+//                                                                                    $postcard_message_short = substr($postcard_message, 0, 75);
+//                                                                                    echo '<p id="#shorttext">'.$postcard_message_short.'....<a href="#" id="#readmore">Read More</a></p><span id="#alltext" style="display:none;">'.$postcard_message.'</span>';
+//                                                                                }
+//                                                                                if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }
+                                                                                echo $postcard_message;
                                                                                 ?></td>
 										
 										<th>
