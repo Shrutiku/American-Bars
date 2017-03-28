@@ -96,7 +96,7 @@ $barowner = '';
 
 ?>
 
-<div style="width:5.75in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1); margin-top: 1in; margin-left: -1in;">
+<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1); margin-top: 1in; margin-left: -1in;">
 
   <div  style="width:3.25in; float: left;">
     <div style="float: left; padding-left: 6.25%; padding-top: 31.125%">
@@ -110,8 +110,8 @@ $barowner = '';
     <!--<div style="width:0.2in;"></div> <!-- Padding for divider -->
 
   <div style="width:2.5in; float: right;">
-    <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
-    <div style="padding-top: 37.5%">
+    <!--<div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>-->
+    <div style="padding-top: 50%">
       <div style="font-family: Calibri; text-align: left; font-size: 14px; padding-top: 9%; padding-right: 6.25%">          
             <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
             <?php echo $one_order['bar_title'];?><br/>
