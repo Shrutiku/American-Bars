@@ -51,13 +51,15 @@
 						  'cookie' => true,
                                                   'default_graph_version' => 'v2.2',
 						));
-				  $loginUrl   = $this->fb->getLoginUrl(
+                        
+                        	  $loginUrl   = $this->fb->getLoginUrl(
             array(
                 //'scope'         => 'email,user_birthday,user_location,user_work_history,user_about_me,user_hometown',
                 'scope'         => 'email,user_friends, public_profile,publish_actions',
                 'redirect_uri'  =>  site_url("/home/facebook/")
             )
     );
+			
 			//store the return session from facebook
 			$this->fbSession  =$this->fb->getUser();
 			//echo '<pre>'; print_r($this->fbSession); die;
@@ -82,12 +84,7 @@
 
      //$slang=strtoupper($my_language->lang());		
 
-	 $loginUrl   = $this->fb->getLoginUrl(
-            array(
-                //'scope'         => 'email,user_birthday,user_location,user_work_history,user_about_me,user_hometown',
-                'scope'         => 'email,user_friends, public_profile,publish_actions',
-                'redirect_uri'  =>  site_url("/home/facebook/")
-       			$this->fbLoginURL =  $loginUrl   ;
+				$this->fbLoginURL =  $loginUrl   ;
 			// login or logout url will be needed depending on current user state.
 			//(if using the javascript api as well, you may not need these.)
 			//var_dump($this->fbLoginURL);
