@@ -132,9 +132,9 @@ $html .= '
     <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
     <div style="float: right; padding-top: 37.5%">
       <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 6%">
-                      <?php '.$one_order['bar_title'].' <br/>
-                      '.$one_order['address'].' <br/>
-                      '.$one_order['city']." ".$one_order['state']." ".$one_order['zipcode'].' ?>       
+                      <?php echo $one_order['bar_title'];?><br/>
+                      <?php echo $one_order['address'];?><br/>
+                      <?php echo $one_order['city']." ".$one_order['state'].", ".$one_order['zipcode'];?>       
       </div>
     </div>
   </div>
