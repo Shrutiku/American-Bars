@@ -96,7 +96,7 @@ $barowner = '';
 
 ?>
 
-<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1); margin-top: 1in; margin-left: -1in;">
+<div style="width:5.75in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1); margin-top: 1in; margin-left: -1in;">
 
   <div  style="width:3.25in; float: left;">
     <div style="float: left; padding-left: 6.25%; padding-top: 31.125%">
