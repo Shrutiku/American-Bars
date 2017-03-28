@@ -47,34 +47,6 @@ $barowner = '';
             $barowner = $one_order['bar_first_name'];
         }
 
-
-$html .= '
-    
-<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1.03); margin-top: 1in; margin-left: -1in;">
-
-  <div  style="width:3in; float: left;">
-    <div style="float: left; padding-left: 6.25%; padding-top: 31.25%">
-      <h1 style="font-family: Calibri;  font-size: 20px; letter-spacing: .8px;">Dear Bar Owner,</h1>
-      <p style="font-family: Calibri; font-size: 16px; font-weight: normal; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" >'.substr(nl2br($one_order['post_message']),0,100).'<!--Max 100 Characters-->
-      </p>
-      <label style="font-family: Calibri; font-size: 22px; font-weight: bold; float:left; margin-top: -2%; align-self: center; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br>'.$code.'</label>    
-    </div>
-  </div>
-
-  <div style="width:3in; float: right;">
-    <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
-    <div style="float: right; padding-top: 37.5%">
-      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 6%">
-                      '.$one_order['bar_title'].' <br/>
-                      '.$one_order['address'].' <br/>
-                      '.$one_order['city']." ".$one_order['state']." ".$one_order['zipcode'].'        
-      </div>
-    </div>
-  </div>
-
-</div>';
-  
-
 // HTML2PDF Conv Method
 
 //$html .= '<div style="width:4in; height:6in; font-family: courier; color: #000; overflow: hidden; font-size: 11px; letter-spacing: .8px; <!--border: solid 1px #996E13;--> <!--rotate: 90;--> <!--transform: rotate(90deg) scale(1.03);-->">';
@@ -135,12 +107,12 @@ $html .= '
     </div>
   </div>
     
-    <div style="width:0.25in;"></div> <!-- Padding for divider-->
+    <div style="width:0.25in;"></div> <!-- Padding for divider -->
 
   <div style="width:2.5in; float: right;">
     <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
     <div style="float: right; padding-top: 37.5%">
-      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 4%; padding-top: 9%">          
+      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-top: 9%">          
             <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
             <?php echo $one_order['bar_title'];?><br/>
             <?php echo $one_order['address'];?><br/>
