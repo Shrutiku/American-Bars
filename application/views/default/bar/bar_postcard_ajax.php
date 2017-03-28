@@ -85,7 +85,14 @@
 										<?php } else {?>
 										<td><?php if($event->post_title=='Your Bar is Awesome'){ echo "Awesome"; } else { echo "Sucks"; }?></td>
 										<td><?php echo ucwords($event->bar_title);?></td>
-										<td><?php if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }?></td>
+										<td><?php 
+                                                                                if (strlen($postcard_message) > 75) {
+                                                                                    $postcard_message_short = substr($postcard_message, 0, 75);
+                                                                                    echo '<p class="shorttext">'.$postcard_message_short.'....</p><a href="#" class="readmore">Read More</a><span class="alltext">'.$postcard_message.'</span>';
+                                                                                }
+                                                                                // if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }
+                                                                                
+                                                                                ?></td>
 										
 										<th>
 											<?php if($event->image!=''){?>
