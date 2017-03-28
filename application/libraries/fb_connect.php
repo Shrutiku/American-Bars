@@ -53,7 +53,6 @@
 			
 			//store the return session from facebook
 			$this->fbSession  =$this->fb->getUser(); 
-                        show_error("FUCK");
 			//echo '<pre>'; print_r($this->fbSession); die;
 			
 			$me = null;
