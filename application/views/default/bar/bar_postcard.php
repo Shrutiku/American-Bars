@@ -653,9 +653,9 @@ $(document).ready(function(){
     $(function(){
         $('a.readmore').click(function(event){
             event.preventDefault();
-            $(this).find('.alltext').show();
-            $(this).find('.shorttext').hide();
-            $(this).find('.readmore').hide();
+            $(this).find('span.alltext').show();
+            $(this).find('p.shorttext').hide();
+            $(this).find('a.readmore').hide();
         })
     })
 </script>
