@@ -140,7 +140,7 @@ $html .= '
   <div style="width:2.5in; float: right;">
     <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
     <div style="float: right; padding-top: 37.5%">
-      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 8%; padding-top: 8%">          
+      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 4%; padding-top: 9%">          
             <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
             <?php echo $one_order['bar_title'];?><br/>
             <?php echo $one_order['address'];?><br/>
