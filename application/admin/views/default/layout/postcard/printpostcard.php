@@ -101,9 +101,8 @@ $barowner = '';
   <div  style="width:3.25in; float: left;">
     <div style="float: left; padding-left: 4.25%; padding-top: 25%">
       <h1 style="font-family: Calibri;  font-size: 18px; letter-spacing: .8px;">Dear <?php echo $barowner;?>,</h1>
-      <p style="font-family: Calibri; font-size: 16px; font-weight: normal; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" ><?php echo substr(nl2br($one_order['post_message']),0,100);?><!--Max 100 Characters-->
-      </p>
-      <label style="font-family: Calibri; font-size: 20px; font-weight: bold; float:left; margin-top: -4%; text-align: right; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br><?php echo $code;?></label>    
+      <p style="font-family: Calibri; font-size: 16px; font-weight: normal; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" ><?php echo substr(nl2br($one_order['post_message']),0,100);?><!--Max 100 Characters-->.....</p>
+      <label style="font-family: Calibri; font-size: 19px; font-weight: bold; float:left; margin-top: -2%; text-align: right; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br><?php echo $code;?></label>    
     </div>
   </div>
     
