@@ -4,7 +4,7 @@
     .productbar_title mar_top20 padding-10{
         background-image:url('C:\Users\SHRUTI\Documents\images.jpg');
     }
-    #i2{ background:#000000; padding:100px;}
+    #i2{ background:#000000; padding: 0 100px 100px 100px;}
 </style>
 <div id="i2" style="border-radius: 50px 50px 50px 50px;">
     <img src="http://www.snnbuilders.com/images/meet_us/career.jpg" style="width:100%;height:252px;display:block;margin:auto">
