@@ -1,6 +1,6 @@
 <h1 class="productbar_title mar_top20 padding-10">Our Open Positions:</h1>
 <style>
-    #i1{background:#F5ECCE; border-radius: 30px 30px 30px 30px;}
+    #i1{background:#FFBF00; border-radius: 30px 30px 30px 30px;}
     .productbar_title mar_top20 padding-10{
         background-image:url('C:\Users\SHRUTI\Documents\images.jpg');
     }
