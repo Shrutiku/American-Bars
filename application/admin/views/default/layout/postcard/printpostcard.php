@@ -99,7 +99,7 @@ $barowner = '';
 <div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1); margin-top: 1in; margin-left: -1in;">
 
   <div  style="width:3.25in; float: left;">
-    <div style="float: left; padding-left: 3%; padding-top: 25%">
+    <div style="float: left; padding-left: 6.25%; padding-top: 31.125%">
       <h1 style="font-family: Calibri;  font-size: 20px; letter-spacing: .8px;">Dear <?php echo $barowner;?>,</h1>
       <p style="font-family: Calibri; font-size: 16px; font-weight: normal; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" ><?php echo substr(nl2br($one_order['post_message']),0,100);?><!--Max 100 Characters-->
       </p>
@@ -107,12 +107,12 @@ $barowner = '';
     </div>
   </div>
     
-    <div style="width:0.25in;"></div> <!-- Padding for divider -->
+    <!--<div style="width:0.2in;"></div> <!-- Padding for divider -->
 
   <div style="width:2.5in; float: right;">
     <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
-    <div style="float: right; padding-top: 37.5%">
-      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-top: 9%">          
+    <div style="padding-top: 37.5%">
+      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-top: 9%; margin-right: 6.25%">          
             <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
             <?php echo $one_order['bar_title'];?><br/>
             <?php echo $one_order['address'];?><br/>
