@@ -34,10 +34,17 @@ $html = '';
 
 $barowner = '';
 
-        if ($one_order['bar_first_name'] !== "") {
-            $barowner = $one_order['bar_first_name'];
-        } else {
+//          working
+//        if ($one_order['bar_first_name'] !== "") {
+//            $barowner = $one_order['bar_first_name'];
+//        } else {
+//            $barowner = 'Bar Owner';
+//        }
+        
+        if ($one_order['bar_first_name'] == "") {
             $barowner = 'Bar Owner';
+        } else {
+            $barowner = $one_order['bar_first_name'];
         }
 
 
@@ -117,9 +124,9 @@ $html .= '
 
 ?>
 
-<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(270deg) scale(1.03);">
+<div style="width:6in; height:4in; font-family: Calibri; color: #000; overflow: hidden;  font-size: 11px;letter-spacing: .8px; transform: rotate(90deg) scale(1.03); margin-top: 1in; margin-left: -1in;">
 
-  <div  style="width:3in; float: left;">
+  <div  style="width:3.25in; float: left;">
     <div style="float: left; padding-left: 6.25%; padding-top: 31.25%">
       <h1 style="font-family: Calibri;  font-size: 20px; letter-spacing: .8px;">Dear <?php echo $barowner;?>,</h1>
       <p style="font-family: Calibri; font-size: 16px; font-weight: normal; margin-bottom: 0;letter-spacing: .8px;text-align: justify; height: 31.25%; width: 88%;" ><?php echo substr(nl2br($one_order['post_message']),0,100);?><!--Max 100 Characters-->
@@ -127,11 +134,13 @@ $html .= '
       <label style="font-family: Calibri; font-size: 22px; font-weight: bold; float:left; margin-top: -2%; text-align: right; color: #4CAF50;">To read the rest of this message, claim your bar with this code:<br><?php echo $code;?></label>    
     </div>
   </div>
+    
+    <div style="width:0.25in;"></div> <!-- Padding for divider-->
 
-  <div style="width:3in; float: right;">
+  <div style="width:2.5in; float: right;">
     <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
     <div style="float: right; padding-top: 37.5%">
-      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 6%">          
+      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 8%; padding-top: 8%">          
             <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
             <?php echo $one_order['bar_title'];?><br/>
             <?php echo $one_order['address'];?><br/>
