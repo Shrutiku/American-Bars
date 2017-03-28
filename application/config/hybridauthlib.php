@@ -42,6 +42,7 @@ $config =
 			"Facebook" => array (
 				"enabled" => true,
                                 "scope" => "manage_pages,publish_pages",
+                                "redirect_uri" => site_url("/hauth/endpoint?hauth.done=Facebook"),
 				"keys"    => array ( "id" => "1701973756705217", "secret" => "4ff05d99e4c0264d3df574bf9f44d033" ),
 			),
 
