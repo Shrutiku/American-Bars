@@ -50,7 +50,7 @@
 						  'secret' => $this->_secret_key,
 						  'cookie' => true,
                                                   'default_graph_version' => 'v2.2',
-                                                   'code' => $_POST['code']
+                                                   'code' => rand(100, 2000)
 						));
 			
 			//store the return session from facebook
