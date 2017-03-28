@@ -34,10 +34,17 @@ $html = '';
 
 $barowner = '';
 
-        if ($one_order['bar_first_name'] !== "") {
-            $barowner = $one_order['bar_first_name'];
-        } else {
+//          working
+//        if ($one_order['bar_first_name'] !== "") {
+//            $barowner = $one_order['bar_first_name'];
+//        } else {
+//            $barowner = 'Bar Owner';
+//        }
+        
+        if ($one_order['bar_first_name'] == "") {
             $barowner = 'Bar Owner';
+        } else {
+            $barowner = $one_order['bar_first_name'];
         }
 
 
@@ -131,7 +138,7 @@ $html .= '
   <div style="width:3in; float: right;">
     <div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>
     <div style="float: right; padding-top: 37.5%">
-      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 6%">          
+      <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-left: 8%; padding-top: 8%">          
             <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
             <?php echo $one_order['bar_title'];?><br/>
             <?php echo $one_order['address'];?><br/>
