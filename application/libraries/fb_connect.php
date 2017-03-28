@@ -52,7 +52,7 @@
 						));
 			
 			//store the return session from facebook
-			$this->fbSession  =$this->fb->getUser();
+			$this->fbSession  =$facebook->getUser();
                         show_error("$this->fbSession");
 			//echo '<pre>'; print_r($this->fbSession); die;
 			
