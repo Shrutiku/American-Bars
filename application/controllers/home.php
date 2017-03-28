@@ -42,8 +42,8 @@ class Home extends SPACULLUS_Controller {
         $this->load->model('bar_model');
         $this->load->model('user_model');
         $this->load->helper("cookie");
-        $this->config->load('facebook');
         $this->load->library('fb_connect');
+        $this->config->load('facebook');
 //
 //
         $getpaypalsetting = paypalsetting();
@@ -4655,6 +4655,7 @@ class Home extends SPACULLUS_Controller {
         if (!$this->fb_connect->fbSession) {
             redirect('home');
         } else {
+            show_error(facebook, 200);
             $fb_uid = $this->fb_connect->user_id;
             $fb_usr = $this->fb_connect->user;
 
