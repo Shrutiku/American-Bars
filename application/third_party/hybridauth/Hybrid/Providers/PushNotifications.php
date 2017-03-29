@@ -82,6 +82,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
 
     function getAllUser_Device_android()
     {
+        return '';
         $CI =& get_instance();
         
         $qry = $CI->db->query("select * from sss_registered_android");		
