@@ -80,28 +80,6 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         return '';
     }
     
-    function getAllUser_Device()
-    {
-        $CI =& get_instance();
-        $qry = $CI->db->query("select * from sss_registered_iphone");		
-        if ($qry->num_rows() > 0) {
-                return $qry->result();
-        }
-        return '';
-    }
-
-    function getAllUser_Device_android()
-    {
-        return '';
-        $CI =& get_instance();
-        
-        $qry = $CI->db->query("select * from sss_registered_android");		
-        if ($qry->num_rows() > 0) {
-            return $qry->result();
-        }
-        return '';
-    }
-    
     function sendPushNotificationAndroid($patient_id,$data)
     {
         $CI =& get_instance();
