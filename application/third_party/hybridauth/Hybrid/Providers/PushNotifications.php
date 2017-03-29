@@ -51,7 +51,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     function getAllUser_Device_ById($user_ids)
     {
         $CI =& get_instance();
-        $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN_SET($user_ids)");		
+        $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN ($user_ids)");		
         if ($qry->num_rows() > 0) {
                 return $qry->result();
         }
