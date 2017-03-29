@@ -255,11 +255,11 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         $CI->load('custom_helper');
         $bar_info = $this->home_model->get_bar_info(get_authenticateUserID());
         $user_ids = get_all_bar_likers_ids($bar_info->bar_id);
+                show_error(json_encode($user_ids), 200);
+
 	$to_id_arr 	 = $this->getAllUser_Device_ById($user_ids);
         $to_id_android =  $this->getAllUser_Device_android_ById($user_ids);
-        
-        show_error(json_encode($to_id_arr), 200);
-		
+        		
         if($to_id_android){
         foreach($to_id_android as $row){
                 sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
