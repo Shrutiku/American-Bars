@@ -230,6 +230,8 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                             'alert' => $data['message'],
                             'sound' => $sound,
                             );
+                    
+                    show_error($data['message'], 200);
 
                     $body['type'] = $data['type'];
                     $body['subject'] = $data['subject'];
