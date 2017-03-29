@@ -52,7 +52,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     {
         $CI =& get_instance();
         $users_str = $user_ids;
-        show_error($users_str, 200);
+        show_error(json_encode($users_str), 200);
         $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
                 return $qry->result();
