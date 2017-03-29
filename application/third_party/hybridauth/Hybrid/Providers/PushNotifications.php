@@ -179,7 +179,6 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                 {
 
                     $r->token_id;
-                    show_error($r->token_id,200);
                     // Put your device token here (without spaces):
                     $deviceToken = str_replace(array("<",">"," "),'',$r->token_id);
 
