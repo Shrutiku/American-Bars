@@ -232,6 +232,8 @@ class HAuth extends CI_Controller {
             $connected = $this->hybridauthlib->getConnectedProviders();
             $msg = '';
             
+            show_error($status, 200);
+            
             foreach($connected as $provider) {
 		if ($this->hybridauthlib->providerEnabled($provider)) {
                     try {
