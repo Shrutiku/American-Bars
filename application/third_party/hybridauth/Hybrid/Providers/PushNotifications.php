@@ -178,7 +178,8 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                     {
                             //ab_ck.pem	
                             // adb_dist_ck.pem
-                            $pem_file = 'ab_ck.pem';
+                            //$pem_file = 'ab_ck.pem';
+                            $pem_file = 'adb-adhoc-ck.pem';
                             //$stream = 'ssl://gateway.push.apple.com:2195';
                             $stream = 'ssl://gateway.sandbox.push.apple.com:2195';
                     }
