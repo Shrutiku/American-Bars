@@ -60,11 +60,13 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     }
 
     function getUserIdArr($users) {
-        show_error(json_encode($users), 200);
         $user_ids = [];
         foreach ($users as $user) {
             $user_ids[] = $user['user_id'];
         }
+        
+        show_error(json_encode($user_ids), 200);
+
                 
         return ($user_ids);
     }
