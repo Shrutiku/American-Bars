@@ -51,7 +51,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     function getAllUser_Device_ById($users)
     {
         $CI =& get_instance();
-        $users_str = implode(",",getUserIdArr($users));
+        $users_str = implode(",",$this->getUserIdArr($users));
         $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
                 return $qry->result();
@@ -71,7 +71,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     function getAllUser_Device_android_ById($users)
     {
         $CI =& get_instance();
-        $users_str = implode(",",getUserIdArr($users));
+        $users_str = implode(",",$this->getUserIdArr($users));
         $qry = $CI->db->query("select * from sss_registered_android where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
             return $qry->result();
