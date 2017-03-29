@@ -3875,7 +3875,7 @@ if(file_exists(base_path().'upload/bar_eventgallery_thumb_250by150/'.$preImg[$ke
 	}
 	
         function get_all_bar_likers_ids($id=0){
-		$this->db->select("a.user_id as ''");
+		$this->db->select('a.user_id [ ]');
 		$this->db->from('all_likes a');		
 		$this->db->join('user_master u','u.user_id=a.user_id');
 		$this->db->where('a.bar_id',$id);
