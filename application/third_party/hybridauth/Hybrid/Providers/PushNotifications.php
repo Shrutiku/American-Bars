@@ -271,11 +271,11 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
 	$to_id_arr 	 = $this->getAllUser_Device_ById($users);
         $to_id_android =  $this->getAllUser_Device_android_ById($users);
         		
-        /*if($to_id_android){
+        if($to_id_android){
         foreach($to_id_android as $row){
                 sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
         }	
-        }*/
+        }
         if($to_id_arr){
             foreach($to_id_arr as $row){
                 $this->sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
