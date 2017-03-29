@@ -231,8 +231,8 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                             'sound' => $sound,
                             );
                     
-                    //$body['type'] = $data['type'];
-                    //$body['subject'] = $data['subject'];
+                    $body['type'] = $data['type'];
+                    $body['subject'] = $data['subject'];
 
                     // Encode the payload as JSON
                     $payload = json_encode($body);
