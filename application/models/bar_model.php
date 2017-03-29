@@ -3881,7 +3881,7 @@ if(file_exists(base_path().'upload/bar_eventgallery_thumb_250by150/'.$preImg[$ke
 		$this->db->where('a.bar_id',$id);
 		$this->db->where('like_flag',1);
 		$this->db->order_by('date_added','asc');
-		$this->db->group_by('user_id');
+		$this->db->group_by('a.user_id');
 		$qry = $this->db->get();
 		
 		// echo $this->db->last_query();
