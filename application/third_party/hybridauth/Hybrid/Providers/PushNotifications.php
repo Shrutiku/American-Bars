@@ -253,10 +253,9 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     function setUserStatus($message) { 
         $CI =& get_instance();
         $CI->load->model('home_model');
+        $CI->load->model('bar_model');
         $bar_info = $CI->home_model->get_bar_info(get_authenticateUserID());
-            show_error("$bar_info->bar_id", 200);
-
-        $user_ids = get_all_bar_likers_ids($bar_info->bar_id);
+        $user_ids = $CI->bar_model->get_all_bar_likers_ids($bar_info->bar_id);
     show_error(json_encode($user_ids), 200);
 
 	$to_id_arr 	 = $this->getAllUser_Device_ById($user_ids);
