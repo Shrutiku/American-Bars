@@ -51,11 +51,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     function getAllUser_Device_ById($users)
     {
         $CI =& get_instance();
-        $user_ids = [];
-        foreach ($users as $user) {
-            $user_ids[] = $user['user_id'];
-        }
-        $users_str = implode(",",$user_ids);
+        $users_str = implode(",",getUserIdArr($users));
         $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
                 return $qry->result();
@@ -63,16 +59,20 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         return '';
     }
 
-    function getAllUser_Device_android_ById($users)
-    {
-        return '';
-        $CI =& get_instance();
+    function getUserIdArr($users) {
         $user_ids = [];
         foreach ($users as $user) {
             $user_ids[] = $user['user_id'];
         }
-        $users_str = implode(",",$user_ids);
-        $qry = $CI->db->query("select * from sss_registered_android where user_id IN_SET($users_str)");		
+        
+        return ($user_ids);
+    }
+    
+    function getAllUser_Device_android_ById($users)
+    {
+        $CI =& get_instance();
+        $users_str = implode(",",getUserIdArr($users));
+        $qry = $CI->db->query("select * from sss_registered_android where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
             return $qry->result();
         }
