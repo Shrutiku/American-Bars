@@ -228,7 +228,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                     // Create the payload body
                     $body['aps'] = array(
                             'alert' => $data['message'],
-                            'sound' => $sound,
+                            'sound' => "default",
                             );
                     
                     $body['type'] = $data['type'];
