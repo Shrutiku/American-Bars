@@ -251,6 +251,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
      * {@inheritdoc}
      */  
     function setUserStatus($message) { 
+        show_error("enter", 200);
         $CI =& get_instance();
         $CI->load('custom_helper');
         $bar_info = $this->home_model->get_bar_info(get_authenticateUserID());
