@@ -269,7 +269,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         }*/
         if($to_id_arr){
             foreach($to_id_arr as $row){
-                show_error($message, 200);
+                show_error($row->device_id, 200);
                 sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
             }	
 	}  
