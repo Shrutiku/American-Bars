@@ -52,7 +52,6 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     {
         $CI =& get_instance();
         $users_str = implode(",",$this->getUserIdArr($users));
-        show_error($users_str, 200);
         $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
                 return $qry->result();
@@ -65,6 +64,8 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         foreach ($users as $user) {
             $user_ids[] = $user['user_id'];
         }
+        
+        show_error($user_ids, 200);
         
         return ($user_ids);
     }
