@@ -48,10 +48,14 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         return null;
     }
     
-    function getAllUser_Device_ById($user_ids)
+    function getAllUser_Device_ById($users)
     {
         $CI =& get_instance();
-        $users_str = implode(",",array(1526));
+        $user_ids = [];
+        foreach ($users as $user) {
+            $user_ids[] = $user['user_id'];
+        }
+        $users_str = implode(",",$user_ids);
         $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
                 return $qry->result();
@@ -59,12 +63,16 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         return '';
     }
 
-    function getAllUser_Device_android_ById($user_ids)
+    function getAllUser_Device_android_ById($users)
     {
         return '';
         $CI =& get_instance();
-        
-        $qry = $CI->db->query("select * from sss_registered_android where user_id IN_SET($user_ids)");		
+        $user_ids = [];
+        foreach ($users as $user) {
+            $user_ids[] = $user['user_id'];
+        }
+        $users_str = implode(",",$user_ids);
+        $qry = $CI->db->query("select * from sss_registered_android where user_id IN_SET($users_str)");		
         if ($qry->num_rows() > 0) {
             return $qry->result();
         }
@@ -258,9 +266,9 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         $CI->load->model('home_model');
         $CI->load->model('bar_model');
         $bar_info = $CI->home_model->get_bar_info(get_authenticateUserID());
-        $user_ids = $CI->bar_model->get_all_bar_likers_ids($bar_info['bar_id']);
-	$to_id_arr 	 = $this->getAllUser_Device_ById($user_ids);
-        $to_id_android =  $this->getAllUser_Device_android_ById($user_ids);
+        $users = $CI->bar_model->get_all_bar_likers_ids($bar_info['bar_id']);
+	$to_id_arr 	 = $this->getAllUser_Device_ById($users);
+        $to_id_android =  $this->getAllUser_Device_android_ById($users);
         		
         /*if($to_id_android){
         foreach($to_id_android as $row){
