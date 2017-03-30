@@ -19,7 +19,7 @@ And, if you sign up 100 bars, $2500 a month!<br/>
     <li>Start signing up bars from you phone or laptop.</li>
     <li>Get paid and perform monthly maintenance.</li>
 </ol><br/>
-<h2><center>It’s that easy!  Interested?  Click here!</center></h2><br/>
+<h2><center>It’s that easy!  Interested?  <a href="<?php echo site_url["/ambassador/"];?>">Click here!</a></center></h2><br/>
 <center><img src="https://static.pexels.com/photos/260922/pexels-photo-260922.jpeg" width="722" height="406" alt="American Bars Ambassador"/></center>
 
 
