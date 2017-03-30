@@ -185,7 +185,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                     else
                     {
                             $pem_file = 'ab_ck.pem';
-                            $stream = 'ssl://gateway.push.apple.com:2195'
+                            $stream = 'ssl://gateway.push.apple.com:2195';
                             //$stream = 'ssl://gateway.sandbox.push.apple.com:2195';
                     }
                     stream_context_set_option($ctx, 'ssl', 'local_cert', base_path()."iphone/$pem_file");
