@@ -105,7 +105,7 @@ max-height:8%;padding-right: 5px;', 'class' => 'login')));
                         <div class="clearfix"></div>
                         <div class="padtb" style="text-align: center;">
                             <div class="input_box text-center">                               
-                                <textarea class="form-control form-pad" id="message" name="message" style="width: 400px ; height: 100px;display: block; margin-left: auto; margin-right: auto;" placeholder="What's on your mind?"></textarea>
+                                <textarea class="form-control form-pad"  <?php if (!@$providers['PushNotifications']['connected']) { echo 'onkeypress="return isNumberKey(event)" maxlength="200"';}?> id="message" name="message" style="width: 400px ; height: 100px;display: block; margin-left: auto; margin-right: auto;" placeholder="What's on your mind?"></textarea>
                             </div>
                             <div class="clearfix"></div>
                         </div>
