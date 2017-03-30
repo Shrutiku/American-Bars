@@ -58,7 +58,7 @@ function choosepage(provider, accounts) {
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
-                        <h1>Login to your Social Media:</h1>
+                        <h1>Login to Social Media or Send Push Notifications</h1>
                         <p></p>
                         <div class="clearfix"></div>
                         <div id="body" style="display: inline-block; text-align: center;">
