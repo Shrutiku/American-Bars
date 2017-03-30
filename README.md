@@ -62,5 +62,5 @@ $ ./build-all
 
    [sshkey]: <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>
    [netbeans]: <https://netbeans.org/downloads/start.html?platform=macosx&lang=en&option=php>
-   [mamp]: <https://www.mamp.info/en/downloads/>
+   [mamp]: <http://downloads1.mamp.info/MAMP-PRO/releases/4.1.1/MAMP_MAMP_PRO_4.1.1.pkg>
    [webapp_tools]: <http://54.89.247.251:8080/userContent/webapp/*zip*/webapp.zip>
