@@ -73,6 +73,7 @@ function choosepage(provider, accounts) {
 <?php
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
+if (!@$providers['PushNotifications']['connected']) {
 foreach ($providers as $provider => $data) {
     if ($data['connected'] && ($provider == 'PushNotifications' || ($provider != 'PushNotifications' && !@$providers['PushNotifications']['connected']))) {        
         echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
@@ -81,6 +82,7 @@ foreach ($providers as $provider => $data) {
         echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
    max-height:8%;padding-right: 5px;', 'class' => 'login')));
     }
+}
 }
 ?>
                             </ul>
