@@ -10,10 +10,11 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <div style="align="center"></div>
-        <h1>Test: Become an Ambasador Today!</h1>
-        <?php
-        // put your code here
-        ?>
+        <div style="align="center">
+            <h1>Test: Become an Ambasador Today!</h1>
+            <?php
+            // put your code here
+            ?>
+        </div>
     </body>
 </html>
