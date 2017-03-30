@@ -17,9 +17,7 @@ and open the template in the editor.
      				<div class="pad20">
      				<h1 class="yellow_title padb10 br_bott_gray">Welcome to American Bars. Verify your phone number to complete your ambassador registration.  </h1>
 					<?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
-							echo form_open('postcard/',$attributes); ?>	
-	     						<input name="type" value="bar_owner" id="type" />
-	     						<input name="postcardid" id="postcardid" />
+							echo form_open('postcard/',$attributes); ?>
 	     						<br><br>
 	     							<?php if($error!=""){ ?>
                         <div class="error1 text-center"><a class="closemsg" data-dismiss="alert"></a><span><?php echo $error; ?></span></div>
