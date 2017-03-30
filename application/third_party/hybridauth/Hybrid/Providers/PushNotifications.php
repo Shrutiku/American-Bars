@@ -213,7 +213,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
 
                     // Create the payload body
                     $body['aps'] = array(
-                            'alert' => $data['message']['message'],
+                            'alert' => $data['message'],
                             'sound' => $sound,
                             );
                     
@@ -239,7 +239,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     /**
      * {@inheritdoc}
      */  
-    function setUserStatus($message) { 
+    function setUserStatus($status) { 
         $CI =& get_instance();
         $CI->load->model('home_model');
         $CI->load->model('bar_model');
@@ -250,12 +250,12 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         		
         if($to_id_android){
         foreach($to_id_android as $row){
-                sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
+                sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"]));
         }	
         }
         if($to_id_arr){
             foreach($to_id_arr as $row){
-                $this->sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
+                $this->sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"]));
             }	
 	}  
     }
