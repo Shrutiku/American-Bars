@@ -74,21 +74,17 @@ function choosepage(provider, accounts) {
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
 foreach ($providers as $provider => $data) {
-    if ($data['connected']) {    
-        if ($provider != "PushNotifications" && 
-            $providers["PushNotifications"]['connected']) {
-                echo img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
-           max-height:8%;padding-right: 5px;', 'class' => 'connected'));
-        } else {
+    if ($data['connected']) {      
             echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
        max-height:8%;padding-right: 5px;', 'class' => 'connected')));
-        }
     } else {
-        if ($provider == "PushNotifications" && 
-            ($providers["Facebook"]['connected'] || 
-            $providers["Twitter"]['connected'] || 
-            $providers["Google"]['connected'] ||
-            $providers["Instagram"]['connected'])) {
+        if (($provider == "PushNotifications" && 
+                ($providers["Facebook"]['connected'] || 
+                $providers["Twitter"]['connected'] || 
+                $providers["Google"]['connected'] ||
+                $providers["Instagram"]['connected'])) ||
+            ($provider != "PushNotifications" && 
+                $providers["PushNotifications"]['connected'])) {
             echo img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
 max-height:8%;padding-right: 5px;', 'class' => 'login'));
         }
