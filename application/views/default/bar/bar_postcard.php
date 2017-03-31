@@ -97,8 +97,8 @@
 									<th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
 									<th>Title</th>
 									<th>Description</th>
-									<th>First Name</th>
-									<th>Last Name</th>
+									<th>First</th>
+									<th>Last</th>
 									<!-- <th>Barname</th> -->
 									<!-- <th>Email</th> -->
 									<th>Download</th>
@@ -128,12 +128,25 @@
 										    $dark =  "light";
 										  }?>	
 									<tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->postcard_id; ?>'>
-								<?php 	if($this->session->userdata('user_type')=='bar_owner')
+								<?php 	
+                                                                $postcard_message = '';
+                                                                $postcard_message .= strip_tags($event->post_message);
+                                                                if($this->session->userdata('user_type')=='bar_owner')
 										 { ?>
 										<td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->postcard_id;?>">
 											<input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->postcard_id;?>" value="<?php echo $event->postcard_id;?>"></label></td>
 										<td><?php if($event->post_title=='Your Bar is Awesome'){ echo "Awesome"; } else { echo "Sucks"; }?></td>
-										<td><?php if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }?></td>
+										<td><?php 
+                                                                                
+//                                                                                if (strlen($postcard_message) > 75) {
+//                                                                                    $postcard_message_short = substr($postcard_message, 0, 75);
+//                                                                                    echo '<p class="shorttext">'.$postcard_message_short.'....</p><a href="#" class="readmore">Read More</a><span class="alltext">'.$postcard_message.'</span>';
+//                                                                                }
+                                                                                
+//                                                                                 if(strlen($postcard_message)>50) { echo substr($postcard_message, 0,50)."...."; } else { echo $postcard_message; }
+                                                                                echo $postcard_message;
+                                                                                
+                                                                                ?></td>
 										<td><?php echo ucwords($event->first_name);?></td>
 										<td><?php echo ucwords($event->last_name);?></td>
 										<!-- <td><?php echo $event->bar_title;?></td> -->
@@ -153,7 +166,14 @@
 										<?php } else {?>
 										<td><?php if($event->post_title=='Your Bar is Awesome'){ echo "Awesome"; } else { echo "Sucks"; }?></td>
 										<td><?php echo ucwords($event->bar_title);?></td>
-										<td><?php if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }?></td>
+										<td><?php 
+//                                                                                if (strlen($postcard_message) > 75) {
+//                                                                                    $postcard_message_short = substr($postcard_message, 0, 75);
+//                                                                                    echo '<p id="#shorttext">'.$postcard_message_short.'....<a href="#" id="#readmore">Read More</a></p><span id="#alltext" style="display:none;">'.$postcard_message.'</span>';
+//                                                                                }
+//                                                                                if(strlen(strip_tags($event->post_message))>50) { echo substr(strip_tags($event->post_message), 0,50)."...."; } else { echo strip_tags($event->post_message); }
+                                                                                echo $postcard_message;
+                                                                                ?></td>
 										
 										<th>
 											<?php if($event->image!=''){?>
@@ -630,4 +650,16 @@ $(document).ready(function(){
 	}
 }
 </script>
-
+<script>
+    $(function(){
+        $('a.readmore').click(function(event){
+            event.preventDefault();
+            
+            document.getElementById("alltext").style.display = "inline";
+            document.getElementById("shorttext").style.display = "none";
+//            $(this).find('span.alltext').show();
+//            $(this).find('p.shorttext').hide();
+//            $(this).find('a.readmore').hide();
+        })
+    })
+</script>

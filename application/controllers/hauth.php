@@ -231,7 +231,7 @@ class HAuth extends CI_Controller {
             // Send to the view all permitted services as a user profile if authenticated
             $connected = $this->hybridauthlib->getConnectedProviders();
             $msg = '';
-            
+                        
             foreach($connected as $provider) {
 		if ($this->hybridauthlib->providerEnabled($provider)) {
                     try {

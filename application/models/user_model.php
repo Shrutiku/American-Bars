@@ -24,7 +24,23 @@ class User_model extends CI_Model {
 			return $query->row_array();
 		}
 		return;
-	}	
+	}
+        
+        function get_one_user_by_email($email) 
+        {
+            $this->db->select("*");
+            $this->db->from('user_master');
+            $this->db->where('email',$email);
+            $this->db->order_by('email','desc');
+            $this->db->limit('1','0');
+            $query=$this->db->get();
+
+            if($query->num_rows()>0)
+            {			
+                    return $query->row_array();
+            }
+            return;
+        }
 
      
 	/** function insert_profile_step1()
