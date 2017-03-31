@@ -48,42 +48,31 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         return null;
     }
     
-    function getAllUser_Device_ById($user_ids)
+    function getAllUser_Device_ById($users)
     {
         $CI =& get_instance();
-        $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN_SET($user_ids)");		
+        $users_str = implode(",",$this->getUserIdArr($users));
+        $qry = $CI->db->query("select * from sss_registered_iphone where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
                 return $qry->result();
         }
         return '';
     }
 
-    function getAllUser_Device_android_ById($user_ids)
-    {
-        $CI =& get_instance();
-        
-        $qry = $CI->db->query("select * from sss_registered_android where user_id IN_SET($user_ids)");		
-        if ($qry->num_rows() > 0) {
-            return $qry->result();
+    function getUserIdArr($users) {
+        $user_ids = [];
+        foreach ($users as $user) {
+            $user_ids[] = $user->user_id;
         }
-        return '';
+                        
+        return ($user_ids);
     }
     
-    function getAllUser_Device()
+    function getAllUser_Device_android_ById($users)
     {
         $CI =& get_instance();
-        $qry = $CI->db->query("select * from sss_registered_iphone");		
-        if ($qry->num_rows() > 0) {
-                return $qry->result();
-        }
-        return '';
-    }
-
-    function getAllUser_Device_android()
-    {
-        $CI =& get_instance();
-        
-        $qry = $CI->db->query("select * from sss_registered_android");		
+        $users_str = implode(",",$this->getUserIdArr($users));
+        $qry = $CI->db->query("select * from sss_registered_android where user_id IN ($users_str)");		
         if ($qry->num_rows() > 0) {
             return $qry->result();
         }
@@ -190,12 +179,14 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                             //ab_ck.pem	
                             // adb_dist_ck.pem
                             $pem_file = 'ab_ck.pem';
+                            //$stream = 'ssl://gateway.sandbox.push.apple.com:2195';
                             $stream = 'ssl://gateway.push.apple.com:2195';
                     }
                     else
                     {
-                            $pem_file = 'adb-adhoc-ck.pem';
-                            $stream = 'ssl://gateway.sandbox.push.apple.com:2195';
+                            $pem_file = 'ab_ck.pem';
+                            $stream = 'ssl://gateway.push.apple.com:2195';
+                            //$stream = 'ssl://gateway.sandbox.push.apple.com:2195';
                     }
                     stream_context_set_option($ctx, 'ssl', 'local_cert', base_path()."iphone/$pem_file");
 
@@ -227,8 +218,9 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                             'alert' => $data['message'],
                             'sound' => $sound,
                             );
-
+                    
                     $body['type'] = $data['type'];
+                    $body['bar_id'] = $data['bar_id'];
                     $body['subject'] = $data['subject'];
 
                     // Encode the payload as JSON
@@ -250,22 +242,29 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
     /**
      * {@inheritdoc}
      */  
-    function setUserStatus($message) { 
+    function setUserStatus($status) { 
         $CI =& get_instance();
-        $CI->load('custom_helper');
-        $bar_info = $this->home_model->get_bar_info(get_authenticateUserID());
-        $user_ids = get_all_bar_likers_ids($bar_info->bar_id);
-	$to_id_arr 	 = $this->getAllUser_Device_ById($user_ids);
-        $to_id_android =  $this->getAllUser_Device_android_ById($user_ids);
-		
+        $CI->load->model('home_model');
+        $CI->load->model('bar_model');
+        $bar_info = $CI->home_model->get_bar_info(get_authenticateUserID());
+        $users = $CI->bar_model->get_all_bar_likers_ids($bar_info['bar_id']);
+        
+        if ($users==[]) {
+            return;
+        }
+	$to_id_arr 	 = $this->getAllUser_Device_ById($users);
+        $to_id_android =  $this->getAllUser_Device_android_ById($users);
+        
+        $status["message"] = $bar_info["bar_title"].": ".$status["message"];
+        		
         if($to_id_android){
-        foreach($to_id_android as $row){
-                sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
-        }	
+            foreach($to_id_android as $row){
+                    sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"], "bar_id" => $bar_info['bar_id']));
+            }	
         }
         if($to_id_arr){
             foreach($to_id_arr as $row){
-                sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$message));
+                $this->sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"], "bar_id" => $bar_info['bar_id']));
             }	
 	}  
     }

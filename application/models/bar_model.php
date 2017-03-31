@@ -587,7 +587,7 @@ class Bar_model extends CI_Model
 	
 	function get_one_bar($id = 0)
 	{
-		$this->db->select('*,bars.address as address,bars.city as city,bars.state as state,bars.zipcode as zipcode,bars.website as website,bars.twitter_link as twitter_link,bars.linkedin_link as linkedin_link,bars.pinterest_link as pinterest_link,bars.instagram_link as instagram_link');		
+		$this->db->select('*,bars.address as address,bars.followers, bars.city as city,bars.state as state,bars.zipcode as zipcode,bars.website as website,bars.twitter_link as twitter_link,bars.linkedin_link as linkedin_link,bars.pinterest_link as pinterest_link,bars.instagram_link as instagram_link');		
 		$this->db->from('bars');
 		$this->db->join('user_master u','u.user_id=bars.owner_id','left');
 		$this->db->where('bar_id',$id);

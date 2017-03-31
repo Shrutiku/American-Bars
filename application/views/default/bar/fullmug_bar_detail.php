@@ -46,8 +46,12 @@
      	<div class="container">
      		<div class="result_search">
      			<div class="pull-left">
-	     			<div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?></div>
-	     			
+                            <div class="result_search_text">
+                                <?php echo "Welcome to " .$bar_detail['bar_title'];?>
+                                <b style="padding-left:1em;"></b>
+                                <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 1.5%;height: 1.5%;padding:0px 0px 0px 0px">
+                                <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
+                            </div>	     			
 	            </div>
 	            
      			<div class="newrightblock">
@@ -65,7 +69,6 @@
 											<a id="total-like" href="javascript:void(0);" name="1" class="review text-center full-icon marr_10">
 											Like This Bar</a>
 								<?php  } ?>
-                    <a style="text-decoration: none;" id="view-all" href="javascript://" class="review text-center full-icon marr_10">Who Likes This Bar</a>
                     
      				<div class="result_search_text full-icon marr_10">Full Mug Bar</div>
      				<div class="full-icon"><i class="strip fullmug"></i></div>

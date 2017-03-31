@@ -231,7 +231,7 @@ class HAuth extends CI_Controller {
             // Send to the view all permitted services as a user profile if authenticated
             $connected = $this->hybridauthlib->getConnectedProviders();
             $msg = '';
-            
+                        
             foreach($connected as $provider) {
 		if ($this->hybridauthlib->providerEnabled($provider)) {
                     try {
@@ -249,7 +249,7 @@ class HAuth extends CI_Controller {
                 }
             }
             
-            redirect('/home/socialshare/'."\"$msg\"");
+            redirect('/home/socialshare/'.$msg);
 	}
         
         public function page($provider, $id)

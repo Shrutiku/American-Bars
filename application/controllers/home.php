@@ -68,7 +68,7 @@ class Home extends SPACULLUS_Controller {
 
     public function index($msg = '') {
 
-        //echo "<script language=\"javascript\">alert('test');</script>";
+        //echo "<script l$this->fb_connectanguage=\"javascript\">alert('test');</script>";
         //$this->cart->destroy();
         $data = array();
         $data['msg'] = $msg;
@@ -4658,7 +4658,6 @@ class Home extends SPACULLUS_Controller {
             $fb_uid = $this->fb_connect->user_id;
             $fb_usr = $this->fb_connect->user;
 
-
             $accessToken = '';
 
             if ($fb_uid != '') {
@@ -4673,7 +4672,6 @@ class Home extends SPACULLUS_Controller {
                 }
 
                 $usr = $this->home_model->get_user_by_fb_uid($fb_uid, $email);
-
 
                 if ($usr) {
                     $this->_facebook_validate($fb_uid, $email, $accessToken);

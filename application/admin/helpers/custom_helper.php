@@ -1841,6 +1841,7 @@ function totalbarcomment($id)
 				{
 					
 					$r->token_id;
+                                        
 					// Put your device token here (without spaces):
 					$deviceToken = str_replace(array("<",">"," "),'',$r->token_id);
 					//ti($deviceToken);

@@ -58,7 +58,7 @@ function choosepage(provider, accounts) {
                 <div class="dashboard_detail">
                     <div class="result_search event"><div class="result_search_text"><i class="strip social_share"></i> Social Media</div></div>
                     <div id="container" style="display:inline-block; text-align: center;">
-                        <h1>Login to your Social Media:</h1>
+                        <h1>Login to Social Media or Send Push Notifications</h1>
                         <p></p>
                         <div class="clearfix"></div>
                         <div id="body" style="display: inline-block; text-align: center;">
@@ -74,12 +74,24 @@ function choosepage(provider, accounts) {
 // Output the enabled services and change link/button if the user is authenticated.
 $this->load->helper('url');
 foreach ($providers as $provider => $data) {
-    if ($data['connected'] && ($provider == 'PushNotifications' || ($provider != 'PushNotifications' && !@$providers['PushNotifications']['connected']))) {        
-        echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
-   max-height:8%;padding-right: 5px;', 'class' => 'connected')));
+    if ($data['connected']) {      
+            echo anchor('hauth/logout/' . $provider, img(array('src'=>"$theme_url/images/logout_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
+       max-height:8%;padding-right: 5px;', 'class' => 'connected')));
     } else {
-        echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
-   max-height:8%;padding-right: 5px;', 'class' => 'login')));
+        if (($provider == "PushNotifications" && 
+                ($providers["Facebook"]['connected'] || 
+                $providers["Twitter"]['connected'] || 
+                $providers["Google"]['connected'] ||
+                $providers["Instagram"]['connected'])) ||
+            ($provider != "PushNotifications" && 
+                $providers["PushNotifications"]['connected'])) {
+            echo img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
+max-height:8%;padding-right: 5px;', 'class' => 'login'));
+        }
+        else {
+            echo anchor('hauth/login/' . $provider, img(array('src'=>"$theme_url/images/login_$provider.png",'border'=>'0','alt'=>'$provider', 'style'=>'max-width:8%;
+max-height:8%;padding-right: 5px;', 'class' => 'login')));
+        }
     }
 }
 ?>
@@ -93,7 +105,7 @@ foreach ($providers as $provider => $data) {
                         <div class="clearfix"></div>
                         <div class="padtb" style="text-align: center;">
                             <div class="input_box text-center">                               
-                                <textarea class="form-control form-pad" id="message" name="message" style="width: 400px ; height: 100px;display: block; margin-left: auto; margin-right: auto;" placeholder="What's on your mind?"></textarea>
+                                <textarea class="form-control form-pad"  <?php if (@$providers['PushNotifications']['connected']) { echo 'maxlength="200"';}?> id="message" name="message" style="width: 400px ; height: 100px;display: block; margin-left: auto; margin-right: auto;" placeholder="What's on your mind?"></textarea>
                             </div>
                             <div class="clearfix"></div>
                         </div>
