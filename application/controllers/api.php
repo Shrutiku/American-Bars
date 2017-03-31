@@ -21,8 +21,48 @@ class Api extends REST_Controller
         $data = $this->api_model->check_api_login($email,$pass);
         $this->response($data ,200);
     }
+    
+    function user_register_post()
+	{
+			$num	=	$this->db->select('count(user_id) AS total')
+							 ->where("email",$this->input->post('email'))
+							 ->where("user_type",'user')
+							 ->get("user_master")
+							 ->row()
+							 ->total;
+			
+			
+			if($num > 0) {
+				$data['status'] = "unique_failed"; 
+				$this->response($data ,200);
+			}
+			
+			$start = strtotime($this->input->post('year').'-'.$this->input->post('month').'-'.$this->input->post('day'));
+	        $dt = date('Y-m-d');
+	        $end = strtotime($dt.'-21 year'); 
+			if($start >= $end)
+			{
+	              $data['status'] = "age_failed"; 
+				  $this->response($data ,200);
+			}
+        	$first_name = $this->input->post('first_name');
+			$last_name = $this->input->post('last_name');
+        	$email = $this->input->post('email');
+			$nick_name = $this->input->post('nick_name');
+			$pass = $this->input->post('password');
+			$mobile_no = $this->input->post('mobile_no'); 
+			$month = $this->input->post('month'); 
+			$day = $this->input->post('day'); 
+			$year = $this->input->post('year'); 
+			$gender = $this->input->post('gender'); 
+        	
+			//$data = $this->api_model->user_register_api($user_type,$first_name,$last_name,$email,$pass,$mobile_no);
+			$data = $this->api_model->user_register_api($first_name,$last_name,$email,$pass,$mobile_no,$nick_name,$month,$day,$year,$gender);
+        	$this->response($data ,200);
+			
+	}
 	
-	function user_register_post()
+	function user_phone_login_post()
 	{
             $num	=	$this->db->select('count(user_id) AS total')
                                              ->where("email",$this->input->post('email'))
