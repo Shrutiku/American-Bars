@@ -248,6 +248,10 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         $CI->load->model('bar_model');
         $bar_info = $CI->home_model->get_bar_info(get_authenticateUserID());
         $users = $CI->bar_model->get_all_bar_likers_ids($bar_info['bar_id']);
+        
+        if ($users==[]) {
+            return;
+        }
 	$to_id_arr 	 = $this->getAllUser_Device_ById($users);
         $to_id_android =  $this->getAllUser_Device_android_ById($users);
         
