@@ -220,6 +220,7 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
                             );
                     
                     $body['type'] = $data['type'];
+                    $body['bar_id'] = $data['bar_id'];
                     $body['subject'] = $data['subject'];
 
                     // Encode the payload as JSON
@@ -247,17 +248,23 @@ class Hybrid_Providers_PushNotifications extends Hybrid_Provider_Model {
         $CI->load->model('bar_model');
         $bar_info = $CI->home_model->get_bar_info(get_authenticateUserID());
         $users = $CI->bar_model->get_all_bar_likers_ids($bar_info['bar_id']);
+        
+        if ($users==[]) {
+            return;
+        }
 	$to_id_arr 	 = $this->getAllUser_Device_ById($users);
         $to_id_android =  $this->getAllUser_Device_android_ById($users);
+        
+        $status["message"] = $bar_info["bar_title"].": ".$status["message"];
         		
         if($to_id_android){
-        foreach($to_id_android as $row){
-                sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"]));
-        }	
+            foreach($to_id_android as $row){
+                    sendPushNotificationAndroid($row->gcm_regid,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"], "bar_id" => $bar_info['bar_id']));
+            }	
         }
         if($to_id_arr){
             foreach($to_id_arr as $row){
-                $this->sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"]));
+                $this->sendPushNotificationiPhone($row->device_id,array("type"=>"American Bars","subject"=>"American Bars","message"=>$status["message"], "bar_id" => $bar_info['bar_id']));
             }	
 	}  
     }
