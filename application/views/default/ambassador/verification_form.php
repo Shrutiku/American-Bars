@@ -59,6 +59,6 @@ and open the template in the editor.
    	</div>
 <script>
 function showDiv() {
-   document.getElementById('welcomeDiv').style.display = "block";
+   document.getElementById('showdiv').style.display = "block";
 }
     </script>
