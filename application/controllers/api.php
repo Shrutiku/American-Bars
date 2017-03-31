@@ -107,7 +107,7 @@ class Api extends REST_Controller
 				$this->response($data ,200);
 			}
 			
-        	r
+        	
 			//$data = $this->api_model->user_register_api($user_type,$first_name,$last_name,$email,$pass,$mobile_no);
 			$data = $this->api_model->user_edit_api();
         	$this->response($data ,200);
