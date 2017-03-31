@@ -161,7 +161,7 @@ foreach ($providers as $provider => $d) {
     }
 }
 ?>
-<?php if ($msg == '"success"') { ?>
+<?php if ($msg == 'success') { ?>
             $.growlUI('<?php echo "Post sent successfully."; ?>');
 
 <?php } ?>
