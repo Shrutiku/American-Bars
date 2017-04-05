@@ -75,16 +75,8 @@ class Api extends REST_Controller
                 $first_name = $this->input->post('first_name');
                 $last_name = $this->input->post('last_name');
                 $email = $this->input->post('email');
-                $nick_name = $this->input->post('nick_name');
-                $pass = $this->input->post('password');
                 $mobile_no = $this->input->post('mobile_no'); 
-                $month = $this->input->post('month'); 
-                $day = $this->input->post('day'); 
-                $year = $this->input->post('year'); 
-                $gender = $this->input->post('gender'); 
-
-                //$data = $this->api_model->user_register_api($user_type,$first_name,$last_name,$email,$pass,$mobile_no);
-                $data = $this->api_model->user_register_api($first_name,$last_name,$email,$pass,$mobile_no,$nick_name,$month,$day,$year,$gender);
+                $data = $this->api_model->user_phone_login_api($first_name,$last_name,$email,$mobile_no);
             }
             
             $data['user'] = $this->user_model->get_one_user_by_email($this->input->post('email')); 
