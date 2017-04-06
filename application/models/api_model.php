@@ -186,6 +186,55 @@ class Api_model extends CI_Model
 					  );
 			return $data;
     }
+    
+    function user_phone_login_api($first_name,$last_name,$email,$mobile_no)
+    {
+    	$site_setting = site_setting();	
+		
+        $data_insert = array();
+        $data_insert['first_name'] = $first_name;
+        $data_insert['last_name'] = $last_name;
+        $data_insert['email'] = $email;		
+        $data_insert['mobile_no'] = $mobile_no;		
+        $data_insert['status'] = 'active';
+        $data_insert['user_type'] = 'user';		
+        $data_insert['sign_up_ip'] = $_SERVER['REMOTE_ADDR'];
+        $data_insert['sign_up_date'] = date('Y-m-d H:i:s');		
+        $this->db->insert('user_master',$data_insert);		
+        $uid = mysql_insert_id();
+
+        $data123=array(
+                'fname'=>1,
+                'user_id'=>$uid,
+                'lname'=>1,
+                'email1'=>1,
+                'gender1'=>1,
+                'address1'=>1,
+                'mnum'=>1,
+                'abt'=>1,
+                'pic'=>1,
+                'album'=>1,
+        );
+        //$this->db->where('setting_id',$this->input->post('setting_id'));
+        $this->db->insert('user_setting',$data123);
+
+        if($this->input->post('device')=="iphone")
+        {
+        $data1234=array(
+                'device_id'=>$this->input->post('device_id'),
+                'token_id'=>$this->input->post('token_id'),
+                'user_id'=>1,
+        );
+        //$this->db->where('setting_id',$this->input->post('setting_id'));
+        $this->db->insert('registered_iphone',$data1234);
+        }
+
+        $data = array(
+                                        'status'=>'success',
+                                        'user_id'=> $uid
+                                  );
+        return $data;
+    }
 
 	function user_edit_api($user_id)
 	{
