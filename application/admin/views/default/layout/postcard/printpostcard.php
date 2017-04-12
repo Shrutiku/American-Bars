@@ -112,7 +112,7 @@ $barowner = '';
     <!--<div style="text-align: center; border: solid 1px #996E13; width: .75in; height: .75in; float: right; font-size: 16px;"><br>Stamp</div>-->
     <div style="padding-top: 50%">
       <div style="font-family: Calibri; text-align: center; font-size: 14px; padding-top:30%; padding-right: 6.25%">          
-            <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?>
+            <?php echo $one_order['bar_first_name']." ".$one_order['bar_last_name'];?><br>
             <?php echo $one_order['bar_title'];?><br/>
             <?php echo $one_order['address'];?><br/>
             <?php echo $one_order['city'].", ".$one_order['state']." ".$one_order['zipcode'];?>       
