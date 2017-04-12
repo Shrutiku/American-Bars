@@ -1322,7 +1322,6 @@ function loadTaxi()
             position: latlng,
             map: map,
             title: p[2]
-            break;
         });
      
         google.maps.event.addListener(marker, 'click', function() {
