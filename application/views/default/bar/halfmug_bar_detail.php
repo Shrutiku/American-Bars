@@ -557,7 +557,7 @@ function piShare()
      								<?php if($r->is_closed!='yes'){ ?>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
      									<div class="pull-left" style="width: 50px;">-</div>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
+                                                                        <div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div><br>
      								<?php } else {?>
      									<!-- <div class="schedule-text">-</div> -->
      									<div class="schedule-text">Closed.</div>
@@ -1322,6 +1322,7 @@ function loadTaxi()
             position: latlng,
             map: map,
             title: p[2]
+            break;
         });
      
         google.maps.event.addListener(marker, 'click', function() {
