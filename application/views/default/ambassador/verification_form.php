@@ -21,14 +21,14 @@ and open the template in the editor.
 
                                         
                                         
-                                    <!-- <?php //$attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
-                                                 //   echo form_open('ambassador/',$attributes); ?>
+                                    <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form');
+                                                    echo form_open('ambassador/',$attributes); ?>
                                                     <br><br>
-                                    <?php //if($error!=""){ ?>
+                                    <?php if($error!=""){ ?>
                                     <div class="error1 text-center"><a class="closemsg" data-dismiss="alert"></a><span>////<?php echo $error; ?></span></div>
                                     <?php }?>
    
-                                    <div class="padtb8">
+                                    <!--<div class="padtb8">
                                            <div class="col-sm-3">
                                                    <label class="control-label">Phone Number :</label>
                                            </div>
