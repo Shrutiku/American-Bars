@@ -136,7 +136,7 @@ $('#comment_title').live('click', function(e){
  });
    $(document).ready(function()
    {
-//	  initialize_map();
+	  initialize_map();
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
@@ -1290,6 +1290,7 @@ function initialize_map()
     var bounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
      directionsDisplay = new google.maps.DirectionsRenderer();
+     var LocationData = <?php echo $var; ?>;
      marker = new google.maps.Marker({
     map:map,
     // draggable:true,
