@@ -514,7 +514,8 @@ function piShare()
      			</div>
      			<div class="right_gallery_block">
      				<a href="javascript://" class="btn-lg btn-primary" onclick="loadMap()">Get Directions</a>
-     				<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>
+     				<!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a>-->
+                                <div class="clearfix"></div>
 		     			<div class="br_map mart10 ">
 		     				
 		     				<div class="portlet-body">
@@ -669,8 +670,8 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 					<div class="modal fade login_pop2" id="mapmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 					</div>	
 					
-					<div class="modal fade login_pop2" id="taximodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-					</div>	
+					<!--<div class="modal fade login_pop2" id="taximodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+					</div>-->	
 
 
 <div class="modal fade login_pop2" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
