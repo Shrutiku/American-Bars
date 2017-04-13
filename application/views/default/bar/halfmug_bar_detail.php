@@ -1284,12 +1284,9 @@ function loadMap()
   
 function initialize_map()
   {
-    var latlang = new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var map = new google.maps.Map(document.getElementById('gmap_marker'), {
-    center: latlang,
-    draggable = true,
-    });
+    var map = 
+            new google.maps.Map(document.getElementById('gmap_marker'));
     var bounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
     directionsDisplay = new google.maps.DirectionsRenderer();
@@ -1298,7 +1295,7 @@ function initialize_map()
      map:map,
     // draggable:true,
     // animation: google.maps.Animation.DROP,
-    position: latlang,
+    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
     icon: iconBase
   });
   
