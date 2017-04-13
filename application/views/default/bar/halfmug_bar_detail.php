@@ -1308,7 +1308,7 @@ function loadTaxi()
             title: '<?php echo $bar_detail['bar_title']?>'
         });
      
-        google.maps.event.addListener(marker, 'click', function() {
+        google.maps.event.addListener(marker, 'click', initialize_map() {
             infowindow.setContent('<?php echo $contentstring1;?>');
             infowindow.open(map, this);
         });
