@@ -1309,7 +1309,7 @@ function initialize_map()
      //   });
      //
         google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent('<?php //echo $contentstring1;?>');
+            infowindow.setContent('<?php echo $contentstring1;?>');
             infowindow.open(map, this);
         });
         
