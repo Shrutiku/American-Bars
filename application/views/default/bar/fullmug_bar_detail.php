@@ -56,7 +56,6 @@
 	            
      			<div class="newrightblock">
                 	<!-- <a href="javascript://" class="review text-center full-icon marr_10">Like This Bar</a> -->
-                        <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
                 	 <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
 											
 								if($cnt_like==2 && get_authenticateUserID()!=''){
@@ -72,8 +71,9 @@
 								<?php  } ?>
                     
      				<div class="result_search_text full-icon marr_10">Full Mug Bar</div>
-     				<div class="full-icon"><i class="strip fullmug"></i></div>
-     				<div class="clearfix"></div>
+                                <div class="full-icon"><i class="strip fullmug"></i></div>
+     				<b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
+                                <div class="clearfix"></div>
 	             </div>
 	             <div class="clearfix"></div>
      		</div>
