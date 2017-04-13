@@ -1346,7 +1346,7 @@ function loadTaxi()
 //  	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
 //  	    	   $(".growlUI strong").empty();
 //  	    	  return false;
-//  	    <?php } ?> 
+//  	    <?php //} ?> 
 //		var flag = this.name;
 //		var bid = '<?php //echo $bar_detail["bar_id"]; ?>';
 //		var uid = '<?php //echo get_authenticateUserID(); ?>';
