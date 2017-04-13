@@ -134,10 +134,10 @@ span.required {
 $('#comment_title').live('click', function(e){
     e.preventDefault();
  });
-   $(document).ready(function()
+   $(document).ready(initialize_map();
    {
+          initialize_map();
 	  $('#menu').click(function() {
-              	  initialize_map();
 		   $('.profile_menu').slideToggle("slow");
 	  });
 		        
