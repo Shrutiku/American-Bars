@@ -251,13 +251,13 @@ function piShare()
      		<div class="result_search">
      			<div class="pull-left">
                             <div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?>
-<!--                                        <b style="padding-left:1em;"></b>-->
-                                        <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 2%;height: 2%;overflow: auto;">
-                                <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
+                                        <b style="padding-left:1em;"></b>
+                                        <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 2%;height: 2%;overflow: auto; display:none;">
                             </div>
 	            </div>
                     <div class="pull-right">
      				<div class="result_search_text full-icon marr_10"><?php if($bar_detail['claim']=='unclaimed'  && get_authenticateUserID()==''){?>
+                                    <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
                                     <a href="<?php echo site_url('home/claim_bar_owner_register/'.base64_encode('1V1').'/1V1/'.base64_encode($bar_detail['bar_id']));?>" style="background-color: #4CAF50;" class="review text-center"><b>Register This Bar</b></a>
 						        	<?php } ?>Half Mug Bar</div>
      				<div class="full-icon"><i class="strip halfmug"></i></div>
