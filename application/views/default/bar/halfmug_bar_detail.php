@@ -1282,64 +1282,104 @@ function loadMap()
   var map;
   var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['zipcode']." ".@$bar_detail['state'];?>";
   
-function initialize_map()
+//function initialize_map()
+//  {
+//    var latlang = new google.maps.LatLng(<?php //echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
+//    var iconBase = '<?php //echo base_url().getThemeName(); ?>/images/marker.png';
+//    var map = new google.maps.Map(document.getElementById('gmap_marker'), {
+//    center: latlang,
+//    draggable = true,
+//    });
+////    var bounds = new google.maps.LatLngBounds();
+////    var infowindow = new google.maps.InfoWindow();
+//     directionsDisplay = new google.maps.DirectionsRenderer();
+//     
+//    marker = new google.maps.Marker({ 
+//    // map:map,
+//    // draggable:true,
+//    // animation: google.maps.Animation.DROP,
+//    position: latlang,
+//    icon: iconBase
+//  });
+//  
+//  //var latlng = new google.maps.LatLng(<?php //echo $bar_detail['lat']?>, <?php //echo $bar_detail['lang']?>);
+//      //  bounds.extend(latlng);
+//         
+//     //   var marker = new google.maps.Marker({
+//     //       position: latlng,
+//      //      map: map,
+//     //       title: '<?php //echo $bar_detail['bar_title']?>'
+//     //   });
+//     //
+//        google.maps.event.addListener(marker, 'click', function() {
+//            infowindow.setContent('<?php //echo $contentstring1;?>');
+//            infowindow.open(map, this);
+//        });
+//        
+//    for (var i in LocationData)
+//    {  
+//        var p = LocationData[i];
+//        var latlng = new google.maps.LatLng(p[0], p[1]);
+//        bounds.extend(latlng);
+//         
+//        var marker = new google.maps.Marker({
+//            position: latlng,
+//            map: map,
+//            title: p[2]
+//        });
+//     
+//        google.maps.event.addListener(marker, 'click', function() {
+//            infowindow.setContent(this.title);
+//            infowindow.open(map, this);
+//        });
+//    }
+//    
+//    
+//     
+//    map.fitBounds(bounds);
+//    	directionsDisplay.setMap(map);
+//		google.maps.event.trigger(map, 'resize');
+//  }
+
+  function initialize_map() 
   {
-    var latlang = new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
-    var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var map = new google.maps.Map(document.getElementById('gmap_marker'), {
-    center: latlang,
-    draggable = true,
-    });
-//    var bounds = new google.maps.LatLngBounds();
-//    var infowindow = new google.maps.InfoWindow();
-     directionsDisplay = new google.maps.DirectionsRenderer();
-     
-    marker = new google.maps.Marker({ 
-    // map:map,
-    // draggable:true,
-    // animation: google.maps.Animation.DROP,
-    position: latlang,
-    icon: iconBase
-  });
-  
-  //var latlng = new google.maps.LatLng(<?php //echo $bar_detail['lat']?>, <?php //echo $bar_detail['lang']?>);
-      //  bounds.extend(latlng);
-         
-     //   var marker = new google.maps.Marker({
-     //       position: latlng,
-      //      map: map,
-     //       title: '<?php //echo $bar_detail['bar_title']?>'
-     //   });
-     //
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent('<?php echo $contentstring1;?>');
-            infowindow.open(map, this);
-        });
-        
-    for (var i in LocationData)
-    {  
-        var p = LocationData[i];
-        var latlng = new google.maps.LatLng(p[0], p[1]);
-        bounds.extend(latlng);
-         
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            title: p[2]
-        });
-     
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(this.title);
-            infowindow.open(map, this);
-        });
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = {
+      zoom: 17,
+      center: latlng,
+    mapTypeControl: true,
+    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    navigationControl: true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("gmap_marker"), myOptions);
+    if (geocoder) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+          map.setCenter(results[0].geometry.location);
+
+            var infowindow = new google.maps.InfoWindow(
+                { content: '<b>'+address+'</b>',
+                  size: new google.maps.Size(150,50)
+                });
+
+            var marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map: map, 
+                title:address
+            }); 
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map,marker);
+            });
+
+          } 
+         }
+      });
     }
-    
-    
-     
-    map.fitBounds(bounds);
-    	directionsDisplay.setMap(map);
-		google.maps.event.trigger(map, 'resize');
   }
+
 </script>
 
 <script>
