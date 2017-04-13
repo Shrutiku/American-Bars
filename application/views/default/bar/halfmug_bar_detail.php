@@ -1236,44 +1236,44 @@ function loadMap()
 	   });
 }	
 
-function loadTaxi()
-{
-	$.ajax({
-	       type: "POST",
-		   url: "<?php  echo site_url('taxiowner/gettaxiajax')?>",
-		   data: {id:<?php echo $bar_detail["bar_id"]; ?>},
-		   dataType : 'html',
-		     beforeSend : function() {
-		   		$('#dvLoading').fadeIn('slow');
-		   },
-		    complete : function() {
-		   		$('#dvLoading').fadeOut('slow');
-		   },		
-		   success: function(response) {
-		    	$("#taximodal").html(function(){
-		   		$(this).html(response);
-		   		$('#taximodal').one('shown.bs.modal', function() {
-			           	 	
-    						}).modal();
-    						
-    						 setTimeout(function() {
-					       loadData_taxi(0,15);
-					       check();
-					       $('#infinite-favorite-taxi').slimscroll({
-		        alwaysVisible: true,
-		        height: 200,
-		        color: '#f19d12',
-		        opacity: .8
-		      });
-						}, 200);
-		   	});
-		    //$('#mapmodal').one('show.bs.modal', function (e) {
-		    	//$('#myModalnew').one('shown.bs.modal', function (e) {
-		    	
-		     
-		  }
-	   });
-}	
+//function loadTaxi()
+//{
+//	$.ajax({
+//	       type: "POST",
+//		   url: "<?php  //echo site_url('taxiowner/gettaxiajax')?>",
+//		   data: {id:<?php //echo $bar_detail["bar_id"]; ?>},
+//		   dataType : 'html',
+//		     beforeSend : function() {
+//		   		$('#dvLoading').fadeIn('slow');
+//		   },
+//		    complete : function() {
+//		   		$('#dvLoading').fadeOut('slow');
+//		   },		
+//		   success: function(response) {
+//		    	$("#taximodal").html(function(){
+//		   		$(this).html(response);
+//		   		$('#taximodal').one('shown.bs.modal', function() {
+//			           	 	
+//    						}).modal();
+//    						
+//    						 setTimeout(function() {
+//					       loadData_taxi(0,15);
+//					       check();
+//					       $('#infinite-favorite-taxi').slimscroll({
+//		        alwaysVisible: true,
+//		        height: 200,
+//		        color: '#f19d12',
+//		        opacity: .8
+//		      });
+//						}, 200);
+//		   	});
+//		    //$('#mapmodal').one('show.bs.modal', function (e) {
+//		    	//$('#myModalnew').one('shown.bs.modal', function (e) {
+//		    	
+//		     
+//		  }
+//	   });
+//}	
 
 </script>
 
@@ -1281,20 +1281,24 @@ function loadTaxi()
   var geocoder;
   var map;
   var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['zipcode']." ".@$bar_detail['state'];?>";
-  function initialize_map() 
+  
+var initialize_map()
   {
+    var latlang = new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var map = 
-        new google.maps.Map(document.getElementById('gmap_marker'));
-    var bounds = new google.maps.LatLngBounds();
-    var infowindow = new google.maps.InfoWindow();
+    var map = new google.maps.Map(document.getElementById('gmap_marker'), {
+    center: latlang,
+    draggable = true,
+    });
+//    var bounds = new google.maps.LatLngBounds();
+//    var infowindow = new google.maps.InfoWindow();
      directionsDisplay = new google.maps.DirectionsRenderer();
-     marker = new google.maps.Marker({
-    map:map,
+     
+    marker = new google.maps.Marker({ 
+    // map:map,
     // draggable:true,
     // animation: google.maps.Animation.DROP,
-    
-    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
+    position: latlang,
     icon: iconBase
   });
   
