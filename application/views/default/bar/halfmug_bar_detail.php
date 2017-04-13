@@ -1308,7 +1308,7 @@ function loadTaxi()
             title: '<?php echo $bar_detail['bar_title']?>'
         });
      
-        google.maps.event.addListener(marker, 'click', initialize_map() {
+        google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent('<?php echo $contentstring1;?>');
             infowindow.open(map, this);
         });
@@ -1340,47 +1340,47 @@ function loadTaxi()
 </script>
 
 <script>
- $(document).ready(function () {
-	$('#total-like').click(function(){
-		<?php if($this->session->userdata('user_type')=='taxi_owner'){?>
-  	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
-  	    	   $(".growlUI strong").empty();
-  	    	  return false;
-  	    <?php } ?> 
-		var flag = this.name;
-		var bid = '<?php echo $bar_detail["bar_id"]; ?>';
-		var uid = '<?php echo get_authenticateUserID(); ?>';
-		
-		if($('#sess_id').val()==0)
-		{
-			<?php $this->session->set_userdata("REDIRECT_PAGE","bar/details/".$bar_detail["bar_slug"]); ?>
-			$('#loginmodal').modal('show');
-			return false;
-		}
-		
-		$.ajax({
-        type: "POST",
-        url: "<?php echo base_url(); ?>bar/bar_likes",         //the script to call to get data          
-        data: {bar_id: bid, user_id: uid, like_flag:flag},
-	    dataType: '',                //data format      
-        success: function(data)          //on receive of reply		
-            {  
-            	
-			var main = data.split('*');
-			   if(main[0]==1){
-				   $('#total-like').attr('name','0');
-				   $('#total-like').html('Already Liked');
-				   $('.likeduser').append(main[1]);	
-			   }
-			   else{
-				   $('#total-like').attr('name','1');
-				   $('#total-like').html('Like This Bar');
-				   $('#'+main[1]).remove();
-				}
-		    } 
-		
-        });
-	});
+// $(document).ready(function () {
+//	$('#total-like').click(function(){
+//		<?php //if($this->session->userdata('user_type')=='taxi_owner'){?>
+//  	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
+//  	    	   $(".growlUI strong").empty();
+//  	    	  return false;
+//  	    <?php } ?> 
+//		var flag = this.name;
+//		var bid = '<?php //echo $bar_detail["bar_id"]; ?>';
+//		var uid = '<?php //echo get_authenticateUserID(); ?>';
+//		
+//		if($('#sess_id').val()==0)
+//		{
+//			<?php //$this->session->set_userdata("REDIRECT_PAGE","bar/details/".$bar_detail["bar_slug"]); ?>
+//			$('#loginmodal').modal('show');
+//			return false;
+//		}
+//		
+//		$.ajax({
+//        type: "POST",
+//        url: "<?php //echo base_url(); ?>bar/bar_likes",         //the script to call to get data          
+//        data: {bar_id: bid, user_id: uid, like_flag:flag},
+//	    dataType: '',                //data format      
+//        success: function(data)          //on receive of reply		
+//            {  
+//            	
+//			var main = data.split('*');
+//			   if(main[0]==1){
+//				   $('#total-like').attr('name','0');
+//				   $('#total-like').html('Already Liked');
+//				   $('.likeduser').append(main[1]);	
+//			   }
+//			   else{
+//				   $('#total-like').attr('name','1');
+//				   $('#total-like').html('Like This Bar');
+//				   $('#'+main[1]).remove();
+//				}
+//		    } 
+//		
+//        });
+//	});
 	
 	 $("#view-all").click(function(){
     	$.ajax({
