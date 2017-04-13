@@ -136,7 +136,7 @@ $('#comment_title').live('click', function(e){
  });
    $(document).ready(function()
    {
-//	  initialize_map();
+	  initialize_map();
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
@@ -252,7 +252,7 @@ function piShare()
      			<div class="pull-left">
                             <div class="result_search_text"><?php echo "Welcome to " .$bar_detail['bar_title'];?>
                                         <b style="padding-left:1em;"></b>
-                                        <!--<img src ="<?php //echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 2%;height: 2%;overflow: auto;">-->
+                                        <img src ="<?php echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 2%;height: 2%;overflow: auto;">
                                 <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
                             </div>
 	            </div>
@@ -514,8 +514,7 @@ function piShare()
      			</div>
      			<div class="right_gallery_block">
      				<a href="javascript://" class="btn-lg btn-primary" onclick="loadMap()">Get Directions</a>
-     				<!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a>-->
-                                <div class="clearfix"></div>
+     				<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>
 		     			<div class="br_map mart10 ">
 		     				
 		     				<div class="portlet-body">
@@ -558,7 +557,7 @@ function piShare()
      								<?php if($r->is_closed!='yes'){ ?>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
      									<div class="pull-left" style="width: 50px;">-</div>
-                                                                        <div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div><br>
+     								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
      									<!-- <div class="schedule-text">-</div> -->
      									<div class="schedule-text">Closed.</div>
@@ -670,8 +669,8 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 					<div class="modal fade login_pop2" id="mapmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 					</div>	
 					
-					<!--<div class="modal fade login_pop2" id="taximodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-					</div>-->	
+					<div class="modal fade login_pop2" id="taximodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+					</div>	
 
 
 <div class="modal fade login_pop2" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -1282,33 +1281,32 @@ function loadTaxi()
   var geocoder;
   var map;
   var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['zipcode']." ".@$bar_detail['state'];?>";
-function initialize_map() 
-{
+  function initialize_map() 
+  {
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
     var map = 
         new google.maps.Map(document.getElementById('gmap_marker'));
     var bounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
      directionsDisplay = new google.maps.DirectionsRenderer();
-     var LocationData = <?php echo $var; ?>;
      marker = new google.maps.Marker({
     map:map,
     // draggable:true,
     // animation: google.maps.Animation.DROP,
     
-    position: new google.maps.LatLng(<?php echo $bar_detail['lat'];//echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']; //echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
+    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
     icon: iconBase
   });
   
-  var latlng = new google.maps.LatLng(<?php echo $bar_detail['lat'];?>, <?php echo $bar_detail['lang'];?>);
-        bounds.extend(latlng);
+  //var latlng = new google.maps.LatLng(<?php //echo $bar_detail['lat']?>, <?php //echo $bar_detail['lang']?>);
+      //  bounds.extend(latlng);
          
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            title: '<?php echo $bar_detail['bar_title']?>'
-        });
-     
+     //   var marker = new google.maps.Marker({
+     //       position: latlng,
+      //      map: map,
+     //       title: '<?php //echo $bar_detail['bar_title']?>'
+     //   });
+     //
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent('<?php echo $contentstring1;?>');
             infowindow.open(map, this);
@@ -1331,7 +1329,9 @@ function initialize_map()
             infowindow.open(map, this);
         });
     }
- 
+    
+    
+     
     map.fitBounds(bounds);
     	directionsDisplay.setMap(map);
 		google.maps.event.trigger(map, 'resize');
@@ -1340,46 +1340,46 @@ function initialize_map()
 
 <script>
  $(document).ready(function () {
-//	$('#total-like').click(function(){
-//		<?php //if($this->session->userdata('user_type')=='taxi_owner'){?>
-//  	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
-//  	    	   $(".growlUI strong").empty();
-//  	    	  return false;
-//  	    <?php //} ?> 
-//		var flag = this.name;
-//		var bid = '<?php //echo $bar_detail["bar_id"]; ?>';
-//		var uid = '<?php //echo get_authenticateUserID(); ?>';
-//		
-//		if($('#sess_id').val()==0)
-//		{
-//			<?php //$this->session->set_userdata("REDIRECT_PAGE","bar/details/".$bar_detail["bar_slug"]); ?>
-//			$('#loginmodal').modal('show');
-//			return false;
-//		}
-//		
-//		$.ajax({
-//        type: "POST",
-//        url: "<?php //echo base_url(); ?>bar/bar_likes",         //the script to call to get data          
-//        data: {bar_id: bid, user_id: uid, like_flag:flag},
-//	    dataType: '',                //data format      
-//        success: function(data)          //on receive of reply		
-//            {  
-//            	
-//			var main = data.split('*');
-//			   if(main[0]==1){
-//				   $('#total-like').attr('name','0');
-//				   $('#total-like').html('Already Liked');
-//				   $('.likeduser').append(main[1]);	
-//			   }
-//			   else{
-//				   $('#total-like').attr('name','1');
-//				   $('#total-like').html('Like This Bar');
-//				   $('#'+main[1]).remove();
-//				}
-//		    } 
-//		
-//        });
-//	});
+	$('#total-like').click(function(){
+		<?php if($this->session->userdata('user_type')=='taxi_owner'){?>
+  	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
+  	    	   $(".growlUI strong").empty();
+  	    	  return false;
+  	    <?php } ?> 
+		var flag = this.name;
+		var bid = '<?php echo $bar_detail["bar_id"]; ?>';
+		var uid = '<?php echo get_authenticateUserID(); ?>';
+		
+		if($('#sess_id').val()==0)
+		{
+			<?php $this->session->set_userdata("REDIRECT_PAGE","bar/details/".$bar_detail["bar_slug"]); ?>
+			$('#loginmodal').modal('show');
+			return false;
+		}
+		
+		$.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?>bar/bar_likes",         //the script to call to get data          
+        data: {bar_id: bid, user_id: uid, like_flag:flag},
+	    dataType: '',                //data format      
+        success: function(data)          //on receive of reply		
+            {  
+            	
+			var main = data.split('*');
+			   if(main[0]==1){
+				   $('#total-like').attr('name','0');
+				   $('#total-like').html('Already Liked');
+				   $('.likeduser').append(main[1]);	
+			   }
+			   else{
+				   $('#total-like').attr('name','1');
+				   $('#total-like').html('Like This Bar');
+				   $('#'+main[1]).remove();
+				}
+		    } 
+		
+        });
+	});
 	
 	 $("#view-all").click(function(){
     	$.ajax({
