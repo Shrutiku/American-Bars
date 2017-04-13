@@ -1338,7 +1338,7 @@ function initialize_map()
 </script>
 
 <script>
-// $(document).ready(function () {
+ $(document).ready(function () {
 //	$('#total-like').click(function(){
 //		<?php //if($this->session->userdata('user_type')=='taxi_owner'){?>
 //  	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
