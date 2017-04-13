@@ -136,7 +136,7 @@ $('#comment_title').live('click', function(e){
  });
    $(document).ready(function()
    {
-	  initialize_map();
+	  initialize-map();
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
@@ -1282,7 +1282,7 @@ function loadMap()
   var map;
   var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['zipcode']." ".@$bar_detail['state'];?>";
   
-var initialize_map()
+function initialize-map()
   {
     var latlang = new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
