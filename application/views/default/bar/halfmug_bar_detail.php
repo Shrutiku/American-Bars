@@ -134,9 +134,9 @@ span.required {
 $('#comment_title').live('click', function(e){
     e.preventDefault();
  });
-   $(document).ready(initialize_map();
+   $(document).ready(function()
    {
-          initialize_map();
+              	  initialize_map();
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
