@@ -514,7 +514,7 @@ function piShare()
      			</div>
      			<div class="right_gallery_block">
      				<a href="javascript://" class="btn-lg btn-primary" onclick="loadMap()">Get Directions</a>
-     				<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>
+     				<!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>-->
 		     			<div class="br_map mart10 ">
 		     				
 		     				<div class="portlet-body">
