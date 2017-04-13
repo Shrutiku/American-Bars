@@ -1282,8 +1282,8 @@ function loadTaxi()
   var geocoder;
   var map;
   var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['zipcode']." ".@$bar_detail['state'];?>";
-  function initialize_map() 
-  {
+function initialize_map() 
+{
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
     var map = 
         new google.maps.Map(document.getElementById('gmap_marker'));
@@ -1330,9 +1330,7 @@ function loadTaxi()
             infowindow.open(map, this);
         });
     }
-    
-    
-     
+ 
     map.fitBounds(bounds);
     	directionsDisplay.setMap(map);
 		google.maps.event.trigger(map, 'resize');
