@@ -136,7 +136,7 @@ $('#comment_title').live('click', function(e){
  });
    $(document).ready(function()
    {
-	  initialize_map();
+//	  initialize_map();
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
