@@ -1298,15 +1298,15 @@ function loadTaxi()
     icon: iconBase
   });
   
-  //var latlng = new google.maps.LatLng(<?php //echo $bar_detail['lat']?>, <?php //echo $bar_detail['lang']?>);
-      //  bounds.extend(latlng);
+  var latlng = new google.maps.LatLng(<?php echo $bar_detail['lat'];?>, <?php echo $bar_detail['lang'];?>);
+        bounds.extend(latlng);
          
-     //   var marker = new google.maps.Marker({
-     //       position: latlng,
-      //      map: map,
-     //       title: '<?php //echo $bar_detail['bar_title']?>'
-     //   });
-     //
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: '<?php echo $bar_detail['bar_title']?>'
+        });
+     
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent('<?php echo $contentstring1;?>');
             infowindow.open(map, this);
