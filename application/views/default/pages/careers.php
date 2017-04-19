@@ -1,9 +1,11 @@
-<h1 class="productbar_title mar_top20">Our Open Positions:</h1>
+Our Open Positions:
 <style>
     #i1{background:#E6E6E6; border-radius: 30px 30px 30px 30px;}
-    .productbar_title mar_top20 {
+   /* 
+   <h1 class="productbar_title mar_top20">Our Open Positions:</h1>
+   .productbar_title mar_top20 {
         background-image:url('C:\Users\SHRUTI\Documents\images.jpg');
-    }
+    }*/
     #i2{ background:#000000;}
 </style>
 <div id="i2" >
