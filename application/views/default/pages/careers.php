@@ -1,4 +1,4 @@
-<h2 class="productbar_title mar" align="center" >Our Open Positions:</h2>
+<h1 class="productbar_title mar" align="center" >Our Open Positions:</h1>
 <style>
     #i1{background:#E6E6E6; border-radius: 30px 30px 30px 30px;}
    /* 
@@ -7,7 +7,7 @@
         background-image:url('C:\Users\SHRUTI\Documents\images.jpg');
     }*/
     #i2{ background:#000000;}
-    h2{
+    h1{
         background: red;
     }
 </style>
