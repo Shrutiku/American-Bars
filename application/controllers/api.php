@@ -79,6 +79,8 @@ class Api extends REST_Controller
                 $data = $this->api_model->user_phone_login_api($first_name,$last_name,$email,$mobile_no);
             }
             
+            $this->load->model('user_model');
+            
             $data['user'] = $this->user_model->get_one_user_by_email($this->input->post('email')); 
             $this->response($data ,200);			
 	}
