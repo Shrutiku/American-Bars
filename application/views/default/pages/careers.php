@@ -8,7 +8,7 @@
     }*/
     #i2{ background:#000000;}
     h2{
-       padding: 2px; font-color:white; background:#C57B00;
+       padding: 4px; color:#ffffff; background:#C57B00;
     }
 </style>
 <div id="i2" >
