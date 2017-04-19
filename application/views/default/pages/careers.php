@@ -12,7 +12,7 @@
     }
 </style>
 <div id="i2" >
-    <img src="https://cdn.pixabay.com/photo/2016/12/14/09/37/keyboard-1905884_1280.jpg" style="width:1260px;height:300px;">
+    <img src="https://cdn.pixabay.com/photo/2015/09/23/09/00/workplace-953162_1280.jpg" style="width:1260px;height:300px;">
     <br><br><br><br><br><br><br><br><br><br>
     <div id="i1" style=" width:800px;margin:0 auto; padding: 80pt;border-radius: 30px 30px 30px 30px;">
 <script data-startup="american-bars" src="https://angel.co/javascripts/embed_jobs.js" id="angellist_embed" async></script>
