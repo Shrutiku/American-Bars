@@ -7,6 +7,9 @@
         background-image:url('C:\Users\SHRUTI\Documents\images.jpg');
     }*/
     #i2{ background:#000000;}
+    h2{
+        background: red;
+    }
 </style>
 <div id="i2" >
     <img src="http://www.snnbuilders.com/images/meet_us/career.jpg" style="width:1260px;height:300px;">
