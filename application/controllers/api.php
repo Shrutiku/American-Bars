@@ -87,7 +87,7 @@ class Api extends REST_Controller
                 
                 $user = $this->user_model->get_one_user_by_email($phone);
 
-                if (!$user)
+                if ($user)
                 {
                     $data['user_id'] = $user->user_id; 
                     $data['status']= 'success';
