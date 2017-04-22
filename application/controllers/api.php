@@ -89,7 +89,7 @@ class Api extends REST_Controller
 
                 if ($user)
                 {
-                    $data['user_id'] = $user->user_id; 
+                    $data['user_id'] = $user['user_id']; 
                     $data['status']= 'success';
                 }
                 else {                 
