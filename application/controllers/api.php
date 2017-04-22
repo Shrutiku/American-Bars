@@ -64,8 +64,11 @@ class Api extends REST_Controller
 	
 	function user_phone_login_post()
 	{
+            // Hack: We store phone number in the email field
+            $phone = $this->input->post('email');
+            $phone = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
             $num	=	$this->db->select('count(user_id) AS total')
-                                             ->where("email",$this->input->post('email'))
+                                             ->where("email",$phone)
                                              ->where("user_type",'user')
                                              ->get("user_master")
                                              ->row()
@@ -76,13 +79,13 @@ class Api extends REST_Controller
                 $last_name = $this->input->post('last_name');
                 $email = $this->input->post('email');
                 $mobile_no = $this->input->post('mobile_no'); 
-                $data = $this->api_model->user_phone_login_api($first_name,$last_name,$email,$mobile_no);
+                $data = $this->api_model->user_phone_login_api($first_name,$last_name,$phone,$mobile_no);
             }
             else
             {
                 $this->load->model('user_model');
                 
-                $user = $this->user_model->get_one_user_by_email($this->input->post('email'));
+                $user = $this->user_model->get_one_user_by_email($phone);
 
                 if (!$user)
                 {
