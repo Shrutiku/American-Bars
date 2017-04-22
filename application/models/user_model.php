@@ -28,7 +28,7 @@ class User_model extends CI_Model {
         
         function get_one_user_by_email($email) 
         {
-            $this->db->select("*");
+            $this->db->select("user_id");
             $this->db->from('user_master');
             $this->db->where('email',$email);
             $this->db->order_by('email','desc');

@@ -78,10 +78,21 @@ class Api extends REST_Controller
                 $mobile_no = $this->input->post('mobile_no'); 
                 $data = $this->api_model->user_phone_login_api($first_name,$last_name,$email,$mobile_no);
             }
+            else
+            {
+                $this->load->model('user_model');
+                
+                $user = $this->user_model->get_one_user_by_email($this->input->post('email'));
+
+                if (!$user)
+                {
+                    $data['user_id'] = $user->user_id; 
+                    $data['status']= 'success';
+                }
+                $data['status']= 'failure';        
+            }
             
-            $this->load->model('user_model');
             
-            $data['user'] = $this->user_model->get_one_user_by_email($this->input->post('email')); 
             $this->response($data ,200);			
 	}
 
