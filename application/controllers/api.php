@@ -65,9 +65,8 @@ class Api extends REST_Controller
 	function user_phone_login_post()
 	{
             // Hack: We store phone number in the email field
-            $phone = $this->input->post('email');
-            $phone = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
-            $phone = preg_replace('-', '', $phone);
+            $phone_str = $this->input->post('email');
+            $phone = filter_var($phone_str, FILTER_SANITIZE_NUMBER_INT);
             $num	=	$this->db->select('count(user_id) AS total')
                                              ->where("email",$phone)
                                              ->where("user_type",'user')
