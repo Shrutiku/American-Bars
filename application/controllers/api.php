@@ -22,6 +22,16 @@ class Api extends REST_Controller
         $this->response($data ,200);
     }
     
+    function user_phone_login_post()
+    {
+    	//$email = "php.viral@spaculus.info";//$this->input->post('email');
+        //$pass = "a@12345678";//$this->input->post('password');
+        $phone = $this->input->post('phone');
+        $pass = $this->input->post('activation_code');
+        $data = $this->api_model->check_api_login($phone,$pass);
+        $this->response($data ,200);
+    }
+    
     function user_register_post()
 	{
 			$num	=	$this->db->select('count(user_id) AS total')
@@ -62,41 +72,61 @@ class Api extends REST_Controller
 			
 	}
 	
-	function user_phone_login_post()
+	function user_phone_register_post()
 	{
-            // Hack: We store phone number in the email field
-            $phone_str = $this->input->post('email');
+            $phone_str = $this->input->post('phone');
             $phone_dash = filter_var($phone_str, FILTER_SANITIZE_NUMBER_INT);
             $phone = str_replace(array('+','-', '.'), '', $phone_dash);
             $num	=	$this->db->select('count(user_id) AS total')
-                                             ->where("email",$phone)
+                                             ->where("phone_no",$phone)
                                              ->where("user_type",'user')
                                              ->get("user_master")
                                              ->row()
-                                             ->total;
+                                             ->total;          
 
             if($num == 0) { 
                 $first_name = $this->input->post('first_name');
                 $last_name = $this->input->post('last_name');
-                $mobile_no = $this->input->post('mobile_no'); 
-                $data = $this->api_model->user_phone_login_api($first_name,$last_name,$phone,$mobile_no);
+            
+                $data = $this->api_model->user_phone_register_api($first_name,$last_name,$phone);
             }
             else
             {
                 $this->load->model('user_model');
                 
-                $user = $this->user_model->get_one_user_by_email($phone);
+                $user = $this->user_model->get_one_user_by_phone($phone);
 
-                if ($user)
+                if ($user && $user['user_id'])
                 {
                     $data['user_id'] = $user['user_id']; 
                     $data['status']= 'success';
                 }
-                else {                 
-                    $data['status']= 'failure';  
-                }
             }
             
+            if (!$data['user_id']) {
+                $data['status']= 'failure';
+                $this->response($data ,200);
+            }
+            
+            $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
+            $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
+            $client = new TwilioClient($account_sid, $auth_token);
+            $activation_code = rand(100000, 999999);
+            $user_update = array('password' => md5($activation_code));
+            $body = 'Here is your verification code for American Bars: ' . $claim_code;
+
+            try {
+                $client->account->messages->create($phone, array(
+                    'from' => '+13102725642',
+                    'body' => $body,
+                        )
+                );
+
+                $this->db->where('user_id', $data['user_id']);
+                $this->db->update('user_master', $user_update);
+            } catch (Exception $e) {
+                $data["error"] = "Connectivity Error";
+            }
             
             $this->response($data ,200);			
 	}

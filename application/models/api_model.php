@@ -14,85 +14,162 @@ class Api_model extends CI_Model
 
 			
 	/**N**/
-	function check_api_login($email,$password)
-	{
-		//$this->load->helper('cookie');
-		$device_id = $this->input->post('device_id');
-		$unique_code = uniqid().$device_id;
-		$query = $this->db->get_where('user_master',array('email'=>$email,'password'=>md5($password),'user_type'=>'user'));
-		if($query->num_rows() == 1)
-		{
-			$user = $query->row_array();
-			$user_type=$user['user_type'];
-			$user_id = $user['user_id'];
-			$status = $user['status'];
-			$first_name= $user['first_name'];
-			$last_name= $user['last_name'];
-			$email= $user['email'];
-			$mobile_no= $user['mobile_no'];
-			$image= $user['profile_image'];
+    function check_api_login($email,$password)
+    {
+            //$this->load->helper('cookie');
+            $device_id = $this->input->post('device_id');
+            $unique_code = uniqid().$device_id;
+            $query = $this->db->get_where('user_master',array('email'=>$email,'password'=>md5($password),'user_type'=>'user'));
+            if($query->num_rows() == 1)
+            {
+                    $user = $query->row_array();
+                    $user_type=$user['user_type'];
+                    $user_id = $user['user_id'];
+                    $status = $user['status'];
+                    $first_name= $user['first_name'];
+                    $last_name= $user['last_name'];
+                    $email= $user['email'];
+                    $mobile_no= $user['mobile_no'];
+                    $image= $user['profile_image'];
 
-			
-			if($status=='active')
-			{
-				//return "1";
-				$data = array(
-						'user_id' => $user_id,
-						'email' => $email,
-						'image' => $image,
-						'first_name'=>$first_name,
-						'last_name'=>$last_name,
-						'mobile_no'=>$mobile_no,
-						'unique_code' => $unique_code,
-						'device_id'=>$device_id,
-						'status'=>'success'
-						);
-						
-			    $data_device = array(
-                        'user_id' => $user_id,
-                        'device_name'=>$device_id,
-                        'unique_code' => $unique_code,
-                        'created_on'=> date('Y-m-d H:i:s')
-                );
-				$this->db->insert('device_master',$data_device);	
-				
-				return $data;
-				
-						
-						
-			}else if($status=='suspend'){
-				
-				$data = array(
-                        'status'=>'suspend'
-                        );
-				return $data;
-				
-			}
-			else if($status=='inactive'){
-				
-				$data = array(
-                        'status'=>'inactive'
-                        );
-				return $data;
-				
-			}else{
-				$data = array(
-                        'status'=>'fail'
-                        );
-				return $data;
-			}	
 
-		}
-		else
-		{
-			$data = array(
-                        'status'=>'fail'
-                        );
-				return $data;
-		}
+                    if($status=='active')
+                    {
+                            //return "1";
+                            $data = array(
+                                            'user_id' => $user_id,
+                                            'email' => $email,
+                                            'image' => $image,
+                                            'first_name'=>$first_name,
+                                            'last_name'=>$last_name,
+                                            'mobile_no'=>$mobile_no,
+                                            'unique_code' => $unique_code,
+                                            'device_id'=>$device_id,
+                                            'status'=>'success'
+                                            );
 
-	}
+                        $data_device = array(
+                    'user_id' => $user_id,
+                    'device_name'=>$device_id,
+                    'unique_code' => $unique_code,
+                    'created_on'=> date('Y-m-d H:i:s')
+            );
+                            $this->db->insert('device_master',$data_device);	
 
+                            return $data;
+
+
+
+                    }else if($status=='suspend'){
+
+                            $data = array(
+                    'status'=>'suspend'
+                    );
+                            return $data;
+
+                    }
+                    else if($status=='inactive'){
+
+                            $data = array(
+                    'status'=>'inactive'
+                    );
+                            return $data;
+
+                    }else{
+                            $data = array(
+                    'status'=>'fail'
+                    );
+                            return $data;
+                    }	
+
+            }
+            else
+            {
+                    $data = array(
+                    'status'=>'fail'
+                    );
+                            return $data;
+            }
+
+    }
+    
+    function check_api_phone_login($phone,$password)
+    {
+            //$this->load->helper('cookie');
+            $device_id = $this->input->post('device_id');
+            $unique_code = uniqid().$device_id;
+            $query = $this->db->get_where('user_master',array('phone_no'=>$phone,'password'=>md5($password),'user_type'=>'user'));
+            if($query->num_rows() == 1)
+            {
+                    $user = $query->row_array();
+                    $user_type=$user['user_type'];
+                    $user_id = $user['user_id'];
+                    $status = $user['status'];
+                    $first_name= $user['first_name'];
+                    $last_name= $user['last_name'];
+                    $mobile_no= $user['mobile_no'];
+                    $image= $user['profile_image'];
+
+
+                    if($status=='active')
+                    {
+                            //return "1";
+                            $data = array(
+                                            'user_id' => $user_id,
+                                            'image' => $image,
+                                            'first_name'=>$first_name,
+                                            'last_name'=>$last_name,
+                                            'mobile_no'=>$mobile_no,
+                                            'unique_code' => $unique_code,
+                                            'device_id'=>$device_id,
+                                            'status'=>'success'
+                                            );
+
+                        $data_device = array(
+                    'user_id' => $user_id,
+                    'device_name'=>$device_id,
+                    'unique_code' => $unique_code,
+                    'created_on'=> date('Y-m-d H:i:s')
+            );
+                            $this->db->insert('device_master',$data_device);	
+
+                            return $data;
+
+
+
+                    }else if($status=='suspend'){
+
+                            $data = array(
+                    'status'=>'suspend'
+                    );
+                            return $data;
+
+                    }
+                    else if($status=='inactive'){
+
+                            $data = array(
+                    'status'=>'inactive'
+                    );
+                            return $data;
+
+                    }else{
+                            $data = array(
+                    'status'=>'fail'
+                    );
+                            return $data;
+                    }	
+
+            }
+            else
+            {
+                    $data = array(
+                    'status'=>'fail'
+                    );
+                            return $data;
+            }
+
+    }
+        
     function user_register_api($first_name,$last_name,$email,$pass,$mobile_no,$nick_name,$month,$day,$year,$gender)
     {
     	$site_setting = site_setting();	
@@ -187,15 +264,15 @@ class Api_model extends CI_Model
 			return $data;
     }
     
-    function user_phone_login_api($first_name,$last_name,$email,$mobile_no)
+    function user_phone_register_api($first_name,$last_name,$phone_no)
     {
     	$site_setting = site_setting();	
 		
         $data_insert = array();
         $data_insert['first_name'] = $first_name;
         $data_insert['last_name'] = $last_name;
-        $data_insert['email'] = $email;		
-        $data_insert['mobile_no'] = $mobile_no;		
+        $data_insert['phone_no'] = $phone_no;		
+        $data_insert['mobile_no'] = $phone_no;		
         $data_insert['status'] = 'active';
         $data_insert['user_type'] = 'user';		
         $data_insert['sign_up_ip'] = $_SERVER['REMOTE_ADDR'];
