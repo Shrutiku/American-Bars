@@ -272,7 +272,8 @@ class Api_model extends CI_Model
         $data_insert['first_name'] = $first_name;
         $data_insert['last_name'] = $last_name;
         $data_insert['phone_no'] = $phone_no;		
-        $data_insert['mobile_no'] = $phone_no;		
+        $data_insert['mobile_no'] = $phone_no;	
+        $data_insert['user_name'] = $phone_no;		
         $data_insert['status'] = 'active';
         $data_insert['user_type'] = 'user';		
         $data_insert['sign_up_ip'] = $_SERVER['REMOTE_ADDR'];
