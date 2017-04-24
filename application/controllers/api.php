@@ -1,6 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 require(APPPATH.'/libraries/REST_Controller.php');
+require_once(APPPATH . 'libraries/Twilio/autoload.php');
+require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
+
+use Twilio\Rest\Client as TwilioClient;
  
 class Api extends REST_Controller
 {
