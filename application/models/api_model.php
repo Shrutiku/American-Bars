@@ -107,7 +107,7 @@ class Api_model extends CI_Model
                     $status = $user['status'];
                     $first_name= $user['first_name'];
                     $last_name= $user['last_name'];
-                    $mobile_no= $user['mobile_no'];
+                    $phone_no= $user['phone_no'];
                     $image= $user['profile_image'];
 
 
@@ -119,7 +119,7 @@ class Api_model extends CI_Model
                                             'image' => $image,
                                             'first_name'=>$first_name,
                                             'last_name'=>$last_name,
-                                            'phone'=>$mobile_no,
+                                            'phone'=>$phone_no,
                                             'unique_code' => $unique_code,
                                             'device_id'=>$device_id,
                                             'status'=>'success'
