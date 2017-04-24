@@ -119,7 +119,7 @@ class Api_model extends CI_Model
                                             'image' => $image,
                                             'first_name'=>$first_name,
                                             'last_name'=>$last_name,
-                                            'mobile_no'=>$mobile_no,
+                                            'phone'=>$mobile_no,
                                             'unique_code' => $unique_code,
                                             'device_id'=>$device_id,
                                             'status'=>'success'
