@@ -96,6 +96,8 @@ class Api_model extends CI_Model
     function check_api_phone_login($phone,$password)
     {
             //$this->load->helper('cookie');
+            $device_id = $this->input->post('device_id');
+            $unique_code = uniqid().$device_id;
             $query = $this->db->get_where('user_master',array('phone_no'=>$phone,'password'=>md5($password),'user_type'=>'user'));
             if($query->num_rows() == 1)
             {
@@ -106,10 +108,7 @@ class Api_model extends CI_Model
                     $first_name= $user['first_name'];
                     $last_name= $user['last_name'];
                     $phone_no= $user['phone_no'];
-                    $image= $user['profile_image']; 
-                    $device_id = $user['device_id'];
-            
-                    $unique_code = uniqid().$device_id;
+                    $image= $user['profile_image'];
 
                     if($status=='active')
                     {
