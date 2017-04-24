@@ -117,7 +117,7 @@ class Api extends REST_Controller
             $client = new TwilioClient($account_sid, $auth_token);
             $activation_code = rand(100000, 999999);
             $user_update = array('password' => md5($activation_code));
-            $body = 'Here is your verification code for American Bars: ' . $claim_code;
+            $body = 'Here is your verification code for American Bars: ' . $activation_code;
 
             try {
                 $client->account->messages->create($phone, array(
