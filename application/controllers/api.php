@@ -32,7 +32,7 @@ class Api extends REST_Controller
         //$pass = "a@12345678";//$this->input->post('password');
         $phone = $this->input->post('phone');
         $pass = $this->input->post('activation_code');
-        $data = $this->api_model->check_api_login($phone,$pass);
+        $data = $this->api_model->check_api_phone_login($phone,$pass);
         $this->response($data ,200);
     }
     
