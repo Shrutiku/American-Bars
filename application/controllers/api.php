@@ -30,7 +30,9 @@ class Api extends REST_Controller
     {
     	//$email = "php.viral@spaculus.info";//$this->input->post('email');
         //$pass = "a@12345678";//$this->input->post('password');
-        $phone = $this->input->post('phone');
+        $phone_str = $this->input->post('phone');
+        $phone_dash = filter_var($phone_str, FILTER_SANITIZE_NUMBER_INT);
+        $phone = str_replace(array('+','-', '.'), '', $phone_dash);        
         $pass = $this->input->post('activation_code');
         $data = $this->api_model->check_api_phone_login($phone,$pass);
         $this->response($data ,200);
