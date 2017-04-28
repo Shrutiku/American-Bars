@@ -78,7 +78,7 @@ class Api extends REST_Controller
 			
 	}
 	
-	function user_phone_register_post()
+	function user_phone_activate_post()
 	{
             $phone_str = $this->input->post('phone');
             $phone_dash = filter_var($phone_str, FILTER_SANITIZE_NUMBER_INT);
