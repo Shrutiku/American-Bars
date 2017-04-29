@@ -38,6 +38,22 @@ class Api extends REST_Controller
         $this->response($data ,200);
     }
     
+    function user_phone_check_get()
+    {
+        $phone_str = $this->input->post('phone');
+        $phone_dash = filter_var($phone_str, FILTER_SANITIZE_NUMBER_INT);
+        $phone = str_replace(array('+','-', '.'), '', $phone_dash);
+        $num	=	$this->db->select('count(user_id) AS total')
+                                         ->where("phone_no",$phone)
+                                         ->where("user_type",'user')
+                                         ->get("user_master")
+                                         ->row()
+                                         ->total; 
+        
+        $data['status'] = $num == 0 ? "login" : "first_login";   
+        $this->response($data ,200);   	
+    }
+    
     function user_register_post()
 	{
 			$num	=	$this->db->select('count(user_id) AS total')
