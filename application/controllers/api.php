@@ -38,7 +38,7 @@ class Api extends REST_Controller
         $this->response($data ,200);
     }
     
-    function user_phone_check_get()
+    function user_phone_check_post()
     {
         $phone_str = $this->input->post('phone');
         $phone_dash = filter_var($phone_str, FILTER_SANITIZE_NUMBER_INT);
