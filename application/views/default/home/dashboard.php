@@ -165,10 +165,10 @@ B.show();
 		     			<div>
 		     				<div class="mug_block parrot margin-right-25">
 		     					<div class="">
-		     						Total Message
+                                                            <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
 		     						<p class="mug_count">
 		     							<a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a></p>
-		     						Total Post Cards
+                                                                <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
 		     						<p class="mug_count">
 		     							<a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a></p>
 		     					
@@ -176,16 +176,16 @@ B.show();
 		     				</div>
 		     				
 		     				<div class="mug_block green margin-right-25">
-		     					Total Beers
+                                                    <a href="<?php echo site_url('bar/bar_beer')?>">Beers</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
 		     			<?php if($getbar['serve_as']=='cocktail'){?>		
-		     					Total Cocktails
+                                                        <a href="<?php echo site_url('bar/bar_cocktail')?>">Cocktails</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_cocktail')?>"><?php echo $this->home_model->countcocktail(@$getbar['bar_id']); ?></a></p>
 		     			<?php } ?>		
 		     			<?php if($getbar['serve_as']=='liquor'){?>
-		     					Total Liquors
+                                                        <a href="<?php echo site_url('bar/bar_liquor')?>">Liquors</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_liquor')?>"><?php echo $this->home_model->countliquor(@$getbar['bar_id']); ?></a></p>
 		     			<?php } ?>		
