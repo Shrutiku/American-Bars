@@ -32,25 +32,7 @@
      							Events
      						</a>
      					</li>
-                                        <li title="" class="<?php echo $this->uri->segment(2)=='bar_beer' ? 'active':'';?> ">
-     						<a href="<?php echo site_url('bar/bar_beer')?>">
-     							<i class="strip beers"></i>
-     							Beers
-     						</a>
-     					</li>
-     					<li title="" id="ck_hide" class="<?php echo $this->uri->segment(2)=='bar_cocktail' ? 'active':'';?> <?php if($getbarinfo->serve_as=='liquor'){ echo "gray_bg"; }?>"  >
-     						<a href="<?php echo site_url('bar/bar_cocktail')?>">
-     							<i class="strip cocktails"></i>
-     							Cocktails
-     						</a>
-     					</li>
-     					
-     					<li title="" id="lq_hide" class="<?php echo $this->uri->segment(2)=='bar_liquor' ? 'active':'';?> <?php if($getbarinfo->serve_as=='cocktail'){ echo "gray_bg"; }?>">
-     						<a href="<?php echo site_url('bar/bar_liquor')?>">
-     							<i class="strip liquor"></i>
-     							Liquors
-     						</a>
-     					</li>
+                                      
      					<li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_gallery' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
      						<a href="<?php echo site_url('bar/bar_gallery')?>">
      							<i class="strip gallery"></i>
