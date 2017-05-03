@@ -163,15 +163,7 @@
      							My Orders
      						</a>
      					</li>
-     						<?php } ?>
-     						
-     						
-     						<li title="<?php if(@$getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your accoount half mug To full mug bar for access this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='postcard' ? 'active':'';?> <?php if(@$getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-     						<a href="<?php echo site_url('bar/postcard')?>">
-     							<i class="strip postcards"></i>
-     							My Post Cards
-     						</a>
-     					</li>    						
+     						<?php } ?> 											
      						<li class="<?php echo $this->uri->segment(2)=='changepassword' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/changepassword')?>">
      							<i class="strip change_pwd"></i>
