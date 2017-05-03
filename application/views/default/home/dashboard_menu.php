@@ -171,16 +171,7 @@
      							<i class="strip postcards"></i>
      							My Post Cards
      						</a>
-     					</li>
-     						<li style="position: relative;"  class="<?php if($this->uri->segment(2)=='list_message' || $this->uri->segment(2)=='viewconversation'){ echo "active"; };?>">
-     						<a href="<?php echo site_url('bar/list_message')?>">
-     								<p>
-     							<i class="strip message"></i>
-     							<?php if(unread_message_admin()!=0){?><i class="glyphicon glyphicon-bell notify-icon"></i><?php } ?>
-     							</p>
-     							Message To Admin
-     						</a>
-     					</li>
+     					</li>    						
      						<li class="<?php echo $this->uri->segment(2)=='changepassword' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/changepassword')?>">
      							<i class="strip change_pwd"></i>
