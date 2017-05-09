@@ -21,7 +21,7 @@
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
 					
 					<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-					<form name="form" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_beer/'.base64_encode($getbar['bar_id']),"/bar_beer"); ?>">
+					<form name="form" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_beer/'.base64_encode($getbar['bar_id'])."/bar_beer"); ?>">
 						<!-- <input type="hidden" name="event_id" id="event_id" value="" /> -->
      				
 		     			<div class="text-center pad_t15b20">
