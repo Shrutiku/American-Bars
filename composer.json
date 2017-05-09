@@ -1,0 +1,7 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.20",
+	"facebook/graph-sdk": "^5.4",
+        "spipu/html2pdf": "^4.6"
+    }
+}
