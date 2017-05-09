@@ -15,7 +15,7 @@ and open the template in the editor.
 
 
                 <div class="pad20">
-                    <h1 align="center" class="yellow_title padb10 br_bott_gray">Welcome to American Bars. <br>Verify your phone number to complete your ambassador registration.</h1>
+                    <h1 align="center" class="yellow_title padb10 br_bott_gray">Welcome to American Bars.</h1>
                     <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form'); echo form_open('ambassador/',$attributes); ?>
                     <br><br>
                     <?php if($error!=""){ ?>
@@ -27,7 +27,7 @@ and open the template in the editor.
                     <div class="pad20">
                         <form class="form-horizontal" role="form" name="register" id="register" action="<?php //echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
                             <div class="padtb" style="text-align:center; ">
-                                
+                                <p class="bar_add yellow_title">Verify your phone number to complete your ambassador registration.<p>
                                 <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
 
                                 <div class="clearfix"></div>
@@ -38,7 +38,7 @@ and open the template in the editor.
                                 <div class="col-sm-2" style="text-align: center"> 
                                     <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Verify</button>
                                 </div>
-                                <div class="col-sm-2" style="text-align: center;">
+                                <div class="col-sm-2" style="text-align: left;">
                                     <button class="btn btn-lg btn-primary" type="submit" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
 
                                 </div>
