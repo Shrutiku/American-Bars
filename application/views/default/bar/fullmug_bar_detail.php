@@ -6,7 +6,6 @@
 		max-height:470px !important; 
 	}
 </style>
-*****************
 <?php
 		          		if($bar_detail['bar_logo']!="" && file_exists(base_path().'upload/barlogo_thumb/'.@$bar_detail['bar_logo']))
 					{?>
