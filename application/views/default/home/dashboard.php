@@ -201,12 +201,10 @@ B.show();
 		     				</div>
 		     				<div class="clearfix"></div>
 		     			</div> 
-		     			
-		     			
+		     					     			
 		     			<?php } ?>
 		     			
-		     			
-		     			
+		     			<a href="<?php echo site_url('home/bar/add_drink')?>" class="btn btn-lg btn-primary marr_10" >Add A Drink To Your Menu</a> 	
 		     					     			
 		     			<div class="result_search margin-top-20">
 		     				<h1 class="dashboard_smalltitle pull-left">Bar Information</h1>

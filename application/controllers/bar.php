@@ -2042,6 +2042,26 @@ function getallliquorbybar_new()
 		
 		
 	}
+        
+        function add_drink()
+        {
+            if($this->session->userdata('user_type')!='bar_owner')
+            {
+                    redirect('home');
+            }
+            if(get_authenticateUserID()=='')
+            {
+                    redirect('home');
+            }
+
+            $data["error"] = '';
+            $data["msg"] = '';
+                
+            $this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
+            $this->template->write_view ('content_center', $theme.'/bar/bar_add_drink', $data, TRUE);
+            $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+            $this->template->render ();
+        }
 
     function bar_cocktail($limit=10,$keyword='1V1',$offset=0,$msg='')
 	{
