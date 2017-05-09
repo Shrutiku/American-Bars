@@ -36,10 +36,10 @@ and open the template in the editor.
                                     <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
                                 </div>
                                 <div class="col-sm-2" style="text-align: center"> 
-                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Verify</button>
+                                    <button class="btn btn-lg btn-primary btn-next"  type="submit" name="submit"  id="submit" />Verify</button>
                                 </div>
                                 <div class="col-sm-3" style="text-align: center;">
-                                    <button class="btn btn-md btn-primary btn-next" type="submit" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
+                                    <button class="btn btn-lg btn-primary" type="submit" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
 
                                 </div>
 <!--                                <div class="input box col-sm-4" style="text-align: left;"></div>-->
