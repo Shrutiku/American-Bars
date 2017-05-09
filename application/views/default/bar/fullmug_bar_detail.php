@@ -853,7 +853,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
      		</div>
 
 
-            <!-- <div class="padtb10">
+<!--            <div class="padtb10">
      			<div class="review_mainblock">
      					<h1 class="productbar_title"><div>Get in Touch!</div>
      				</h1>
@@ -884,11 +884,11 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
                    <div class="form-group">
                        <label for="inputEmail3" class="col-sm-3 control-label">What do you want? :</label>
                        <div class="col-sm-8 input_box">
-                           <!-- <input type="text" class="form-control form-pad" id="inputEmail3" placeholder="State"> -->
+                            <input type="text" class="form-control form-pad" id="inputEmail3" placeholder="State"> 
                            <textarea class="form-control form-pad" name="desc" id="desc"  placeholder="Insert comment here..." rows="5"></textarea>
                        </div>
                        <div class="clearfix"></div>
-                   </div> -->
+                   </div>
 
                    <div class="form-group" id="r_captcha">
                    	 <label for="inputEmail3" class="col-sm-3 control-label"></label>
@@ -916,7 +916,8 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
               </form>
      			</div>
      			<div class="clearfix"></div>
-     		</div>
+     		</div>-->
+
    		</div>
    	</div>
 
