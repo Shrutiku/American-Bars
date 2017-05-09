@@ -204,7 +204,7 @@ B.show();
 		     					     			
 		     			<?php } ?>
 		     			
-		     			<a href="<?php echo site_url('/bar/add_drink')?>" class="btn btn-lg btn-primary marr_10" >Add A Drink To Your Menu</a> 	
+		     			<a style="left-padding: 10px;" href="<?php echo site_url('/bar/add_drink')?>" class="btn btn-lg btn-primary marr_10" >Add A Drink To Your Menu</a> 	
 		     					     			
 		     			<div class="result_search margin-top-20">
 		     				<h1 class="dashboard_smalltitle pull-left">Bar Information</h1>
