@@ -46,7 +46,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-7 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/bar_cocktail');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/add_drink');?>" >Cancel</a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -107,7 +107,7 @@ $(document).ready(function(){
         list_add();
 	 });
         
-        $('#form').validate(
+        /*$('#form').validate(
 		{
 		rules: {
 					'cocktail_id[]': {
@@ -175,7 +175,7 @@ $(document).ready(function(){
 		   		 }
 		    });
 		  }
-		})
+		})*/
 		
 		
     function getData()
