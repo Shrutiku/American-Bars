@@ -33,18 +33,18 @@ and open the template in the editor.
                                 <div class="clearfix"></div>
                                 <div class="col-sm-3" style="text-align: center;">
                                     <label class="control-label">Phone Number: <span class="aestrick"> * </span></label>
-                                </div>
-                                    <div class="input_box col-sm-3">
+                                <!-- </div>
+                                    <div class="input_box col-sm-3"> -->
                                         <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
-                                    </div>    
+                                    <!--</div>-->    
                                     <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Verify</button>
-                                    <!-- </div> -->
+                                 </div> 
                                     <div class="clearfix"></div>  
                                 </div>
                             </div>
                             <div class="padtb8" style="text-align:center; ">
 
-                                <a class="btn btn-lg btn-primary btn-next pull-left" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
+                                <a class="btn btn-lg btn-primary btn-next" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
                                 <!-- </div> -->
                                 <div class="clearfix"></div>
                             </div>
