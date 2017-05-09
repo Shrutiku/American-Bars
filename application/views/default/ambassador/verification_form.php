@@ -15,18 +15,18 @@ and open the template in the editor.
 
 
                 <div class="pad20">
-                    <h1 align="center" class="yellow_title padb10 br_bott_gray">Welcome to American Bars. Verify your phone number to complete your ambassador registration.</h1>
+                    <h1 align="center" class="yellow_title padb10 br_bott_gray">Welcome to American Bars. <br>Verify your phone number to complete your ambassador registration.</h1>
                     <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form'); echo form_open('ambassador/',$attributes); ?>
                     <br><br>
                     <?php if($error!=""){ ?>
                     <div class="error1 text-center"><a class="closemsg" data-dismiss="alert"></a><span>////<?php echo $error; ?></span></div>
                     <?php }?>
                     <div>
-                    <h1 class="yellow_title padb10 br_bott_gray text-center padding-bottom-15">Verify Your Phone Number</h1>
+<!--                    <h1 class="yellow_title padb10 br_bott_gray text-center padding-bottom-15">Verify Your Phone Number</h1>-->
                     
                     <div class="pad20">
-                        <form class="form-horizontal" role="form" name="register" id="register" action="<?php echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
-                            <div class="padtb" style="text-align: "center">
+                        <form class="form-horizontal" role="form" name="register" id="register" action="<?php //echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
+                            <div class="padtb" style="text-align:center; ">
                                 
                                 <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
 
