@@ -27,8 +27,8 @@ and open the template in the editor.
                     <div class="pad20">
                         <form class="form-horizontal" role="form" name="register" id="register" action="<?php //echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
                             <div class="padtb" style="text-align:center; ">
-                                <p class="bar_add yellow_title">Verify your phone number to complete your ambassador registration.<p>
-                                <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
+                                <p>Verify your phone number to complete your ambassador registration.<p>
+                                <p>We'll send an activation code via SMS to your mobile phone.</p>
 
                                 <div class="clearfix"></div>
                                 <div class="input box col-sm-4" style="text-align: center;"></div>
