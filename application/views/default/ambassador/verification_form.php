@@ -31,21 +31,18 @@ and open the template in the editor.
                                 <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
 
                                 <div class="clearfix"></div>
-                                <div class="col-sm-3" style="text-align: center;">
-                                    <label class="control-label">Phone Number: <span class="aestrick"> * </span></label>
-                                <!-- </div>
-                                    <div class="input_box col-sm-3"> -->
-                                        <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
-                                    <!--</div>-->    
+                                <div class="input box col-sm-3" style="text-align: center;">
+                                    <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
+                                </div>
+                                <div class="col-sm-3"> 
                                     <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Verify</button>
-                                 </div> 
+                                </div> 
                                     <div class="clearfix"></div>  
                                 </div>
                             </div>
                             <div class="padtb8" style="text-align:center; ">
 
                                 <a class="btn btn-lg btn-primary btn-next" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
-                                <!-- </div> -->
                                 <div class="clearfix"></div>
                             </div>
 
