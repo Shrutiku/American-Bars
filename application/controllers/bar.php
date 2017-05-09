@@ -2309,7 +2309,7 @@ function getallliquorbybar_new()
 		else
 	    {
 	    	
-	       $this->template->write_view ('content_center', $theme.'/bar/choose_cocktail', $data, TRUE);	
+	       $this->template->write_view ('content_center', $theme.'/bar/bar_cocktail_add', $data, TRUE);	
 	    }		
 		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
 		$this->template->render ();
