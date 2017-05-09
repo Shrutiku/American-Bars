@@ -4886,7 +4886,7 @@ class Home extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
 
-                $data["bar_id"] = $this->input->post('bar_id');
+//                $data["bar_id"] = $this->input->post('bar_id');
                 $data["phone_number"] = $this->input->post('phone_number');
             } else {
 

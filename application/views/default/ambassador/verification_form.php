@@ -15,7 +15,7 @@ and open the template in the editor.
 
 
                 <div class="pad20">
-                    <h1 align="center" class="yellow_title padb10 br_bott_gray">Welcome to American Bars. <br>Verify your phone number to complete your ambassador registration.</h1>
+                    <h1 align="center" class="yellow_title padb10 br_bott_gray">Welcome to American Bars.</h1>
                     <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form'); echo form_open('ambassador/',$attributes); ?>
                     <br><br>
                     <?php if($error!=""){ ?>
@@ -24,30 +24,31 @@ and open the template in the editor.
                     <div>
 <!--                    <h1 class="yellow_title padb10 br_bott_gray text-center padding-bottom-15">Verify Your Phone Number</h1>-->
                     
-                    <div class="pad20">
+                    <div class="pad20" style="text-align:center;">
+                        <h2>Verify your phone number to complete your ambassador registration.<h2>
+                        <h2>We'll send an activation code via SMS to your mobile phone.</h2>
                         <form class="form-horizontal" role="form" name="register" id="register" action="<?php //echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
                             <div class="padtb" style="text-align:center; ">
-                                
-                                <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
-
                                 <div class="clearfix"></div>
-                                <div class="col-sm-3" style="text-align: center;">
-                                    <label class="control-label">Phone Number: <span class="aestrick"> * </span></label>
+                                <div class="input box col-sm-4" style="text-align: center;"></div>
+                                <div class="input box col-sm-2" style="text-align: center;">
+                                    <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
                                 </div>
-                                    <div class="input_box col-sm-3">
-                                        <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
-                                    </div>    
+                                <div class="col-sm-2" style="text-align: center"> 
                                     <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Verify</button>
-                                    <!-- </div> -->
+                                </div>
+                                <div class="col-sm-2" style="text-align: left;">
+                                    <button class="btn btn-lg btn-primary" type="submit" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
+
+                                </div>
+<!--                                <div class="input box col-sm-4" style="text-align: left;"></div>-->
                                     <div class="clearfix"></div>  
                                 </div>
                             </div>
-                            <div class="padtb8" style="text-align:center; ">
+<!--                            <div class="col-sm-4 col-sm-offset-4" style="text-align:center; ">
 
-                                <a class="btn btn-lg btn-primary btn-next pull-left" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
-                                <!-- </div> -->
                                 <div class="clearfix"></div>
-                            </div>
+                            </div>-->
 
                         </form>
                     </div>
