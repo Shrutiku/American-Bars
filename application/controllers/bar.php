@@ -2235,6 +2235,87 @@ function getallliquorbybar_new()
 		}
 	}
 
+        function choose_cocktail($limit=10,$keyword='1V1',$offset=0,$msg='')
+	{
+		if($this->session->userdata('user_type')!='bar_owner')
+		{
+			redirect('home');
+		}
+		if(get_authenticateUserID()=='')
+		{
+			redirect('home');
+		}
+        
+		$getbarinfo = getBarInfoByUserID(get_authenticateUserID());
+		
+		$data = array();
+		$data['msg'] = $msg;
+		$theme = getThemeName ();
+		$this->template->set_master_template ($theme.'/template.php');
+		$this->load->library('pagination');
+		$page_detail=meta_setting();
+		$pageTitle=$page_detail->title;
+		$metaDescription=$page_detail->meta_description;
+		$metaKeyword=$page_detail->meta_keyword;
+		
+		$data['error'] = '';
+		$data['site_setting'] = site_setting ();
+        $data['active_menu']='home';
+        $this->template->write ('pageTitle', $pageTitle, TRUE);
+		$this->template->write ('metaDescription', $metaDescription, TRUE);
+		$this->template->write ('metaKeyword', $metaKeyword, TRUE);
+        $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
+		
+		if($this->input->post('event_keyword')!='')
+		{
+			$keyword= $this->input->post('event_keyword');
+			$limit= $this->input->post('limit');
+			$offset= $this->input->post('offset');
+		}
+		else {
+			$keyword = $keyword;
+			$limit= $limit;
+			$offset= $offset;
+		}
+		$config['uri_segment']='5';
+		$config['base_url'] = base_url().'bar/bar_cocktail/'.$limit.'/'.$keyword;
+		$config["total_rows"] = $this->bar_model->getBarCocktailcount(@$data['getbar']['bar_id'],$keyword);
+		
+		//$config['total_rows'] = $this->service_provider_model->countStaff($id,$keyword);
+		//echo $data["total_rows"];
+		$config['per_page'] = $limit;
+		$this->pagination->initialize($config);	
+		$data['page_link'] = $this->pagination->create_links();
+		$data['result'] = $this->bar_model->getBarCocktailDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+		
+	
+		//	$data['result'] = $this->bar_model->getAllComments($bar_id,$offset,$limit);	
+		$data['offset'] = $offset;
+		$data['limit'] = $limit;
+		$data['redirect_page']='bar_cocktail';
+		
+		if($this->input->is_ajax_request()){
+			echo $this->load->view($theme .'/bar/bar_cocktail_ajax',$data,TRUE);die;
+			
+		}
+		else {
+		$this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
+			
+			//echo $getbarinfo->serve_as;
+		if($getbarinfo->serve_as=='liquor')
+		{
+			$this->template->write_view ('content_center', $theme.'/bar/bar_cocktail_no', $data, TRUE);
+		}
+		else
+	    {
+	    	
+	       $this->template->write_view ('content_center', $theme.'/bar/bar_cocktail', $data, TRUE);	
+	    }		
+		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+		$this->template->render ();
+		}
+	}
+        
     function bar_liquor($limit=10,$keyword='1V1',$offset=0,$msg='')
 	{
 		if($this->session->userdata('user_type')!='bar_owner')
@@ -2314,7 +2395,7 @@ function getallliquorbybar_new()
 		}
 	}
 
-    function add_cocktail($bar_id='')
+    function add_cocktail($bar_id='', $redirect='')
 	{
 		if($this->session->userdata('user_type')!='bar_owner')
 		{
@@ -2355,6 +2436,10 @@ function getallliquorbybar_new()
 			
 			
 		}
+                
+                if($redirect == "bar_cocktail") {
+                    redirect("bar/bar_cocktail");
+                }
 		
 			echo json_encode($response);
 		    die;
