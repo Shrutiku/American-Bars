@@ -123,6 +123,7 @@ $(document).ready(function(){
 		   		 dataType : 'json',
 				 beforeSubmit: function() 
 				 {
+		       		$('#dvLoading').fadeIn('slow');
 		    	 },
 		    	
 		    	uploadProgress: function ( event, position, total, percentComplete ) {	
@@ -135,6 +136,7 @@ $(document).ready(function(){
 					{
 						$("#cm-err-main1").show();
 					$("#cm-err-main1").html('Cocktail Name Field is required');
+			    		$('#dvLoading').fadeOut('slow');
 			    		scrollToDiv('cm-err-main1');
 				  		// setTimeout(function () 
 						// {
