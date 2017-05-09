@@ -1,7 +1,7 @@
 
 <div class="wrapper row6 padtb10 has-js">
      	<div class="container">
-            <div class='pull-left'><div class="result_search_text">What kind of drink you want to add?</div></div>
+            <div class='pull-left' style="text-align: center;"><div class="result_search_text">What kind of drink you want to add?</div></div>
      		<div class="margin-top-50 bg_brown" style="text-align: center;">
                     <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/bar_cocktail');?>">Cocktail</a>
                     <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_beer');?>">Beer</a>
