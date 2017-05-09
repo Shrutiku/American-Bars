@@ -123,7 +123,6 @@ $(document).ready(function(){
 		   		 dataType : 'json',
 				 beforeSubmit: function() 
 				 {
-		       		$('#dvLoading').fadeIn('slow');
 		    	 },
 		    	
 		    	uploadProgress: function ( event, position, total, percentComplete ) {	
@@ -136,7 +135,6 @@ $(document).ready(function(){
 					{
 						$("#cm-err-main1").show();
 					$("#cm-err-main1").html('Cocktail Name Field is required');
-			    		$('#dvLoading').fadeOut('slow');
 			    		scrollToDiv('cm-err-main1');
 				  		// setTimeout(function () 
 						// {
@@ -387,36 +385,6 @@ $(document).ready(function(){
 			$("#list_hide").html(res);
 			    setupLabel();
 				bindJquery();
- }
- 
- function deletecocktail(id)
- {
- 	 
-			alertify.confirm("Are you sure you want to delete this cocktail?", function (e) {
-				if (e) {
-					 var res = $.ajax(
-	        {						
-			   type: 'POST',
-			   url: '<?php echo site_url('bar/barcocktaildelete/')?>',
-			   dataType: 'post', 
-			   data : {id:id},
-			   cache: false,
-			   async: false,
-			   beforeSend : function(){
-			      $('#dvLoading').fadeIn('slow');
-			   },
-				complete: function(){
-				     $('#dvLoading').fadeOut('slow');
-				     getData();
-				     $("#remove_event_"+id).remove();
-				     $.growlUI('Your cocktail deleted successfully .');
-				    }
-				}).responseText;
-				bindJquery();
-			}
-			return false;
-			
- });
  }
  
  function bindJquery()
