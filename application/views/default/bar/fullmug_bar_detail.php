@@ -900,7 +900,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 
                                     document.getElementById('captcha2').src='<?php echo base_url();?>captcha/captcha.php?'+Math.random();
 
-                                    document.getElementById('captcha-form1').focus();"
+                                    document.getElementById('captcha-form1');"
 
                                     id="change-image1" class="lable_title text-right">Not readable? Change text.</a>
 
