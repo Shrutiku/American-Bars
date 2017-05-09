@@ -1984,7 +1984,7 @@ function getallliquorbybar_new()
 		echo json_encode($operator_list);
 		die;
 	}
-	function add_beer($bar_id='')
+	function add_beer($bar_id='', $redirect='')
 	{
 		if($this->session->userdata('user_type')!='bar_owner')
 		{
@@ -2035,6 +2035,11 @@ function getallliquorbybar_new()
 			
 			
 		}
+                
+                if ($redirect == "bar_beer")
+                {
+                    redirect('bar/bar_beer');
+                }
 		
 		echo json_encode($response);
 		die;

@@ -21,7 +21,7 @@
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
 					
 					<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-					<form name="form" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_beer/'.base64_encode($getbar['bar_id'])); ?>">
+					<form name="form" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_beer/'.base64_encode($getbar['bar_id']),"/bar_beer"); ?>">
 						<!-- <input type="hidden" name="event_id" id="event_id" value="" /> -->
      				
 		     			<div class="text-center pad_t15b20">
@@ -57,7 +57,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-7 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/bar_beer');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/add_drink');?>" >Cancel</a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
