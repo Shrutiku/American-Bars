@@ -1,16 +1,16 @@
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/pgwslideshow.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/pgwslideshow.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/pgwslideshow_light.css" /><style>
-	.ps-current 
+	.ps-current
 	{
-		max-height:470px !important; 
+		max-height:470px !important;
 	}
 </style>
 <?php
 		          		if($bar_detail['bar_logo']!="" && file_exists(base_path().'upload/barlogo_thumb/'.@$bar_detail['bar_logo']))
 					{?>
 		            	<?php $img =  base_url().'/upload/barlogo_thumb/'.$bar_detail['bar_logo']; ?>
-		            	<?php }  else { ?> 
+		            	<?php }  else { ?>
 		            		<?php $img =  base_url().'upload/barlogo/no_image.png'; ?>
 		            		<?php } ?>
 
@@ -31,13 +31,13 @@
 		            	<?php }  else if($bar_detail['bar_banner']!="" && file_exists(base_path().'upload/banner_drag_without/'.@$bar_detail['bar_banner']))
 					{?>
 						<img src="<?php echo base_url()?>/upload/banner_without_drag/<?php echo $bar_detail['bar_banner']; ?>" alt="American Dive Bars"/>
-		            		
+
 		            		<?php } else {?>
-		            		<img src="<?php echo base_url().'default'?>/images/smallbanner1.png" alt="American Dive Bars"/>	
+		            		<img src="<?php echo base_url().'default'?>/images/smallbanner1.png" alt="American Dive Bars"/>
 		            			<?php } ?>
-		            	
+
 		          	</div>
-		          	
+
 	            </div>
    	  		</div>
        </div>
@@ -51,13 +51,13 @@
                                 <b style="padding-left:1em;"></b>
                                 <!--<img src ="<?php //echo base_url().'default';?>/images/Team_icon_-_noun_project_20586.svg.png" style="width: 1.5%;height: 1.5%;padding:0px 0px 0px 0px">-->
                                 <b style="color:black;font-weight: normal;font-size:18px;"><?php echo ($bar_detail['followers'] + count($bar_liker))." Followers";?></b>
-                            </div>	     			
+                            </div>
 	            </div>
-	            
+
      			<div class="newrightblock">
                 	<!-- <a href="javascript://" class="review text-center full-icon marr_10">Like This Bar</a> -->
-                	 <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
-											
+                	 <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
+
 								if($cnt_like==2 && get_authenticateUserID()!=''){
 								?>
 								<a id="total-like" href="javascript:void(0);" name="2" class="review text-center full-icon marr_10">Like This Bar</i></a>
@@ -65,11 +65,11 @@
 											} elseif(get_authenticateUserID()!='') {?>
 											<a id="total-like" href="javascript:void(0);" name="<?php if($cnt_like==1){ echo $cnt_like=0;} else{ echo $cnt_like=1; } ?>" class="review text-center full-icon marr_10">
 											<?php if($cnt_like==1){ echo 'Like This Bar'; } else{ echo 'Already Liked'; } ?></i></a>
-											<?php } else { ?> 
+											<?php } else { ?>
 											<a id="total-like" href="javascript:void(0);" name="1" class="review text-center full-icon marr_10">
 											Like This Bar</a>
 								<?php  } ?>
-                    
+
      				<div class="result_search_text full-icon marr_10">Full Mug Bar</div>
      				<div class="full-icon"><i class="strip fullmug"></i></div>
      				<div class="clearfix"></div>
@@ -93,21 +93,21 @@
 						   <?php
 						    		 if($this->session->userdata('user_type')!='bar_owner')
 		{
-						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
-									 
-									
+						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
+
+
 											if($cnt_fav==2 && get_authenticateUserID()!=''){
 											?>
 											<a id="total-fav" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn mart10">Add to My Bar List</a>
 											<?php
 											} elseif(get_authenticateUserID()!=''){?>
-												
+
 											<a id="total-fav" href="javascript:void(0);" name="<?php if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="btn btn-lg btn-primary full-btn mart10">
 											 <?php if($cnt_fav==1){ echo 'Add to My Bar List'; } else{ echo 'Remove Favorite'; } ?></a>
 											<?php } else { ?>
 												<a id="total-fav" class="btn btn-lg btn-primary full-btn mart10" href="javascript:void(0);" name="1" >Add to My Bar List</a>
-											<?php } }?>	
-								
+											<?php } }?>
+
 								 <div>
 								 	<div class="clearfix"></div>
 						         	<div class="website-rating rating-new mart10">
@@ -120,144 +120,144 @@
 						         		<ul class="social_icon">
 							         		<?php if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>
 							    		 		<li><a href="<?php echo $bar_detail['facebook_link']; ?>" target="_blank" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" /></a></li>
-							    		 	<?php } ?>	
+							    		 	<?php } ?>
 							    		 	<?php if($bar_detail['twitter_link']!='' && $bar_detail['twitter_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['twitter_link']; ?>" ><img src="<?php echo base_url().'default'?>/images/result_twitt.png" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['linkedin_link']!='' && $bar_detail['linkedin_link']!='0'){?>	
+							    		 	<?php if($bar_detail['linkedin_link']!='' && $bar_detail['linkedin_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['linkedin_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_linkln.png" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['google_plus_link']!='' && $bar_detail['google_plus_link']!='0'){?>	
+							    		 	<?php if($bar_detail['google_plus_link']!='' && $bar_detail['google_plus_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['google_plus_link']; ?>" "><img src="<?php echo base_url().'default'?>/images/result_google.png" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['pinterest_link']!='' && $bar_detail['pinterest_link']!='0'){?>	
+							    		 	<?php if($bar_detail['pinterest_link']!='' && $bar_detail['pinterest_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['pinterest_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_p.png" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['dribble_link']!='' && $bar_detail['dribble_link']!='0'){?>	
+							    		 	<?php if($bar_detail['dribble_link']!='' && $bar_detail['dribble_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['dribble_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_circle.png" /></a></li>
-							    		 	<?php } ?>	
+							    		 	<?php } ?>
 		    		 					</ul>
 		    		 				</div> -->
 		    		 				<div class="clearfix"></div>
 						         </div>
 							</div>
-							
+
 						    <div class="media-body favourite-box">
 						       <div class="barnew-title"><h4 class="media-heading"><a href="" class="bar_title"><i class="strip fullmug"></i> <?php echo ucwords(@$bar_detail['bar_title']); ?></a></h4></div>
-						      <div class="taxi-right">	
+						      <div class="taxi-right">
 						       <ul class="social_icon">
-							         		<?php 
-							         		
-							         		
+							         		<?php
+
+
 							         		if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>
 							    		 		<li><a href="<?php echo $bar_detail['facebook_link']; ?>" target="_blank" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_fb-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_fb.png'" /></a></li>
-							    		 	<?php } ?>	
+							    		 	<?php } ?>
 							    		 	<?php if($bar_detail['twitter_link']!='' && $bar_detail['twitter_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['twitter_link']; ?>" ><img src="<?php echo base_url().'default'?>/images/result_twitt.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_twitt-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_twitt.png'" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['linkedin_link']!='' && $bar_detail['linkedin_link']!='0'){?>	
+							    		 	<?php if($bar_detail['linkedin_link']!='' && $bar_detail['linkedin_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['linkedin_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_linkln.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_linkln-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_linkln.png'" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['google_plus_link']!='' && $bar_detail['google_plus_link']!='0'){?>	
+							    		 	<?php if($bar_detail['google_plus_link']!='' && $bar_detail['google_plus_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['google_plus_link']; ?>" "><img src="<?php echo base_url().'default'?>/images/result_google.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_google-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_google.png'" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['pinterest_link']!='' && $bar_detail['pinterest_link']!='0'){?>	
+							    		 	<?php if($bar_detail['pinterest_link']!='' && $bar_detail['pinterest_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['pinterest_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_p.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_p-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_p.png'" /></a></li>
 							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['dribble_link']!='' && $bar_detail['dribble_link']!='0'){?>	
+							    		 	<?php if($bar_detail['dribble_link']!='' && $bar_detail['dribble_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['dribble_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_circle_white.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_circle-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_circle.png'" /></a></li>
-							    		 	<?php } ?>	
-							    		 	<?php if($bar_detail['instagram_link']!='' && $bar_detail['instagram_link']!='0'){?>	
+							    		 	<?php } ?>
+							    		 	<?php if($bar_detail['instagram_link']!='' && $bar_detail['instagram_link']!='0'){?>
 							    		 		<li><a target="_blank" href="<?php echo $bar_detail['instagram_link']; ?>"><img src="<?php echo base_url().'default'?>/images/instagram2.png" onmouseover="this.src='<?php echo base_url();?>default/images/instagram2_hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/instagram2.png'" /></a></li>
-							    		 	<?php } ?>	
+							    		 	<?php } ?>
 							    		 	<div class="clearfix"></div>
 		    		 					</ul>
-		    		 				</div>	
+		    		 				</div>
 						       		<div class="clearfix"></div>
-						       		
+
 						       <!-- <div class="rating_box"><a href="#"><img src="images/rating.png"/></a></div> -->
 						       <!-- <div class="rating_box">
 						       	<?php
 						    		 if($this->session->userdata('user_type')!='bar_owner')
 									{
-						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
-									 
-									
+						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
+
+
 											if($cnt_fav==2 && get_authenticateUserID()!=''){
 											?>
 											<a id="total-fav" href="javascript:void(0);" name="2" class="favourite_text"><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>
 											<a id="total-like" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary">Like</i></a>
 											<?php
 											} elseif(get_authenticateUserID()!=''){?>
-												
+
 											<a id="total-fav" href="javascript:void(0);" name="<?php if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="favourite_text <?php if($cnt_fav==1){ echo ''; } else{ echo 'active'; } ?>">
 											<i class="glyphicon glyphicon-heart"></i> <?php if($cnt_fav==1){ echo 'Add To My Favorites'; } else{ echo 'Remove From My Favorites'; } ?></a>
 											<?php } else { ?>
 												<a id="total-fav" class="favourite_text" href="javascript:void(0);" name="1" ><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>
-											<?php } }?>	
+											<?php } }?>
 						       	</div> -->
 						       <div class="clearfix"></div>
-						       
+
 						        <div class="mart10 min-height125">
-						        	<?php if($bar_detail['bar_category']){?>	
+						        	<?php if($bar_detail['bar_category']){?>
 						        	<div class="socialicon-right">
-						        		
-						        		
+
+
                                          <h4 class="bar_add mar_bot10">Bar Type :</h4>
-                                         
-                                         
+
+
                                          	<?php
-					     							
-													
+
+
 													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
-					     							
+
 													$getin = array_slice($getin1, 0, 3);
 													$getin12 = array_slice($getin1, 3);
 					     							  foreach($getin as $r)
 													  {
 													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
 													} ?>
-													
-													  
-													
+
+
+
                                          <div class="clear"></div>
                                     <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
-		    		 									       
+
                                         </div>
-                                       <?php } ?> 
-                                       
+                                       <?php } ?>
+
 						        	<div class="bar_add">
 						        		<i class="strip address"></i>
 						        		<div class="address-strip">
 						        			<?php echo @$bar_detail['address']."<br>";?>
-						        			
+
 						        			<p><?php echo  @$bar_detail['city'].", ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?></p>
 						        		</div>
 						        	</div>
 						        	<p class="bar_add">
 						        		<?php if($bar_detail['website']!='' && $bar_detail['website']!='0'){?>
 						        		<i class="strip url"></i><a onclick="window.open('<?php echo @$bar_detail['website'];?>', '_blank', 'width=800,height=600,scrollbars=yes,status=yes,resizable=yes,screenx=0,screeny=0');" href="javascript:void(0);"><?php echo @$bar_detail['website'];?></a>
-						        		
+
 						        <?php }?>		</p>
-						        	
-						        	
+
+
 						        		<!-- <a  href="<?php echo @$bar_detail['website'];?>" class="bar_title">  <?php echo @$bar_detail['website'];?></a></p> -->
 						        	<!-- <p class="bar_add"><?php echo @$bar_detail['address'].", ".@$bar_detail['city'].", ".@$bar_detail['zipcode'].", ".@$bar_detail['state'];?></p> -->
 						        	<div>
 						        		<div class="bar_phone pull-left reult_sub_title min-height25" style="width: 60%;"><?php echo $bar_detail['phone']!='' ? '<i class="strip smallphone"></i>'.$bar_detail['phone']:'' ;?></div>
-						        		
+
 		    		 					<div class="clearfix"></div>
 						        	</div>
 						         </div>
-						        
+
 						       <div class="result_desc mar_top5 margin-left-5">
-						       	
+
 						       	  <?php if(strip_tags(strlen($bar_detail['bar_desc'])>350)){ echo substr(strip_tags($bar_detail['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($bar_detail['bar_desc']); } ?>
-						       	   <!-- <?php 
+						       	   <!-- <?php
 						       	   $text=str_ireplace('<p>','',strip_tags($bar_detail['bar_desc']));
-									$text=str_ireplace('</p>','',$text); 
+									$text=str_ireplace('</p>','',$text);
 								echo $text;
-								
+
 								if(strlen($text>400)){ echo "Dsad"; die; }?> -->
 						       </div> <div class="clear"></div>
 						    </div>
@@ -272,11 +272,11 @@
 						         	</div>
 						     <div class="clearfix"></div>
 				    	</div>
-				    	
+
 				    	<div>
 				    		 <div class="mar_top20 like-block wid50 mar_r15 text-right">
-				    		 	 <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
-											
+				    		 	 <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
+
 								if($cnt_like==2 && get_authenticateUserID()!=''){
 								?>
 								<a id="total-like" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn pull-left">Like This Bar</i></a>
@@ -284,23 +284,23 @@
 											} elseif(get_authenticateUserID()!='') {?>
 											<a id="total-like" href="javascript:void(0);" name="<?php if($cnt_like==1){ echo $cnt_like=0;} else{ echo $cnt_like=1; } ?>" class="btn btn-lg btn-primary full-btn pull-left">
 											<?php if($cnt_like==1){ echo 'Like This Bar'; } else{ echo 'Already Liked'; } ?></i></a>
-											<?php } else { ?> 
+											<?php } else { ?>
 											<a id="total-like" href="javascript:void(0);" name="1" class="btn btn-lg btn-primary full-btn pull-left">
 											Like This Bar</a>
 								<?php  } ?>
 		     					<div class="bar_add mar_bot10 pull-right">We Liked This Bar</div> -->
 		     					<div class="clearfix"></div>
-		     					<?php 
-                                		
+		     					<?php
+
                                 		if($barhours){ ?>
                                 <div class="text-left">
                                 	<div class="bar_add mar_bot10">Hours We Are Open :</div>
                                 	<ul class="new-hours">
-                                		<?php 
-                                		
+                                		<?php
+
                                 		if($barhours){
                                 		$get =	array_slice($barhours, 0, 3);
-     							  foreach($get as $r){ ?>	
+     							  foreach($get as $r){ ?>
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
      								<?php if($r->is_closed!='yes'){ ?>
@@ -310,19 +310,19 @@
      								<?php } else {?>
      									<div class="schedule-text dash">-</div>
      									<div class="schedule-text">Closed.</div>
-     							<?php } ?>		
+     							<?php } ?>
      								<div class="clearfix"></div>
      							</li>
      						<?php } } else { ?>
      							No bar open hours available.
-     						<?php } ?>	
-     						
-                                    	
+     						<?php } ?>
+
+
                                     </ul>
                                 </div>
-                            <?php } ?>    
+                            <?php } ?>
 			     				<div class="clearfix"></div>
-			     				<?php 
+			     				<?php
 									if($barhours){ ?>
 			     				<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>
 			     				<?php } ?>
@@ -330,8 +330,8 @@
 		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
 								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
 										 $bar_detail['american_p']==1){ ?>
-		     					
-		     				
+
+
 		     				<div class="mar_top20 wid50 like-block">
 		     					<div class="bar_add mar_bot10">Payment Type Accepted :</div>
 		     					<ul class="cashicon-list">
@@ -357,7 +357,7 @@
 		     						<li><i class="strip apple-pay"></i></li>
 		     								<?php } ?>
 		     					</ul>
-		     					
+
 	     				  </div>
 	     				  	<?php } ?>
 				    	</div>
@@ -373,10 +373,10 @@
      				</div>
      				<div class="pad20">
      					<ul class="happy-list">
-     					<?php 
-                                		
+     					<?php
+
                                 		if($barhours){
-     							  foreach($barhours as $r){ ?>	
+     							  foreach($barhours as $r){ ?>
      							<li>
      								<p class="happy-title"><?php echo $r->days;?></p>
      								<?php if($r->is_closed!='yes'){ ?>
@@ -386,23 +386,23 @@
      								<?php } else {?>
      									-
      									<p class="happy-text">Closed.</p>
-     							<?php } ?>		
+     							<?php } ?>
      								<div class="clearfix"></div>
      							</li>
      						<?php } } else { ?>
      							No bar open hours available.
-     						<?php } ?>	
-                        	
-                        </ul>	
-     						
-     						
-     				</div>		
+     						<?php } ?>
+
+                        </ul>
+
+
+     				</div>
      			</div>
      		</div>
      	</div>
      </div>
-     			</div>	
-     			
+     			</div>
+
      			<div class="modal fade login_pop2" id="hourmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 						<div class="padtb10">
      	<div class="container">
@@ -414,73 +414,73 @@
      				</div>
      				<div class="pad20">
      					<ul class="happy-list">
-     						
-     						
-     						
-     						 
+
+
+
+
      						 	<div id="displayhours"></div>
                             </li>
-                        </ul>	
-     						
-     						
-     				</div>		
+                        </ul>
+
+
+     				</div>
      			</div>
      		</div>
      	</div>
      </div>
-     			</div>	
+     			</div>
      			<div class="right_gallery_block newadded">
                 	<a  href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary">Happy Hours & Specials</a>
      				<a href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadTaxi()">Call a Taxi</a>
 		    		<!-- <a href="javascript://" class="btn-lg btn-primary text-center mar_top5 marl_10" onclick="loadTaxi()">Yelp Reviews</a> -->
-		    		
+
      				<div class="text-center mar_top15">
-     														
+
 	     				 <?php if($bar_gallery){ ?><ul class="bxslider">
-	     					    
+
      					  	   <?php   foreach($bar_gallery as $rows){
      					  	    	?>
 									  <li class="br_green_yellow">
 									  	<span class="image_title"><?php echo ucfirst($rows->title); ?></span>
 									  	<img class=" gallery_img" src="<?php echo base_url().'upload/bar_gallery_thumb_big/'.$rows->bar_image_name;?>" /></li>
-								<?php } }?>	  
+								<?php } }?>
 									</ul>
-									
-									
+
+
 									 <?php if($bar_gallery){ ?>
 									 	<ul id="bx-pager" class="bxslider1">
      					  	    <?php $i=0; foreach($bar_gallery as $rows){
-     					  	    	?>	
+     					  	    	?>
 									  <li class=""><a data-slide-index="<?php echo $i;?>" href=""><img class="thumb_img" src="<?php echo base_url().'upload/bar_gallery_thumb/'.$rows->bar_image_name;?>" /></a></li>
 									<?php $i++; } ?>  </ul> <?php } else {?>
-										
+
 										<div class="gallery-default ">
      					No Gallery Available
      				</div>
      				<?php } ?>
-		
+
      				</div>
      				<div class="margin-top-80">
      				 <?php if($bar_gallery){ ?>
      					<div class="pull-left view-gallery">
 						   <a href="javascript://"  onclick="see_gal();" class="btn-lg btn-primary">View All Galleries</a>
 						</div>
-					<?php } ?>	
+					<?php } ?>
      					<ul class="social_icon pull-right">
      						<li>Share : </li>
 						    <li><a href="javascript://" onclick="fbShare()" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_fb-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_fb.png'" /></a></li>
 						    <li><a onclick="twShare()" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_twitt.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_twitt-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_twitt.png'" /></a></li>
 						    <li><a onclick="gPlusShare1('<?php echo site_url().'bar/details/'.$bar_detail['bar_id']; ?>','<?php echo $bar_detail['bar_title']; ?>')" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_google.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_google-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_google.png'" /></a></li>
 						    <li><a  href="javascript://" onclick="piShare()"><img src="<?php echo base_url().'default'?>/images/result_p.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_p-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_p.png'" /></a></li>
-						    
+
 						    <div class="clearfix"></div>
 		    		 	</ul><div class="clear"></div>
      				</div>
-     				
+
      			</div>
-     			
+
      			<div class="clearfix"></div>
-     			
+
      			<div id="see_gal" style="display: none;" class="padtb10 pad_lr10 mug-gallery mar_top20">
      				<div class="result_search">
 		     			<div class="result_search_text"><?php echo $bar_detail['bar_title']; ?> Bar Gallery <a onclick="hide_gal()" class="white pull-right review" href="javascript://">Close</a></div>
@@ -490,8 +490,8 @@
      					<ul class="event-listing">
      					<?php if($bar_gallery_all){
      						foreach($bar_gallery_all as $bg){
-     							
-     					?>	
+
+     					?>
      						<a href="javascript://" onclick="opengallery('<?php echo $bg->bar_gallery_id; ?>')" ><li>
      							<div class="event-img">
      									<img class=" img-responsive" src="<?php echo base_url().'upload/bar_gallery_thumb_big/'.$bg->bar_image_name;?>" />
@@ -501,17 +501,17 @@
      							</div>
      						</li></a>
      						<?php } } ?>
-     						
+
      						<div class="clearfix"></div>
      					</ul>
      				  </div>
      				</div>
-     			
-     			
-     			
-     			
+
+
+
+
      		</div>
-     		
+
      		<div class="fullmug_block">
      			<div class="col-md-4 col-sm-5 padb20">
      				<div class="bar_bg">
@@ -519,18 +519,18 @@
      					<ul class="bottom_box">
      					<?php if($bar_event){
      						  foreach($bar_event as $row){
-     						  	
-     						  	$getimage = geteventimagethumb($row->event_id);?>	
+
+     						  	$getimage = geteventimagethumb($row->event_id);?>
 	         			<li>
 	         				<div class="media">
 	         				<a class="pull-left widheig70" href="<?php echo site_url('event/detail/'.base64_encode($row->event_id));?>">
 						        <!-- <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZWVlIj48L3JlY3Q+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzIiIHk9IjMyIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9zdmc+" style="width: 64px; height: 64px;"> -->
 						      <img src="<?php echo $getimage; ?>" class="img-responsive" />
 						      </a>
-						     <div class="media-body"> 
+						     <div class="media-body">
 	         				<div class="fourm_label"><a href="<?php echo site_url().'event/detail/'.base64_encode($row->event_id);?>" class="newsyellow"><?php if(strlen($row->event_title)>20){ echo substr($row->event_title,0,20).".."; } else { echo $row->event_title; }  ?></a></div>
 	         				<div class="result_desc"><?php if(strlen($row->event_desc)>50){ echo substr($row->event_desc,0,50).".."; } else { echo $row->event_desc; }  ?></div>
-	         				
+
 	         				</div>
 	         				</div>
 	         			</li>
@@ -541,16 +541,16 @@
 	         			</li>
 	         			<?php } } else { ?>
 	         				<li class='mart10'>No Record Founds.</li>
-	         			<?php } ?>	
+	         			<?php } ?>
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     			
+
      			<div class="col-md-4 col-sm-5 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Beers Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list">
-     					
+
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
@@ -559,22 +559,22 @@
      				<div class="bar_bg">
      					<h1 class="box_title">Cocktails Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
-     					
+
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>	
-     		
+     		<?php } ?>
+
      		<?php if($bar_detail['serve_as']=='liquor'){?>
      			<div class="col-md-4 col-sm-5 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
-     					
+
 	         		<div class="clear"></div></ul><divbeer_state class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>	
+     		<?php } ?>
      			<div class="clearfix"></div>
      		</div>
      		<div>
@@ -584,7 +584,7 @@
      					<a href="javascript://" class="white pull-right review" onclick="loadMap()">Get Directions</a>
      					<div class="clearfix"></div>
      				</h1>
-		     			
+
 		     			<div class="br_map mar_top20">
 		     				<!-- <img src="<?php echo base_url().'default'?>/images/map.png" class="map_img"/> -->
 		     				<div class="portlet-body">
@@ -593,7 +593,7 @@
 		     			</div>
      			</div>
      			<div class="review_mainblock">
-     				
+
      				<h1 class="productbar_title" style="margin-top: 10px;"><div>Take a Look Inside</div>
      				</h1>
      				<div class="mar_top20 pos_rel">
@@ -617,14 +617,14 @@
 					//print_r($parsed);
 				       if(isset($matches[1])){
 							$id = $matches[1];
-							echo '<iframe style="height:357px;" src="//player.vimeo.com/video/'.$id.'" class="gallery_img" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> ';	
-								
+							echo '<iframe style="height:357px;" src="//player.vimeo.com/video/'.$id.'" class="gallery_img" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> ';
+
 							}else{
 								$a=json_decode(file_get_contents('http://vimeo.com/api/oembed.json?url='.$url));
-								
+
 								if(isset($a->video_id) && $a->video_id!=''){
 								$id=$a->video_id;
-									echo '<iframe style="height:357px;" src="//player.vimeo.com/video/'.$id.'" class="gallery_img" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> ';	
+									echo '<iframe style="height:357px;" src="//player.vimeo.com/video/'.$id.'" class="gallery_img" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> ';
 								}
 							}
 				    }
@@ -636,12 +636,12 @@ else {
      				</div>
      				<?php } ?>
 	     			</div>
-     				
-     				
-     				
-     				
-     				
-     				
+
+
+
+
+
+
      			</div>
      			<div class="clearfix"></div>
      		</div>
@@ -651,16 +651,16 @@ else {
      				</h1>
      			<div id="crd_not_send">
      				<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-     			<?php if($get_post_card == 0){?>	
-					<form name="add_post" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/post_card_send/'.base64_encode($bar_id))?>">		
-     					<div class="pull-left marr_10"> 
+     			<?php if($get_post_card == 0){?>
+					<form name="add_post" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/post_card_send/'.base64_encode($bar_id))?>">
+     					<div class="pull-left marr_10">
      						<div class="checkbox">
 	     						 <label>
 	          							<input type="radio" name="sel_title" onclick="gettitle(this.value)" value="Your Bar is Awesome" checked> Your Bar is Awesome !
 	        					</label>
         					</div>
      					</div>
-     					<div class="pull-left"> 
+     					<div class="pull-left">
      						<div class="checkbox">
 	     						 <label>
 	          							<input type="radio" name="sel_title" onclick="gettitle(this.value)" value="Your Bar Needs Work"> Your Bar Needs Work!
@@ -668,11 +668,11 @@ else {
         					</div>
      					</div>
      					<div class="clearfix"></div>
- 
-     					<textarea name="desc_post_card"  onKeyDown="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" 
+
+     					<textarea name="desc_post_card"  onKeyDown="limitText(event,this.form.desc_post_card,this.form.countdown,700 );"
 onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id="desc_post_card" class="form-control form-pad mart10" rows="3" placeholder="Write Here"></textarea>
-     					
-     					
+
+
      					<!-- <div class="padtb10 pull-right">
 							<font size="1">(Maximum characters: 700)<br>
 							You have <input readonly type="text" style="background-color:transparent; border: 0; font-weight: bold;" name="countdown" id="countdown" size="3" value="700">Characters left.</font>
@@ -683,17 +683,17 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	     					<div class="post_left br_r">
 	     						<h1 class="post_label ">Dear Bar Owner,</h1>
 	     						<div class="result_desc padb10" >I recently Visited your Bar And I have Concluded: <div id="paste_cont" class="sp_tag"></div>  </div>
-	     						
+
 	     						<div class="">
 	     						 <label id="title">
-	                                    Your Bar is Awesome!      							
+	                                    Your Bar is Awesome!
 	        					</label><div class="clearfix"></div>
 	        					<!-- <div class="mar_top20">
 	        						<a href="#" class="btn btn-lg btn-primary">Upload Image</a>
 	        					</div> -->
-	        					
-                        		
-                        		
+
+
+
 									<div class="browse1"  id="upload">
 										<input type="file" name="file" id="file" class="browse" value="Upload Image">
 									</div>
@@ -702,12 +702,12 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	     							<img id="previewimg" src="" height="50" width="40"/>
 	     						</div>
 	        					</div>
-	        					
-                        		
+
+
 	     					</div>
 	     					<div class="post_left">
 	     						<img src="<?php echo base_url().getThemeName(); ?>/images/post.png" class="pull-left"/>
-	     					
+
 	     						<div class="stamp" >
 	     							Place Stamp Here
 	     						</div>
@@ -716,20 +716,20 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	     							<?php echo $bar_detail['bar_title'];?><div class="clearfix"></div>
 	     							<?php echo $bar_detail['address']."<br/>".$bar_detail['city'].", ".$bar_detail['state']." ".$bar_detail['zipcode'];?>
 	     						</div>
-	     						
+
 	     					</div>
 	     					<div class="clearfix"></div>
 	     				</div>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 margin-top-10">
                                 <img src="<?php echo base_url();?>captcha/captcha.php" id="captcha" class="img-responsive"/><br/>
-    
+
                                 <a href="javascript://" onclick="
-    
+
                                 document.getElementById('captcha').src='<?php echo base_url();?>captcha/captcha.php?'+Math.random();
-    
+
                                 document.getElementById('captcha-form').focus();"
-    
+
                                 id="change-image" class="lable_title text-right">Not readable? Change text.</a>
                            </div>
                            <div class="col-md-6 col-sm-6" id="r_captcha">
@@ -739,18 +739,18 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
                         		</div>
                             </div>
                         </div>
-	     				
+
 	     				</form>
 	     				<?php } else {?>
 	     					<div  class="error mar_top20  center"> Hello user now you can send another post card after <?php echo 24-number_format($time,2);?> Hours .</div>
-	     				<?php } ?>	
+	     				<?php } ?>
 	     				</div>
      				</div>
-					
+
 
 					<div class="modal fade login_pop2" id="mapmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 					     <?php //echo $this->load->view($theme.'/home/map');?>
-					</div>	
+					</div>
 
 
 <div class="modal fade login_pop2" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -777,7 +777,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
-	                       	
+
 	                       	<div class="padtb8">
 	        				 	<div class="col-sm-3">
 	        				 		<label class="control-label">Review Description :</label>
@@ -787,7 +787,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
-	                       	
+
 	                       	<div class="padtb8">
 	        				 	<div class="col-sm-3">
 	        				 		<label class="control-label">Rating :</label>
@@ -797,24 +797,24 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
-	                       	
+
 	                       	 <div class="padtb8">
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-7 mart10">
-									<button class="btn btn-lg btn-primary" type="submit">Post</button>									
+									<button class="btn btn-lg btn-primary" type="submit">Post</button>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
-	                       	</form>	
-     				</div>		
+	                       	</form>
+     				</div>
      			</div>
      		</div>
      	</div>
-     </div>	
+     </div>
 </div>
      			<div class="review_mainblock padt10 new_review">
      				<h1 class="productbar_title">
-     					<div class="pull-left mar_top5">Raves and Rants</div> 
+     					<div class="pull-left mar_top5">Raves and Rants</div>
      					<div class="pull-right">
      						<a href="javascript://" onclick="show_popup()" class="review">Write a Review</a>
      					</div>
@@ -839,21 +839,21 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	     					<div class="gallery-default reviewdefault mar_top20">
      					No Review Available
      				</div>
-	     					<?php } ?>	  	
+	     					<?php } ?>
 	     			</ul>
-	     			
+
 	     			<div class="pagination">
 	     				<?php echo $page_link;?>
      				</div>
      				<div class="clearfix"></div>
-     				
+
      			</div>
      		</div>
      		<div class="clearfix"></div>
      		</div>
-     		
-     		
-            <div class="padtb10">
+
+
+            <!-- <div class="padtb10">
      			<div class="review_mainblock">
      					<h1 class="productbar_title"><div>Get in Touch!</div>
      				</h1>
@@ -888,8 +888,8 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
                            <textarea class="form-control form-pad" name="desc" id="desc"  placeholder="Insert comment here..." rows="5"></textarea>
                        </div>
                        <div class="clearfix"></div>
-                   </div>
-                   
+                   </div> -->
+
                    <div class="form-group" id="r_captcha">
                    	 <label for="inputEmail3" class="col-sm-3 control-label"></label>
  <div class="col-sm-8 input_box">
@@ -904,15 +904,15 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 
                                     id="change-image1" class="lable_title text-right">Not readable? Change text.</a>
 
-                                
+
 </div>
 								</div>
                    <div class="col-sm-8 pull-right mar_top20">
                    	    <input type="submit" name="sub" id="sub" value="Submit" class="btn btn-lg btn-primary pull-right marr_10" />
                   		<div class="clearfix"></div>
                   </div>
-                  <div class="clearfix"></div>		
-             
+                  <div class="clearfix"></div>
+
               </form>
      			</div>
      			<div class="clearfix"></div>
@@ -931,27 +931,27 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
      				</div>
      				<div class="pad20">
      					<ul class="happy-list">
-     						
+
      						<?php
-					     							
-													
+
+
 													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
-					     							
+
 					     							  foreach($getin1 as $r)
-													  { 
+													  {
 													  	  echo '<li><p style="color:#fff;">'.'&#149; '.getCatname($r).'</p></li>';
 													} ?>
-     					
-                        	
-                        </ul>	
-     						
-     						
-     				</div>		
+
+
+                        </ul>
+
+
+     				</div>
      			</div>
      		</div>
      	</div>
      </div>
-     			</div>	
+     			</div>
 <div class="modal fade" id="myModalnew_ajax" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
 <div class="modal fade" id="myModalnew_open" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -964,18 +964,18 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	     				<i class="strip login_icon"></i><div class="result_search_text">Description</div>
      				</div>
      				<div class="pad20">
-     						<label class="control-label" style="color: #fff;"><?php echo $bar_detail['bar_desc']; ?></label>	
-     				</div>		
+     						<label class="control-label" style="color: #fff;"><?php echo $bar_detail['bar_desc']; ?></label>
+     				</div>
      			</div>
      		</div>
      	</div>
      </div>
-	
+
 </div>
 <div class="modal fade" id="myModalnew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
 	<div class="modal fade login_pop2" id="taximodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-					</div>	
+					</div>
 <style>
 .morecontent span {
     display: none;
@@ -1000,21 +1000,21 @@ span.required {
 		        color: '#f19d12',
 		        opacity: .8
 		      });
-		      
+
 		        $('#infinite-list-cocktail').slimscroll({
 		        alwaysVisible: true,
 		        height: 410,
 		        color: '#f19d12',
 		        opacity: .8
 		      });
-		      
+
 		      $('#infinite-list-liquor').slimscroll({
 		        alwaysVisible: true,
 		        height: 410,
 		        color: '#f19d12',
 		        opacity: .8
 		      });
-		
+
 		  });
 	</script>
 	<!--------------End Scroll ------------------->
@@ -1041,9 +1041,9 @@ span.required {
     overflow-x: hidden;
     overflow-y: scroll;
 }
-</style>	
+</style>
 
-	
+
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 
@@ -1052,7 +1052,7 @@ span.required {
 	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
 	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
 	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
-	
+
 </script>
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
@@ -1071,66 +1071,66 @@ span.required {
   	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
   	    	   $(".growlUI strong").empty();
   	    	  return false;
-  	    <?php } ?> 
+  	    <?php } ?>
 		var flag = this.name;
 		var bid = '<?php echo $bar_detail["bar_id"]; ?>';
 		var uid = '<?php echo get_authenticateUserID(); ?>';
-		
+
 		if($('#sess_id').val()==0)
 		{
 			<?php $this->session->set_userdata("REDIRECT_PAGE","bar/details/".$bar_detail["bar_slug"]); ?>
 			$('#loginmodal').modal('show');
 			return false;
 		}
-		
+
 		$.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?>bar/bar_likes",         //the script to call to get data          
+        url: "<?php echo base_url(); ?>bar/bar_likes",         //the script to call to get data
         data: {bar_id: bid, user_id: uid, like_flag:flag},
-	    dataType: '',                //data format      
-        success: function(data)          //on receive of reply		
-            {  
-            	
+	    dataType: '',                //data format
+        success: function(data)          //on receive of reply
+            {
+
 			var main = data.split('*');
 			   if(main[0]==1){
 				   $('#total-like').attr('name','0');
 				   $('#total-like').html('Already Liked');
-				  // $('.likeduser').append(main[1]);	
+				  // $('.likeduser').append(main[1]);
 			   }
 			   else{
 				   $('#total-like').attr('name','1');
 				   $('#total-like').html('Like This Bar');
 				  // $('#'+main[1]).remove();
 				}
-		    } 
-		
+		    }
+
         });
 	});
-});	
+});
 </script>
 <script>
 
 	$(document).ready(function(e) {
-   
-   
+
+
     $('#total-fav').click(function(){
-  	
-  	  
+
+
   	    <?php if($this->session->userdata('user_type')=='taxi_owner'){?>
   	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
   	    	   $(".growlUI strong").empty();
   	    	  return false;
-  	    <?php } ?> 	
+  	    <?php } ?>
 		var flag = this.name;
 		var bid = '<?php echo $bar_detail["bar_id"]; ?>';
 		var uid = '<?php echo get_authenticateUserID(); ?>';
-		
+
 		// if(uid=="")
 		// {
 			// //window.location.href='<?php //echo site_url("beer/beer_likes/".$beer_detail["beer_id"]); ?>';
 			// //return false;
 		// }
-		
+
 	//	alert($('#sess_id').val())
 		if($('#sess_id').val()==0)
 		{
@@ -1138,15 +1138,15 @@ span.required {
 			$('#loginmodal').modal('show');
 			return false;
 		}
-		
+
 		$.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?>bar/bar_fav",         //the script to call to get data          
+        url: "<?php echo base_url(); ?>bar/bar_fav",         //the script to call to get data
         data: {bar_id: bid, user_id: uid, fav_flag:flag},
-	    dataType: '',                //data format      
-        success: function(data)          //on receive of reply		
-            {  
-            	
+	    dataType: '',                //data format
+        success: function(data)          //on receive of reply
+            {
+
 			var main = data.split('*');
 			   if(main[0]==1){
 				  $('#total-fav').attr('name','0');
@@ -1158,8 +1158,8 @@ span.required {
 				   $('#total-fav').html('Add to My Bar List');
 				   $( "#total-fav" ).removeClass( "active" );
 				}
-		    } 
-		
+		    }
+
         });
 	});
 	$('.bxslider').bxSlider({
@@ -1184,29 +1184,29 @@ span.required {
 	  	// maxSlides: 2,
 	  	// slideWidth: 300,
 	   // auto:false,.
-	   
+
 	    minSlides: 2,
   maxSlides: 4,
   slideWidth: 300,
 	});
-	
+
 	 $('.bxslider1').bxSlider({
 	 	useCSS: false,
 	 	infiniteLoop:false,
 	 	mode: 'horizontal',
 	 	preloadImages:'all',
 	 	controls:true,
-	 	
+
 		minSlides: 5,
 	  	maxSlides: 5,
 	  	slideWidth: 65,
 	 	pager: false,
 });
 
- 
+
  //$('#soom_0').elevateZoom({zoomType: "inner",cursor: "crosshair",easing : true,});
-    
- 
+
+
 });
 	$(document).ready(function() {
 		$('.bxsaslider1').bxSlider({
@@ -1218,24 +1218,24 @@ span.required {
     var ellipsestext = "...";
     var moretext = "Show more";
     var lesstext = "Show less";
-    
+
     $('.more').each(function() {
         var content = $(this).html();
- 
+
         if(content.length > showChar) {
- 
+
             var c = content.substr(0, showChar);
             var h = '';
-             
+
              //alert(h);
             var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="javascript://" class="morelink more pull-right"><i class="strip arrow_down"></i>' + moretext + '</a></span>';
- 
+
             $(this).html(html);
         }
- 
+
     });
-     
-     
+
+
     $("#view-all").click(function(){
     	$.ajax({
 			         type: "POST",
@@ -1263,7 +1263,7 @@ span.required {
         // $(this).prev().toggle();
         // return false;
     // });
-    
+
     $(".morelink").click(function(){
          $("#myModalnew_open").modal('show');
     });
@@ -1283,13 +1283,13 @@ $('#comment_title').live('click', function(e){
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
-		        
-	  
+
+
   });
 </script>
 
 <script type="text/javascript">
-	 $(document).ready(function () 
+	 $(document).ready(function ()
 	 {
 		$('#star1').rating('www.url.php', {maxvalue:5});
 		$(".cancel").hide();
@@ -1318,16 +1318,16 @@ $(document).ready(function(){
 
     $('#desc_post_card').keyup(function(e) {
 
-      
+
         newLines = $(this).val().split("\n").length;
-        
-       
+
+
         linesUsed.text(newLines);
         content = document.getElementById('desc_post_card').value.replace(/\n/g, '<br>');
-        
+
         var num = content.length;
         var rem = $("#countdown").val();
-       
+
         if((e.keyCode == 13 && newLines >= lines) || num>700) {
             //linesUsed.css('color', 'red');
            // alert('You cannot enter more text.');
@@ -1335,28 +1335,28 @@ $(document).ready(function(){
         }
         else {
         	content = document.getElementById('desc_post_card').value.replace(/\n/g, '<br>');
-        	document.getElementById('paste_cont').innerHTML = content; 
+        	document.getElementById('paste_cont').innerHTML = content;
         	$("#countdown").val(700-parseInt(num));
         }
     });
 });
 
-	function limitText(e,limitField, limitCount, limitNum) 
-	{  
-		  
+	function limitText(e,limitField, limitCount, limitNum)
+	{
+
 		// content = document.getElementById('desc_post_card').value.replace(/\n/g, '<br>');
 		   // newLines = limitField.value.split("\n").length;
-// 		   
-// 		
+//
+//
 		 // if (limitField.value.length > limitNum || (e.keyCode != 13 && newLines>=16)) {
-// 		 
+//
 		// limitField.value = limitField.value.substring(0, limitNum);
 		// return false;
 	// } else {
-// 		
+//
 		  // $("#linesUsed").html(newLines);
 		// limitCount.value = limitNum - limitField.value.length;
-		// document.getElementById('paste_cont').innerHTML = content; 
+		// document.getElementById('paste_cont').innerHTML = content;
 		  // limitField.selected = false;
 	// }
 	}
@@ -1366,50 +1366,50 @@ $(document).ready(function(){
 		$("#title").html(val+'!');
 	}
 </script>
-           
+
 <script type="text/javascript">
- 
-	
-     
+
+
+
      function checkauth()
 {
 	//$('#myModal').modal('show');
-	
-	
+
+
 }
-            	
+
 	function show_popup()
 	{
 		 <?php if($this->session->userdata('user_type')=='taxi_owner'){?>
   	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
   	    	   $(".growlUI strong").empty();
   	    	  return false;
-  	    <?php } ?> 
+  	    <?php } ?>
 		$(".star").removeClass("on");
 		$("#postcard").val(0);
 		$('#dvLoading').fadeIn('slow')
-		setTimeout(function () 
+		setTimeout(function ()
 		{
 			$('#dvLoading').fadeOut('slow')
 		}, 500);
-		
+
 		if($('#sess_id').val()==1)
 		{
 			$('#myModal1').modal('show');
 		}
 		else
 		{
-			
+
 			$('#loginmodal').modal('show');
 		}
-	} 
-    
-    
+	}
+
+
 		$('document').ready(function()
 		{
 		$('#form').validate(
 		{
-			
+
 		rules: {
 					file: {
 						accept: "jpg|jpeg|png|bmp"
@@ -1422,7 +1422,7 @@ $(document).ready(function(){
 					},
 						errorClass:'error fl_right'
 				},
-				
+
 		submitHandler: function(form){
 			$("#postcard").val(1);
 			if($("#sess_id").val()==0)
@@ -1436,14 +1436,14 @@ $(document).ready(function(){
   	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
   	    	   $(".growlUI strong").empty();
   	    	  return false;
-  	    <?php } ?> 
+  	    <?php } ?>
 		$(form).ajaxSubmit({
 		type: "POST",
 		   		 dataType : 'json',
-				 beforeSubmit: function() 
+				 beforeSubmit: function()
 				 {
 		       		$('#dvLoading').fadeIn('slow');
-		       		
+
 		       		if($("#sess_id").val()==1)
 		       		{
 		       		 var retVal = confirm("Are you want to Send Postcard ?");
@@ -1454,28 +1454,28 @@ $(document).ready(function(){
 					    //  alert("User does not want to continue!");
 						  return false;
 					   }
-					} 
+					}
 		    	 },
-		    	
-		    	uploadProgress: function ( event, position, total, percentComplete ) {	
+
+		    	uploadProgress: function ( event, position, total, percentComplete ) {
 		        },
-		    
-		    	success : function ( json ) 
+
+		    	success : function ( json )
 		    	{
-		    		
+
 					if(json.status == "fail")
 					{
 						$('#change-image').trigger('click');
 						$("#cm-err-main1").show();
 						$("#cm-err-main1").html(json.comment_error);
 			    		$('#dvLoading').fadeOut('slow')
-				  		setTimeout(function () 
+				  		setTimeout(function ()
 						{
 						      $("#cm-err-main").fadeOut('slow');
 						}, 3000);
 						return false;
 					}
-			
+
 					else
 					{
 						$("#cm-err-main1").hide();
@@ -1488,17 +1488,17 @@ $(document).ready(function(){
 						$("#preview").empty();
 						$.growlUI('Your post card send successfully . You can send another postcard after 24 hours');
 					}
-		     
+
 					$('#dvLoading').fadeOut('slow');
 					$('.profile_menu').fadeOut('slow');
-								  
+
 		   		 }
 		    });
 		    }
 		  }
 		})
-		
-		
+
+
 		$('#contact').validate(
 		{
 		rules: {
@@ -1518,20 +1518,20 @@ $(document).ready(function(){
 					desc: {
 						required: true,
 					},
-					
+
 						errorClass:'error fl_right'
 				},
-				
+
 		submitHandler: function(form){
 		$(form).ajaxSubmit({
 				type: "POST",
 		     	dataType : 'json',
-				beforeSubmit: function() 
+				beforeSubmit: function()
 				{
 		       		$('#dvLoading').fadeIn('slow');
 		    	},
 		    	uploadProgress: function ( event, position, total, percentComplete ) { 	},
-		    	success : function ( json ) 
+		    	success : function ( json )
 		    	{
 					if(json.status == "fail")
 					{
@@ -1539,13 +1539,13 @@ $(document).ready(function(){
 						$("#cm-err-main_contact").show();
 						$("#cm-err-main_contact").html(json.comment_error);
 					    $('#dvLoading').fadeOut('slow')
-						  setTimeout(function () 
+						  setTimeout(function ()
 								 {
 								      $("#cm-err-main_contact").fadeOut('slow');
 								}, 3000);
 						return false;
 					}
-					
+
 					else
 					{
 						$('#change-image1').trigger('click');
@@ -1564,43 +1564,43 @@ $(document).ready(function(){
 		  }
 		})
 	  });
-    
-	
+
+
 	 $('#frm_add_review').ajaxForm(
 	 {
-	 	
+
 	 	type: "POST",
     	dataType : 'json',
-		beforeSubmit: function() 
+		beforeSubmit: function()
 		{
         	$("#frm_add_review").validate(
         	{
-		   	rules: 
+		   	rules:
 		   	{
 			   comment_title: {required: true},
                comment: {required: true},
-               rating: {required: true}	  
-		   	}		  
-       		});	   
+               rating: {required: true}
+		   	}
+       		});
        		$('#dvLoading').fadeIn('slow');
    		 },
-   
+
     	 uploadProgress: function ( event, position, total, percentComplete ) { },
-    	  
-    	 success : function ( json ) 
+
+    	 success : function ( json )
     	 {
 			if(json.status == "fail")
 			{
 				$("#cm-err-main").show();
 				$("#cm-err-main").html(json.comment_error);
 			    $('#dvLoading').fadeOut('slow')
-				  setTimeout(function () 
+				  setTimeout(function ()
 						 {
 						      $("#cm-err-main").fadeOut('slow');
 						}, 3000);
 				return false;
 			}
-			
+
 			else
 			{
 				$("#cm-err-main").hide();
@@ -1621,7 +1621,7 @@ $(document).ready(function(){
 			$('.review_block').prepend(data);
 			$('#test').val(json.testdd);
 			$('#myModal1').modal('hide');
-	     
+
 	        $(':input','#add-comment')
 			  .not(':button, :submit, :reset, :hidden')
 			  .val('')
@@ -1637,10 +1637,10 @@ $(document).ready(function(){
 $(".pagination li a").click(function() {
 		  //alert("Handler for .click() called.");
 		  var res = $.ajax(
-	        {						
+	        {
 			   type: 'POST',
 			   url: $(this).attr("href"),
-			   dataType: 'post', 
+			   dataType: 'post',
 			   cache: false,
 			   async: false,
 			   beforeSend : function(){
@@ -1649,17 +1649,17 @@ $(".pagination li a").click(function() {
 			   complete: function(){
 			     $('#dvLoading').fadeOut('slow');
 			    }
-			}).responseText;	
+			}).responseText;
 			$("#responsecomment").html(res);
-			
+
 			return false;
-			
+
 		});
-		
+
 	var directionDisplay;
 	var directionsService = new google.maps.DirectionsService();
 	var map;
-		
+
 	function initialize() {
 	var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
 			directionsDisplay = new google.maps.DirectionsRenderer();
@@ -1676,29 +1676,29 @@ $(".pagination li a").click(function() {
 	        if (status == google.maps.GeocoderStatus.OK) {
 	          if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
 	          map.setCenter(results[0].geometry.location);
-	
+
 	            var infowindow = new google.maps.InfoWindow(
 	                { content: '<b>'+address+'</b>',
 	                  size: new google.maps.Size(150,50)
 	                });
-	
+
 	            var marker = new google.maps.Marker({
 	                position: results[0].geometry.location,
-	                map: map, 
+	                map: map,
 	                title:address
-	            }); 
+	            });
 	            google.maps.event.addListener(marker, 'click', function() {
 	                infowindow.open(map,marker);
 	            });
-	
-	          } 
+
+	          }
 	         }
           });
         }
 		google.maps.event.trigger(map, 'resize');
 		directionsDisplay.setMap(map);
 	}
-	
+
 function loadMap()
 {
 	$.ajax({
@@ -1711,39 +1711,39 @@ function loadMap()
 		   },
 		    complete : function() {
 		   		$('#dvLoading').fadeOut('slow');
-		   },		
+		   },
 		   success: function(response) {
 		   	$("#mapmodal").html(function(){
 		   		$(this).html(response);
 		   		$('#mapmodal').on('show.bs.modal', function() {
-		    		
+
                          initialize();
-			           	 	
+
     						}).modal();
-    						
+
     						 setTimeout(function() {
 					       initialize();
 						}, 200);
 		   	});
 		    //$('#mapmodal').one('show.bs.modal', function (e) {
 		    	//$('#myModalnew').one('shown.bs.modal', function (e) {
-		    	
-		     
+
+
 		  }
 	   });
-}	
+}
 
 </script>
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js" ></script>
 <script type="text/javascript">
- $(document).ready(function() { 
- 	
+ $(document).ready(function() {
+
 		   $("#phone").inputmask("(999) 999-9999");
 	});
   var geocoder;
   var map;
   var address ="<?php echo @mysql_real_escape_string($bar_detail['address'])." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-  function initialize_map() 
+  function initialize_map()
   {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-34.397, 150.644);
@@ -1769,19 +1769,19 @@ function loadMap()
 
             var marker = new google.maps.Marker({
                 position: results[0].geometry.location,
-                map: map, 
+                map: map,
                 title:address
-            }); 
+            });
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.open(map,marker);
             });
 
-          } 
+          }
          }
       });
     }
   }
-  
+
 function fbShare(){
 	window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('<?php echo site_url('bar/details/'.$bar_detail['bar_slug']); ?>'),'facebook-share-dialog','width=626,height=436');
             return false;
@@ -1799,9 +1799,9 @@ function twShare()
                  ',height=' + height +
                  ',top='    + top    +
                  ',left='   + left;
-    
+
     window.open(url, 'twitter', opts);
- 
+
     return false;
 }
 function gPlusShare1(url,name)
@@ -1810,10 +1810,10 @@ function gPlusShare1(url,name)
 		var x=Number((window.screen.width-w)/2);
 		var y=Number((window.screen.height-h)/2);
 		window.open('https://plus.google.com/share?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(name),'','width='+w+',height='+h+',left='+x+',top='+y+',scrollbars=no');
-		  
+
     	}
-    	
-    	
+
+
 function piShare()
 {
 	var width  = 600,
@@ -1826,9 +1826,9 @@ function piShare()
                  ',height=' + height +
                  ',top='    + top    +
                  ',left='   + left;
-    
+
     window.open(url, 'Pinterest', opts);
- 
+
     return false;
 }
 
@@ -1840,24 +1840,24 @@ function addToCart(iid,bar_id)
 			dataType:'json',
 			data:{id:iid,bar_id:bar_id},
 			success:function(data){
-				
+
 				if(data.count>0)
-				{	
+				{
 					$("#cartcount").html('<span class="itemcart">'+data.count+'</span>');
 					$("#cartcount_2").html('<span class="itemcart">'+data.count+'</span>');
 					//alertify.alert("Item has been added to cart Successfully");
-					$.growlUI('<?php echo "Item has been added to cart Successfully"; ?>'); 
+					$.growlUI('<?php echo "Item has been added to cart Successfully"; ?>');
 				}
-				
+
 				if(data.count==0)
-				{	
-					$.growlUI('<?php echo "Item Not available"; ?>'); 
+				{
+					$.growlUI('<?php echo "Item Not available"; ?>');
 				}
 			}
 		})
 	}
-	
-	
+
+
 function opengallery(id)
 {
 	  $.ajax({
@@ -1871,26 +1871,26 @@ function opengallery(id)
 			     $('#dvLoading').fadeOut('slow');
 			   },
 			         success: function(response) {
-			           
+
 			           			           	 //$('#myModalnew_ajax').on('show.bs.modal', function (e) {
 			           	 $('#myModalnew_ajax').one('show.bs.modal', function (e) {
 			           	 	$("#myModalnew_ajax").empty();
 			           	 	$("#myModalnew_ajax").html(response);
-			           	 	    $('.pgwSlideshow').pgwSlideshow(); 
+			           	 	    $('.pgwSlideshow').pgwSlideshow();
     						 }).modal();
-			           	 
-			           	 
+
+
 			           // alert(response);
 			        }
 			    });
-			    
-			   
-	
+
+
+
 }
 
   function see_gal()
   {
-  	 
+
   	  $("#see_gal").slideDown();
   	   scrollToDiv('see_gal');
   }
@@ -1898,7 +1898,7 @@ function opengallery(id)
   {
   	$("#see_gal").slideUp();
   }
-  
+
 function loadTaxi()
 {
 	$.ajax({
@@ -1911,14 +1911,14 @@ function loadTaxi()
 		   },
 		    complete : function() {
 		   		$('#dvLoading').fadeOut('slow');
-		   },		
+		   },
 		   success: function(response) {
 		   	$("#taximodal").html(function(){
 		   		$(this).html(response);
 		   		$('#taximodal').one('shown.bs.modal', function() {
-			           	 	
+
     						}).modal();
-    						
+
     						 setTimeout(function() {
 					       loadData_taxi(0,15);
 					       check();
@@ -1932,11 +1932,11 @@ function loadTaxi()
 		   	});
 		    //$('#mapmodal').one('show.bs.modal', function (e) {
 		    	//$('#myModalnew').one('shown.bs.modal', function (e) {
-		    	
-		     
+
+
 		  }
 	   });
-}	
+}
 
 function callhour()
 {
@@ -1954,20 +1954,20 @@ function getBarSpecialHours(day)
 		   },
 		    complete : function() {
 		   		$('#dvLoading').fadeOut('slow');
-		   },		
+		   },
 		   success: function(response) {
 		   	$('#displayhours').html(response);
 		    //$('#mapmodal').one('show.bs.modal', function (e) {
 		    	//$('#myModalnew').one('shown.bs.modal', function (e) {
-		    	
-		     
+
+
 		  }
 	   });
 	   }
-	   
+
 </script>
 
-<!-- 
+<!--
 
 <div itemscope itemtype="http://schema.org/LocalBusiness" style="display:none;>
 <a itemprop="url" href="<?php echo site_url('bar/bar/'.$bar_detail['bar_slug']);?>"><div itemprop="name"><strong><?php echo $bar_detail['bar_title']; ?></strong></div>
@@ -1996,7 +1996,7 @@ function getBarSpecialHours(day)
 
 
    <div itemscope itemtype="http://schema.org/LocalBusiness" style="display:none;">
-   	
+
 
 <?php
 		          		if($bar_detail['bar_banner']!="" && file_exists(base_path().'upload/banner_drag/'.@$bar_detail['bar_banner']))
@@ -2005,37 +2005,37 @@ function getBarSpecialHours(day)
 		            	<?php }  else if($bar_detail['bar_banner']!="" && file_exists(base_path().'upload/banner_drag_without/'.@$bar_detail['bar_banner']))
 					{?>
 						$img = <?php echo base_url()?>/upload/banner_without_drag/<?php echo $bar_detail['bar_banner']; ?>;
-		            		
+
 		            		<?php } else {?>
-		            		$img = <?php echo base_url().'default'?>/images/smallbanner1.png";	
+		            		$img = <?php echo base_url().'default'?>/images/smallbanner1.png";
 		            			<?php } ?>
 		<span itemprop="name"><?php echo $bar_detail['bar_title'];?></span>
 		<div itemprop="description"> <?php echo $bar_detail['bar_desc'];?></div>
 			<span  itemprop="email"><?php echo $bar_detail['email'];?></span>
-			
+
 			<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="mart10">
 			<p itemprop="streetAddress" class="bar_add">
 				<?php echo $bar_detail['address'];?>
 			</p>
-			
+
 		</div>
-			
+
 			<span id="_telephone3" itemprop="telephone"><?php echo $bar_detail['phone'];?></span>,
-			<img  itemprop="image" src="<?php echo $img; ?>" alt="American Dive Bars"/> 
+			<img  itemprop="image" src="<?php echo $img; ?>" alt="American Dive Bars"/>
 			<span itemprop="ratingCount"><?php echo getReviewRating($bar_id);?></span>
-			<label itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" id="title"> 
+			<label itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" id="title">
 				 <span itemprop="postalCode"><?php echo $bar_detail['zipcode'];?></span>
 				 <span itemprop="addressRegion"><?php echo $bar_detail['state'];?></span>
 				 <span itemprop="addressLocality"><?php echo $bar_detail['city'];?></span>! </label>
 
-			
-			
-			
-			
+
+
+
+
 
 			<ul itemscope itemtype="http://schema.org/LocalBusiness">
 				<?php if($barhours){
-     							  foreach($barhours as $r){?>	
+     							  foreach($barhours as $r){?>
 			<li itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
 				<span itemprop="dayOfWeek" itemscope itemtype="http://schema.org/DayOfWeek">
 					<div itemprop="name" class="schedule-text">
@@ -2048,13 +2048,11 @@ function getBarSpecialHours(day)
 					<?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?>
 					<?php } else {?>
 						<meta itemprop="closes" content="Please insert valid ISO 8601 date/time here. Examples: 2015-07-27 or 2015-07-27T15:30">Closed
-					<?php } ?>	
+					<?php } ?>
 			</li>
 			<?php } } ?>
 		</ul>
-			
-			
-			
+
+
+
 	</div>
-	
-	
