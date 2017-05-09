@@ -25,11 +25,10 @@ and open the template in the editor.
 <!--                    <h1 class="yellow_title padb10 br_bott_gray text-center padding-bottom-15">Verify Your Phone Number</h1>-->
                     
                     <div class="pad20">
+                        <p>Verify your phone number to complete your ambassador registration.<p>
+                        <p>We'll send an activation code via SMS to your mobile phone.</p>
                         <form class="form-horizontal" role="form" name="register" id="register" action="<?php //echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
                             <div class="padtb" style="text-align:center; ">
-                                <p>Verify your phone number to complete your ambassador registration.<p>
-                                <p>We'll send an activation code via SMS to your mobile phone.</p>
-
                                 <div class="clearfix"></div>
                                 <div class="input box col-sm-4" style="text-align: center;"></div>
                                 <div class="input box col-sm-2" style="text-align: center;">
