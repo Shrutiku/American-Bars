@@ -2077,7 +2077,7 @@ function getallliquorbybar_new()
             $this->template->render ();
         }
         
-        function choose_beer()
+        function choose_beer($limit=10,$keyword='1V1',$offset=0,$msg='')
         {
             if($this->session->userdata('user_type')!='bar_owner')
 		{
