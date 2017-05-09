@@ -44,7 +44,7 @@ and open the template in the editor.
                             </div>
                             <div class="col-sm-4 col-sm-offset-3" style="text-align:center; ">
 
-                                <a class="btn btn-lg btn-primary btn-next" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
+                                <a class="btn btn-lg btn-primary btn-next" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i>      Cancel</a>
                                 <div class="clearfix"></div>
                             </div>
 
