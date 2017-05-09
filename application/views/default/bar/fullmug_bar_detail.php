@@ -890,19 +890,19 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
                        <div class="clearfix"></div>
                    </div>
 
-<!--                   <div class="form-group" id="r_captcha">
+                   <div class="form-group" id="r_captcha">
                    	 <label for="inputEmail3" class="col-sm-3 control-label"></label>
- <div class="col-sm-8 input_box">-->
-<!-- 									 <input type="text" placeholder="Captcha " name="captcha2" id="captcha-form1" class="form-control" />
+ <div class="col-sm-8 input_box">
+ 									 <input type="text" placeholder="Captcha " name="captcha2" id="captcha-form1" class="form-control" />
 									<img src="<?php echo base_url();?>captcha/captcha.php" id="captcha2" /><br/>
 
                                     <a href="javascript://" onclick="
 
                                     document.getElementById('captcha2').src='<?php echo base_url();?>captcha/captcha.php?'+Math.random();
 
-                                    document.getElementById('captcha-form1').focus();"
+                                    document.getElementById('captcha-form1');"
 
-                                    id="change-image1" class="lable_title text-right">Not readable? Change text.</a>-->
+                                    id="change-image1" class="lable_title text-right">Not readable? Change text.</a>
 
 
 </div>
