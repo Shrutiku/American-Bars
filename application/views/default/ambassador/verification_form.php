@@ -42,7 +42,7 @@ and open the template in the editor.
                                     <div class="clearfix"></div>  
                                 </div>
                             </div>
-                            <div class="padtb8" style="text-align: "center">
+                            <div class="padtb8" style="text-align:center; ">
 
                                 <a class="btn btn-lg btn-primary btn-next pull-left" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i> Cancel</a>
                                 <!-- </div> -->
