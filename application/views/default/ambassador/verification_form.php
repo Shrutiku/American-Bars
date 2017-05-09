@@ -42,9 +42,9 @@ and open the template in the editor.
                                     <div class="clearfix"></div>  
                                 </div>
                             </div>
-                            <div class="col-sm-4 col-sm-offset-3" style="text-align:center; ">
+                            <div class="col-sm-4 col-sm-offset-4" style="text-align:center; ">
 
-                                <a class="btn btn-lg btn-primary btn-next" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i>      Cancel</a>
+                                <br><a class="btn btn-md btn-primary btn-next" href="<?php echo site_url('home'); ?>"><i class="previous-arrow-icon"></i>      Cancel</a>
                                 <div class="clearfix"></div>
                             </div>
 
