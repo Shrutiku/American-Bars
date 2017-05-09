@@ -9,7 +9,7 @@ and open the template in the editor.
      		<div class="result_box clearfix mar_top30bot20">
      			<div class="login_block br_green_yellow" style="width: 90%;">
      				<div class="result_search">
-	     				<div class="result_search_text">Ambassador Signup</div>
+	     				<div class="result_search_text" text-align="center">Ambassador Signup</div>
      				</div>
 				
                         
