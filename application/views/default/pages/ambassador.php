@@ -1,4 +1,4 @@
-<div style="padding: 20px" class="wrapper">
+<div class="wrapper">
     <div class="container">
         <h1 class="productbar_title mar_top20 padding-10"><center>Become an American Bars Ambassador</center></h1><br/>
         <h3><center>Start Making Money Today!</center></h3><br/>
