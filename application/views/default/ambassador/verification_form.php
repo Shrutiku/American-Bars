@@ -31,7 +31,7 @@ and open the template in the editor.
                                 <p class="bar_add yellow_title">We'll send an activation code via SMS to your mobile phone.</p>
 
                                 <div class="clearfix"></div>
-                                <div class="col-sm-3" style="text-align: left;">
+                                <div class="col-sm-3" style="text-align: center;">
                                     <label class="control-label">Phone Number: <span class="aestrick"> * </span></label>
                                 </div>
                                     <div class="input_box col-sm-3">
