@@ -4879,16 +4879,16 @@ class Home extends SPACULLUS_Controller {
         $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
 
         if ($_POST) {
-            if ($this->form_validation->run() == FALSE) {
-                if (validation_errors()) {
-                    $data["error"] = validation_errors();
-                } else {
-                    $data["error"] = "";
-                }
-
-//                $data["bar_id"] = $this->input->post('bar_id');
-                $data["phone_number"] = $this->input->post('phone_number');
-            } else {
+//            if ($this->form_validation->run() == FALSE) {
+//                if (validation_errors()) {
+//                    $data["error"] = validation_errors();
+//                } else {
+//                    $data["error"] = "";
+//                }
+//
+////                $data["bar_id"] = $this->input->post('bar_id');
+//                $data["phone_number"] = $this->input->post('phone_number');
+//            } else {
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
@@ -4906,7 +4906,7 @@ class Home extends SPACULLUS_Controller {
                 } catch (Exception $e) {
                     $data["error"] = "Connectivity Error";
                 }
-            }
+//            }
         }
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
