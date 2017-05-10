@@ -1280,7 +1280,7 @@ function loadMap()
 <script type="text/javascript">
   var geocoder;
   var map;
-  var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['zipcode']." ".@$bar_detail['state'];?>";
+  var address = "<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
   
 function initialize_map()
   {
@@ -1292,10 +1292,10 @@ function initialize_map()
     directionsDisplay = new google.maps.DirectionsRenderer();
      
     marker = new google.maps.Marker({ 
-     map:map,
+    map: map,
     // draggable:true,
     // animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
+    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
     icon: iconBase
   });
   
