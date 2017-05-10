@@ -25,7 +25,7 @@ and open the template in the editor.
 <!--                    <h1 class="yellow_title padb10 br_bott_gray text-center padding-bottom-15">Verify Your Phone Number</h1>-->
                     
                     <div class="pad20" style="text-align:center;">
-                        <h2>Verify your phone number to complete your ambassador registration. We'll send an activation code via SMS to your mobile phone.<br></h2>
+                        <h3>Verify your phone number to complete your ambassador registration. We'll send an activation code via SMS to your mobile phone.<br></h3>
                                 <p><br></p>
                         <form class="form-horizontal" role="form" name="register" id="register" action="<?php //echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
                             <div class="padtb" style="text-align:center; ">
@@ -35,7 +35,7 @@ and open the template in the editor.
                                     <input type="text" class="form-control form-pad" id="phone_number" name="phone_number" style="width:150px">
                                 </div>
                                 <div class="col-sm-2" style="text-align: center"> 
-                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Verify</button>
+                                    <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Submit</button>
                                 </div>
                                 <div class="col-sm-2" style="text-align: left;">
                                     <button class="btn btn-lg btn-primary" type="submit" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
