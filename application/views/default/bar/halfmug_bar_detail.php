@@ -1279,6 +1279,7 @@ function loadMap()
 <script type="text/javascript">
   var geocoder;
   var map;
+  var title = "<?php echo $bar_detail['bar_title']?>";
   // var address = "<?php// echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
   var street = "<?php echo @$bar_detail['address'];?>";
   var city = "<?php echo @$bar_detail['city'];?>";
@@ -1304,7 +1305,7 @@ function initialize()
           map.setCenter(results[0].geometry.location);
 
             var infowindow = new google.maps.InfoWindow(
-                { content: '<b>'+address+'</b>',
+                { content: title, //'<b>'+address+'</b>',
                   size: new google.maps.Size(150,50)
                 });
                 
@@ -1314,7 +1315,7 @@ function initialize()
                 // animation: google.maps.Animation.DROP,
                 position: results[0].geometry.location,
                 icon: iconBase,
-                title: "<?php echo $bar_detail['bar_title']?>"
+                title: title
             });
             
             google.maps.event.addListener(marker, 'click', function() {
