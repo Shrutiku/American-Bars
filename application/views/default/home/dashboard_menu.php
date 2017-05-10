@@ -59,7 +59,7 @@
                                                         <p>
                                                                 <i class="domain-settings"></i>
                                                         </p>
-                                                        Domain Management
+                                                        Domain Management 
                                                 </a>
                                         </li>
      					
