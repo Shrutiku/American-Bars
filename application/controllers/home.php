@@ -4889,14 +4889,12 @@ class Home extends SPACULLUS_Controller {
 //                $data["bar_id"] = $this->input->post('bar_id');
                 $data["phone_number"] = $this->input->post('phone_number');
             } else {
-
-                $bar_id = $this->input->post('bar_id');
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $this->input->post('phone_number');
                 $claim_code = rand(100000, 999999);
-                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
+//                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
                 $body = 'Here is your ambassador verification code for American Bars: ' . $claim_code;
 
                 try {
@@ -4912,7 +4910,7 @@ class Home extends SPACULLUS_Controller {
         }
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/verification_form', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/ambassador/verification_form', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
