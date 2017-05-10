@@ -1147,21 +1147,20 @@ $(".pagination li a").click(function() {
 	var directionDisplay;
 	var directionsService = new google.maps.DirectionsService();
 	var map;
-		var LocationData = <?php echo $var; ?>;
+        var LocationData = <?php echo $var; ?>;
 	function initialize() {
 	var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var map = 
-        new google.maps.Map(document.getElementById('gmap_marker'));
-    var bounds = new google.maps.LatLngBounds();
-    var infowindow = new google.maps.InfoWindow();
-     directionsDisplay = new google.maps.DirectionsRenderer();
-     marker = new google.maps.Marker({
-    map:map,
-    // draggable:true,
-    // animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
-    icon: iconBase
-  });
+        var map = new google.maps.Map(document.getElementById('gmap_marker'));
+        var bounds = new google.maps.LatLngBounds();
+        var infowindow = new google.maps.InfoWindow();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+//        marker = new google.maps.Marker({
+//            map:map,
+//            // draggable:true,
+//            // animation: google.maps.Animation.DROP,
+//            position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
+//            icon: iconBase
+//        });
   
         var latlng = new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
         bounds.extend(latlng);
@@ -1169,7 +1168,8 @@ $(".pagination li a").click(function() {
         var marker = new google.maps.Marker({
             position: latlng,
             map: map,
-            title: '<?php echo mysql_real_escape_string($bar_detail['bar_title']);?>'
+//            title: '<?php echo mysql_real_escape_string($bar_detail['bar_title']);?>'
+            title: address
         });
      
         google.maps.event.addListener(marker, 'click', function() {
@@ -1281,12 +1281,11 @@ function loadMap()
   var geocoder;
   var map;
   var address = "<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-  
+
 function initialize_map()
   {
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var map = 
-            new google.maps.Map(document.getElementById('gmap_marker'));
+    var map = new google.maps.Map(document.getElementById('gmap_marker'));
     var bounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
     directionsDisplay = new google.maps.DirectionsRenderer();
