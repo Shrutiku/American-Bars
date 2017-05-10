@@ -1289,7 +1289,7 @@ function loadMap()
 function initialize()
   {
         map = new google.maps.Map(document.getElementById('gmap_marker'), {
-        zoom: 6,
+        zoom: 17,
         center: {lat:-25.363, lng: 131.044}
     });
     
