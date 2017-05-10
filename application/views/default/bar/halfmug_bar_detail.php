@@ -1288,7 +1288,7 @@ function loadMap()
 function initialize()
   {
         map = new google.maps.Map(document.getElementById('gmap_marker'), {
-        zoom: 8,
+        zoom: 6,
         center: {lat:-25.363, lng: 131.044}
     });
     
