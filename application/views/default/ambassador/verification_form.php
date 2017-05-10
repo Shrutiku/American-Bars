@@ -38,7 +38,7 @@ and open the template in the editor.
                                     <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Submit</button>
                                 </div>
                                 <div class="col-sm-2" style="text-align: left;">
-                                    <button class="btn btn-lg btn-primary" type="cancel" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
+                                    <!--<button class="btn btn-lg btn-primary" type="cancel" name="cancel" id="cancel" href="<?php //echo site_url('home'); ?>"/><i class="previous-arrow-icon"></i>Cancel</button>-->
 
                                 </div>
 <!--                                <div class="input box col-sm-4" style="text-align: left;"></div>-->

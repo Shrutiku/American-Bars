@@ -50,9 +50,9 @@ class Ambassador extends SPACULLUS_Controller {
     }
     
         function ambassador_register($msg = '', $email = '', $bar_id_orig = '') {
-//        if (check_user_authentication() != '') {
-//            redirect('home');
-//        }
+        if (check_user_authentication() != '') {
+            redirect('home');
+        }
 
         $theme = getThemeName();
         $data['error'] = '';
