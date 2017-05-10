@@ -1288,13 +1288,13 @@ function loadMap()
   var address = street + " " + city + ", " + state + " " + zip;
 function initialize()
   {
-        map = new google.maps.Map(document.getElementById('gmap_marker'), {
+    map = new google.maps.Map(document.getElementById('gmap_marker'), {
         zoom: 17,
-        center: {lat:-25.363, lng: 131.044}
+        center: {lat: -25.363, lng: 131.044}
     });
     
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var bounds = new google.maps.LatLngBounds();
+//    var bounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
     directionsDisplay = new google.maps.DirectionsRenderer();  
     geocoder = new google.maps.Geocoder();
@@ -1303,7 +1303,7 @@ function initialize()
         if (status === google.maps.GeocoderStatus.OK) {
           if (status !== google.maps.GeocoderStatus.ZERO_RESULTS) {
           map.setCenter(results[0].geometry.location);
-
+          map.setZoom(17);
             var infowindow = new google.maps.InfoWindow(
                 { content: title, //'<b>'+address+'</b>',
                   size: new google.maps.Size(150,50)
