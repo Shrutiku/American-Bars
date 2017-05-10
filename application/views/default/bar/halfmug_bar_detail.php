@@ -1304,7 +1304,7 @@ function initialize()
           map.setCenter(results[0].geometry.location);
 
             var infowindow = new google.maps.InfoWindow(
-                { content: "<?php echo $bar_detail['bar_title']?>"
+                { content: '<b>'+address+'</b>',
                   size: new google.maps.Size(150,50)
                 });
                 
