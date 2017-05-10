@@ -4912,7 +4912,7 @@ class Home extends SPACULLUS_Controller {
         }
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/claim_bar_owner_register', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/verification_form', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
