@@ -27,7 +27,7 @@ and open the template in the editor.
                     <div class="pad20" style="text-align:center;">
                         <h3>Verify your phone number to complete your ambassador registration. We'll send an activation code via SMS to your mobile phone.<br></h3>
                                 <p><br></p>
-                        <form class="form-horizontal" role="form" name="register" id="register" action="<?php echo site_url("ambassador/verification_form/" . $new_bar_id); ?>" method="post">
+                        <form class="form-horizontal" role="form" name="register" id="register" action="<?php echo site_url("ambassador/verification_form/"); ?>" method="post">
                             <div class="padtb" style="text-align:center; ">
                                 <div class="clearfix"></div>
                                 <div class="input box col-sm-4" style="text-align: center;"></div>
