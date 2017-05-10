@@ -4861,7 +4861,6 @@ class Home extends SPACULLUS_Controller {
         $this->db->where('message_id', $this->input->post('id'));
         $this->db->update('broadcast_message', $data);
     }
-
     function claim_bar_owner_register($msg = '', $email = '', $bar_id_orig = '') {
         if (check_user_authentication() != '') {
             redirect('home');
@@ -4949,10 +4948,10 @@ class Home extends SPACULLUS_Controller {
 
                 if ($data["error"] == null) {
                     if ($this->input->post('temp_id') == "") {
-                        redirect('ambassador/verify_code/'));
+                        redirect('home/claim_bar_owner_verify_code/' . "/" . base64_encode($bar_id));
                     } else {
                         $barid = $this->input->post('temp_id');
-                        redirect('ambassador/verify_code/' . "/" . base64_encode($bar_id));
+                        redirect('home/claim_bar_owner_verify_code/' . "/" . base64_encode($bar_id));
                     }
                 }
             }
