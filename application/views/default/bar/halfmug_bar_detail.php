@@ -1279,7 +1279,7 @@ function loadMap()
 <script type="text/javascript">
   var geocoder;
   var map;
-  var address = "<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
+  var address = "<?php echo @$bar_detail['address']." "."\\".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
 
 function initialize_map()
   {
