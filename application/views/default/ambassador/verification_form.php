@@ -16,7 +16,7 @@ and open the template in the editor.
 
                 <div class="pad20">
                     <h1 align="center" class="yellow_title padb10 br_bott_gray">Welcome to American Bars.</h1>
-                    <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form'); echo form_open('ambassador/',$attributes); ?>
+                    <?php $attributes = array('id'=>'frm_login','name'=>'frm_login','class'=>'form-horizontal','rolde'=>'form'); echo form_open('ambassador/verification_form/',$attributes); ?>
                     <br><br>
                     <?php if($error!=""){ ?>
                     <div class="error1 text-center"><a class="closemsg" data-dismiss="alert"></a><span>////<?php echo $error; ?></span></div>
@@ -27,7 +27,7 @@ and open the template in the editor.
                     <div class="pad20" style="text-align:center;">
                         <h3>Verify your phone number to complete your ambassador registration. We'll send an activation code via SMS to your mobile phone.<br></h3>
                                 <p><br></p>
-                        <form class="form-horizontal" role="form" name="register" id="register" action="<?php //echo site_url("home/claim_bar_owner_register/" . $new_bar_id); ?>" method="post">
+                        <form class="form-horizontal" role="form" name="register" id="register" action="<?php echo site_url("ambassador/verification_form/" . $new_bar_id); ?>" method="post">
                             <div class="padtb" style="text-align:center; ">
                                 <div class="clearfix"></div>
                                 <div class="input box col-sm-4" style="text-align: center;"></div>
@@ -38,7 +38,7 @@ and open the template in the editor.
                                     <button class="btn btn-lg btn-primary"  type="submit" name="submit"  id="submit" />Submit</button>
                                 </div>
                                 <div class="col-sm-2" style="text-align: left;">
-                                    <button class="btn btn-lg btn-primary" type="submit" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
+                                    <button class="btn btn-lg btn-primary" type="cancel" name="cancel" id="cancel" href="<?php echo site_url('home'); ?>"/><!--<i class="previous-arrow-icon"></i>-->Cancel</button>
 
                                 </div>
 <!--                                <div class="input box col-sm-4" style="text-align: left;"></div>-->
