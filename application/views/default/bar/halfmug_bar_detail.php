@@ -136,7 +136,7 @@ $('#comment_title').live('click', function(e){
  });
    $(document).ready(function()
    {
-          initialize_map();
+          initialize();
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
@@ -1285,7 +1285,7 @@ function loadMap()
   var state = "<?php echo @$bar_detail['state'];?>";
   var zip = "<?php echo @$bar_detail['zipcode'];?>";
   var address = street + " " + city + ", " + state + " " + zip;
-function initialize_map()
+function initialize()
   {
         map = new google.maps.Map(document.getElementById('gmap_marker'), {
         zoom: 10,
