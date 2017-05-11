@@ -129,9 +129,9 @@ class Ambassador extends SPACULLUS_Controller {
     }
     function verify_code($msg = "") {
 
-        $data['error'] = '';
-        $data['type'] = '';
-        $data["active_menu"] = '';
+//        $data['error'] = '';
+//        $data['type'] = '';
+//        $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
         $theme = getThemeName();
 //        $this->template->set_master_template($theme . '/template.php');
