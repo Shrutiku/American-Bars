@@ -84,6 +84,7 @@ class Ambassador extends SPACULLUS_Controller {
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
+                echo '<script>console.log("GOOD")</script>';
                 $phone_number = $this->input->post('phone_number');
                 echo '<script>console.log("#: " + <?php echo $phone_number; ?>)</script>';
                 if ($phone_number == '') {
@@ -119,7 +120,7 @@ class Ambassador extends SPACULLUS_Controller {
         $this->load->library ('form_validation');
 
         $this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
-        $this->template->write_view ('content_center', $theme.'/ambassador/verification_form', $data, TRUE);
+        $this->template->write_view ('content_center', $theme.'/ambassador/verification_form/', $data, TRUE);
         $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
         $this->template->render();
     }
