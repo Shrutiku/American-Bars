@@ -45,14 +45,14 @@
      							Comments
      						</a>
      					</li>
-                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='barlistings' ? 'active':'';?>">
+<!--                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='barlistings' ? 'active':'';?>">
                                                 <a href="<?php echo site_url('home/barlistings')?>">
                                                         <p>
                                                                 <i class="bar-listings"></i>
                                                         </p>
                                                         Bar Listings
                                                 </a>
-                                        </li>
+                                        </li>-->
                                         
 <!--                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='domainmanagement' ? 'active':'';?>">
                                                 <a href="<?php echo site_url('home/domainmanagement')?>">
@@ -63,12 +63,12 @@
                                                 </a>
                                         </li>-->
      					
-     					<li class="<?php echo $this->uri->segment(2)=='updatecard' ? 'active':'';?>">
+<!--     					<li class="<?php echo $this->uri->segment(2)=='updatecard' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/updatecard')?>">
      							<i class="strip update_creditcard"></i>
      							Update Credit Card
      						</a>
-     					</li>
+     					</li>-->
                                         
                                         
 
@@ -164,17 +164,18 @@
      						</a>
      					</li>
      						<?php } ?> 											
-     						<li class="<?php echo $this->uri->segment(2)=='changepassword' ? 'active':'';?>">
+<!--     						<li class="<?php echo $this->uri->segment(2)=='changepassword' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/changepassword')?>">
      							<i class="strip change_pwd"></i>
+     						<li class="<?php echo $this->uri->segment(2)=='changepassword' ? 'active':'';?>">
      							Change Password
      						</a>
-     					</li>
+     					</li>-->
      					
      					<li class="<?php echo $this->uri->segment(2)=='updatebanner' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/updatebanner')?>">
      							<i class="strip update_banner"></i>
-     							Update Banner
+     							Settings
      						</a>
      					</li>
      							
