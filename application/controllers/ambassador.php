@@ -52,7 +52,7 @@ class Ambassador extends SPACULLUS_Controller {
 
     }
     
-        function ambassador_register($msg = '', $phone_number = '') {
+        function verification_form($msg = '', $phone_number = '') {
 
         $theme = getThemeName();
         $data['error'] = '';
@@ -67,19 +67,19 @@ class Ambassador extends SPACULLUS_Controller {
         echo '<script>console.log("TEST")</script>';
         if ($_POST) {
             echo '<script>console.log("HERE")</script>';
-            if ($this->form_validation->run() == FALSE) {
-            
-                echo '<script>console.log("BAD FORM")</script>';
-
-                if (validation_errors()) {
-                    $data["error"] = validation_errors();
-                } else {
-                    $data["error"] = "";
-                }
+//            if ($this->form_validation->run() == FALSE) {
+//            
+//                echo '<script>console.log("BAD FORM")</script>';
+//
+//                if (validation_errors()) {
+//                    $data["error"] = validation_errors();
+//                } else {
+//                    $data["error"] = "";
+//                }
 
 //                $data["bar_id"] = $this->input->post('bar_id');
 //                $data["phone_number"] = $this->input->post('phone_number');
-            } else {
+//            } else {
                 echo '<script>console.log("GOOD")</script>';
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
@@ -110,7 +110,7 @@ class Ambassador extends SPACULLUS_Controller {
                         redirect('ambassador/verify_code/');
                     }
                 }
-            }
+//            }
         }
     }
 }
