@@ -145,14 +145,14 @@ class Ambassador extends SPACULLUS_Controller {
 //        $metaDescription=$page_detail->meta_description;
 //        $metaKeyword=$page_detail->meta_keyword;
 //
-//        $this->template->write ('pageTitle', $pageTitle, TRUE);
-//        $this->template->write ('metaDescription', $metaDescription, TRUE);
-//        $this->template->write ('metaKeyword', $metaKeyword, TRUE);
-//        $this->load->library ('form_validation');
-//
-//        $this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
-//        $this->template->write_view ('content_center', $theme.'/ambassador/verify_code', $data, TRUE);
-//        $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
-//        $this->template->render();
+        $this->template->write ('pageTitle', $pageTitle, TRUE);
+        $this->template->write ('metaDescription', $metaDescription, TRUE);
+        $this->template->write ('metaKeyword', $metaKeyword, TRUE);
+        $this->load->library ('form_validation');
+
+        $this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
+        $this->template->write_view ('content_center', $theme.'/ambassador/verify_code', $data, TRUE);
+        $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+        $this->template->render();
     }
 }
