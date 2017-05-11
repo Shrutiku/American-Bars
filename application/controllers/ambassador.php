@@ -141,36 +141,34 @@ class Ambassador extends SPACULLUS_Controller {
         $metaDescription = $page_detail->meta_description;
         $metaKeyword = $page_detail->meta_keyword;
 
-//        $this->template->write('pageTitle', $pageTitle, TRUE);
-//        $this->template->write('metaDescription', $metaDescription, TRUE);
-//        $this->template->write('metaKeyword', $metaKeyword, TRUE);
-//        $this->load->library('form_validation');
-//
-//        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
-//
-//        if ($_POST) {
-//            if ($this->form_validation->run() == FALSE) {
-//                if (validation_errors()) {
-//                    $data["error"] = validation_errors();
-//                } else {
-//                    $data["error"] = "";
-//                }
-//            } else {
-//                $this->db->where('bar_id', $bar_id);
-//                $bar_info = $this->db->get('bars')->row();
-//                if ($bar_info != NULL) {
-//                    $code = $bar_info->claim_code;
-//
-//                    if ($code == $this->input->post('code')) {
-//                        redirect('home/claimbar_owner_info/' . base64_encode($bar_id));
-//                    } else {
-//                        $data["error"] = "Invalid verification code.";
-//                    }
-//                } else {
-//                    $data["error"] = "Internal Error";
-//                }
-//            }
-//        }
+        $this->template->write('pageTitle', $pageTitle, TRUE);
+        $this->template->write('metaDescription', $metaDescription, TRUE);
+        $this->template->write('metaKeyword', $metaKeyword, TRUE);
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
+
+        if ($_POST) {
+            if ($this->form_validation->run() == FALSE) {
+                if (validation_errors()) {
+                    $data["error"] = validation_errors();
+                } else {
+                    $data["error"] = "";
+                }
+            } else {
+                if ($bar_info != NULL) {
+                    $code = 'test'
+
+                    if ($code == $this->input->post('code')) {
+                        redirect('ambssador'));
+                    } else {
+                        $data["error"] = "Invalid verification code.";
+                    }
+                } else {
+                    $data["error"] = "Internal Error";
+                }
+            }
+        }
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
         $this->template->write_view('content_center', $theme . '/ambassador/verify_code', $data, TRUE);
