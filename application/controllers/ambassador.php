@@ -142,7 +142,7 @@ class Ambassador extends SPACULLUS_Controller {
         $this->load->library ('form_validation');
 
         $this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
-        $this->template->write_view ('content_center', $theme.'/ambassador/verify_code/', $data, TRUE);
+        $this->template->write_view ('content_center', $theme.'/ambassador/verify_code', $data, TRUE);
         $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
         $this->template->render();
     }
