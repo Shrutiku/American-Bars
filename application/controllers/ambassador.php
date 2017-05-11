@@ -46,6 +46,9 @@ class Ambassador extends SPACULLUS_Controller {
         $this->template->write_view ('content_center', $theme.'/ambassador/verification_form', $data, TRUE);
         $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
         $this->template->render();
+                        
+        echo '<script>console.log("TEST")</script>';
+
 
     }
     
