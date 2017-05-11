@@ -49,10 +49,7 @@ class Ambassador extends SPACULLUS_Controller {
 
     }
     
-        function ambassador_register($msg = '', $email = '', $bar_id_orig = '') {
-        if (check_user_authentication() != '') {
-            redirect('home');
-        }
+        function ambassador_register($msg = '', $phone_number = '') {
 
         $theme = getThemeName();
         $data['error'] = '';
@@ -64,7 +61,7 @@ class Ambassador extends SPACULLUS_Controller {
         $this->template->set_master_template($theme . '/template.php');
 
         $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
-
+        echo '<script>console.log("TEST")</script>';
         if ($_POST) {
             echo '<script>console.log("HERE")</script>';
             if ($this->form_validation->run() == FALSE) {
@@ -78,13 +75,16 @@ class Ambassador extends SPACULLUS_Controller {
                 }
 
 //                $data["bar_id"] = $this->input->post('bar_id');
-                $data["phone_number"] = $this->input->post('phone_number');
+//                $data["phone_number"] = $this->input->post('phone_number');
             } else {
                 echo '<script>console.log("GOOD")</script>';
                 $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $this->input->post('phone_number');
+                if ($phone_number == '') {
+                    redirect('home');
+                }
                 $claim_code = rand(100000, 999999);
         //                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
                 $body = 'Here is your ambassador verification code for American Bars: ' . $claim_code;
