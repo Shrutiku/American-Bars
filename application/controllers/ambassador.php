@@ -86,12 +86,12 @@ class Ambassador extends SPACULLUS_Controller {
                 echo '<script>console.log("GOOD")</script>';
                 $phone_number = $this->input->post('phone_number');
                 echo '<script>console.log("#: " + <?php echo $phone_number; ?>)</script>';
-                if ($phone_number == '') {
-                    redirect('ambassador/verification_form');
-                }
-                if (strlen($phone_number) != 10) {
-                    redirect('ambassador/verification_form');
-                }
+//                if ($phone_number == '') {
+//                    redirect('ambassador/verification_form');
+//                }
+//                if (strlen($phone_number) != 10) {
+//                    redirect('ambassador/verification_form');
+//                }
                 $claim_code = rand(100000, 999999);
         //                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
                 $body = 'Here is your ambassador verification code for American Bars: ' . $claim_code;
