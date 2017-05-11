@@ -2,14 +2,14 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/plugin/Tokenize/jquery.tokenize.css" />
 
 
-<script>
+<!--<script>
     var test = '<a href="#suggestmodal" data-toggle="modal" class="yellowlink">Select a settings function</a>';
 	
-</script>
+</script>-->
 
-<div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+<!--<div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
     <?php echo $this->load->view(getThemeName().'/bar/cocktail_suggest');?>
-</div>	
+</div>	-->
 
 <div class="wrapper row6 padtb10 has-js">
     <div class="container">	
