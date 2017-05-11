@@ -6578,6 +6578,33 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
+    
+    function settings_menu($msg = "") {
+        if (get_authenticateUserID() == '') {
+            redirect('home');
+        }
+//        if ($this->session->userdata('user_type') != 'bar_owner' && $this->session->userdata('user_type') != 'taxi_owner' && get_authenticateUserID()) {
+//            redirect('home/user_dashboard');
+//        }
+//
+//        if ($this->session->userdata('user_type') != 'bar_owner' && $this->session->userdata('user_type') != 'user' && get_authenticateUserID()) {
+//            redirect('home/taxi_owner_dashboard');
+//        }
+        $data = array();
+        $data['msg'] = $msg;
+        
+        $theme = getThemeName();
+        $data['error'] = '';
+        $data["active_menu"] = '';
+        $data['site_setting'] = site_setting();
+        $theme = getThemeName();
+        $this->template->set_master_template($theme . '/template.php');
+
+        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/settings_menu', $data, TRUE);
+        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+        $this->template->render();
+    }
 }
 
 ?>
