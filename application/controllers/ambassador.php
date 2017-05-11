@@ -86,12 +86,12 @@ class Ambassador extends SPACULLUS_Controller {
                 echo '<script>console.log("GOOD")</script>';
                 $phone_number = $this->input->post('phone_number');
                 echo '<script>console.log("#: " + <?php echo $phone_number; ?>)</script>';
-//                if ($phone_number == '') {
-//                    redirect('ambassador/verification_form');
-//                }
-//                if (strlen($phone_number) != 10) {
-//                    redirect('ambassador/verification_form');
-//                }
+                if ($phone_number == '') {
+                    redirect('ambassador/verification_form');
+                }
+                if (strlen($phone_number) != 10) {
+                    redirect('ambassador/verification_form');
+                }
                 $claim_code = rand(100000, 999999);
         //                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
                 $body = 'Here is your ambassador verification code for American Bars: ' . $claim_code;
@@ -127,44 +127,28 @@ class Ambassador extends SPACULLUS_Controller {
 //        $this->template->render();
     }
     function verify_code($msg = "") {
+        
         $theme = getThemeName();
         $data['error'] = '';
-        $data['type'] = '';
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
+        $data["msg"] = base64_decode($msg);
         $theme = getThemeName();
-        $this->template->write('pageTitle', $pageTitle, TRUE);
-        $this->template->write('metaDescription', $metaDescription, TRUE);
-        $this->template->write('metaKeyword', $metaKeyword, TRUE);
-        $this->load->library('form_validation');
+        $this->template->set_master_template($theme . '/template.php');
 
-        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
+        $page_detail=meta_setting();
+        $pageTitle=$page_detail->title;
+        $metaDescription=$page_detail->meta_description;
+        $metaKeyword=$page_detail->meta_keyword;
 
-        if ($_POST) {
-            if ($this->form_validation->run() == FALSE) {
-                if (validation_errors()) {
-                    $data["error"] = validation_errors();
-                } else {
-                    $data["error"] = "";
-                }
-            } else {
-                $this->db->where('bar_id', $bar_id);
-                $bar_info = $this->db->get('bars')->row();
-                if ($bar_info != NULL) {
-                    $code = $bar_info->claim_code;
+        $this->template->write ('pageTitle', $pageTitle, TRUE);
+        $this->template->write ('metaDescription', $metaDescription, TRUE);
+        $this->template->write ('metaKeyword', $metaKeyword, TRUE);
+        $this->load->library ('form_validation');
 
-                    if ($code == $this->input->post('code')) {
-                        redirect('home/claimbar_owner_info/' . base64_encode($bar_id));
-                    } else {
-                        $data["error"] = "Invalid verification code.";
-                    }
-                } else {
-                    $data["error"] = "Internal Error";
-                }
-            }
-        }
-
-        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/ambassador/verify_code', $data, TRUE);
-        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+        $this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
+        $this->template->write_view ('content_center', $theme.'/ambassador/verify_code', $data, TRUE);
+        $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+        $this->template->render();
+    }
 }
