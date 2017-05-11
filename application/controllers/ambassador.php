@@ -130,7 +130,6 @@ class Ambassador extends SPACULLUS_Controller {
 
         $theme = getThemeName();
         $data['error'] = '';
-        $data['bar_id'] = $bar_id;
         $data['type'] = '';
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
