@@ -85,6 +85,7 @@ class Ambassador extends SPACULLUS_Controller {
                 $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
                 $client = new TwilioClient($account_sid, $auth_token);
                 $phone_number = $this->input->post('phone_number');
+                echo '<script>console.log(<?php echo $phone_number; ?>)</script>';
                 if ($phone_number == '') {
                     redirect('home');
                 }
