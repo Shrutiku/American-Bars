@@ -1,19 +1,14 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    require_once(APPPATH . 'libraries/Twilio/autoload.php');
+    require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
+    use Twilio\Rest\Client as TwilioClient;
 
 /**
  * Description of ambassador
  *
  * @author esco
  */
-
-    require_once(APPPATH . 'libraries/Twilio/autoload.php');
-    require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
 
 class Ambassador extends SPACULLUS_Controller {
     //put your code here
