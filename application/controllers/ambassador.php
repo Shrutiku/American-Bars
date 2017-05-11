@@ -136,17 +136,17 @@ class Ambassador extends SPACULLUS_Controller {
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
 
-//        $page_detail = meta_setting();
-//        $pageTitle = $page_detail->title;
-//        $metaDescription = $page_detail->meta_description;
-//        $metaKeyword = $page_detail->meta_keyword;
+        $page_detail = meta_setting();
+        $pageTitle = $page_detail->title;
+        $metaDescription = $page_detail->meta_description;
+        $metaKeyword = $page_detail->meta_keyword;
 
-//        $this->template->write('pageTitle', $pageTitle, TRUE);
-//        $this->template->write('metaDescription', $metaDescription, TRUE);
-//        $this->template->write('metaKeyword', $metaKeyword, TRUE);
-//        $this->load->library('form_validation');
-//
-//        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
+        $this->template->write('pageTitle', $pageTitle, TRUE);
+        $this->template->write('metaDescription', $metaDescription, TRUE);
+        $this->template->write('metaKeyword', $metaKeyword, TRUE);
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
 //
 //        if ($_POST) {
 //            if ($this->form_validation->run() == FALSE) {
