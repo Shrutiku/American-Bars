@@ -179,9 +179,9 @@
      						</a>
      					</li>-->
                                         
-                                        <li class="<?php echo $this->uri->segment(2)=='settings_menu' ? 'active':'';?>">
+                                        <li class="<?php echo $this->uri->segment(2)=='updatebanner' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/settings_menu')?>">
-     							<i class="strip settings_menu"></i>
+     							<i class="strip update_banner"></i>
      							Settings
      						</a>
      					</li>
