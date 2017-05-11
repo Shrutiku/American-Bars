@@ -87,7 +87,10 @@ class Ambassador extends SPACULLUS_Controller {
                 $phone_number = $this->input->post('phone_number');
                 echo '<script>console.log("#: " + <?php echo $phone_number; ?>)</script>';
                 if ($phone_number == '') {
-                    redirect('home');
+                    redirect('ambassador/verification_form');
+                }
+                if (strlen($phone_number) != 10) {
+                    redirect('ambassador/verification_form');
                 }
                 $claim_code = rand(100000, 999999);
         //                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
