@@ -11,6 +11,10 @@
  *
  * @author esco
  */
+
+    require_once(APPPATH . 'libraries/Twilio/autoload.php');
+    require_once(APPPATH . 'libraries/Twilio/Rest/Client.php');
+
 class Ambassador extends SPACULLUS_Controller {
     //put your code here
     
