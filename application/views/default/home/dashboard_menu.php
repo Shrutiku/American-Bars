@@ -54,14 +54,14 @@
                                                 </a>
                                         </li>
                                         
-                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='domainmanagement' ? 'active':'';?>">
+<!--                                        <li style="position: relative;" class="<?php echo $this->uri->segment(2)=='domainmanagement' ? 'active':'';?>">
                                                 <a href="<?php echo site_url('home/domainmanagement')?>">
                                                         <p>
                                                                 <i class="domain-settings"></i>
                                                         </p>
                                                         Domain Management 
                                                 </a>
-                                        </li>
+                                        </li>-->
      					
      					<li class="<?php echo $this->uri->segment(2)=='updatecard' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/updatecard')?>">

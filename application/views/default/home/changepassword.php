@@ -6,13 +6,14 @@
                             <div class="carousel-inner">
                                 <div class="active item">
                                     <?php $userinfo_new = get_user_info(get_authenticateUserID());
-                                      if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag/'.@$userinfo_new->user_banner)) {?>
-                                          <img src="<?php echo base_url()?>/upload/banner_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Bars"/> <?php 
-                                      } else if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag_without/'.@$userinfo_new->user_banner)) {?>
-                                          <img src="<?php echo base_url()?>/upload/banner_without_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Bars"/> <?php 
-                                      } else { ?>
-                                          <img src="<?php echo base_url().'default'?>/images/smallbanner1.png" alt="American Bars"/> <?php
-                                      } ?>
+                                        if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag/'.@$userinfo_new->user_banner)) {?>
+                                            <img src="<?php echo base_url()?>/upload/banner_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Bars"/> <?php 
+                                        } else if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag_without/'.@$userinfo_new->user_banner)) {?>
+                                            <img src="<?php echo base_url()?>/upload/banner_without_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Bars"/> <?php 
+                                        } else { ?>
+                                            <img src="<?php echo base_url().'default'?>/images/smallbanner1.png" alt="American Bars"/> <?php
+                                        } 
+                                    ?>
                                 </div>
                             </div>
                         </div>
