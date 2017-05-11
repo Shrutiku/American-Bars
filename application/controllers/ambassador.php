@@ -130,21 +130,14 @@ class Ambassador extends SPACULLUS_Controller {
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
         $data["msg"] = base64_decode($msg);
-    //        $data["reset_email"] = base64_decode($email);
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
-//        $data['error'] = '';
-//        $data["active_menu"]='';
-//        $data['site_setting'] = site_setting ();
-//
-//        $theme = getThemeName ();
-//        $this->template->set_master_template ($theme.'/template.php');
-//
-//        $page_detail=meta_setting();
-//        $pageTitle=$page_detail->title;
-//        $metaDescription=$page_detail->meta_description;
-//        $metaKeyword=$page_detail->meta_keyword;
-//
+
+        $page_detail=meta_setting();
+        $pageTitle=$page_detail->title;
+        $metaDescription=$page_detail->meta_description;
+        $metaKeyword=$page_detail->meta_keyword;
+
         $this->template->write ('pageTitle', $pageTitle, TRUE);
         $this->template->write ('metaDescription', $metaDescription, TRUE);
         $this->template->write ('metaKeyword', $metaKeyword, TRUE);
