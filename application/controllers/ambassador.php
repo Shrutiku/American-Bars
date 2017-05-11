@@ -129,50 +129,50 @@ class Ambassador extends SPACULLUS_Controller {
     }
     function verify_code($msg = "") {
 
-        $data['error'] = '';
-        $data['type'] = '';
-        $data["active_menu"] = '';
-        $data['site_setting'] = site_setting();
-        $theme = getThemeName();
-        $this->template->set_master_template($theme . '/template.php');
-
-        $page_detail = meta_setting();
-        $pageTitle = $page_detail->title;
-        $metaDescription = $page_detail->meta_description;
-        $metaKeyword = $page_detail->meta_keyword;
-
-        $this->template->write('pageTitle', $pageTitle, TRUE);
-        $this->template->write('metaDescription', $metaDescription, TRUE);
-        $this->template->write('metaKeyword', $metaKeyword, TRUE);
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
-
-        if ($_POST) {
-            if ($this->form_validation->run() == FALSE) {
-                if (validation_errors()) {
-                    $data["error"] = validation_errors();
-                } else {
-                    $data["error"] = "";
-                }
-            } else {
-                if ($bar_info != NULL) {
-                    $code = 'test'
-
-                    if ($code == $this->input->post('code')) {
-                        redirect('ambssador'));
-                    } else {
-                        $data["error"] = "Invalid verification code.";
-                    }
-                } else {
-                    $data["error"] = "Internal Error";
-                }
-            }
-        }
-
-        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/ambassador/verify_code', $data, TRUE);
-        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
-        $this->template->render();
+//        $data['error'] = '';
+//        $data['type'] = '';
+//        $data["active_menu"] = '';
+//        $data['site_setting'] = site_setting();
+//        $theme = getThemeName();
+//        $this->template->set_master_template($theme . '/template.php');
+//
+//        $page_detail = meta_setting();
+//        $pageTitle = $page_detail->title;
+//        $metaDescription = $page_detail->meta_description;
+//        $metaKeyword = $page_detail->meta_keyword;
+//
+//        $this->template->write('pageTitle', $pageTitle, TRUE);
+//        $this->template->write('metaDescription', $metaDescription, TRUE);
+//        $this->template->write('metaKeyword', $metaKeyword, TRUE);
+//        $this->load->library('form_validation');
+//
+//        $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
+//
+//        if ($_POST) {
+//            if ($this->form_validation->run() == FALSE) {
+//                if (validation_errors()) {
+//                    $data["error"] = validation_errors();
+//                } else {
+//                    $data["error"] = "";
+//                }
+//            } else {
+//                if ($bar_info != NULL) {
+//                    $code = 'test'
+//
+//                    if ($code == $this->input->post('code')) {
+//                        redirect('ambssador'));
+//                    } else {
+//                        $data["error"] = "Invalid verification code.";
+//                    }
+//                } else {
+//                    $data["error"] = "Internal Error";
+//                }
+//            }
+//        }
+//
+//        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
+//        $this->template->write_view('content_center', $theme . '/ambassador/verify_code', $data, TRUE);
+//        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+//        $this->template->render();
     }
 }
