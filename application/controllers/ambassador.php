@@ -124,26 +124,35 @@ class Ambassador extends SPACULLUS_Controller {
 //        $this->template->render();
     }
     function verify_code($msg = "") {
+        
+        $theme = getThemeName();
         $data['error'] = '';
-        $data["active_menu"]='';
-        $data['site_setting'] = site_setting ();
-
-        $theme = getThemeName ();
-        $this->template->set_master_template ($theme.'/template.php');
-
-        $page_detail=meta_setting();
-        $pageTitle=$page_detail->title;
-        $metaDescription=$page_detail->meta_description;
-        $metaKeyword=$page_detail->meta_keyword;
-
-        $this->template->write ('pageTitle', $pageTitle, TRUE);
-        $this->template->write ('metaDescription', $metaDescription, TRUE);
-        $this->template->write ('metaKeyword', $metaKeyword, TRUE);
-        $this->load->library ('form_validation');
-
-        $this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
-        $this->template->write_view ('content_center', $theme.'/ambassador/verify_code', $data, TRUE);
-        $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
-        $this->template->render();
+        $data["active_menu"] = '';
+        $data['site_setting'] = site_setting();
+        $data["msg"] = base64_decode($msg);
+    //        $data["reset_email"] = base64_decode($email);
+        $theme = getThemeName();
+        $this->template->set_master_template($theme . '/template.php');
+//        $data['error'] = '';
+//        $data["active_menu"]='';
+//        $data['site_setting'] = site_setting ();
+//
+//        $theme = getThemeName ();
+//        $this->template->set_master_template ($theme.'/template.php');
+//
+//        $page_detail=meta_setting();
+//        $pageTitle=$page_detail->title;
+//        $metaDescription=$page_detail->meta_description;
+//        $metaKeyword=$page_detail->meta_keyword;
+//
+//        $this->template->write ('pageTitle', $pageTitle, TRUE);
+//        $this->template->write ('metaDescription', $metaDescription, TRUE);
+//        $this->template->write ('metaKeyword', $metaKeyword, TRUE);
+//        $this->load->library ('form_validation');
+//
+//        $this->template->write_view ('header', $theme.'/common/header_home', $data, TRUE);
+//        $this->template->write_view ('content_center', $theme.'/ambassador/verify_code', $data, TRUE);
+//        $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+//        $this->template->render();
     }
 }
