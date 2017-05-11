@@ -145,13 +145,7 @@ class Ambassador extends SPACULLUS_Controller {
         $this->template->write('metaDescription', $metaDescription, TRUE);
         $this->template->write('metaKeyword', $metaKeyword, TRUE);
         $this->load->library('form_validation');
-        
-        
-        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/ambassador/verify_code', $data, TRUE);
-        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
-        $this->template->render();
-        
+
         $this->form_validation->set_rules('code', 'Verification Code is missing', 'required');
 
         if ($_POST) {
@@ -177,5 +171,10 @@ class Ambassador extends SPACULLUS_Controller {
                 }
             }
         }
+
+        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/ambassador/verify_code', $data, TRUE);
+        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+        $this->template->render();
     }
 }
