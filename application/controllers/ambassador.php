@@ -52,7 +52,7 @@ class Ambassador extends SPACULLUS_Controller {
 
     }
     
-        function ambassador_register($msg = '', $phone_number = '') {
+        function verification_form($msg = '', $phone_number = '') {
 
         $theme = getThemeName();
         $data['error'] = '';
