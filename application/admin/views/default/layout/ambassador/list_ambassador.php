@@ -295,7 +295,7 @@ button.close {
 //			if($msg == "rights"){ $error = ASSIGN_RIGHTS;}			
     ?>
         <div class="success_msg"><?php echo '<p>'.$error.'</p>';?></div>
-    <?php } ?>
+    <?php //} ?>
 				<div class="row_fluid"> 
 					<div class="portlet blue">
 						<div class="portlet-title">
