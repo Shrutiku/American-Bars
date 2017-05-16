@@ -350,28 +350,28 @@ button.close {
                                                    
                            </select>-->
 					</div>
-							<input type="text" name="keyword" id="keyword" value="<?php echo $keyword_data;?>"  class="search_key mar0" placeholder="Enter keyword" /> 
+							<input type="text" name="keyword" id="keyword" value="<?php //echo $keyword_data;?>"  class="search_key mar0" placeholder="Enter keyword" /> 
 							</div>           
                             <input type="submit" name="submit" id="submit" value="Search" class="btn blue  fl_left mar10" />
                               <input type="button" name="refresh" id="submit" value="Refresh" class="btn blue  fl_left mar10" onclick="document.location.href = '<?php echo site_url("bar/list_bar/".$bar_type); ?>'" /> 
 								</form>
 								</div>
 									<div class="fl_right">
-					<?php echo anchor('bar/add_bar/'.$bar_type,'Add New', 'class="btn blue  fl_left mar_r_5" id="addbar"'); ?>
-					<?php echo anchor('bar/import_bar','Import 	xls', 'class="btn blue  fl_left mar_r_5" id="addbeer"'); ?>
-					<a href="<?php echo front_base_url().'upload/bar.xls';?>" class='btn purple fl_left mar_r_5'>Demo xls</a>
+					<?php //echo anchor('bar/add_bar/'.$bar_type,'Add New', 'class="btn blue  fl_left mar_r_5" id="addbar"'); ?>
+					<?php //echo anchor('bar/import_bar','Import 	xls', 'class="btn blue  fl_left mar_r_5" id="addbeer"'); ?>
+<!--					<a href="<?php //echo front_base_url().'upload/bar.xls';?>" class='btn purple fl_left mar_r_5'>Demo xls</a>
 					<a href="javascript:void(0)" onclick="setaction('chk[]','active', 'Are you sure, you want to activate selected record(s)?', 'frm_listlogin');" class="btn purple fl_left mar_r_5" >Active</a>
 					<a href="javascript:void(0)" onclick="setaction('chk[]','inactive', 'Are you sure, you want to inactivate selected record(s)?', 'frm_listlogin');" class="btn yellow  fl_left mar_r_5" >Inactive</a>
-					
-					<?php if($this->session->userdata('admin_type')==1){?>
-						  <a href="javascript:void(0)" onclick="donwloadCSV();" class="btn black mar_r_5  fl_left" >Download</a>
-					<?php } ?>	
-					<a href="javascript:void(0)" onclick="setaction('chk[]','delete', 'Are you sure, you want to delete selected record(s)?', 'frm_listlogin');" class="btn black  fl_left mar_r_5" >Delete</a>
+					-->
+					<?php //if($this->session->userdata('admin_type')==1){?>
+						  <!--<a href="javascript:void(0)" onclick="donwloadCSV();" class="btn black mar_r_5  fl_left" >Download</a>-->
+					<?php// } ?>	
+<!--					<a href="javascript:void(0)" onclick="setaction('chk[]','delete', 'Are you sure, you want to delete selected record(s)?', 'frm_listlogin');" class="btn black  fl_left mar_r_5" >Delete</a>
 					
 					<a href="javascript:void(0)" onclick="setaction('chk[]','claimed', 'Are you sure, you want to claimed selected record(s)?', 'frm_listlogin');" class="btn blue  fl_left mar_r_5" >Claimed</a>
 					<a href="javascript:void(0)" onclick="setaction('chk[]','unclaimed', 'Are you sure, you want to unclaimed selected record(s)?', 'frm_listlogin');" class="btn blue  fl_left mar_r_5" >Unclaimed</a>
 					<a href="javascript:void(0)" onclick="setaction('chk[]','archived', 'Are you sure, you want to archived selected record(s)?', 'frm_listlogin');" class="btn blue  fl_left mar_r_5" >Archived</a>
-					
+					-->
 					<div class="clear"></div>		
 										
 										
