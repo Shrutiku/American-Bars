@@ -19,9 +19,9 @@ class ambassador extends  CI_Controller
             }
             $check_rights=get_rights('ambassador');
 
-            if(	$check_rights==0) {			
-                    redirect('home/dashboard/no_rights');	
-            }
+//            if(	$check_rights==0) {			
+//                    redirect('home/dashboard/no_rights');	
+//            }
 
             $theme = getThemeName();
             $this->template->set_master_template($theme .'/template.php');
