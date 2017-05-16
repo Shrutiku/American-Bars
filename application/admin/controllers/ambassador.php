@@ -26,7 +26,7 @@ class Suggest_bar extends  CI_Controller
             {
                     redirect('home');
             }
-            $check_rights=get_rights('list_ambassador');
+            $check_rights=get_rights('ambassador');
 
             if(	$check_rights==0) {			
                     redirect('home/dashboard/no_rights');	
@@ -38,7 +38,7 @@ class Suggest_bar extends  CI_Controller
             $this->load->library('pagination');
 
             $config['uri_segment']='4';
-            $config['base_url'] = base_url().'ambassador/list_ambassador/'.$limit.'/';
+            $config['base_url'] = base_url().'ambassador'.$limit.'/';
             $config['total_rows'] = $this->bar_model->get_total_suggest_bar();
 
             $config['per_page'] = $limit;		
@@ -63,7 +63,7 @@ class Suggest_bar extends  CI_Controller
             $data['serach_option']='1V1';
             $data['serach_keyword']='1V1';
             $data['search_type']='normal';
-            $data['redirect_page']='list_suggest_bar';
+//            $data['redirect_page']='list_suggest_bar';
 
             $data['site_setting'] = site_setting();
             $this->template->write_view('header',$theme .'/layout/common/header',$data,TRUE);
