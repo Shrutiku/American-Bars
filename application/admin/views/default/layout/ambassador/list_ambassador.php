@@ -353,7 +353,7 @@ button.close {
 							<input type="text" name="keyword" id="keyword" value="<?php //echo $keyword_data;?>"  class="search_key mar0" placeholder="Enter keyword" /> 
 							</div>           
                             <input type="submit" name="submit" id="submit" value="Search" class="btn blue  fl_left mar10" />
-                              <input type="button" name="refresh" id="submit" value="Refresh" class="btn blue  fl_left mar10" onclick="document.location.href = '<?php echo site_url("bar/list_bar/".$bar_type); ?>'" /> 
+                              <input type="button" name="refresh" id="submit" value="Refresh" class="btn blue  fl_left mar10" onclick="document.location.href = '<?php // echo site_url("bar/list_bar/".$bar_type); ?>'" /> 
 								</form>
 								</div>
 									<div class="fl_right">
@@ -378,14 +378,14 @@ button.close {
 										<div class="clear"></div>
 									</div>
 									<div class="clear"></div>
-			<form name="frm_listlogin" id="frm_listlogin" action="<?php echo base_url();?>bar/action_bar/<?php echo $bar_type; ?>" method="post">
-	<input type="hidden" name="offset" id="offset" value="<?php echo $offset; ?>" />
-					<input type="hidden" name="limit" id="limit" value="<?php echo $limit; ?>" />
-					<input type="hidden" name="serach_keyword" id="serach_keyword" value="<?php echo $keyword_data; ?>" />
-					<input type="hidden" name="serach_option" id="serach_option" value="<?php echo $option; ?>" />
+			<form name="frm_listlogin" id="frm_listlogin" action="<?php // echo base_url();?>bar/action_bar/<?php // echo $bar_type; ?>" method="post">
+	<input type="hidden" name="offset" id="offset" value="<?php // echo $offset; ?>" />
+					<input type="hidden" name="limit" id="limit" value="<?php // echo $limit; ?>" />
+					<input type="hidden" name="serach_keyword" id="serach_keyword" value="<?php // echo $keyword_data; ?>" />
+					<input type="hidden" name="serach_option" id="serach_option" value="<?php // echo $option; ?>" />
 					
             	   <input type="hidden" name="action" id="action" />
-				   <input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
+				   <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
 				   <div class="scroll-pane horizontal-only" >
 									<table class="table border" >
 										
@@ -397,9 +397,9 @@ button.close {
 												<th class="sorting_disabled" style="width: 5%;">Customer#</th>
 												<th class="sorting_disabled" style="width: 5%;">Bar Title</th>
 												<th class="sorting_disabled" style="width: 5%;">Username</th>
-												<?php if($bar_type=='all'){?>
+												<?php // if($bar_type=='all'){?>
 												<th class="sorting_disabled" style="width: 5%;">Bar Type</th>
-												<?php } ?>	
+												<?php // } ?>	
 												 <th class="sorting_disabled" style="width: 6%;">Email</th> 
 												<th class="sorting" style="width: 5%;">City</th>
 												<th class="sorting" style="width: 4%;">State</th>
@@ -408,7 +408,7 @@ button.close {
 												 <th class="sorting" style="width: 5%;">Phone Number</th> 
 												<th class="sorting" style="width: 10%;">Reviews And Ratings</th><?php 
 												//echo $bar_type;
-												if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
+//												if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
 												
 												 <th class="sorting" style="width: 5%;">Happy Hours</th> 
 												<th class="sorting" style="width: 5%;">Event</th>
@@ -417,7 +417,7 @@ button.close {
 												<th class="sorting" style="width: 5%;">Cocktail / Liquor</th>
 												<th class="sorting" style="width: 5%;">Postcard</th>
 												<th class="sorting" style="width: 4%;">Cap Logo</th>
-												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php } ?>
+												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php // } ?>
 												<th class="sorting" style="width: 5%;">Date Time</th>
 												 <th class="sorting" style="width: 5%;">Change Password</th> 
 												<th class="sorting" style="width: 5%;">Status</th>
@@ -437,15 +437,15 @@ button.close {
 									{    $cls=($i%2==0)?'even':'odd';
 									?>
 									<tr class="<?php echo $cls ?>">
-									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php echo $row->bar_id ?>" class="chk"  /></td>
-														<td class=" sorting_1 break-column"><?php echo $row->bar_id; ?></td>								
-														<td class=" sorting_1 break-column"><a target="_blank" href="<?php echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php echo ucwords($row->bar_title); ?></a></td>
+									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php // echo $row->bar_id ?>" class="chk"  /></td>
+														<td class=" sorting_1 break-column"><?php // echo $row->bar_id; ?></td>								
+														<td class=" sorting_1 break-column"><a target="_blank" href="<?php // echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php echo ucwords($row->bar_title); ?></a></td>
 														<?php $getbar = $this->bar_model->get_one_bar($row->bar_id);?>
-														<td class=" sorting_1 break-column"><?php echo $getbar['first_name']!='' ? $getbar['first_name']." ".$getbar['last_name']:'ADB'; ?></td>
-														 <td class=" sorting_1"><?php echo $row->email; ?></td> 
-														<?php if($bar_type=='all'){?>
-														<td><?php if($row->bar_type=='half_mug'){ echo "Half Mug"; } else  { echo "Full Mug" ;} ?></td>
-														<?php } ?>
+														<td class=" sorting_1 break-column"><?php // echo $getbar['first_name']!='' ? $getbar['first_name']." ".$getbar['last_name']:'ADB'; ?></td>
+														 <td class=" sorting_1"><?php // echo $row->email; ?></td> 
+														<?php // if($bar_type=='all'){?>
+														<td><?php // if($row->bar_type=='half_mug'){ echo "Half Mug"; } else  { echo "Full Mug" ;} ?></td>
+														<?php // } ?>
 														<td class=" sorting_1"><?php echo $row->city; ?></td>
 														<td class=" sorting_1"><?php echo $row->state; ?></td>
 														 <td class=" sorting_1"><?php echo $row->zipcode; ?></td> 
