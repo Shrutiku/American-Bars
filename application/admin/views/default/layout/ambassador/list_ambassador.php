@@ -408,7 +408,7 @@ button.close {
 												 <th class="sorting" style="width: 5%;">Phone Number</th> 
 												<th class="sorting" style="width: 10%;">Reviews And Ratings</th><?php 
 												//echo $bar_type;
-//												if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
+												if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
 												
 												 <th class="sorting" style="width: 5%;">Happy Hours</th> 
 												<th class="sorting" style="width: 5%;">Event</th>
@@ -417,7 +417,7 @@ button.close {
 												<th class="sorting" style="width: 5%;">Cocktail / Liquor</th>
 												<th class="sorting" style="width: 5%;">Postcard</th>
 												<th class="sorting" style="width: 4%;">Cap Logo</th>
-												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php// } ?>
+												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php } ?>
 												<th class="sorting" style="width: 5%;">Date Time</th>
 												 <th class="sorting" style="width: 5%;">Change Password</th> 
 												<th class="sorting" style="width: 5%;">Status</th>
@@ -550,13 +550,13 @@ button.close {
 								<?php } ?>
 								
 											
-								<?php if(strlen($page_link)>0){ ?>
-								<tr class="odd">
+								<?php // if(strlen($page_link)>0){ ?>
+<!--								<tr class="odd">
 										<td class=" sorting_1" colspan="110" style="text-align:center!important;"><div class="fg-toolbar tableFooter">
 									<div class="dataTables_paginate paging_full_numbers" style="float:right"> <ul class="pagination_new"><?php echo $page_link; ?></ul></div>
 								</div></td>
-								</tr>				
-								<?php } ?>					
+								</tr>				-->
+								<?php // } ?>					
 								</tbody>	
 								
 											</table>
