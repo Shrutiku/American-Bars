@@ -455,7 +455,7 @@ button.close {
 															(<?php echo totalbarcomment($row->bar_id);?>)
 															<div class="clearfix"></div>
 														</td>														
-														<?php if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
+														<?php // if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
 															 <td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("bar/add_happy_hours/".$row->bar_id); ?>">Add </a></td> 
 														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("event/list_event/".$limit."/".$row->bar_id); ?>">Events</a></td>
 														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("bar_gallery/list_gallery/".$limit."/".$row->bar_id); ?>">Gallery</a></td>
@@ -476,38 +476,38 @@ button.close {
 														<td class=" sorting_1" style="text-align:center;">
 																	<?php
 																	
-		          		if($row->cap_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->cap_logo))
-					{?>
+		          		//if($row->cap_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->cap_logo))
+					//{?>
 						<a target="_blank" class="btn blue table_icon" href="<?php echo front_base_url()?>/upload/product_logo_thumb/<?php echo $row->cap_logo; ?>"><i class="comon_icon download_icon"></i></a>
-		            	<?php } ?>
+		            	<?php //} ?>
 																
 														
 														</td>
 														
 														<td class=" sorting_1" style="text-align:center;">
 																	<?php
-		          		if($row->tshirt_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->tshirt_logo))
-					{?>
+		          		//if($row->tshirt_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->tshirt_logo))
+					//{?>
 						<a target="_blank" class="btn blue table_icon" href="<?php echo front_base_url()?>/upload/product_logo_thumb/<?php echo $row->tshirt_logo; ?>"><i class="comon_icon download_icon"></i></a>
-		            	<?php } ?>
+		            	<?php //} ?>
 																
 														
 														</td>
-														<?php } ?>
+														<?php // } ?>
 														<td class=" sorting_1" style="text-align:center;"> <?php echo date($site_setting->date_format .' h:i:s',strtotime($row->date_added)); ?>
 														</td>
 														 <td class="center">
-															<?php if($row->owner_id==0 || $row->owner_id==""){?>
-															<a onclick="changePassword('<?php echo $row->bar_id;?>','<?php echo $limit;?>','<?php echo $offset;?>')" href="javascript://" class="btn black table_icon"><i class="comon_icon change_icon"></i></a>
-															<?php } ?>
+															<?php //if($row->owner_id==0 || $row->owner_id==""){?>
+															<a onclick="changePassword('<?php echo $row->bar_id;?>','<?php // echo $limit;?>','<?php // echo $offset;?>')" href="javascript://" class="btn black table_icon"><i class="comon_icon change_icon"></i></a>
+															<?php // } ?>
 														</td> 
 														<td class="center">
-															<?php $cls = ($row->status=='active')?'purple':'yellow';?>
-															<span class="<?php echo $cls;?>"><?php echo ucfirst($row->status); ?></span>
+															<?php // $cls = ($row->status=='active')?'purple':'yellow';?>
+															<span class="<?php // echo $cls;?>"><?php // echo ucfirst($row->status); ?></span>
 														</td>
 														<td class="center">
 
-															<input type="checkbox" disabled="disabled" <?php echo (isset($row->agree) && $row->agree=='1')?'checked':'';?>>
+															<input type="checkbox" disabled="disabled" <?php // echo (isset($row->agree) && $row->agree=='1')?'checked':'';?>>
 														</td>
 															
 														<td>
@@ -540,14 +540,14 @@ button.close {
 															<?php } ?>		
 														</td>
 													</tr>
-								<?php $i++;} }else{ ?>
+								<?php// $i++;} }else{ ?>
 								
 												
 													<tr class="odd">
 														<td class=" sorting_1" colspan="18" style="text-align:center!important;">No Records Found</td>
 														
 													</tr>
-								<?php } ?>
+								<?php //} ?>
 								
 											
 								<?php if(strlen($page_link)>0){ ?>
