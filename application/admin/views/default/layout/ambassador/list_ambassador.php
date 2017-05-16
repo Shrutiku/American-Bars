@@ -72,177 +72,176 @@ button.close {
 
 <script src="<?php echo $theam_url; ?>/assets/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript" ></script>
 <script type="text/javascript" language="javascript">
-
-	function delete_rec(id,redirectpage,option,keyword,limit,offset)
-	{
-		var ans = confirm("Are you sure, you want to delete this ambassador?");
-		if(ans)
-		{
-			location.href = "<?php echo base_url(); ?>bar/delete_bar/<?php echo $bar_type; ?>/"+id+"/"+redirectpage+"/"+option+"/"+keyword+"/"+limit+"/"+offset;
-		}else{
-			return false;
-		}
-	}
-	
-	function getlimit(limit)
-	{
-		
-		if(limit ==='0')
-		{
-		return false;
-		}
-		else
-		{
-			window.location.href='<?php echo base_url();?>bar/list_ambassador/<?php echo $bar_type;?>/'+limit+'/';
-		}
-	
-	}	
-	
-	function getsearchlimit(limit)
-	{
-		if(limit ==='0')
-		{
-		return false;
-		}
-		else
-		{
-			
-			window.location.href='<?php echo base_url();?>bar/search_list_bar/<?php echo $bar_type; ?>/'+limit+'/<?php echo $option.'/'.$keyword; ?>';
-		}
-	
-	}
-	
-	function gomain(x)
-	{
-		
-		if(x === 'all')
-		{
-			window.location.href= '<?php echo base_url();?>bar/list_bar/<?php echo $bar_type; ?>';
-		}
-		
-	}
-	
-	
-function setchecked(elemName){
-	elem = document.getElementsByName(elemName);
-	if(document.getElementById("titleCheck").checked === true)
-	{
-		for(i=0;i<elem.length;i++){
-			elem[i].checked=1;
-		}
-	}
-	else
-	{
-		for(i=0;i<elem.length;i++){
-			elem[i].checked=0;
-		}
-	}
-}
-
-function setaction(elename, actionval, actionmsg, formname) {
-
-	vchkcnt=0;
-	elem = document.getElementsByName(elename);
-	
-	for(i=0;i<elem.length;i++){
-		if(elem[i].checked) vchkcnt++;	
-	}
-	if(vchkcnt === 0) {
-		alert('Please select a record')
-	} else {
-		
-		if(confirm(actionmsg))
-		{
-			document.getElementById('action').value=actionval;	
-			document.frm_listlogin.submit();
-		}		
-		
-	}
-}
-
-	function reply_message(id,redirectpage,option,keyword,limit){
-		location.href = "<?php echo base_url(); ?>bar/comment/<?php echo $bar_type; ?>/"+id+"/"+redirectpage+"/"+option+"/"+keyword+"/"+limit;
-	}
-
+//
+//	function delete_rec(id,redirectpage,option,keyword,limit,offset)
+//	{
+//		var ans = confirm("Are you sure, you want to delete this ambassador?");
+//		if(ans)
+//		{
+//			location.href = "<?php echo base_url(); ?>bar/delete_bar/<?php echo $bar_type; ?>/"+id+"/"+redirectpage+"/"+option+"/"+keyword+"/"+limit+"/"+offset;
+//		}else{
+//			return false;
+//		}
+//	}
+//	
+//	function getlimit(limit)
+//	{
+//		
+//		if(limit ==='0')
+//		{
+//		return false;
+//		}
+//		else
+//		{
+//			window.location.href='<?php echo base_url();?>bar/list_ambassador/<?php echo $bar_type;?>/'+limit+'/';
+//		}
+//	
+//	}	
+//	
+//	function getsearchlimit(limit)
+//	{
+//		if(limit ==='0')
+//		{
+//		return false;
+//		}
+//		else
+//		{
+//			
+//			window.location.href='<?php echo base_url();?>bar/search_list_bar/<?php echo $bar_type; ?>/'+limit+'/<?php echo $option.'/'.$keyword; ?>';
+//		}
+//	
+//	}
+//	
+//	function gomain(x)
+//	{
+//		
+//		if(x === 'all')
+//		{
+//			window.location.href= '<?php echo base_url();?>bar/list_bar/<?php echo $bar_type; ?>';
+//		}
+//		
+//	}
+//	
+//	
+//function setchecked(elemName){
+//	elem = document.getElementsByName(elemName);
+//	if(document.getElementById("titleCheck").checked === true)
+//	{
+//		for(i=0;i<elem.length;i++){
+//			elem[i].checked=1;
+//		}
+//	}
+//	else
+//	{
+//		for(i=0;i<elem.length;i++){
+//			elem[i].checked=0;
+//		}
+//	}
+//}
+//
+//function setaction(elename, actionval, actionmsg, formname) {
+//
+//	vchkcnt=0;
+//	elem = document.getElementsByName(elename);
+//	
+//	for(i=0;i<elem.length;i++){
+//		if(elem[i].checked) vchkcnt++;	
+//	}
+//	if(vchkcnt === 0) {
+//		alert('Please select a record')
+//	} else {
+//		
+//		if(confirm(actionmsg))
+//		{
+//			document.getElementById('action').value=actionval;	
+//			document.frm_listlogin.submit();
+//		}		
+//		
+//	}
+//}
+//
+//	function reply_message(id,redirectpage,option,keyword,limit){
+//		location.href = "<?php echo base_url(); ?>bar/comment/<?php echo $bar_type; ?>/"+id+"/"+redirectpage+"/"+option+"/"+keyword+"/"+limit;
+//	}
 </script>
 
 <div id="ajax-modal" class="modal fade" tabindex="-1" data-width="400" style="display: none;"></div>	
 <script>
-function changePassword(id,limit,offset)
-{
-	
-		var $modal = $('#ajax-modal');
-		 $('body').modalmanager('loading');
-		 //alert(this.href);
-		 var url='<?php echo base_url(); ?>bar/setNewPassword/'+id+'/';
-		// return false;
-		  setTimeout(function(){
-		     $modal.load(url, '', function(){
-		      $modal.modal().on("hidden", function() {
-              	$modal.empty();
-              })
-              .one('shown.bs.modal', function(){
-              		
-              		$('#submitSet').click(function()
-              		{
-              			//alert('fdsa');
-              			$('#noteerror').fadeOut();
-              			
-              				
-              				 $.ajax({
-				            type: 'POST',
-				            dataType:'Json',
-				            url: url,
-				            data: $('#setPstat').serialize(),
-				            beforeSend : function() {
-								blockUI('#setPstat');
-							},success: function(data) {
-				                if(data.error.length>0){
-				                	$('#errorDiv').html(function(){
-				                		$(this).html(data.error);
-				                		$(this).fadeIn();
-				                	});
-				                	//$.growlUI(data.msg); 
-				                	//$modal.modal('toggle');
-				                	//getData(limit,offset);	
-				                	
-				                	
-				                }else{
-				                	window.reload();
-				                		
-				                }
-				               // $.growlUI(data.msg); 
-				            },complete : function() {
-								unblockUI('#setPstat');
-								
-							},
-				        });
-              				
-              			
-              		});
-              		
-              		
-              }).modal();;
-		    });
-		  }, 1000);
-		  return false;
-	
-	
-}
-	$(document).ready(function() {
-		
-		   
-   
-    
-});
-
-function donwloadCSV(){
-   //alert($('#fd').val());
-        $('#downloadCSV #opt').val($('#option').val());
-        $('#downloadCSV #key').val($('#keyword').val());
-        $('#downloadCSV #typ').val($('#b_type').val());
-        $('#downloadCSV').submit();
-    }
+//function changePassword(id,limit,offset)
+//{
+//	
+//		var $modal = $('#ajax-modal');
+//		 $('body').modalmanager('loading');
+//		 //alert(this.href);
+//		 var url='<?php echo base_url(); ?>bar/setNewPassword/'+id+'/';
+//		// return false;
+//		  setTimeout(function(){
+//		     $modal.load(url, '', function(){
+//		      $modal.modal().on("hidden", function() {
+//              	$modal.empty();
+//              })
+//              .one('shown.bs.modal', function(){
+//              		
+//              		$('#submitSet').click(function()
+//              		{
+//              			//alert('fdsa');
+//              			$('#noteerror').fadeOut();
+//              			
+//              				
+//              				 $.ajax({
+//				            type: 'POST',
+//				            dataType:'Json',
+//				            url: url,
+//				            data: $('#setPstat').serialize(),
+//				            beforeSend : function() {
+//								blockUI('#setPstat');
+//							},success: function(data) {
+//				                if(data.error.length>0){
+//				                	$('#errorDiv').html(function(){
+//				                		$(this).html(data.error);
+//				                		$(this).fadeIn();
+//				                	});
+//				                	//$.growlUI(data.msg); 
+//				                	//$modal.modal('toggle');
+//				                	//getData(limit,offset);	
+//				                	
+//				                	
+//				                }else{
+//				                	window.reload();
+//				                		
+//				                }
+//				               // $.growlUI(data.msg); 
+//				            },complete : function() {
+//								unblockUI('#setPstat');
+//								
+//							},
+//				        });
+//              				
+//              			
+//              		});
+//              		
+//              		
+//              }).modal();;
+//		    });
+//		  }, 1000);
+//		  return false;
+//	
+//	
+//}
+//	$(document).ready(function() {
+//		
+//		   
+//   
+//    
+//});
+//
+//function donwloadCSV(){
+//   //alert($('#fd').val());
+//        $('#downloadCSV #opt').val($('#option').val());
+//        $('#downloadCSV #key').val($('#keyword').val());
+//        $('#downloadCSV #typ').val($('#b_type').val());
+//        $('#downloadCSV').submit();
+//    }
 </script>
  User For Rating  
 
