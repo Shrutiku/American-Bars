@@ -219,7 +219,7 @@ $(document).ready(function(){
 				</li>
                                 
                                 <li class="menu_tag <?php // echo ($uri[1]=='list_suggest_bar' || $uri[1]=='edit_suggest_bar' ||  $uri[1]=='search_list_suggest_bar' || $uri[1]=='view_suggest_bar')?'active':''; ?>">
-					<a href="<?php echo site_url('bar/list_ambassador') ?>" <?php // echo (isset($uri[1]) && ($uri[1]=='list_suggest_bar' || $uri[1]=='view_suggest_bar' || $uri[1]=='search_list_suggest_bar'))?'class="active"':''; ?>><!--<span class="badge badge-info"><?php // echo get_unread_sugbar();?></span>-->
+					<a href="<?php echo site_url('ambassador/list_ambassador') ?>" <?php // echo (isset($uri[1]) && ($uri[1]=='list_suggest_bar' || $uri[1]=='view_suggest_bar' || $uri[1]=='search_list_suggest_bar'))?'class="active"':''; ?>><!--<span class="badge badge-info"><?php // echo get_unread_sugbar();?></span>-->
 						<i class="sidebar_icon suggest_icon"></i>
 						<span class="title"> Ambassadors </span>
 					</a>
