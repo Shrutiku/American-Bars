@@ -417,7 +417,7 @@ button.close {
 												<th class="sorting" style="width: 5%;">Cocktail / Liquor</th>
 												<th class="sorting" style="width: 5%;">Postcard</th>
 												<th class="sorting" style="width: 4%;">Cap Logo</th>
-												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php // } ?>
+												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php// } ?>
 												<th class="sorting" style="width: 5%;">Date Time</th>
 												 <th class="sorting" style="width: 5%;">Change Password</th> 
 												<th class="sorting" style="width: 5%;">Status</th>
@@ -430,22 +430,22 @@ button.close {
 												</thead>
 								<tbody role="alert" aria-live="polite" aria-relevant="all">	
 									<?php
-//								if($result)
-//								{
-//									$i=1;
-//									foreach($result as $row)
-//									{    $cls=($i%2==0)?'even':'odd';
+								if($result)
+								{
+									$i=1;
+									foreach($result as $row)
+									{    $cls=($i%2==0)?'even':'odd';
 									?>
-									<tr class="<?php // echo $cls ?>">
-									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php // echo $row->bar_id ?>" class="chk"  /></td>
-														<td class=" sorting_1 break-column"><?php // echo $row->bar_id; ?></td>								
-														<td class=" sorting_1 break-column"><a target="_blank" href="<?php // echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php echo ucwords($row->bar_title); ?></a></td>
+									<tr class="<?php echo $cls ?>">
+									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php echo $row->bar_id ?>" class="chk"  /></td>
+														<td class=" sorting_1 break-column"><?php echo $row->bar_id; ?></td>								
+														<td class=" sorting_1 break-column"><a target="_blank" href="<?php echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php echo ucwords($row->bar_title); ?></a></td>
 														<?php $getbar = $this->bar_model->get_one_bar($row->bar_id);?>
-														<td class=" sorting_1 break-column"><?php // echo $getbar['first_name']!='' ? $getbar['first_name']." ".$getbar['last_name']:'ADB'; ?></td>
-														 <td class=" sorting_1"><?php // echo $row->email; ?></td> 
-														<?php // if($bar_type=='all'){?>
-														<td><?php // if($row->bar_type=='half_mug'){ echo "Half Mug"; } else  { echo "Full Mug" ;} ?></td>
-														<?php // } ?>
+														<td class=" sorting_1 break-column"><?php echo $getbar['first_name']!='' ? $getbar['first_name']." ".$getbar['last_name']:'ADB'; ?></td>
+														 <td class=" sorting_1"><?php echo $row->email; ?></td> 
+														<?php if($bar_type=='all'){?>
+														<td><?php if($row->bar_type=='half_mug'){ echo "Half Mug"; } else  { echo "Full Mug" ;} ?></td>
+														<?php } ?>
 														<td class=" sorting_1"><?php echo $row->city; ?></td>
 														<td class=" sorting_1"><?php echo $row->state; ?></td>
 														 <td class=" sorting_1"><?php echo $row->zipcode; ?></td> 
@@ -540,23 +540,23 @@ button.close {
 															<?php } ?>		
 														</td>
 													</tr>
-								<?php // $i++;} }else{ ?>
+								<?php $i++;} }else{ ?>
 								
 												
 													<tr class="odd">
 														<td class=" sorting_1" colspan="18" style="text-align:center!important;">No Records Found</td>
 														
 													</tr>
-								<?php // } ?>
+								<?php } ?>
 								
 											
-								<?php // if(strlen($page_link)>0){ ?>
+								<?php if(strlen($page_link)>0){ ?>
 								<tr class="odd">
 										<td class=" sorting_1" colspan="110" style="text-align:center!important;"><div class="fg-toolbar tableFooter">
 									<div class="dataTables_paginate paging_full_numbers" style="float:right"> <ul class="pagination_new"><?php echo $page_link; ?></ul></div>
 								</div></td>
 								</tr>				
-								<?php // } ?>					
+								<?php } ?>					
 								</tbody>	
 								
 											</table>
