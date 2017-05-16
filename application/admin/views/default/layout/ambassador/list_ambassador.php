@@ -260,11 +260,9 @@ button.close {
 			<div class="container_fluid">
 		
 				<div class="row_fluid"> 
-					<h3 class="page_title"><?php //echo $bar_type=='full_mug' ? 'Full Mug':'Half Mug'; ?> Bar Listing</h3>
-					
-					
+					<h3 class="page_title">Ambassadors</h3>	
 				</div>
-					<?php 
+<?php 
 //   if($er!='')
 //		   {
 //		  $tags = explode('*',  base64_decode($er));
@@ -293,8 +291,8 @@ button.close {
 //			if($msg == "inactive"){ $error = INACTIVE_RECORD;}
 //			if($msg == "archived"){ $error = ARCHIVED_RECORD;}
 //			if($msg == "rights"){ $error = ASSIGN_RIGHTS;}			
-    ?>
-        <div class="success_msg"><?php echo '<p>'.$error.'</p>';?></div>
+?>
+        <!--<div class="success_msg"><?php// echo '<p>'.$error.'</p>';?></div>-->
     <?php //} ?>
 				<div class="row_fluid"> 
 					<div class="portlet blue">
@@ -309,13 +307,13 @@ button.close {
                           	<select name="limit" id="limit" onchange="getsearchlimit(this.value)" style="width:80px; margin-top:5px;">
                         <?php } ?>
                                 <option value="0">Per Page</option>
-                                <option value="5" <?php if($limit==5){?> selected="selected"<?php }?>>5</option>
-                                <option value="10"  <?php if($limit==10){?> selected="selected"<?php }?>>10</option>
-                                <option value="15"  <?php if($limit==15){?> selected="selected"<?php }?>>15</option>
-                                <option value="25"  <?php if($limit==25){?> selected="selected"<?php }?>>25</option>
-                                <option value="50"  <?php if($limit==50){?> selected="selected"<?php }?>>50</option>
-                                <option value="75"  <?php if($limit==75){?> selected="selected"<?php }?>>75</option>
-                                <option value="100"  <?php if($limit==100){?> selected="selected"<?php }?>>100</option>     
+                                <option value="5" <?php //if($limit==5){?> selected="selected"<?php }?>>5</option>
+                                <option value="10"  <?php //if($limit==10){?> selected="selected"<?php }?>>10</option>
+                                <option value="15"  <?php //if($limit==15){?> selected="selected"<?php }?>>15</option>
+                                <option value="25"  <?php //if($limit==25){?> selected="selected"<?php }?>>25</option>
+                                <option value="50"  <?php //if($limit==50){?> selected="selected"<?php }?>>50</option>
+                                <option value="75"  <?php //if($limit==75){?> selected="selected"<?php }?>>75</option>
+                                <option value="100"  <?php //if($limit==100){?> selected="selected"<?php }?>>100</option>     
                        	   </select>
                     </div>
 					<div class="clear"></div>
