@@ -32,7 +32,7 @@ class Suggest_bar extends  CI_Controller
 
             $config['uri_segment']='4';
             $config['base_url'] = base_url().'ambassador'.$limit.'/';
-            $config['total_rows'] = $this->bar_model->get_total_suggest_bar();
+//            $config['total_rows'] = $this->bar_model->get_total_suggest_bar();
 
             $config['per_page'] = $limit;		
             $this->pagination->initialize($config);		
