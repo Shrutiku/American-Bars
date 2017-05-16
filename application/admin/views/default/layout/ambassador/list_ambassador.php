@@ -301,54 +301,54 @@ button.close {
 							<div class="fl_right">
                         
 						<span class="sspan fl_left ">Show</span>
-					    <?php if($search_type=='normal') { ?>
-                        	<select name="limit" id="limit" onchange="getlimit(this.value)" style="width:80px; margin-top:5px;">
-                        <?php } if($search_type=='search') { ?>
-                          	<select name="limit" id="limit" onchange="getsearchlimit(this.value)" style="width:80px; margin-top:5px;">
-                        <?php } ?>
-                                <option value="0">Per Page</option>
+					    <?php// if($search_type=='normal') { ?>
+                        	<!--<select name="limit" id="limit" onchange="getlimit(this.value)" style="width:80px; margin-top:5px;">-->
+                        <?php //} if($search_type=='search') { ?>
+                          	<!--<select name="limit" id="limit" onchange="getsearchlimit(this.value)" style="width:80px; margin-top:5px;">-->
+                        <?php //} ?>
+<!--                                <option value="0">Per Page</option>
                                 <option value="5" <?php //if($limit==5){?> selected="selected"<?php //}?>>5</option>
                                 <option value="10"  <?php //if($limit==10){?> selected="selected"<?php //}?>>10</option>
                                 <option value="15"  <?php //if($limit==15){?> selected="selected"<?php //}?>>15</option>
                                 <option value="25"  <?php //if($limit==25){?> selected="selected"<?php //}?>>25</option>
                                 <option value="50"  <?php //if($limit==50){?> selected="selected"<?php //}?>>50</option>
                                 <option value="75"  <?php //if($limit==75){?> selected="selected"<?php //}?>>75</option>
-                                <option value="100"  <?php //if($limit==100){?> selected="selected"<?php //}?>>100</option>     
-                       	   </select>
-                    </div>
+                                <option value="100"  <?php //if($limit==100){?> selected="selected"<?php //}?>>100</option>     -->
+                       	   <!--</select>-->
+                                                        </div>
 					<div class="clear"></div>
 							</div>
 						<div class="portlet-body form ">
 							<?php 
-							if($keyword != '1V1')
-							{
-								$keyword_data = str_replace('-',' ',$keyword);
-							}
-							else
-							{
-								$keyword_data ='';
-							}
+//							if($keyword != '1V1')
+//							{
+//								$keyword_data = str_replace('-',' ',$keyword);
+//							}
+//							else
+//							{
+//								$keyword_data ='';
+//							}
 							?>
 							
 							
 							<div class="fl_left">
 								 <?php			 
-					$attributes = array('name'=>'frm_search','id'=>'frm_search');
-					echo form_open('bar/search_list_bar/'.$bar_type."/".$limit,$attributes);?>
+					// $attributes = array('name'=>'frm_search','id'=>'frm_search');
+					// echo form_open('bar/search_list_bar/'.$bar_type."/".$limit,$attributes);?>
 					<div class="fl_left">
 					<div class="sdrop fl_left wid140">
-                            <select name="option" id="option" onchange="gomain(this.value)"  class="m_wrap fl_left mar0" style="padding:6px;">
+<!--                            <select name="option" id="option" onchange="gomain(this.value)"  class="m_wrap fl_left mar0" style="padding:6px;">
                             		
-                                <option value="bar_title" <?php if($option=='bar_title'){?> selected="selected"<?php }?>>Bar Title</option>
-                                <option value="city" <?php if($option=='city'){?> selected="selected"<?php }?>>City</option>
-                                <option value="state" <?php if($option=='state'){?> selected="selected"<?php }?>>State</option>
-                                <option value="cust_num" <?php if($option=='cust_num'){?> selected="selected"<?php }?>>Customer #</option>
-                                 <option value="email" <?php if($option=='email'){?> selected="selected"<?php }?>>Email</option> 
-                                 <option value="zipcode" <?php if($option=='zipcode'){?> selected="selected"<?php }?>>Zipcode</option>
-                                <option value="phone" <?php if($option=='phone'){?> selected="selected"<?php }?>>phone</option>
+                                <option value="bar_title" <?php //if($option=='bar_title'){?> selected="selected"<?php //}?>>Bar Title</option>
+                                <option value="city" <?php //if($option=='city'){?> selected="selected"<?php //}?>>City</option>
+                                <option value="state" <?php //if($option=='state'){?> selected="selected"<?php //}?>>State</option>
+                                <option value="cust_num" <?php //if($option=='cust_num'){?> selected="selected"<?php //}?>>Customer #</option>
+                                 <option value="email" <?php //if($option=='email'){?> selected="selected"<?php //}?>>Email</option> 
+                                 <option value="zipcode" <?php //if($option=='zipcode'){?> selected="selected"<?php //}?>>Zipcode</option>
+                                <option value="phone" <?php //if($option=='phone'){?> selected="selected"<?php //}?>>phone</option>
                              
                                                    
-                           </select>
+                           </select>-->
 					</div>
 							<input type="text" name="keyword" id="keyword" value="<?php echo $keyword_data;?>"  class="search_key mar0" placeholder="Enter keyword" /> 
 							</div>           
