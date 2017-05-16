@@ -430,13 +430,13 @@ button.close {
 												</thead>
 								<tbody role="alert" aria-live="polite" aria-relevant="all">	
 									<?php
-								if($result)
-								{
-									$i=1;
-									foreach($result as $row)
-									{    $cls=($i%2==0)?'even':'odd';
+//								if($result)
+//								{
+//									$i=1;
+//									foreach($result as $row)
+//									{    $cls=($i%2==0)?'even':'odd';
 									?>
-									<tr class="<?php echo $cls ?>">
+									<tr class="<?php // echo $cls ?>">
 									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php // echo $row->bar_id ?>" class="chk"  /></td>
 														<td class=" sorting_1 break-column"><?php // echo $row->bar_id; ?></td>								
 														<td class=" sorting_1 break-column"><a target="_blank" href="<?php // echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php echo ucwords($row->bar_title); ?></a></td>
@@ -540,23 +540,23 @@ button.close {
 															<?php } ?>		
 														</td>
 													</tr>
-								<?php $i++;} }else{ ?>
+								<?php // $i++;} }else{ ?>
 								
 												
 													<tr class="odd">
 														<td class=" sorting_1" colspan="18" style="text-align:center!important;">No Records Found</td>
 														
 													</tr>
-								<?php } ?>
+								<?php // } ?>
 								
 											
-								<?php if(strlen($page_link)>0){ ?>
+								<?php // if(strlen($page_link)>0){ ?>
 								<tr class="odd">
 										<td class=" sorting_1" colspan="110" style="text-align:center!important;"><div class="fg-toolbar tableFooter">
 									<div class="dataTables_paginate paging_full_numbers" style="float:right"> <ul class="pagination_new"><?php echo $page_link; ?></ul></div>
 								</div></td>
 								</tr>				
-								<?php } ?>					
+								<?php // } ?>					
 								</tbody>	
 								
 											</table>
