@@ -1,13 +1,6 @@
 <?php
 class Suggest_bar extends  CI_Controller 
 {
-    function Suggest_bar()
-    {
-             parent::__construct();	
-            $this->load->model('bar_model');
-
-    }
-
     function index()
     {
             if(!check_admin_authentication())
