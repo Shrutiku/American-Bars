@@ -68,7 +68,7 @@ class Suggest_bar extends  CI_Controller
             $data['site_setting'] = site_setting();
             $this->template->write_view('header',$theme .'/layout/common/header',$data,TRUE);
             $this->template->write_view('left',$theme .'/layout/common/sidebar',$data,TRUE);
-            $this->template->write_view('center',$theme .'/layout/bar/list_ambassador',$data,TRUE);
+            $this->template->write_view('center',$theme .'/layout/ambassador/list_ambassador',$data,TRUE);
             $this->template->write_view('footer',$theme .'/layout/common/footer',$data,TRUE);
             $this->template->render();
     }
