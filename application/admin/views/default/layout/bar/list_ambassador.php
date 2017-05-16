@@ -1,4 +1,6 @@
-<style>
+<h1>test</h1>
+
+<!--<style>
 	.modal {
     background-clip: padding-box;
     background-color: #FFFFFF;
@@ -62,7 +64,7 @@ button.close {
 }
 </style>
 <?php $theam_url = base_url().getThemeName(); ?>
-		<!-- styles needed by jScrollPane - include in your own sites -->
+		 styles needed by jScrollPane - include in your own sites 
 
 		<link href="<?php echo $theam_url; ?>/assets/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
 		
@@ -242,9 +244,9 @@ function donwloadCSV(){
         $('#downloadCSV').submit();
     }
 </script>
- <!--User For Rating  -->
+ User For Rating  
 
- <!-- Rating End -->
+  Rating End 
  
  <?php $att=array('id'=>'downloadCSV','name'=>'downloadCSV','class'=>'no-margin');
                                         echo form_open('bar/download',$att) ?>
@@ -345,10 +347,10 @@ function donwloadCSV(){
                                 <option value="city" <?php if($option=='city'){?> selected="selected"<?php }?>>City</option>
                                 <option value="state" <?php if($option=='state'){?> selected="selected"<?php }?>>State</option>
                                 <option value="cust_num" <?php if($option=='cust_num'){?> selected="selected"<?php }?>>Customer #</option>
-                                <!-- <option value="email" <?php if($option=='email'){?> selected="selected"<?php }?>>Email</option> -->
-                                <!-- <option value="zipcode" <?php if($option=='zipcode'){?> selected="selected"<?php }?>>Zipcode</option>
+                                 <option value="email" <?php if($option=='email'){?> selected="selected"<?php }?>>Email</option> 
+                                 <option value="zipcode" <?php if($option=='zipcode'){?> selected="selected"<?php }?>>Zipcode</option>
                                 <option value="phone" <?php if($option=='phone'){?> selected="selected"<?php }?>>phone</option>
-                             -->
+                             
                                                    
                            </select>
 					</div>
@@ -402,17 +404,17 @@ function donwloadCSV(){
 												<?php if($bar_type=='all'){?>
 												<th class="sorting_disabled" style="width: 5%;">Bar Type</th>
 												<?php } ?>	
-												<!-- <th class="sorting_disabled" style="width: 6%;">Email</th> -->
+												 <th class="sorting_disabled" style="width: 6%;">Email</th> 
 												<th class="sorting" style="width: 5%;">City</th>
 												<th class="sorting" style="width: 4%;">State</th>
 												
-												<!-- <th class="sorting" style="width: 5%;">zipcode</th> -->
-												<!-- <th class="sorting" style="width: 5%;">Phone Number</th> -->
+												 <th class="sorting" style="width: 5%;">zipcode</th> 
+												 <th class="sorting" style="width: 5%;">Phone Number</th> 
 												<th class="sorting" style="width: 10%;">Reviews And Ratings</th><?php 
 												//echo $bar_type;
 												if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
 												
-												<!-- <th class="sorting" style="width: 5%;">Happy Hours</th> -->
+												 <th class="sorting" style="width: 5%;">Happy Hours</th> 
 												<th class="sorting" style="width: 5%;">Event</th>
 												<th class="sorting" style="width: 5%;">Gallery</th>
 												<th class="sorting" style="width: 5%;">Beers</th>
@@ -421,7 +423,7 @@ function donwloadCSV(){
 												<th class="sorting" style="width: 4%;">Cap Logo</th>
 												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php } ?>
 												<th class="sorting" style="width: 5%;">Date Time</th>
-												<!-- <th class="sorting" style="width: 5%;">Change Password</th> -->
+												 <th class="sorting" style="width: 5%;">Change Password</th> 
 												<th class="sorting" style="width: 5%;">Status</th>
 												<th class="sorting" style="width: 5%;">Domain AB</th>
 												<th class="sorting" style="width:7%;">Action</th>
@@ -444,21 +446,21 @@ function donwloadCSV(){
 														<td class=" sorting_1 break-column"><a target="_blank" href="<?php echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php echo ucwords($row->bar_title); ?></a></td>
 														<?php $getbar = $this->bar_model->get_one_bar($row->bar_id);?>
 														<td class=" sorting_1 break-column"><?php echo $getbar['first_name']!='' ? $getbar['first_name']." ".$getbar['last_name']:'ADB'; ?></td>
-														<!-- <td class=" sorting_1"><?php echo $row->email; ?></td> -->
+														 <td class=" sorting_1"><?php echo $row->email; ?></td> 
 														<?php if($bar_type=='all'){?>
 														<td><?php if($row->bar_type=='half_mug'){ echo "Half Mug"; } else  { echo "Full Mug" ;} ?></td>
 														<?php } ?>
 														<td class=" sorting_1"><?php echo $row->city; ?></td>
 														<td class=" sorting_1"><?php echo $row->state; ?></td>
-														<!-- <td class=" sorting_1"><?php echo $row->zipcode; ?></td> -->
-														<!-- <td class=" sorting_1"><?php echo $row->phone; ?></td> -->
+														 <td class=" sorting_1"><?php echo $row->zipcode; ?></td> 
+														 <td class=" sorting_1"><?php echo $row->phone; ?></td> 
 													
 														<td class=" sorting_1"><div class="pull-left"><?php echo getReviewRating($row->bar_id); ?></div><a class="btn blue table_icon pull-left" href="javascript://" onclick="reply_message('<?php echo $row->bar_id; ?>','<?php echo $redirect_page;?>','<?php echo $option?>','<?php echo $keyword?>','<?php echo $limit?>');" title="View"><i class="comon_icon view_icon"></i></a>
 															(<?php echo totalbarcomment($row->bar_id);?>)
 															<div class="clearfix"></div>
 														</td>														
 														<?php if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
-															<!-- <td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("bar/add_happy_hours/".$row->bar_id); ?>">Add </a></td> -->
+															 <td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("bar/add_happy_hours/".$row->bar_id); ?>">Add </a></td> 
 														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("event/list_event/".$limit."/".$row->bar_id); ?>">Events</a></td>
 														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("bar_gallery/list_gallery/".$limit."/".$row->bar_id); ?>">Gallery</a></td>
 														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("beer/list_beer/".$limit."/".$row->bar_id); ?>">Beer</a></td>
@@ -498,11 +500,11 @@ function donwloadCSV(){
 														<?php } ?>
 														<td class=" sorting_1" style="text-align:center;"> <?php echo date($site_setting->date_format .' h:i:s',strtotime($row->date_added)); ?>
 														</td>
-														<!-- <td class="center">
+														 <td class="center">
 															<?php if($row->owner_id==0 || $row->owner_id==""){?>
 															<a onclick="changePassword('<?php echo $row->bar_id;?>','<?php echo $limit;?>','<?php echo $offset;?>')" href="javascript://" class="btn black table_icon"><i class="comon_icon change_icon"></i></a>
 															<?php } ?>
-														</td> -->
+														</td> 
 														<td class="center">
 															<?php $cls = ($row->status=='active')?'purple':'yellow';?>
 															<span class="<?php echo $cls;?>"><?php echo ucfirst($row->status); ?></span>
@@ -573,4 +575,4 @@ function donwloadCSV(){
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
