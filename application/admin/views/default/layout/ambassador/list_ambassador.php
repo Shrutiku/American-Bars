@@ -417,12 +417,12 @@ button.close {
 												<th class="sorting" style="width: 5%;">Cocktail / Liquor</th>
 												<th class="sorting" style="width: 5%;">Postcard</th>
 												<th class="sorting" style="width: 4%;">Cap Logo</th>
-												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php //} ?>-->
+												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php //} ?>
 												<th class="sorting" style="width: 5%;">Date Time</th>
 												 <th class="sorting" style="width: 5%;">Change Password</th> 
 												<th class="sorting" style="width: 5%;">Status</th>
 												<th class="sorting" style="width: 5%;">Domain AB</th>
-												<th class="sorting" style="width:7%;">Action</th>
+												<th class="sorting" style="width:7%;">Action</th>-->
 																<th class="sorting" style="width:7%;">Claimed</th>
 												
 												</tr>
@@ -430,45 +430,45 @@ button.close {
 												</thead>
 								<tbody role="alert" aria-live="polite" aria-relevant="all">	
 									<?php
-//								if($result)
-//								{
-//									$i=1;
-//									foreach($result as $row)
-//									{    $cls=($i%2==0)?'even':'odd';
+								if($result)
+								{
+									$i=1;
+									foreach($result as $row)
+									{    $cls=($i%2==0)?'even':'odd';
 									?>
-<!--									<tr class="<?php echo $cls ?>">
-									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php // echo $row->bar_id ?>" class="chk"  /></td>
-														<td class=" sorting_1 break-column"><?php // echo $row->bar_id; ?></td>								
-														<td class=" sorting_1 break-column"><a target="_blank" href="<?php // echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php // echo ucwords($row->bar_title); ?></a></td>
-														<?php // $getbar = $this->bar_model->get_one_bar($row->bar_id);?>
-														<td class=" sorting_1 break-column"><?php // echo $getbar['first_name']!='' ? $getbar['first_name']." ".$getbar['last_name']:'ADB'; ?></td>
-														 <td class=" sorting_1"><?php // echo $row->email; ?></td> 
-														<?php // if($bar_type=='all'){?>
-														<td><?php // if($row->bar_type=='half_mug'){ echo "Half Mug"; } else  { echo "Full Mug" ;} ?></td>
-														<?php // } ?>
-														<td class=" sorting_1"><?php // echo $row->city; ?></td>
-														<td class=" sorting_1"><?php // echo $row->state; ?></td>
-														 <td class=" sorting_1"><?php // echo $row->zipcode; ?></td> 
-														 <td class=" sorting_1"><?php // echo $row->phone; ?></td> 
+									<tr class="<?php echo $cls ?>">
+									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php echo $row->bar_id ?>" class="chk"  /></td>
+														<td class=" sorting_1 break-column"><?php echo $row->bar_id; ?></td>								
+														<td class=" sorting_1 break-column"><a target="_blank" href="<?php echo front_base_url().'bar/details/'.$row->bar_slug;?>"><?php echo ucwords($row->bar_title); ?></a></td>
+														<?php $getbar = $this->bar_model->get_one_bar($row->bar_id);?>
+														<td class=" sorting_1 break-column"><?php echo $getbar['first_name']!='' ? $getbar['first_name']." ".$getbar['last_name']:'ADB'; ?></td>
+														 <td class=" sorting_1"><?php echo $row->email; ?></td> 
+														<?php if($bar_type=='all'){?>
+														<td><?php if($row->bar_type=='half_mug'){ echo "Half Mug"; } else  { echo "Full Mug" ;} ?></td>
+														<?php } ?>
+														<td class=" sorting_1"><?php echo $row->city; ?></td>
+														<td class=" sorting_1"><?php echo $row->state; ?></td>
+														 <td class=" sorting_1"><?php echo $row->zipcode; ?></td> 
+														 <td class=" sorting_1"><?php echo $row->phone; ?></td> 
 													
-														<td class=" sorting_1"><div class="pull-left"><?php // echo getReviewRating($row->bar_id); ?></div><a class="btn blue table_icon pull-left" href="javascript://" onclick="reply_message('<?php // echo $row->bar_id; ?>','<?php // echo $redirect_page;?>','<?php // echo $option?>','<?php // echo $keyword?>','<?php // echo $limit?>');" title="View"><i class="comon_icon view_icon"></i></a>
-															(<?php // echo totalbarcomment($row->bar_id);?>)
+														<td class=" sorting_1"><div class="pull-left"><?php echo getReviewRating($row->bar_id); ?></div><a class="btn blue table_icon pull-left" href="javascript://" onclick="reply_message('<?php echo $row->bar_id; ?>','<?php echo $redirect_page;?>','<?php echo $option?>','<?php echo $keyword?>','<?php echo $limit?>');" title="View"><i class="comon_icon view_icon"></i></a>
+															(<?php echo totalbarcomment($row->bar_id);?>)
 															<div class="clearfix"></div>
 														</td>														
-														<?php // if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
-															 <td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php // echo site_url("bar/add_happy_hours/".$row->bar_id); ?>">Add </a></td> 
-														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php // echo site_url("event/list_event/".$limit."/".$row->bar_id); ?>">Events</a></td>
-														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php // echo site_url("bar_gallery/list_gallery/".$limit."/".$row->bar_id); ?>">Gallery</a></td>
-														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php // echo site_url("beer/list_beer/".$limit."/".$row->bar_id); ?>">Beer</a></td>
+														<?php if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
+															 <td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("bar/add_happy_hours/".$row->bar_id); ?>">Add </a></td> 
+														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("event/list_event/".$limit."/".$row->bar_id); ?>">Events</a></td>
+														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("bar_gallery/list_gallery/".$limit."/".$row->bar_id); ?>">Gallery</a></td>
+														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("beer/list_beer/".$limit."/".$row->bar_id); ?>">Beer</a></td>
 														<td class=" sorting_1" style="text-align:center;">
-															<?php // if($row->serve_as=='cocktail'){?>
-															<a class="btn red mini" href="<?php // echo site_url("cocktail/list_cocktail/".$limit."/".$row->bar_id); ?>">Cocktail</a>
-														   <?php // } else { ?>
-														   <a class="btn red mini" href="<?php // echo site_url("liquor/list_liquor/".$limit."/".$row->bar_id); ?>">Liquor</a>
-														   	<?php // } ?>	
+															<?php if($row->serve_as=='cocktail'){?>
+															<a class="btn red mini" href="<?php echo site_url("cocktail/list_cocktail/".$limit."/".$row->bar_id); ?>">Cocktail</a>
+														   <?php } else { ?>
+														   <a class="btn red mini" href="<?php echo site_url("liquor/list_liquor/".$limit."/".$row->bar_id); ?>">Liquor</a>
+														   	<?php } ?>	
 														</td>
 														
-														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php // echo site_url("postcard/list_postcard/".$limit."/".$row->bar_id); ?>">View <?php echo $this->bar_model->get_bar_postcard_count($row->bar_id); ?></a>
+														<td class=" sorting_1" style="text-align:center;"><a class="btn red mini" href="<?php echo site_url("postcard/list_postcard/".$limit."/".$row->bar_id); ?>">View <?php echo $this->bar_model->get_bar_postcard_count($row->bar_id); ?></a>
 														
 														</td>
 														
@@ -476,50 +476,50 @@ button.close {
 														<td class=" sorting_1" style="text-align:center;">
 																	<?php
 																	
-//		          		if($row->cap_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->cap_logo))
-//					{?>
-						<a target="_blank" class="btn blue table_icon" href="<?php // echo front_base_url()?>/upload/product_logo_thumb/<?php // echo $row->cap_logo; ?>"><i class="comon_icon download_icon"></i></a>
-		            	//<?php // } ?>
+		          		if($row->cap_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->cap_logo))
+					{?>
+						<a target="_blank" class="btn blue table_icon" href="<?php echo front_base_url()?>/upload/product_logo_thumb/<?php echo $row->cap_logo; ?>"><i class="comon_icon download_icon"></i></a>
+		            	<?php } ?>
 																
 														
 														</td>
 														
 														<td class=" sorting_1" style="text-align:center;">
 																	<?php
-//		          		if($row->tshirt_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->tshirt_logo))
-//					{?>
-						<a target="_blank" class="btn blue table_icon" href="<?php // echo front_base_url()?>/upload/product_logo_thumb/<?php // echo $row->tshirt_logo; ?>"><i class="comon_icon download_icon"></i></a>
-		            	<?php // } ?>
+		          		if($row->tshirt_logo!="" && file_exists(base_path().'upload/product_logo_thumb/'.@$row->tshirt_logo))
+					{?>
+						<a target="_blank" class="btn blue table_icon" href="<?php echo front_base_url()?>/upload/product_logo_thumb/<?php echo $row->tshirt_logo; ?>"><i class="comon_icon download_icon"></i></a>
+		            	<?php } ?>
 																
 														
 														</td>
-														<?php // } ?>
-														<td class=" sorting_1" style="text-align:center;"> <?php // echo date($site_setting->date_format .' h:i:s',strtotime($row->date_added)); ?>
+														<?php } ?>
+														<td class=" sorting_1" style="text-align:center;"> <?php echo date($site_setting->date_format .' h:i:s',strtotime($row->date_added)); ?>
 														</td>
 														 <td class="center">
-															<?php // if($row->owner_id==0 || $row->owner_id==""){?>
-															<a onclick="changePassword('<?php // echo $row->bar_id;?>','<?php // echo $limit;?>','<?php // echo $offset;?>')" href="javascript://" class="btn black table_icon"><i class="comon_icon change_icon"></i></a>
-															<?php // } ?>
+															<?php if($row->owner_id==0 || $row->owner_id==""){?>
+															<a onclick="changePassword('<?php echo $row->bar_id;?>','<?php echo $limit;?>','<?php echo $offset;?>')" href="javascript://" class="btn black table_icon"><i class="comon_icon change_icon"></i></a>
+															<?php } ?>
 														</td> 
 														<td class="center">
-															<?php // $cls = ($row->status=='active')?'purple':'yellow';?>
-															<span class="<?php // echo $cls;?>"><?php // echo ucfirst($row->status); ?></span>
+															<?php $cls = ($row->status=='active')?'purple':'yellow';?>
+															<span class="<?php echo $cls;?>"><?php echo ucfirst($row->status); ?></span>
 														</td>
 														<td class="center">
 
-															<input type="checkbox" disabled="disabled" <?php // echo (isset($row->agree) && $row->agree=='1')?'checked':'';?>>
+															<input type="checkbox" disabled="disabled" <?php echo (isset($row->agree) && $row->agree=='1')?'checked':'';?>>
 														</td>
 															
 														<td>
 														<?php 
 							
-//																echo anchor('bar/edit_bar/'.$bar_type.'/'.$row->bar_id.'/'.$redirect_page.'/'.$option.'/'.$keyword.'/'.$limit.'/'.$offset,'<i class="comon_icon edit_icon"></i>','class="table_icon btn blue" id="bar_'.$row->bar_id.'" title="Edit Admin"'); 
+																echo anchor('bar/edit_bar/'.$bar_type.'/'.$row->bar_id.'/'.$redirect_page.'/'.$option.'/'.$keyword.'/'.$limit.'/'.$offset,'<i class="comon_icon edit_icon"></i>','class="table_icon btn blue" id="bar_'.$row->bar_id.'" title="Edit Admin"'); 
 														?>
 														
-														<a class="table_icon btn red" href="javascript://" onClick="delete_rec('<?php // echo $row->bar_id; ?>','<?php // echo $redirect_page;?>','<?php // echo $option?>','<?php // echo $keyword?>','<?php // echo $limit?>','<?php // echo $offset; ?>')" title="Delete"><i class="comon_icon delete_icon"></i></a>
-														<?php // if($row->ustatus=='active'){?>	
-														<?php // echo  anchor('user/viewUserFrontProfile/'.$row->user_id,'<i class="comon_icon view_icon"></i>','class="table_icon btn blue" target="_blank" id="user_'.$row->user_id.'" title="View"');  ?>
-													<?php // } ?>	
+														<a class="table_icon btn red" href="javascript://" onClick="delete_rec('<?php echo $row->bar_id; ?>','<?php echo $redirect_page;?>','<?php echo $option?>','<?php echo $keyword?>','<?php echo $limit?>','<?php echo $offset; ?>')" title="Delete"><i class="comon_icon delete_icon"></i></a>
+														<?php if($row->ustatus=='active'){?>	
+														<?php echo  anchor('user/viewUserFrontProfile/'.$row->user_id,'<i class="comon_icon view_icon"></i>','class="table_icon btn blue" target="_blank" id="user_'.$row->user_id.'" title="View"');  ?>
+													<?php } ?>	
 														</td>
 														<td>
 															<?php 
@@ -529,25 +529,25 @@ button.close {
 																
 																?>
 																<?php
-//																$getowner = get_user_info($row->owner_id);
-//																if($row->owner_id!='' && $row->owner_id!=0 && @$getowner->status=='active')
-//																{ ?>
-															<span class="purple"><?php // echo "claimed"; ?></span>
-															<?php // } else { 
-//																 $cls = ($row->claim=='claimed')?'purple':'yellow';?>
-															<span class="<?php // echo $cls;?>"><?php // echo ucfirst($row->claim); ?></span>
+																$getowner = get_user_info($row->owner_id);
+																if($row->owner_id!='' && $row->owner_id!=0 && @$getowner->status=='active')
+																{ ?>
+															<span class="purple"><?php echo "claimed"; ?></span>
+															<?php } else { 
+																 $cls = ($row->claim=='claimed')?'purple':'yellow';?>
+															<span class="<?php echo $cls;?>"><?php echo ucfirst($row->claim); ?></span>
 																
-															<?php // } ?>		
+															<?php } ?>		
 														</td>
-													</tr>-->
-								<?php // $i++;} } // else{ ?>
+													</tr>
+								<?php $i++;} }else{ ?>
 								
 												
-<!--													<tr class="odd">
+													<tr class="odd">
 														<td class=" sorting_1" colspan="18" style="text-align:center!important;">No Records Found</td>
 														
-													</tr>-->
-								<?php // } ?>
+													</tr>
+								<?php } ?>
 								
 											
 								<?php // if(strlen($page_link)>0){ ?>
