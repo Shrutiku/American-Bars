@@ -1,5 +1,5 @@
 <?php
-class Suggest_bar extends  CI_Controller 
+class ambassador extends  CI_Controller 
 {
     function index()
     {
