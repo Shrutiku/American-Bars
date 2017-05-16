@@ -1,6 +1,6 @@
-<h1>test</h1>
+<!--<h1>test</h1>-->
 
-<!--<style>
+<style>
 	.modal {
     background-clip: padding-box;
     background-color: #FFFFFF;
@@ -575,4 +575,4 @@ function donwloadCSV(){
 				</div>
 			</div>
 		</div>
-	</div>-->
+	</div>
