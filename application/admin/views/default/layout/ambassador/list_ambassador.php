@@ -408,8 +408,8 @@ button.close {
 												 <th class="sorting" style="width: 5%;">Phone Number</th> 
 												<th class="sorting" style="width: 10%;">Reviews And Ratings</th><?php 
 												//echo $bar_type;
-												if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
-												
+												//if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
+<!--												
 												 <th class="sorting" style="width: 5%;">Happy Hours</th> 
 												<th class="sorting" style="width: 5%;">Event</th>
 												<th class="sorting" style="width: 5%;">Gallery</th>
@@ -417,7 +417,7 @@ button.close {
 												<th class="sorting" style="width: 5%;">Cocktail / Liquor</th>
 												<th class="sorting" style="width: 5%;">Postcard</th>
 												<th class="sorting" style="width: 4%;">Cap Logo</th>
-												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php } ?>
+												<th class="sorting" style="width: 4%;">Tshirt Logo</th><?php //} ?>-->
 												<th class="sorting" style="width: 5%;">Date Time</th>
 												 <th class="sorting" style="width: 5%;">Change Password</th> 
 												<th class="sorting" style="width: 5%;">Status</th>
