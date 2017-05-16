@@ -247,14 +247,14 @@ button.close {
 
   Rating End 
  
- <?php $att=array('id'=>'downloadCSV','name'=>'downloadCSV','class'=>'no-margin');
-                                        echo form_open('bar/download',$att) ?>
-                                        <input type="hidden" value="" id="opt" name="opt" />
+ <?php //$att=array('id'=>'downloadCSV','name'=>'downloadCSV','class'=>'no-margin');
+            //                            echo form_open('bar/download',$att) ?>
+<!--                                        <input type="hidden" value="" id="opt" name="opt" />
                                         <input type="hidden" value="" id="key" name="key" />
                                         <input type="hidden" value="" id="typ" name="typ" />
-                                    </form>
+                                    </form>-->
                                     
-                                    <input name="b_type" id="b_type" type="hidden" value="<?php echo $bar_type; ?>"  />
+                                    <!--<input name="b_type" id="b_type" type="hidden" value="<?php echo $bar_type; ?>"  />-->
 <div class="page_content">
 
 			<div class="container_fluid">
@@ -265,35 +265,34 @@ button.close {
 					
 				</div>
 					<?php 
-   if($er!='')
-		   {
-		  $tags = explode('*',  base64_decode($er));
-		  
-		 // print_r(array_filter($tags));
-		 
-		 // die;
-		 if(isset($tags[1])){
-		   	 $error =  "<p>Total Uploaded = ".(base64_decode($er1)-count(array_filter($tags)))." Records</p><p>Total Failed = ".count(array_filter($tags))." Records</p><p>Failed row  :<b> ".substr(str_replace('*', ', ', base64_decode($er)),0,-2)." </b></p>" ;
-		   }
-		 else {
-			 $error =  "<p>Total Uploaded = ".(base64_decode($er1)-1)." Records</p><p>Total Failed = 0 Records</p><p>Failed row  :<b> ".substr(str_replace('*', ', ', base64_decode($er)),0,-2)." </b></p>" ;
-		 }
-		   }
-		   else if($msg != "") {
-			   if($msg == "Successfully"){ $error = "Import Data Successfully";}
-		   }
-		if($msg != ""){
-	     if($msg == "insert"){ $error = ADD_NEW_RECORD;}
-		 if($msg == "claimed"){ $error = CLAIM_RECORD;}
-		 if($msg == "unclaimed"){ $error = UNCLAIM_RECORD;}
-            if($msg == "update"){ $error = UPDATE_RECORD;}
-            if($msg == "delete"){ $error = DELETE_RECORD;}
-			 if($msg == "Success"){ $error = ADD_NEW_RECORD;}
-			if($msg == "active") {  $error = ACTIVE_RECORD;}
-			if($msg == "inactive"){ $error = INACTIVE_RECORD;}
-			if($msg == "archived"){ $error = ARCHIVED_RECORD;}
-			if($msg == "rights"){ $error = ASSIGN_RIGHTS;}
-			
+//   if($er!='')
+//		   {
+//		  $tags = explode('*',  base64_decode($er));
+//		  
+//		 // print_r(array_filter($tags));
+//		 
+//		 // die;
+//		 if(isset($tags[1])){
+//		   	 $error =  "<p>Total Uploaded = ".(base64_decode($er1)-count(array_filter($tags)))." Records</p><p>Total Failed = ".count(array_filter($tags))." Records</p><p>Failed row  :<b> ".substr(str_replace('*', ', ', base64_decode($er)),0,-2)." </b></p>" ;
+//		   }
+//		 else {
+//			 $error =  "<p>Total Uploaded = ".(base64_decode($er1)-1)." Records</p><p>Total Failed = 0 Records</p><p>Failed row  :<b> ".substr(str_replace('*', ', ', base64_decode($er)),0,-2)." </b></p>" ;
+//		 }
+//		   }
+//		   else if($msg != "") {
+//			   if($msg == "Successfully"){ $error = "Import Data Successfully";}
+//		   }
+//		if($msg != ""){
+//	     if($msg == "insert"){ $error = ADD_NEW_RECORD;}
+//		 if($msg == "claimed"){ $error = CLAIM_RECORD;}
+//		 if($msg == "unclaimed"){ $error = UNCLAIM_RECORD;}
+//            if($msg == "update"){ $error = UPDATE_RECORD;}
+//            if($msg == "delete"){ $error = DELETE_RECORD;}
+//			 if($msg == "Success"){ $error = ADD_NEW_RECORD;}
+//			if($msg == "active") {  $error = ACTIVE_RECORD;}
+//			if($msg == "inactive"){ $error = INACTIVE_RECORD;}
+//			if($msg == "archived"){ $error = ARCHIVED_RECORD;}
+//			if($msg == "rights"){ $error = ASSIGN_RIGHTS;}			
     ?>
         <div class="success_msg"><?php echo '<p>'.$error.'</p>';?></div>
     <?php } ?>
