@@ -430,11 +430,11 @@ button.close {
 												</thead>
 								<tbody role="alert" aria-live="polite" aria-relevant="all">	
 									<?php
-								if($result)
-								{
-									$i=1;
-									foreach($result as $row)
-									{    $cls=($i%2==0)?'even':'odd';
+//								if($result)
+//								{
+//									$i=1;
+//									foreach($result as $row)
+//									{    $cls=($i%2==0)?'even':'odd';
 									?>
 									<tr class="<?php echo $cls ?>">
 									<td  style="width: 30px;"><input type="checkbox" name="chk[]" value="<?php echo $row->bar_id ?>" class="chk"  /></td>
