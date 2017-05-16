@@ -3,35 +3,25 @@ class ambassador extends  CI_Controller
 {
     function index()
     {
-        
-        
-        $theme = getThemeName();
-        $this->template->set_master_template($theme .'/template.php');
-        $data['site_setting'] = site_setting();
-        $this->template->write_view('header',$theme .'/layout/common/header',$data,TRUE);
-        $this->template->write_view('left',$theme .'/layout/common/sidebar',$data,TRUE);
-        $this->template->write_view('center',$theme .'/layout/ambassador/list_ambassador',$data,TRUE);
-        $this->template->write_view('footer',$theme .'/layout/common/footer',$data,TRUE);
-        $this->template->render();
-//            if(!check_admin_authentication())
-//            {
-//                    redirect('home');
-//            }
-//            redirect('ambassador/list_ambassador');
+            if(!check_admin_authentication())
+            {
+                    redirect('home');
+            }
+            redirect('ambassador/list_ambassador');
     }
 
 
     function list_ambassador($limit='10',$offset=0,$msg='')
     {
-//            if(!check_admin_authentication())
-//            {
-//                    redirect('home');
-//            }
-//            $check_rights=get_rights('ambassador');
-//
-//            if(	$check_rights==0) {			
-//                    redirect('home/dashboard/no_rights');	
-//            }
+            if(!check_admin_authentication())
+            {
+                    redirect('home');
+            }
+            $check_rights=get_rights('ambassador');
+
+            if(	$check_rights==0) {			
+                    redirect('home/dashboard/no_rights');	
+            }
 
             $theme = getThemeName();
             $this->template->set_master_template($theme .'/template.php');
