@@ -343,8 +343,8 @@ button.close {
                                 <option value="city" <?php //if($option=='city'){?> selected="selected"<?php //}?>>City</option>
                                 <option value="state" <?php //if($option=='state'){?> selected="selected"<?php //}?>>State</option>
                                 <option value="cust_num" <?php //if($option=='cust_num'){?> selected="selected"<?php //}?>>Customer #</option>
-                                 <option value="email" <?php //if($option=='email'){?> selected="selected"<?php //}?>>Email</option> 
-                                 <option value="zipcode" <?php //if($option=='zipcode'){?> selected="selected"<?php //}?>>Zipcode</option>
+                                <option value="email" <?php //if($option=='email'){?> selected="selected"<?php //}?>>Email</option> 
+                                <option value="zipcode" <?php //if($option=='zipcode'){?> selected="selected"<?php //}?>>Zipcode</option>
                                 <option value="phone" <?php //if($option=='phone'){?> selected="selected"<?php //}?>>phone</option>
                              
                                                    
@@ -394,9 +394,9 @@ button.close {
 												<th class="sorting_disabled" style="width: 0.1%;">
 												<input type="checkbox" id="titleCheck" name="titleCheck"  onclick="setchecked('chk[]')" />
 												</th>
-												<th class="sorting_disabled" style="width: 5%;">Customer#</th>
-												<th class="sorting_disabled" style="width: 5%;">Bar Title</th>
-												<th class="sorting_disabled" style="width: 5%;">Username</th>
+												<th class="sorting_disabled" style="width: 5%;">First Name</th>
+												<th class="sorting_disabled" style="width: 5%;">Last Name</th>
+												<th class="sorting_disabled" style="width: 5%;">Phone Number</th>
 												<?php // if($bar_type=='all'){?>
 												<th class="sorting_disabled" style="width: 5%;">Bar Type</th>
 												<?php // } ?>	
