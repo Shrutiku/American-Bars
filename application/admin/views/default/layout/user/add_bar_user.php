@@ -57,7 +57,7 @@ $('#start_date').datepicker({
 		
 		    return isNaN(value) && isNaN($(params).val()) 
 		        || (Number(value) < Number($(params).val())); 
-		},'Your Age Must Be Greater Than 21 Year.');
+		},'Your Age Must Be Greater Than 21 Years.');
 	
 
 	

@@ -64,7 +64,7 @@ button.close {
 <?php $theam_url = base_url().getThemeName(); ?>
 		<!-- styles needed by jScrollPane - include in your own sites -->
 
-		<link href="<?php echo $theam_url; ?>/assets/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $theam_url; ?>/assets/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
 		
 <script src="<?php echo $theam_url; ?>/assets/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript" ></script>
 
@@ -91,7 +91,7 @@ $(document).ready(function(){
 	function getlimit(limit)
 	{
 		
-		if(limit=='0')
+		if(limit ==='0')
 		{
 		return false;
 		}
@@ -104,7 +104,7 @@ $(document).ready(function(){
 	
 	function getsearchlimit(limit)
 	{
-		if(limit=='0')
+		if(limit ==='0')
 		{
 		return false;
 		}
@@ -119,7 +119,7 @@ $(document).ready(function(){
 	function gomain(x)
 	{
 		
-		if(x == 'all')
+		if(x === 'all')
 		{
 			window.location.href= '<?php echo base_url();?>user/list_enthusiast_user/';
 		}
@@ -129,7 +129,7 @@ $(document).ready(function(){
 	
 function setchecked(elemName){
 	elem = document.getElementsByName(elemName);
-	if(document.getElementById("titleCheck").checked == true)
+	if(document.getElementById("titleCheck").checked === true)
 	{
 		for(i=0;i<elem.length;i++){
 			elem[i].checked=1;
@@ -152,7 +152,7 @@ function setaction(elename, actionval, actionmsg, formname) {
 	for(i=0;i<elem.length;i++){
 		if(elem[i].checked) vchkcnt++;	
 	}
-	if(vchkcnt==0) {
+	if(vchkcnt === 0) {
 		alert('Please select a record')
 	} else {
 		
