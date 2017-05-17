@@ -80,6 +80,14 @@ $(document).ready(function(){
 					</ul>
 					</div>
 				</li>
+                                
+                                <li class="menu_tag <?php echo '';//echo ($uri[1]=='list_suggest_bar' || $uri[1]=='edit_suggest_bar' ||  $uri[1]=='search_list_suggest_bar' || $uri[1]=='view_suggest_bar')?'active':''; ?>">
+					<a href="<?php echo site_url('ambassador') ?>" <?php echo '';// echo (isset($uri[1]) && ($uri[1]=='list_suggest_bar' || $uri[1]=='view_suggest_bar' || $uri[1]=='search_list_suggest_bar'))?'class="active"':''; ?>><!--<span class="badge badge-info"><?php // echo get_unread_sugbar();?></span>-->
+						<i class="halflings-icon user white"></i>
+						<span class="title"> Ambassadors </span>
+					</a>
+				</li>
+                                
 				<!-- <li class="menu_tag <?php echo (isset($uri[0]) && ($uri[0]=='user' || $uri[0]=='taxi_owner'  ))?'active':''; ?>">
 					<a href="javascript://">
 						<i class="halflings-icon user  white"> </i> <span class="title"> Users </span>
@@ -215,13 +223,6 @@ $(document).ready(function(){
 					<a href="<?php echo site_url('suggest_bar/list_suggest_bar') ?>" <?php echo (isset($uri[1]) && ($uri[1]=='list_suggest_bar' || $uri[1]=='view_suggest_bar' || $uri[1]=='search_list_suggest_bar'))?'class="active"':''; ?>><span class="badge badge-info"><?php echo get_unread_sugbar();?></span>
 						<i class="sidebar_icon suggest_icon"></i>
 						<span class="title"> Suggested Bars</span>
-					</a>
-				</li>
-                                
-                                <li class="menu_tag <?php echo '';//echo ($uri[1]=='list_suggest_bar' || $uri[1]=='edit_suggest_bar' ||  $uri[1]=='search_list_suggest_bar' || $uri[1]=='view_suggest_bar')?'active':''; ?>">
-					<a href="<?php echo site_url('ambassador') ?>" <?php echo '';// echo (isset($uri[1]) && ($uri[1]=='list_suggest_bar' || $uri[1]=='view_suggest_bar' || $uri[1]=='search_list_suggest_bar'))?'class="active"':''; ?>><!--<span class="badge badge-info"><?php // echo get_unread_sugbar();?></span>-->
-						<i class="sidebar_icon suggest_icon"></i>
-						<span class="title"> Ambassadors </span>
 					</a>
 				</li>
 			
