@@ -423,7 +423,7 @@ button.close {
 												<th class="sorting" style="width: 5%;">Status</th>
 												<th class="sorting" style="width: 5%;">Domain AB</th>
 												<th class="sorting" style="width:7%;">Action</th>-->
-																<th class="sorting" style="width:7%;">Claimed</th>
+												<!--<th class="sorting" style="width:7%;">Claimed</th>-->
 												
 												</tr>
 
