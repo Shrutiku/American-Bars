@@ -398,15 +398,15 @@ button.close {
 												<th class="sorting_disabled" style="width: 5%;">Last Name</th>
 												<th class="sorting_disabled" style="width: 5%;">Phone Number</th>
 												<?php // if($bar_type=='all'){?>
-												<th class="sorting_disabled" style="width: 5%;">Bar Type</th>
+												<!--<th class="sorting_disabled" style="width: 5%;">Bar Type</th>-->
 												<?php // } ?>	
 												 <th class="sorting_disabled" style="width: 6%;">Email</th> 
-												<th class="sorting" style="width: 5%;">City</th>
-												<th class="sorting" style="width: 4%;">State</th>
+												<th class="sorting" style="width: 5%;">Associated Bar</th>
+												<th class="sorting" style="width: 4%;">Ambassador ID</th>
 												
-												 <th class="sorting" style="width: 5%;">zipcode</th> 
-												 <th class="sorting" style="width: 5%;">Phone Number</th> 
-												<th class="sorting" style="width: 10%;">Reviews And Ratings</th><?php 
+												 <!--<th class="sorting" style="width: 5%;">zipcode</th>--> 
+												 <!--<th class="sorting" style="width: 5%;">Phone Number</th>--> 
+												<!--<th class="sorting" style="width: 10%;">Reviews And Ratings</th>--><?php 
 												//echo $bar_type;
 												//if($bar_type=='full_mug' || $bar_type=='managed_bar' ){?>
 <!--												
