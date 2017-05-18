@@ -23,7 +23,7 @@
                     <?php// if($getbar['bar_type']=='half_mug'){?>
                             <div class="pull-right marr_10">
                                     <!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
-                                    <a class="review" name="" href="<?php echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">Upgrade to Full Mug</a>
+                                    <a class="review" name="" href="<?php //echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">Upgrade to Full Mug</a>
                             </div>
                     <?php //} ?>
 
