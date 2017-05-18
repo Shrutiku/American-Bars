@@ -11,7 +11,7 @@
     <?php //echo $this->load->view(getThemeName().'/bar/cocktail_suggest');?>
 </div>	-->
 <?php $theme_url = $urls= base_url().getThemeName();?>
-$theme = '';
+<?php $theme = ""; ?>
 <div class="wrapper row6 padtb10 has-js">
     <div class="container">
         <div class="margin-top-50 bg_brown">
