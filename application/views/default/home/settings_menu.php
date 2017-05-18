@@ -11,11 +11,10 @@
     <?php //echo $this->load->view(getThemeName().'/bar/cocktail_suggest');?>
 </div>	-->
 <?php $theme_url = $urls= base_url().getThemeName();?>
-<?php //$theme = ""; ?>
 <div class="wrapper row6 padtb10 has-js">
     <div class="container">
         <div class="margin-top-50 bg_brown">
-     			<?php echo $this->load->view('/home/dashboard_menu'); ?>
+     			<?php echo $this->load->view($theme_url.'/home/dashboard_menu'); ?>
      			
      			<div class="dashboard_detail">
                             <div class="result_search">
