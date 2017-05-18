@@ -37,18 +37,6 @@
                     </div>
                     <div class="dashboard_subblock">
                         <?php // if($getbar['bar_type']=='full_mug'){?>
-                        <div>
-<!--                            <div class="mug_block parrot margin-right-25">
-                                <div class="">
-                                    <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
-                                        <p class="mug_count">
-                                            <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a></p>
-                                        <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
-                                        <p class="mug_count">
-                                            <a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a></p>
-                                </div>
-                            </div>-->
-                        </div>
                         <?php // } ?>
                         <div id="list_show">	
                             <div class="wrapper row6 padtb10 has-js">
