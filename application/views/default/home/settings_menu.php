@@ -69,3 +69,29 @@
         </div>
     </div>
 </div>
+<script>
+    function getData()
+    {
+    	var id = '<?php echo @$getbar['bar_id']; ?>';
+    	 $.ajax({
+	       type: "POST",
+		   url: "<?php echo site_url('bar/getbardata')?>",
+		   data : {id:id},
+		     beforeSend : function() {
+		   		$('#dvLoading').fadeIn('slow');
+		   },
+		    complete : function() {
+		   		$('#dvLoading').fadeOut('slow');
+		   },		
+		   success: function(response) {
+		   	//alert('response');
+		   	//alert(response);
+		   	 $('#list_hide').empty();
+		   	 $("#list_hide").slideDown();
+		     $('#list_hide').html(response);
+		    
+		     initialize_map();
+		  }
+	   });
+    }
+</script>
