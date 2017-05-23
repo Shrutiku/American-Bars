@@ -15,7 +15,7 @@
      						</a>
      					</li>
                                         <li class="<?php echo $this->uri->segment(2)=='updatebanner' ? 'active':'';?>">
-     						<a href="<?php echo site_url('home/dashboard')?>">
+     						<a href="<?php echo site_url('home/drinks')?>">
      							<i class="strip cocktails"></i>
      							Drinks
      						</a>
