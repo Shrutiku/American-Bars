@@ -62,6 +62,31 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
+                        <script type="text/javascript">
+                            $(function(){
+                                $('#infinite-list').slimscroll({
+                                  alwaysVisible: true,
+                                  height: 410,
+                                  color: '#f19d12',
+                                  opacity: .8
+                                });
+
+                                  $('#infinite-list-cocktail').slimscroll({
+                                  alwaysVisible: true,
+                                  height: 410,
+                                  color: '#f19d12',
+                                  opacity: .8
+                                });
+
+                                $('#infinite-list-liquor').slimscroll({
+                                  alwaysVisible: true,
+                                  height: 410,
+                                  color: '#f19d12',
+                                  opacity: .8
+                                });
+
+                              });
+                        </script>
                         <div id="list_show">	
                             <div class="wrapper row6 padtb10 has-js">
                                 <div class="container">
