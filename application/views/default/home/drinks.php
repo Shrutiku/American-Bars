@@ -39,6 +39,9 @@
                         <?php // if($getbar['bar_type']=='full_mug'){?>
                         <?php // } ?>
                         <div class="col-md-4 coctail-new col-sm-12 padb20">
+                            <h2>Beers</h2>
+                            <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                            <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
      				<div class="bar_bg">
      					<h1 class="box_title">Beers</h1>
      					<ul class="bottom_box" id="infinite-list">
@@ -47,7 +50,10 @@
      				</div>
      			</div>
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
-     				<div class="bar_bg">
+                            <h2>Cocktails</h2>
+                            <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
+                            <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
+                                <div class="bar_bg">
      					<h1 class="box_title">Cocktails</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
      					
@@ -55,6 +61,9 @@
      				</div>
      			</div>     		
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
+                            <h2>Liquors</h2>
+                            <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
+                            <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
@@ -63,14 +72,14 @@
      				</div>
      			</div>	
                     </div>
-                    <div class="container">
-                        <div class='pull-left' style="text-align: center;"><div class="result_search_text">What kind of drink would you like to add?</div></div>
-                            <div class="margin-top-50 bg_brown" style="text-align: center;">
-                                <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/choose_cocktail');?>">Cocktail</a>
-                                <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/choose_beer');?>">Beer</a>
-                                <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_liquor');?>">Liquor</a>
-                            </div>
-                    </div>
+<!--                                <div class="container">
+                                    <div class='pull-left' style="text-align: center;"><div class="result_search_text">What kind of drink would you like to add?</div></div>
+                                        <div class="margin-top-50 bg_brown" style="text-align: center;">
+                                            <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/choose_cocktail');?>">Cocktail</a>
+                                            <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/choose_beer');?>">Beer</a>
+                                            <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_liquor');?>">Liquor</a>
+                                        </div>
+                                </div>-->
                 </div>
         </div>
     </div>
@@ -87,14 +96,12 @@
           color: '#f19d12',
           opacity: .8
         });
-
           $('#infinite-list-cocktail').slimscroll({
           alwaysVisible: true,
           height: 410,
           color: '#f19d12',
           opacity: .8
         });
-
         $('#infinite-list-liquor').slimscroll({
           alwaysVisible: true,
           height: 410,
@@ -135,6 +142,9 @@
         margin-right: auto;
         overflow-x: hidden;
         overflow-y: scroll;
+    }
+    #drink-btn {
+        padding: auto;
     }
 </style>
 <?php $theme_url = $urls= base_url().getThemeName();?>
