@@ -132,7 +132,7 @@
 //	var base_url = '<?php // echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
 //	var base_url_cocktail = '<?php // echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
 //	var base_url_liquor = '<?php // echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
-        var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$this->session->userdata('viewid')); ?>';
+        var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$getbar['bar_id']); ?>';
 	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$this->session->userdata('viewid')); ?>';
 	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$this->session->userdata('viewid')); ?>';
 </script>

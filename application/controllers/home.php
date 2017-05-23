@@ -6606,7 +6606,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
     
-    function drink_menu($msg = '', $bar_id = '') {
+    function drink_menu($msg = '') {
         if (get_authenticateUserID() == '') {
             redirect('home');
         }
@@ -6622,15 +6622,17 @@ class Home extends SPACULLUS_Controller {
         $data = array();
         $data['msg'] = $msg;
 //        $data["bar_id"] = $this->bar_model->get_one_bar(base64_decode($bar_id));
-        $bar_id = $this->session->userdata('viewid');
+//        $bar_id = $this->session->userdata('viewid');
 
-        $bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
-
+//        $bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
         $theme = getThemeName();
         $data['error'] = '';
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
-        $data['bar_id'] = $bar_id;
+        
+        $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
+
+//        $data['bar_id'] = $bar_id;
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
 
