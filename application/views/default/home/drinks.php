@@ -40,7 +40,7 @@
                         <?php // } ?>
                         <div class="col-md-4 coctail-new col-sm-12 padb20">
      				<div class="bar_bg">
-     					<h1 class="box_title">Beers Served at Bar</h1>
+     					<h1 class="box_title">Beers</h1>
      					<ul class="bottom_box" id="infinite-list">
      					
 	         		<div class="clear"></div></ul><div class="clear"></div>
@@ -48,7 +48,7 @@
      			</div>
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
-     					<h1 class="box_title">Cocktails Served at Bar</h1>
+     					<h1 class="box_title">Cocktails</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
      					
 	         		<div class="clear"></div></ul><div class="clear"></div>
@@ -56,7 +56,7 @@
      			</div>     		
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
-     					<h1 class="box_title">Liquors Served at Bar</h1>
+     					<h1 class="box_title">Liquors</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
      					
 	         		<div class="clear"></div></ul><div class="clear"></div>
@@ -133,9 +133,9 @@
 </style>
 <?php $theme_url = $urls= base_url().getThemeName();?>
 <script>
-	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
+	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$getbar['bar_id']); ?>';
+	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$getbar['bar_id']); ?>';
+	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$getbar['bar_id']); ?>';
 </script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
