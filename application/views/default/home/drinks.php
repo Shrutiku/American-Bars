@@ -62,7 +62,8 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>	
-                        <div id="list_show">	
+                    </div>
+                    <div id="list_show">	
                             <div class="wrapper row6 padtb10 has-js">
                                 <div class="container">
                                     <div class='pull-left' style="text-align: center;"><div class="result_search_text">What kind of drink would you like to add?</div></div>
@@ -74,7 +75,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
         </div>
     </div>
