@@ -271,7 +271,7 @@ B.show();
 		     							
 		     							
 		     							<!--<li><span class="marr_10">Address: </span> <?php // echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>-->
-		     							<li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].' '.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
+		     							<li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].' '.@$getbar['city'].', '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
 		     							
 		     							<?php if($getbar['phone']){?>
 		     							<li><span class="marr_10">Phone: </span> <?php echo @$getbar['phone']; ?></li>
