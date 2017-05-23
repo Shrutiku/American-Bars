@@ -6619,7 +6619,7 @@ class Home extends SPACULLUS_Controller {
 //        }
         $data = array();
         $data['msg'] = $msg;
-        $data["bar_detail"] = $this->bar_model->get_one_bar($bar_id);
+        $data["bar_detail"] = $this->bar_model->get_one_bar(getBarID($this->session->userdata('viewid')));
 
         
         $theme = getThemeName();
