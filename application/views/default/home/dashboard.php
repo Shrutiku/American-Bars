@@ -271,7 +271,7 @@ B.show();
 		     							
 		     							
 		     							<!--<li><span class="marr_10">Address: </span> <?php // echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>-->
-		     							<li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].' '.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
+		     							<li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].' '.@$getbar['city'].', '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
 		     							
 		     							<?php if($getbar['phone']){?>
 		     							<li><span class="marr_10">Phone: </span> <?php echo @$getbar['phone']; ?></li>
@@ -285,7 +285,7 @@ B.show();
 		     					<div class="map_block" id="gmap_marker">
 		     						
 		     					</div>
-		     					<div class="clearfix"></div>
+		     					<!--<div class="clearfix"></div>-->
 		     					<p class="dashboard_title">Description:</p>
 		     					<p class="dashboard_desc"> 
 		     						<?php if(strip_tags(strlen($getbar['bar_desc'])>350)){ echo substr(strip_tags($getbar['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($getbar['bar_desc']); } ?>
