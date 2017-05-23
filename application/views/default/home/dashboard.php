@@ -660,7 +660,7 @@ B.show();
                         <?php } else { ?>
                             <a href="<?php echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right">Create New Album</a><div class="clear"></div>
 
-                        }
+                        <?php } ?>
 		     		<?php if($albumgallery){
 		     			foreach($albumgallery as $album){	?>	
 		     		 <div class="result_search margin-top-20">
