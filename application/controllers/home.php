@@ -6630,6 +6630,7 @@ class Home extends SPACULLUS_Controller {
         $data['error'] = '';
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
+        $data['bar_id'] = $bar_id;
         $theme = getThemeName();
         $this->template->set_master_template($theme . '/template.php');
 
