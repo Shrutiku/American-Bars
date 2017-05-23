@@ -5,12 +5,12 @@
         	<div class="carousel-inner">
           	<div class="active item">
           	  	
-          	  									<?php
+          	<?php
           	  									
-          	  									$userinfo_new = get_user_info(get_authenticateUserID());
+                $userinfo_new = get_user_info(get_authenticateUserID());
           	  									
-		          		if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag/'.@$userinfo_new->user_banner))
-					{?>
+                if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag/'.@$userinfo_new->user_banner))
+                                    {?>
 		            	<img src="<?php echo base_url()?>/upload/banner_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Dive Bars"/>
 		            	<?php }  else if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag_without/'.@$userinfo_new->user_banner))
 					{?>
