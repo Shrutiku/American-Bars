@@ -256,7 +256,7 @@ B.show();
 		     								 } else if(@$getbar['bar_type']=='full_mug' && $getbar['is_managed']=='yes'){
 		     								 	echo "Managed Account";
 		     								 }?></li>
-                                                                        <?php $name = @$getbar['first_name'] + ' ' + @$getbar['last_name'];?>
+                                                                        <?php $name = @$getbar['first_name'] + " " + @$getbar['last_name'];?>
 		     							<li><span class="marr_10">Bar Name: </span> <?php echo @$getbar['bar_title']; ?></li>
 		     							<li><span class="marr_10">Bar Owner: </span> <?php echo $name; ?></li>
 		     							<!--<li><span class="marr_10">Bar Owner First Name: </span> <?php //echo @$getbar['first_name']; ?></li>-->
