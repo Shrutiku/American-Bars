@@ -1,86 +1,82 @@
 <div class="wrapper row6 padtb10 has-js">
      	<div class="container">
-     		<?php  if($this->session->userdata('user_type')!='bar_owner'){ ?><div class="wrapper row4">
-   			<div class="carousel slide" id="slider-fixed-banner">
-        	<div class="carousel-inner">
-          	<div class="active item">
-          	  	
-          	  									<?php
-          	  									
-          	  									$userinfo_new = get_user_info(get_authenticateUserID());
-          	  									
-		          		if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag/'.@$userinfo_new->user_banner))
-					{?>
-		            	<img src="<?php echo base_url()?>/upload/banner_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Dive Bars"/>
-		            	<?php }  else if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag_without/'.@$userinfo_new->user_banner))
-					{?>
-						<img src="<?php echo base_url()?>/upload/banner_without_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Dive Bars"/>
-		            		
-		            		<?php } else {?>
-		            		<img src="<?php echo base_url().'default'?>/images/smallbanner1.png" alt="American Dive Bars"/>	
-		            			<?php } ?>
-         </div>
-        </div>
-   	</div>
-	</div>
-  <!-- </div> -->
+            <?php  if($this->session->userdata('user_type')!='bar_owner'){ ?>
+                <div class="wrapper row4">
+                    <div class="carousel slide" id="slider-fixed-banner">
+                        <div class="carousel-inner">
+                            <div class="active item">
+
+                                <?php
+
+                                $userinfo_new = get_user_info(get_authenticateUserID());
+
+                                if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag/'.@$userinfo_new->user_banner))
+                                {?>
+                                    <img src="<?php echo base_url()?>/upload/banner_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Dive Bars"/>
+                                <?php }  else if($userinfo_new->user_banner!="" && file_exists(base_path().'upload/banner_drag_without/'.@$userinfo_new->user_banner))
+                                {?>
+                                    <img src="<?php echo base_url()?>/upload/banner_without_drag/<?php echo $userinfo_new->user_banner; ?>" alt="American Dive Bars"/>
+
+                                <?php } else {?>
+                                    <img src="<?php echo base_url().'default'?>/images/smallbanner1.png" alt="American Dive Bars"/>	
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+   <!--</div>--> 
   <?php }  ?>
-  </div><div class="<?php if($this->session->userdata('user_type')=='user'){?>user-top-border<?php } else {?>margin-top-50<?php } ?>">
-  		<div class="container">
+        </div>
+        <div class="<?php if($this->session->userdata('user_type')=='user'){?>user-top-border<?php } else {?>margin-top-50<?php } ?>">
+            <div class="container">
      		<div class="bg_brown">
-     			<?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
+                    <?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
      			<div class="dashboard_detail">
-     				<div class="result_search event"><div class="result_search_text"><i class="strip change_pwd"></i> Privacy Setting</div></div>
+                            <div class="result_search event"><div class="result_search_text"><i class="strip change_pwd"></i> Privacy Setting</div></div>
 		     		<div class="dashboard_subblock">
-		     			<div>
-     						
-     					
-     					
-					
+                                <div>	
 				<div id="list_show" style="display: block;" >	
-					<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-					<form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('user/settings'); ?>">
+                                    <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
+                                    <form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('user/settings'); ?>">
      				<input type="hidden" name="setting_id" id="setting_id" value="<?php echo @$setting_id; ?>" />
-		     			<div class="text-center pad_t15b20">
+                                    <div class="text-center pad_t15b20">
 	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">First Name : </label>
-	        				 	</div>
-	                       		<div class="padb10 col-sm-7">
-				     				<div class="radio pull-left" style="margin-top: -4px;">
-					     				<label>
-					          				<input type="radio" <?php if(@$fname==1){?>checked<?php } ?> id="fname" name="fname" value="1"> Show 
-					        			</label>
-				        			</div>
-				        			<div class="radio pull-left">
-					     				<label>
-					          				<input type="radio" <?php if(@$fname==0){?>checked<?php } ?> id="fname" name="fname" value="0"> Hide
-					        			</label>
-				        			</div>
-			        				<div class="clearfix"></div>
-	        					</div>
-	                       		<div class="clearfix"></div>
+                                    <div class="col-sm-3 text-right">
+                                        <label class="control-label">First Name : </label>
+                                    </div>
+                                    <div class="padb10 col-sm-7">
+                                        <div class="radio pull-left" style="margin-top: -4px;">
+                                            <label>
+                                                <input type="radio" <?php if(@$fname==1){?>checked<?php } ?> id="fname" name="fname" value="1"> Show 
+                                            </label>
+                                        </div>
+                                        <div class="radio pull-left">
+                                            <label>
+                                                <input type="radio" <?php if(@$fname==0){?>checked<?php } ?> id="fname" name="fname" value="0"> Hide
+                                            </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
 	                       	</div>
-	                       	
-	                       	
 	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Last Name : </label>
-	        				 	</div>
-	                       		<div class="padb10 col-sm-7">
-				     				<div class="radio pull-left" style="margin-top: -4px;">
-					     				<label>
-					          				<input type="radio" <?php if(@$lname==1){?>checked<?php } ?> id="lname" name="lname" value="1"> Show 
-					        			</label>
-				        			</div>
-				        			<div class="radio pull-left">
-					     				<label>
-					          				<input type="radio" <?php if(@$lname==0){?>checked<?php } ?> id="lname" name="lname" value="0"> Hide
-					        			</label>
-				        			</div>
-			        				<div class="clearfix"></div>
-	        					</div>
-	                       		<div class="clearfix"></div>
+                                    <div class="col-sm-3 text-right">
+                                        <label class="control-label">Last Name : </label>
+                                    </div>
+                                    <div class="padb10 col-sm-7">
+                                        <div class="radio pull-left" style="margin-top: -4px;">
+                                            <label>
+                                                <input type="radio" <?php if(@$lname==1){?>checked<?php } ?> id="lname" name="lname" value="1"> Show 
+                                            </label>
+                                        </div>
+                                        <div class="radio pull-left">
+                                            <label>
+                                                <input type="radio" <?php if(@$lname==0){?>checked<?php } ?> id="lname" name="lname" value="0"> Hide
+                                            </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
 	                       	</div>
 	                       	
 	                       	<!-- <div class="padtb">
@@ -105,44 +101,44 @@
 	                       	
 	                       	
 	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Gender : </label>
-	        				 	</div>
-	                       		<div class="padb10 col-sm-7">
-				     				<div class="radio pull-left" style="margin-top: -4px;">
-					     				<label>
-					          				<input type="radio" <?php if(@$gender1==1){?>checked<?php } ?> id="gender1" name="gender1" value="1"> Show 
-					        			</label>
-				        			</div>
-				        			<div class="radio pull-left">
-					     				<label>
-					          				<input type="radio" <?php if(@$gender1==0){?>checked<?php } ?> id="gender1" name="gender1" value="0"> Hide
-					        			</label>
-				        			</div>
-			        				<div class="clearfix"></div>
-	        					</div>
-	                       		<div class="clearfix"></div>
+                                    <div class="col-sm-3 text-right">
+                                        <label class="control-label">Gender : </label>
+                                    </div>
+                                    <div class="padb10 col-sm-7">
+                                        <div class="radio pull-left" style="margin-top: -4px;">
+                                            <label>
+                                                <input type="radio" <?php if(@$gender1==1){?>checked<?php } ?> id="gender1" name="gender1" value="1"> Show 
+                                            </label>
+                                        </div>
+                                        <div class="radio pull-left">
+                                            <label>
+                                                <input type="radio" <?php if(@$gender1==0){?>checked<?php } ?> id="gender1" name="gender1" value="0"> Hide
+                                            </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
 	                       	</div>
 	                       	
 	                       	
 	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Address : </label>
-	        				 	</div>
-	                       		<div class="padb10 col-sm-7">
-				     				<div class="radio pull-left" style="margin-top: -4px;">
-					     				<label>
-					          				<input type="radio" <?php if(@$address1==1){?>checked<?php } ?> id="address1" name="address1" value="1"> Show 
-					        			</label>
-				        			</div>
-				        			<div class="radio pull-left">
-					     				<label>
-					          				<input type="radio" <?php if(@$address1==0){?>checked<?php } ?> id="address1" name="address1" value="0"> Hide
-					        			</label>
-				        			</div>
-			        				<div class="clearfix"></div>
-	        					</div>
-	                       		<div class="clearfix"></div>
+                                    <div class="col-sm-3 text-right">
+                                        <label class="control-label">Address : </label>
+                                    </div>
+                                    <div class="padb10 col-sm-7">
+                                        <div class="radio pull-left" style="margin-top: -4px;">
+                                            <label>
+                                                <input type="radio" <?php if(@$address1==1){?>checked<?php } ?> id="address1" name="address1" value="1"> Show 
+                                            </label>
+                                        </div>
+                                        <div class="radio pull-left">
+                                            <label>
+                                                <input type="radio" <?php if(@$address1==0){?>checked<?php } ?> id="address1" name="address1" value="0"> Hide
+                                            </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
 	                       	</div>
 	                       	
 	                       	<!-- <div class="padtb">
@@ -167,54 +163,52 @@
 	                       	
 	                       	
 	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">About : </label>
-	        				 	</div>
-	                       		<div class="padb10 col-sm-7">
-				     				<div class="radio pull-left" style="margin-top: -4px;">
-					     				<label>
-					          				<input type="radio" <?php if(@$abt==1){?>checked<?php } ?> id="abt" name="abt" value="1"> Show 
-					        			</label>
-				        			</div>
-				        			<div class="radio pull-left">
-					     				<label>
-					          				<input type="radio" <?php if(@$abt==0){?>checked<?php } ?> id="abt" name="abt" value="0"> Hide
-					        			</label>
-				        			</div>
-			        				<div class="clearfix"></div>
-	        					</div>
-	                       		<div class="clearfix"></div>
+                                    <div class="col-sm-3 text-right">
+                                        <label class="control-label">About : </label>
+                                    </div>
+                                    <div class="padb10 col-sm-7">
+                                        <div class="radio pull-left" style="margin-top: -4px;">
+					    <label>
+                                                <input type="radio" <?php if(@$abt==1){?>checked<?php } ?> id="abt" name="abt" value="1"> Show 
+                                            </label>
+                                        </div>
+                                        <div class="radio pull-left">
+                                            <label>
+                                                <input type="radio" <?php if(@$abt==0){?>checked<?php } ?> id="abt" name="abt" value="0"> Hide
+                                            </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
 	                       	</div>
 	                       	
-	                       	
-	                       	
 	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Album : </label>
-	        				 	</div>
-	                       		<div class="padb10 col-sm-7">
-				     				<div class="radio pull-left" style="margin-top: -4px;">
-					     				<label>
-					          				<input type="radio" <?php if(@$album==1){?>checked<?php } ?> id="album" name="album" value="1"> Show 
-					        			</label>
-				        			</div>
-				        			<div class="radio pull-left">
-					     				<label>
-					          				<input type="radio" <?php if(@$album==0){?>checked<?php } ?> id="album" name="album" value="0"> Hide
-					        			</label>
-				        			</div>
-			        				<div class="clearfix"></div>
-	        					</div>
-	                       		<div class="clearfix"></div>
+                                    <div class="col-sm-3 text-right">
+                                        <label class="control-label">Album : </label>
+                                    </div>
+                                    <div class="padb10 col-sm-7">
+                                        <div class="radio pull-left" style="margin-top: -4px;">
+                                            <label>
+                                                <input type="radio" <?php if(@$album==1){?>checked<?php } ?> id="album" name="album" value="1"> Show 
+                                            </label>
+                                        </div>
+                                        <div class="radio pull-left">
+                                            <label>
+                                                <input type="radio" <?php if(@$album==0){?>checked<?php } ?> id="album" name="album" value="0"> Hide
+                                            </label>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
 	                       	</div>
 	                       	
 	                       	
 	                       	<div class="padtb8">
-	                       		<div class="col-sm-3"></div>
-	                       		<div class="col-sm-7 mart10 text-left">
-	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       		</div>
-	                       		<div class="clearfix"></div>
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-7 mart10 text-left">
+                                        <button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
+                                    </div>
+                                    <div class="clearfix"></div>
 	                       	</div>
 	                       	<div class="clearfix"></div>
      		</div>
