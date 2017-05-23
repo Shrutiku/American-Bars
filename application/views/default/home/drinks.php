@@ -79,11 +79,7 @@
         </div>
     </div>
 </div>
-<script>
-	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
-</script>                        
+                     
 <link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
 <script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
 <script src="<?php echo base_url().getThemeName(); ?>/js/prettify.js"></script>
@@ -135,3 +131,10 @@
         overflow-y: scroll;
     }
 </style>
+<?php $theme_url = $urls= base_url().getThemeName();?>
+<script>
+	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
+	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
+	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
+</script>
+<script type="text/javascript">InfiniteList.loadData(0,15); InfiniteList.loadData_cocktail(0,15);InfiniteList.loadData_liquor(0,15);</script>
