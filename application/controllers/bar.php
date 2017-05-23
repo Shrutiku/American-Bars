@@ -2302,17 +2302,18 @@ function getallliquorbybar_new()
 		$this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
 			
 			//echo $getbarinfo->serve_as;
-		if($getbarinfo->serve_as=='liquor')
-		{
-			$this->template->write_view ('content_center', $theme.'/bar/bar_cocktail_no', $data, TRUE);
-		}
-		else
-	    {
-	    	
-	       $this->template->write_view ('content_center', $theme.'/bar/bar_cocktail_add', $data, TRUE);	
-	    }		
-		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
-		$this->template->render ();
+//		if($getbarinfo->serve_as=='liquor')
+//		{
+//			$this->template->write_view ('content_center', $theme.'/bar/bar_cocktail_no', $data, TRUE);
+//		}
+//		else
+//                {
+//
+//                   $this->template->write_view ('content_center', $theme.'/bar/bar_cocktail_add', $data, TRUE);	
+//                }		
+                    $this->template->write_view ('content_center', $theme.'/bar/bar_cocktail_add', $data, TRUE);
+                    $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+                    $this->template->render ();
 		}
 	}
         
@@ -2380,17 +2381,18 @@ function getallliquorbybar_new()
 		}
 		else {
 		$this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
-		if($getbarinfo->serve_as=='cocktail')
-		{
-			//redirect('bar/bar_cocktail');
-			$this->template->write_view ('content_center', $theme.'/bar/bar_liquor_no', $data, TRUE);
-		}
-		else
-	    {
-	       $this->template->write_view ('content_center', $theme.'/bar/bar_liquor', $data, TRUE);	
-	    }
+//		if($getbarinfo->serve_as=='cocktail')
+//		{
+//			//redirect('bar/bar_cocktail');
+//			$this->template->write_view ('content_center', $theme.'/bar/bar_liquor_no', $data, TRUE);
+//		}
+//                    else
+//                {
+//                   $this->template->write_view ('content_center', $theme.'/bar/bar_liquor', $data, TRUE);	
+//                }
 		
-		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+		$this->template->write_view ('content_center', $theme.'/bar/bar_liquor', $data, TRUE);
+                $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
 		$this->template->render ();
 		}
 	}
@@ -2459,16 +2461,16 @@ function getallliquorbybar_new()
 		}
 		else {
 		$this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
-		if($getbarinfo->serve_as=='cocktail')
-		{
-			//redirect('bar/bar_cocktail');
-			$this->template->write_view ('content_center', $theme.'/bar/bar_liquor_no', $data, TRUE);
-		}
-		else
-	    {
-	       $this->template->write_view ('content_center', $theme.'/bar/bar_liquor_add', $data, TRUE);	
-	    }
-		
+//		if($getbarinfo->serve_as=='cocktail')
+//		{
+//			//redirect('bar/bar_cocktail');
+//			$this->template->write_view ('content_center', $theme.'/bar/bar_liquor_no', $data, TRUE);
+//		}
+//                else
+//                {
+//                   $this->template->write_view ('content_center', $theme.'/bar/bar_liquor_add', $data, TRUE);	
+//                }
+		$this->template->write_view ('content_center', $theme.'/bar/bar_liquor_add', $data, TRUE);
 		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
 		$this->template->render ();
 		}

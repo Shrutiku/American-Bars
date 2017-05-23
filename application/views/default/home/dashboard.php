@@ -491,16 +491,16 @@ B.show();
 	                       		<div class="clearfix"></div>
 	                       	</div>
 	                       	
-	                       	<div class="padtb">
+<!--	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Serve As : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7 text-left padt5">
-	                           		<label style="font-size: 20px;" for="radio-01" class="radio-checkbox label_radio marr_10 r_on"><input type="radio" value="cocktail" <?php if($getalldata->serve_as=='cocktail'){ echo "checked"; }?> name="serve_as" id="serve_as_c" > Cocktail</label>
-	                           		<label style="font-size: 20px;" for="radio-02" class="radio-checkbox label_radio"><input type="radio" value="liquor"  <?php if($getalldata->serve_as=='liquor'){ echo "checked"; }?> name="serve_as" id="serve_as_l" > Liquor</label>
+	                           		<label style="font-size: 20px;" for="radio-01" class="radio-checkbox label_radio marr_10 r_on"><input type="radio" value="cocktail" <?php // if($getalldata->serve_as=='cocktail'){ echo "checked"; }?> name="serve_as" id="serve_as_c" > Cocktail</label>
+	                           		<label style="font-size: 20px;" for="radio-02" class="radio-checkbox label_radio"><input type="radio" value="liquor"  <?php // if($getalldata->serve_as=='liquor'){ echo "checked"; }?> name="serve_as" id="serve_as_l" > Liquor</label>
 	                       		</div>
 	                       		<div class="clearfix"></div>
-	                       	</div>
+	                       	</div> -->
 	                       	
 	                       	
 	                       		<div class="padtb">
