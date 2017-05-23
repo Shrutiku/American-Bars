@@ -39,6 +39,7 @@
                         <?php // if($getbar['bar_type']=='full_mug'){?>
                         <?php // } ?>
                         <div class="col-md-4 coctail-new col-sm-12 padb20">
+                            <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
      				<div class="bar_bg">
      					<h1 class="box_title">Beers</h1>
@@ -48,6 +49,7 @@
      				</div>
      			</div>
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
+                            <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
                             <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
                                 <div class="bar_bg">
      					<h1 class="box_title">Cocktails</h1>
@@ -57,6 +59,7 @@
      				</div>
      			</div>     		
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
+                            <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors</h1>
