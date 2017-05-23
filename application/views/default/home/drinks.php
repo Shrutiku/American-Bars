@@ -62,6 +62,9 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
+                        <link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
+                        <script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
+                        <script src="<?php echo base_url().getThemeName(); ?>/js/prettify.js"></script>
                         <script type="text/javascript">
                             $(function(){
                                 $('#infinite-list').slimscroll({
@@ -84,9 +87,32 @@
                                   color: '#f19d12',
                                   opacity: .8
                                 });
-
                               });
                         </script>
+	<!--------------End Scroll ------------------->
+                        <style>
+                            #gmap_marker {
+                                height: 322px;
+                                width: 100%;
+                            }
+                            .gm-style-iw {
+                                color:#000000;
+                            }
+                            #infinite-list {
+                                height: 410px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                overflow-x: hidden;
+                                overflow-y: scroll;
+                            }
+                            #infinite-list-cocktail {
+                                height: 410px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                overflow-x: hidden;
+                                overflow-y: scroll;
+                            }
+                        </style>	
                         <div id="list_show">	
                             <div class="wrapper row6 padtb10 has-js">
                                 <div class="container">
