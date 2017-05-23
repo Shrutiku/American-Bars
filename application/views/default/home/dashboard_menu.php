@@ -20,8 +20,8 @@
      							Drinks
      						</a>
      					</li>
-                                            <?php if ($getbar['bar_type']=='full_mug') {?>
-                                            <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
+                                            <?php if ($getbar['bar_type']=='full_mug') { // fullmug dashboard menu ?>
+                                            <li title="Add your bar's happy hours here." class="active">
                                                     <a href="<?php echo site_url('bar/bar_special_hours')?>">
                                                             <i class="strip bar-special"></i>
                                                             Happy Hours
@@ -114,7 +114,11 @@
                                                             All Orders
                                                     </a>
                                             </li>-->
-                                            <?php } else {?>
+                        
+                                                
+                                                
+                                                
+                                            <?php } else { // halfmug disabled buttons ?>
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
                                                 <a href="<?php echo site_url('bar/bar_special_hours')?>">
                                                         <i class="strip bar-special"></i>
@@ -147,6 +151,13 @@
                                                     </a>
                                             </li>
                                             <?php } ?>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
      					<?php } else {?>
      						<li class="<?php echo $this->uri->segment(2)=='user_dashboard' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/user_dashboard')?>">
