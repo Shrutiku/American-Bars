@@ -130,13 +130,12 @@
     }
     #infinite-list-cocktail {
         height: 410px;
-        margin-right: 1%;
+        padding-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
     #infinite-list-liquor {
         height: 410px;
-        margin-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
