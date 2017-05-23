@@ -38,7 +38,7 @@
                     <div class="dashboard_subblock">
                         <?php // if($getbar['bar_type']=='full_mug'){?>
                         <?php // } ?>
-                        <div class="col-md-6 coctail-new col-sm-5 padb20">
+                        <div class="col-md-4 coctail-new col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Beers Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list">
@@ -46,7 +46,7 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     			<div class="col-md-6 coctail-newright col-sm-5 padb20">
+     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Cocktails Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
@@ -54,7 +54,7 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>     		
-     			<div class="col-md-6 coctail-newright col-sm-5 padb20">
+     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
