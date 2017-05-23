@@ -35,7 +35,7 @@
                    <?php // } ?>
                         <div class="clear"></div>
                     </div>
-                    <div class="fullmug_block">
+                    <div class="fullmug_block" style="width: 90%; align-self: center;">
                         <?php // if($getbar['bar_type']=='full_mug'){?>
                         <?php // } ?>
                         <div class="col-md-4 coctail-new col-sm-12 padb20">
