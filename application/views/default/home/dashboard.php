@@ -285,7 +285,7 @@ B.show();
 		     					<div class="map_block" id="gmap_marker">
 		     						
 		     					</div>
-		     					<!--<div class="clearfix"></div>-->
+		     					<div class="clearfix"></div>
 		     					<p class="dashboard_title">Description:</p>
 		     					<p class="dashboard_desc"> 
 		     						<?php if(strip_tags(strlen($getbar['bar_desc'])>350)){ echo substr(strip_tags($getbar['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($getbar['bar_desc']); } ?>
