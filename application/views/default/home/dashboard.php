@@ -248,7 +248,7 @@ B.show();
 		     				<div class="map_mainblock">
 		     					<div class="dashboard_beer_detail">
 		     						<ul class="dashboard_list">
-		     							<li><span class="marr_10">Bar Type : </span>
+		     							<li><span class="marr_10">Bar Type: </span>
 		     								 <?php if(@$getbar['bar_type']=='half_mug'){
 		     								 	   echo "Half Mug Bar";
 		     								 } else if(@$getbar['bar_type']=='full_mug' && $getbar['is_managed']=='no'){
