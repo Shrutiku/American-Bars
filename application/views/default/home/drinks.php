@@ -35,13 +35,13 @@
                    <?php // } ?>
                         <div class="clear"></div>
                     </div>
-                    <div class="fullmug_block" style="width: 90%; align-self: center;">
+                    <div class="fullmug_block" style="width: 100%; padding-left: 3%">
                         <?php // if($getbar['bar_type']=='full_mug'){?>
                         <?php // } ?>
                         <div class="col-md-4 coctail-new col-sm-12 padb20">
                             <h2  style="align: center;">Beers
-                                <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
                             </h2>
                                 <div class="bar_bg">
      					<!--<h1 class="box_title">Beers</h1>-->
@@ -52,8 +52,8 @@
      			</div>
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
                             <h2  style="align: center;">Cocktails
-                                <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
                             </h2>
                                 <div class="bar_bg">
      					<!--<h1 class="box_title">Cocktails</h1>-->
@@ -64,8 +64,8 @@
      			</div>     		
      			<div class="col-md-4 coctail-newright col-sm-12 padb20">
                             <h2  style="align: center;">Liquors
-                                <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
                             </h2>
                                 <div class="bar_bg">
      					<!--<h1 class="box_title">Liquors</h1>-->
@@ -124,25 +124,19 @@
     }
     #infinite-list {
         height: 410px;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
     #infinite-list-cocktail {
         height: 410px;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
     #infinite-list-liquor {
         height: 410px;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
