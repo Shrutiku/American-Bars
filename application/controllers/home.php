@@ -6606,7 +6606,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
     
-    function drink_menu($msg = "") {
+    function drink_menu($bar_id) {
         if (get_authenticateUserID() == '') {
             redirect('home');
         }
@@ -6618,9 +6618,10 @@ class Home extends SPACULLUS_Controller {
 //            redirect('home/taxi_owner_dashboard');
 //        }
         $data = array();
-        $data['msg'] = $msg;
+//        $data['msg'] = $msg;
 //        $data["bar_id"] = $this->bar_model->get_one_bar(base64_decode($bar_id));
-
+        $bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
+        
         $this->session->userdata('viewid');
         $theme = getThemeName();
         $data['error'] = '';
