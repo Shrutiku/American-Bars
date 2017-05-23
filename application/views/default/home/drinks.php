@@ -114,6 +114,7 @@
     }
     #infinite-list {
         height: 410px;
+        width: 95%;
         margin-left: auto;
         margin-right: auto;
         overflow-x: hidden;
@@ -121,6 +122,15 @@
     }
     #infinite-list-cocktail {
         height: 410px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    #infinite-list-liquor {
+        height: 410px;
+        width: 95%;
         margin-left: auto;
         margin-right: auto;
         overflow-x: hidden;
