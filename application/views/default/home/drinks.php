@@ -124,25 +124,19 @@
     }
     #infinite-list {
         height: 410px;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
     #infinite-list-cocktail {
         height: 410px;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
     #infinite-list-liquor {
         height: 410px;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 1%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
