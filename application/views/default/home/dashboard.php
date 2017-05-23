@@ -261,7 +261,7 @@ B.show();
 		     							<li><span class="marr_10">Bar Owner: </span> <?php echo $name; ?></li>
 		     							<!--<li><span class="marr_10">Bar Owner First Name: </span> <?php //echo @$getbar['first_name']; ?></li>-->
 		     							<!--<li><span class="marr_10">Bar Owner Last Name: </span> <?php //echo @$getbar['last_name']; ?></li>-->
-		     							<li><span class="marr_10">Bar Owner Email: </span> <?php echo @$getbar['email']; ?></li>
+		     							<li><span class="marr_10">Owner Email: </span> <?php echo @$getbar['email']; ?></li>
 		     							 									
 		     							<!--<li><span class="marr_10">Gender : </span> <?php echo @$getbar['gender']; ?></li>-->
 		     							<!-- <li><span class="marr_10">Address : </span> <?php echo @$getbar['address']; ?></li>
@@ -270,7 +270,8 @@ B.show();
 		     							<li><span class="marr_10">Zip Code : </span> <?php echo @$getbar['zipcode']; ?></li> -->
 		     							
 		     							
-		     							<li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
+		     							<!--<li><span class="marr_10">Address: </span> <?php // echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>-->
+		     							<li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].' '.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
 		     							
 		     							<?php if($getbar['phone']){?>
 		     							<li><span class="marr_10">Phone: </span> <?php echo @$getbar['phone']; ?></li>
