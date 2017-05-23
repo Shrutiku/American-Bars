@@ -137,5 +137,12 @@
 	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
 	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
 </script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/image_script.js"></script>
+<script type="text/javascript" src="<?php echo $theme_url; ?>/js/jquery_form.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/js/rating.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
 <script type="text/javascript">InfiniteList.loadData(0,15); InfiniteList.loadData_cocktail(0,15);InfiniteList.loadData_liquor(0,15);</script>
