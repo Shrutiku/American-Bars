@@ -777,7 +777,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
      		 <div class="fullmug_block">
      			
      			
-     			<div class="col-md-6 coctail-new col-sm-5 padb20">
+     			<div class="col-md-4 coctail-new col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Beers Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list">
@@ -785,8 +785,8 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php if($bar_detail['serve_as']=='cocktail'){?>
-     			<div class="col-md-6 coctail-newright col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='cocktail'){?>
+     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Cocktails Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
@@ -794,10 +794,10 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>	
+     		<?php // } ?>	
      		
-     		<?php if($bar_detail['serve_as']=='liquor'){?>
-     			<div class="col-md-6 coctail-newright col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='liquor'){?>
+     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
@@ -805,7 +805,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>	
+     		<?php // } ?>	
      			<div class="clearfix"></div>
      		</div>
      		

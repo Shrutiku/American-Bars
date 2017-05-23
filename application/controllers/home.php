@@ -6632,51 +6632,6 @@ class Home extends SPACULLUS_Controller {
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
-    function getmorebeer()
-	{
-		$theme = getThemeName ();
-		$this->template->set_master_template ($theme.'/template.php');
-		
-    	$data["bar_beer"] = $this->bar_model->getBarBeerNew($_GET['bar_id'],$_GET['offset'],$_GET['limit']);
-		if($data["bar_beer"])
-		{
-		echo $this->load->view($theme .'/bar/barbeerajaxscroll',$data,TRUE);
-		}
-		elseif($_GET['offset']==0) {
-			echo "No";
-		}
-		die;
-	}
-	
-	function getmorecocktail()
-	{
-		$theme = getThemeName ();
-		$this->template->set_master_template ($theme.'/template.php');
-    	$data["bar_cocktail"] = $this->bar_model->getBarCocktailNew($_GET['bar_id'],$_GET['offset'],$_GET['limit']);
-		if($data["bar_cocktail"])
-		{
-		echo $this->load->view($theme .'/bar/barcocktailajaxscroll',$data,TRUE);
-		}
-		elseif($_GET['offset']==0) {
-			echo "No";
-		}
-		die;
-	}
-
-	function getmoreliquor()
-	{
-		$theme = getThemeName ();
-		$this->template->set_master_template ($theme.'/template.php');
-    	$data["bar_cocktail"] = $this->bar_model->getBarLiquorNew($_GET['bar_id'],$_GET['offset'],$_GET['limit']);
-		if($data["bar_cocktail"])
-		{
-		echo $this->load->view($theme .'/bar/barliquorajaxscroll',$data,TRUE);
-		}
-		elseif($_GET['offset']==0) {
-			echo "No";
-		}
-		die;
-	}
 }
 
 ?>
