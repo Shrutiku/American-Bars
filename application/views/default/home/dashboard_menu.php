@@ -14,7 +14,7 @@
      							My Profile
      						</a>
      					</li>
-                                        <li class="<?php echo $this->uri->segment(2)=='dashboard' ? 'active':'';?> ">
+                                        <li class="<?php echo $this->uri->segment(2)=='updatebanner' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/dashboard')?>">
      							<i class="strip cocktails"></i>
      							Drinks
