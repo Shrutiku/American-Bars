@@ -6622,10 +6622,11 @@ class Home extends SPACULLUS_Controller {
         $data = array();
         $data['msg'] = $msg;
 //        $data["bar_id"] = $this->bar_model->get_one_bar(base64_decode($bar_id));
-//        $bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
         
         $bar_id = $this->session->userdata('viewid');
         
+        $bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
+
         $theme = getThemeName();
         $data['error'] = '';
         $data["active_menu"] = '';
