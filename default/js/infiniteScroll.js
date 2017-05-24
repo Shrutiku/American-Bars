@@ -293,44 +293,44 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
     }
   }
 
-//  function loadData(o, l) {
-//  	
-//    if (arguments.length !== 2) {
-//      console.log('Usage: InfiniteList.loadData(offset, length)');
-//    } else {
-//      if (serviceEndpoint === 'local') {
-//        console.log(l);
-//        getRealData(o, l, displayFunction);
-//      } else {
-//        console.log(l);
-//        getRealData(o, l, displayFunction, serviceEndpoint);
-//      }
-//    }
-//  }
+  function loadData(o, l) {
+  	
+    if (arguments.length !== 2) {
+      console.log('Usage: InfiniteList.loadData(offset, length)');
+    } else {
+      if (serviceEndpoint === 'local') {
+        console.log(l);
+        getRealData(o, l, displayFunction);
+      } else {
+        console.log(l);
+        getRealData(o, l, displayFunction, serviceEndpoint);
+      }
+    }
+  }
   
-//   function loadData_cocktail(o, l) {
-//    if (arguments.length !== 2) {
-//      console.log('Usage: InfiniteList.loadData_cocktail(offset, length)');
-//    } else {
-//      if (serviceEndpoint === 'local') {
-//        getRealData_cocktail(o, l, displayFunction);
-//      } else {
-//        getRealData_cocktail(o, l, displayFunction, serviceEndpoint);
-//      }
-//    }
-//  }
+   function loadData_cocktail(o, l) {
+    if (arguments.length !== 2) {
+      console.log('Usage: InfiniteList.loadData_cocktail(offset, length)');
+    } else {
+      if (serviceEndpoint === 'local') {
+        getRealData_cocktail(o, l, displayFunction);
+      } else {
+        getRealData_cocktail(o, l, displayFunction, serviceEndpoint);
+      }
+    }
+  }
   
-//  function loadData_liquor(o, l) {
-//    if (arguments.length !== 2) {
-//      console.log('Usage: InfiniteList.loadData_liquor(offset, length)');
-//    } else {
-//      if (serviceEndpoint === 'local') {
-//        getRealData_liquor(o, l, displayFunction);
-//      } else {
-//        getRealData_liquor(o, l, displayFunction, serviceEndpoint);
-//      }
-//    }
-//  }
+  function loadData_liquor(o, l) {
+    if (arguments.length !== 2) {
+      console.log('Usage: InfiniteList.loadData_liquor(offset, length)');
+    } else {
+      if (serviceEndpoint === 'local') {
+        getRealData_liquor(o, l, displayFunction);
+      } else {
+        getRealData_liquor(o, l, displayFunction, serviceEndpoint);
+      }
+    }
+  }
   
   function loadData_comment(o, l) {
     if (arguments.length !== 2) {
