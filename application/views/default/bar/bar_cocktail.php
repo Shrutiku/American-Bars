@@ -24,9 +24,13 @@
 		                       		<a class="btn btn-lg btn-primary marr_10" href="javascript:void(0)" onclick="setaction('chk[]','delete',   'frm_event');">Delete</a>
 		                       		
 	     						</div>
-	     						<div id="hs_del" style="display: none;">
+<!--	     						<div id="hs_del" style="display: none;">
 	     							<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-	     						</div>
+	     						</div>-->
+                                                    <div  id="hs_del">
+                                                            <!--<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>-->
+                                                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
+                                                    </div>
      						</div>
      					<div id="list_hide_m">
      						<?php			 
