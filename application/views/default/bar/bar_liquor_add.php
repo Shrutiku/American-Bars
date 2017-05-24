@@ -102,7 +102,7 @@ $(document).ready(function(){
         list_add();
 	 });
         
-        $('#form').validate(
+        /*$('#form').validate(
 		{
 		rules: {
 					'liquor_id[]': {
@@ -170,7 +170,7 @@ $(document).ready(function(){
 		   		 }
 		    });
 		  }
-		})
+		})*/
 		
 		
     function getData()

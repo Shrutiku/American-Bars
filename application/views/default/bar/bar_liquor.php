@@ -250,11 +250,11 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
 						if($('#event_id').val()=='')
 						{
-							$.growlUI('Your liquor add successfully .');
+							$.growlUI('Your liquor was added successfully .');
 						}
 						else
 						{
-							$.growlUI('Your liquor update successfully .');
+							$.growlUI('Your liquor list was updated successfully .');
 						}
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')

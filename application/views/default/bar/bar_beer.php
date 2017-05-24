@@ -361,11 +361,11 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
 						if($('#event_id').val()=='')
 						{
-							$.growlUI('Your beer add successfully .');
+							$.growlUI('Your beer was added successfully .');
 						}
 						else
 						{
-							$.growlUI('Your beer update successfully .');
+							$.growlUI('Your beer list was updated successfully .');
 						}
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')
