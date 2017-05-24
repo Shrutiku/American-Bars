@@ -144,7 +144,7 @@ B.show();
      			<div class="dashboard_detail">
      				<div class="result_search">
 			     		<div class='pull-left'><div class="result_search_text">Bar Owner Dashboard</div></div>
-			     		<div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>
+			     		<!--<div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>-->
 			     	<?php if($getbar['bar_type']=='half_mug'){?>
 			     		<div class="pull-right marr_10">
 		     				<!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
