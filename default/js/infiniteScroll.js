@@ -25,7 +25,7 @@ var InfiniteList = (function () {
 //  }
 
   /* real Http service */
-  function getRealData(offset, limit, callback, serviceEndpoint) {
+  function getRealData(offset, limit) {// , callback, serviceEndpoint) {
       if($('#beerval').val()==0 || offset==0)
     {
     var err = {};
@@ -53,7 +53,7 @@ var InfiniteList = (function () {
       'error' : function (data, status, error) {
         err.push(status);
         err.push(error);
-        callback(err, data);
+//        callback(err, data);
       }
     });
     }
