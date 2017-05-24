@@ -156,4 +156,4 @@
 </script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
-<script type="text/javascript">InfiniteList.loadData(0,15); InfiniteList.loadData_cocktail(0,15);InfiniteList.loadData_liquor(0,15);</script>
+<script type="text/javascript">InfiniteList.loadData(0,30); InfiniteList.loadData_cocktail(0,30);InfiniteList.loadData_liquor(0,30);</script>
