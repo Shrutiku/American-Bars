@@ -14,7 +14,7 @@
      							My Profile
      						</a>
      					</li>
-                                        <li class="<?php echo $this->uri->segment(2)=='dashboard' ? 'active':'';?>">
+                                        <li class="<?php echo $this->uri->segment(2)=='favoritebeer' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/drink_menu')?>">
      							<i class="strip cocktails"></i>
      							Drinks
@@ -231,7 +231,7 @@
      						</a>
      					</li>-->
                                         
-                                        <li class="<?php echo $this->uri->segment(2)=='updatebanner' ? 'active':'';?>">
+                                        <li class="<?php echo $this->uri->segment(2)=='settings' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/settings_menu')?>">
      							<i class="strip update_banner"></i>
      							Account Settings
