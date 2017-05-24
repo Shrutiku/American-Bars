@@ -131,7 +131,7 @@
     }
     #infinite-list-cocktail {
         height: 410px;
-        background-color: '#222018',
+        background: '#222018',
         margin-left: auto;
         margin-right: auto;
         overflow-x: hidden;
