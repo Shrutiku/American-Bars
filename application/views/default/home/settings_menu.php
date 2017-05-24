@@ -18,21 +18,7 @@
 
                 <div class="dashboard_detail">
                     <div class="result_search">
-                            <div class='pull-left'><div class="result_search_text">Bar Owner Dashboard</div></div>
-                            <div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>
-                    <?php // if($getbar['bar_type']=='half_mug'){?>
-                            <div class="pull-right marr_10">
-                                    <!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
-                                    <a class="review" name="" href="<?php // echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">Upgrade to Full Mug</a>
-                            </div>
-                    <?php // } ?>
-
-                    <?php // if(($getbar['bar_type']=='half_mug' || $getbar['bar_type']=='full_mug' && $getbar['is_managed']=='no') ){?>
-                            <div class="pull-right marr_10">
-                                <!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
-                                <a class="review" name="" href="<?php // echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/managed');?>">Upgrade to  Managed Account</a>
-                            </div>
-                   <?php // } ?>
+                            <div class='pull-left'><div class="result_search_text">Account Settings</div></div>
                         <div class="clear"></div>
                     </div>
                     <div class="dashboard_subblock">

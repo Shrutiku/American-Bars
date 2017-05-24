@@ -413,6 +413,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       var infiniteList = $('#infinite-list');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
         offset += limit;
+        limit += limit;
         loadData(offset+1, limit);
       }
     });
