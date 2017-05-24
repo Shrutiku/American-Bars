@@ -100,7 +100,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : lim,
       },
       'success' : function (data) {
       	if(data=='No')
