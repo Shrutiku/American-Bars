@@ -1552,6 +1552,13 @@ function initialize()
     overflow-x: hidden;
     overflow-y: scroll;
 }
+#infinite-list-liquor {
+    height: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 </style>	
 
 	

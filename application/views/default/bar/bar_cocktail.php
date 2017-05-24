@@ -281,11 +281,11 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
 						if($('#event_id').val()=='')
 						{
-							$.growlUI('Your cocktail add successfully .');
+							$.growlUI('Your cocktail was added successfully .');
 						}
 						else
 						{
-							$.growlUI('Your cocktail update successfully .');
+							$.growlUI('Your cocktail list was updated successfully .');
 						}
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')
