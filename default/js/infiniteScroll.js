@@ -34,7 +34,7 @@ var InfiniteList = (function () {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 10
+        'limit' : limit
       },
       'success' : function (data) {
       	
@@ -415,7 +415,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       var infiniteList = $('#infinite-list');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
         offset += limit;
-        //loadData(offset+1, limit);
+        loadData(offset+1, limit);
       }
     });
     
