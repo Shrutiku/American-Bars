@@ -2,27 +2,27 @@ var InfiniteList = (function () {
   var pub = {};
 
   var offset = 0;
-  var limit = 10; /* enough elements to activate the scrollbar*/
+  var limit = 6; /* enough elements to activate the scrollbar*/
   var serviceEndpoint = null;
   var displayFunction = null;
 
   /* simulate a webservice */
-  function getFakeData(offset, limit, callback) {
-    var data = [];
-    var i;
-    var id;
-    for (i = 0; i < limit; i++) {
-      id = offset + i;
-      data.push({
-        id: id,
-        name: "Name " + id,
-        description: "Description " + id
-      });
-    }
-    setTimeout(function () {
-      callback(null, data);
-    }, 1000); /* simulate 1s delay for the service call */
-  }
+//  function getFakeData(offset, limit, callback) {
+//    var data = [];
+//    var i;
+//    var id;
+//    for (i = 0; i < limit; i++) {
+//      id = offset + i;
+//      data.push({
+//        id: id,
+//        name: "Name " + id,
+//        description: "Description " + id
+//      });
+//    }
+//    setTimeout(function () {
+//      callback(null, data);
+//    }, 1000); /* simulate 1s delay for the service call */
+//  }
 
   /* real Http service */
   function getRealData(offset, limit, callback, serviceEndpoint) {
