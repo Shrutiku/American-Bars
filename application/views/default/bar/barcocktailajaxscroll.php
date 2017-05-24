@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </li>
-            <hr>
+            <!--<hr>-->
         <?php } ?>
 	         			
         <?php } else { ?>
