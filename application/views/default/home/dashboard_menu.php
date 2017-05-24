@@ -120,7 +120,7 @@
                                                 
                                             <?php } else { // halfmug disabled buttons ?>
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-                                                <a href="<?php echo site_url('bar/bar_special_hours')?>">
+                                                <a href="<?php echo site_url('home/registration_step3_upgrade')?>">
                                                         <i class="strip bar-special"></i>
                                                         Happy Hours
                                                 </a>
