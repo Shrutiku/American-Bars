@@ -14,7 +14,7 @@
      							My Profile
      						</a>
      					</li>
-                                        <li class="<?php echo $this->uri->segment(2)=='drinks' ? 'active':'';?>">
+                                        <li class="<?php echo $this->uri->segment(2)=='dashboard' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/drink_menu')?>">
      							<i class="strip cocktails"></i>
      							Drinks
