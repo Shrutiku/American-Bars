@@ -20,7 +20,7 @@
                     <div class="fourm_label"><?php  if(strlen($row->beer_type)>35){ echo substr($row->beer_type, 0,35).'...'; } else { echo $row->beer_type; } ?></div>
                         <div class="fourm_label"><?php  if(strlen($row->producer)>35){ echo substr($row->producer, 0,35).'...'; } else { echo $row->producer; } ?></div>
 						        
-                            <p class="fourm_label"><?php echo strlen($row->city_produced)>20 ? substr($row->city_produced,0,20):$row->city_produced; ?>, <?php echo  strlen($row->beer_state)>20 ? substr($row->beer_state,0,20):$row->beer_state; ?></p>
+                            <p class="fourm_label"><?php echo strlen($row->city_produced)>35 ? substr($row->city_produced,0,35):$row->city_produced; ?>, <?php echo  strlen($row->beer_state)>20 ? substr($row->beer_state,0,20):$row->beer_state; ?></p>
                             <div class="clearfix"></div>
                     </div>
                 </div>
