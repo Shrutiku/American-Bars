@@ -17,11 +17,16 @@
                     <h4 class="media-heading"><a href="<?php echo site_url('beer/detail/'.$row->beer_slug);?>" class="newsyellow">
                         <?php  if(strlen($row->beer_name)>35){ echo substr($row->beer_name, 0,35).'...'; } else { echo $row->beer_name; } ?>
                     </a></h4>
-                    <div class="fourm_label"><?php  if(strlen($row->beer_type)>35){ echo substr($row->beer_type, 0,35).'...'; } else { echo $row->beer_type; } ?></div>
-                        <div class="fourm_label"><?php  if(strlen($row->producer)>35){ echo substr($row->producer, 0,35).'...'; } else { echo $row->producer; } ?></div>
+<!--                    <div class="fourm_label"><?php //  if(strlen($row->beer_type)>35){ echo substr($row->beer_type, 0,35).'...'; } else { echo $row->beer_type; } ?></div>
+                        <div class="fourm_label"><?php //  if(strlen($row->producer)>35){ echo substr($row->producer, 0,35).'...'; } else { echo $row->producer; } ?></div>
 						        
-                            <p class="fourm_label"><?php echo strlen($row->city_produced)>35 ? substr($row->city_produced,0,35):$row->city_produced; ?>, <?php echo  strlen($row->beer_state)>20 ? substr($row->beer_state,0,20):$row->beer_state; ?></p>
-                            <div class="clearfix"></div>
+                            <p class="fourm_label"><?php // echo strlen($row->city_produced)>35 ? substr($row->city_produced,0,35):$row->city_produced; ?>, <?php // echo  strlen($row->beer_state)>20 ? substr($row->beer_state,0,20):$row->beer_state; ?></p>
+                            <div class="clearfix"></div>-->
+                        <div class="fourm_label"><?php  if(strlen($row->type)>35){ echo substr($row->type, 0,35).'...'; } else { echo $row->type; } ?></div>
+                            <div class="fourm_label"><?php  if(strlen($row->base_spirit)>35){ echo substr($row->base_spirit, 0,35).'...'; } else { echo $row->base_spirit; } ?></div>
+						        
+                                <p class="fourm_label"><?php echo strlen($row->strength)>35 ? substr($row->strength,0,35).'...':$row->strength; ?></p>
+                                <div class="clearfix"></div>
                     </div>
                 </div>
             </li>
