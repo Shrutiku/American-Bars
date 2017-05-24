@@ -131,7 +131,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 4
+        'limit' : limit
       },
       'success' : function (data) {
          $('#infinite-list-comment').append(data);
@@ -154,7 +154,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 4
+        'limit' : limit
       },
       'success' : function (data) {
       	if(data=='No')
@@ -187,7 +187,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 4
+        'limit' : limit
       },
       'success' : function (data) {
       	if(data=='No')
@@ -223,7 +223,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 4
+        'limit' : limit
       },
       'success' : function (data) {
       	if(data=='No')
@@ -256,7 +256,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 4
+        'limit' : limit
       },
       'success' : function (data) {
       		if(data=='No')
