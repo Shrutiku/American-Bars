@@ -2,7 +2,7 @@ var InfiniteList = (function () {
   var pub = {};
 
   var offset = 0;
-  var limit = 4; /* enough elements to activate the scrollbar*/
+  var limit = 10; /* enough elements to activate the scrollbar*/
   var serviceEndpoint = null;
   var displayFunction = null;
 
