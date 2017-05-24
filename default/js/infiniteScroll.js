@@ -302,6 +302,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
         console.log(l);
         getRealData(o, l, displayFunction);
       } else {
+        console.log(l);
         getRealData(o, l, displayFunction, serviceEndpoint);
       }
     }
