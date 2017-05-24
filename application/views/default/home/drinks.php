@@ -18,7 +18,7 @@
 
                 <div class="dashboard_detail">
                     <div class="result_search">
-                            <div class='pull-left'><div class="result_search_text">Drinks on Your Menu</div></div>
+                            <div class='pull-left'><div class="result_search_text"><i class="strip cocktails"></i>Drinks on Your Menu</div></div>
                         <div class="clear"></div>
                     </div>
                     <div class="fullmug_block" style="width: 100%; padding-left: 3%">
