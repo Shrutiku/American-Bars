@@ -18,7 +18,7 @@
 
                 <div class="dashboard_detail">
                     <div class="result_search">
-                            <div class='pull-left'><div class="result_search_text">Account Dashboard</div></div>
+                            <div class='pull-left'><div class="result_search_text">Account Settings</div></div>
                         <div class="clear"></div>
                     </div>
                     <div class="dashboard_subblock">
