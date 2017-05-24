@@ -20,6 +20,8 @@
      							Drinks
      						</a>
      					</li>
+                                        
+                                        
                                             <?php if ($getbarinfo->bar_type=='full_mug') { // fullmug dashboard menu ?>
                                             <li title="Add your bar's happy hours here." class="active">
                                                     <a href="<?php echo site_url('bar/bar_special_hours')?>">
