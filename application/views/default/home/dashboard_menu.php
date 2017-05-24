@@ -119,12 +119,18 @@
                                                 
                                                 
                                             <?php } else { // halfmug disabled buttons ?>
-                                            <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
+<!--                                            <li title="<?php // if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
+                                                <a href="<?php // echo site_url('home/registration_step3_upgrade')?>">
+                                                        <i class="strip bar-special"></i>
+                                                        Happy Hours
+                                                </a>
+                                            </li>-->
+                                            <?php if($getbarinfo->bar_type=='half_mug'){ ?>
                                                 <a href="<?php echo site_url('home/registration_step3_upgrade')?>">
                                                         <i class="strip bar-special"></i>
                                                         Happy Hours
                                                 </a>
-                                            </li>
+                                            <!--</li>-->
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='socialshare' || $this->uri->segment(2)=='twitterpost' || $this->uri->segment(2)=='facebookpost' || $this->uri->segment(2)=='instagrampost' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
                                                     <a href="<?php echo site_url('home/socialshare')?>">
                                                             <i class="strip social_share"></i>
