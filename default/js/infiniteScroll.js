@@ -293,20 +293,20 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
     }
   }
 
-  function loadData(o, l) {
-  	
-    if (arguments.length !== 2) {
-      console.log('Usage: InfiniteList.loadData(offset, length)');
-    } else {
-      if (serviceEndpoint === 'local') {
-        console.log(l);
-        getRealData(o, l, displayFunction);
-      } else {
-        console.log(l);
-        getRealData(o, l, displayFunction, serviceEndpoint);
-      }
-    }
-  }
+//  function loadData(o, l) {
+//  	
+//    if (arguments.length !== 2) {
+//      console.log('Usage: InfiniteList.loadData(offset, length)');
+//    } else {
+//      if (serviceEndpoint === 'local') {
+//        console.log(l);
+//        getRealData(o, l, displayFunction);
+//      } else {
+//        console.log(l);
+//        getRealData(o, l, displayFunction, serviceEndpoint);
+//      }
+//    }
+//  }
   
    function loadData_cocktail(o, l) {
     if (arguments.length !== 2) {
