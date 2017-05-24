@@ -69,7 +69,7 @@ $('.sorted_table').sortable({
      		<div class="margin-top-50 bg_brown">
      			<?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
      			<div class="dashboard_detail">
-     				<div class="result_search event"><div class="result_search_text"><i class="strip gallery"></i> Special Hours</div></div>
+     				<div class="result_search event"><div class="result_search_text"><i class="strip bar-special"></i> Special Hours</div></div>
 		     		<div class="dashboard_subblock">
 		     			<div>
 		     				
