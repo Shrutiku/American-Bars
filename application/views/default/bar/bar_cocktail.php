@@ -132,6 +132,10 @@
 								</tbody>
 							</table>
 							</div>
+                                                        <div  id="hs_del">
+                                                            <!--<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>-->
+                                                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
+                                                        </div>
 							<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
 					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
