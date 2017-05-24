@@ -14,12 +14,12 @@
                 </a>
                 <div class="media-body">
                     <h4 class="media-heading"><a href="<?php echo site_url('cocktail/detail/'.$row->cocktail_slug);?>" class="newsyellow">
-                        <?php  if(strlen($row->cocktail_name)>35){ echo substr($row->cocktail_name, 0,35).'...'; } else { echo $row->cocktail_name; } ?>
+                        <?php  if(strlen($row->cocktail_name)>70){ echo substr($row->cocktail_name, 0,70).'...'; } else { echo $row->cocktail_name; } ?>
                     </a></h4>
-                    <div class="fourm_label"><?php  if(strlen($row->type)>35){ echo substr($row->type, 0,35).'...'; } else { echo $row->type; } ?></div>
-                        <div class="fourm_label"><?php  if(strlen($row->base_spirit)>35){ echo substr($row->base_spirit, 0,35).'...'; } else { echo $row->base_spirit; } ?></div>
+                    <div class="fourm_label"><?php  if(strlen($row->type)>70){ echo substr($row->type, 0,70).'...'; } else { echo $row->type; } ?></div>
+                        <div class="fourm_label"><?php  if(strlen($row->base_spirit)>70){ echo substr($row->base_spirit, 0,70).'...'; } else { echo $row->base_spirit; } ?></div>
 
-                            <p class="fourm_label"><?php echo strlen($row->strength)>35 ? substr($row->strength,0,35).'...':$row->strength; ?></p>
+                            <p class="fourm_label"><?php echo strlen($row->strength)>70 ? substr($row->strength,0,70).'...':$row->strength; ?></p>
                             <div class="clearfix"></div>
                 </div>
             </div>
