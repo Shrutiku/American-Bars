@@ -102,7 +102,7 @@
           $('#infinite-list-cocktail').slimscroll({
           alwaysVisible: true,
           height: 410,
-          color: '#222018',
+          color: '#f19d12',
           opacity: .8
         });
         $('#infinite-list-liquor').slimscroll({

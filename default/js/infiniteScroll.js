@@ -2,7 +2,7 @@ var InfiniteList = (function () {
   var pub = {};
 
   var offset = 0;
-  var limit = 4; /* enough elements to activate the scrollbar*/
+  var limit = 6; /* enough elements to activate the scrollbar*/
   var serviceEndpoint = null;
   var displayFunction = null;
 
@@ -34,7 +34,7 @@ var InfiniteList = (function () {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 4
+        'limit' : limit
       },
       'success' : function (data) {
       	
@@ -67,7 +67,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 5
+        'limit' : limit
       },
       'success' : function (data) {
       		if(data=='No')
@@ -100,7 +100,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 5
+        'limit' : limit
       },
       'success' : function (data) {
       	if(data=='No')
