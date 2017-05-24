@@ -2,7 +2,7 @@ var InfiniteList = (function () {
   var pub = {};
 
   var offset = 0;
-  var limit = 6; /* enough elements to activate the scrollbar*/
+  var limit = 4; /* enough elements to activate the scrollbar*/
   var serviceEndpoint = null;
   var displayFunction = null;
 
@@ -34,7 +34,7 @@ var InfiniteList = (function () {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 10
       },
       'success' : function (data) {
       	
@@ -67,7 +67,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 5
       },
       'success' : function (data) {
       		if(data=='No')
@@ -100,7 +100,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 5
       },
       'success' : function (data) {
       	if(data=='No')
@@ -131,7 +131,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 4
       },
       'success' : function (data) {
          $('#infinite-list-comment').append(data);
@@ -154,7 +154,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 4
       },
       'success' : function (data) {
       	if(data=='No')
@@ -187,7 +187,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 4
       },
       'success' : function (data) {
       	if(data=='No')
@@ -223,7 +223,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 4
       },
       'success' : function (data) {
       	if(data=='No')
@@ -256,7 +256,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 4
       },
       'success' : function (data) {
       		if(data=='No')
