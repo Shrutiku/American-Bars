@@ -180,7 +180,7 @@ $('.sorted_table').sortable({
                                     <div class="col-sm-4" style="width: 15%" >
                                         <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                     </div>
-                                    <div class="col-sm-3 text-right"  style="width: 15%">	
+                                    <div class="col-sm-4 text-right"  style="width: 15%">	
                                         <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
 	                       			
                                     </div>	
