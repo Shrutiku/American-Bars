@@ -90,9 +90,9 @@ $('.sorted_table').sortable({
 														<div id="pi_<?php echo $im->bar_hour_id ?>">	
 															<input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
 															<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
+<!--	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Days : <span class="aestrick"> * </span></label>
-	        				 	</div>
+	        				 	</div>-->
 	        					        				 	
 <!--	                       		<div class="input_box upload_btn">
 	                       			<select required name="days[]" id="days<?php //echo $im->bar_hour_id; ?>" class="select_box">
