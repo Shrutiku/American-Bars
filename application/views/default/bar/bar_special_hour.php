@@ -120,14 +120,14 @@ $('.sorted_table').sortable({
 	                       		<!-- <div class="input_box upload_user">
 	                           		<img src="" id="img_here" alt="" class="img-responsive"/>
 	                       		</div> -->
-	                       			<div class="span3">
-												<?php if($i==0){ ?>
+<!--	                       			<div class="span3">
+												<?php // if($i==0){ ?>
 												<a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-												<?php }else{ ?>
-												<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php echo $im->bar_hour_id ?>','<?php echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
-												<?php } ?>
+												<?php // }else{ ?>
+												<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
+												<?php // } ?>
 												
-											</div>
+											</div>-->
 	                       		<!-- <div class="input_box pull-left">
 	                           		<button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
 	                       		</div> -->
