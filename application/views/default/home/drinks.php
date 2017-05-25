@@ -52,10 +52,10 @@
                                             <?php
 
 
-                                            if($result)
+                                            if($resultBeer)
                                             {
                                                 $i=1;
-                                                foreach($result as $event){								
+                                                foreach($resultBeer as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
@@ -111,10 +111,10 @@
                                             <?php
 
 
-                                            if($resultBeer)
+                                            if($result)
                                             {
                                                 $i=1;
-                                                foreach($resultBeer as $event){								
+                                                foreach($result as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
