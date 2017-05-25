@@ -162,7 +162,7 @@ $('.sorted_table').sortable({
 								
 	                       	<div class="padtb8">
                                     <div class="col-sm-1 text-right">
-                                        <label class="control-label">Beers:</label>
+                                        <label class="control-label" style="font-size: 16px;">Beers:</label>
                                     </div>
                                     <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
                                     <div class="col-sm-2" style="padding-left: 15px;">	
