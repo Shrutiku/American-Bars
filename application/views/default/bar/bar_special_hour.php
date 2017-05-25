@@ -162,7 +162,7 @@ $('.sorted_table').sortable({
                                                                                     <input type="checkbox" name="day" value="Sunday"> Sun
                                                                                 </form>
                                                                             </div>
-                                                                            <div class="col-sm-4 text-left">
+                                                                            <div class="col-sm-1 text-left">
                                                                                 <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                             </div>
                                                                             <div class="col-sm-4" style="width: 13%" >
@@ -174,7 +174,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-4" >
                                                                                 <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
-                                                                            <div class="col-sm-4" style="width: 7%">	
+                                                                            <div class="col-sm-1" style="width: 7%">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
