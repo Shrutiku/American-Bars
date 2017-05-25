@@ -19,159 +19,160 @@
         <div class="margin-top-50 bg_brown">
                 <?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
 
-                <div class="dashboard_detail">
-                    <div class="result_search">
-                            <div class='pull-left'><div class="result_search_text"><i class="strip cocktails"></i>Drinks on Your Menu</div></div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="dashboard_subblock">
-                        <div id="list_hide" class="content">	
-     						<?php			 
-					$attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-					echo form_open('bar/actionbeer',$attributes);?> 
-					<input type="hidden" name="action" id="action" />
-					    					<div class="table-responsive">
-     						<div id="responsecomment">
-     							<div class="pagination" id="at_ajax">
-	     				<?php echo $page_link;?>
-                                                        </div><div class="clearfix"></div>
-                            <table class="table">
-                                <thead>
-                                    <th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
-                                    <th>Beer Name</th>
-                                    <th>Type</th>
-                                    <th>Producer</th>
-                                    <th>Served As</th>
-                                    <th>Action</th>
-                                </thead>
-                                <tbody>
-                                <?php
+            <div class="dashboard_detail">
+                <div class="result_search">
+                        <div class='pull-left'><div class="result_search_text"><i class="strip cocktails"></i>Drinks on Your Menu</div></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="dashboard_subblock">
+                    <div id="list_hide" class="content">	
+                        <?php			 
+                        $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
+                        echo form_open('bar/actionbeer',$attributes);?> 
+                        <input type="hidden" name="action" id="action" />
+                        <div class="table-responsive">
+                            <div id="responsecomment">
+                                <div class="pagination" id="at_ajax">
+                                    <?php echo $page_link;?>
+                                </div>
+                                <div class="clearfix"></div>
+                                <table class="table">
+                                    <thead>
+                                        <th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
+                                        <th>Beer Name</th>
+                                        <th>Type</th>
+                                        <th>Producer</th>
+                                        <th>Served As</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                    <?php
 
 
-                                if($result)
-                                {
-                                    $i=1;
-                                    foreach($result as $event){								
-
-                                if ($i % 2 == 0)
+                                    if($result)
                                     {
-                                      $dark =  "dark";
-                                    }
-                                    else
-                                    {
-                                      $dark =  "light";
-                                    }?>	
-                                        <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-                                            <td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->beer_bar_id;?>">
-                                                    <input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->beer_bar_id;?>"></label></td>
-                                            <td><?php echo $event->beer_name;?></td>
-                                            <td><?php echo $event->beer_type;?></td>
-                                            <td><?php echo $event->producer;?></td>
-                                            <td>
-                                                    <label class="radio-checkbox label_check c_on" for="checkbox-tap<?php echo $event->beer_bar_id; ?>">
-                                                    <input <?php if($event->tap=='yes'){ ?>checked<?php } ?> onchange="ChangeState('<?php echo $event->beer_bar_id; ?>','tap')"  type="checkbox"  class="checkboxes" name="tap" id="checkbox-tap<?php echo $event->beer_bar_id; ?>" value="<?php echo $event->tap; ?>">Tap</label>
-                                                    <label class="radio-checkbox label_check c_on" for="checkbox-bottle<?php echo $event->beer_bar_id; ?>">
-                                                    <input <?php if($event->bottle=='yes'){?>checked<?php } ?> onchange="ChangeState1('<?php echo $event->beer_bar_id; ?>','bottle')" type="checkbox"  class="checkboxes" name="bottle" id="checkbox-bottle<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->bottle; ?>">Bottle</label>
-                                            </td>
-                                            <td>
-                                                <!-- <a href="javascript://" onclick="editbarevent('<?php echo $event->beer_id; ?>')"><i class="strip edit_table"></i></a> -->
-                                                <a href="javascript://" onclick="deletebeer('<?php echo $event->beer_bar_id; ?>')" ><i class="strip delete"></i></a>
-                                                <a onclick="morelink('<?php echo $event->beer_bar_id; ?>')"><i class="strip view"></i></a>
+                                        $i=1;
+                                        foreach($result as $event){								
 
-                                                <div class="modal fade" id="myModalnew_open_<?php echo $event->beer_bar_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                    <div class="padtb10">
-                                                        <div>
-                                                            <div class="result_box clearfix mar_top30bot20">
-                                                                <div class="login_block br_green_yellow">
-                                                                    <div class="result_search">
-                                                                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                                                    <i class="strip login_icon"></i><div class="result_search_text">Beer Description </div>
+                                    if ($i % 2 == 0)
+                                        {
+                                          $dark =  "dark";
+                                        }
+                                        else
+                                        {
+                                          $dark =  "light";
+                                        }?>	
+                                            <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
+                                                <td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->beer_bar_id;?>">
+                                                        <input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->beer_bar_id;?>"></label></td>
+                                                <td><?php echo $event->beer_name;?></td>
+                                                <td><?php echo $event->beer_type;?></td>
+                                                <td><?php echo $event->producer;?></td>
+                                                <td>
+                                                        <label class="radio-checkbox label_check c_on" for="checkbox-tap<?php echo $event->beer_bar_id; ?>">
+                                                        <input <?php if($event->tap=='yes'){ ?>checked<?php } ?> onchange="ChangeState('<?php echo $event->beer_bar_id; ?>','tap')"  type="checkbox"  class="checkboxes" name="tap" id="checkbox-tap<?php echo $event->beer_bar_id; ?>" value="<?php echo $event->tap; ?>">Tap</label>
+                                                        <label class="radio-checkbox label_check c_on" for="checkbox-bottle<?php echo $event->beer_bar_id; ?>">
+                                                        <input <?php if($event->bottle=='yes'){?>checked<?php } ?> onchange="ChangeState1('<?php echo $event->beer_bar_id; ?>','bottle')" type="checkbox"  class="checkboxes" name="bottle" id="checkbox-bottle<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->bottle; ?>">Bottle</label>
+                                                </td>
+                                                <td>
+                                                    <!-- <a href="javascript://" onclick="editbarevent('<?php echo $event->beer_id; ?>')"><i class="strip edit_table"></i></a> -->
+                                                    <a href="javascript://" onclick="deletebeer('<?php echo $event->beer_bar_id; ?>')" ><i class="strip delete"></i></a>
+                                                    <a onclick="morelink('<?php echo $event->beer_bar_id; ?>')"><i class="strip view"></i></a>
+
+                                                    <div class="modal fade" id="myModalnew_open_<?php echo $event->beer_bar_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="padtb10">
+                                                            <div>
+                                                                <div class="result_box clearfix mar_top30bot20">
+                                                                    <div class="login_block br_green_yellow">
+                                                                        <div class="result_search">
+                                                                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                                        <i class="strip login_icon"></i><div class="result_search_text">Beer Description </div>
+                                                                        </div>
+                                                                    <div class="pad20">
+                                                                            <label class="control-label" style="color: #fff;"><?php echo $event->beer_desc; ?></label>	
+                                                                    </div>		
                                                                     </div>
-                                                                <div class="pad20">
-                                                                        <label class="control-label" style="color: #fff;"><?php echo $event->beer_desc; ?></label>	
-                                                                </div>		
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
 
-                                                    </div>
-                                            </td>
-                                                <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
-                                        </tr>
-                                <?php $i++; } } else { ?>
-                                        <tr>
-                                                <td colspan="6">No beers found at your bar.</td>
-                                        </tr>	
+                                                        </div>
+                                                </td>
+                                                    <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
+                                            </tr>
+                                    <?php $i++; } } else { ?>
+                                            <tr>
+                                                    <td colspan="6">No beers found at your bar.</td>
+                                            </tr>	
 
-                                        <?php } ?>	
-                                </tbody>
-                            </table>
-                        </div>
+                                            <?php } ?>	
+                                    </tbody>
+                                </table>
+                            </div>
                             <input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
                             <input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
                             <input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
-                                </div>
-                                </form>
-                        </div>	
-                    
-                    
-                    
-                    
-                    
-                    <div class="fullmug_block" style="width: 100%; padding-left: 3%">
-                        <?php // if($getbar['bar_type']=='full_mug'){?>
-                        <?php // } ?>
-                        <div class="col-md-4 coctail-new col-sm-12 padb20">
-                            <h2  style="align: center;">Beers
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
-                            </h2>
-                                <div class="bar_bg">
-     					<!--<h1 class="box_title">Beers</h1>-->
-     					<ul class="bottom_box" id="infinite-list">
-     					
-	         		<div class="clear"></div></ul><div class="clear"></div>
-     				</div>
-     			</div>
-     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
-                            <h2  style="align: center;">Cocktails
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
-                            </h2>
-                                <div class="bar_bg">
-     					<!--<h1 class="box_title">Cocktails</h1>-->
-     					<ul class="bottom_box" id="infinite-list-cocktail">
-     					
-	         		<div class="clear"></div></ul><div class="clear"></div>
-     				</div>
-     			</div>     		
-     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
-                            <h2  style="align: center;">Liquors
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
-                            </h2>
-                                <div class="bar_bg">
-     					<!--<h1 class="box_title">Liquors</h1>-->
-     					<ul class="bottom_box" id="infinite-list-liquor">
-     					
-	         		<div class="clear"></div></ul><div class="clear"></div>
-     				</div>
-     			</div>	
+                        </div>
+                    </div>	
+
+
+
+
+
+                <div class="fullmug_block" style="width: 100%; padding-left: 3%">
+                    <?php // if($getbar['bar_type']=='full_mug'){?>
+                    <?php // } ?>
+                    <div class="col-md-4 coctail-new col-sm-12 padb20">
+                        <h2  style="align: center;">Beers
+                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
+                        </h2>
+                            <div class="bar_bg">
+                                    <!--<h1 class="box_title">Beers</h1>-->
+                                    <ul class="bottom_box" id="infinite-list">
+
+                            <div class="clear"></div></ul><div class="clear"></div>
+                            </div>
                     </div>
+                    <div class="col-md-4 coctail-newright col-sm-12 padb20">
+                        <h2  style="align: center;">Cocktails
+                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
+                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
+                        </h2>
+                            <div class="bar_bg">
+                                    <!--<h1 class="box_title">Cocktails</h1>-->
+                                    <ul class="bottom_box" id="infinite-list-cocktail">
+
+                            <div class="clear"></div></ul><div class="clear"></div>
+                            </div>
+                    </div>     		
+                    <div class="col-md-4 coctail-newright col-sm-12 padb20">
+                        <h2  style="align: center;">Liquors
+                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
+                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
+                        </h2>
+                            <div class="bar_bg">
+                                    <!--<h1 class="box_title">Liquors</h1>-->
+                                    <ul class="bottom_box" id="infinite-list-liquor">
+
+                            <div class="clear"></div></ul><div class="clear"></div>
+                            </div>
+                    </div>	
+                </div>
 <!--                                <div class="container">
-                                    <div class='pull-left' style="text-align: center;"><div class="result_search_text">What kind of drink would you like to add?</div></div>
-                                        <div class="margin-top-50 bg_brown" style="text-align: center;">
-                                            <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/choose_cocktail');?>">Cocktail</a>
-                                            <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/choose_beer');?>">Beer</a>
-                                            <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_liquor');?>">Liquor</a>
-                                        </div>
-                                </div>-->
+                                <div class='pull-left' style="text-align: center;"><div class="result_search_text">What kind of drink would you like to add?</div></div>
+                                    <div class="margin-top-50 bg_brown" style="text-align: center;">
+                                        <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/choose_cocktail');?>">Cocktail</a>
+                                        <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/choose_beer');?>">Beer</a>
+                                        <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_liquor');?>">Liquor</a>
+                                    </div>
+                            </div>-->
 
 
 
 
                 </div>
+            </div>
         </div>
     </div>
 </div>
