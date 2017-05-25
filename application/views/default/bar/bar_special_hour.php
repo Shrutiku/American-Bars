@@ -94,7 +94,7 @@ $('.sorted_table').sortable({
 	        				 		<label class="control-label">Days : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	        					        				 	
-	                       		<div class="input_box upload_btn">
+<!--	                       		<div class="input_box upload_btn">
 	                       			<select required name="days[]" id="days<?php echo $im->bar_hour_id; ?>" class="select_box">
 	                       				<option value="">-- Select Day-- </option>
 	                       				<option value="Monday" <?php echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
@@ -106,7 +106,16 @@ $('.sorted_table').sortable({
 	                       				<option value="Sunday" <?php echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
 	                       			</select>
 														
-	                       		</div>
+	                       		</div>-->
+                                        <form action="">
+                                            <input type="checkbox" name="day" value="Monday">Monday<br>
+                                            <input type="checkbox" name="day" value="Tuesday">Tuesday<br>
+                                            <input type="checkbox" name="day" value="Wednesday">Wednesday<br>
+                                            <input type="checkbox" name ="day" value="Thursday">Thursday<br>
+                                            <input type="checkbox" name="day" value="Friday">Friday<br>
+                                            <input type="checkbox" name="day" value="Saturday">Saturday<br>
+                                            <input type="checkbox" name="day" value="Sunday">Sunday<br>
+                                        </form>
 	                       		
 	                       		<!-- <div class="input_box upload_user">
 	                           		<img src="" id="img_here" alt="" class="img-responsive"/>
