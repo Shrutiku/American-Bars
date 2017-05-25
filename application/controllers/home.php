@@ -6653,7 +6653,9 @@ class Home extends SPACULLUS_Controller {
 //        
         $this->pagination->initialize($config);	
         $data['page_link'] = $this->pagination->create_links();
-        $data['result'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultBeer'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultCocktail'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultLiquor'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
 
 //        $data['offset'] = $offset;
 //        $data['limit'] = $limit;

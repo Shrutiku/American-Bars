@@ -111,18 +111,18 @@
                                             <?php
 
 
-                                            if($result)
+                                            if($resultBeer)
                                             {
                                                 $i=1;
-                                                foreach($result as $event){								
+                                                foreach($resultBeer as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
-                                                  $dark =  "light";
+                                                  $dark =  "dark";
                                                 }
                                                 else
                                                 {
-                                                  $dark =  "dark";
+                                                  $dark =  "light";
                                                 }?>	
                                                     <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
                                                         <td><?php echo $event->cocktail_name;?></td>
