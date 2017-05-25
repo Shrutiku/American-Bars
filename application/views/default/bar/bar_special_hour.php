@@ -161,11 +161,11 @@ $('.sorted_table').sortable({
 	                       <div id="innerbeer<?php echo $i; ?>" >	
 								
 	                       	<div class="padtb8">
-                                    <div class="col-sm-3 text-right">
+                                    <div class="col-sm-1 text-right">
                                         <label class="control-label">Beers: </label>
                                     </div>
                                     <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
-                                    <div class="col-sm-1" style="padding-left: 15px;">	
+                                    <div class="col-sm-3" style="padding-left: 15px;">	
                                         <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
                                     </div>
                                     <form action="">
