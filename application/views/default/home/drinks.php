@@ -169,7 +169,7 @@
                                             <?php
 
 
-                                            if($result)
+                                            if($resultLiquor)
                                             {
                                                 $i=1;
                                                 foreach($resultLiquor as $event){								
