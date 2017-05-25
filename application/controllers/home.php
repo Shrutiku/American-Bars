@@ -6637,7 +6637,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->set_master_template($theme . '/template.php');
 
         $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/drinks', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/drink_menu', $data, TRUE);
         $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
         $this->template->render();
     }
