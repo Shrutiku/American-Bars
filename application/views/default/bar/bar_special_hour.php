@@ -148,7 +148,7 @@ $('.sorted_table').sortable({
                                                                                 <label class="control-label" style="font-size: 16px;">Beers:</label>
                                                                             </div>
                                                                             <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
-                                                                            <div class="col-sm-2" style="padding-left: 15px">	
+                                                                            <div class="col-sm-1" style="padding-left: 15px">	
                                                                                 <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
                                                                             </div>
                                                                             <div class="col-sm-4">
@@ -165,13 +165,13 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-1 text-left">
                                                                                 <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                             </div>
-                                                                            <div class="col-sm-4" style="width: 13%" >
+                                                                            <div class="col-sm-1" style="width: 13%" >
                                                                                 <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                             </div>
-                                                                            <div class="col-sm-4 text-left"  style="width: 13%">	
+                                                                            <div class="col-sm-1 text-left"  style="width: 13%">	
                                                                                 <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                             </div>	
-                                                                            <div class="col-sm-4" >
+                                                                            <div class="col-sm-1" >
                                                                                 <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 7%">	
