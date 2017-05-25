@@ -78,7 +78,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       		return false;
       	}
       	else{
-      		 $('#infinite-list-cocktail').append(data);
+//      		 $('#infinite-list-cocktail').append(data);
       	}
         
       },
