@@ -6636,12 +6636,12 @@ class Home extends SPACULLUS_Controller {
 //        $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
 //        $data['beer_list'] = $this->bar_model->getBeer(@$data['getbar']['bar_id']);
 //        
-//        if($this->input->post('event_keyword')!='')
-//        {
-//                $keyword= $this->input->post('event_keyword');
-//                $limit= $this->input->post('limit');
-//                $offset= $this->input->post('offset');
-//        }
+        if($this->input->post('event_keyword')!='')
+        {
+                $keyword= $this->input->post('event_keyword');
+                $limit= $this->input->post('limit');
+                $offset= $this->input->post('offset');
+        }
 //        $config['base_url'] = base_url().'bar/bar_beer/'.$limit.'/'.$keyword;
 //	$config["total_rows"] = $this->bar_model->getBarBeercount(@$data['getbar']['bar_id'],$keyword);
 //	//echo $data["total_rows"];
