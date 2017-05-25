@@ -125,10 +125,10 @@ $('.sorted_table').sortable({
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                         
-                                                            <div class="padtb8">
-                    <!--                                        <div class="col-sm-3 text-right">
+<!--                                                            <div class="padtb8">
+                                                            <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
-                                                                </div>-->
+                                                                </div>
                                                                 <div class="col-sm-4" style="width: 23.5%" >
                                                                     <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                 </div>
@@ -136,8 +136,8 @@ $('.sorted_table').sortable({
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
                                                                 <div class="clearfix"></div>
-                                                                    <!-- <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> -->
-                                                            </div>
+                                                                     <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
+                                                            </div>-->
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
