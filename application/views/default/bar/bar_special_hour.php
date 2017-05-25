@@ -131,7 +131,7 @@ $('.sorted_table').sortable({
 	                       		<!-- <div class="input_box pull-left">
 	                           		<button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
 	                       		</div> -->
-	                       		<div class="clearfix"></div>
+	                       		<!--<div class="clearfix"></div>-->
 	                       		</div>
 	                       		
 	                       		
