@@ -172,7 +172,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-2" >
                                                                                 <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
-                                                                            <div class="col-sm-1" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                            <div class="col-sm-1" style="width: 7%">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
