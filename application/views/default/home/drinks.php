@@ -25,7 +25,7 @@
                     <div class="clear"></div>
                 </div>
                 <div class="dashboard_subblock">
-                    <div id="list_hide" class="content">	
+                    <!--<div id="list_hide" class="content">	
                         <?php			 
                         $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
                         echo form_open('bar/actionbeer',$attributes);?> 
@@ -113,64 +113,55 @@
                             <input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
                             <input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
                         </div>
-                    </div>	
+                    </div> -->	
 
 
 
 
 
-                <div class="fullmug_block" style="width: 100%; padding-left: 3%">
-                    <?php // if($getbar['bar_type']=='full_mug'){?>
-                    <?php // } ?>
-                    <div class="col-md-4 coctail-new col-sm-12 padb20">
-                        <h2  style="align: center;">Beers
-                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
-                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
-                        </h2>
-                            <div class="bar_bg">
-                                    <!--<h1 class="box_title">Beers</h1>-->
-                                    <ul class="bottom_box" id="infinite-list">
+                    <div class="fullmug_block" style="width: 100%; padding-left: 3%">
+                        <?php // if($getbar['bar_type']=='full_mug'){?>
+                        <?php // } ?>
+                        <div class="col-md-4 coctail-new col-sm-12 padb20">
+                            <h2  style="align: center;">Beers
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
+                            </h2>
+                                <div class="bar_bg">
+                                        <!--<h1 class="box_title">Beers</h1>-->
+                                        <ul class="bottom_box" id="infinite-list">
 
-                            <div class="clear"></div></ul><div class="clear"></div>
-                            </div>
+                                <div class="clear"></div></ul><div class="clear"></div>
+                                </div>
+                        </div>
+                        <div class="col-md-4 coctail-newright col-sm-12 padb20">
+                            <h2  style="align: center;">Cocktails
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
+                            </h2>
+                                <div class="bar_bg">
+                                        <!--<h1 class="box_title">Cocktails</h1>-->
+                                        <ul class="bottom_box" id="infinite-list-cocktail">
+
+                                <div class="clear"></div></ul><div class="clear"></div>
+                                </div>
+                        </div>     		
+                        <div class="col-md-4 coctail-newright col-sm-12 padb20">
+                            <h2  style="align: center;">Liquors
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
+                            </h2>
+                                <div class="bar_bg">
+                                        <!--<h1 class="box_title">Liquors</h1>-->
+                                        <ul class="bottom_box" id="infinite-list-liquor">
+
+                                <div class="clear"></div></ul><div class="clear"></div>
+                                </div>
+                        </div>	
                     </div>
-                    <div class="col-md-4 coctail-newright col-sm-12 padb20">
-                        <h2  style="align: center;">Cocktails
-                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
-                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
-                        </h2>
-                            <div class="bar_bg">
-                                    <!--<h1 class="box_title">Cocktails</h1>-->
-                                    <ul class="bottom_box" id="infinite-list-cocktail">
-
-                            <div class="clear"></div></ul><div class="clear"></div>
-                            </div>
-                    </div>     		
-                    <div class="col-md-4 coctail-newright col-sm-12 padb20">
-                        <h2  style="align: center;">Liquors
-                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
-                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
-                        </h2>
-                            <div class="bar_bg">
-                                    <!--<h1 class="box_title">Liquors</h1>-->
-                                    <ul class="bottom_box" id="infinite-list-liquor">
-
-                            <div class="clear"></div></ul><div class="clear"></div>
-                            </div>
-                    </div>	
-                </div>
-<!--                                <div class="container">
-                                <div class='pull-left' style="text-align: center;"><div class="result_search_text">What kind of drink would you like to add?</div></div>
-                                    <div class="margin-top-50 bg_brown" style="text-align: center;">
-                                        <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/bar/choose_cocktail');?>">Cocktail</a>
-                                        <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/choose_beer');?>">Beer</a>
-                                        <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/bar/bar_liquor');?>">Liquor</a>
-                                    </div>
-                            </div>-->
-
-
-
-
+                    
+                    
+                    
                 </div>
             </div>
         </div>
