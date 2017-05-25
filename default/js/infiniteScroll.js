@@ -1,7 +1,7 @@
 var InfiniteList = (function () {
   var pub = {};
 
-  var offset = 0;
+//  var offset = 0;
 //  var limit = 6; /* enough elements to activate the scrollbar*/
   var serviceEndpoint = null;
   var displayFunction = null;
@@ -33,7 +33,7 @@ var InfiniteList = (function () {
       'url' : base_url,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 5
       },
       'success' : function (data) {
@@ -66,8 +66,8 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_cocktail,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
-        'limit' : 5
+        'offset' : 0,
+        'limit' : 10
       },
       'success' : function (data) {
       		if(data=='No')
@@ -99,8 +99,8 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_liquor,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
-        'limit' : 5,
+        'offset' : 0,
+        'limit' : 10,
       },
       'success' : function (data) {
       	if(data=='No')
@@ -112,6 +112,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       	}
       	else{
       		 $('#infinite-list-liquor').append(data);
+                 return true;
       	}
       },
       'error' : function (data, status, error) {
@@ -130,7 +131,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_comment,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -153,7 +154,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_bar,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -186,7 +187,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_beer,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -222,7 +223,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_cocktail,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -255,7 +256,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_liquor,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
