@@ -144,8 +144,7 @@
         var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$getbar['bar_id']); ?>';
 	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$getbar['bar_id']); ?>';
 	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$getbar['bar_id']); ?>';
-        var lim = 100;
 </script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
-<script type="text/javascript">InfiniteList.loadData(0,2); InfiniteList.loadData_cocktail(0,2);InfiniteList.loadData_liquor(0,3);</script>
+<script type="text/javascript">InfiniteList.loadData(0,0); InfiniteList.loadData_cocktail(0,15);InfiniteList.loadData_liquor(0,15);</script>
