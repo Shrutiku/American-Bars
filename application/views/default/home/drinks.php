@@ -52,10 +52,10 @@
                                             <?php
 
 
-                                            if($result)
+                                            if($resultBeer)
                                             {
                                                 $i=1;
-                                                foreach($result as $event){								
+                                                foreach($resultBeer as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
@@ -111,10 +111,10 @@
                                             <?php
 
 
-                                            if($resultBeer)
+                                            if($resultCocktail)
                                             {
                                                 $i=1;
-                                                foreach($resultBeer as $event){								
+                                                foreach($resultCocktail as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
@@ -127,7 +127,6 @@
                                                     <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
                                                         <td><?php echo $event->cocktail_name;?></td>
                                                         <td><?php echo $event->type;?></td>
-                                                        <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
                                                     </tr>
                                             <?php $i++; } } else { ?>
                                                     <tr>
@@ -163,17 +162,17 @@
                                         <div class="clearfix"></div>
                                         <table class="table">
                                             <thead>
-                                                <th>Beer Name</th>
+                                                <th>Liquor Name</th>
                                                 <th>Type</th>
                                             </thead>
                                             <tbody>
                                             <?php
 
 
-                                            if($result)
+                                            if($resultLiquor)
                                             {
                                                 $i=1;
-                                                foreach($result as $event){								
+                                                foreach($resultLiquor as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
@@ -184,9 +183,8 @@
                                                   $dark =  "light";
                                                 }?>	
                                                     <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-                                                        <td><?php echo $event->beer_name;?></td>
-                                                        <td><?php echo $event->beer_type;?></td>
-                                                        <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
+                                                        <td><?php echo $event->liquor_title;?></td>
+                                                        <td><?php echo $event->type;?></td>
                                                     </tr>
                                             <?php $i++; } } else { ?>
                                                     <tr>
@@ -211,7 +209,7 @@
 
 
 
-                    <div class="fullmug_block" style="width: 100%; padding-left: 3%">
+<!--                    <div class="fullmug_block" style="width: 100%; padding-left: 3%">
                         <?php // if($getbar['bar_type']=='full_mug'){?>
                         <?php // } ?>
                         <div class="col-md-4 coctail-new col-sm-12 padb20">
@@ -220,7 +218,7 @@
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
                             </h2>
                                 <div class="bar_bg">
-                                        <!--<h1 class="box_title">Beers</h1>-->
+                                        <h1 class="box_title">Beers</h1>
                                         <ul class="bottom_box" id="infinite-list">
 
                                 <div class="clear"></div></ul><div class="clear"></div>
@@ -232,7 +230,7 @@
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
                             </h2>
                                 <div class="bar_bg">
-                                        <!--<h1 class="box_title">Cocktails</h1>-->
+                                        <h1 class="box_title">Cocktails</h1>
                                         <ul class="bottom_box" id="infinite-list-cocktail">
 
                                 <div class="clear"></div></ul><div class="clear"></div>
@@ -244,13 +242,13 @@
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
                             </h2>
                                 <div class="bar_bg">
-                                        <!--<h1 class="box_title">Liquors</h1>-->
+                                        <h1 class="box_title">Liquors</h1>
                                         <ul class="bottom_box" id="infinite-list-liquor">
 
                                 <div class="clear"></div></ul><div class="clear"></div>
                                 </div>
                         </div>	
-                    </div>
+                    </div>-->
                     
                     
                     
