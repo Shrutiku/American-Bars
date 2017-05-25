@@ -261,188 +261,188 @@
 </div>
 
 <script>
-    $(document).ready(function(){
-	
-	 $('.label_check, .label_radio').click(function(){
-    	        	
-            setupLabel();
-        });
-        setupLabel(); 	
-	  bindJquery();	
-	 var arrVal = new Array();
-	var t = $("[class=user_type]").val();
-	
-	 });
-        
-        $('#form').validate(
-		{
-		rules: {
-					'beer_id[]': {
-							required: true,
-					},
-					
-					
-						errorClass:'error fl_right'
-				},
-				
-		submitHandler: function(form){
-		$(form).ajaxSubmit({
-		type: "POST",
-		   		 dataType : 'json',
-				 beforeSubmit: function() 
-				 {
-		       		$('#dvLoading').fadeIn('slow');
-		    	 },
-		    	
-		    	uploadProgress: function ( event, position, total, percentComplete ) {	
-		        },
-		    
-		    	success : function ( json ) 
-		    	{
-					if(json.status == "fail" )
-					{
-						$("#cm-err-main1").show();
-						$("#cm-err-main1").html('Beer Name Field is required');
-			    		$('#dvLoading').fadeOut('slow');
-			    		scrollToDiv('cm-err-main1');
-				  		// setTimeout(function () 
-						// {
-						      // $("#cm-err-main1").fadeOut('slow');
-						// }, 3000);
-					return false;
-					}
-			
-					else
-					{
-						//alert("sdsa");
-						$("#cm-err-main1").hide();
-						$("#cm-err-main1").html("");
-						if($('#event_id').val()=='')
-						{
-							$.growlUI('Your beer was added successfully .');
-						}
-						else
-						{
-							$.growlUI('Your beer list was updated successfully .');
-						}
-						$(':input','#form')
-					 	.not(':button, :submit, :reset, :hidden')
-					 	.val('')
-					 	//.removeAttr('checked')
-					 	.removeAttr('selected');
-					 	 $("#list_hide").slideDown();
-					 	 $("#list_hide_m").slideDown();
-					     $("#hd_del").slideDown();
-					     $("#hs_del").slideUp();
-					     $('#list_show').slideUp();
-					     $("#at_ajax").remove();
-					     getData();
-					     
-					}
-					$('#dvLoading').fadeOut('slow');
-		   		 }
-		    });
-		  }
-		});
-                
-                
-    function getData()
-	{
-	//var keyword=($('#keyword').val()!='')?$('#keyword').val().split(' ').join('-'):'1V1';
-	var limit = $('#limit').val();
-    var keyword = $("#event_keyword").val();
-    if(keyword=='')
-    {
-    	var keyword = '1V1';
-    }
-	var offset = $('#offset').val();
-	var redirect_page=$('#redirect_page').val();
-	var url='<?php echo site_url('bar/') ?>/'+redirect_page+'/'+limit+'/'+keyword+'/'+offset;
-	
-	
-	$.ajax({
-			url : url,
-			// beforeSend : function() {
-				// blockUI('.portlet-body');
-			// },
-			  beforeSend : function(){
-			      
-			      $('#dvLoading').fadeIn('slow');
-			   },
-			   complete: function(){
-			   
-			     $('#dvLoading').fadeOut('slow');
-			     
-			   },
-			success : function(response) {
-				// alert(response);
-				$('.content').html('');
-				$('.content').html(response);
-				setupLabel();
-				bindJquery();
-				
-				
-				//bindJquery();
-			},
-			// complete : function() {
-				// unblockUI('.portlet-body');
-			// },
-	});
-	
-	}
-        
-        function bindJquery()
-	{
-		
-		
-		jQuery('.group-checkable').change(function () {
-			
-	                if ($('.label_check input').length) {
-			            $('.label_check').each(function(){ 
-			                $(this).removeClass('c_on');
-			                            $('.checkboxes').removeAttr('Checked'); 
-			            });
-			            $('.label_check input:checked').each(function(){ 
-			            	
-			               // $(this).parent('label').addClass('c_on');
-			                $( ".radio-checkbox" ).addClass( "c_on" ); 
-			                            $('.checkboxes').attr('Checked','Checked'); 
-			                  //  $('#states').find('span').addClass('checked');        
-			            });                
-			        };
-	            });
-	
-	}
-
- function setupLabel() {
-        if ($('.label_check input').length) {
-            $('.label_check').each(function(){ 
-                $(this).removeClass('c_on');
-            });
-            $('.label_check input:checked').each(function(){ 
-                $(this).parent('label').addClass('c_on');
-            });                
-        };
-        if ($('.label_radio input').length) {
-            $('.label_radio').each(function(){ 
-                $(this).removeClass('r_on');
-            });
-            $('.label_radio input:checked').each(function(){ 
-                $(this).parent('label').addClass('r_on');
-            });
-        };
-    };
-    var base_url = "<?php echo base_url();?>";
-    $('#tokenize').tokenize({
-      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
-         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
-    });
-</script>
+//    $(document).ready(function(){
+//	
+//	 $('.label_check, .label_radio').click(function(){
+//    	        	
+//            setupLabel();
+//        });
+//        setupLabel(); 	
+//	  bindJquery();	
+//	 var arrVal = new Array();
+//	var t = $("[class=user_type]").val();
+//	
+//	 });
+//        
+//        $('#form').validate(
+//		{
+//		rules: {
+//					'beer_id[]': {
+//							required: true,
+//					},
+//					
+//					
+//						errorClass:'error fl_right'
+//				},
+//				
+//		submitHandler: function(form){
+//		$(form).ajaxSubmit({
+//		type: "POST",
+//		   		 dataType : 'json',
+//				 beforeSubmit: function() 
+//				 {
+//		       		$('#dvLoading').fadeIn('slow');
+//		    	 },
+//		    	
+//		    	uploadProgress: function ( event, position, total, percentComplete ) {	
+//		        },
+//		    
+//		    	success : function ( json ) 
+//		    	{
+//					if(json.status == "fail" )
+//					{
+//						$("#cm-err-main1").show();
+//						$("#cm-err-main1").html('Beer Name Field is required');
+//			    		$('#dvLoading').fadeOut('slow');
+//			    		scrollToDiv('cm-err-main1');
+//				  		// setTimeout(function () 
+//						// {
+//						      // $("#cm-err-main1").fadeOut('slow');
+//						// }, 3000);
+//					return false;
+//					}
+//			
+//					else
+//					{
+//						//alert("sdsa");
+//						$("#cm-err-main1").hide();
+//						$("#cm-err-main1").html("");
+//						if($('#event_id').val()=='')
+//						{
+//							$.growlUI('Your beer was added successfully .');
+//						}
+//						else
+//						{
+//							$.growlUI('Your beer list was updated successfully .');
+//						}
+//						$(':input','#form')
+//					 	.not(':button, :submit, :reset, :hidden')
+//					 	.val('')
+//					 	//.removeAttr('checked')
+//					 	.removeAttr('selected');
+//					 	 $("#list_hide").slideDown();
+//					 	 $("#list_hide_m").slideDown();
+//					     $("#hd_del").slideDown();
+//					     $("#hs_del").slideUp();
+//					     $('#list_show').slideUp();
+//					     $("#at_ajax").remove();
+//					     getData();
+//					     
+//					}
+//					$('#dvLoading').fadeOut('slow');
+//		   		 }
+//		    });
+//		  }
+//		});
+//                
+//                
+//    function getData()
+//	{
+//	//var keyword=($('#keyword').val()!='')?$('#keyword').val().split(' ').join('-'):'1V1';
+//	var limit = $('#limit').val();
+//    var keyword = $("#event_keyword").val();
+//    if(keyword=='')
+//    {
+//    	var keyword = '1V1';
+//    }
+//	var offset = $('#offset').val();
+//	var redirect_page=$('#redirect_page').val();
+//	var url='<?php //echo site_url('bar/') ?>/'+redirect_page+'/'+limit+'/'+keyword+'/'+offset;
+//	
+//	
+//	$.ajax({
+//			url : url,
+//			// beforeSend : function() {
+//				// blockUI('.portlet-body');
+//			// },
+//			  beforeSend : function(){
+//			      
+//			      $('#dvLoading').fadeIn('slow');
+//			   },
+//			   complete: function(){
+//			   
+//			     $('#dvLoading').fadeOut('slow');
+//			     
+//			   },
+//			success : function(response) {
+//				// alert(response);
+//				$('.content').html('');
+//				$('.content').html(response);
+//				setupLabel();
+//				bindJquery();
+//				
+//				
+//				//bindJquery();
+//			},
+//			// complete : function() {
+//				// unblockUI('.portlet-body');
+//			// },
+//	});
+//	
+//	}
+//        
+//        function bindJquery()
+//	{
+//		
+//		
+//		jQuery('.group-checkable').change(function () {
+//			
+//	                if ($('.label_check input').length) {
+//			            $('.label_check').each(function(){ 
+//			                $(this).removeClass('c_on');
+//			                            $('.checkboxes').removeAttr('Checked'); 
+//			            });
+//			            $('.label_check input:checked').each(function(){ 
+//			            	
+//			               // $(this).parent('label').addClass('c_on');
+//			                $( ".radio-checkbox" ).addClass( "c_on" ); 
+//			                            $('.checkboxes').attr('Checked','Checked'); 
+//			                  //  $('#states').find('span').addClass('checked');        
+//			            });                
+//			        };
+//	            });
+//	
+//	}
+//
+// function setupLabel() {
+//        if ($('.label_check input').length) {
+//            $('.label_check').each(function(){ 
+//                $(this).removeClass('c_on');
+//            });
+//            $('.label_check input:checked').each(function(){ 
+//                $(this).parent('label').addClass('c_on');
+//            });                
+//        };
+//        if ($('.label_radio input').length) {
+//            $('.label_radio').each(function(){ 
+//                $(this).removeClass('r_on');
+//            });
+//            $('.label_radio input:checked').each(function(){ 
+//                $(this).parent('label').addClass('r_on');
+//            });
+//        };
+//    };
+//    var base_url = "<?php echo base_url();?>";
+//    $('#tokenize').tokenize({
+//      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
+//         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
+//    });
+//</script>
                      
 <link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
 <script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
 <script src="<?php echo base_url().getThemeName(); ?>/js/prettify.js"></script>
-<script type="text/javascript">
+<script type="text/javascript">//
     $(function(){
         $('#infinite-list').slimscroll({
           alwaysVisible: true,
