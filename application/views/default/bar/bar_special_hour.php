@@ -165,7 +165,7 @@ $('.sorted_table').sortable({
                                         <label class="control-label">Beers: </label>
                                     </div>
                                     <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
-                                    <div class="col-sm-1" style="padding-left: 15px;">	
+                                    <div class="col-sm-2" style="padding-left: 15px;">	
                                         <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
                                     </div>
                                     <form action="">
@@ -177,7 +177,7 @@ $('.sorted_table').sortable({
                                         <input type="checkbox" name="day" value="Saturday"> Sat
                                         <input type="checkbox" name="day" value="Sunday"> Sun
                                     </form>
-                                    <div class="col-sm-1" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
                                         <label class="control-label" style="font-size: 16px;">Price: $ </label>
                                     </div>
                                     <div class="col-sm-1" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
