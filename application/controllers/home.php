@@ -6638,9 +6638,9 @@ class Home extends SPACULLUS_Controller {
 //        
 //        if($this->input->post('event_keyword')!='')
 //        {
-//                $keyword= $this->input->post('event_keyword');
-//                $limit= $this->input->post('limit');
-//                $offset= $this->input->post('offset');
+                $keyword= $this->input->post('event_keyword');
+                $limit= $this->input->post('limit');
+                $offset= $this->input->post('offset');
 //        }
 //        
 //        $config['base_url'] = base_url().'bar/bar_beer/'.$limit.'/'.$keyword;
