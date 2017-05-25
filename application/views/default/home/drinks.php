@@ -160,6 +160,53 @@
         </div>
     </div>
 </div>
+
+<script>
+    function getData()
+	{
+	//var keyword=($('#keyword').val()!='')?$('#keyword').val().split(' ').join('-'):'1V1';
+	var limit = $('#limit').val();
+    var keyword = $("#event_keyword").val();
+    if(keyword=='')
+    {
+    	var keyword = '1V1';
+    }
+	var offset = $('#offset').val();
+	var redirect_page=$('#redirect_page').val();
+	var url='<?php echo site_url('bar/') ?>/'+redirect_page+'/'+limit+'/'+keyword+'/'+offset;
+	
+	
+	$.ajax({
+			url : url,
+			// beforeSend : function() {
+				// blockUI('.portlet-body');
+			// },
+			  beforeSend : function(){
+			      
+			      $('#dvLoading').fadeIn('slow');
+			   },
+			   complete: function(){
+			   
+			     $('#dvLoading').fadeOut('slow');
+			     
+			   },
+			success : function(response) {
+				// alert(response);
+				$('.content').html('');
+				$('.content').html(response);
+				setupLabel();
+				bindJquery();
+				
+				
+				//bindJquery();
+			},
+			// complete : function() {
+				// unblockUI('.portlet-body');
+			// },
+	});
+	
+	}
+</script>
                      
 <link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
 <script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
