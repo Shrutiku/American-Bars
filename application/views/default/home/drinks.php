@@ -109,9 +109,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
+<!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
                                 <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
-                                <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />
+                                <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
                             </div>
                         </form>
                     </div>	
@@ -341,6 +341,11 @@
             });
         };
     };
+    var base_url = "<?php echo base_url();?>";
+    $('#tokenize').tokenize({
+      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
+         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
+    });
 </script>
                      
 <link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
@@ -367,11 +372,7 @@
           opacity: .8
         });
       });
-    var base_url = "<?php echo base_url();?>";
-    $('#tokenize').tokenize({
-      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
-         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
-    });
+    
 </script>
 <!--------------End Scroll ------------------->
 <style>
