@@ -144,14 +144,18 @@ $('.sorted_table').sortable({
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
-                                                                            <div class="col-sm-1 text-left">
+                                                                            <div class="col-sm-3 text-left">
                                                                                 <label class="control-label" style="font-size: 16px;">Beers:</label>
+                                                                                <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
+                                                                                <div class="col-sm-3" style="padding-left: 15px">	
+                                                                                    <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
+                                                                                </div>
                                                                             </div>
-                                                                            <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
-                                                                            <div class="col-sm-2" style="padding-left: 15px">	
+<!--                                                                            <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
+                                                                            <div class="col-sm-3" style="padding-left: 15px">	
                                                                                 <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
-                                                                            </div>
-                                                                            <div class="col-sm-4">
+                                                                            </div>-->
+                                                                            <div class="col-sm-3">
                                                                                 <form action="">
                                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
