@@ -2077,7 +2077,7 @@ function getallliquorbybar_new()
             $this->template->write ('metaKeyword', $metaKeyword, TRUE);
                 
             $this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
-            $this->template->write_view ('content_center', $theme.'/home/drink_menu', $data, TRUE);
+            $this->template->write_view ('content_center', $theme.'/bar/bar_add_drink', $data, TRUE);
             $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
             $this->template->render ();
         }
