@@ -131,7 +131,7 @@ $('.sorted_table').sortable({
 	                       		<!-- <div class="input_box pull-left">
 	                           		<button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
 	                       		</div> -->
-	                       		<!--<div class="clearfix"></div>-->
+	                       		<div class="clearfix"></div>
 	                       		</div>
 	                       		
 	                       		
@@ -161,27 +161,34 @@ $('.sorted_table').sortable({
 	                       <div id="innerbeer<?php echo $i; ?>" >	
 								
 	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Beers : </label>
-	        				 	</div>
-	                       		<input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
-	                       		</div>
-	                       		
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       		
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        				 	</div>
+                                    <div class="col-sm-3 text-right">
+                                        <label class="control-label">Beers: </label>
+                                    </div>
+                                    <form action="">
+                                        <input type="checkbox" name="day" value="Monday"> M
+                                        <input type="checkbox" name="day" value="Tuesday"> Tu
+                                        <input type="checkbox" name="day" value="Wednesday"> W
+                                        <input type="checkbox" name ="day" value="Thursday"> Th
+                                        <input type="checkbox" name="day" value="Friday"> F
+                                        <input type="checkbox" name="day" value="Saturday"> Sat
+                                        <input type="checkbox" name="day" value="Sunday"> Sun
+                                    </form>
+                                    <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
+                                    <div class="col-sm-3" style="padding-left: 15px;">	
+                                        <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
+                                    </div>
+
+                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                        <label class="control-label" style="font-size: 16px;">Price: $ </label>
+                                    </div>
+                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                        <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
+                                    </div>	
+                                    <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+
+                                    <div class="clearfix"></div>
+                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
+                                </div>
 	        				 </div>	
 	        				 	
 	        				 	</div>
