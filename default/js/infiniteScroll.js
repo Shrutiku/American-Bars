@@ -409,7 +409,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
   }
 
   /* when scrolling to the bottom start loading the new stuff */
-  $(document).ready(function () {
+  /*$(document).ready(function () {
 
 //    $("#infinite-list").scroll(function () {
 //      var infiniteList = $('#infinite-list');
@@ -475,7 +475,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       }
     });
   });
-
+*/
   /* define public methods for the module */
   pub.setDisplay = setDisplay;
   pub.setService = setService;
