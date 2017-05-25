@@ -78,7 +78,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       		return false;
       	}
       	else{
-//      		 $('#infinite-list-cocktail').append(data);
+      		 $('#infinite-list-cocktail').append(data);
       	}
         
       },
@@ -312,6 +312,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       console.log('Usage: InfiniteList.loadData_cocktail(offset, length)');
     } else {
       if (serviceEndpoint === 'local') {
+          console.log('FUCK)');
         getRealData_cocktail(o, l, displayFunction);
       } else {
         getRealData_cocktail(o, l, displayFunction, serviceEndpoint);
