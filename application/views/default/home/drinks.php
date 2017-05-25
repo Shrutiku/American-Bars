@@ -111,10 +111,10 @@
                                             <?php
 
 
-                                            if($result)
+                                            if($resultCocktail)
                                             {
                                                 $i=1;
-                                                foreach($result as $event){								
+                                                foreach($resultCocktail as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
@@ -127,7 +127,6 @@
                                                     <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
                                                         <td><?php echo $event->cocktail_name;?></td>
                                                         <td><?php echo $event->type;?></td>
-                                                        <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
                                                     </tr>
                                             <?php $i++; } } else { ?>
                                                     <tr>
@@ -163,7 +162,7 @@
                                         <div class="clearfix"></div>
                                         <table class="table">
                                             <thead>
-                                                <th>Beer Name</th>
+                                                <th>Liquor Name</th>
                                                 <th>Type</th>
                                             </thead>
                                             <tbody>
@@ -173,7 +172,7 @@
                                             if($result)
                                             {
                                                 $i=1;
-                                                foreach($result as $event){								
+                                                foreach($resultLiquor as $event){								
 
                                             if ($i % 2 == 0)
                                                 {
@@ -184,9 +183,8 @@
                                                   $dark =  "light";
                                                 }?>	
                                                     <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-                                                        <td><?php echo $event->beer_name;?></td>
-                                                        <td><?php echo $event->beer_type;?></td>
-                                                        <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
+                                                        <td><?php echo $event->liquor_title;?></td>
+                                                        <td><?php echo $event->type;?></td>
                                                     </tr>
                                             <?php $i++; } } else { ?>
                                                     <tr>
