@@ -6634,7 +6634,6 @@ class Home extends SPACULLUS_Controller {
         $data['site_setting'] = site_setting();
         
         $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
-//        $data['beer_list'] = $this->bar_model->getBeer(@$data['getbar']['bar_id']);
         
 //        if($this->input->post('event_keyword')!='')
 //        {
