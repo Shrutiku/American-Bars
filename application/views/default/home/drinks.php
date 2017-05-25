@@ -26,7 +26,9 @@
                 </div>
                 <div class="dashboard_subblock">
                     <div id="list_hide" class="content">	
-                        <?php			 
+                        
+                        
+                        <?php			// BEGIN SMALL BEER TABLE 
                         $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
                         echo form_open('bar/actionbeer',$attributes);?> 
                         <input type="hidden" name="action" id="action" />
@@ -38,12 +40,12 @@
                                     <div class="clearfix"></div>
                                     <table class="table">
                                         <thead>
-                                            <th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
+                                            <!--<th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>-->
                                             <th>Beer Name</th>
                                             <th>Type</th>
-                                            <th>Producer</th>
+<!--                                            <th>Producer</th>
                                             <th>Served As</th>
-                                            <th>Action</th>
+                                            <th>Action</th>-->
                                         </thead>
                                         <tbody>
                                         <?php
@@ -63,11 +65,11 @@
                                               $dark =  "light";
                                             }?>	
                                                 <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-                                                    <td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->beer_bar_id;?>">
-                                                            <input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->beer_bar_id;?>"></label></td>
+<!--                                                    <td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->beer_bar_id;?>">
+                                                            <input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->beer_bar_id;?>"></label></td>-->
                                                     <td><?php echo $event->beer_name;?></td>
                                                     <td><?php echo $event->beer_type;?></td>
-                                                    <td><?php echo $event->producer;?></td>
+<!--                                                    <td><?php echo $event->producer;?></td>
                                                     <td>
                                                             <label class="radio-checkbox label_check c_on" for="checkbox-tap<?php echo $event->beer_bar_id; ?>">
                                                             <input <?php if($event->tap=='yes'){ ?>checked<?php } ?> onchange="ChangeState('<?php echo $event->beer_bar_id; ?>','tap')"  type="checkbox"  class="checkboxes" name="tap" id="checkbox-tap<?php echo $event->beer_bar_id; ?>" value="<?php echo $event->tap; ?>">Tap</label>
@@ -75,7 +77,7 @@
                                                             <input <?php if($event->bottle=='yes'){?>checked<?php } ?> onchange="ChangeState1('<?php echo $event->beer_bar_id; ?>','bottle')" type="checkbox"  class="checkboxes" name="bottle" id="checkbox-bottle<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->bottle; ?>">Bottle</label>
                                                     </td>
                                                     <td>
-                                                        <!-- <a href="javascript://" onclick="editbarevent('<?php echo $event->beer_id; ?>')"><i class="strip edit_table"></i></a> -->
+                                                         <a href="javascript://" onclick="editbarevent('<?php echo $event->beer_id; ?>')"><i class="strip edit_table"></i></a> 
                                                         <a href="javascript://" onclick="deletebeer('<?php echo $event->beer_bar_id; ?>')" ><i class="strip delete"></i></a>
                                                         <a onclick="morelink('<?php echo $event->beer_bar_id; ?>')"><i class="strip view"></i></a>
 
@@ -97,7 +99,7 @@
                                                             </div>
 
                                                             </div>
-                                                    </td>
+                                                    </td>-->
                                                         <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
                                                 </tr>
                                         <?php $i++; } } else { ?>
