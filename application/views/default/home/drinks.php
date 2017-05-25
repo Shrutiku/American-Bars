@@ -40,7 +40,7 @@
                                 <div class="table-responsive">
                                     <div id="responsecomment">
                                         <div class="pagination" id="at_ajax">
-                                            <?php // echo $page_link;?>
+                                            <?php echo $page_link;?>
                                         </div>
                                         <div class="clearfix"></div>
                                         <table class="table">
@@ -99,7 +99,7 @@
                                 <div class="table-responsive">
                                     <div id="responsecomment">
                                         <div class="pagination" id="at_ajax">
-                                            <?php // echo $page_link;?>
+                                            <?php echo $page_link;?>
                                         </div>
                                         <div class="clearfix"></div>
                                         <table class="table">
@@ -157,7 +157,7 @@
                                 <div class="table-responsive">
                                     <div id="responsecomment">
                                         <div class="pagination" id="at_ajax">
-                                            <?php // echo $page_link;?>
+                                            <?php echo $page_link;?>
                                         </div>
                                         <div class="clearfix"></div>
                                         <table class="table">
