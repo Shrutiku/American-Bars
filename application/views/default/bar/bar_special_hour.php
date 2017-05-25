@@ -95,15 +95,15 @@ $('.sorted_table').sortable({
 	        				 	</div>
 	        					        				 	
 <!--	                       		<div class="input_box upload_btn">
-	                       			<select required name="days[]" id="days<?php echo $im->bar_hour_id; ?>" class="select_box">
+	                       			<select required name="days[]" id="days<?php //echo $im->bar_hour_id; ?>" class="select_box">
 	                       				<option value="">-- Select Day-- </option>
-	                       				<option value="Monday" <?php echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
-	                       				<option value="Tuesday" <?php echo $im->days=="Tuesday" ? 'selected':'';?>>Tuesday</option>
-	                       				<option value="Wednesday" <?php echo $im->days=="Wednesday" ? 'selected':'';?>>Wednesday</option>
-	                       				<option value="Thursday" <?php echo $im->days=="Thursday" ? 'selected':'';?>>Thursday</option>
-	                       				<option value="Friday" <?php echo $im->days=="Friday" ? 'selected':'';?>>Friday</option>
-	                       				<option value="Saturday" <?php echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
-	                       				<option value="Sunday" <?php echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
+	                       				<option value="Monday" <?php // echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
+	                       				<option value="Tuesday" <?php // echo $im->days=="Tuesday" ? 'selected':'';?>>Tuesday</option>
+	                       				<option value="Wednesday" <?php // echo $im->days=="Wednesday" ? 'selected':'';?>>Wednesday</option>
+	                       				<option value="Thursday" <?php // echo $im->days=="Thursday" ? 'selected':'';?>>Thursday</option>
+	                       				<option value="Friday" <?php // echo $im->days=="Friday" ? 'selected':'';?>>Friday</option>
+	                       				<option value="Saturday" <?php // echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
+	                       				<option value="Sunday" <?php // echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
 	                       			</select>
 														
 	                       		</div>-->
