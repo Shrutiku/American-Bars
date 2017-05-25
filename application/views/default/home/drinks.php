@@ -259,6 +259,33 @@
 </div>
 
 <script>
+    
+    	 $(".pagination li a").click(function() {
+		  //alert("Handler for .click() called.");
+		  var res = $.ajax(
+	        {						
+			   type: 'POST',
+			   url: $(this).attr("href"),
+			   dataType: 'post', 
+			   cache: false,
+			   async: false,
+			   beforeSend : function(){
+			      $('#dvLoading').fadeIn('slow');
+			   },
+			   complete: function(){
+			   
+			     $('#dvLoading').fadeOut('slow');
+			     
+			    }
+			}).responseText;
+			
+			$("#list_hide").html(res);
+			bindJquery();
+			setupLabel();	
+			
+			return false;
+			
+		});
 //    $(document).ready(function(){
 //	
 //	 $('.label_check, .label_radio').click(function(){
