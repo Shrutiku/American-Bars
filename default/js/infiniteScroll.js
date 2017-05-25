@@ -34,7 +34,7 @@ var InfiniteList = (function () {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : limit
+        'limit' : 5
       },
       'success' : function (data) {
       	
@@ -100,7 +100,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : lim,
+        'limit' : 5,
       },
       'success' : function (data) {
       	if(data=='No')
