@@ -10,6 +10,9 @@
 <!--<div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
     <?php //echo $this->load->view(getThemeName().'/bar/cocktail_suggest');?>
 </div>	-->
+<input type="hidden" name="beerval" id="beerval" value="0" />
+<input type="hidden" name="cocktailval" id="cocktailval" value="0" />
+<input type="hidden" name="liquorval" id="liquorval" value="0" />
 <?php $theme_url = $urls= base_url().getThemeName();?>
 <div class="wrapper row6 padtb10 has-js">
     <div class="container">
@@ -144,8 +147,7 @@
         var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$getbar['bar_id']); ?>';
 	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$getbar['bar_id']); ?>';
 	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$getbar['bar_id']); ?>';
-        var lim = 100;
 </script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
-<script type="text/javascript">InfiniteList.loadData(0,2); InfiniteList.loadData_cocktail(0,2);InfiniteList.loadData_liquor(0,3);</script>
+<script type="text/javascript">InfiniteList.loadData(0,0); InfiniteList.loadData_cocktail(0,15);InfiniteList.loadData_liquor(0,15);</script>
