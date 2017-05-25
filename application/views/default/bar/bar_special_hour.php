@@ -137,9 +137,9 @@ $('.sorted_table').sortable({
 	                       		
 	                       		
 	                       		<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
+<!--	                       		<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
-	        				 	</div>
+	        				 	</div>-->
 	                       		<div class="col-sm-4" style="width: 23.5%" >
 	                       			<input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
 	                       		</div>
