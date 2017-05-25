@@ -151,7 +151,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-2" style="padding-left: 15px">	
                                                                                 <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
                                                                             </div>
-                                                                            <div class="col-sm-2">
+                                                                            <div class="col-sm-4">
                                                                                 <form action="">
                                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
