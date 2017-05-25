@@ -6633,9 +6633,9 @@ class Home extends SPACULLUS_Controller {
         $data["active_menu"] = '';
         $data['site_setting'] = site_setting();
         
-//        $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
-//        $data['beer_list'] = $this->bar_model->getBeer(@$data['getbar']['bar_id']);
-//        
+        $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
+        $data['beer_list'] = $this->bar_model->getBeer(@$data['getbar']['bar_id']);
+        
 //        if($this->input->post('event_keyword')!='')
 //        {
                 $keyword= $this->input->post('event_keyword');
@@ -6643,9 +6643,9 @@ class Home extends SPACULLUS_Controller {
                 $offset= $this->input->post('offset');
 //        }
 //        
-//        $config['base_url'] = base_url().'bar/bar_beer/'.$limit.'/'.$keyword;
-//	$config["total_rows"] = $this->bar_model->getBarBeercount(@$data['getbar']['bar_id'],$keyword);
-//        $config['per_page'] = $limit;
+        $config['base_url'] = base_url().'bar/bar_beer/'.$limit.'/'.$keyword;
+	$config["total_rows"] = $this->bar_model->getBarBeercount(@$data['getbar']['bar_id'],$keyword);
+        $config['per_page'] = $limit;
 //        
         $this->pagination->initialize($config);	
         $data['page_link'] = $this->pagination->create_links();
