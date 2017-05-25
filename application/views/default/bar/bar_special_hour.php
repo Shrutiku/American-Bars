@@ -108,13 +108,13 @@ $('.sorted_table').sortable({
 														
 	                       		</div>-->
                                         <form action="">
-                                            <input type="checkbox" name="day" value="Monday">Monday<br>
-                                            <input type="checkbox" name="day" value="Tuesday">Tuesday<br>
-                                            <input type="checkbox" name="day" value="Wednesday">Wednesday<br>
-                                            <input type="checkbox" name ="day" value="Thursday">Thursday<br>
-                                            <input type="checkbox" name="day" value="Friday">Friday<br>
-                                            <input type="checkbox" name="day" value="Saturday">Saturday<br>
-                                            <input type="checkbox" name="day" value="Sunday">Sunday<br>
+                                            <input type="checkbox" name="day" value="Monday">Monday
+                                            <input type="checkbox" name="day" value="Tuesday">Tuesday
+                                            <input type="checkbox" name="day" value="Wednesday">Wednesday
+                                            <input type="checkbox" name ="day" value="Thursday">Thursday
+                                            <input type="checkbox" name="day" value="Friday">Friday
+                                            <input type="checkbox" name="day" value="Saturday">Saturday
+                                            <input type="checkbox" name="day" value="Sunday">Sunday
                                         </form>
 	                       		
 	                       		<!-- <div class="input_box upload_user">
