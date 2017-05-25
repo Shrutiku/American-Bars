@@ -144,17 +144,13 @@ $('.sorted_table').sortable({
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
-                                                                            <div class="col-sm-3 text-left">
+                                                                            <div class="col-sm-1 text-left">
                                                                                 <label class="control-label" style="font-size: 16px;">Beers:</label>
-                                                                                <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
-                                                                                <div class="col-sm-3" style="padding-left: 15px">	
-                                                                                    <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
-                                                                                </div>
                                                                             </div>
-<!--                                                                            <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
+                                                                            <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
                                                                             <div class="col-sm-3" style="padding-left: 15px">	
                                                                                 <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
-                                                                            </div>-->
+                                                                            </div>
                                                                             <div class="col-sm-3">
                                                                                 <form action="">
                                                                                     <input type="checkbox" name="day" value="Monday"> M
@@ -169,16 +165,16 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-1 text-left">
                                                                                 <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                             </div>
-                                                                            <div class="col-sm-1" style="width: 13%" >
+                                                                            <div class="col-sm-2" style="width: 13%" >
                                                                                 <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                             </div>
-                                                                            <div class="col-sm-1 text-left"  style="width: 13%">	
+                                                                            <div class="col-sm-2 text-left"  style="width: 13%">	
                                                                                 <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                             </div>	
                                                                             <div class="col-sm-1" >
                                                                                 <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
-                                                                            <div class="col-sm-1" style="width: 7%">	
+                                                                            <div class="col-sm-2" style="width: 7%">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
