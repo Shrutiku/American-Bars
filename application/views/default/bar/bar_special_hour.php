@@ -177,10 +177,10 @@ $('.sorted_table').sortable({
                                         <input type="checkbox" name="day" value="Saturday"> Sat
                                         <input type="checkbox" name="day" value="Sunday"> Sun
                                     </form>
-                                    <div class="col-sm-4" style="width: 12%" >
+                                    <div class="col-sm-4" style="width: 13%" >
                                         <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                     </div>
-                                    <div class="col-sm-4 text-right"  style="width: 12%">	
+                                    <div class="col-sm-4 text-right"  style="width: 13%">	
                                         <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                     </div>	
                                     <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
