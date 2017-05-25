@@ -10,6 +10,9 @@
 <!--<div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
     <?php //echo $this->load->view(getThemeName().'/bar/cocktail_suggest');?>
 </div>	-->
+<input type="hidden" name="beerval" id="beerval" value="0" />
+<input type="hidden" name="cocktailval" id="cocktailval" value="0" />
+<input type="hidden" name="liquorval" id="liquorval" value="0" />
 <?php $theme_url = $urls= base_url().getThemeName();?>
 <div class="wrapper row6 padtb10 has-js">
     <div class="container">

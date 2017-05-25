@@ -47,7 +47,6 @@ var InfiniteList = (function () {
       	}
       	else{
       		$('#infinite-list').append(data);
-                console.log("data");
       	}
          //$('#infinite-list').append(data);
       },
