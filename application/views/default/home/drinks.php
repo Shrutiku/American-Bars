@@ -25,10 +25,10 @@
                     <div class="clear"></div>
                 </div>
                 <div class="dashboard_subblock">
-                    <!--<div id="list_hide" class="content">	
+                    <div id="list_hide" class="content">	
                         <?php			 
-                        $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-                        echo form_open('bar/actionbeer',$attributes);?> 
+                        //$attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
+                        //echo form_open('bar/actionbeer',$attributes);?> 
                         <input type="hidden" name="action" id="action" />
                         <div class="table-responsive">
                             <div id="responsecomment">
