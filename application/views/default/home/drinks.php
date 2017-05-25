@@ -341,6 +341,11 @@
             });
         };
     };
+    var base_url = "<?php echo base_url();?>";
+    $('#tokenize').tokenize({
+      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
+         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
+    });
 </script>
                      
 <link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
@@ -367,11 +372,7 @@
           opacity: .8
         });
       });
-    var base_url = "<?php echo base_url();?>";
-    $('#tokenize').tokenize({
-      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
-         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
-    });
+    
 </script>
 <!--------------End Scroll ------------------->
 <style>
