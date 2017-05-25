@@ -6606,7 +6606,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
     
-    function drink_menu($msg = '') {
+    function drink_menu($msg = '',$limit=10,$keyword='1V1',$offset=0) {
         if (get_authenticateUserID() == '') {
             redirect('home');
         }
