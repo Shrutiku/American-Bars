@@ -6606,7 +6606,7 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
     
-    function drink_menu($msg = '') {
+    function drink_menu($msg = '',$limit=10,$keyword='1V1',$offset=0) {
         if (get_authenticateUserID() == '') {
             redirect('home');
         }
@@ -6635,12 +6635,17 @@ class Home extends SPACULLUS_Controller {
         
         $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
         
-//        if($this->input->post('event_keyword')!='')
-//        {
+        if($this->input->post('event_keyword')!='')
+        {
                 $keyword= $this->input->post('event_keyword');
                 $limit= $this->input->post('limit');
                 $offset= $this->input->post('offset');
-//        }
+        }
+        else {
+                $keyword = $keyword;
+                $limit= $limit;
+                $offset= $offset;
+        }
 //        
         $config['base_url'] = base_url().'bar/bar_beer/'.$limit.'/'.$keyword;
 	$config["total_rows"] = $this->bar_model->getBarBeercount(@$data['getbar']['bar_id'],$keyword);
@@ -6648,7 +6653,9 @@ class Home extends SPACULLUS_Controller {
 //        
         $this->pagination->initialize($config);	
         $data['page_link'] = $this->pagination->create_links();
-        $data['result'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultBeer'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultCocktail'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultLiquor'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
 
 //        $data['offset'] = $offset;
 //        $data['limit'] = $limit;

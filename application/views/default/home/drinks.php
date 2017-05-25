@@ -26,94 +26,185 @@
                 </div>
                 <div class="dashboard_subblock">
                     <div id="list_hide" class="content">	
-                        <?php			 
-                        $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-                        echo form_open('bar/actionbeer',$attributes);?> 
-                        <input type="hidden" name="action" id="action" />
-                            <div class="table-responsive">
-                                <div id="responsecomment">
-                                    <div class="pagination" id="at_ajax">
-                                        <?php // echo $page_link;?>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <table class="table">
-                                        <thead>
-                                            <th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
-                                            <th>Beer Name</th>
-                                            <th>Type</th>
-                                            <th>Producer</th>
-                                            <th>Served As</th>
-                                            <th>Action</th>
-                                        </thead>
-                                        <tbody>
-                                        <?php
+                        
+                        <div class="col-md-4 coctail-new col-sm-12 padb20">
+                            <h2  style="align: center;">Beers
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
+                            </h2>
+                        
+                            <?php			// BEGIN SMALL BEER TABLE 
+                            $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
+                            echo form_open('bar/actionbeer',$attributes);?> 
+                            <input type="hidden" name="action" id="action" />
+                                <div class="table-responsive">
+                                    <div id="responsecomment">
+                                        <div class="pagination" id="at_ajax">
+                                            <?php // echo $page_link;?>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Beer Name</th>
+                                                <th>Type</th>
+                                            </thead>
+                                            <tbody>
+                                            <?php
 
 
-                                        if($result)
-                                        {
-                                            $i=1;
-                                            foreach($result as $event){								
-
-                                        if ($i % 2 == 0)
+                                            if($result)
                                             {
-                                              $dark =  "dark";
-                                            }
-                                            else
-                                            {
-                                              $dark =  "light";
-                                            }?>	
-                                                <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-                                                    <td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->beer_bar_id;?>">
-                                                            <input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->beer_bar_id;?>"></label></td>
-                                                    <td><?php echo $event->beer_name;?></td>
-                                                    <td><?php echo $event->beer_type;?></td>
-                                                    <td><?php echo $event->producer;?></td>
-                                                    <td>
-                                                            <label class="radio-checkbox label_check c_on" for="checkbox-tap<?php echo $event->beer_bar_id; ?>">
-                                                            <input <?php if($event->tap=='yes'){ ?>checked<?php } ?> onchange="ChangeState('<?php echo $event->beer_bar_id; ?>','tap')"  type="checkbox"  class="checkboxes" name="tap" id="checkbox-tap<?php echo $event->beer_bar_id; ?>" value="<?php echo $event->tap; ?>">Tap</label>
-                                                            <label class="radio-checkbox label_check c_on" for="checkbox-bottle<?php echo $event->beer_bar_id; ?>">
-                                                            <input <?php if($event->bottle=='yes'){?>checked<?php } ?> onchange="ChangeState1('<?php echo $event->beer_bar_id; ?>','bottle')" type="checkbox"  class="checkboxes" name="bottle" id="checkbox-bottle<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->bottle; ?>">Bottle</label>
-                                                    </td>
-                                                    <td>
-                                                        <!-- <a href="javascript://" onclick="editbarevent('<?php echo $event->beer_id; ?>')"><i class="strip edit_table"></i></a> -->
-                                                        <a href="javascript://" onclick="deletebeer('<?php echo $event->beer_bar_id; ?>')" ><i class="strip delete"></i></a>
-                                                        <a onclick="morelink('<?php echo $event->beer_bar_id; ?>')"><i class="strip view"></i></a>
+                                                $i=1;
+                                                foreach($result as $event){								
 
-                                                        <div class="modal fade" id="myModalnew_open_<?php echo $event->beer_bar_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                            <div class="padtb10">
-                                                                <div>
-                                                                    <div class="result_box clearfix mar_top30bot20">
-                                                                        <div class="login_block br_green_yellow">
-                                                                            <div class="result_search">
-                                                                             <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                                                            <i class="strip login_icon"></i><div class="result_search_text">Beer Description </div>
-                                                                            </div>
-                                                                        <div class="pad20">
-                                                                                <label class="control-label" style="color: #fff;"><?php echo $event->beer_desc; ?></label>	
-                                                                        </div>		
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            </div>
-                                                    </td>
+                                            if ($i % 2 == 0)
+                                                {
+                                                  $dark =  "dark";
+                                                }
+                                                else
+                                                {
+                                                  $dark =  "light";
+                                                }?>	
+                                                    <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
+                                                        <td><?php echo $event->beer_name;?></td>
+                                                        <td><?php echo $event->beer_type;?></td>
                                                         <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
-                                                </tr>
-                                        <?php $i++; } } else { ?>
-                                                <tr>
-                                                        <td colspan="6">No beers found at your bar.</td>
-                                                </tr>	
+                                                    </tr>
+                                            <?php $i++; } } else { ?>
+                                                    <tr>
+                                                            <td colspan="6">No beers found at your bar.</td>
+                                                    </tr>	
 
-                                                <?php } ?>	
-                                        </tbody>
-                                    </table>
+                                                    <?php } ?>	
+                                            </tbody>
+                                        </table>
+                                    </div>
+    <!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
+                                    <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
+                                    <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
                                 </div>
-<!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
-                                <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
-                                <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                        
+                        <div class="col-md-4 coctail-new col-sm-12 padb20">
+                            <h2  style="align: center;">Beers
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
+                            </h2>
+                        
+                            <?php			// BEGIN SMALL COCKTAIL TABLE 
+                            $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
+                            echo form_open('bar/actionbeer',$attributes);?> 
+                            <input type="hidden" name="action" id="action" />
+                                <div class="table-responsive">
+                                    <div id="responsecomment">
+                                        <div class="pagination" id="at_ajax">
+                                            <?php // echo $page_link;?>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Cocktail Name</th>
+                                                <th>Type</th>
+                                            </thead>
+                                            <tbody>
+                                            <?php
+
+
+                                            if($resultBeer)
+                                            {
+                                                $i=1;
+                                                foreach($resultBeer as $event){								
+
+                                            if ($i % 2 == 0)
+                                                {
+                                                  $dark =  "dark";
+                                                }
+                                                else
+                                                {
+                                                  $dark =  "light";
+                                                }?>	
+                                                    <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
+                                                        <td><?php echo $event->cocktail_name;?></td>
+                                                        <td><?php echo $event->type;?></td>
+                                                        <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
+                                                    </tr>
+                                            <?php $i++; } } else { ?>
+                                                    <tr>
+                                                            <td colspan="6">No cocktails found at your bar.</td>
+                                                    </tr>	
+
+                                                    <?php } ?>	
+                                            </tbody>
+                                        </table>
+                                    </div>
+    <!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
+                                    <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
+                                    <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="col-md-4 coctail-new col-sm-12 padb20">
+                            <h2  style="align: center;">Beers
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
+                            </h2>
+                        
+                            <?php			// BEGIN SMALL LIQUOR TABLE 
+                            $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
+                            echo form_open('bar/actionbeer',$attributes);?> 
+                            <input type="hidden" name="action" id="action" />
+                                <div class="table-responsive">
+                                    <div id="responsecomment">
+                                        <div class="pagination" id="at_ajax">
+                                            <?php // echo $page_link;?>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Beer Name</th>
+                                                <th>Type</th>
+                                            </thead>
+                                            <tbody>
+                                            <?php
+
+
+                                            if($result)
+                                            {
+                                                $i=1;
+                                                foreach($result as $event){								
+
+                                            if ($i % 2 == 0)
+                                                {
+                                                  $dark =  "dark";
+                                                }
+                                                else
+                                                {
+                                                  $dark =  "light";
+                                                }?>	
+                                                    <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
+                                                        <td><?php echo $event->beer_name;?></td>
+                                                        <td><?php echo $event->beer_type;?></td>
+                                                        <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
+                                                    </tr>
+                                            <?php $i++; } } else { ?>
+                                                    <tr>
+                                                            <td colspan="6">No beers found at your bar.</td>
+                                                    </tr>	
+
+                                                    <?php } ?>	
+                                            </tbody>
+                                        </table>
+                                    </div>
+    <!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
+                                    <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
+                                    <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
+                                </div>
+                            </form>
+                        </div>
+                        
+                        
                     </div>	
 
 
@@ -170,188 +261,188 @@
 </div>
 
 <script>
-    $(document).ready(function(){
-	
-	 $('.label_check, .label_radio').click(function(){
-    	        	
-            setupLabel();
-        });
-        setupLabel(); 	
-	  bindJquery();	
-	 var arrVal = new Array();
-	var t = $("[class=user_type]").val();
-	
-	 });
-        
-        $('#form').validate(
-		{
-		rules: {
-					'beer_id[]': {
-							required: true,
-					},
-					
-					
-						errorClass:'error fl_right'
-				},
-				
-		submitHandler: function(form){
-		$(form).ajaxSubmit({
-		type: "POST",
-		   		 dataType : 'json',
-				 beforeSubmit: function() 
-				 {
-		       		$('#dvLoading').fadeIn('slow');
-		    	 },
-		    	
-		    	uploadProgress: function ( event, position, total, percentComplete ) {	
-		        },
-		    
-		    	success : function ( json ) 
-		    	{
-					if(json.status == "fail" )
-					{
-						$("#cm-err-main1").show();
-						$("#cm-err-main1").html('Beer Name Field is required');
-			    		$('#dvLoading').fadeOut('slow');
-			    		scrollToDiv('cm-err-main1');
-				  		// setTimeout(function () 
-						// {
-						      // $("#cm-err-main1").fadeOut('slow');
-						// }, 3000);
-					return false;
-					}
-			
-					else
-					{
-						//alert("sdsa");
-						$("#cm-err-main1").hide();
-						$("#cm-err-main1").html("");
-						if($('#event_id').val()=='')
-						{
-							$.growlUI('Your beer was added successfully .');
-						}
-						else
-						{
-							$.growlUI('Your beer list was updated successfully .');
-						}
-						$(':input','#form')
-					 	.not(':button, :submit, :reset, :hidden')
-					 	.val('')
-					 	//.removeAttr('checked')
-					 	.removeAttr('selected');
-					 	 $("#list_hide").slideDown();
-					 	 $("#list_hide_m").slideDown();
-					     $("#hd_del").slideDown();
-					     $("#hs_del").slideUp();
-					     $('#list_show').slideUp();
-					     $("#at_ajax").remove();
-					     getData();
-					     
-					}
-					$('#dvLoading').fadeOut('slow');
-		   		 }
-		    });
-		  }
-		});
-                
-                
-    function getData()
-	{
-	//var keyword=($('#keyword').val()!='')?$('#keyword').val().split(' ').join('-'):'1V1';
-	var limit = $('#limit').val();
-    var keyword = $("#event_keyword").val();
-    if(keyword=='')
-    {
-    	var keyword = '1V1';
-    }
-	var offset = $('#offset').val();
-	var redirect_page=$('#redirect_page').val();
-	var url='<?php echo site_url('bar/') ?>/'+redirect_page+'/'+limit+'/'+keyword+'/'+offset;
-	
-	
-	$.ajax({
-			url : url,
-			// beforeSend : function() {
-				// blockUI('.portlet-body');
-			// },
-			  beforeSend : function(){
-			      
-			      $('#dvLoading').fadeIn('slow');
-			   },
-			   complete: function(){
-			   
-			     $('#dvLoading').fadeOut('slow');
-			     
-			   },
-			success : function(response) {
-				// alert(response);
-				$('.content').html('');
-				$('.content').html(response);
-				setupLabel();
-				bindJquery();
-				
-				
-				//bindJquery();
-			},
-			// complete : function() {
-				// unblockUI('.portlet-body');
-			// },
-	});
-	
-	}
-        
-        function bindJquery()
-	{
-		
-		
-		jQuery('.group-checkable').change(function () {
-			
-	                if ($('.label_check input').length) {
-			            $('.label_check').each(function(){ 
-			                $(this).removeClass('c_on');
-			                            $('.checkboxes').removeAttr('Checked'); 
-			            });
-			            $('.label_check input:checked').each(function(){ 
-			            	
-			               // $(this).parent('label').addClass('c_on');
-			                $( ".radio-checkbox" ).addClass( "c_on" ); 
-			                            $('.checkboxes').attr('Checked','Checked'); 
-			                  //  $('#states').find('span').addClass('checked');        
-			            });                
-			        };
-	            });
-	
-	}
-
- function setupLabel() {
-        if ($('.label_check input').length) {
-            $('.label_check').each(function(){ 
-                $(this).removeClass('c_on');
-            });
-            $('.label_check input:checked').each(function(){ 
-                $(this).parent('label').addClass('c_on');
-            });                
-        };
-        if ($('.label_radio input').length) {
-            $('.label_radio').each(function(){ 
-                $(this).removeClass('r_on');
-            });
-            $('.label_radio input:checked').each(function(){ 
-                $(this).parent('label').addClass('r_on');
-            });
-        };
-    };
-    var base_url = "<?php echo base_url();?>";
-    $('#tokenize').tokenize({
-      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
-         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
-    });
-</script>
+//    $(document).ready(function(){
+//	
+//	 $('.label_check, .label_radio').click(function(){
+//    	        	
+//            setupLabel();
+//        });
+//        setupLabel(); 	
+//	  bindJquery();	
+//	 var arrVal = new Array();
+//	var t = $("[class=user_type]").val();
+//	
+//	 });
+//        
+//        $('#form').validate(
+//		{
+//		rules: {
+//					'beer_id[]': {
+//							required: true,
+//					},
+//					
+//					
+//						errorClass:'error fl_right'
+//				},
+//				
+//		submitHandler: function(form){
+//		$(form).ajaxSubmit({
+//		type: "POST",
+//		   		 dataType : 'json',
+//				 beforeSubmit: function() 
+//				 {
+//		       		$('#dvLoading').fadeIn('slow');
+//		    	 },
+//		    	
+//		    	uploadProgress: function ( event, position, total, percentComplete ) {	
+//		        },
+//		    
+//		    	success : function ( json ) 
+//		    	{
+//					if(json.status == "fail" )
+//					{
+//						$("#cm-err-main1").show();
+//						$("#cm-err-main1").html('Beer Name Field is required');
+//			    		$('#dvLoading').fadeOut('slow');
+//			    		scrollToDiv('cm-err-main1');
+//				  		// setTimeout(function () 
+//						// {
+//						      // $("#cm-err-main1").fadeOut('slow');
+//						// }, 3000);
+//					return false;
+//					}
+//			
+//					else
+//					{
+//						//alert("sdsa");
+//						$("#cm-err-main1").hide();
+//						$("#cm-err-main1").html("");
+//						if($('#event_id').val()=='')
+//						{
+//							$.growlUI('Your beer was added successfully .');
+//						}
+//						else
+//						{
+//							$.growlUI('Your beer list was updated successfully .');
+//						}
+//						$(':input','#form')
+//					 	.not(':button, :submit, :reset, :hidden')
+//					 	.val('')
+//					 	//.removeAttr('checked')
+//					 	.removeAttr('selected');
+//					 	 $("#list_hide").slideDown();
+//					 	 $("#list_hide_m").slideDown();
+//					     $("#hd_del").slideDown();
+//					     $("#hs_del").slideUp();
+//					     $('#list_show').slideUp();
+//					     $("#at_ajax").remove();
+//					     getData();
+//					     
+//					}
+//					$('#dvLoading').fadeOut('slow');
+//		   		 }
+//		    });
+//		  }
+//		});
+//                
+//                
+//    function getData()
+//	{
+//	//var keyword=($('#keyword').val()!='')?$('#keyword').val().split(' ').join('-'):'1V1';
+//	var limit = $('#limit').val();
+//    var keyword = $("#event_keyword").val();
+//    if(keyword=='')
+//    {
+//    	var keyword = '1V1';
+//    }
+//	var offset = $('#offset').val();
+//	var redirect_page=$('#redirect_page').val();
+//	var url='<?php //echo site_url('bar/') ?>/'+redirect_page+'/'+limit+'/'+keyword+'/'+offset;
+//	
+//	
+//	$.ajax({
+//			url : url,
+//			// beforeSend : function() {
+//				// blockUI('.portlet-body');
+//			// },
+//			  beforeSend : function(){
+//			      
+//			      $('#dvLoading').fadeIn('slow');
+//			   },
+//			   complete: function(){
+//			   
+//			     $('#dvLoading').fadeOut('slow');
+//			     
+//			   },
+//			success : function(response) {
+//				// alert(response);
+//				$('.content').html('');
+//				$('.content').html(response);
+//				setupLabel();
+//				bindJquery();
+//				
+//				
+//				//bindJquery();
+//			},
+//			// complete : function() {
+//				// unblockUI('.portlet-body');
+//			// },
+//	});
+//	
+//	}
+//        
+//        function bindJquery()
+//	{
+//		
+//		
+//		jQuery('.group-checkable').change(function () {
+//			
+//	                if ($('.label_check input').length) {
+//			            $('.label_check').each(function(){ 
+//			                $(this).removeClass('c_on');
+//			                            $('.checkboxes').removeAttr('Checked'); 
+//			            });
+//			            $('.label_check input:checked').each(function(){ 
+//			            	
+//			               // $(this).parent('label').addClass('c_on');
+//			                $( ".radio-checkbox" ).addClass( "c_on" ); 
+//			                            $('.checkboxes').attr('Checked','Checked'); 
+//			                  //  $('#states').find('span').addClass('checked');        
+//			            });                
+//			        };
+//	            });
+//	
+//	}
+//
+// function setupLabel() {
+//        if ($('.label_check input').length) {
+//            $('.label_check').each(function(){ 
+//                $(this).removeClass('c_on');
+//            });
+//            $('.label_check input:checked').each(function(){ 
+//                $(this).parent('label').addClass('c_on');
+//            });                
+//        };
+//        if ($('.label_radio input').length) {
+//            $('.label_radio').each(function(){ 
+//                $(this).removeClass('r_on');
+//            });
+//            $('.label_radio input:checked').each(function(){ 
+//                $(this).parent('label').addClass('r_on');
+//            });
+//        };
+//    };
+//    var base_url = "<?php echo base_url();?>";
+//    $('#tokenize').tokenize({
+//      // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
+//         datas: ""+base_url+"bar/getallbeerbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
+//    });
+//</script>
                      
 <link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
 <script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
 <script src="<?php echo base_url().getThemeName(); ?>/js/prettify.js"></script>
-<script type="text/javascript">
+<script type="text/javascript">//
     $(function(){
         $('#infinite-list').slimscroll({
           alwaysVisible: true,
