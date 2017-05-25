@@ -170,7 +170,7 @@ $('.sorted_table').sortable({
                                                                                 <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                             </div>	
                                                                             <div class="col-sm-2" style="width: 10%;">
-                                                                                <label class="control-label" style="font-size: 16px;">Price:</label>
+                                                                                <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
