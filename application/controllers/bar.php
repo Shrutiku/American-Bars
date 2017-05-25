@@ -2048,39 +2048,39 @@ function getallliquorbybar_new()
 		
 	}
         
-        function add_drink()
-        {
-            if($this->session->userdata('user_type')!='bar_owner')
-            {
-                    redirect('home');
-            }
-            if(get_authenticateUserID()=='')
-            {
-                    redirect('home');
-            }
-
-            $data["error"] = '';
-            $data["msg"] = '';
-                
-            $theme = getThemeName ();
-	    $this->template->set_master_template ($theme.'/template.php');
-            $page_detail=meta_setting();
-            $pageTitle=$page_detail->title;
-            $metaDescription=$page_detail->meta_description;
-            $metaKeyword=$page_detail->meta_keyword;
-
-            $data['error'] = '';
-            $data['site_setting'] = site_setting ();
-            
-            $this->template->write ('pageTitle', $pageTitle, TRUE);
-            $this->template->write ('metaDescription', $metaDescription, TRUE);
-            $this->template->write ('metaKeyword', $metaKeyword, TRUE);
-                
-            $this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
-            $this->template->write_view ('content_center', $theme.'/bar/bar_add_drink', $data, TRUE);
-            $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
-            $this->template->render ();
-        }
+//        function add_drink()
+//        {
+//            if($this->session->userdata('user_type')!='bar_owner')
+//            {
+//                    redirect('home');
+//            }
+//            if(get_authenticateUserID()=='')
+//            {
+//                    redirect('home');
+//            }
+//
+//            $data["error"] = '';
+//            $data["msg"] = '';
+//                
+//            $theme = getThemeName ();
+//	    $this->template->set_master_template ($theme.'/template.php');
+//            $page_detail=meta_setting();
+//            $pageTitle=$page_detail->title;
+//            $metaDescription=$page_detail->meta_description;
+//            $metaKeyword=$page_detail->meta_keyword;
+//
+//            $data['error'] = '';
+//            $data['site_setting'] = site_setting ();
+//            
+//            $this->template->write ('pageTitle', $pageTitle, TRUE);
+//            $this->template->write ('metaDescription', $metaDescription, TRUE);
+//            $this->template->write ('metaKeyword', $metaKeyword, TRUE);
+//                
+//            $this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
+//            $this->template->write_view ('content_center', $theme.'/bar/bar_add_drink', $data, TRUE);
+//            $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+//            $this->template->render ();
+//        }
         
         function choose_beer($limit=10,$keyword='1V1',$offset=0,$msg='')
         {
