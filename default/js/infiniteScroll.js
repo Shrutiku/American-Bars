@@ -415,7 +415,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
     $("#infinite-list").scroll(function () {
       var infiniteList = $('#infinite-list');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData(offset+1, limit);
       }
     });
@@ -425,7 +425,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
     $("#infinite-list-comment").scroll(function () {
       var infiniteList = $('#infinite-list-comment');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_comment(offset+1, limit);
       }
     });
@@ -433,7 +433,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
      $("#infinite-list-cocktail").scroll(function () {
       var infiniteList = $('#infinite-list-cocktail');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_cocktail(offset+1, limit);
       }
     });
@@ -441,7 +441,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
     $("#infinite-list-liquor").scroll(function () {
       var infiniteList = $('#infinite-list-liquor');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_liquor(offset+1, limit);
       }
     });
@@ -449,7 +449,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       $("#infinite-favorite-bar").scroll(function () {
       var infiniteList = $('#infinite-favorite-bar');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_bar(offset+1, limit);
       }
     });
@@ -457,7 +457,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       $("#infinite-favorite-beer").scroll(function () {
       var infiniteList = $('#infinite-favorite-beer');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_beer(offset+1, limit);
       }
     });
@@ -465,7 +465,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
      $("#infinite-favorite-cocktail").scroll(function () {
       var infiniteList = $('#infinite-favorite-cocktail');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_cocktail(offset+1, limit);
       }
     });
@@ -473,7 +473,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
     $("#infinite-favorite-liquor").scroll(function () {
       var infiniteList = $('#infinite-favorite-liquor');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_liquor(offset+1, limit);
       }
     });
