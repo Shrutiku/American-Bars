@@ -65,389 +65,320 @@ $('.sorted_table').sortable({
 	});
 </script>
 <div class="wrapper row6 padtb10 has-js">
-     	<div class="container">
-     		<div class="margin-top-50 bg_brown">
-     			<?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
-     			<div class="dashboard_detail">
-     				<div class="result_search event"><div class="result_search_text"><i class="strip bar-special"></i> Special Hours</div></div>
-		     		<div class="dashboard_subblock">
-		     			<div>
-		     				
-     					
-     					
-					
-				<div id="list_show"  >	
-					
-					<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-					<form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_special_hours'); ?>" onsubmit="return validate()" autocomplete="off">
-						<form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_special_hours'); ?>" >
-					
+    <div class="container">
+        <div class="margin-top-50 bg_brown">
+            <?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
+                <div class="dashboard_detail">
+                    <div class="result_search event"><div class="result_search_text"><i class="strip bar-special"></i> Special Hours</div></div>
+                    <div class="dashboard_subblock">
+                        <div>
+                            <div id="list_show">
+                                <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
+                                <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_special_hours'); ?>" onsubmit="return validate()" autocomplete="off">
+                                    <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_special_hours'); ?>" >
 					<?php // print_r($imageGallery);die;
-												if($getbar_hour!=''){
-													?>
-													<div class="" id="inner">
-													<?php $i=0; foreach($getbar_hour as $im){ ?>
-														<div id="pi_<?php echo $im->bar_hour_id ?>">	
-															<input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
-															<div class="padtb">
-<!--	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Days : <span class="aestrick"> * </span></label>
-	        				 	</div>-->
+                                            if($getbar_hour!=''){?>
+                                                <div class="" id="inner">
+                                                <?php $i=0; foreach($getbar_hour as $im){ ?>
+                                                    <div id="pi_<?php echo $im->bar_hour_id ?>">	
+                                                        <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
+                                                            <div class="padtb">
+        <!--	        				 	<div class="col-sm-3 text-right">
+                                                                    <label class="control-label">Days : <span class="aestrick"> * </span></label>
+                                                                </div>-->
 	        					        				 	
-<!--	                       		<div class="input_box upload_btn">
-	                       			<select required name="days[]" id="days<?php //echo $im->bar_hour_id; ?>" class="select_box">
-	                       				<option value="">-- Select Day-- </option>
-	                       				<option value="Monday" <?php // echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
-	                       				<option value="Tuesday" <?php // echo $im->days=="Tuesday" ? 'selected':'';?>>Tuesday</option>
-	                       				<option value="Wednesday" <?php // echo $im->days=="Wednesday" ? 'selected':'';?>>Wednesday</option>
-	                       				<option value="Thursday" <?php // echo $im->days=="Thursday" ? 'selected':'';?>>Thursday</option>
-	                       				<option value="Friday" <?php // echo $im->days=="Friday" ? 'selected':'';?>>Friday</option>
-	                       				<option value="Saturday" <?php // echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
-	                       				<option value="Sunday" <?php // echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
-	                       			</select>
-														
-	                       		</div>-->
-                                        <form action="">
-                                            <input type="checkbox" name="day" value="Monday"> M
-                                            <input type="checkbox" name="day" value="Tuesday"> Tu
-                                            <input type="checkbox" name="day" value="Wednesday"> W
-                                            <input type="checkbox" name ="day" value="Thursday"> Th
-                                            <input type="checkbox" name="day" value="Friday"> F
-                                            <input type="checkbox" name="day" value="Saturday"> Sat
-                                            <input type="checkbox" name="day" value="Sunday"> Sun
-                                        </form>
+                    <!--                                        <div class="input_box upload_btn">
+                                                                    <select required name="days[]" id="days<?php //echo $im->bar_hour_id; ?>" class="select_box">
+                                                                        <option value="">-- Select Day-- </option>
+                                                                        <option value="Monday" <?php // echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
+                                                                        <option value="Tuesday" <?php // echo $im->days=="Tuesday" ? 'selected':'';?>>Tuesday</option>
+                                                                        <option value="Wednesday" <?php // echo $im->days=="Wednesday" ? 'selected':'';?>>Wednesday</option>
+                                                                        <option value="Thursday" <?php // echo $im->days=="Thursday" ? 'selected':'';?>>Thursday</option>
+                                                                        <option value="Friday" <?php // echo $im->days=="Friday" ? 'selected':'';?>>Friday</option>
+                                                                        <option value="Saturday" <?php // echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
+                                                                        <option value="Sunday" <?php // echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
+                                                                    </select>
+                                                                </div>-->
+                    <!--                                        <form action="">
+                                                                    <input type="checkbox" name="day" value="Monday"> M
+                                                                    <input type="checkbox" name="day" value="Tuesday"> Tu
+                                                                    <input type="checkbox" name="day" value="Wednesday"> W
+                                                                    <input type="checkbox" name ="day" value="Thursday"> Th
+                                                                    <input type="checkbox" name="day" value="Friday"> F
+                                                                    <input type="checkbox" name="day" value="Saturday"> Sat
+                                                                    <input type="checkbox" name="day" value="Sunday"> Sun
+                                                                </form>-->
 	                       		
-	                       		<!-- <div class="input_box upload_user">
-	                           		<img src="" id="img_here" alt="" class="img-responsive"/>
-	                       		</div> -->
-<!--	                       			<div class="span3">
-												<?php // if($i==0){ ?>
-												<a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-												<?php // }else{ ?>
-												<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
-												<?php // } ?>
-												
-											</div>-->
-	                       		<!-- <div class="input_box pull-left">
-	                           		<button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
-	                       		</div> -->
-	                       		<div class="clearfix"></div>
-	                       		</div>
-	                       		
-	                       		
-	                       		
-	                       		<div class="padtb8">
-<!--	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
-	        				 	</div>-->
-	                       		<div class="col-sm-4" style="width: 23.5%" >
-	                       			<input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
-	                       		</div>
-	                       		<div class="col-sm-3 text-right"  style="width: 23.5%">	
-	                       			<input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-	                       			
-	                       		</div>	
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> -->
-	        				 	</div>
-	                       		
-	                       		
-	                       		
-	        				 	
-	        			<?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
-						      if(empty($getval)){?>	 	
-	                       		<input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
-	                       <div id="contbeer" class="mar_top20bot20">
-	                       <div id="innerbeer<?php echo $i; ?>" >	
-								
-	                       	<div class="padtb8">
-                                    <div class="col-sm-1 text-right">
-                                        <label class="control-label" style="font-size: 16px;">Beers:</label>
-                                    </div>
-                                    <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
-                                    <div class="col-sm-2" style="padding-left: 15px;">	
-                                        <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
-                                    </div>
-                                    <form action="">
-                                        <input type="checkbox" name="day" value="Monday"> M
-                                        <input type="checkbox" name="day" value="Tuesday"> Tu
-                                        <input type="checkbox" name="day" value="Wednesday"> W
-                                        <input type="checkbox" name ="day" value="Thursday"> Th
-                                        <input type="checkbox" name="day" value="Friday"> F
-                                        <input type="checkbox" name="day" value="Saturday"> Sat
-                                        <input type="checkbox" name="day" value="Sunday"> Sun
-                                    </form>
-                                    <div class="col-sm-4" style="width: 13%" >
-                                        <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
-                                    </div>
-                                    <div class="col-sm-4 text-right"  style="width: 13%">	
-                                        <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                    </div>	
-                                    <div class="col-sm-2" style="width: 10%;">
-                                        <label class="control-label" style="font-size: 16px;">Price:</label>
-                                    </div>
-                                    <div class="col-sm-1" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-                                        <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
-                                    </div>	
-                                    <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                <!-- <div class="input_box upload_user">
+                                                                        <img src="" id="img_here" alt="" class="img-responsive"/>
+                                                                </div> -->
+    <!--                                                        <div class="span3">
+                                                                    <?php // if($i==0){ ?>
+                                                                    <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                    <?php // }else{ ?>
+                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                    <?php // } ?>		
+                                                                </div>-->
+                                                                <!-- <div class="input_box pull-left">
+                                                                    <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
+                                                                </div> -->
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        
+                                                            <div class="padtb8">
+                    <!--                                        <div class="col-sm-3 text-right">
+                                                                    <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
+                                                                </div>-->
+                                                                <div class="col-sm-4" style="width: 23.5%" >
+                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                </div>
+                                                                <div class="col-sm-3 text-right"  style="width: 23.5%">	
+                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                </div>	
+                                                                <div class="clearfix"></div>
+                                                                    <!-- <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> -->
+                                                            </div>
+                                                            <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
+                                                            if(empty($getval)){?>	 	
+                                                                <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
+                                                                <div id="contbeer" class="mar_top20bot20">
+                                                                    <div id="innerbeer<?php echo $i; ?>" >	
+                                                                        <div class="padtb8">
+                                                                            <div class="col-sm-1 text-right">
+                                                                                <label class="control-label" style="font-size: 16px;">Beers:</label>
+                                                                            </div>
+                                                                            <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
+                                                                            <div class="col-sm-2" style="padding-left: 15px;">	
+                                                                                <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
+                                                                            </div>
+                                                                            <form action="">
+                                                                                <input type="checkbox" name="day" value="Monday"> M
+                                                                                <input type="checkbox" name="day" value="Tuesday"> Tu
+                                                                                <input type="checkbox" name="day" value="Wednesday"> W
+                                                                                <input type="checkbox" name ="day" value="Thursday"> Th
+                                                                                <input type="checkbox" name="day" value="Friday"> F
+                                                                                <input type="checkbox" name="day" value="Saturday"> Sat
+                                                                                <input type="checkbox" name="day" value="Sunday"> Sun
+                                                                            </form>
+                                                                            <div class="col-sm-4" style="width: 13%" >
+                                                                                <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                            </div>
+                                                                            <div class="col-sm-4 text-right"  style="width: 13%">	
+                                                                                <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                            </div>	
+                                                                            <div class="col-sm-2" style="width: 10%;">
+                                                                                <label class="control-label" style="font-size: 16px;">Price:</label>
+                                                                            </div>
+                                                                            <div class="col-sm-1" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
+                                                                            </div>	
+                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 
-                                    <div class="clearfix"></div>
-                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
-                                </div>
-	        				 </div>	
+                                                                            <div class="clearfix"></div>
+                                                                                <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            <?php } else { ?>
+                                                                <input type="hidden" name="cntprobeer[]" id="cntprobeer<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
+                                                                <div id="contbeer" class="mar_top20bot20">
+                                                                    <div id="innerbeer<?php echo $i; ?>" >
+                                                                        <?php $j=0; foreach($getval as $beer){?>	
+                                                                                <div class="padtb8" id="imgbeer<?php echo $i; ?>_<?php echo $j; ?>">
+                                                                                    <div class="col-sm-3 text-right">
+                                                                                        <label class="control-label"><?php if($j==0){?>Beers :<?php } ?>  </label>
+                                                                                    </div>
+                                                                                    <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_<?php echo $j; ?>" value="<?php echo $beer->sp_beer_id; ?>" />
+                                                                                    <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                        <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_<?php echo $j; ?>"  name="beerid[]" value="<?php echo getBeernameByID($beer->sp_beer_id); ?>">
+                                                                                    </div>	
+                                                                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                        <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                    </div>
+                                                                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                        <input type="text" class="form-control form-pad" id="beerprice_<?php echo $j; ?>" name="beerprice<?php echo $i; ?>[]" value="<?php echo $beer->sp_beer_price; ?>">
+                                                                                    </div>	
+                                                                                    <?php if($j==0){ ?>
+                                                                                        <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                    <?php }else{ ?>
+                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                    <?php } ?>
+                                                                                    <div class="clearfix"></div>
+                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                </div>
+                                                                        <?php $j++; } ?>
+                                                                    </div>
+                                                                </div> 
 	        				 	
-	        				 	</div>
-	        				 <?php } else { ?>
-	        				 	<input type="hidden" name="cntprobeer[]" id="cntprobeer<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
-	                       <div id="contbeer" class="mar_top20bot20">
-	                       <div id="innerbeer<?php echo $i; ?>" >	
-								
-	                       <?php $j=0; foreach($getval as $beer){?>	
-	                       	<div class="padtb8" id="imgbeer<?php echo $i; ?>_<?php echo $j; ?>">
-	                       		
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label"><?php if($j==0){?>Beers :<?php } ?>  </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_<?php echo $j; ?>" value="<?php echo $beer->sp_beer_id; ?>" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_<?php echo $j; ?>"  name="beerid[]" value="<?php echo getBeernameByID($beer->sp_beer_id); ?>">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="beerprice_<?php echo $j; ?>" name="beerprice<?php echo $i; ?>[]" value="<?php echo $beer->sp_beer_price; ?>">
-	                       		</div>	
-	                       		<?php if($j==0){ ?>
-												<a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                            <?php } ?>		
+                                                            <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
+                                                                if(empty($getvalcocktail)){?>	 		
+                                                                    <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
+                                                                    <div id="contcocktail" class="mar_top20bot20">
+                                                                        <div id="innercocktail<?php echo $i; ?>" >
+                                                                            <div class="padtb8">
+                                                                                <div class="col-sm-3 text-right">
+                                                                                    <label class="control-label">Cocktails : </label>
+                                                                                </div>
+                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
+                                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                    <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
+                                                                                </div>	
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                </div>
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                    <input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">
+                                                                                </div>	
+                                                                                <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                <div class="clearfix"></div>
+                                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php } else {?>
+                                                                    <input type="hidden" name="cntprococktail[]" id="cntprococktail<?php echo $i; ?>" value="<?php echo count($getvalcocktail); ?>" />
+                                                                    <div id="contcocktail" class="mar_top20bot20">
+                                                                        <div id="innercocktail<?php echo $i; ?>" >	
+                                                                            <?php $c=0; foreach($getvalcocktail as $cocktail ){?>		
+                                                                                <div class="padtb8" id="imgcocktail<?php echo $i; ?>_<?php echo $c;?>">
+                                                                                    <div class="col-sm-3 text-right">
+                                                                                        <label class="control-label"><?php if($c==0){?>Cocktails :<?php } ?> </label>
+                                                                                    </div>
+                                                                                    <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_<?php echo $c; ?>" value="<?php echo $cocktail->sp_cocktail_id; ?>" />
+                                                                                    <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                        <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_<?php echo $c; ?>"  name="cocktailid[]" value="<?php echo getCocktailnameByID($cocktail->sp_cocktail_id); ?>">
+                                                                                    </div>
+                                                                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                        <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                    </div>
+                                                                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                        <input type="text" class="form-control form-pad" id="cocktailprice_<?php echo $c; ?>" name="cocktailprice<?php echo $i; ?>[]" value="<?php echo $cocktail->sp_cocktail_price; ?>">
+                                                                                    </div>
+                                                                                    <?php if($c==0){ ?>
+                                                                                        <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                    <?php }else{ ?>
+                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $cocktail->bar_hour_id ?>','cocktail','<?php echo $c;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                    <?php } ?>
+                                                                                    <div class="clearfix"></div>
+                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                </div>
+                                                                            <?php $c++; } ?>	
+                                                                        </div>	
+                                                                    </div>
+                                                                <?php } ?>		 	
+                                                                <?php $getvalliquor = getBarSpecialHoursByRand($im->rand,'liquor'); 
+                                                                    if(empty($getvalliquor)){?>				 	
+                                                                        <input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
+                                                                            <div id="contliquor" class="mar_top20bot20">
+                                                                                <div id="innerliquor<?php echo $i; ?>" >
+                                                                                    <div class="padtb8">
+                                                                                        <div class="col-sm-3 text-right">
+                                                                                            <label class="control-label">Liquors : </label>
+                                                                                        </div>
+                                                                                        <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
+                                                                                        <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                            <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
+                                                                                        </div>	
+                                                                                        <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                            <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                        </div>
+                                                                                        <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                            <input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">
+                                                                                        </div>	
+                                                                                        <a href="javascript://;" id="" onclick="addrows_liquor('<?php echo $i; ?>')" name="add_rowliquor" class="add_rowliquor btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                        <div class="clearfix"></div>
+                                                                                            <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                    </div>
+                                                                                </div>	
+                                                                            </div>
+                                                                    <?php } else {?>
+                                                                        <input type="hidden" name="cntproliquor[]" id="cntproliquor<?php echo $i; ?>" value="<?php echo count($getvalliquor);?>" />
+                                                                        <div id="contliquor" class="mar_top20bot20">
+                                                                            <div id="innerliquor<?php echo $i; ?>" >	
+                                                                                <?php $l=0; foreach($getvalliquor as $liquor ){?>		
+                                                                                    <div class="padtb8" id="imgliquor<?php echo $i; ?>_<?php echo $l; ?>">
+                                                                                        <div class="col-sm-3 text-right">
+                                                                                            <label class="control-label"><?php if($l==0){?>Liquors  :<?php } ?> </label>
+                                                                                        </div>
+                                                                                        <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_<?php echo $l; ?>" value="<?php echo $liquor->sp_liquor_id; ?>" />
+                                                                                        <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                            <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_<?php echo $l; ?>"  name="liquorid[]" value="<?php echo getLiquornameByID($liquor->sp_liquor_id); ?>">
+                                                                                        </div>
+                                                                                        <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                            <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                        </div>
+                                                                                        <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                            <input type="text" class="form-control form-pad" id="liquorprice_<?php echo $l; ?>" name="liquorprice<?php echo $i; ?>[]" value="<?php echo $liquor->sp_liquor_price; ?>">
+                                                                                        </div>	
+                                                                                        <?php if($l==0){ ?>
+                                                                                            <a href="javascript://;" id="" onclick="addrows_liquor('<?php echo $i; ?>')" name="add_rowliquor" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                        <?php }else{ ?>
+                                                                                            <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $liquor->bar_hour_id ?>','liquor','<?php echo $l; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                        <?php } ?>
+                                                                                        <div class="clearfix"></div>
+                                                                                            <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                    </div>
+                                                                                <?php $l++;} ?> 	
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php } ?>	 
+                                                                    <?php $getvalfood = getBarSpecialHoursByRand($im->rand,'food'); 
+                                                                        if(empty($getvalfood)){?>	
+                                                                            <input type="hidden" name="cntprofood[]" id="cntprofood" value="<?php echo count($getvalfood); ?>" />
+                                                                            <div id="contfood" class="mar_top20bot20">
+                                                                                <div id="innerfood<?php echo $i; ?>" >	
+                                                                                    <div class="padtb8">
+                                                                                        <div class="col-sm-3 text-right">
+                                                                                            <label class="control-label">Foods : </label>
+                                                                                        </div>
+                                                                                        <input type="hidden" name="fid<?php echo $i;?>[]" id="fid_0" value="" />
+                                                                                        <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                            <input type="text" class="form-control tagsfood form-pad" id="foodid_<?php echo $i; ?>_0"  name="foodid<?php echo $i; ?>[]" value="">
+                                                                                        </div>	
+                                                                                        <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                            <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                        </div>
+                                                                                        <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                            <input type="text" class="form-control form-pad" id="foodprice" name="foodprice<?php echo $i; ?>_0[]" value="">
+                                                                                        </div>	
+                                                                                        <a href="javascript://;" id="" onclick="addrows_food('<?php echo $i; ?>')" name="add_rowfood" class="add_rowfood btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                        <div class="clearfix"></div>
+                                                                                            <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                    </div>
+                                                                                </div>	
+                                                                            </div>
+                                                                        <?php } else {?>
+                                                                            <input type="hidden" name="cntprofood[]" id="cntprofood<?php echo $i; ?>" value="0" />
+                                                                                <div id="contfood" class="mar_top20bot20">
+                                                                                    <div id="innerfood<?php echo $i; ?>" >	
+                                                                                        <?php $f=0; foreach($getvalfood as $food ){?>	
+                                                                                            <div class="padtb8" id="imgfood<?php echo $i; ?>_<?php echo $f; ?>">
+                                                                                                <div class="col-sm-3 text-right">
+                                                                                                    <label class="control-label"><?php if($f==0){?>Foods : <?php } ?></label>
+                                                                                                </div>
+                                                                                                <input type="hidden" name="fid0[]" id="fid_<?php echo $f; ?>" value="" />
+                                                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                                    <input type="text" class="form-control tagsfood form-pad" id="foodid_<?php echo $f; ?>"  name="foodid<?php echo $i; ?>[]" value="<?php echo $food->food_name; ?>">
+                                                                                                </div>	
+                                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                                </div>
+                                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                                    <input type="text" class="form-control form-pad" id="foodprice_<?php echo $f; ?>" name="foodprice<?php echo $i; ?>[]" value="<?php echo $food->food_price; ?>">
+                                                                                                </div>	
+                                                                                                <?php if($f==0){ ?>
+                                                                                                    <a href="javascript://;" id="" onclick="addrows_food('<?php echo $i; ?>')" name="add_rowfood" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 												<?php }else{ ?>
-												<a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                                    <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $food->bar_hour_id ?>','food','<?php echo $f; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
 												<?php } ?>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        			</div>
-	        				 <?php $j++; } ?>	
-	        				 	
-	        				 </div>	
-	        				 	
-	        				 	</div> 
-	        				 	
-	        				 <?php } ?>		
-	        			<?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
-						      if(empty($getvalcocktail)){?>	 		
-	        				 	<input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
-	                       <div id="contcocktail" class="mar_top20bot20">
-	                       <div id="innercocktail<?php echo $i; ?>" >	
-								
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Cocktails : </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 </div>	
-	        				 	
-	        				 	</div>
-	        				 	
-	        				<?php } else {?>
-	        					
-	        					<input type="hidden" name="cntprococktail[]" id="cntprococktail<?php echo $i; ?>" value="<?php echo count($getvalcocktail); ?>" />
-	                       <div id="contcocktail" class="mar_top20bot20">
-	                       <div id="innercocktail<?php echo $i; ?>" >	
-						<?php $c=0; foreach($getvalcocktail as $cocktail ){?>		
-	                       	<div class="padtb8" id="imgcocktail<?php echo $i; ?>_<?php echo $c;?>">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label"><?php if($c==0){?>Cocktails :<?php } ?> </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_<?php echo $c; ?>" value="<?php echo $cocktail->sp_cocktail_id; ?>" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_<?php echo $c; ?>"  name="cocktailid[]" value="<?php echo getCocktailnameByID($cocktail->sp_cocktail_id); ?>">
-	                       		</div>	
-	                       		
-	                       		
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="cocktailprice_<?php echo $c; ?>" name="cocktailprice<?php echo $i; ?>[]" value="<?php echo $cocktail->sp_cocktail_price; ?>">
-	                       		</div>	
-	                       		
-	                       		<?php if($c==0){ ?>
-												<a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-												<?php }else{ ?>
-												<a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $cocktail->bar_hour_id ?>','cocktail','<?php echo $c;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
-												<?php } ?>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 <?php $c++; } ?>	
-	        				 </div>	
-	        				 	
-	        				 	</div>
-	        					
-	        					
-	        			  <?php } ?>		 	
-	        	<?php $getvalliquor = getBarSpecialHoursByRand($im->rand,'liquor'); 
-						      if(empty($getvalliquor)){?>				 	
-	        				 	<input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
-	                       <div id="contliquor" class="mar_top20bot20">
-	                       <div id="innerliquor<?php echo $i; ?>" >	
-								
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Liquors : </label>
-	        				 	</div>
-	                       			
-                                <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="" onclick="addrows_liquor('<?php echo $i; ?>')" name="add_rowliquor" class="add_rowliquor btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 </div>	
-	        				 	
-	        				 	</div>
-	        				<?php } else {?>
-	        					<input type="hidden" name="cntproliquor[]" id="cntproliquor<?php echo $i; ?>" value="<?php echo count($getvalliquor);?>" />
-	                       <div id="contliquor" class="mar_top20bot20">
-	                       <div id="innerliquor<?php echo $i; ?>" >	
-							<?php $l=0; foreach($getvalliquor as $liquor ){?>		
-	                       	<div class="padtb8" id="imgliquor<?php echo $i; ?>_<?php echo $l; ?>">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label"><?php if($l==0){?>Liquors  :<?php } ?> </label>
-	        				 	</div>
-	                       		
-	                       		  <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_<?php echo $l; ?>" value="<?php echo $liquor->sp_liquor_id; ?>" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_<?php echo $l; ?>"  name="liquorid[]" value="<?php echo getLiquornameByID($liquor->sp_liquor_id); ?>">
-	                       		</div>	
-	                       		
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="liquorprice_<?php echo $l; ?>" name="liquorprice<?php echo $i; ?>[]" value="<?php echo $liquor->sp_liquor_price; ?>">
-	                       		</div>	
-	                       		<?php if($l==0){ ?>
-												<a href="javascript://;" id="" onclick="addrows_liquor('<?php echo $i; ?>')" name="add_rowliquor" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-												<?php }else{ ?>
-												<a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $liquor->bar_hour_id ?>','liquor','<?php echo $l; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
-												<?php } ?>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 	
-	        				<?php $l++;} ?> 	
-	        				 </div>	
-	        				 	
-	        				 	</div>
-	        				
-	        				
-	        				<?php } ?>	 	
-	        				 	
-	        				 	
-	        				 	<?php $getvalfood = getBarSpecialHoursByRand($im->rand,'food'); 
-						      if(empty($getvalfood)){?>	
-	        				 		<input type="hidden" name="cntprofood[]" id="cntprofood" value="<?php echo count($getvalfood); ?>" />
-	                       <div id="contfood" class="mar_top20bot20">
-	                       <div id="innerfood<?php echo $i; ?>" >	
-									
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Foods : </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="fid<?php echo $i;?>[]" id="fid_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsfood form-pad" id="foodid_<?php echo $i; ?>_0"  name="foodid<?php echo $i; ?>[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="foodprice" name="foodprice<?php echo $i; ?>_0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="" onclick="addrows_food('<?php echo $i; ?>')" name="add_rowfood" class="add_rowfood btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 	</div>	
-	        				 	
-	        				 	</div>
-	        				 	<?php } else {?>
-	        				 		<input type="hidden" name="cntprofood[]" id="cntprofood<?php echo $i; ?>" value="0" />
-	                       <div id="contfood" class="mar_top20bot20">
-	                       <div id="innerfood<?php echo $i; ?>" >	
-									<?php $f=0; foreach($getvalfood as $food ){?>	
-	                       	<div class="padtb8" id="imgfood<?php echo $i; ?>_<?php echo $f; ?>">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label"><?php if($f==0){?>Foods : <?php } ?></label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="fid0[]" id="fid_<?php echo $f; ?>" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsfood form-pad" id="foodid_<?php echo $f; ?>"  name="foodid<?php echo $i; ?>[]" value="<?php echo $food->food_name; ?>">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="foodprice_<?php echo $f; ?>" name="foodprice<?php echo $i; ?>[]" value="<?php echo $food->food_price; ?>">
-	                       		</div>	
-	                       		<?php if($f==0){ ?>
-												<a href="javascript://;" id="" onclick="addrows_food('<?php echo $i; ?>')" name="add_rowfood" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-												<?php }else{ ?>
-												<a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $food->bar_hour_id ?>','food','<?php echo $f; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
-												<?php } ?>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		
-	        				 	</div>
-	        				
-	        				 		
-	        				 	
-	        				 	<?php $f++; } ?>
-	        				  </div>	
-	        				 	
-	        				 	</div>
-	        				 		
-	        				 	<?php } ?>	
+                                                                                                <div class="clearfix"></div>
+                                                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                            </div>
+                                                                                        <?php $f++; } ?>
+                                                                                    </div>
+                                                                                </div>
+                                                                        <?php } ?>	
 	        				 	
 	        				 	
 	        				 	
