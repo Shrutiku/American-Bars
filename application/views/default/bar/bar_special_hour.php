@@ -157,9 +157,9 @@ $('.sorted_table').sortable({
                                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
                                                                                     <input type="checkbox" name="day" value="Wednesday"> W
                                                                                     <input type="checkbox" name ="day" value="Thursday"> Th
-                                                                                    <input type="checkbox" name="day" value="Friday"> F <br>
-                                                                                    <input type="checkbox" name="day" value="Saturday"> Sat
-                                                                                    <input type="checkbox" name="day" value="Sunday"> Sun
+                                                                                    <input type="checkbox" name="day" value="Friday"> F
+                                                                                    <input type="checkbox" name="day" value="Saturday"> S
+                                                                                    <input type="checkbox" name="day" value="Sunday"> Su
                                                                                 </form>
                                                                             </div>
                                                                             <div class="col-sm-1">
