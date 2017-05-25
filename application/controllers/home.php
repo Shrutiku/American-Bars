@@ -6642,14 +6642,14 @@ class Home extends SPACULLUS_Controller {
 //                $limit= $this->input->post('limit');
 //                $offset= $this->input->post('offset');
 //        }
+//        
 //        $config['base_url'] = base_url().'bar/bar_beer/'.$limit.'/'.$keyword;
 //	$config["total_rows"] = $this->bar_model->getBarBeercount(@$data['getbar']['bar_id'],$keyword);
-//	//echo $data["total_rows"];
 //        $config['per_page'] = $limit;
 //        
-//        $this->pagination->initialize($config);	
-//        $data['page_link'] = $this->pagination->create_links();
-//        $data['result'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $this->pagination->initialize($config);	
+        $data['page_link'] = $this->pagination->create_links();
+        $data['result'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
 
 //        $data['offset'] = $offset;
 //        $data['limit'] = $limit;
