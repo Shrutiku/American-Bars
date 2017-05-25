@@ -378,122 +378,98 @@ $('.sorted_table').sortable({
                                                                                         <?php $f++; } ?>
                                                                                     </div>
                                                                                 </div>
-                                                                        <?php } ?>	
-	        				 	
-	        				 	
-	        				 	
-	        				 	
-	        				 	<?php $getvalother = getBarSpecialHoursByRand($im->rand,'other'); 
-						      if(empty($getvalother)){?>	
-	        				 	<input type="hidden" name="cntproother[]" id="cntproother" value="0" />
-	                       <div id="contother" class="mar_top20bot20">
-	                       <div id="innerother<?php echo $i; ?>" >	
-								
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Others : </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="oid0[]" id="oid_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control  form-pad" id="otherid_<?php echo $i; ?>_0"  name="otherid<?php echo $i; ?>[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="otherprice" name="otherprice<?php echo $i; ?>_0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="" onclick="addrows_other('<?php echo $i; ?>')" name="add_rowother" class="add_rowother btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		</div>
-	        				 	</div>
-	        				 </div>	
-	        				 
-	        				<?php } else {?>
-	        					<input type="hidden" name="cntproother[]" id="cntproother<?php echo $i; ?>" value="<?php echo count($getvalother)?>" />
-	                       <div id="contother" class="mar_top20bot20">
-	                       <div id="innerother<?php echo $i; ?>" >	
-								<?php $o=0; foreach($getvalother as $other ){?>	
-	                       	<div class="padtb8" id="imgother<?php echo $i; ?>_<?php echo $o;?>">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label"><?php if($o==0){?>Others : <?php } ?> </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="oid<?php echo $i;?>[]" id="oid_<?php echo $o;?>" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsfood form-pad" id="otherid_<?php echo $o;?>"  name="otherid<?php echo $i;?>[]" value="<?php echo $other->other_name;?>">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="otherprice_<?php echo $o;?>" name="otherprice<?php echo $i;?>[]" value="<?php echo $other->other_price;?>">
-	                       		</div>	
-	                       		<?php if($o==0){ ?>
-												<a href="javascript://;" id="" onclick="addrows_other('<?php echo $i; ?>')" name="add_rowother" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-												<?php }else{ ?>
-												<a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $other->bar_hour_id ?>','other','<?php echo $o;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
-												<?php } ?>
-	                       			<div class="clearfix"></div>
-	        				 		<!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-	        				 		
-	        				 		</div>
-	        				 <?php $o++; }?>
-	        				 		
-	        				 	</div>
-	        				 </div>	
-	        				 
-	        					
-	        				<?php } ?>	  
-	        				 <div class="line">
-					
-					
-				</div>
-														</div>
-									<?php $i++; } ?>
-												<input type="hidden" name="cntpro" id="cntpro" value="<?php echo $i-1; ?>" />																
-													</div>	
-													
-													
-													<div class="padtb8">
-	                       		<div class="col-sm-3"></div>
-	                       		<div class="col-sm-7 mart10 text-left">
-	                       			<button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       		</div>
-	                       		<div class="clearfix"></div>
-	                       	</div>														
-													<?php } else {?>	
-													 	
-					
-						<input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="" />
-     				
-		     			<div class="text-center pad_t15b20">
-	                       	
-	                       	
-	                     <div id="hide_edit">
-	                     	<div id="inner">  	
-	                     		<input type="hidden" name="cntpro" id="cntpro" value="0" />
-	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Days : <span class="aestrick"> * </span></label>
-	        				 	</div>
+                                                                        <?php } ?>
+                                                                        <?php $getvalother = getBarSpecialHoursByRand($im->rand,'other'); 
+                                                                            if(empty($getvalother)){?>	
+                                                                                <input type="hidden" name="cntproother[]" id="cntproother" value="0" />
+                                                                                    <div id="contother" class="mar_top20bot20">
+                                                                                        <div id="innerother<?php echo $i; ?>" >	
+                                                                                            <div class="padtb8">
+                                                                                                <div class="col-sm-3 text-right">
+                                                                                                    <label class="control-label">Others : </label>
+                                                                                                </div>
+                                                                                                <input type="hidden" name="oid0[]" id="oid_0" value="" />
+                                                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                                    <input type="text" class="form-control  form-pad" id="otherid_<?php echo $i; ?>_0"  name="otherid<?php echo $i; ?>[]" value="">
+                                                                                                </div>	
+                                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                                </div>
+                                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                                    <input type="text" class="form-control form-pad" id="otherprice" name="otherprice<?php echo $i; ?>_0[]" value="">
+                                                                                                </div>	
+                                                                                                <a href="javascript://;" id="" onclick="addrows_other('<?php echo $i; ?>')" name="add_rowother" class="add_rowother btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                                <div class="clearfix"></div>
+                                                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                            <?php } else {?>
+                                                                                <input type="hidden" name="cntproother[]" id="cntproother<?php echo $i; ?>" value="<?php echo count($getvalother)?>" />
+                                                                                    <div id="contother" class="mar_top20bot20">
+                                                                                        <div id="innerother<?php echo $i; ?>" >	
+                                                                                            <?php $o=0; foreach($getvalother as $other ){?>	
+                                                                                                <div class="padtb8" id="imgother<?php echo $i; ?>_<?php echo $o;?>">
+                                                                                                    <div class="col-sm-3 text-right">
+                                                                                                        <label class="control-label"><?php if($o==0){?>Others : <?php } ?> </label>
+                                                                                                    </div>
+                                                                                                    <input type="hidden" name="oid<?php echo $i;?>[]" id="oid_<?php echo $o;?>" value="" />
+                                                                                                    <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                                        <input type="text" class="form-control tagsfood form-pad" id="otherid_<?php echo $o;?>"  name="otherid<?php echo $i;?>[]" value="<?php echo $other->other_name;?>">
+                                                                                                    </div>	
+                                                                                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                                        <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                                        <input type="text" class="form-control form-pad" id="otherprice_<?php echo $o;?>" name="otherprice<?php echo $i;?>[]" value="<?php echo $other->other_price;?>">
+                                                                                                    </div>	
+                                                                                                    <?php if($o==0){ ?>
+                                                                                                        <a href="javascript://;" id="" onclick="addrows_other('<?php echo $i; ?>')" name="add_rowother" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                                    <?php }else{ ?>
+                                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $other->bar_hour_id ?>','other','<?php echo $o;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                                    <?php } ?>
+                                                                                                    <div class="clearfix"></div>
+                                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                                </div>
+                                                                                            <?php $o++; }?>
+                                                                                        </div>
+                                                                                    </div>
+                                                                            <?php } ?>	  
+                                                                            <div class="line"></div>
+                                                        </div>
+                                                <?php $i++; } ?>
+                                                <input type="hidden" name="cntpro" id="cntpro" value="<?php echo $i-1; ?>" />																
+                                                </div>							
+                                                <div class="padtb8">
+                                                    <div class="col-sm-3"></div>
+                                                        <div class="col-sm-7 mart10 text-left">
+                                                            <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>														
+                                            <?php } else {?>
+                                                <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="" />
+                                                <div class="text-center pad_t15b20">
+                                                    <div id="hide_edit">
+                                                    <div id="inner">  	
+                                                        <input type="hidden" name="cntpro" id="cntpro" value="0" />
+                                                    <div class="padtb">
+                                                    <div class="col-sm-3 text-right">
+                                                        <label class="control-label">Days : <span class="aestrick"> * </span></label>
+                                                    </div>
 	        					        				 	
-	                       		<div class="input_box upload_btn">
-	                       			<select required name="days[]" id="days" class="select_box">
-	                       				<option value="">-- Select Day-- </option>
-	                       				<option value="Monday">Monday</option>
-	                       				<option value="Tuesday">Tuesday</option>
-	                       				<option value="Wednesday">Wednesday</option>
-	                       				<option value="Thursday">Thursday</option>
-	                       				<option value="Friday">Friday</option>
-	                       				<option value="Saturday">Saturday</option>
-	                       				<option value="Sunday">Sunday</option>
-	                       			</select>
-														
-	                       		</div>
+                                                    <div class="input_box upload_btn">
+                                                        <select required name="days[]" id="days" class="select_box">
+                                                            <option value="">-- Select Day-- </option>
+                                                            <option value="Monday">Monday</option>
+                                                            <option value="Tuesday">Tuesday</option>
+                                                            <option value="Wednesday">Wednesday</option>
+                                                            <option value="Thursday">Thursday</option>
+                                                            <option value="Friday">Friday</option>
+                                                            <option value="Saturday">Saturday</option>
+                                                            <option value="Sunday">Sunday</option>
+                                                        </select>							
+                                                    </div>
 	                       		
 	                       		<!-- <div class="input_box upload_user">
 	                           		<img src="" id="img_here" alt="" class="img-responsive"/>
