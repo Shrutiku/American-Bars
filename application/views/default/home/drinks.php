@@ -92,7 +92,7 @@
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
                             </h2>
                         
-                            <?php			// BEGIN SMALL BEER TABLE 
+                            <?php			// BEGIN SMALL COCKTAIL TABLE 
                             $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
                             echo form_open('bar/actionbeer',$attributes);?> 
                             <input type="hidden" name="action" id="action" />
@@ -104,7 +104,7 @@
                                         <div class="clearfix"></div>
                                         <table class="table">
                                             <thead>
-                                                <th>Beer Name</th>
+                                                <th>Cocktail Name</th>
                                                 <th>Type</th>
                                             </thead>
                                             <tbody>
@@ -118,20 +118,20 @@
 
                                             if ($i % 2 == 0)
                                                 {
-                                                  $dark =  "dark";
+                                                  $dark =  "light";
                                                 }
                                                 else
                                                 {
-                                                  $dark =  "light";
+                                                  $dark =  "dark";
                                                 }?>	
-                                                    <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-                                                        <td><?php echo $event->beer_name;?></td>
-                                                        <td><?php echo $event->beer_type;?></td>
+                                                    <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
+                                                        <td><?php echo $event->cocktail_name;?></td>
+                                                        <td><?php echo $event->type;?></td>
                                                         <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
                                                     </tr>
                                             <?php $i++; } } else { ?>
                                                     <tr>
-                                                            <td colspan="6">No beers found at your bar.</td>
+                                                            <td colspan="6">No cocktails found at your bar.</td>
                                                     </tr>	
 
                                                     <?php } ?>	
@@ -151,7 +151,7 @@
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
                             </h2>
                         
-                            <?php			// BEGIN SMALL BEER TABLE 
+                            <?php			// BEGIN SMALL LIQUOR TABLE 
                             $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
                             echo form_open('bar/actionbeer',$attributes);?> 
                             <input type="hidden" name="action" id="action" />
