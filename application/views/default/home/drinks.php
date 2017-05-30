@@ -27,124 +27,128 @@
                 <div class="dashboard_subblock">
                     <div id="list_hide" class="content">	
                         
-                        <div class="col-md-4 coctail-new col-sm-12 padb20 marr_10">
-                            <h2  style="align: center;">Beers
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
-                            </h2>
-                        
-                            <?php			// BEGIN SMALL BEER TABLE 
-                            $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-                            echo form_open('bar/actionbeer',$attributes);?> 
-                            <input type="hidden" name="action" id="action" />
-                                <div class="table-responsive">
-                                    <div id="responsecomment">
-                                        <div class="pagination" id="at_ajax">
-                                            <?php echo $page_link;?>
+                        <div class="col-md-4 col-sm-12 padb20">
+                            <div class="marr_10">
+                                <h2  style="align: center;">Beers
+                                    <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
+                                    <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
+                                </h2>
+
+                                <?php			// BEGIN SMALL BEER TABLE 
+                                $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
+                                echo form_open('bar/actionbeer',$attributes);?> 
+                                <input type="hidden" name="action" id="action" />
+                                    <div class="table-responsive">
+                                        <div id="responsecomment">
+                                            <div class="pagination" id="at_ajax">
+                                                <?php echo $page_link;?>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <table class="table">
+                                                <thead>
+                                                    <th>Beer Name</th>
+                                                    <th>Type</th>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+
+
+                                                if($resultBeer)
+                                                {
+                                                    $i=1;
+                                                    foreach($resultBeer as $event){								
+
+                                                if ($i % 2 == 0)
+                                                    {
+                                                      $dark =  "dark";
+                                                    }
+                                                    else
+                                                    {
+                                                      $dark =  "light";
+                                                    }?>	
+                                                        <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
+                                                            <td><?php echo $event->beer_name;?></td>
+                                                            <td><?php echo $event->beer_type;?></td>
+                                                            <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
+                                                        </tr>
+                                                <?php $i++; } } else { ?>
+                                                        <tr>
+                                                                <td colspan="6">No beers found at your bar.</td>
+                                                        </tr>	
+
+                                                        <?php } ?>	
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="clearfix"></div>
-                                        <table class="table">
-                                            <thead>
-                                                <th>Beer Name</th>
-                                                <th>Type</th>
-                                            </thead>
-                                            <tbody>
-                                            <?php
-
-
-                                            if($resultBeer)
-                                            {
-                                                $i=1;
-                                                foreach($resultBeer as $event){								
-
-                                            if ($i % 2 == 0)
-                                                {
-                                                  $dark =  "dark";
-                                                }
-                                                else
-                                                {
-                                                  $dark =  "light";
-                                                }?>	
-                                                    <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-                                                        <td><?php echo $event->beer_name;?></td>
-                                                        <td><?php echo $event->beer_type;?></td>
-                                                        <input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
-                                                    </tr>
-                                            <?php $i++; } } else { ?>
-                                                    <tr>
-                                                            <td colspan="6">No beers found at your bar.</td>
-                                                    </tr>	
-
-                                                    <?php } ?>	
-                                            </tbody>
-                                        </table>
+        <!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
+                                        <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
+                                        <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
                                     </div>
-    <!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
-                                    <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
-                                    <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                         
-                        <div class="col-md-4 coctail-new col-sm-12 padb20 marr_10">
-                            <h2  style="align: center;">Cocktails
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
-                                <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
-                            </h2>
-                        
-                            <?php			// BEGIN SMALL COCKTAIL TABLE 
-                            $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-                            echo form_open('bar/actionbeer',$attributes);?> 
-                            <input type="hidden" name="action" id="action" />
-                                <div class="table-responsive">
-                                    <div id="responsecomment">
-                                        <div class="pagination" id="at_ajax">
-                                            <?php echo $page_link;?>
+                        <div class="col-md-4 col-sm-12 padb20">
+                            <div class="marr_10">
+                                <h2  style="align: center;">Cocktails
+                                    <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
+                                    <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
+                                </h2>
+
+                                <?php			// BEGIN SMALL COCKTAIL TABLE 
+                                $attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
+                                echo form_open('bar/actionbeer',$attributes);?> 
+                                <input type="hidden" name="action" id="action" />
+                                    <div class="table-responsive">
+                                        <div id="responsecomment">
+                                            <div class="pagination" id="at_ajax">
+                                                <?php echo $page_link;?>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <table class="table">
+                                                <thead>
+                                                    <th>Cocktail Name</th>
+                                                    <th>Type</th>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+
+
+                                                if($resultCocktail)
+                                                {
+                                                    $i=1;
+                                                    foreach($resultCocktail as $event){								
+
+                                                if ($i % 2 == 0)
+                                                    {
+                                                      $dark =  "dark";
+                                                    }
+                                                    else
+                                                    {
+                                                      $dark =  "light";
+                                                    }?>	
+                                                        <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
+                                                            <td><?php echo $event->cocktail_name;?></td>
+                                                            <td><?php echo $event->type;?></td>
+                                                        </tr>
+                                                <?php $i++; } } else { ?>
+                                                        <tr>
+                                                                <td colspan="6">No cocktails found at your bar.</td>
+                                                        </tr>	
+
+                                                        <?php } ?>	
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="clearfix"></div>
-                                        <table class="table">
-                                            <thead>
-                                                <th>Cocktail Name</th>
-                                                <th>Type</th>
-                                            </thead>
-                                            <tbody>
-                                            <?php
-
-
-                                            if($resultCocktail)
-                                            {
-                                                $i=1;
-                                                foreach($resultCocktail as $event){								
-
-                                            if ($i % 2 == 0)
-                                                {
-                                                  $dark =  "dark";
-                                                }
-                                                else
-                                                {
-                                                  $dark =  "light";
-                                                }?>	
-                                                    <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
-                                                        <td><?php echo $event->cocktail_name;?></td>
-                                                        <td><?php echo $event->type;?></td>
-                                                    </tr>
-                                            <?php $i++; } } else { ?>
-                                                    <tr>
-                                                            <td colspan="6">No cocktails found at your bar.</td>
-                                                    </tr>	
-
-                                                    <?php } ?>	
-                                            </tbody>
-                                        </table>
+        <!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
+                                        <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
+                                        <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
                                     </div>
-    <!--                                <input type="hidden" name="redirect_page" id="redirect_page" value="<?php // echo $redirect_page;?>"/>
-                                    <input type="hidden" name="offset" id="offset" value="<?php // echo ($offset!='')?$offset:0; ?>" />
-                                    <input type="hidden" name="limit" id="limit" value="<?php // echo ($limit>0)?$limit:10; ?>" />-->
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                         
-                        <div class="col-md-4 coctail-new col-sm-12 padb20">
+                        <div class="col-md-4 col-sm-12 padb20">
                             <h2  style="align: center;">Liquors
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Add</a>
