@@ -181,7 +181,7 @@ $('.sorted_table').sortable({
                                                                                 </form>
                                                                             </div>-->
                                                                             <div class="col-sm-1">
-                                                                                <label class="control-label" style="font-size: 16px;">Time:</label>
+                                                                                <label class="control-label" style="font-size: 16px;"> &nbsp Time:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 13%" >
                                                                                 <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
