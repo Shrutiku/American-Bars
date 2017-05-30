@@ -241,7 +241,7 @@ $('.sorted_table').sortable({
                                                                                     </form>
                                                                                 </div>-->
                                                                                 <div class="dropdown">
-                                                                                    <button onclick="myFunction()" class="dropbtn"></button>
+                                                                                    <button onclick="myFunction()" class="dropbtn">Day</button>
                                                                                     <div id="myDropdown" class="dropdown-content">
                                                                                         <a href="#Monday">Monday</a>
                                                                                         <a href="#Tuesday">Tuesday</a>
