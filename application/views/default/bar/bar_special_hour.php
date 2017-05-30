@@ -151,10 +151,14 @@ $('.sorted_table').sortable({
 <!--                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>-->
-<<<<<<< HEAD
                                                                             <div class="col-sm-3 padding-0">      
+<<<<<<< HEAD
 =======
                                                                             <div class="col-sm-2 padding-0">      
+>>>>>>> origin/sandbox
+=======
+                                                                            </div>
+                                                                            <div class="col-sm-2">      
 >>>>>>> origin/sandbox
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
@@ -256,7 +260,7 @@ $('.sorted_table').sortable({
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
-                                                                                <div class="col-sm-1">
+                                                                                <div class="col-sm-2">
                                                                                     <label class="control-label">Daily Specials:</label>
                                                                                 </div>
 <!--                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
