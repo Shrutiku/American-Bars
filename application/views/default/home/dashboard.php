@@ -1001,15 +1001,15 @@ B.show();
  
    $(document).ready(function(){
     
-   		$('.bxslider').bxSlider({
-   		    //auto: false,
-            //autoControls: true,
+   		$('.').bxSlider({
+   		    auto: false,
+            autoControls: true
             //infiniteLoop: false,
             //hideControlOnEnd: true,
-            minSlides: 1,
-            maxSlides: 3,
-            slideWidth: 300,
-            slideMargin: 10
+            //minSlides: 1,
+            //maxSlides: 3,
+            //slideWidth: 300,
+            //slideMargin: 10
         });
 		   // initiate layout and plugins
 		   Gallery.init();
