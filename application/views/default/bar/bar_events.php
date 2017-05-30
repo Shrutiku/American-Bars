@@ -231,7 +231,7 @@
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Address : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Address : </label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="address" name="address" value="">
