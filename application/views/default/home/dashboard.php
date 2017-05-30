@@ -165,8 +165,8 @@ B.show();
 		     			<div>
 		     				<div class="mug_block parrot margin-right-30">
 		     					<div class="">
-                                                            <!--<a href="<?php echo site_url('bar/list_message')?>">Messages</a>-->
-                                                            <p class="mug_count">Messages
+                                                            <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
+                                                            <p class="mug_count">
                                                                 <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a>
                                                             </p>
 <!--                                                            <a href="<?php // echo site_url('bar/comments')?>">Comments</a>
@@ -174,7 +174,7 @@ B.show();
                                                                 <a href="<?php // echo site_url('bar/comments')?>"><?php // echo '0'; //$this->home_model->getcommentcount();?></a>
                                                             </p>-->
                                                             <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
-                                                            <p class="mug_count">Post Cards
+                                                            <p class="mug_count">
                                                                     <a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a>
                                                             </p>
 		     					</div>
