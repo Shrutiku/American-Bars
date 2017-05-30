@@ -282,7 +282,7 @@ $('.sorted_table').sortable({
                                                                                         <a href="#Sunday">Sunday</a>
                                                                                     </div>
                                                                                 </div>-->
-                                                                                <div class="dropdown">
+                                                                                <div class="col-sm-2">
 <!--                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                                                                         <span class="caret"></span>
                                                                                     </button>
