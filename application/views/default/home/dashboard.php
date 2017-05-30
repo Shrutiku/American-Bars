@@ -1002,10 +1002,6 @@ B.show();
    $(document).ready(function(){
     
    		$('gallery_img').bxSlider({
-   		    auto: false,//test
-            autoControls: true
-            infiniteLoop: false,
-            hideControlOnEnd: true,
             minSlides: 1,
             maxSlides: 3,
             slideWidth: 300,
