@@ -257,7 +257,7 @@ $('.sorted_table').sortable({
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
-                                                                                <h6><div class="col-sm-12">Daily Specials:</div></h6><br><br>
+                                                                                <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
                                                                                 </div>
@@ -265,7 +265,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
                                                                                     <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>-->
-                                                                                <div class="col-sm-2">
+                                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">
                                                                                     <select class="form-control">
                                                                                         <option value="monday">Monday</option>
                                                                                         <option value="tuesday">Tuesday</option>
@@ -276,8 +276,15 @@ $('.sorted_table').sortable({
                                                                                         <option value="sunday">Sunday</option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-sm-1">
-                                                                                    <label class="control-label" style="font-size: 16px;">Time:</label>
+                                                                                 <div class="col-sm-1 text-right">
+                                                                                <label class="control-label">Items: </label>
+                                                                            </div>
+                                                                            <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
+                                                                            <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
+                                                                            </div>
+                                                                                <div class="col-sm-1"> 
+                                                                                    <label class="control-label" style="font-size: 16px;padding-left: 0px; padding-right: 0px; ">Time:</label>
                                                                                 </div>
                                                                                 <div class="col-sm-1" style="width: 13%" >
                                                                                     <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
@@ -285,10 +292,10 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1"  style="width: 13%">	
                                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                                 </div>	
-                                                                                <div class="col-sm-1" style="width: 5%">
+                                                                                <div class="col-sm-1" style="width: 5%;padding-left: 0px; padding-right: 0px;">
                                                                                     <label class="control-label" style="font-size: 16px;">$:</label>
                                                                                 </div>
-                                                                                <div class="col-sm-1" style="width: 13%">	
+                                                                                <div class="col-sm-1" style="width: 13%;padding-left: 0px; padding-right: 0px;">	
                                                                                     <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                                 </div>
                                                                                 <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
