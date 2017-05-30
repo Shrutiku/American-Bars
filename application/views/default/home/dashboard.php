@@ -165,24 +165,22 @@ B.show();
 		     			<div>
 		     				<div class="mug_block parrot margin-right-30">
 		     					<div class="">
-                                                            <!--<a href="<?php // echo site_url('bar/list_message')?>">Messages</a>-->
+                                                            <!--<a href="<?php echo site_url('bar/list_message')?>">Messages</a>-->
                                                             <p class="mug_count">Messages
                                                                 <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a>
                                                             </p>
-                                                        </div>
 <!--                                                            <a href="<?php // echo site_url('bar/comments')?>">Comments</a>
                                                             <p class="mug_count">
                                                                 <a href="<?php // echo site_url('bar/comments')?>"><?php // echo '0'; //$this->home_model->getcommentcount();?></a>
                                                             </p>-->
-                                                        <div>    
-                                                            <!--<a href="<?php // echo site_url('bar/postcard')?>">Post Cards</a>-->
+                                                            <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
                                                             <p class="mug_count">Post Cards
                                                                     <a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a>
                                                             </p>
 		     					</div>
 		     				</div>
 		     				
-<!--		     				<div class="mug_block green margin-right-30">
+		     				<div class="mug_block green margin-right-30">
                                                     <a href="<?php echo site_url('bar/bar_beer')?>">Beers</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
@@ -196,7 +194,8 @@ B.show();
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_liquor')?>"><?php echo $this->home_model->countliquor(@$getbar['bar_id']); ?></a></p>
 		     			<?php // } ?>		
-		     				</div>-->
+		     				</div>
+                                            
 		     				<div class="mug_block brown ">
 		     					<div class="">
 		     						Total Visitors
