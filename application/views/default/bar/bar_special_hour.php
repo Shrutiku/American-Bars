@@ -229,7 +229,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
                                                                                     <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>
-                                                                                <div class="col-sm-2">
+<!--                                                                                <div class="col-sm-2">
                                                                                     <form action="">
                                                                                         <input type="checkbox" name="day" value="Monday"> M
                                                                                         <input type="checkbox" name="day" value="Tuesday"> Tu
@@ -239,6 +239,18 @@ $('.sorted_table').sortable({
                                                                                         <input type="checkbox" name="day" value="Saturday"> S <br>
                                                                                         <input type="checkbox" name="day" value="Sunday"> Su
                                                                                     </form>
+                                                                                </div>-->
+                                                                                <div class="dropdown">
+                                                                                    <button onclick="myFunction()" class="dropbtn"></button>
+                                                                                    <div id="myDropdown" class="dropdown-content">
+                                                                                        <a href="#Monday">Monday</a>
+                                                                                        <a href="#Tuesday">Tuesday</a>
+                                                                                        <a href="#Wednesday">Wednesday</a>
+                                                                                        <a href="#Thursday">Thursday</a>
+                                                                                        <a href="#Friday">Friday</a>
+                                                                                        <a href="#Saturday">Saturday</a>
+                                                                                        <a href="#Sunday">Sunday</a>
+                                                                                    </div>
                                                                                 </div>
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label" style="font-size: 16px;">Time:</label>
