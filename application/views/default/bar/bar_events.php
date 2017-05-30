@@ -235,7 +235,7 @@
 	        				 		<label class="control-label">Address : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="address" name="address" value="">
+	                           		<input type="text" class="form-control form-pad" id="address" name="address" value="<?php echo $getbar['address'];?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
