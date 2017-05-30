@@ -1,6 +1,6 @@
 <style>
 @media (max-width:767px){
-.col-sm-4, .col-sm-3, .col-sm-2{ width:10% !important; padding-left: 15px !important;
+.col-sm-4, .col-sm-3, .col-sm-2{ width:100% !important; padding-left: 15px !important;
 padding-right: 15px !important; margin-top:5px;}
 .btn-primary.search { margin-left: 15px;    margin-top: 5px;}
 }
