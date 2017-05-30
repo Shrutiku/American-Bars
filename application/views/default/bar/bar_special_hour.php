@@ -2010,11 +2010,11 @@ function addrows(cnt){
 		//alert(cnt);
 		var html = '';
 		html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb8">';
-	    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-1 text-right">';
+	    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-1 ">';
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
 	    
-           html+=  '<div class="col-sm-1 text-right">';
+           html+=  '<div class="col-sm-1">';
                                                     html+=    '<label class="control-label">Dayssss : <span class="aestrick"> * </span></label>';
                                                html+=     '</div>';
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
