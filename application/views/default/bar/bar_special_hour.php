@@ -265,7 +265,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
                                                                                     <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>-->
-                                                                                <div class="col-sm-2">
+                                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">
                                                                                     <select class="form-control">
                                                                                         <option value="monday">Monday</option>
                                                                                         <option value="tuesday">Tuesday</option>
