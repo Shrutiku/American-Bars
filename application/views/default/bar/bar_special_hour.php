@@ -154,7 +154,7 @@ $('.sorted_table').sortable({
 <<<<<<< HEAD
                                                                             <div class="col-sm-3 padding-0">      
 =======
-                                                                            <div class="col-sm-2">      
+                                                                            <div class="col-sm-2 padding-0">      
 >>>>>>> origin/sandbox
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
@@ -167,7 +167,7 @@ $('.sorted_table').sortable({
                                                                                     <option value="sunday">Sunday</option>
                                                                                 </select>
                                                                             </div>
-                                                                            <div class="col-sm-1">
+                                                                            <div class="col-sm-1 padding-0">
                                                                                 <label class="control-label" style="font-size: 16px;">to</label>
                                                                             </div>
                                                                             <div class="col-sm-2 padding-0">                                                                                  
