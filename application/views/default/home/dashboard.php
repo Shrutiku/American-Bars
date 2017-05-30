@@ -163,7 +163,7 @@ B.show();
 		     		<div class="dashboard_subblock">
 		     			<?php if($getbar['bar_type']=='full_mug'){?>
 		     			<div>
-		     				<div class="mug_block parrot margin-right-30">
+		     				<div class="mug_block parrot margin-right-30 style="height: 217px;"">
 		     					<div class="">
                                                             <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
                                                             <p class="mug_count">
@@ -180,7 +180,7 @@ B.show();
 		     					</div>
 		     				</div>
 		     				
-		     				<div class="mug_block green margin-right-30">
+                                            <div class="mug_block green margin-right-30">
                                                     <a href="<?php echo site_url('bar/bar_beer')?>">Beers</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
@@ -196,7 +196,7 @@ B.show();
 		     			<?php // } ?>		
 		     				</div>
                                             
-		     				<div class="mug_block brown ">
+		     				<div class="mug_block brown" style="height: 217px;">
 		     					<div class="">
 		     						Total Visitors
 		     						<p class="mug_count"><?php if(get_count_impression(@$getbar['bar_id'])>0) { echo get_count_impression(@$getbar['bar_id']); } else { echo '0'; } ?></p>
