@@ -258,7 +258,7 @@ $('.sorted_table').sortable({
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
                                                                                 <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
-                                                                                <div class="col-sm-1">
+                                                                                <div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">
                                                                                     <label class="control-label">Day:</label>
                                                                                 </div>
 <!--                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
