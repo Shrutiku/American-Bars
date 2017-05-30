@@ -38,7 +38,7 @@
                                             <li title="Add events." class="<?php echo $this->uri->segment(2)=='bar_events' ? 'active':'';?>">
                                                     <a href="<?php echo site_url('bar/bar_events')?>">
                                                             <!--<i class="strip events"></i>-->
-                                                        <i class='glyphicon glyphicon-calendar' style="color:'#FFF'; display: block; font-size: 50px; vertical-align: middle; margin: 0 auto;"></i>
+                                                        <i class='glyphicon glyphicon-calendar' style="color:'#FFF'; display: block; font-size: 46px; vertical-align: middle; margin: auto;"></i>
                                                             Events
                                                     </a>
                                             </li>
