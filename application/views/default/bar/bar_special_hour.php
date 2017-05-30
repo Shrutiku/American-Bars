@@ -276,7 +276,7 @@ $('.sorted_table').sortable({
                                                                                         <option value="sunday">Sunday</option>
                                                                                     </select>
                                                                                 </div>
-                                                                                 <div class="col-sm-3 text-right">
+                                                                                 <div class="col-sm-1 text-right">
                                                                                 <label class="control-label">Items: </label>
                                                                             </div>
                                                                             <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
