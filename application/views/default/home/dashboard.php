@@ -1002,9 +1002,8 @@ B.show();
    $(document).ready(function(){
     
    		$('.bxslider').bxSlider({
-            controls: true,//teeestoo
-            auto: false,
-            autoControls: true,
+            infiniteLoop: false,
+            hideControlOnEnd: true,
             minSlides: 3,
             maxSlides: 3,
             slideWidth: 300,
