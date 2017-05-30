@@ -257,7 +257,7 @@ $('.sorted_table').sortable({
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
-                                                                                <div class="col-sm-2">Daily Specials:</div><br><br>
+                                                                                <h3><div class="col-sm-2">Daily Specials:</div></h3><br><br>
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
                                                                                 </div>
