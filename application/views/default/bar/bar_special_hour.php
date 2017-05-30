@@ -4,19 +4,12 @@
 padding-right: 15px !important; margin-top:5px;}
 .btn-primary.search { margin-left: 15px;    margin-top: 5px;}
 }
-.padding-0{
-    padding-right:0;
-    padding-left:0;
-}
 </style>
 <script src="<?php echo base_url().getThemeName(); ?>/js/jquery-sortable.js"></script>
 <style>
-
 	body.dragging, body.dragging * {
   cursor: move !important;
 }
-
-
 tbody.example tr td.placeholder {
   position: relative;
   /** More li styles **/
@@ -29,14 +22,11 @@ tr.example td.placeholder:before {
 <script>
 	
 $(document).ready(function(){
-
-
 $('.sorted_table').sortable({
   containerSelector: 'table',
   itemPath: '> tbody',
   itemSelector: 'tr',
   placeholder: '<tr class="placeholder"/>',
-
   onDrop: function (item, container, _super) {
            // var obj = jQuery('.sorted_table tr').map(function(){
            //     return 'trvalue[]=' + jQuery (this).attr("data-id");
@@ -64,8 +54,6 @@ $('.sorted_table').sortable({
 })
  
 // Sortable column heads
-
-
 	});
 </script>
 <div class="wrapper row6 padtb10 has-js">
@@ -151,14 +139,7 @@ $('.sorted_table').sortable({
 <!--                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>-->
-<<<<<<< HEAD
-                                                                            <div class="col-sm-3 padding-0">      
-                                                                            
-=======
-                                                                            <div class="col-sm-3 padding-0">   
->>>>>>> origin/sandbox
                                                                             <div class="col-sm-2">      
-
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
@@ -170,10 +151,10 @@ $('.sorted_table').sortable({
                                                                                     <option value="sunday">Sunday</option>
                                                                                 </select>
                                                                             </div>
-                                                                            <div class="col-sm-1 padding-0">
+                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">to</label>
                                                                             </div>
-                                                                            <div class="col-sm-2 padding-0">                                                                                  
+                                                                            <div class="col-sm-2">                                                                                  
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
                                                                                     <option value="tuesday">Tuesday</option>
@@ -198,75 +179,29 @@ $('.sorted_table').sortable({
                                                                                     <input type="checkbox" name="day" value="Saturday"> S <br>
                                                                                     <input type="checkbox" name="day" value="Sunday"> Su
                                                                                 </form>
-=======
-<!--                                                                            <div class="col-sm-2 ">     
->>>>>>> origin/sandbox
                                                                             </div>-->
-                                                                              <!--  <div class="col-sm-2">      
-
-                                                                                    <label class="control-label" style="font-size: 16px;">Days:</label>
-                                                                                    <select class="form-control">
-                                                                                        <option value="monday">Monday</option>
-                                                                                        <option value="tuesday">Tuesday</option>
-                                                                                        <option value="wednesday">Wednesday</option>
-                                                                                        <option value="thursday">Thursday</option>
-                                                                                        <option value="friday">Friday</option>
-                                                                                        <option value="saturday">Saturday</option>
-                                                                                        <option value="sunday">Sunday</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                                <div class="col-sm-1 padding-0">
-                                                                                    <label class="control-label" style="font-size: 16px;">to</label>
-                                                                                </div>
-                                                                                <div class="col-sm-2 padding-0">                                                                                  
-                                                                                    <select class="form-control">
-                                                                                        <option value="monday">Monday</option>
-                                                                                        <option value="tuesday">Tuesday</option>
-                                                                                        <option value="wednesday">Wednesday</option>
-                                                                                        <option value="thursday">Thursday</option>
-                                                                                        <option value="friday">Friday</option>
-                                                                                        <option value="saturday">Saturday</option>
-                                                                                        <option value="sunday">Sunday</option>
-                                                                                    </select>
-                                                                                </div>-->
-
-    <!--                                                                            <div class="col-sm-2" style="padding-left: 15px">	
-
-                                                                                </div>-->
-    <!--                                                                            <div class="col-sm-2">
-                                                                                    <form action="">
-                                                                                        <input type="checkbox" name="day" value="Monday"> M
-                                                                                        <input type="checkbox" name="day" value="Tuesday"> Tu
-                                                                                        <input type="checkbox" name="day" value="Wednesday"> W <br>
-                                                                                        <input type="checkbox" name ="day" value="Thursday"> Th
-                                                                                        <input type="checkbox" name="day" value="Friday"> F
-                                                                                        <input type="checkbox" name="day" value="Saturday"> S <br>
-                                                                                        <input type="checkbox" name="day" value="Sunday"> Su
-                                                                                    </form>
-                                                                                </div>-->
-    <br>
-                                                                                <div class="col-sm-1">
-                                                                                    <label class="control-label" style="font-size: 16px;">Time:</label>
-                                                                                </div>
-                                                                                <div class="col-sm-1" style="width: 13%" >
-                                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
-                                                                                </div>
-                                                                                <div class="col-sm-1"  style="width: 13%">	
-                                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                                                                </div>	
-                                                                                <div class="col-sm-1" style="width: 5%">
-                                                                                    <label class="control-label" style="font-size: 16px;">$:</label>
-                                                                                </div>
-                                                                                <div class="col-sm-1" style="width: 13%">	
-                                                                                    <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
-                                                                                </div>	
-                                                                                <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-
-                                                                                <div class="clearfix"></div>
-                                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
+                                                                            <div class="col-sm-1">
+                                                                                <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                             </div>
+                                                                            <div class="col-sm-1" style="width: 13%" >
+                                                                                <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                            </div>
+                                                                            <div class="col-sm-1"  style="width: 13%">	
+                                                                                <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                            </div>	
+                                                                            <div class="col-sm-1" style="width: 5%">
+                                                                                <label class="control-label" style="font-size: 16px;">$:</label>
+                                                                            </div>
+                                                                            <div class="col-sm-1" style="width: 13%">	
+                                                                                <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
+                                                                            </div>	
+                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+
+                                                                            <div class="clearfix"></div>
+                                                                                <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
                                                                         </div>
                                                                     </div>
+                                                                </div>
                                                             <?php } else { ?>
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
                                                                 <div id="contbeer" class="mar_top20bot20">
@@ -305,7 +240,7 @@ $('.sorted_table').sortable({
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
-                                                                                <div class="col-sm-2">
+                                                                                <div class="col-sm-1">
                                                                                     <label class="control-label">Daily Specials:</label>
                                                                                 </div>
 <!--                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
@@ -797,7 +732,6 @@ $('.sorted_table').sortable({
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.easing.1.3.js"></script>
  
 <script>
-
 $(document).ready(function(){	
 	
 	$('.tagsbeer').autocomplete({
@@ -1450,7 +1384,6 @@ $('#add_row').click(function(){
 		      });
 		     
 		$('.timepicker-default').timepicker({
-
             });
 		$('#img_'+cnt).slideDown();
 			
@@ -1961,9 +1894,7 @@ function validate(){
 	}
 	
 	$('.timepicker-default').timepicker({
-
                // defaultTime : false
-
             });
 		jQuery(document).ready(function() {       
 				<?php if($msg=='update'){?>
@@ -1972,9 +1903,7 @@ function validate(){
 		
 		  // FormComponents.init();
 		       $('.timepicker-default').timepicker({
-
                // defaultTime : false
-
             });
 		});
 function addrows(cnt){		
@@ -2338,4 +2267,3 @@ function addrows(cnt){
 		      });
 	</script>
 	
-
