@@ -286,13 +286,13 @@ $('.sorted_table').sortable({
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                                                                     <span class="caret"></span></button>
                                                                                     <ul class="dropdown-menu">
-                                                                                        <li><a href="#Monday">Monday</a></li>
-                                                                                        <li><a href="#Tuesday">Tuesday</a></li>
-                                                                                        <li><a href="#Wednesday">Wednesday</a></li>
-                                                                                        <li><a href="#Thursday">Thursday</a></li>
-                                                                                        <li><a href="#Friday">Friday</a></li>
-                                                                                        <li><a href="#Saturday">Saturday</a></li>
-                                                                                        <li><a href="#Sunday">Sunday</a></li>
+                                                                                        <li><a value="Monday">Monday</a></li>
+                                                                                        <li><a value="Tuesday">Tuesday</a></li>
+                                                                                        <li><a value="Wednesday">Wednesday</a></li>
+                                                                                        <li><a value="Thursday">Thursday</a></li>
+                                                                                        <li><a value="Friday">Friday</a></li>
+                                                                                        <li><a value="Saturday">Saturday</a></li>
+                                                                                        <li><a value="Sunday">Sunday</a></li>
                                                                                     </ul>
                                                                                 </div>
                                                                                 <div class="col-sm-1">
