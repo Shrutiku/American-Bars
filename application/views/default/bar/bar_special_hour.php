@@ -196,7 +196,7 @@ $('.sorted_table').sortable({
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	-->
                                                                             <div class="col-sm-1"></div>                   
-                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> <br>
                                                                             <div class="padtb8">
                                                                                 <div class="col-sm-3 text-right">
                                                                                     <label class="control-label">Items: </label>
