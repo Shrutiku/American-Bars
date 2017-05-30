@@ -27,7 +27,7 @@
                 <div class="dashboard_subblock">
                     <div id="list_hide" class="content">	
                         
-                        <div class="col-md-4 coctail-new col-sm-12 padb20 margin-right-30">
+                        <div class="col-md-4 coctail-new col-sm-12 padb20 margin-right-20">
                             <h2  style="align: center;">Beers
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_beer');?>">Edit</a>
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_beer');?>">Add</a>
@@ -86,7 +86,7 @@
                             </form>
                         </div>
                         
-                        <div class="col-md-4 coctail-new col-sm-12 padb20 margin-right-30">
+                        <div class="col-md-4 coctail-new col-sm-12 padb20 margin-right-20">
                             <h2  style="align: center;">Cocktails
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_cocktail');?>">Edit</a>
                                 <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_cocktail');?>">Add</a>
