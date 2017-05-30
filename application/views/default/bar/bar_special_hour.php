@@ -4,6 +4,10 @@
 padding-right: 15px !important; margin-top:5px;}
 .btn-primary.search { margin-left: 15px;    margin-top: 5px;}
 }
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
 </style>
 <script src="<?php echo base_url().getThemeName(); ?>/js/jquery-sortable.js"></script>
 <style>
@@ -147,7 +151,11 @@ $('.sorted_table').sortable({
 <!--                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>-->
+<<<<<<< HEAD
+                                                                            <div class="col-sm-3 padding-0">      
+=======
                                                                             <div class="col-sm-2">      
+>>>>>>> origin/sandbox
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
@@ -162,7 +170,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">to</label>
                                                                             </div>
-                                                                            <div class="col-sm-2">                                                                                  
+                                                                            <div class="col-sm-2 padding-0">                                                                                  
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
                                                                                     <option value="tuesday">Tuesday</option>
