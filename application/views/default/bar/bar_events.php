@@ -149,7 +149,7 @@
 	        				 		<label class="control-label">Venue : </label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="venue" name="venue" value="<?php echo $getbar['bar_title'];?>">
+	                           		<input type="text" class="form-control form-pad" id="venue" name="venue" value="<?php echo $bar_detail['bar_title'];?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -235,7 +235,7 @@
 	        				 		<label class="control-label">Address : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="address" name="address" value="<?php echo $getbar['address'];?>">
+	                           		<input type="text" class="form-control form-pad" id="address" name="address" value="<?php echo $bar_detail['address'];?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -245,7 +245,7 @@
 	        				 		<label class="control-label">City : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="city1" name="city" value="<?php echo $getbar['city'];?>">
+	                           		<input type="text" class="form-control form-pad" id="city1" name="city" value="<?php echo $bar_detail['city'];?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -256,7 +256,7 @@
 	        				 		<label class="control-label">State : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="state1" name="state" value="<?php echo $getbar['state'];?>">
+	                           		<input type="text" class="form-control form-pad" id="state1" name="state" value="<?php echo $bar_detail['state'];?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
