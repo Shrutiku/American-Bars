@@ -163,7 +163,7 @@ $('.sorted_table').sortable({
                                                                             
                                                                              <label class="control-label" style="font-size: 16px;">to</label>
                                                                             
-                                                                            <div class="dropdown">
+                                                                            <div class="col-sm-1">
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                                                                     <span class="caret"></span></button>
                                                                                     <ul class="dropdown-menu">
