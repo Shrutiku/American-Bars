@@ -1003,6 +1003,8 @@ B.show();
    $(document).ready(function(){
     
    		$('.bxslider').bxSlider({
+
+   		    controls: true,
   minSlides: 3,
   maxSlides: 3,
   slideWidth: 300,
