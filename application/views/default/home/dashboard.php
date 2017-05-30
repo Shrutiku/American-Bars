@@ -1001,8 +1001,8 @@ B.show();
  
    $(document).ready(function(){
     
-   		//$('.').bxSlider({
-   		    auto: false,
+   		$('.').bxSlider({
+   		    auto: false,//test
             autoControls: true
             infiniteLoop: false,
             hideControlOnEnd: true,
