@@ -703,7 +703,7 @@ B.show();
                                             <div class="full_mugblock margin-right-30">
                                                     <div class="img_br_yellow height-515">
                                                         <h1 class="productbar_title">Latest Comments
-                                                            <a class="btn btn-lg btn-warning pull-right" href="<?php echo site_url('bar/comments')?>">See All</a>
+                                                            <small><a class="pull-right" href="<?php echo site_url('bar/comments')?>">See All</a></small>
                                                         </h1>
 
                                                         <ul class="latest_block_list" >
@@ -737,7 +737,7 @@ B.show();
                                             <div class="full_mugblock">
 			     				<div class="img_br_yellow height-515">
 		     						<h1 class="productbar_title">Latest Messages
-                                                                    <a class="btn btn-lg btn-warning pull-right" href="<?php echo site_url('bar/list_message')?>">See All</a>
+                                                                    <small><a class="pull-right" href="<?php echo site_url('bar/list_message')?>">See All</a></small>
                                                                 </h1>
 		     						<ul class="latest_block_list">
 		     							<?php if($resultmessage){
@@ -773,7 +773,7 @@ B.show();
 		     				<div class="full_mugblock margin-right-30">
 			     				<div class="img_br_yellow height-515">
 		     						<h1 class="productbar_title">Latest Post Cards
-                                                                    <a class="btn btn-lg btn-warning pull-right" href="<?php echo site_url('bar/postcard')?>">See All</a>
+                                                                    <small><a class="pull-right" href="<?php echo site_url('bar/postcard')?>">See All</a></small>
                                                                 </h1>
 		     						<ul class="latest_block_list">
 		     							<?php if($getpostcard){
