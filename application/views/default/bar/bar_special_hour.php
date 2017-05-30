@@ -149,7 +149,7 @@ $('.sorted_table').sortable({
                                                                             </div>
                                                                          
                                                                             <div class="col-sm-2" style="padding-left: 15px">	
-                                                                                <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
+                                                                               
                                                                             </div>
                                                                             <div class="col-sm-2">
                                                                                 <form action="">
