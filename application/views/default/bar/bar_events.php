@@ -143,7 +143,7 @@
 	                       		<div class="clearfix"></div>
 	                       	</div>
 	                       	
-	                       	<div class="padtb">
+<!--	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Venue : </label>
 	        				 	</div>
@@ -151,7 +151,7 @@
 	                           		<input type="text" class="form-control form-pad" id="venue" name="venue" value="">
 	                       		</div>
 	                       		<div class="clearfix"></div>
-	                       	</div>
+	                       	</div>-->
 	                       	
 	                       	<div class="padtb mar_top20">
 	        				 	<div class="col-sm-3 text-right">
@@ -229,9 +229,9 @@
 	        				 	</div>
 	        				 	
 	                       	
-	                       	<div class="padtb">
+<!--	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Address : </label>
+	        				 		<label class="control-label">Address : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="address" name="address" value="">
@@ -268,7 +268,7 @@
 	                           		<input type="text" class="form-control form-pad" id="zipcode1" name="zipcode" value="">
 	                       		</div>
 	                       		<div class="clearfix"></div>
-	                       	</div>
+	                       	</div>-->
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
