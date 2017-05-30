@@ -189,12 +189,12 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-1"  style="width: 13%">	
                                                                                 <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                             </div>	
-                                                                            <div class="col-sm-1" style="width: 5%">
+<!--                                                                            <div class="col-sm-1" style="width: 5%">
                                                                                 <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 13%">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
-                                                                            </div>	
+                                                                            </div>	-->
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 
                                                                             <div class="clearfix"></div>
