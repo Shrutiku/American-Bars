@@ -17,7 +17,7 @@
      		<div class="margin-top-50 bg_brown">
      			<?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
      			<div class="dashboard_detail">
-     				<div class="result_search event"><div class="result_search_text"><i class='glyphicon glyphicon-calendar' style="color:'#FFF'; font-size: 46px; vertical-align: middle; margin: auto;"></i> Events</div></div>
+     				<div class="result_search event"><div class="result_search_text"><i class='glyphicon glyphicon-calendar' style="color:'#FFF'; font-size: 42px; vertical-align: middle; margin: auto;"></i> Events</div></div>
 		     		<div class="dashboard_subblock">
 		     			<div>
 		     				<div class="dash-btngroup">
