@@ -1159,6 +1159,10 @@ function bareventtime()
 		{
 			redirect('home');
 		}
+                
+                $bar_id = $this->session->userdata('viewid');
+                $data['getbar'] = $this->home_model->get_bar_info($bar_id);
+                
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('event_title', 'Event Title', 'required');
 		$this->form_validation->set_rules('event_desc', 'Event Description', 'required');
@@ -1403,8 +1407,8 @@ function bareventtime()
 		
 		$data["bar_gallery_all"] = $this->bar_model->getBarGalleryAll($bar_id);
 		$data["bar_event"] = $this->bar_model->getBarEvent($bar_id,$limit=4);
-		$data["bar_beer"] = $this->bar_model->getBarBeer($bar_id,$limit=4);
-		$data["bar_cocktail"] = $this->bar_model->getBarCocktail($bar_id,$limit=4);
+		$data["bar_beer"] = $this->bar_model->getBarBeer($bar_id,$limit=5);
+		$data["bar_cocktail"] = $this->bar_model->getBarCocktail($bar_id,$limit=5);
 		$data['get_post_card'] = getTodayPostCard($bar_id);
 		$data['user_detail'] = get_user_info(get_authenticateUserID());
 		$data['barhours'] =  $this->bar_model->getBarHours($bar_id);
