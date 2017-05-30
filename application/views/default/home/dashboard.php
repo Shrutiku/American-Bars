@@ -144,7 +144,7 @@ B.show();
      			<div class="dashboard_detail">
      				<div class="result_search">
 			     		<div class='pull-left'><div class="result_search_text">Bar Owner Dashboard</div></div>
-			     		<div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>
+			     		<!--<div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>-->
 			     	<?php if($getbar['bar_type']=='half_mug'){?>
 			     		<div class="pull-right marr_10">
 		     				<!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
@@ -163,33 +163,41 @@ B.show();
 		     		<div class="dashboard_subblock">
 		     			<?php if($getbar['bar_type']=='full_mug'){?>
 		     			<div>
-		     				<div class="mug_block parrot margin-right-25">
+		     				<div class="mug_block parrot margin-right-30">
 		     					<div class="">
                                                             <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
-		     						<p class="mug_count">
-		     							<a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a></p>
-                                                                <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
-		     						<p class="mug_count">
-		     							<a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a></p>
+                                                            <p class="mug_count">
+                                                                <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a>
+                                                            </p>
+                                                            
+<!--                                                            <a href="<?php // echo site_url('bar/comments')?>">Comments</a>
+                                                            <p class="mug_count">
+                                                                <a href="<?php // echo site_url('bar/comments')?>"><?php // echo '0'; //$this->home_model->getcommentcount();?></a>
+                                                            </p>-->
+                                                            
+                                                            <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
+                                                            <p class="mug_count">
+                                                                    <a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a>
+                                                            </p>
 		     					
 		     					</div>
 		     				</div>
 		     				
-		     				<div class="mug_block green margin-right-25">
+<!--		     				<div class="mug_block green margin-right-30">
                                                     <a href="<?php echo site_url('bar/bar_beer')?>">Beers</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
-		     			<?php if($getbar['serve_as']=='cocktail'){?>		
+		     			<?php // if($getbar['serve_as']=='cocktail'){?>		
                                                         <a href="<?php echo site_url('bar/bar_cocktail')?>">Cocktails</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_cocktail')?>"><?php echo $this->home_model->countcocktail(@$getbar['bar_id']); ?></a></p>
-		     			<?php } ?>		
-		     			<?php if($getbar['serve_as']=='liquor'){?>
+		     			<?php // } ?>		
+		     			<?php // if($getbar['serve_as']=='liquor'){?>
                                                         <a href="<?php echo site_url('bar/bar_liquor')?>">Liquors</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_liquor')?>"><?php echo $this->home_model->countliquor(@$getbar['bar_id']); ?></a></p>
-		     			<?php } ?>		
-		     				</div>
+		     			<?php // } ?>		
+		     				</div>-->
 		     				<div class="mug_block brown ">
 		     					<div class="">
 		     						Total Visitors
@@ -692,71 +700,45 @@ B.show();
 					  </ul>	<div class="clearfix"></div>
 					<?php } } ?>
 		     			<div class="margin-top-30">
+                                            <div class="full_mugblock margin-right-30">
+                                                    <div class="img_br_yellow height-515">
+                                                        <h1 class="productbar_title">Latest Comments
+                                                            <small><a class="pull-right" href="<?php echo site_url('bar/comments')?>">See All</a></small>
+                                                        </h1>
+
+                                                        <ul class="latest_block_list" >
+                                                                <?php if($result){
+                                                          foreach($result as $comment){?>
+                                                        <li>
+                                                                <div class="reult_sub_title "><a target="_blank" href="<?php echo site_url('user/profile/'.base64_encode($comment->user_id))?>" class="bar_title"><?php echo $comment->comment_title; ?></a></div>
+                                                                <div class="rating_box"><a class="bar_title"><?php echo getDuration($comment->date_added); ?></a></div>
+                                                                <div class="clearfix"></div>
+                                                                <p class="result_desc"><?php if(strlen($comment->comment)>55) { echo substr($comment->comment,0,55)."..."; } else { echo $comment->comment; }?></p>
+                                                                <div class="reult_sub_title wdth-74"><p class="review_light pull-left"><?php echo $comment->first_name." ".$comment->last_name;?></p></div>
+                                                                <div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
+                                                                <div class="clearfix"></div>
+                                                        </li>
+                                                <?php } ?>
+                                                                        <?php if($result){ ?>	<div class="text-right pad_lr10 padtb10">
+                                                                        <a href="<?php echo site_url('bar/comments');?>" class="">View More</a>
+                                                                </div>
+                                                  <?php } ?>	
+                                                                        <?php } else {?>
+
+                                                                                <li>
+                                                                                        No comments found.
+                                                                                </li>
+                                                                <?php } ?>			  
+                                                        </ul>
+
+                                                    </div>
+                                            </div>
                                             <?php if ($getbar['bar_type']=='full_mug') {?>
-		     				<div class="full_mugblock margin-right-30">
-			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Post Cards</h1>
-		     						<ul class="latest_block_list">
-		     							<?php if($getpostcard){
-		     								   foreach($getpostcard as $card) { ?>
-		     							<li>
-		     								<a href="<?php echo site_url('bar/postcard');?>"><?php echo ucfirst($card->post_title); ?></a>
-		     								<p class="latest_date"><?php echo date("j F",strtotime($card->date_added));?></p>
-		     								<div class="clearfix"></div>
-		     								<?php if(strlen($card->post_message)>197){ echo substr($card->post_message,0,197).'...';  } else { echo $card->post_message; }  ?>
-		     							</li>
-		     							<?php } } else {?>
-		     								<li>
-		     								No postcards found.
-		     								</li>
-		     								<?php }?>
-		     							
-		     						<?php if($getpostcard){ ?>	<div class="text-right pad_lr10 padtb10">
-		     								<a href="<?php echo site_url('bar/postcard');?>" class="">View More</a>
-		     							</div>
-		     					  <?php } ?>		
-		     						</ul>
-								</div>
-			     			</div>
-                                            <?php } ?>
-			     			<div class="full_mugblock">
-			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Comments</h1>
-		     					
-		     						<ul class="latest_block_list" >
-		     							<?php if($result){
-			     					  foreach($result as $comment){?>
-				     				<li>
-				     					<div class="reult_sub_title "><a target="_blank" href="<?php echo site_url('user/profile/'.base64_encode($comment->user_id))?>" class="bar_title"><?php echo $comment->comment_title; ?></a></div>
-				     					<div class="rating_box"><a class="bar_title"><?php echo getDuration($comment->date_added); ?></a></div>
-				     					<div class="clearfix"></div>
-				     					<p class="result_desc"><?php if(strlen($comment->comment)>55) { echo substr($comment->comment,0,55)."..."; } else { echo $comment->comment; }?></p>
-				     					<div class="reult_sub_title wdth-74"><p class="review_light pull-left"><?php echo $comment->first_name." ".$comment->last_name;?></p></div>
-				     					<div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
-				     					<div class="clearfix"></div>
-				     				</li>
-			     				<?php } ?>
-										<?php if($result){ ?>	<div class="text-right pad_lr10 padtb10">
-		     								<a href="<?php echo site_url('bar/comments');?>" class="">View More</a>
-		     							</div>
-		     					  <?php } ?>	
-										<?php } else {?>
-											
-											<li>
-												No comments found.
-											</li>
-									<?php } ?>			  
-		     						</ul>
-		     						
-								</div>
-			     			</div>
-			     			<div class="clearfix"></div>
-		     			</div>
-		     			<div class="margin-top-30">
-		     			<?php if ($getbar['bar_type']=='full_mug') {?>
                                             <div class="full_mugblock">
 			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Messages</h1>
+		     						<h1 class="productbar_title">Latest Messages
+                                                                    <small><a class="pull-right" href="<?php echo site_url('bar/list_message')?>">See All</a></small>
+                                                                </h1>
 		     						<ul class="latest_block_list">
 		     							<?php if($resultmessage){
 			     					  foreach($resultmessage as $msg){?>
@@ -784,6 +766,38 @@ B.show();
 								</div>
 			     			</div>
                                         <?php } ?>
+			     			<div class="clearfix"></div>
+		     			</div>
+		     			<div class="margin-top-30">
+		     			<?php if ($getbar['bar_type']=='full_mug') {?>
+		     				<div class="full_mugblock margin-right-30">
+			     				<div class="img_br_yellow height-515">
+		     						<h1 class="productbar_title">Latest Post Cards
+                                                                    <small><a class="pull-right" href="<?php echo site_url('bar/postcard')?>">See All</a></small>
+                                                                </h1>
+		     						<ul class="latest_block_list">
+		     							<?php if($getpostcard){
+		     								   foreach($getpostcard as $card) { ?>
+		     							<li>
+		     								<a href="<?php echo site_url('bar/postcard');?>"><?php echo ucfirst($card->post_title); ?></a>
+		     								<p class="latest_date"><?php echo date("j F",strtotime($card->date_added));?></p>
+		     								<div class="clearfix"></div>
+		     								<?php if(strlen($card->post_message)>197){ echo substr($card->post_message,0,197).'...';  } else { echo $card->post_message; }  ?>
+		     							</li>
+		     							<?php } } else {?>
+		     								<li>
+		     								No postcards found.
+		     								</li>
+		     								<?php }?>
+		     							
+		     						<?php if($getpostcard){ ?>	<div class="text-right pad_lr10 padtb10">
+		     								<a href="<?php echo site_url('bar/postcard');?>" class="">View More</a>
+		     							</div>
+		     					  <?php } ?>		
+		     						</ul>
+								</div>
+			     			</div>
+                                            <?php } ?>
 			     			<div class="clearfix"></div>
 		     			</div>
 		     		</div>

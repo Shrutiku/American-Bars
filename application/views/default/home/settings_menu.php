@@ -18,21 +18,7 @@
 
                 <div class="dashboard_detail">
                     <div class="result_search">
-                            <div class='pull-left'><div class="result_search_text">Bar Owner Dashboard</div></div>
-                            <div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>
-                    <?php // if($getbar['bar_type']=='half_mug'){?>
-                            <div class="pull-right marr_10">
-                                    <!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
-                                    <a class="review" name="" href="<?php // echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">Upgrade to Full Mug</a>
-                            </div>
-                    <?php // } ?>
-
-                    <?php // if(($getbar['bar_type']=='half_mug' || $getbar['bar_type']=='full_mug' && $getbar['is_managed']=='no') ){?>
-                            <div class="pull-right marr_10">
-                                <!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
-                                <a class="review" name="" href="<?php // echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/managed');?>">Upgrade to  Managed Account</a>
-                            </div>
-                   <?php // } ?>
+                            <div class='pull-left'><div class="result_search_text"><i class="strip update_banner"></i>Account Settings</div></div>
                         <div class="clear"></div>
                     </div>
                     <div class="dashboard_subblock">
@@ -40,16 +26,16 @@
                         <?php // } ?>
                         <div id="list_show">	
                             <div class="wrapper row6 padtb10 has-js">
-                                <div class="container">
+                                <!--<div class="container">-->
                                     <div class='pull-left' style="text-align: center;"><div class="result_search_text">Select a settings function.</div></div>
-                                        <div class="margin-top-50 bg_brown" style="text-align: center;">
+                                        <div class="margin-top-50" style="text-align: center;">
                                             <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/home/changepassword');?>">Change Password</a>
                                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/domainmanagement');?>">Domain Management</a>
                                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/barlistings');?>">Bar Listings</a>
                                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/updatebanner');?>">Update Banner</a>
                                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/updatecard');?>">Update Credit Card</a>
                                         </div>
-                                </div>
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>

@@ -20,11 +20,11 @@
 	     						<div id="hd_del">
 	     							<button type="submit" class="btn btn-lg btn-primary marr_10" onclick="list_add()">Add</button>
 		                       		<a class="btn btn-lg btn-primary marr_10" href="javascript:void(0)" onclick="setaction('chk[]','delete',   'frm_event');">Delete</a>
-		                       		
+		                       		<a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
 	     						</div>
-	     						<div id="hs_del" style="display: none;">
+<!--	     						<div id="hs_del" style="display: none;">
 	     							<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-	     						</div>
+	     						</div>-->
      						</div>
      					<div id="list_hide_m">
      						<?php			 
@@ -110,10 +110,10 @@
 								</tbody>
 							</table>
 							</div>
-                                                        <div  id="hs_del">
-                                                            <!--<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>-->
+<!--                                                        <div  id="hs_del">
+                                                            <a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
                                                             <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
-                                                        </div>
+                                                        </div>-->
 							<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
 					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
@@ -148,7 +148,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-7 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/bar_liquor');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('home/drink_menu');?>" >Cancel</a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -250,11 +250,11 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
 						if($('#event_id').val()=='')
 						{
-							$.growlUI('Your liquor add successfully .');
+							$.growlUI('Your liquor was added successfully .');
 						}
 						else
 						{
-							$.growlUI('Your liquor update successfully .');
+							$.growlUI('Your liquor list was updated successfully .');
 						}
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')

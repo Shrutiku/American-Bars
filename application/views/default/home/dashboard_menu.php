@@ -14,14 +14,16 @@
      							My Profile
      						</a>
      					</li>
-                                        <li class="<?php echo $this->uri->segment(2)=='updatebanner' ? 'active':'';?>">
+                                        <li class="<?php echo $this->uri->segment(2)=='drink_menu' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/drink_menu')?>">
      							<i class="strip cocktails"></i>
      							Drinks
      						</a>
      					</li>
+                                        
+                                        
                                             <?php if ($getbarinfo->bar_type=='full_mug') { // fullmug dashboard menu ?>
-                                            <li title="Add your bar's happy hours here." class="active">
+                                            <li title="Add your bar's happy hours here." class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?>">
                                                     <a href="<?php echo site_url('bar/bar_special_hours')?>">
                                                             <i class="strip bar-special"></i>
                                                             Happy Hours
@@ -35,7 +37,8 @@
                                             </li>
                                             <li title="Add events." class="<?php echo $this->uri->segment(2)=='bar_events' ? 'active':'';?>">
                                                     <a href="<?php echo site_url('bar/bar_events')?>">
-                                                            <i class="strip events"></i>
+                                                            <!--<i class="strip events"></i>-->
+                                                        <i class='glyphicon glyphicon-calendar' style="color:'#FFF'; display: block; font-size: 46px; vertical-align: middle; margin: auto;"></i>
                                                             Events
                                                     </a>
                                             </li>
@@ -133,8 +136,9 @@
                                             </li>
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_events' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
                                                     <a href="<?php echo site_url('bar/bar_events')?>">
-                                                            <i class="strip events"></i>
-                                                            Events
+                                                            <!--<i class="strip events"></i>-->
+                                                        <i class='glyphicon glyphicon-calendar' style="color:'#FFF'; display: block; font-size: 46px; vertical-align: middle; margin: auto;"></i>    
+                                                        Events
                                                     </a>
                                             </li>
 
@@ -229,7 +233,7 @@
      						</a>
      					</li>-->
                                         
-                                        <li class="<?php echo $this->uri->segment(2)=='updatebanner' ? 'active':'';?>">
+                                        <li class="<?php echo $this->uri->segment(2)=='settings_menu' ? 'active':'';?>">
      						<a href="<?php echo site_url('home/settings_menu')?>">
      							<i class="strip update_banner"></i>
      							Account Settings
