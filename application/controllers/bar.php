@@ -1170,9 +1170,9 @@ function bareventtime()
 		//$this->form_validation->set_rules('end_date', 'End Date','required|trim|callback_compareDates');
 		//$this->form_validation->set_rules('start_time', 'Start Time', 'required');
 		//$this->form_validation->set_rules('end_time', 'End Time','required');
-//		$this->form_validation->set_rules('address', 'Address', 'required');
-//		$this->form_validation->set_rules('city', 'City', 'required');
-//		$this->form_validation->set_rules('state', 'State', 'required');
+		$this->form_validation->set_rules('address', 'Address', 'required');
+		$this->form_validation->set_rules('city', 'City', 'required');
+		$this->form_validation->set_rules('state', 'State', 'required');
 		$this->form_validation->set_rules('admission', 'Admission', 'numeric');
 		$this->form_validation->set_rules('event_video_link','Event Video Link', 'valid_url');
 		$this->form_validation->set_rules('website','Website', 'valid_url');
