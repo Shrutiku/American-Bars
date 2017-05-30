@@ -174,10 +174,10 @@ $('.sorted_table').sortable({
                                                                                 </select>
                                                                             </div>
                                                                          
-                                                                            <div class="col-sm-2" style="padding-left: 15px">	
+<!--                                                                            <div class="col-sm-2" style="padding-left: 15px">	
                                                                                
-                                                                            </div>
-                                                                            <div class="col-sm-2">
+                                                                            </div>-->
+<!--                                                                            <div class="col-sm-2">
                                                                                 <form action="">
                                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
@@ -187,7 +187,7 @@ $('.sorted_table').sortable({
                                                                                     <input type="checkbox" name="day" value="Saturday"> S <br>
                                                                                     <input type="checkbox" name="day" value="Sunday"> Su
                                                                                 </form>
-                                                                            </div>
+                                                                            </div>-->
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                             </div>
