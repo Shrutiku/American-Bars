@@ -170,10 +170,10 @@ B.show();
                                                                 <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a>
                                                             </p>
                                                             
-<!--                                                            <a href="<?php // echo site_url('bar/comments')?>">Messages</a>
+                                                            <a href="<?php echo site_url('bar/comments')?>">Messages</a>
                                                             <p class="mug_count">
-                                                                <a href="<?php // echo site_url('bar/comments')?>"><?php // echo $this->home_model->getcommentcount();?></a>
-                                                            </p>-->
+                                                                <a href="<?php echo site_url('bar/comments')?>"><?php echo $this->home_model->getcommentcount();?></a>
+                                                            </p>
                                                             
                                                             <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
                                                             <p class="mug_count">

@@ -1153,16 +1153,16 @@ function claim_register_bar_owner()
         
         function getcommentcount()
 	{
-//		$this->db->select('*');
-//		$this->db->from('message');
-//		$this->db->where('from_user_type','admin');
-//		$this->db->where('to_user_id',get_authenticateUserID());
-//		$this->db->where('is_read',0);
-//		$this->db->where('is_deleted',0);
-//		$this->db->order_by('message_id','desc');
-//		$query= $this->db->get();
-//		
-//		return $query->num_rows();
+		$this->db->select('*');
+		$this->db->from('comments');
+		$this->db->where('from_user_type','admin');
+		$this->db->where('to_user_id',get_authenticateUserID());
+		$this->db->where('is_read',0);
+		$this->db->where('is_deleted',0);
+		$this->db->order_by('bar_comment_id','desc');
+		$query= $this->db->get();
+		
+		return $query->num_rows();
 	}  
 	
 	
