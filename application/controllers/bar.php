@@ -1179,8 +1179,6 @@ function bareventtime()
 		$this->form_validation->set_rules('eventstarttime[]', 'Event Start Time', 'required|xss_clean');
 		$this->form_validation->set_rules('eventendtime[]', 'Event End Time', 'required|xss_clean');
 	
-//                $bar_id = $this->session->userdata('viewid');
-//                $data['getbar'] = $this->home_model->get_bar_info($bar_id);
                 $data["error"] = '';
 		$data["msg"] = '';
 		// $this->form_validation->set_rules('event_fb_link','Facebook Link', 'valid_url');
@@ -1229,7 +1227,8 @@ function bareventtime()
 			// }
 		}	
 		
-		
+		$bar_id = $this->session->userdata('viewid');
+                $data['getbar'] = $this->home_model->get_bar_info($bar_id);
 		$bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
 		
 		if($this->form_validation->run() == FALSE || $imagarr!='')
