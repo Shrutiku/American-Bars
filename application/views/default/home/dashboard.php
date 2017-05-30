@@ -163,10 +163,10 @@ B.show();
 		     		<div class="dashboard_subblock">
 		     			<?php if($getbar['bar_type']=='full_mug'){?>
 		     			<div>
-		     				<div class="mug_block parrot margin-right-30">
+		     				<div class="mug_block parrot margin-right-30" style="height: 217px;">
 		     					<div class="">
-                                                            <!--<a href="<?php echo site_url('bar/list_message')?>">Messages</a>-->
-                                                            <p class="mug_count">Messages
+                                                            <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
+                                                            <p class="mug_count">
                                                                 <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a>
                                                             </p>
 <!--                                                            <a href="<?php // echo site_url('bar/comments')?>">Comments</a>
@@ -174,13 +174,13 @@ B.show();
                                                                 <a href="<?php // echo site_url('bar/comments')?>"><?php // echo '0'; //$this->home_model->getcommentcount();?></a>
                                                             </p>-->
                                                             <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
-                                                            <p class="mug_count">Post Cards
+                                                            <p class="mug_count">
                                                                     <a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a>
                                                             </p>
 		     					</div>
 		     				</div>
 		     				
-		     				<div class="mug_block green margin-right-30">
+                                            <div class="mug_block green margin-right-30">
                                                     <a href="<?php echo site_url('bar/bar_beer')?>">Beers</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
@@ -196,7 +196,7 @@ B.show();
 		     			<?php // } ?>		
 		     				</div>
                                             
-		     				<div class="mug_block brown ">
+		     				<div class="mug_block brown" style="height: 217px;">
 		     					<div class="">
 		     						Total Visitors
 		     						<p class="mug_count"><?php if(get_count_impression(@$getbar['bar_id'])>0) { echo get_count_impression(@$getbar['bar_id']); } else { echo '0'; } ?></p>
@@ -285,17 +285,17 @@ B.show();
 		  									<?php if($getbar['website']){?>
 		     							<li><span class="marr_10">Web Site: </span> <?php echo @$getbar['website']; ?></li>
 		  								<?php } ?>  
-		     							<!-- <li><span class="marr_10">Description : </span> Erich</li> -->
+                                                                        <li class="marr_10"><span class="marr_10" style="height: 114px;">Description:</span><?php if(strip_tags(strlen($getbar['bar_desc'])>350)){ echo substr(strip_tags($getbar['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($getbar['bar_desc']); } ?></li> 
 		     						</ul>
 		     					</div>
 		     					<div class="map_block" id="gmap_marker">
 		     						
 		     					</div>
 		     					<div class="clearfix"></div>
-		     					<p class="dashboard_title">Description:</p>
+<!--		     					<p class="dashboard_title">Description:</p>
 		     					<p class="dashboard_desc"> 
-		     						<?php if(strip_tags(strlen($getbar['bar_desc'])>350)){ echo substr(strip_tags($getbar['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($getbar['bar_desc']); } ?>
-		     						</p>
+		     						<?php // if(strip_tags(strlen($getbar['bar_desc'])>350)){ echo substr(strip_tags($getbar['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($getbar['bar_desc']); } ?>
+		     						</p>-->
 		     				</div></div></div>
 		     				<div class="clearfix"></div>
 		     				
@@ -664,7 +664,7 @@ B.show();
                             <!--<a href="<?php // echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right disabled">Create New Album</a><div class="clear"></div>-->
 
                         <?php } else { ?>
-                            <a href="<?php echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right">Create New Album</a><div class="clear"></div>
+                                                <a href="<?php echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right padtb10">Create New Album</a><div class="clear"></div>
 
                         <?php } ?>
 		     		<?php if($albumgallery){
@@ -1002,13 +1002,13 @@ B.show();
    $(document).ready(function(){
     
    		$('.bxslider').bxSlider({
-
-   		    controls: true,
-  minSlides: 3,
-  maxSlides: 3,
-  slideWidth: 300,
-  slideMargin: 10
-});
+            infiniteLoop: false,
+            hideControlOnEnd: true,
+            minSlides: 3,
+            maxSlides: 3,
+            slideWidth: 300,
+            slideMargin: 10
+        });
 		   // initiate layout and plugins
 		   Gallery.init();
    	 $('#form').on('submit', function() {
