@@ -286,10 +286,10 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1"> 
                                                                                     <label class="control-label" style="font-size: 16px;padding-left: 0px; padding-right: 0px; ">Time:</label>
                                                                                 </div>
-                                                                                <div class="col-sm-1" style="padding-left: 3px; padding-right: 3px;" >
+                                                                                <div class="col-sm-2" style="padding-left: 3px; padding-right: 3px;" >
                                                                                     <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                                 </div>
-                                                                                <div class="col-sm-1"  style="padding-left: 3px; padding-right: 3px;">	
+                                                                                <div class="col-sm-2"  style="padding-left: 3px; padding-right: 3px;">	
                                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                                 </div>	
                                                                                 <div class="col-sm-1" style="width: 2%;padding-left: 3px; padding-right: 3px;">
