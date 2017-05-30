@@ -145,11 +145,24 @@ $('.sorted_table').sortable({
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
                                                                             <div class="col-sm-1">
-                                                                                <label class="control-label" style="font-size: 16px;">Beers:</label>
+                                                                                <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
-                                                                            <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
+                                                                            <div class="dropdown">
+                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                                                                    <span class="caret"></span></button>
+                                                                                    <ul class="dropdown-menu">
+                                                                                        <li><a href="#Monday">Monday</a></li>
+                                                                                        <li><a href="#Tuesday">Tuesday</a></li>
+                                                                                        <li><a href="#Wednesday">Wednesday</a></li>
+                                                                                        <li><a href="#Thursday">Thursday</a></li>
+                                                                                        <li><a href="#Friday">Friday</a></li>
+                                                                                        <li><a href="#Saturday">Saturday</a></li>
+                                                                                        <li><a href="#Sunday">Sunday</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                         
                                                                             <div class="col-sm-2" style="padding-left: 15px">	
-                                                                                <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
+                                                                               
                                                                             </div>
                                                                             <div class="col-sm-2">
                                                                                 <form action="">
