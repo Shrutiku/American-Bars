@@ -147,35 +147,31 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
-                                                                            <div class="col-sm-1">
-                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                                                                    <span class="caret"></span></button>
-                                                                                    <ul class="dropdown-menu">
-                                                                                        <li><a href="#Monday">Monday</a></li>
-                                                                                        <li><a href="#Tuesday">Tuesday</a></li>
-                                                                                        <li><a href="#Wednesday">Wednesday</a></li>
-                                                                                        <li><a href="#Thursday">Thursday</a></li>
-                                                                                        <li><a href="#Friday">Friday</a></li>
-                                                                                        <li><a href="#Saturday">Saturday</a></li>
-                                                                                        <li><a href="#Sunday">Sunday</a></li>
-                                                                                    </ul>
-                                                                                </div>
+                                                                            <div class="col-sm-2">                                                                                  
+                                                                                <select class="form-control">
+                                                                                    <option value="monday">Monday</option>
+                                                                                    <option value="tuesday">Tuesday</option>
+                                                                                    <option value="wednesday">Wednesday</option>
+                                                                                    <option value="thursday">Thursday</option>
+                                                                                    <option value="friday">Friday</option>
+                                                                                    <option value="saturday">Saturday</option>
+                                                                                    <option value="sunday">Sunday</option>
+                                                                                </select>
+                                                                            </div>
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">to</label>
                                                                             </div>
-                                                                            <div class="col-sm-1">
-                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                                                                    <span class="caret"></span></button>
-                                                                                    <ul class="dropdown-menu">
-                                                                                        <li><a href="#Monday">Monday</a></li>
-                                                                                        <li><a href="#Tuesday">Tuesday</a></li>
-                                                                                        <li><a href="#Wednesday">Wednesday</a></li>
-                                                                                        <li><a href="#Thursday">Thursday</a></li>
-                                                                                        <li><a href="#Friday">Friday</a></li>
-                                                                                        <li><a href="#Saturday">Saturday</a></li>
-                                                                                        <li><a href="#Sunday">Sunday</a></li>
-                                                                                    </ul>
-                                                                                </div>
+                                                                            <div class="col-sm-2">                                                                                  
+                                                                                <select class="form-control">
+                                                                                    <option value="monday">Monday</option>
+                                                                                    <option value="tuesday">Tuesday</option>
+                                                                                    <option value="wednesday">Wednesday</option>
+                                                                                    <option value="thursday">Thursday</option>
+                                                                                    <option value="friday">Friday</option>
+                                                                                    <option value="saturday">Saturday</option>
+                                                                                    <option value="sunday">Sunday</option>
+                                                                                </select>
+                                                                            </div>
                                                                          
                                                                             <div class="col-sm-2" style="padding-left: 15px">	
                                                                                
