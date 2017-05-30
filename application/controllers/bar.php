@@ -1160,8 +1160,7 @@ function bareventtime()
 			redirect('home');
 		}
                 
-                $bar_id = $this->session->userdata('viewid');
-                $data['getbar'] = $this->home_model->get_bar_info($bar_id);
+               
                 
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('event_title', 'Event Title', 'required');
@@ -1179,14 +1178,17 @@ function bareventtime()
 		$this->form_validation->set_rules('eventdate[]', 'Event Date', 'required|xss_clean');
 		$this->form_validation->set_rules('eventstarttime[]', 'Event Start Time', 'required|xss_clean');
 		$this->form_validation->set_rules('eventendtime[]', 'Event End Time', 'required|xss_clean');
-	$data["error"] = '';
+	
+                $bar_id = $this->session->userdata('viewid');
+                $data['getbar'] = $this->home_model->get_bar_info($bar_id);
+                $data["error"] = '';
 		$data["msg"] = '';
 		// $this->form_validation->set_rules('event_fb_link','Facebook Link', 'valid_url');
 		// $this->form_validation->set_rules('event_twitter_link','Twitter Link', 'valid_url');
 		// $this->form_validation->set_rules('event_google_plus_link','Google Plus Link', 'valid_url');
 		// $this->form_validation->set_rules('event_pinterest_link','Pinterest Link', 'valid_url');
 		$this->form_validation->set_rules('buy_ticket','Buy Ticket', 'valid_url');
-//		$this->form_validation->set_rules('zipcode', 'Zipcode', 'required|numeric|max_length[6]');
+		$this->form_validation->set_rules('zipcode', 'Zipcode', 'required|numeric|max_length[6]');
 		//$this->form_validation->set_rules('phone', 'Phone', 'required');
 		
 	
