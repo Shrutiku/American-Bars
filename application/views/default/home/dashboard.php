@@ -1002,13 +1002,14 @@ B.show();
    $(document).ready(function(){
     
    		$('.bxslider').bxSlider({
-
-   		    controls: true,//teeestoo
-  minSlides: 3,
-  maxSlides: 3,
-  slideWidth: 300,
-  slideMargin: 10
-});
+            controls: true,//teeestoo
+            auto: false,
+            autoControls: true,
+            minSlides: 3,
+            maxSlides: 3,
+            slideWidth: 300,
+            slideMargin: 10
+        });
 		   // initiate layout and plugins
 		   Gallery.init();
    	 $('#form').on('submit', function() {
