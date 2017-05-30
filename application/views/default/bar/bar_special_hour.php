@@ -244,6 +244,7 @@ $('.sorted_table').sortable({
                                                                                         <input type="checkbox" name="day" value="Sunday"> Su
                                                                                     </form>
                                                                                 </div>-->
+    <br>
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                                 </div>
