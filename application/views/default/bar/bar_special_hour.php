@@ -152,14 +152,10 @@ $('.sorted_table').sortable({
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>-->
                                                                             <div class="col-sm-3 padding-0">      
-<<<<<<< HEAD
-=======
-                                                                            <div class="col-sm-2 padding-0">      
->>>>>>> origin/sandbox
-=======
+                                                                            <div class="col-sm-2 ">     
                                                                             </div>
                                                                             <div class="col-sm-2">      
->>>>>>> origin/sandbox
+
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
