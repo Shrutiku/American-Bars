@@ -1001,7 +1001,7 @@ B.show();
  
    $(document).ready(function(){
     
-   		$('bxSlider').bxSlider({
+   		$('bxslider').bxSlider({
             minSlides: 3,
             maxSlides: 3,
             slideWidth: 300,
