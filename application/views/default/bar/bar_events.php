@@ -149,7 +149,7 @@
 	        				 		<label class="control-label">Venue : </label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<input type="text" class="form-control form-pad" id="venue" name="venue" value="<?php echo $getbar;?>">
+	                           		<input type="text" class="form-control form-pad" id="venue" name="venue" value="<?php echo $getbar['bar_title'];?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
