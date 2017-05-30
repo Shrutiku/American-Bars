@@ -160,6 +160,22 @@ $('.sorted_table').sortable({
                                                                                         <li><a href="#Sunday">Sunday</a></li>
                                                                                     </ul>
                                                                                 </div>
+                                                                            <div class="col-sm-1">
+                                                                                <label class="control-label" style="font-size: 16px;">To</label>
+                                                                            </div>
+                                                                            <div class="dropdown">
+                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                                                                    <span class="caret"></span></button>
+                                                                                    <ul class="dropdown-menu">
+                                                                                        <li><a href="#Monday">Monday</a></li>
+                                                                                        <li><a href="#Tuesday">Tuesday</a></li>
+                                                                                        <li><a href="#Wednesday">Wednesday</a></li>
+                                                                                        <li><a href="#Thursday">Thursday</a></li>
+                                                                                        <li><a href="#Friday">Friday</a></li>
+                                                                                        <li><a href="#Saturday">Saturday</a></li>
+                                                                                        <li><a href="#Sunday">Sunday</a></li>
+                                                                                    </ul>
+                                                                                </div>
                                                                          
                                                                             <div class="col-sm-2" style="padding-left: 15px">	
                                                                                
