@@ -146,8 +146,6 @@ $('.sorted_table').sortable({
                                                                         <div class="padtb8">
                                                                             <div class="col-sm-3">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
-                                                                                
-                                                                               
                                                                             </div>
                                                                             <div class="dropdown">
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
@@ -163,7 +161,7 @@ $('.sorted_table').sortable({
                                                                                     </ul>
                                                                                 </div>
                                                                             
-                                                                             <label class="control-label" style="font-size: 16px;">To</label>
+                                                                             <label class="control-label" style="font-size: 16px;">to</label>
                                                                             
                                                                             <div class="dropdown">
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
