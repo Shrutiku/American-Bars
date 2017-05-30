@@ -1001,7 +1001,7 @@ B.show();
  
    $(document).ready(function(){
     
-   		$('.').bxSlider({
+   		$('gallery_img').bxSlider({
    		    auto: false,//test
             autoControls: true
             infiniteLoop: false,
