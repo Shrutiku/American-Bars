@@ -515,8 +515,8 @@ $('.sorted_table').sortable({
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>														
-                                            <?php } //else {?>
-<!--                                                <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="" />
+                                            <?php } else {?>
+                                                <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="" />
                                                 <div class="text-center pad_t15b20">
                                                     <div id="hide_edit">
                                                     <div id="inner">  	
@@ -737,9 +737,9 @@ $('.sorted_table').sortable({
 	                       		<div class="clearfix"></div>
 	                       	</div>
 	                       	<div class="clearfix"></div>
-     		</div>-->
+     		</div>
      		
-     		<?php // } ?>
+     		<?php } ?>
      			</form>
      			</div>
      			
