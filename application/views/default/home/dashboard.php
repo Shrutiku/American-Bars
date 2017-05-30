@@ -144,7 +144,7 @@ B.show();
      			<div class="dashboard_detail">
      				<div class="result_search">
 			     		<div class='pull-left'><div class="result_search_text">Bar Owner Dashboard</div></div>
-			     		<div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>
+			     		<!--<div class='pull-right'><div class="result_search_text"><a href="#userguide" data-toggle="modal" href="javascript://"  class="review mar_r15" >User Guide</a></div></div>-->
 			     	<?php if($getbar['bar_type']=='half_mug'){?>
 			     		<div class="pull-right marr_10">
 		     				<!-- <a href="#" class="review">Upgrade to Full Mug</a> -->
@@ -163,32 +163,40 @@ B.show();
 		     		<div class="dashboard_subblock">
 		     			<?php if($getbar['bar_type']=='full_mug'){?>
 		     			<div>
-		     				<div class="mug_block parrot margin-right-25">
+		     				<div class="mug_block parrot margin-right-30">
 		     					<div class="">
-		     						Total Message
-		     						<p class="mug_count">
-		     							<a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a></p>
-		     						Total Post Cards
-		     						<p class="mug_count">
-		     							<a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a></p>
+                                                            <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
+                                                            <p class="mug_count">
+                                                                <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a>
+                                                            </p>
+                                                            
+                                                            <a href="<?php echo site_url('bar/comments')?>">Messages</a>
+                                                            <p class="mug_count">
+                                                                <a href="<?php echo site_url('bar/comments')?>"><?php echo $this->home_model->getcommentcount();?></a>
+                                                            </p>
+                                                            
+                                                            <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
+                                                            <p class="mug_count">
+                                                                    <a href="<?php echo site_url('bar/postcard')?>"><?php echo $this->home_model->get_bar_postcard_count(@$getbar['bar_id']); ?></a>
+                                                            </p>
 		     					
 		     					</div>
 		     				</div>
 		     				
-		     				<div class="mug_block green margin-right-25">
-		     					Total Beers
+		     				<div class="mug_block green margin-right-30">
+                                                    <a href="<?php echo site_url('bar/bar_beer')?>">Beers</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
-		     			<?php if($getbar['serve_as']=='cocktail'){?>		
-		     					Total Cocktails
+		     			<?php // if($getbar['serve_as']=='cocktail'){?>		
+                                                        <a href="<?php echo site_url('bar/bar_cocktail')?>">Cocktails</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_cocktail')?>"><?php echo $this->home_model->countcocktail(@$getbar['bar_id']); ?></a></p>
-		     			<?php } ?>		
-		     			<?php if($getbar['serve_as']=='liquor'){?>
-		     					Total Liquors
+		     			<?php // } ?>		
+		     			<?php // if($getbar['serve_as']=='liquor'){?>
+                                                        <a href="<?php echo site_url('bar/bar_liquor')?>">Liquors</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_liquor')?>"><?php echo $this->home_model->countliquor(@$getbar['bar_id']); ?></a></p>
-		     			<?php } ?>		
+		     			<?php // } ?>		
 		     				</div>
 		     				<div class="mug_block brown ">
 		     					<div class="">
@@ -201,12 +209,10 @@ B.show();
 		     				</div>
 		     				<div class="clearfix"></div>
 		     			</div> 
-		     			
-		     			
+		     					     			
 		     			<?php } ?>
 		     			
-		     			
-		     			
+		     			<!--<a style="left-padding: 10px;" href="<?php echo site_url('/bar/add_drink')?>" class="btn btn-lg btn-primary marr_10" >Add A Drink To Your Menu</a>--> 	
 		     					     			
 		     			<div class="result_search margin-top-20">
 		     				<h1 class="dashboard_smalltitle pull-left">Bar Information</h1>
@@ -250,7 +256,7 @@ B.show();
 		     				<div class="map_mainblock">
 		     					<div class="dashboard_beer_detail">
 		     						<ul class="dashboard_list">
-		     							<li><span class="marr_10">Bar Type : </span>
+		     							<li><span class="marr_10">Bar Type: </span>
 		     								 <?php if(@$getbar['bar_type']=='half_mug'){
 		     								 	   echo "Half Mug Bar";
 		     								 } else if(@$getbar['bar_type']=='full_mug' && $getbar['is_managed']=='no'){
@@ -258,25 +264,28 @@ B.show();
 		     								 } else if(@$getbar['bar_type']=='full_mug' && $getbar['is_managed']=='yes'){
 		     								 	echo "Managed Account";
 		     								 }?></li>
-		     							<li><span class="marr_10">Bar Name : </span> <?php echo @$getbar['bar_title']; ?></li>
-		     							<li><span class="marr_10">Bar Owner First Name  : </span> <?php echo @$getbar['first_name']; ?></li>
-		     							<li><span class="marr_10">Bar Owner Last Name  : </span> <?php echo @$getbar['last_name']; ?></li>
-		     							<li><span class="marr_10">Bar Owner Email : </span> <?php echo @$getbar['email']; ?></li>
+                                                                        <?php $name = @$getbar['first_name']." ".@$getbar['last_name'];?>
+		     							<li><span class="marr_10">Bar Name: </span> <?php echo @$getbar['bar_title']; ?></li>
+		     							<li><span class="marr_10">Bar Owner: </span> <?php echo $name; ?></li>
+		     							<!--<li><span class="marr_10">Bar Owner First Name: </span> <?php //echo @$getbar['first_name']; ?></li>-->
+		     							<!--<li><span class="marr_10">Bar Owner Last Name: </span> <?php //echo @$getbar['last_name']; ?></li>-->
+		     							<li><span class="marr_10">Owner Email: </span> <?php echo @$getbar['email']; ?></li>
 		     							 									
-		     							<li><span class="marr_10">Gender : </span> <?php echo @$getbar['gender']; ?></li>
+		     							<!--<li><span class="marr_10">Gender : </span> <?php echo @$getbar['gender']; ?></li>-->
 		     							<!-- <li><span class="marr_10">Address : </span> <?php echo @$getbar['address']; ?></li>
 		     							<li><span class="marr_10">City : </span> <?php echo @$getbar['city']; ?></li>
 		     							<li><span class="marr_10">State : </span> <?php echo @$getbar['state']; ?></li>
 		     							<li><span class="marr_10">Zip Code : </span> <?php echo @$getbar['zipcode']; ?></li> -->
 		     							
 		     							
-		     							<li><span class="marr_10">Address : </span> <?php echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
+		     							<!--<li><span class="marr_10">Address: </span> <?php // echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>-->
+		     							<li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].' '.@$getbar['city'].', '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
 		     							
 		     							<?php if($getbar['phone']){?>
-		     							<li><span class="marr_10">Phone : </span> <?php echo @$getbar['phone']; ?></li>
+		     							<li><span class="marr_10">Phone: </span> <?php echo @$getbar['phone']; ?></li>
 		  								<?php } ?>   
 		  									<?php if($getbar['website']){?>
-		     							<li><span class="marr_10">Website : </span> <?php echo @$getbar['website']; ?></li>
+		     							<li><span class="marr_10">Web Site: </span> <?php echo @$getbar['website']; ?></li>
 		  								<?php } ?>  
 		     							<!-- <li><span class="marr_10">Description : </span> Erich</li> -->
 		     						</ul>
@@ -285,7 +294,7 @@ B.show();
 		     						
 		     					</div>
 		     					<div class="clearfix"></div>
-		     					<p class="dashboard_title">Description :</p>
+		     					<p class="dashboard_title">Description:</p>
 		     					<p class="dashboard_desc"> 
 		     						<?php if(strip_tags(strlen($getbar['bar_desc'])>350)){ echo substr(strip_tags($getbar['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($getbar['bar_desc']); } ?>
 		     						</p>
@@ -303,7 +312,7 @@ B.show();
 	                     <div id="hd_t">
 	                     	<div class="padtb mar_top20">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Account # : </label>
+	        				 		<label class="control-label">Account #: </label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<?php echo @$getalldata->bar_id; ?>
@@ -490,16 +499,16 @@ B.show();
 	                       		<div class="clearfix"></div>
 	                       	</div>
 	                       	
-	                       	<div class="padtb">
+<!--	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Serve As : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7 text-left padt5">
-	                           		<label style="font-size: 20px;" for="radio-01" class="radio-checkbox label_radio marr_10 r_on"><input type="radio" value="cocktail" <?php if($getalldata->serve_as=='cocktail'){ echo "checked"; }?> name="serve_as" id="serve_as_c" > Cocktail</label>
-	                           		<label style="font-size: 20px;" for="radio-02" class="radio-checkbox label_radio"><input type="radio" value="liquor"  <?php if($getalldata->serve_as=='liquor'){ echo "checked"; }?> name="serve_as" id="serve_as_l" > Liquor</label>
+	                           		<label style="font-size: 20px;" for="radio-01" class="radio-checkbox label_radio marr_10 r_on"><input type="radio" value="cocktail" <?php // if($getalldata->serve_as=='cocktail'){ echo "checked"; }?> name="serve_as" id="serve_as_c" > Cocktail</label>
+	                           		<label style="font-size: 20px;" for="radio-02" class="radio-checkbox label_radio"><input type="radio" value="liquor"  <?php // if($getalldata->serve_as=='liquor'){ echo "checked"; }?> name="serve_as" id="serve_as_l" > Liquor</label>
 	                       		</div>
 	                       		<div class="clearfix"></div>
-	                       	</div>
+	                       	</div> -->
 	                       	
 	                       	
 	                       		<div class="padtb">
@@ -653,7 +662,13 @@ B.show();
 	        			</form>
      			</div>
      			
-     			<a href="<?php echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary  pull-right">Create New Album</a><div class="clear"></div>
+                        <?php if($getbar['bar_type'] == 'half_mug') { ?>
+                            <!--<a href="<?php // echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right disabled">Create New Album</a><div class="clear"></div>-->
+
+                        <?php } else { ?>
+                            <a href="<?php echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right">Create New Album</a><div class="clear"></div>
+
+                        <?php } ?>
 		     		<?php if($albumgallery){
 		     			foreach($albumgallery as $album){	?>	
 		     		 <div class="result_search margin-top-20">
@@ -685,67 +700,39 @@ B.show();
 					  </ul>	<div class="clearfix"></div>
 					<?php } } ?>
 		     			<div class="margin-top-30">
-		     				<div class="full_mugblock margin-right-30">
-			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Post Cards</h1>
-		     						<ul class="latest_block_list">
-		     							<?php if($getpostcard){
-		     								   foreach($getpostcard as $card) { ?>
-		     							<li>
-		     								<a href="<?php echo site_url('bar/postcard');?>"><?php echo ucfirst($card->post_title); ?></a>
-		     								<p class="latest_date"><?php echo date("j F",strtotime($card->date_added));?></p>
-		     								<div class="clearfix"></div>
-		     								<?php if(strlen($card->post_message)>197){ echo substr($card->post_message,0,197).'...';  } else { echo $card->post_message; }  ?>
-		     							</li>
-		     							<?php } } else {?>
-		     								<li>
-		     								No postcards found.
-		     								</li>
-		     								<?php }?>
-		     							
-		     						<?php if($getpostcard){ ?>	<div class="text-right pad_lr10 padtb10">
-		     								<a href="<?php echo site_url('bar/postcard');?>" class="">View More</a>
-		     							</div>
-		     					  <?php } ?>		
-		     						</ul>
-								</div>
-			     			</div>
-			     			
-			     			<div class="full_mugblock">
-			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Comments</h1>
-		     					
-		     						<ul class="latest_block_list" >
-		     							<?php if($result){
-			     					  foreach($result as $comment){?>
-				     				<li>
-				     					<div class="reult_sub_title "><a target="_blank" href="<?php echo site_url('user/profile/'.base64_encode($comment->user_id))?>" class="bar_title"><?php echo $comment->comment_title; ?></a></div>
-				     					<div class="rating_box"><a class="bar_title"><?php echo getDuration($comment->date_added); ?></a></div>
-				     					<div class="clearfix"></div>
-				     					<p class="result_desc"><?php if(strlen($comment->comment)>55) { echo substr($comment->comment,0,55)."..."; } else { echo $comment->comment; }?></p>
-				     					<div class="reult_sub_title wdth-74"><p class="review_light pull-left"><?php echo $comment->first_name." ".$comment->last_name;?></p></div>
-				     					<div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
-				     					<div class="clearfix"></div>
-				     				</li>
-			     				<?php } ?>
-										<?php if($result){ ?>	<div class="text-right pad_lr10 padtb10">
-		     								<a href="<?php echo site_url('bar/comments');?>" class="">View More</a>
-		     							</div>
-		     					  <?php } ?>	
-										<?php } else {?>
-											
-											<li>
-												No comments found.
-											</li>
-									<?php } ?>			  
-		     						</ul>
-		     						
-								</div>
-			     			</div>
-			     			<div class="clearfix"></div>
-		     			</div>
-		     			<div class="margin-top-30">
-		     			<div class="full_mugblock">
+                                            <div class="full_mugblock margin-right-30">
+                                                    <div class="img_br_yellow height-515">
+                                                        <h1 class="productbar_title">Latest Comments</h1>
+
+                                                        <ul class="latest_block_list" >
+                                                                <?php if($result){
+                                                          foreach($result as $comment){?>
+                                                        <li>
+                                                                <div class="reult_sub_title "><a target="_blank" href="<?php echo site_url('user/profile/'.base64_encode($comment->user_id))?>" class="bar_title"><?php echo $comment->comment_title; ?></a></div>
+                                                                <div class="rating_box"><a class="bar_title"><?php echo getDuration($comment->date_added); ?></a></div>
+                                                                <div class="clearfix"></div>
+                                                                <p class="result_desc"><?php if(strlen($comment->comment)>55) { echo substr($comment->comment,0,55)."..."; } else { echo $comment->comment; }?></p>
+                                                                <div class="reult_sub_title wdth-74"><p class="review_light pull-left"><?php echo $comment->first_name." ".$comment->last_name;?></p></div>
+                                                                <div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
+                                                                <div class="clearfix"></div>
+                                                        </li>
+                                                <?php } ?>
+                                                                        <?php if($result){ ?>	<div class="text-right pad_lr10 padtb10">
+                                                                        <a href="<?php echo site_url('bar/comments');?>" class="">View More</a>
+                                                                </div>
+                                                  <?php } ?>	
+                                                                        <?php } else {?>
+
+                                                                                <li>
+                                                                                        No comments found.
+                                                                                </li>
+                                                                <?php } ?>			  
+                                                        </ul>
+
+                                                    </div>
+                                            </div>
+                                            <?php if ($getbar['bar_type']=='full_mug') {?>
+                                            <div class="full_mugblock">
 			     				<div class="img_br_yellow height-515">
 		     						<h1 class="productbar_title">Latest Messages</h1>
 		     						<ul class="latest_block_list">
@@ -774,6 +761,37 @@ B.show();
 		     						</ul>
 								</div>
 			     			</div>
+                                        <?php } ?>
+			     			<div class="clearfix"></div>
+		     			</div>
+		     			<div class="margin-top-30">
+		     			<?php if ($getbar['bar_type']=='full_mug') {?>
+		     				<div class="full_mugblock margin-right-30">
+			     				<div class="img_br_yellow height-515">
+		     						<h1 class="productbar_title">Latest Post Cards</h1>
+		     						<ul class="latest_block_list">
+		     							<?php if($getpostcard){
+		     								   foreach($getpostcard as $card) { ?>
+		     							<li>
+		     								<a href="<?php echo site_url('bar/postcard');?>"><?php echo ucfirst($card->post_title); ?></a>
+		     								<p class="latest_date"><?php echo date("j F",strtotime($card->date_added));?></p>
+		     								<div class="clearfix"></div>
+		     								<?php if(strlen($card->post_message)>197){ echo substr($card->post_message,0,197).'...';  } else { echo $card->post_message; }  ?>
+		     							</li>
+		     							<?php } } else {?>
+		     								<li>
+		     								No postcards found.
+		     								</li>
+		     								<?php }?>
+		     							
+		     						<?php if($getpostcard){ ?>	<div class="text-right pad_lr10 padtb10">
+		     								<a href="<?php echo site_url('bar/postcard');?>" class="">View More</a>
+		     							</div>
+		     					  <?php } ?>		
+		     						</ul>
+								</div>
+			     			</div>
+                                            <?php } ?>
 			     			<div class="clearfix"></div>
 		     			</div>
 		     		</div>
