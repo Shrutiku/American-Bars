@@ -154,7 +154,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-1 text-center">
                                                                                 <label class="control-label" style="font-size: 16px;">to</label>
                                                                             </div>
-                                                                            <div class="col-sm-2">                                                                                  
+                                                                            <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">                                                                                  
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
                                                                                     <option value="tuesday">Tuesday</option>
