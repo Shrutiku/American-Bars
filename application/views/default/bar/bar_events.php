@@ -143,7 +143,7 @@
 	                       		<div class="clearfix"></div>
 	                       	</div>
 	                       	
-	                       	<div class="padtb">
+<!--	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Venue : </label>
 	        				 	</div>
@@ -151,7 +151,7 @@
 	                           		<input type="text" class="form-control form-pad" id="venue" name="venue" value="">
 	                       		</div>
 	                       		<div class="clearfix"></div>
-	                       	</div>
+	                       	</div>-->
 	                       	
 	                       	<div class="padtb mar_top20">
 	        				 	<div class="col-sm-3 text-right">
@@ -229,7 +229,7 @@
 	        				 	</div>
 	        				 	
 	                       	
-	                       	<div class="padtb">
+<!--	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Address : <span class="aestrick"> * </span></label>
 	        				 	</div>
@@ -268,11 +268,11 @@
 	                           		<input type="text" class="form-control form-pad" id="zipcode1" name="zipcode" value="">
 	                       		</div>
 	                       		<div class="clearfix"></div>
-	                       	</div>
+	                       	</div>-->
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Phone Numer :</label>
+	        				 		<label class="control-label">Phone Number :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="phone" name="phone" value="">
@@ -539,11 +539,11 @@
 						$("#cm-err-main1").html("");
 						if($('#event_id').val()=='')
 						{
-							$.growlUI('Your event add successfully .');
+							$.growlUI('Your event was added successfully .');
 						}
 						else
 						{
-							$.growlUI('Your event update successfully .');
+							$.growlUI('Your event was updated successfully .');
 						}
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')
