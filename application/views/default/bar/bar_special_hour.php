@@ -219,7 +219,7 @@ $('.sorted_table').sortable({
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <?php // } else { ?>
+                                                            <?php } //else { ?>
 <!--                                                                <input type="hidden" name="cntprobeer[]" id="cntprobeer<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >
