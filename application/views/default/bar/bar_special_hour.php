@@ -2013,9 +2013,7 @@ function addrows(cnt){
 	    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-3 text-right">';
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
-	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
-	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail'+cnt+cntcocktail+'" id="cocktailid_'+cntcocktail+'"  name="cocktailid[]" value="">';
-	   html +=                   		'</div>';
+	    
            html+=  '<div class="col-sm-3 text-right">';
                                                     html+=    '<label class="control-label">Dayssss : <span class="aestrick"> * </span></label>';
                                                html+=     '</div>';
