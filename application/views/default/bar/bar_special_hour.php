@@ -155,10 +155,10 @@ $('.sorted_table').sortable({
                                                                                 <form action="">
                                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
-                                                                                    <input type="checkbox" name="day" value="Wednesday"> W
+                                                                                    <input type="checkbox" name="day" value="Wednesday"> W <br>
                                                                                     <input type="checkbox" name ="day" value="Thursday"> Th
                                                                                     <input type="checkbox" name="day" value="Friday"> F
-                                                                                    <input type="checkbox" name="day" value="Saturday"> S
+                                                                                    <input type="checkbox" name="day" value="Saturday"> S <br>
                                                                                     <input type="checkbox" name="day" value="Sunday"> Su
                                                                                 </form>
                                                                             </div>
