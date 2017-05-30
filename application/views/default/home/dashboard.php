@@ -1002,11 +1002,11 @@ B.show();
    $(document).ready(function(){
     
    		$('.bxslider').bxSlider({
-   		    auto: false,
-            autoControls: true,
-            infiniteLoop: false,
-            hideControlOnEnd: true,
-            minSlides: 3,
+   		    //auto: false,
+            //autoControls: true,
+            //infiniteLoop: false,
+            //hideControlOnEnd: true,
+            minSlides: 1,
             maxSlides: 3,
             slideWidth: 300,
             slideMargin: 10
