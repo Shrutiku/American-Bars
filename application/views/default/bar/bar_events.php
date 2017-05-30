@@ -96,7 +96,7 @@
 										<td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->event_id;?>">
 											<input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->event_id;?>" value="<?php echo $event->event_id;?>"></label></td>
 										<td><?php echo $event->event_title;?></td>
-										<td><?php echo $event->eventdate;//$event->address;?></td>
+										<td><?php echo $event->eventtime;//$event->address;?></td>
 										<td><?php echo ucfirst($event->status);?></td>
 										<td>
 											<a href="javascript://" onclick="editbarevent('<?php echo $event->event_id; ?>')"><i class="strip edit_table"></i></a>
