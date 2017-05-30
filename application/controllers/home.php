@@ -4861,62 +4861,6 @@ class Home extends SPACULLUS_Controller {
         $this->db->where('message_id', $this->input->post('id'));
         $this->db->update('broadcast_message', $data);
     }
-    
-    function ambassador_register($msg = '', $email = '', $bar_id_orig = '') {
-        if (check_user_authentication() != '') {
-            redirect('home');
-        }
-        
-        $theme = getThemeName();
-        $data['error'] = '';
-        $data["active_menu"] = '';
-        $data['site_setting'] = site_setting();
-        $data["msg"] = base64_decode($msg);
-        $data["reset_email"] = base64_decode($email);
-        $theme = getThemeName();
-        $this->template->set_master_template($theme . '/template.php');
-        
-        $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
-
-        if ($_POST) {
-            if ($this->form_validation->run() == FALSE) {
-                if (validation_errors()) {
-                    $data["error"] = validation_errors();
-                } else {
-                    $data["error"] = "";
-                }
-
-                $data["bar_id"] = $this->input->post('bar_id');
-                $data["phone_number"] = $this->input->post('phone_number');
-            } else {
-
-                $bar_id = $this->input->post('bar_id');
-                $account_sid = 'AC5d7f1511f026bd36a6d3eac9cb2a2d82';
-                $auth_token = 'd79f765dae55cbf3755b261e6d47e222';
-                $client = new TwilioClient($account_sid, $auth_token);
-                $phone_number = $this->input->post('phone_number');
-                $claim_code = rand(100000, 999999);
-                $bar_update = array('claim_code' => $claim_code, 'claim_phone' => $phone_number);
-                $body = 'Here is your ambassador verification code for American Bars: ' . $claim_code;
-
-                try {
-                    $client->account->messages->create($phone_number, array(
-                        'from' => '+13102725642',
-                        'body' => $body,
-                            )
-                    );
-                } catch (Exception $e) {
-                    $data["error"] = "Connectivity Error";
-                }
-            }
-        }
-
-        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
-        $this->template->write_view('content_center', $theme . '/home/claim_bar_owner_register', $data, TRUE);
-        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
-        $this->template->render();
-    }
-
     function claim_bar_owner_register($msg = '', $email = '', $bar_id_orig = '') {
         if (check_user_authentication() != '') {
             redirect('home');
@@ -6634,6 +6578,97 @@ class Home extends SPACULLUS_Controller {
         $this->template->render();
     }
 
+    
+    function settings_menu($msg = "") {
+        if (get_authenticateUserID() == '') {
+            redirect('home');
+        }
+//        if ($this->session->userdata('user_type') != 'bar_owner' && $this->session->userdata('user_type') != 'taxi_owner' && get_authenticateUserID()) {
+//            redirect('home/user_dashboard');
+//        }
+//
+//        if ($this->session->userdata('user_type') != 'bar_owner' && $this->session->userdata('user_type') != 'user' && get_authenticateUserID()) {
+//            redirect('home/taxi_owner_dashboard');
+//        }
+        $data = array();
+        $data['msg'] = $msg;
+        
+        $theme = getThemeName();
+        $data['error'] = '';
+        $data["active_menu"] = '';
+        $data['site_setting'] = site_setting();
+        $theme = getThemeName();
+        $this->template->set_master_template($theme . '/template.php');
+
+        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/settings_menu', $data, TRUE);
+        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+        $this->template->render();
+    }
+    
+    function drink_menu($msg = '',$limit=20,$keyword='1V1',$offset=0) {
+        if (get_authenticateUserID() == '') {
+            redirect('home');
+        }
+//        if ($this->session->userdata('user_type') != 'bar_owner' && $this->session->userdata('user_type') != 'taxi_owner' && get_authenticateUserID()) {
+//            redirect('home/user_dashboard');
+//        }
+//
+//        if ($this->session->userdata('user_type') != 'bar_owner' && $this->session->userdata('user_type') != 'user' && get_authenticateUserID()) {
+//            redirect('home/taxi_owner_dashboard');
+//        }
+//        $bar_id = getBarID($bar_slug);
+
+        $data = array();
+        $data['msg'] = $msg;
+//        $data["bar_id"] = $this->bar_model->get_one_bar(base64_decode($bar_id));
+//        $bar_id = $this->session->userdata('viewid');
+
+//        $bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
+        $theme = getThemeName();
+        
+        $this->load->library('pagination');
+        
+        $data['error'] = '';
+        $data["active_menu"] = '';
+        $data['site_setting'] = site_setting();
+        
+        $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
+        
+        if($this->input->post('event_keyword')!='')
+        {
+                $keyword= $this->input->post('event_keyword');
+                $limit= $this->input->post('limit');
+                $offset= $this->input->post('offset');
+        }
+        else {
+                $keyword = $keyword;
+                $limit= $limit;
+                $offset= $offset;
+        }
+//        
+        $config['base_url'] = base_url().'bar/bar_beer/'.$limit.'/'.$keyword;
+	$config["total_rows"] = $this->bar_model->getBarBeercount(@$data['getbar']['bar_id'],$keyword);
+        $config['per_page'] = $limit;
+//        
+        $this->pagination->initialize($config);	
+        $data['page_link'] = $this->pagination->create_links();
+        $data['resultBeer'] = $this->bar_model->getBarBeerDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultCocktail'] = $this->bar_model->getBarCocktailDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+        $data['resultLiquor'] = $this->bar_model->getBarLiquorDetail(@$data['getbar']['bar_id'],$offset,$limit,$keyword);
+
+//        $data['offset'] = $offset;
+//        $data['limit'] = $limit;
+//        $data['redirect_page']='bar_beer';
+
+        $theme = getThemeName();
+        $this->template->set_master_template($theme . '/template.php');
+
+        $this->template->write_view('header', $theme . '/common/header_home', $data, TRUE);
+        $this->template->write_view('content_center', $theme . '/home/drinks', $data, TRUE);
+        $this->template->write_view('footer', $theme . '/common/footer', $data, TRUE);
+        $this->template->render();
+    }
 }
 
 ?>

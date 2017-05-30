@@ -136,7 +136,7 @@ $('#comment_title').live('click', function(e){
  });
    $(document).ready(function()
    {
-          initialize_map();
+          initialize();
 	  $('#menu').click(function() {
 		   $('.profile_menu').slideToggle("slow");
 	  });
@@ -777,7 +777,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
      		 <div class="fullmug_block">
      			
      			
-     			<div class="col-md-6 coctail-new col-sm-5 padb20">
+     			<div class="col-md-4 coctail-new col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Beers Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list">
@@ -785,8 +785,8 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php if($bar_detail['serve_as']=='cocktail'){?>
-     			<div class="col-md-6 coctail-newright col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='cocktail'){?>
+     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Cocktails Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
@@ -794,10 +794,10 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>	
+     		<?php // } ?>	
      		
-     		<?php if($bar_detail['serve_as']=='liquor'){?>
-     			<div class="col-md-6 coctail-newright col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='liquor'){?>
+     			<div class="col-md-4 coctail-newright col-sm-12 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
@@ -805,7 +805,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>	
+     		<?php // } ?>	
      			<div class="clearfix"></div>
      		</div>
      		
@@ -1147,21 +1147,20 @@ $(".pagination li a").click(function() {
 	var directionDisplay;
 	var directionsService = new google.maps.DirectionsService();
 	var map;
-		var LocationData = <?php echo $var; ?>;
+        var LocationData = <?php echo $var; ?>;
 	function initialize() {
 	var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var map = 
-        new google.maps.Map(document.getElementById('gmap_marker'));
-    var bounds = new google.maps.LatLngBounds();
-    var infowindow = new google.maps.InfoWindow();
-     directionsDisplay = new google.maps.DirectionsRenderer();
-     marker = new google.maps.Marker({
-    map:map,
-    // draggable:true,
-    // animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
-    icon: iconBase
-  });
+        var map = new google.maps.Map(document.getElementById('gmap_marker'));
+        var bounds = new google.maps.LatLngBounds();
+        var infowindow = new google.maps.InfoWindow();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        marker = new google.maps.Marker({
+            map:map,
+            // draggable:true,
+            // animation: google.maps.Animation.DROP,
+            position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
+            icon: iconBase
+        });
   
         var latlng = new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
         bounds.extend(latlng);
@@ -1280,24 +1279,62 @@ function loadMap()
 <script type="text/javascript">
   var geocoder;
   var map;
-  var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['zipcode']." ".@$bar_detail['state'];?>";
-  
-function initialize_map()
+  var title = "<?php echo $bar_detail['bar_title']?>";
+  // var address = "<?php// echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
+  var street = "<?php echo @$bar_detail['address'];?>";
+  var city = "<?php echo @$bar_detail['city'];?>";
+  var state = "<?php echo @$bar_detail['state'];?>";
+  var zip = "<?php echo @$bar_detail['zipcode'];?>";
+  var address = street + " " + city + ", " + state + " " + zip;
+function initialize()
   {
+    map = new google.maps.Map(document.getElementById('gmap_marker'), {
+        zoom: 17,
+        center: {lat: -25.363, lng: 131.044}
+    });
+    
     var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
-    var map = 
-            new google.maps.Map(document.getElementById('gmap_marker'));
-    var bounds = new google.maps.LatLngBounds();
+//    var bounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
-    directionsDisplay = new google.maps.DirectionsRenderer();
-     
-    marker = new google.maps.Marker({ 
-     map:map,
-    // draggable:true,
-    // animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(<?php echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>);
-    icon: iconBase
-  });
+    directionsDisplay = new google.maps.DirectionsRenderer();  
+    geocoder = new google.maps.Geocoder();
+    if (geocoder) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          if (status !== google.maps.GeocoderStatus.ZERO_RESULTS) {
+          map.setCenter(results[0].geometry.location);
+          map.setZoom(17);
+            var infowindow = new google.maps.InfoWindow(
+                { content: title, //'<b>'+address+'</b>',
+                  size: new google.maps.Size(150,50)
+                });
+                
+            var marker = new google.maps.Marker({ 
+                map: map,
+                // draggable:true,
+                // animation: google.maps.Animation.DROP,
+                position: results[0].geometry.location,
+                icon: iconBase,
+                title: title
+            });
+            
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map,marker);
+            });
+
+          }
+         }
+      });
+    };
+    
+//    var marker = new google.maps.Marker({ 
+//        map: map,
+//        // draggable:true,
+//        // animation: google.maps.Animation.DROP,
+//        position: new google.maps.LatLng(<?php //echo $bar_detail['lat']!="" ? $bar_detail['lat']:59.32522 ?>, <?php echo $bar_detail['lang']!="" ? $bar_detail['lang']:18.07002; ?>),
+//        icon: iconBase,
+//        title: "<?php //echo $bar_detail['bar_title']?>"
+//  });
   
   //var latlng = new google.maps.LatLng(<?php //echo $bar_detail['lat']?>, <?php //echo $bar_detail['lang']?>);
       //  bounds.extend(latlng);
@@ -1308,31 +1345,28 @@ function initialize_map()
      //       title: '<?php //echo $bar_detail['bar_title']?>'
      //   });
      //
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent('<?php echo $contentstring1;?>');
-            infowindow.open(map, this);
-        });
+//        google.maps.event.addListener(marker, 'click', function() {
+//            infowindow.setContent('<?php //echo $contentstring1;?>');
+//            infowindow.open(map, this);
+//        });
         
-    for (var i in LocationData)
-    {  
-        var p = LocationData[i];
-        var latlng = new google.maps.LatLng(p[0], p[1]);
-        bounds.extend(latlng);
-         
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            title: p[2]
-        });
-     
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(this.title);
-            infowindow.open(map, this);
-        });
-    }
-    
-    
-     
+//    for (var i in LocationData)
+//    {  
+//        var p = LocationData[i];
+//        var latlng = new google.maps.LatLng(p[0], p[1]);
+//        bounds.extend(latlng);
+//         
+//        var marker = new google.maps.Marker({
+//            position: latlng,
+//            map: map,
+//            title: p[2]
+//        });
+//     
+//        google.maps.event.addListener(marker, 'click', function() {
+//            infowindow.setContent(this.title);
+//            infowindow.open(map, this);
+//        });
+//    }
     map.fitBounds(bounds);
     	directionsDisplay.setMap(map);
 		google.maps.event.trigger(map, 'resize');
@@ -1512,6 +1546,13 @@ function initialize_map()
     overflow-y: scroll;
 }
 #infinite-list-cocktail {
+    height: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#infinite-list-liquor {
     height: 410px;
     margin-left: auto;
     margin-right: auto;

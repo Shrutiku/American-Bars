@@ -1,143 +1,41 @@
+
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/plugin/Tokenize/jquery.tokenize.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/plugin/Tokenize/jquery.tokenize.css" />
 
+
 <script>
-	 var test = '<a href="#suggestmodal" data-toggle="modal" class="yellowlink">Suggest New Liquor</a>';
+	 var test = '<a href="#suggestmodal" data-toggle="modal" class="yellowlink">Suggest New Cocktail</a>';
 	
 </script>
 <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-					   <?php echo $this->load->view(getThemeName().'/bar/liquor_suggest');?>
+					   <?php echo $this->load->view(getThemeName().'/bar/cocktail_suggest');?>
 </div>	
 <div class="wrapper row6 padtb10 has-js">
      	<div class="container">
      		<div class="margin-top-50 bg_brown">
      			<?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
      			<div class="dashboard_detail">
-     				<div class="result_search event"><div class="result_search_text"><i class="strip liquor"></i> Liquors</div></div>
+     				<div class="result_search event"><div class="result_search_text"><i class="strip cocktails"></i> Cocktails</div></div>
 		     		<div class="dashboard_subblock">
 		     			<div>
-		     				<div class="dash-btngroup">
-	     						<div id="hd_del">
-	     							<button type="submit" class="btn btn-lg btn-primary marr_10" onclick="list_add()">Add</button>
-		                       		<a class="btn btn-lg btn-primary marr_10" href="javascript:void(0)" onclick="setaction('chk[]','delete',   'frm_event');">Delete</a>
-		                       		<a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
-	     						</div>
-<!--	     						<div id="hs_del" style="display: none;">
-	     							<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-	     						</div>-->
-     						</div>
-     					<div id="list_hide_m">
-     						<?php			 
-					$attributes = array('name'=>'frm_search','id'=>'frm_search','data-async'=>'','data-target'=>'.content');
-					echo form_open('admin/search_bar_events/'.$limit,$attributes);?>
-					<div class="search_block">
-						<input type="hidden" name="limit" id="search-limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
-				     			<div class="search-strip">
-				     				<form class="form-horizontal" role="form">
-					                   <div class="form-group">
-					                       <div class="col-sm-7 input_box pull-left" style="padding-left: 0;">
-					                           <input type="text" name="event_keyword" id="event_keyword" class="form-control form-pad" id="inputEmail3" placeholder="Search By Title" onkeydown="if (event.keyCode == 13) { get_search_event(); return false; }" />
-					                       </div>
-					                       <div class="col-sm-2 input_box pull-left">
-				                        		<button type="button" onclick="get_search_event()" id="search" class="btn btn-lg btn-primary search"><i class="strip search"></i></button>
-				                       	   </div>
-				                       	   <div class="col-sm-2 input_box pull-left">
-				                        		<a href="<?php echo site_url('bar/bar_liquor')?>" class="btn btn-lg btn-primary search" type="submit"><i class="strip refresh"></i>
-				                       	   </a></div>
-				                       	   <div class="clearfix"></div>
-					                    </div>
-				                    </form>
-				     			</div>
-					     		
-					     		<div class="clearfix"></div>
-					     		</form>
-					     	</div>
-					     	</div>
-     					<div id="list_hide" class="content">	
-     						<?php			 
-					$attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-					echo form_open('bar/actionliquor',$attributes);?> 
-					<input type="hidden" name="action" id="action" />
-					    					<div class="table-responsive">
-     						<div id="responsecomment">
-     							<div class="pagination" id="at_ajax">
-	     				<?php echo $page_link;?>
-     				</div><div class="clearfix"></div>
-							<table class="table">
-								<thead>
-									<th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
-									<th>Liquor Title</th>
-									<th>Type</th>
-									<th>Proof</th>
-									<th>Producer</th>
-									<th>Action</th>
-								</thead>
-								<tbody>
-								<?php
-								
-								if($result)
-								{
-									$i=1;
-									foreach($result as $event){								
-								
-								if ($i % 2 == 0)
-										  {
-										    $dark =  "dark";
-										  }
-										  else
-										  {
-										    $dark =  "light";
-										  }?>	
-									<tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->liquor_bar_id; ?>'>
-										<td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->liquor_bar_id;?>">
-											<input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->liquor_bar_id;?>" value="<?php echo $event->liquor_bar_id;?>"></label></td>
-										<td><?php echo $event->liquor_title;?></td>
-										<td><?php echo $event->type;?></td>
-										<td><?php echo $event->proof;?></td>
-										<td><?php echo $event->producer;?></td>
-										<td>
-											<!-- <a href="javascript://" onclick="editbarevent('<?php echo $event->event_id; ?>')"><i class="strip edit_table"></i></a> -->
-											<a href="javascript://" onclick="deleteliquor('<?php echo $event->liquor_bar_id; ?>')" ><i class="strip delete"></i></a>
-											<input type="hidden" name="liquor_bar_id" id="liquor_bar_id" value="<?php echo $event->liquor_bar_id;?>" />
-										</td>
-									</tr>
-								<?php $i++; } } else { ?>
-									<tr>
-										<td colspan="6">No liqours were found at your bar.</td>
-									</tr>	
-										
-									<?php } ?>	
-								</tbody>
-							</table>
-							</div>
-<!--                                                        <div  id="hs_del">
-                                                            <a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-                                                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
-                                                        </div>-->
-							<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
-					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
-					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
-						</div>
-						</form>
-					</div>	
-					
-				<div id="list_show" style="display: none;" >	
+		     		
+				<div id="list_show">	
 					<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
 					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
 					
 					<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-					<form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_liquor/'.base64_encode($getbar['bar_id'])); ?>">
+					<form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_cocktail/'.base64_encode($getbar['bar_id'])."/bar_cocktail"); ?>">
 						<!-- <input type="hidden" name="event_id" id="event_id" value="" /> -->
      				
 		     			<div class="text-center pad_t15b20">
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Add Liquor : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Add Cocktail : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<!-- <input type="text" class="form-control form-pad tags" id="liquor_id" name="liquor_id" value=""> -->
-	                           		<select style="display: block ; z-index: 0; border: solid 1px #C57B00!important; background: rgb(43, 41, 35);" id="tokenize" name="liquor_id[]" class="tokenize-sample m_wrap" multiple="multiple">
+	                           		<!-- <input type="text" class="form-control form-pad tags" id="cocktail_id" name="cocktail_id" value=""> -->
+	                           		<select style="display: block ; z-index: 0; border: solid 1px #C57B00!important; background: rgb(43, 41, 35);" id="tokenize" name="cocktail_id[]" class="tokenize-sample m_wrap" multiple="multiple">
 				                     
 				                    </select>
 	                       		</div>
@@ -148,7 +46,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-7 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('home/drink_menu');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/add_drink');?>" >Cancel</a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -166,7 +64,10 @@
 <script type="text/javascript" src="<?php echo base_url().getThemeName();?>/js/jquery_form.js"></script>
     <script>
    
-   
+    function morelink(id)
+    {
+    	  $("#myModalnew_open_"+id).modal('show');
+    }
 $(document).ready(function(){
 	 $('.label_check, .label_radio').click(function(){
     	        	
@@ -177,14 +78,14 @@ $(document).ready(function(){
 	 var arrVal = new Array();
 	var t = $("[class=user_type]").val();
 	$('.tags').tagsInput({
-		autocomplete_url:'<?php echo site_url('bar/getallliquorbybar/');?>',
+		autocomplete_url:'<?php echo site_url('bar/getallcocktailbybar/');?>',
 		itemValue: 'value',
 		itemText: 'text',
 		autocomplete:{
 		   source: function(request, response) {
 		  var t = <?php echo $getbar['bar_id']; ?>;
 			  $.ajax({
-				 url: "<?php echo site_url('bar/getallliquorbybar');?>",
+				 url: "<?php echo site_url('bar/getallcocktailbybar');?>",
 				 dataType: "json",
 				 data: {
 				   	utype : t,
@@ -203,12 +104,13 @@ $(document).ready(function(){
 		   },
 		}
 	});
+        list_add();
 	 });
         
-        $('#form').validate(
+        /*$('#form').validate(
 		{
 		rules: {
-					'liquor_id[]': {
+					'cocktail_id[]': {
 							required: true,
 					},
 					
@@ -233,7 +135,7 @@ $(document).ready(function(){
 					if(json.status == "fail")
 					{
 						$("#cm-err-main1").show();
-					$("#cm-err-main1").html('Liquor Name Field is required');
+					$("#cm-err-main1").html('Cocktail Name Field is required');
 			    		$('#dvLoading').fadeOut('slow');
 			    		scrollToDiv('cm-err-main1');
 				  		// setTimeout(function () 
@@ -250,11 +152,11 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
 						if($('#event_id').val()=='')
 						{
-							$.growlUI('Your liquor was added successfully .');
+							$.growlUI('Your cocktail add successfully .');
 						}
 						else
 						{
-							$.growlUI('Your liquor list was updated successfully .');
+							$.growlUI('Your cocktail update successfully .');
 						}
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')
@@ -273,7 +175,7 @@ $(document).ready(function(){
 		   		 }
 		    });
 		  }
-		})
+		})*/
 		
 		
     function getData()
@@ -325,14 +227,14 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
     	 // $.ajax({
 	       // type: "POST",
-		   // url: "<?php //echo site_url('bar/getallliquorbybar')?>",
+		   // url: "<?php //echo site_url('bar/getallcocktailbybar')?>",
 		   // data : {id:<?php //echo  $getbar['bar_id']; ?>},
 		   // dataType : 'json',
 		   // success: function(response) {
-		   	// $("#liquor_id").empty();
+		   	// $("#cocktail_id").empty();
 		   	    // $(".search-choice").remove();
 		   	    // $('.result-selected').removeClass('result-selected').addClass('active-result');
-		   	    // $('#liquor_id').html(response.result1);
+		   	    // $('#cocktail_id').html(response.result1);
 		   	    // $('.chzn-results').html(response.result2);
 // 		   
 		     // $(".chosen").each(function () 
@@ -350,24 +252,22 @@ $(document).ready(function(){
 					 	.val('')
 					 	//.removeAttr('checked')
 					 	.removeAttr('selected');
-		//$("#liquor_id").val('');
+		//$("#cocktail_id").val('');
 		
-		$("#liquor_id_tagsinput span").remove();			 	
+		$("#cocktail_id_tagsinput span").remove();			 	
     	$("#list_hide").slideUp();
     	$("#list_hide_m").slideUp();
-    	$('#tokenize').data('tokenize').clear();
     	$("#hd_del").slideUp();
     	$("#hs_del").slideDown();
+    	$('#tokenize').data('tokenize').clear();
     	$('#list_show').slideDown();
     	
     }
     
     function goto_main()
-    {
-    		$("#cm-err-main1").hide();
+    {	$("#cm-err-main1").hide();
 						$("#cm-err-main1").html("");
     	$("#event_id").val('');
-    	
     	$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')
 					 	.val('')
@@ -410,7 +310,57 @@ $(document).ready(function(){
 			return false;
 			
 		});
- 
+ function editbarevent(id)
+ {	$("#cm-err-main1").hide();
+						$("#cm-err-main1").html("");
+ 		
+ 	 $.ajax({
+	       type: "POST",
+		   url: "<?php echo site_url('bar/bareventdetail')?>",
+		   data : {id:id},
+		   dataType : 'JSON',
+		   success: function(response) {
+		   
+		      $("#event_id").val(response.event_id);
+		      $("#event_title").val(response.event_title);
+		      $("#event_desc").val(response.event_desc);
+		      $("#start_date").val(response.start_date);
+		      $("#end_date").val(response.end_date);
+		      $("#address").val(response.address);
+		      $("#city").val(response.city);
+		      $("#state").val(response.state);
+		      $("#phone").val(response.phone);
+		      $("#zipcode").val(response.zipcode);
+		      $("#event_video_link").val(response.event_video_link);
+		      $("#is_power_boost_event").val(response.is_power_boost_event);
+		      $("#status").val(response.status);
+		      $("#prev_event_image").val(response.event_image);
+		      $("#prev_event_video").val(response.event_video);
+		      
+		      if(response.event_video!='')
+		      {
+		      		 var src_vid = '<?php echo base_url().'upload/event_video/'?>';
+		      	     var htm = '<a href="'+src_vid+response.event_video+'" id="video_add" class="image_play fancybox-video">'+response.event_video+'</a>';
+		      	   //  $("#video_add").attr("href", src_vid+response.event_video);
+		      		 $("#prev_event_video_htm").html(htm);
+			  }
+		     
+		      if(response.event_image!='')
+		      {
+		      		var src1 = '<?php echo base_url().'upload/event_thumb/'?>';
+					$("#img_here").attr("src", src1+response.event_image);
+			 }
+		      $("#list_hide").slideUp();
+	    	$("#list_hide_m").slideUp();
+	    	$("#hd_del").slideUp();
+	    	$("#hs_del").slideDown();
+	    	
+	    	$('#list_show').slideDown();
+	    	bindJquery();
+		     
+		  }
+	   });
+ }
  function get_search_event()
  {
  	  var event_keyword = $("#event_keyword").val();
@@ -419,7 +369,7 @@ $(document).ready(function(){
  	  var res = $.ajax(
 	        {						
 			   type: 'POST',
-			   url: '<?php echo site_url('bar/bar_liquor/')?>',
+			   url: '<?php echo site_url('bar/bar_cocktail/')?>',
 			   dataType: 'post', 
 			   data : {event_keyword:event_keyword,limit:limit,offset:offset},
 			   cache: false,
@@ -437,36 +387,6 @@ $(document).ready(function(){
 			$("#list_hide").html(res);
 			    setupLabel();
 				bindJquery();
- }
- 
- function deleteliquor(id)
- {
- 	 
-			alertify.confirm("Are you sure you want to delete this liquor?", function (e) {
-				if (e) {
-					 var res = $.ajax(
-	        {						
-			   type: 'POST',
-			   url: '<?php echo site_url('bar/barliquordelete/')?>',
-			   dataType: 'post', 
-			   data : {id:id},
-			   cache: false,
-			   async: false,
-			   beforeSend : function(){
-			      $('#dvLoading').fadeIn('slow');
-			   },
-				complete: function(){
-				     $('#dvLoading').fadeOut('slow');
-				     getData();
-				     $("#remove_event_"+id).remove();
-				     $.growlUI('Your liquor deleted successfully .');
-				    }
-				}).responseText;
-				bindJquery();
-			}
-			return false;
-			
- });
  }
  
  function bindJquery()
@@ -527,7 +447,7 @@ $(document).ready(function(){
 			return false;
 	} else {
 		
-		alertify.confirm("Are you sure you want to delete this liquor?", function (e) {
+		alertify.confirm("Are you sure you want to delete this cocktail?", function (e) {
 				if (e) {
 			document.getElementById('action').value=actionval;	
 			//$('#frm_admin').submit();
@@ -547,7 +467,7 @@ $(document).ready(function(){
 			},success: function(res, status) {
 				// alert(res);
                 if(res.status=='done'){
-                	$.growlUI('Your liquor deleted successfully .'); 
+                	$.growlUI('Your cocktail deleted successfully .'); 
                 	getData();	
                 }
                 
@@ -566,7 +486,7 @@ $(document).ready(function(){
 var base_url = "<?php echo base_url();?>";
  $('#tokenize').tokenize({
 	  // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
-	     datas: ""+base_url+"bar/getallliquorbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
+	     datas: ""+base_url+"bar/getallcocktailbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
 	});
 </script>
 

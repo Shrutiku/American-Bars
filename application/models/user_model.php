@@ -26,12 +26,12 @@ class User_model extends CI_Model {
 		return;
 	}
         
-        function get_one_user_by_email($email) 
+        function get_one_user_by_phone($phone) 
         {
-            $this->db->select("*");
+            $this->db->select("user_id");
             $this->db->from('user_master');
-            $this->db->where('email',$email);
-            $this->db->order_by('email','desc');
+            $this->db->where('phone_no',$phone);
+            $this->db->order_by('phone_no','desc');
             $this->db->limit('1','0');
             $query=$this->db->get();
 

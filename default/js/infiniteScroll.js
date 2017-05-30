@@ -1,31 +1,31 @@
 var InfiniteList = (function () {
   var pub = {};
 
-  var offset = 0;
-  var limit = 4; /* enough elements to activate the scrollbar*/
+//  var offset = 0;
+//  var limit = 6; /* enough elements to activate the scrollbar*/
   var serviceEndpoint = null;
   var displayFunction = null;
 
   /* simulate a webservice */
-  function getFakeData(offset, limit, callback) {
-    var data = [];
-    var i;
-    var id;
-    for (i = 0; i < limit; i++) {
-      id = offset + i;
-      data.push({
-        id: id,
-        name: "Name " + id,
-        description: "Description " + id
-      });
-    }
-    setTimeout(function () {
-      callback(null, data);
-    }, 1000); /* simulate 1s delay for the service call */
-  }
+//  function getFakeData(offset, limit, callback) {
+//    var data = [];
+//    var i;
+//    var id;
+//    for (i = 0; i < limit; i++) {
+//      id = offset + i;
+//      data.push({
+//        id: id,
+//        name: "Name " + id,
+//        description: "Description " + id
+//      });
+//    }
+//    setTimeout(function () {
+//      callback(null, data);
+//    }, 1000); /* simulate 1s delay for the service call */
+//  }
 
   /* real Http service */
-  function getRealData(offset, limit, callback, serviceEndpoint) {
+  function getRealData(offset, limit) {// , callback, serviceEndpoint) {
       if($('#beerval').val()==0 || offset==0)
     {
     var err = {};
@@ -34,7 +34,7 @@ var InfiniteList = (function () {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 4
+        'limit' : limit,
       },
       'success' : function (data) {
       	
@@ -53,7 +53,7 @@ var InfiniteList = (function () {
       'error' : function (data, status, error) {
         err.push(status);
         err.push(error);
-        callback(err, data);
+//        callback(err, data);
       }
     });
     }
@@ -67,7 +67,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 5
+        'limit' : limit
       },
       'success' : function (data) {
       		if(data=='No')
@@ -100,7 +100,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'type' : 'GET',
       'data' : {
         'offset' : offset,
-        'limit' : 5
+        'limit' : limit,
       },
       'success' : function (data) {
       	if(data=='No')
@@ -112,6 +112,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       	}
       	else{
       		 $('#infinite-list-liquor').append(data);
+                 return true;
       	}
       },
       'error' : function (data, status, error) {
@@ -130,7 +131,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_comment,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -153,7 +154,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_bar,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -186,7 +187,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_beer,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -222,7 +223,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_cocktail,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -255,7 +256,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       'url' : base_url_favorite_liquor,
       'type' : 'GET',
       'data' : {
-        'offset' : offset,
+        'offset' : 0,
         'limit' : 4
       },
       'success' : function (data) {
@@ -311,8 +312,10 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       console.log('Usage: InfiniteList.loadData_cocktail(offset, length)');
     } else {
       if (serviceEndpoint === 'local') {
+          console.log('FUCK)');
         getRealData_cocktail(o, l, displayFunction);
       } else {
+          console.log('FUCK)');
         getRealData_cocktail(o, l, displayFunction, serviceEndpoint);
       }
     }
@@ -408,45 +411,44 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
   }
 
   /* when scrolling to the bottom start loading the new stuff */
-  $(document).ready(function () {
-    $("#infinite-list").scroll(function () {
-      var infiniteList = $('#infinite-list');
-      if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
-        loadData(offset+1, limit);
-      }
-    });
-    
-    
+  /*$(document).ready(function () {
+
+//    $("#infinite-list").scroll(function () {
+//      var infiniteList = $('#infinite-list');
+//      if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
+//        offset += (limit + 1);
+//        loadData(offset+1, limit);
+//      }
+//    });
     
     $("#infinite-list-comment").scroll(function () {
       var infiniteList = $('#infinite-list-comment');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_comment(offset+1, limit);
       }
     });
     
-     $("#infinite-list-cocktail").scroll(function () {
-      var infiniteList = $('#infinite-list-cocktail');
-      if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
-        loadData_cocktail(offset+1, limit);
-      }
-    });
+//     $("#infinite-list-cocktail").scroll(function () {
+//      var infiniteList = $('#infinite-list-cocktail');
+//      if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
+//        offset += (limit + 1);
+//        loadData_cocktail(offset+1, limit);
+//      }
+//    });
     
-    $("#infinite-list-liquor").scroll(function () {
-      var infiniteList = $('#infinite-list-liquor');
-      if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
-        loadData_liquor(offset+1, limit);
-      }
-    });
+//    $("#infinite-list-liquor").scroll(function () {
+//      var infiniteList = $('#infinite-list-liquor');
+//      if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
+//        offset += (limit + 1);
+//        loadData_liquor(offset+1, limit);
+//      }
+//    });
     
       $("#infinite-favorite-bar").scroll(function () {
       var infiniteList = $('#infinite-favorite-bar');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_bar(offset+1, limit);
       }
     });
@@ -454,7 +456,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       $("#infinite-favorite-beer").scroll(function () {
       var infiniteList = $('#infinite-favorite-beer');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_beer(offset+1, limit);
       }
     });
@@ -462,7 +464,7 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
      $("#infinite-favorite-cocktail").scroll(function () {
       var infiniteList = $('#infinite-favorite-cocktail');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_cocktail(offset+1, limit);
       }
     });
@@ -470,12 +472,12 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
     $("#infinite-favorite-liquor").scroll(function () {
       var infiniteList = $('#infinite-favorite-liquor');
       if (infiniteList.scrollTop() + infiniteList.innerHeight() >= infiniteList.prop('scrollHeight')) {
-        offset += limit;
+        offset += (limit + 1);
         loadData_favorite_liquor(offset+1, limit);
       }
     });
   });
-
+*/
   /* define public methods for the module */
   pub.setDisplay = setDisplay;
   pub.setService = setService;

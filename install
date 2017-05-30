@@ -1,0 +1,61 @@
+#!/bin/bash
+
+if [$# -e 0]; 
+    then echo "[name] [email] [working_dir]"
+    exit -1
+fi
+
+if [$# -ne 3]; 
+    then echo "illegal number of parameters"
+    exit -1
+fi
+
+NAME=$1
+EMAIL=$2
+DIR=$3
+
+echo "Installing Homebrew.."
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo 'export PATH=/usr/local/bin:$PATH' >> ~/.profile
+
+echo "Installing git.."
+brew install git
+
+echo "Cloning git@github.com:americanbars/webapp.git at ${DIR}.."
+git clone git@github.com:americanbars/webapp.git $DIR
+cd $DIR
+git config --global user.name $NAME
+git config --global user.email $EMAIL
+cp ./build ./.git/hooks/pre-push
+
+echo "Installing php7.."
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
+brew install php71
+
+echo "Configuring Mamp.."
+echo "zend_extension='/Applications/MAMP/bin/php/php7.0.12/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so'
+xdebug.default_enable=1
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9002
+xdebug.remote_autostart=1
+xdebug.idekey='netbeans-xdebug'" >> /Applications/MAMP/bin/php/php7.0.12/conf/php.ini
+
+echo "zend_extension='/Applications/MAMP/bin/php/php5.6.27/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so'
+xdebug.default_enable=1
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9002
+xdebug.remote_autostart=1
+xdebug.idekey='netbeans-xdebug'" >> /Applications/MAMP/bin/php/php5.6.27/conf/php.ini
+
+echo "Creating MySql Databse for AB webapp.."
+/Applications/MAMP/Library/bin/mysql -u root --password=root -e "create database TEST"
+/Applications/MAMP/Library/bin/mysql -u root --password=root -e "CREATE USER 'adbroot'@'localhost' IDENTIFIED BY 'CsK53Dvu+T=tk5';"
+/Applications/MAMP/Library/bin/mysql -u root --password=root -e "GRANT ALL ON TEST.* TO 'adbroot'@'localhost';"
+/Applications/MAMP/Library/bin/mysql -u root --password=root TEST < ../db/americanDB.sql
+/Applications/MAMP/Library/bin/mysql -u root --password=root TEST < ../db/ab_bk.sql

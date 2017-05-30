@@ -14,163 +14,14 @@
      			<div class="dashboard_detail">
      				<div class="result_search event"><div class="result_search_text"><i class="strip beers"></i> Beers</div></div>
 		     		<div class="dashboard_subblock">
-		     			<div>
-		     				<div class="dash-btngroup">
-<!--                                                    <div  id="hs_del">
-                                                            <a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-                                                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php // echo site_url('/home/drink_menu');?>">Back</a>
-                                                        </div>-->
-     						<div  id="hd_del">
-		     							<button type="submit" class="btn btn-lg btn-primary marr_10" onclick="list_add()">Add</button>
-			                       		<a class="btn btn-lg btn-primary marr_10" href="javascript:void(0)" onclick="setaction('chk[]','delete',   'frm_event');">Delete</a>
-                                                        <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
-			                       		
-		     						</div>
-		     						
-		     					</div>
-		     					<!-- <div class="clearfix"></div> -->
-     						
-     					<div id="list_hide_m">
-     						<?php			 
-					$attributes = array('name'=>'frm_search','id'=>'frm_search','data-async'=>'','data-target'=>'.content');
-					echo form_open('admin/search_bar_events/'.$limit,$attributes);?>
-					  <div class="search_block">
-						<input type="hidden" name="limit" id="search-limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
-				     			<div class="search-strip">
-				     				<form class="form-horizontal" role="form">
-					                   <div class="form-group">
-					                       <div class="col-sm-7 input_box pull-left" style="padding-left: 0;">
-					                           <input type="text" name="event_keyword" id="event_keyword" class="form-control form-pad" id="inputEmail3" placeholder="Search By Title" onkeydown="if (event.keyCode == 13) { get_search_event(); return false; }" />
-					                       </div>
-					                       <div class="col-sm-2 input_box pull-left">
-				                        		<button type="button" onclick="get_search_event()" id="search" class="btn btn-lg btn-primary search"><i class="strip search"></i></button>
-				                       	   </div>
-				                       	   <div class="col-sm-2 input_box pull-left">
-				                        		<a href="<?php echo site_url('bar/bar_beer')?>" class="btn btn-lg btn-primary search"><i class="strip refresh"></i>
-				                       	   </a></div>
-				                       	   <div class="clearfix"></div>
-					                    </div>
-				                    </form>
-				     			</div>
-				     			<!-- <div class="dash-btngroup">
-				     				<div  id="hd_del">
-		     							<button type="submit" class="btn btn-lg btn-primary marr_10" onclick="list_add()">Add</button>
-			                       		<a class="btn btn-lg btn-primary marr_10" href="javascript:void(0)" onclick="setaction('chk[]','delete',   'frm_event');">Delete</a>
-			                       		
-		     						</div>
-		     						<div class="text-right" id="hs_del" style="display: none;">
-		     							<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-		     						</div>
-				     			</div> -->
-					     		<div class="clearfix"></div>
-					     		</form>
-					     	</div>
-					     	</div>
-     					
-     					
-     					<div id="list_hide" class="content">	
-     						<?php			 
-					$attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-					echo form_open('bar/actionbeer',$attributes);?> 
-					<input type="hidden" name="action" id="action" />
-					    					<div class="table-responsive">
-     						<div id="responsecomment">
-     							<div class="pagination" id="at_ajax">
-	     				<?php echo $page_link;?>
-     				</div><div class="clearfix"></div>
-							<table class="table">
-								<thead>
-									<th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
-									<th>Beer Name</th>
-									<th>Type</th>
-									<th>Producer</th>
-									<th>Served As</th>
-									<th>Action</th>
-								</thead>
-								<tbody>
-								<?php
-								
-								
-								if($result)
-								{
-									$i=1;
-									foreach($result as $event){								
-								
-								if ($i % 2 == 0)
-										  {
-										    $dark =  "dark";
-										  }
-										  else
-										  {
-										    $dark =  "light";
-										  }?>	
-									<tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->beer_bar_id; ?>'>
-										<td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->beer_bar_id;?>">
-											<input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->beer_bar_id;?>"></label></td>
-										<td><?php echo $event->beer_name;?></td>
-										<td><?php echo $event->beer_type;?></td>
-										<td><?php echo $event->producer;?></td>
-										<td>
-											<label class="radio-checkbox label_check c_on" for="checkbox-tap<?php echo $event->beer_bar_id; ?>">
-											<input <?php if($event->tap=='yes'){ ?>checked<?php } ?> onchange="ChangeState('<?php echo $event->beer_bar_id; ?>','tap')"  type="checkbox"  class="checkboxes" name="tap" id="checkbox-tap<?php echo $event->beer_bar_id; ?>" value="<?php echo $event->tap; ?>">Tap</label>
-											<label class="radio-checkbox label_check c_on" for="checkbox-bottle<?php echo $event->beer_bar_id; ?>">
-											<input <?php if($event->bottle=='yes'){?>checked<?php } ?> onchange="ChangeState1('<?php echo $event->beer_bar_id; ?>','bottle')" type="checkbox"  class="checkboxes" name="bottle" id="checkbox-bottle<?php echo  $event->beer_bar_id;?>" value="<?php echo $event->bottle; ?>">Bottle</label>
-										</td>
-										<td>
-											<!-- <a href="javascript://" onclick="editbarevent('<?php echo $event->beer_id; ?>')"><i class="strip edit_table"></i></a> -->
-											<a href="javascript://" onclick="deletebeer('<?php echo $event->beer_bar_id; ?>')" ><i class="strip delete"></i></a>
-											<a onclick="morelink('<?php echo $event->beer_bar_id; ?>')"><i class="strip view"></i></a>
-											
-											<div class="modal fade" id="myModalnew_open_<?php echo $event->beer_bar_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="padtb10">
-     	<div>
-     		<div class="result_box clearfix mar_top30bot20">
-     			<div class="login_block br_green_yellow">
-     				<div class="result_search">
-     					 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-	     				<i class="strip login_icon"></i><div class="result_search_text">Beer Description </div>
-     				</div>
-     				<div class="pad20">
-     						<label class="control-label" style="color: #fff;"><?php echo $event->beer_desc; ?></label>	
-     				</div>		
-     			</div>
-     		</div>
-     	</div>
-     </div>
-	
-</div>
-										</td>
-										<input type="hidden" name="beer_bar_id" id="beer_bar_id" value="<?php echo $event->beer_bar_id; ?>" />
-									</tr>
-								<?php $i++; } } else { ?>
-									<tr>
-										<td colspan="6">No beers found at your bar.</td>
-									</tr>	
-										
-									<?php } ?>	
-								</tbody>
-							</table>
-							</div>
-                                                        <!--<div  id="hs_del" style="display: none;">-->
-<!--                                                        <div  id="hs_del">
-                                                            <a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-                                                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php //echo site_url('/home/drink_menu');?>">Back</a>
-                                                        </div>-->
-							<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
-					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
-					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
-						</div>
-						</form>
-					</div>	
-					
-					
-				<div id="list_show" style="display: none;" >	
+		     			<div>     										
+				<div id="list_show" >	
 					<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
 					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
 					
 					<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-					<form name="form" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_beer/'.base64_encode($getbar['bar_id'])); ?>">
+					<form name="form" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_beer/'.base64_encode($getbar['bar_id'])."/bar_beer"); ?>">
 						<!-- <input type="hidden" name="event_id" id="event_id" value="" /> -->
      				
 		     			<div class="text-center pad_t15b20">
@@ -206,7 +57,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-7 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('home/drink_menu');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/add_drink');?>" >Cancel</a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -388,6 +239,7 @@ $(document).ready(function(){
 		   		 }
 		    });
 		  }
+                  list_add();
 		})
 		
 		

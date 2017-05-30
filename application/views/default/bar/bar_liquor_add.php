@@ -15,119 +15,15 @@
      			<div class="dashboard_detail">
      				<div class="result_search event"><div class="result_search_text"><i class="strip liquor"></i> Liquors</div></div>
 		     		<div class="dashboard_subblock">
-		     			<div>
-		     				<div class="dash-btngroup">
-	     						<div id="hd_del">
-	     							<button type="submit" class="btn btn-lg btn-primary marr_10" onclick="list_add()">Add</button>
-		                       		<a class="btn btn-lg btn-primary marr_10" href="javascript:void(0)" onclick="setaction('chk[]','delete',   'frm_event');">Delete</a>
-		                       		<a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
-	     						</div>
-<!--	     						<div id="hs_del" style="display: none;">
-	     							<a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-	     						</div>-->
-     						</div>
-     					<div id="list_hide_m">
-     						<?php			 
-					$attributes = array('name'=>'frm_search','id'=>'frm_search','data-async'=>'','data-target'=>'.content');
-					echo form_open('admin/search_bar_events/'.$limit,$attributes);?>
-					<div class="search_block">
-						<input type="hidden" name="limit" id="search-limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
-				     			<div class="search-strip">
-				     				<form class="form-horizontal" role="form">
-					                   <div class="form-group">
-					                       <div class="col-sm-7 input_box pull-left" style="padding-left: 0;">
-					                           <input type="text" name="event_keyword" id="event_keyword" class="form-control form-pad" id="inputEmail3" placeholder="Search By Title" onkeydown="if (event.keyCode == 13) { get_search_event(); return false; }" />
-					                       </div>
-					                       <div class="col-sm-2 input_box pull-left">
-				                        		<button type="button" onclick="get_search_event()" id="search" class="btn btn-lg btn-primary search"><i class="strip search"></i></button>
-				                       	   </div>
-				                       	   <div class="col-sm-2 input_box pull-left">
-				                        		<a href="<?php echo site_url('bar/bar_liquor')?>" class="btn btn-lg btn-primary search" type="submit"><i class="strip refresh"></i>
-				                       	   </a></div>
-				                       	   <div class="clearfix"></div>
-					                    </div>
-				                    </form>
-				     			</div>
-					     		
-					     		<div class="clearfix"></div>
-					     		</form>
-					     	</div>
-					     	</div>
-     					<div id="list_hide" class="content">	
-     						<?php			 
-					$attributes = array('name'=>'actionevent','id'=>'actionevent','data-target'=>'.content');
-					echo form_open('bar/actionliquor',$attributes);?> 
-					<input type="hidden" name="action" id="action" />
-					    					<div class="table-responsive">
-     						<div id="responsecomment">
-     							<div class="pagination" id="at_ajax">
-	     				<?php echo $page_link;?>
-     				</div><div class="clearfix"></div>
-							<table class="table">
-								<thead>
-									<th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
-									<th>Liquor Title</th>
-									<th>Type</th>
-									<th>Proof</th>
-									<th>Producer</th>
-									<th>Action</th>
-								</thead>
-								<tbody>
-								<?php
-								
-								if($result)
-								{
-									$i=1;
-									foreach($result as $event){								
-								
-								if ($i % 2 == 0)
-										  {
-										    $dark =  "dark";
-										  }
-										  else
-										  {
-										    $dark =  "light";
-										  }?>	
-									<tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->liquor_bar_id; ?>'>
-										<td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->liquor_bar_id;?>">
-											<input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->liquor_bar_id;?>" value="<?php echo $event->liquor_bar_id;?>"></label></td>
-										<td><?php echo $event->liquor_title;?></td>
-										<td><?php echo $event->type;?></td>
-										<td><?php echo $event->proof;?></td>
-										<td><?php echo $event->producer;?></td>
-										<td>
-											<!-- <a href="javascript://" onclick="editbarevent('<?php echo $event->event_id; ?>')"><i class="strip edit_table"></i></a> -->
-											<a href="javascript://" onclick="deleteliquor('<?php echo $event->liquor_bar_id; ?>')" ><i class="strip delete"></i></a>
-											<input type="hidden" name="liquor_bar_id" id="liquor_bar_id" value="<?php echo $event->liquor_bar_id;?>" />
-										</td>
-									</tr>
-								<?php $i++; } } else { ?>
-									<tr>
-										<td colspan="6">No liqours were found at your bar.</td>
-									</tr>	
-										
-									<?php } ?>	
-								</tbody>
-							</table>
-							</div>
-<!--                                                        <div  id="hs_del">
-                                                            <a onclick="goto_main()" href="javascript://"  class="btn btn-lg btn-primary marr_10">Back</a>
-                                                            <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/home/drink_menu');?>">Back</a>
-                                                        </div>-->
-							<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
-					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
-					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
-						</div>
-						</form>
-					</div>	
+                                    <div>
 					
-				<div id="list_show" style="display: none;" >	
+				<div id="list_show" >	
 					<input type="hidden" name="redirect_page" id="redirect_page" value="<?php echo $redirect_page;?>"/>
 					<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:10; ?>" />
 					
 					<div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-					<form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_liquor/'.base64_encode($getbar['bar_id'])); ?>">
+					<form name="add_event" id="form" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/add_liquor/'.base64_encode($getbar['bar_id'])."/bar_liquor"); ?>">
 						<!-- <input type="hidden" name="event_id" id="event_id" value="" /> -->
      				
 		     			<div class="text-center pad_t15b20">
@@ -148,7 +44,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-7 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('home/drink_menu');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/bar_liquor');?>" >Cancel</a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -203,9 +99,10 @@ $(document).ready(function(){
 		   },
 		}
 	});
+        list_add();
 	 });
         
-        $('#form').validate(
+        /*$('#form').validate(
 		{
 		rules: {
 					'liquor_id[]': {
@@ -250,11 +147,11 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
 						if($('#event_id').val()=='')
 						{
-							$.growlUI('Your liquor was added successfully .');
+							$.growlUI('Your liquor add successfully .');
 						}
 						else
 						{
-							$.growlUI('Your liquor list was updated successfully .');
+							$.growlUI('Your liquor update successfully .');
 						}
 						$(':input','#form')
 					 	.not(':button, :submit, :reset, :hidden')
@@ -273,7 +170,7 @@ $(document).ready(function(){
 		   		 }
 		    });
 		  }
-		})
+		})*/
 		
 		
     function getData()
