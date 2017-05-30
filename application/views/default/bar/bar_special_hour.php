@@ -144,10 +144,10 @@ $('.sorted_table').sortable({
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
-                                                                            <div class="col-sm-3">
+                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
-                                                                            <div class="dropdown">
+                                                                            <div class="col-sm-1">
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                                                                     <span class="caret"></span></button>
                                                                                     <ul class="dropdown-menu">
