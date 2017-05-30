@@ -122,10 +122,10 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
                                                                 </div>
                                                                 <div class="col-sm-4" style="width: 23.5%" >
-                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                    <input required type="text" value="<?php // echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                 </div>
                                                                 <div class="col-sm-3 text-right"  style="width: 23.5%">	
-                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                    <input required type="text" value="<?php // echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
                                                                 <div class="clearfix"></div>
                                                                      <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
@@ -257,8 +257,9 @@ $('.sorted_table').sortable({
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
+                                                                                <h6><div class="col-sm-12">Daily Specials:</div></h6><br><br>
                                                                                 <div class="col-sm-1">
-                                                                                    <label class="control-label">Daily Specials:</label>
+                                                                                    <label class="control-label">Day:</label>
                                                                                 </div>
 <!--                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	

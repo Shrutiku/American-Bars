@@ -17,7 +17,7 @@
      		<div class="margin-top-50 bg_brown">
      			<?php echo $this->load->view(getThemeName().'/home/dashboard_menu'); ?>
      			<div class="dashboard_detail">
-     				<div class="result_search event"><div class="result_search_text"><i class='glyphicon glyphicon-calendar' style="color:'#FFF'; font-size: 46px; vertical-align: middle; margin: auto;"></i> Events</div></div>
+     				<div class="result_search event"><div class="result_search_text"><i class='glyphicon glyphicon-calendar' style="color:'#FFF'; margin-left: 5px; padding-bottom: 5px; font-size: 42px; vertical-align: middle; margin: auto;"></i> Events</div></div>
 		     		<div class="dashboard_subblock">
 		     			<div>
 		     				<div class="dash-btngroup">
@@ -71,7 +71,8 @@
 								<thead>
 									<th><label  class="radio-checkbox label_check c_on group-checkable" for="checkbox-00"><input type="checkbox" data-set=".checkboxes" name="sample-checkbox-00" id="checkbox-00" value="1"></label></th>
 									<th>Event Title</th>
-									<th>Location</th>
+									<!--<th>Location</th>-->
+                                                                        <th>Date</th>
 									<th>Status</th>
 									<th>Action</th>
 								</thead>
@@ -95,7 +96,7 @@
 										<td><label class="radio-checkbox label_check c_on" for="checkbox-<?php echo  $event->event_id;?>">
 											<input type="checkbox"  class="checkboxes" name="chk[]" id="checkbox-<?php echo  $event->event_id;?>" value="<?php echo $event->event_id;?>"></label></td>
 										<td><?php echo $event->event_title;?></td>
-										<td><?php echo $event->address;?></td>
+										<td><?php echo $event->date;//$event->address;?></td>
 										<td><?php echo ucfirst($event->status);?></td>
 										<td>
 											<a href="javascript://" onclick="editbarevent('<?php echo $event->event_id; ?>')"><i class="strip edit_table"></i></a>
