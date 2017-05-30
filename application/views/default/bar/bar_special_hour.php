@@ -1491,6 +1491,10 @@ $('#add_row').click(function(){
 	    html +=  ' <input type="hidden" name="cid0[]" id="cid_'+cnt+'" value="" /><div class="col-sm-3 text-right">';
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
+            
+             html +=                       '  <div class="col-sm-1">';
+             html+=                       '<label class="control-label" style="font-size: 16px;">Days:</label>';
+             html+='</div>';
 	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
 	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail" id="cocktailid_'+cnt+'"  name="cocktailid[]" value="">';
 	   html +=                   		'</div>';
