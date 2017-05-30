@@ -151,9 +151,7 @@ $('.sorted_table').sortable({
 <!--                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>-->
-                                                                            <div class="col-sm-3 padding-0">      
-<<<<<<< HEAD
-                                                                            
+                                                                            <div class="col-sm-3 padding-0">   
                                                                             <div class="col-sm-2">      
 
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
