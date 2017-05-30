@@ -180,7 +180,7 @@ $('.sorted_table').sortable({
                                                                                     <input type="checkbox" name="day" value="Sunday"> Su
                                                                                 </form>
                                                                             </div>-->
-                                                                            <div class="col-sm-1">
+                                                                            <div class="col-sm-2 text-center">
                                                                                 <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 13%" >
