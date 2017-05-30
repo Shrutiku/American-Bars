@@ -219,8 +219,8 @@ $('.sorted_table').sortable({
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <?php } else { ?>
-                                                                <input type="hidden" name="cntprobeer[]" id="cntprobeer<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
+                                                            <?php // } else { ?>
+<!--                                                                <input type="hidden" name="cntprobeer[]" id="cntprobeer<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >
                                                                         <?php $j=0; foreach($getval as $beer){?>	
@@ -244,13 +244,13 @@ $('.sorted_table').sortable({
                                                                                         <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
                                                                                     <div class="clearfix"></div>
-                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                         <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
                                                                                 </div>
                                                                         <?php $j++; } ?>
                                                                     </div>
                                                                 </div> 
-	        				 	
-                                                            <?php } ?>		
+	        				 	-->
+                                                            <?php // } ?>		
                                                             <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
                                                                 if(empty($getvalcocktail)){?>	 		
                                                                     <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
