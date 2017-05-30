@@ -170,10 +170,10 @@ B.show();
                                                                 <a href="<?php echo site_url('bar/list_message')?>"><?php echo $this->home_model->getmessagecount();?></a>
                                                             </p>
                                                             
-                                                            <a href="<?php echo site_url('bar/comments')?>">Comments</a>
+<!--                                                            <a href="<?php // echo site_url('bar/comments')?>">Comments</a>
                                                             <p class="mug_count">
-                                                                <a href="<?php echo site_url('bar/comments')?>"><?php echo '0'; //$this->home_model->getcommentcount();?></a>
-                                                            </p>
+                                                                <a href="<?php // echo site_url('bar/comments')?>"><?php // echo '0'; //$this->home_model->getcommentcount();?></a>
+                                                            </p>-->
                                                             
                                                             <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
                                                             <p class="mug_count">
@@ -183,7 +183,7 @@ B.show();
 		     					</div>
 		     				</div>
 		     				
-		     				<div class="mug_block green margin-right-30">
+<!--		     				<div class="mug_block green margin-right-30">
                                                     <a href="<?php echo site_url('bar/bar_beer')?>">Beers</a>
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
@@ -197,7 +197,7 @@ B.show();
 		     					<p class="mug_count">
 		     						<a href="<?php echo site_url('bar/bar_liquor')?>"><?php echo $this->home_model->countliquor(@$getbar['bar_id']); ?></a></p>
 		     			<?php // } ?>		
-		     				</div>
+		     				</div>-->
 		     				<div class="mug_block brown ">
 		     					<div class="">
 		     						Total Visitors
