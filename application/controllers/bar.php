@@ -1227,7 +1227,7 @@ function bareventtime()
 			// }
 		}	
 		
-                $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
+                $data['getbar'] = $this->home_model->get_bar_info($bar_id);
 		$bar_detail = $this->bar_model->get_one_bar(base64_decode($bar_id));
 		
 		if($this->form_validation->run() == FALSE || $imagarr!='')
