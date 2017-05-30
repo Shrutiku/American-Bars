@@ -276,22 +276,22 @@ $('.sorted_table').sortable({
                                                                                         <option value="sunday">Sunday</option>
                                                                                     </select>
                                                                                 </div>
-                                                                                 <div class="col-sm-1 text-right">
-                                                                                <label class="control-label">Items: </label>
-                                                                            </div>
-                                                                            <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
-                                                                            <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">	
-                                                                                <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
-                                                                            </div>
+                                                                                <div class="col-sm-1 text-right">
+                                                                                    <label class="control-label">Items: </label>
+                                                                                </div>
+                                                                                <!--<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />-->
+                                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">	
+                                                                                    <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
+                                                                                </div>
                                                                                 <div class="col-sm-1"> 
                                                                                     <label class="control-label" style="font-size: 16px;padding-left: 0px; padding-right: 0px; ">Time:</label>
                                                                                 </div>
-                                                                                <div class="col-sm-1" style="padding-left: 3px; padding-right: 3px;" >
+                                                                                <div class="col-sm-1" style="width: 13%" >
                                                                                     <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                                 </div>
-                                                                                <div class="col-sm-1"  style="padding-left: 3px; padding-right: 3px;">	
+                                                                                <div class="col-sm-1"  style="width: 13%">	
                                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                                                                </div>	
+                                                                                </div>
                                                                                 <div class="col-sm-1" style="width: 2%;padding-left: 3px; padding-right: 3px;">
                                                                                     <label class="control-label" style="font-size: 16px;">$:</label>
                                                                                 </div>
@@ -300,7 +300,7 @@ $('.sorted_table').sortable({
                                                                                 </div>
                                                                                 <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                 <div class="clearfix"></div>
-                                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -2028,6 +2028,13 @@ function addrows(cnt){
                                                                                      html +=   '<option value="sunday">Sunday</option>';
                                                                                   html +=  '</select>';
                                                                        html +=        ' </div>';
+                                                                      html += '<div class="col-sm-1 text-right">';
+                                                                          html +=      '<label class="control-label">Items: </label>';
+                                                                           html += '</div>';
+                                                                           html += '<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />';
+                                                                        html +=    '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';	
+                                                                             html +=   '<input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">';
+                                                                          html +=  '</div>';
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
 	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
 	   html +=    				 	'</div>';
