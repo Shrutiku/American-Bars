@@ -139,7 +139,7 @@ $('.sorted_table').sortable({
 <!--                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>-->
-                                                                            <div class="col-sm-3" style="padding-left: 0px; padding-right: 0px;">      
+                                                                            <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
@@ -154,7 +154,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">to</label>
                                                                             </div>
-                                                                            <div class="col-sm-3">                                                                                  
+                                                                            <div class="col-sm-2">                                                                                  
                                                                                 <select class="form-control">
                                                                                     <option value="monday">Monday</option>
                                                                                     <option value="tuesday">Tuesday</option>
