@@ -108,7 +108,7 @@
                                             <table class="table">
                                                 <thead>
                                                     <th>Cocktail Name</th>
-                                                    <th>Type</th>
+                                                    <!--<th>Type</th>-->
                                                 </thead>
                                                 <tbody>
                                                 <?php
@@ -129,7 +129,7 @@
                                                     }?>	
                                                         <tr class="<?php echo $dark; ?>" id='remove_event_<?php echo $event->cocktail_bar_id; ?>'>
                                                             <td><?php echo $event->cocktail_name;?></td>
-                                                            <td><?php echo $event->type;?></td>
+                                                            <!--<td><?php // echo $event->type;?></td>-->
                                                         </tr>
                                                 <?php $i++; } } else { ?>
                                                         <tr>
