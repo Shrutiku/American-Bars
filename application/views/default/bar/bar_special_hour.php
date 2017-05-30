@@ -1,6 +1,6 @@
 <style>
 @media (max-width:767px){
-.col-sm-4, .col-sm-3, .col-sm-2{ width:100% !important; padding-left: 15px !important;
+.col-sm-4, .col-sm-3, .col-sm-2{ width:10% !important; padding-left: 15px !important;
 padding-right: 15px !important; margin-top:5px;}
 .btn-primary.search { margin-left: 15px;    margin-top: 5px;}
 }
@@ -144,9 +144,12 @@ $('.sorted_table').sortable({
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
-                                                                            <div class="col-sm-1">
+                                                                            <div class="col-sm-3">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
-                                                                                <div class="dropdown">
+                                                                                
+                                                                               
+                                                                            </div>
+                                                                            <div class="dropdown">
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                                                                     <span class="caret"></span></button>
                                                                                     <ul class="dropdown-menu">
@@ -159,8 +162,6 @@ $('.sorted_table').sortable({
                                                                                         <li><a href="#Sunday">Sunday</a></li>
                                                                                     </ul>
                                                                                 </div>
-                                                                               
-                                                                            </div>
                                                                             
                                                                              <label class="control-label" style="font-size: 16px;">To</label>
                                                                             
