@@ -1005,7 +1005,7 @@ B.show();
     
    		$('.bxslider').bxSlider({
 
-   		    controls: true,//teeest
+   		    controls: true,//teeestoo
   minSlides: 3,
   maxSlides: 3,
   slideWidth: 300,
