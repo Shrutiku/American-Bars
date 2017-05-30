@@ -284,8 +284,8 @@ $('.sorted_table').sortable({
                                                                                     </div>
                                                                                 </div>-->
                                                                                 <div class="dropdown">
-                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-<!--                                                                                        <span class="caret"></span>-->
+<!--                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                                                                        <span class="caret"></span>
                                                                                     </button>
                                                                                     <ul class="dropdown-menu">
                                                                                         <li><a value="Monday">Monday</a></li>
@@ -295,7 +295,14 @@ $('.sorted_table').sortable({
                                                                                         <li><a value="Friday">Friday</a></li>
                                                                                         <li><a value="Saturday">Saturday</a></li>
                                                                                         <li><a value="Sunday">Sunday</a></li>
-                                                                                    </ul>
+                                                                                    </ul>-->
+                                                                                    <select class="form-control">
+                                                                                        <option value="one">One</option>
+                                                                                        <option value="two">Two</option>
+                                                                                        <option value="three">Three</option>
+                                                                                        <option value="four">Four</option>
+                                                                                        <option value="five">Five</option>
+                                                                                    </select>
                                                                                 </div>
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label" style="font-size: 16px;">Time:</label>
