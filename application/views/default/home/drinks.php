@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <p class="mug_count">Total: <a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countcocktail(@$getbar['bar_id']);?></a></p>
+                                <p class="mug_count" style="text-align: center;">Total: <a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countcocktail(@$getbar['bar_id']);?></a></p>
                             </div>
                         </div>
                         
@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <p class="mug_count">Total: <a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
+                                <p class="mug_count" style="text-align: center;">Total: <a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countbeer(@$getbar['bar_id']);?></a></p>
                             </div>
                         </div>
                         
@@ -198,7 +198,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <p class="mug_count">Total: <a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countliquor(@$getbar['bar_id']);?></a></p>
+                                <p class="mug_count" style="text-align: center;">Total: <a href="<?php echo site_url('bar/bar_beer')?>"><?php echo $this->home_model->countliquor(@$getbar['bar_id']);?></a></p>
                             </div>
                         </div>
                         
