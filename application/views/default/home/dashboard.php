@@ -692,7 +692,7 @@ B.show();
 					  </ul>	<div class="clearfix"></div>
 					<?php } } ?>
 		     			<div class="margin-top-30">
-                                            <div class="full_mugblock">
+                                            <div class="full_mugblock margin-right-30">
                                                     <div class="img_br_yellow height-515">
                                                         <h1 class="productbar_title">Latest Comments</h1>
 
@@ -754,7 +754,10 @@ B.show();
 								</div>
 			     			</div>
                                         <?php } ?>
-                                            <?php if ($getbar['bar_type']=='full_mug') {?>
+			     			<div class="clearfix"></div>
+		     			</div>
+		     			<div class="margin-top-30">
+		     			<?php if ($getbar['bar_type']=='full_mug') {?>
 		     				<div class="full_mugblock margin-right-30">
 			     				<div class="img_br_yellow height-515">
 		     						<h1 class="productbar_title">Latest Post Cards</h1>
@@ -781,11 +784,6 @@ B.show();
 								</div>
 			     			</div>
                                             <?php } ?>
-			     			
-			     			<div class="clearfix"></div>
-		     			</div>
-		     			<div class="margin-top-30">
-		     			
 			     			<div class="clearfix"></div>
 		     			</div>
 		     		</div>
