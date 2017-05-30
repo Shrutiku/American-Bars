@@ -122,10 +122,10 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
                                                                 </div>
                                                                 <div class="col-sm-4" style="width: 23.5%" >
-                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                    <input required type="text" value="<?php // echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                 </div>
                                                                 <div class="col-sm-3 text-right"  style="width: 23.5%">	
-                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                    <input required type="text" value="<?php // echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
                                                                 <div class="clearfix"></div>
                                                                      <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
