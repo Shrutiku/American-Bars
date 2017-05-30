@@ -285,7 +285,8 @@ $('.sorted_table').sortable({
                                                                                 </div>-->
                                                                                 <div class="dropdown">
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                                                                    <!--<span class="caret"></span></button>-->
+<!--                                                                                        <span class="caret"></span>-->
+                                                                                    </button>
                                                                                     <ul class="dropdown-menu">
                                                                                         <li><a value="Monday">Monday</a></li>
                                                                                         <li><a value="Tuesday">Tuesday</a></li>
