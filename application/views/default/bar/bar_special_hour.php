@@ -1130,7 +1130,7 @@ $('#add_row').click(function(){
 	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail'+cnt+cntcocktail+'" id="cocktailid_'+cntcocktail+'"  name="cocktailid[]" value="">';
 	   html +=                   		'</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Price : $</label>';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
 	   html +=    				 	'</div>';
 	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
 	  html +=                    			'<input type="text" class="form-control form-pad" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
@@ -1500,13 +1500,13 @@ $('#add_row').click(function(){
 	    html +=   '</div>';
             
              html +=                       '  <div class="col-sm-1">';
-             html+=                       '<label class="control-label" style="font-size: 16px;">Days:</label>';
+             html+=                       '<label class="control-label" style="font-size: 16px;">Dayssss:</label>';
              html+='</div>';
 	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
 	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail" id="cocktailid_'+cnt+'"  name="cocktailid[]" value="">';
 	   html +=                   		'</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Days : $</label>';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Daysss : $</label>';
 	   html +=    				 	'</div>';
 	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
 	  html +=                    			'<input type="text" class="form-control form-pad " id="cocktailprice_'+cnt+'" name="cocktailprice0[]" value="">';
@@ -2017,10 +2017,10 @@ function addrows(cnt){
 	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail'+cnt+cntcocktail+'" id="cocktailid_'+cntcocktail+'"  name="cocktailid[]" value="">';
 	   html +=                   		'</div>';
            html+=  '<div class="col-sm-3 text-right">';
-                                                    html+=    '<label class="control-label">Days : <span class="aestrick"> * </span></label>';
+                                                    html+=    '<label class="control-label">Dayssss : <span class="aestrick"> * </span></label>';
                                                html+=     '</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Price : $</label>';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
 	   html +=    				 	'</div>';
 	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
 	  html +=                    			'<input type="text" class="form-control form-pad timepicker-default" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
