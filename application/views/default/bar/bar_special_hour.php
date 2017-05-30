@@ -148,13 +148,7 @@ $('.sorted_table').sortable({
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Days : </label>
-                                                                <select>
-                                            <option value="volvo">Monday</option>
-                                             <option value="saab">Tuesday</option>
-                                             <option value="opel">Wednesday</option>
-                                             <option value="audi">Thursday</option>
-                                             <option value="audi">Friday</option>
-                                              </select>
+                                                              
 	        				 	</div>
 	                       		<input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_0" value="" />
 	                       		<div class="col-sm-3" style="padding-left: 15px;">	
