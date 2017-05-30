@@ -2014,9 +2014,20 @@ function addrows(cnt){
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
 	    
-           html+=  '<div class="col-sm-1">';
-                                                    html+=    '<label class="control-label">Dayssss : <span class="aestrick"> * </span></label>';
-                                               html+=     '</div>';
+          html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
+                                                                           html +=         '<label class="control-label">Day:</label>';
+                                                                         html += '       </div>';
+    html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
+                                                                                   html += '<select class="form-control">';
+                                                                                        html += '<option value="monday">Monday</option>';
+                                                                                   html+=     '<option value="tuesday">Tuesday</option>';
+                                                                                      html +=  '<option value="wednesday">Wednesday</option>';
+                                                                                     html +=   '<option value="thursday">Thursday</option>';
+                                                                                      html +=  '<option value="friday">Friday</option>';
+                                                                                      html +=  '<option value="saturday">Saturday</option>';
+                                                                                     html +=   '<option value="sunday">Sunday</option>';
+                                                                                  html +=  '</select>';
+                                                                       html +=        ' </div>';
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
 	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
 	   html +=    				 	'</div>';
