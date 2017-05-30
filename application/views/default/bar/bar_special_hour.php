@@ -159,11 +159,10 @@ $('.sorted_table').sortable({
                                                                                         <li><a href="#Sunday">Sunday</a></li>
                                                                                     </ul>
                                                                                 </div>
-                                                                                <label class="control-label" style="font-size: 16px;">To</label>
+                                                                               
                                                                             </div>
                                                                             
-                                                                            
-                                                                                <label class="control-label" style="font-size: 16px;">To</label>
+                                                                             <label class="control-label" style="font-size: 16px;">To</label>
                                                                             
                                                                             <div class="dropdown">
                                                                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
