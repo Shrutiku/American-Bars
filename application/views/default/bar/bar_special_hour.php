@@ -249,48 +249,13 @@ $('.sorted_table').sortable({
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
                                                                                 <div class="col-sm-1">
-                                                                                    <label class="control-label">Cocktails:</label>
+                                                                                    <label class="control-label">Days:</label>
                                                                                 </div>
-                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
+<!--                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
                                                                                     <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
-                                                                                </div>
-<!--                                                                                <div class="col-sm-2">
-                                                                                    <form action="">
-                                                                                        <input type="checkbox" name="day" value="Monday"> M
-                                                                                        <input type="checkbox" name="day" value="Tuesday"> Tu
-                                                                                        <input type="checkbox" name="day" value="Wednesday"> W <br>
-                                                                                        <input type="checkbox" name ="day" value="Thursday"> Th
-                                                                                        <input type="checkbox" name="day" value="Friday"> F
-                                                                                        <input type="checkbox" name="day" value="Saturday"> S <br>
-                                                                                        <input type="checkbox" name="day" value="Sunday"> Su
-                                                                                    </form>
-                                                                                </div>-->
-<!--                                                                                <div class="dropdown">
-                                                                                    <button onclick="myFunction()" class="dropbtn">Day</button>
-                                                                                    <div id="myDropdown" class="dropdown-content">
-                                                                                        <a href="#Monday">Monday</a>
-                                                                                        <a href="#Tuesday">Tuesday</a>
-                                                                                        <a href="#Wednesday">Wednesday</a>
-                                                                                        <a href="#Thursday">Thursday</a>
-                                                                                        <a href="#Friday">Friday</a>
-                                                                                        <a href="#Saturday">Saturday</a>
-                                                                                        <a href="#Sunday">Sunday</a>
-                                                                                    </div>
                                                                                 </div>-->
                                                                                 <div class="col-sm-2">
-<!--                                                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                                                                        <span class="caret"></span>
-                                                                                    </button>
-                                                                                    <ul class="dropdown-menu">
-                                                                                        <li><a value="Monday">Monday</a></li>
-                                                                                        <li><a value="Tuesday">Tuesday</a></li>
-                                                                                        <li><a value="Wednesday">Wednesday</a></li>
-                                                                                        <li><a value="Thursday">Thursday</a></li>
-                                                                                        <li><a value="Friday">Friday</a></li>
-                                                                                        <li><a value="Saturday">Saturday</a></li>
-                                                                                        <li><a value="Sunday">Sunday</a></li>
-                                                                                    </ul>-->
                                                                                     <select class="form-control">
                                                                                         <option value="monday">Monday</option>
                                                                                         <option value="tuesday">Tuesday</option>
