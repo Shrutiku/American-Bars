@@ -276,6 +276,13 @@ $('.sorted_table').sortable({
                                                                                         <option value="sunday">Sunday</option>
                                                                                     </select>
                                                                                 </div>
+                                                                                 <div class="col-sm-3 text-right">
+                                                                                <label class="control-label">Items: </label>
+                                                                            </div>
+                                                                            <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
+                                                                            <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
+                                                                            </div>
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label" style="font-size: 16px;">Time:</label>
                                                                                 </div>
