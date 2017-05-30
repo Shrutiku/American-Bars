@@ -1406,9 +1406,9 @@ function bareventtime()
 		$data["bar_gallery"] = $this->bar_model->getBarGallery($bar_id);
 		
 		$data["bar_gallery_all"] = $this->bar_model->getBarGalleryAll($bar_id);
-		$data["bar_event"] = $this->bar_model->getBarEvent($bar_id,$limit=4);
-		$data["bar_beer"] = $this->bar_model->getBarBeer($bar_id,$limit=5);
-		$data["bar_cocktail"] = $this->bar_model->getBarCocktail($bar_id,$limit=5);
+		$data["bar_event"] = $this->bar_model->getBarEvent($bar_id,$limit=100);
+		$data["bar_beer"] = $this->bar_model->getBarBeer($bar_id,$limit=100);
+		$data["bar_cocktail"] = $this->bar_model->getBarCocktail($bar_id,$limit=100);
 		$data['get_post_card'] = getTodayPostCard($bar_id);
 		$data['user_detail'] = get_user_info(get_authenticateUserID());
 		$data['barhours'] =  $this->bar_model->getBarHours($bar_id);
