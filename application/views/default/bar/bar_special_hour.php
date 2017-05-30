@@ -286,16 +286,16 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1"> 
                                                                                     <label class="control-label" style="font-size: 16px;padding-left: 0px; padding-right: 0px; ">Time:</label>
                                                                                 </div>
-                                                                                <div class="col-sm-1" style="width: 10%" >
+                                                                                <div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;" >
                                                                                     <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                                 </div>
-                                                                                <div class="col-sm-1"  style="width: 10%">	
+                                                                                <div class="col-sm-1"  style="padding-left: 0px; padding-right: 0px;">	
                                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                                 </div>	
                                                                                 <div class="col-sm-1" style="width: 5%;padding-left: 0px; padding-right: 0px;">
                                                                                     <label class="control-label" style="font-size: 16px;">$:</label>
                                                                                 </div>
-                                                                                <div class="col-sm-1" style="width: 13%;padding-left: 0px; padding-right: 0px;">	
+                                                                                <div class="col-sm-1" style="width: 10%;padding-left: 0px; padding-right: 0px;">	
                                                                                     <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                                 </div>
                                                                                 <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
