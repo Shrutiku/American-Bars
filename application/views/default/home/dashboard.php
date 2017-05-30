@@ -172,7 +172,7 @@ B.show();
                                                             
                                                             <a href="<?php echo site_url('bar/comments')?>">Messages</a>
                                                             <p class="mug_count">
-                                                                <a href="<?php echo site_url('bar/comments')?>"><?php echo $this->home_model->getcommentcount();?></a>
+                                                                <a href="<?php echo site_url('bar/comments')?>"><?php echo '0'; //$this->home_model->getcommentcount();?></a>
                                                             </p>
                                                             
                                                             <a href="<?php echo site_url('bar/postcard')?>">Post Cards</a>
