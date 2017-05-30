@@ -163,7 +163,7 @@ B.show();
 		     		<div class="dashboard_subblock">
 		     			<?php if($getbar['bar_type']=='full_mug'){?>
 		     			<div>
-		     				<div class="mug_block parrot margin-right-30 style="height: 217px;"">
+		     				<div class="mug_block parrot margin-right-30" style="height: 217px;">
 		     					<div class="">
                                                             <a href="<?php echo site_url('bar/list_message')?>">Messages</a>
                                                             <p class="mug_count">
