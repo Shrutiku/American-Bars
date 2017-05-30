@@ -702,7 +702,9 @@ B.show();
 		     			<div class="margin-top-30">
                                             <div class="full_mugblock margin-right-30">
                                                     <div class="img_br_yellow height-515">
-                                                        <h1 class="productbar_title">Latest Comments</h1>
+                                                        <h1 class="productbar_title">Latest Comments
+                                                            <a class="btn btn-lg btn-primary marr_10 pull-right" href="<?php echo site_url('bar/comments')?>">See All</a>
+                                                        </h1>
 
                                                         <ul class="latest_block_list" >
                                                                 <?php if($result){
@@ -734,7 +736,9 @@ B.show();
                                             <?php if ($getbar['bar_type']=='full_mug') {?>
                                             <div class="full_mugblock">
 			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Messages</h1>
+		     						<h1 class="productbar_title">Latest Messages
+                                                                    <a class="btn btn-lg btn-primary marr_10 pull-right" href="<?php echo site_url('bar/list_message')?>">See All</a>
+                                                                </h1>
 		     						<ul class="latest_block_list">
 		     							<?php if($resultmessage){
 			     					  foreach($resultmessage as $msg){?>
@@ -768,7 +772,9 @@ B.show();
 		     			<?php if ($getbar['bar_type']=='full_mug') {?>
 		     				<div class="full_mugblock margin-right-30">
 			     				<div class="img_br_yellow height-515">
-		     						<h1 class="productbar_title">Latest Post Cards</h1>
+		     						<h1 class="productbar_title">Latest Post Cards
+                                                                    <a class="btn btn-lg btn-primary marr_10 pull-right" href="<?php echo site_url('bar/postcard')?>">See All</a>
+                                                                </h1>
 		     						<ul class="latest_block_list">
 		     							<?php if($getpostcard){
 		     								   foreach($getpostcard as $card) { ?>
