@@ -1002,7 +1002,7 @@ B.show();
    $(document).ready(function(){
     
    		$('gallery_img').bxSlider({
-            minSlides: 1,
+            minSlides: 3,
             maxSlides: 3,
             slideWidth: 300,
             slideMargin: 10
