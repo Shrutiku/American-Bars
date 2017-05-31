@@ -1466,7 +1466,7 @@ $(document).ready(function(){
 
 		       		if($("#sess_id").val()==1)
 		       		{
-		       		 var retVal = confirm("Are you want to Send Postcard ?");
+		       		 var retVal = confirm("Do you want to send this postcard?");
 					   if( retVal == true ){
 					      //alert("User wants to continue!");
 						  return true;
