@@ -258,7 +258,7 @@ $('.sorted_table').sortable({
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
                                                                                 <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
-                                                                                <div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">
+                                                                                <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
                                                                                 </div>
 <!--                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
@@ -284,12 +284,12 @@ $('.sorted_table').sortable({
                                                                                     <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
                                                                                 </div>
                                                                                 <div class="col-sm-1"> 
-                                                                                    <label class="control-label" style="font-size: 16px;padding-left: 0px; padding-right: 0px; ">Time:</label>
+                                                                                    <label class="control-label" style="font-size: 16px">Time:</label>
                                                                                 </div>
-                                                                                <div class="col-sm-1" style="width: 13%" >
+                                                                                <div class="col-sm-1 pull-left" style="width: 13%" >
                                                                                     <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                                 </div>
-                                                                                <div class="col-sm-1"  style="width: 13%">	
+                                                                                <div class="col-sm-1 pull-left"  style="width: 13%">	
                                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                                 </div>
                                                                                 <div class="col-sm-1" style="width: 2%;padding-left: 3px; padding-right: 3px;">
@@ -340,7 +340,7 @@ $('.sorted_table').sortable({
                                                                         <input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
                                                                             <div id="contliquor" class="mar_top20bot20">
                                                                                 <div id="innerliquor<?php echo $i; ?>" >
-                                                                                    <div class="padtb8">
+<!--                                                                                    <div class="padtb8">
                                                                                         <div class="col-sm-3 text-right">
                                                                                             <label class="control-label">Liquors : </label>
                                                                                         </div>
@@ -356,8 +356,8 @@ $('.sorted_table').sortable({
                                                                                         </div>	
                                                                                         <a href="javascript://;" id="" onclick="addrows_liquor('<?php echo $i; ?>')" name="add_rowliquor" class="add_rowliquor btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                         <div class="clearfix"></div>
-                                                                                            <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                                    </div>
+                                                                                             <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                    </div>-->
                                                                                 </div>	
                                                                             </div>
                                                                     <?php } else {?>
@@ -365,7 +365,7 @@ $('.sorted_table').sortable({
                                                                         <div id="contliquor" class="mar_top20bot20">
                                                                             <div id="innerliquor<?php echo $i; ?>" >	
                                                                                 <?php $l=0; foreach($getvalliquor as $liquor ){?>		
-                                                                                    <div class="padtb8" id="imgliquor<?php echo $i; ?>_<?php echo $l; ?>">
+<!--                                                                                    <div class="padtb8" id="imgliquor<?php echo $i; ?>_<?php echo $l; ?>">
                                                                                         <div class="col-sm-3 text-right">
                                                                                             <label class="control-label"><?php if($l==0){?>Liquors  :<?php } ?> </label>
                                                                                         </div>
@@ -385,8 +385,8 @@ $('.sorted_table').sortable({
                                                                                             <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $liquor->bar_hour_id ?>','liquor','<?php echo $l; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                         <?php } ?>
                                                                                         <div class="clearfix"></div>
-                                                                                            <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                                    </div>
+                                                                                             <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                    </div>-->
                                                                                 <?php $l++;} ?> 	
                                                                             </div>
                                                                         </div>
@@ -396,7 +396,7 @@ $('.sorted_table').sortable({
                                                                             <input type="hidden" name="cntprofood[]" id="cntprofood" value="<?php echo count($getvalfood); ?>" />
                                                                             <div id="contfood" class="mar_top20bot20">
                                                                                 <div id="innerfood<?php echo $i; ?>" >	
-                                                                                    <div class="padtb8">
+<!--                                                                                    <div class="padtb8">
                                                                                         <div class="col-sm-3 text-right">
                                                                                             <label class="control-label">Foods : </label>
                                                                                         </div>
@@ -412,8 +412,8 @@ $('.sorted_table').sortable({
                                                                                         </div>	
                                                                                         <a href="javascript://;" id="" onclick="addrows_food('<?php echo $i; ?>')" name="add_rowfood" class="add_rowfood btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                         <div class="clearfix"></div>
-                                                                                            <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                                    </div>
+                                                                                             <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                    </div>-->
                                                                                 </div>	
                                                                             </div>
                                                                         <?php } else {?>
@@ -421,7 +421,7 @@ $('.sorted_table').sortable({
                                                                                 <div id="contfood" class="mar_top20bot20">
                                                                                     <div id="innerfood<?php echo $i; ?>" >	
                                                                                         <?php $f=0; foreach($getvalfood as $food ){?>	
-                                                                                            <div class="padtb8" id="imgfood<?php echo $i; ?>_<?php echo $f; ?>">
+<!--                                                                                            <div class="padtb8" id="imgfood<?php echo $i; ?>_<?php echo $f; ?>">
                                                                                                 <div class="col-sm-3 text-right">
                                                                                                     <label class="control-label"><?php if($f==0){?>Foods : <?php } ?></label>
                                                                                                 </div>
@@ -441,8 +441,8 @@ $('.sorted_table').sortable({
                                                                                                     <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $food->bar_hour_id ?>','food','<?php echo $f; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
 												<?php } ?>
                                                                                                 <div class="clearfix"></div>
-                                                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                                            </div>
+                                                                                                     <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                            </div>-->
                                                                                         <?php $f++; } ?>
                                                                                     </div>
                                                                                 </div>
@@ -452,7 +452,7 @@ $('.sorted_table').sortable({
                                                                                 <input type="hidden" name="cntproother[]" id="cntproother" value="0" />
                                                                                     <div id="contother" class="mar_top20bot20">
                                                                                         <div id="innerother<?php echo $i; ?>" >	
-                                                                                            <div class="padtb8">
+<!--                                                                                            <div class="padtb8">
                                                                                                 <div class="col-sm-3 text-right">
                                                                                                     <label class="control-label">Others : </label>
                                                                                                 </div>
@@ -468,8 +468,8 @@ $('.sorted_table').sortable({
                                                                                                 </div>	
                                                                                                 <a href="javascript://;" id="" onclick="addrows_other('<?php echo $i; ?>')" name="add_rowother" class="add_rowother btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                                 <div class="clearfix"></div>
-                                                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                                            </div>
+                                                                                                     <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                            </div>-->
                                                                                         </div>
                                                                                     </div>
                                                                             <?php } else {?>
@@ -477,7 +477,7 @@ $('.sorted_table').sortable({
                                                                                     <div id="contother" class="mar_top20bot20">
                                                                                         <div id="innerother<?php echo $i; ?>" >	
                                                                                             <?php $o=0; foreach($getvalother as $other ){?>	
-                                                                                                <div class="padtb8" id="imgother<?php echo $i; ?>_<?php echo $o;?>">
+<!--                                                                                                <div class="padtb8" id="imgother<?php echo $i; ?>_<?php echo $o;?>">
                                                                                                     <div class="col-sm-3 text-right">
                                                                                                         <label class="control-label"><?php if($o==0){?>Others : <?php } ?> </label>
                                                                                                     </div>
@@ -497,8 +497,8 @@ $('.sorted_table').sortable({
                                                                                                         <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $other->bar_hour_id ?>','other','<?php echo $o;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                                     <?php } ?>
                                                                                                     <div class="clearfix"></div>
-                                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                                                </div>
+                                                                                                         <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                                </div>-->
                                                                                             <?php $o++; }?>
                                                                                         </div>
                                                                                     </div>
@@ -563,7 +563,7 @@ $('.sorted_table').sortable({
 	                       			
 	                       		</div>	
 	                       			<div class="clearfix"></div>
-	        				 		 <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
+	        				 		 <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
 	        				 	</div>
 	        				 	
 	        				 	<input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
@@ -587,7 +587,7 @@ $('.sorted_table').sortable({
 	                       		</div>	
 	                       		<a href="javascript://;" id="add_rowbeer" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 	                       			<div class="clearfix"></div>
-	        				 		 <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
 	        				 		
 	        				 		
 	        				 	</div>
@@ -617,7 +617,7 @@ $('.sorted_table').sortable({
 	                       		</div>	
 	                       		<a href="javascript://;" id="add_rowcocktail" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 	                       			<div class="clearfix"></div>
-	        				 		 <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
 	        				 		
 	        				 		
 	        				 	</div>
@@ -648,7 +648,7 @@ $('.sorted_table').sortable({
 	                       		</div>	
 	                       		<a href="javascript://;" id="add_rowliquor" name="add_rowliquor" class="add_rowliquor btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 	                       			<div class="clearfix"></div>
-	        				 		 <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
 	        				 		
 	        				 		
 	        				 	</div>
@@ -678,7 +678,7 @@ $('.sorted_table').sortable({
 	                       		</div>	
 	                       		<a href="javascript://;" id="add_rowfood" name="add_rowfood" class="add_rowfood btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 	                       			<div class="clearfix"></div>
-	        				 		 <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
 	        				 		
 	        				 		
 	        				 	</div>
@@ -707,7 +707,7 @@ $('.sorted_table').sortable({
 	                       		</div>	
 	                       		<a href="javascript://;" id="add_rowother" name="add_rowother" class="add_rowother btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 	                       			<div class="clearfix"></div>
-	        				 		 <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
 	        				 		
 	        				 		
 	        				 	</div>
@@ -2035,6 +2035,15 @@ function addrows(cnt){
                                                                         html +=    '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';	
                                                                              html +=   '<input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">';
                                                                           html +=  '</div>';
+                                                                          html += '<div class="col-sm-1">'; 
+                                                                                    html += '<label class="control-label" style="font-size: 16px">Time:</label>';
+                                                                                html += '</div>';
+                                                                                html += '<div class="col-sm-1 pull-left" style="width: 13%" >';
+                                                                                    html += '<input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">';
+                                                                                html += '</div>';
+                                                                                html += '<div class="col-sm-1 pull-left"  style="width: 13%">';	
+                                                                                    html += '<input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">';
+                                                                                html += '</div>';
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
 	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
 	   html +=    				 	'</div>';

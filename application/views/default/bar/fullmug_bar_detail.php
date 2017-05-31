@@ -1172,13 +1172,13 @@ span.required {
 	});
 	$('.bxslider').bxSlider({
 		mode: 'horizontal',
-		infiniteLoop:true,
+		infiniteLoop:false,
 	   pagerCustom: '#bx-pager',
-	   controls:false,
+	   controls:true,
 	   useCSS: false,
 	   preloadImages:'all',
 	   speed: 1500,
-	   auto:true,
+	   auto:false,
 	});
 	$('.bxsliderp').bxSlider({
 		// mode: 'horizontal',
