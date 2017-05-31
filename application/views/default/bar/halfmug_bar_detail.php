@@ -965,7 +965,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 		       		
 		       		if($("#sess_id").val()==1)
 		       		{
-		       		 var retVal = confirm("Are you want to Send Postcard ?");
+		       		 var retVal = confirm("Do you want to send the postcard?");
 					   if( retVal == true ){
 					      //alert("User wants to continue!");
 						  return true;
