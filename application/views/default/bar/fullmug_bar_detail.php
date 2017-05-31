@@ -327,7 +327,7 @@
 			     				<?php } ?>
 		     				</div>
                                             <?php if($bar_detail['bar_category']){?>
-                                                <div class="socialicon-right mar_top20" style="width:30%">
+                                                <div class="like-block mar_top20" style="width:30%">
                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                         <?php
                                                         $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
