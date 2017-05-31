@@ -1758,26 +1758,26 @@ function removeImageDive(id)
 				url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
 				success:function(res){
 					//'removeImageDive'+type(num);
-//					if(type ==='beer')
-//					{
-//						removeImageDivebeer_1(t,num);
-//					}
+					if(type ==='beer')
+					{
+						removeImageDivebeer_1(t,num);
+					}
 					if(type ==='cocktail')
 					{
 						removeImageDivecocktail_1(t,num);
 					}
-//					if(type=='liquor')
-//					{
-//						removeImageDiveliquor_1(t,num);
-//					}
-//					if(type=='food')
-//					{
-//						removeImageDivefood_1(t,num);
-//					}
-//					if(type=='other')
-//					{
-//						removeImageDiveother_1(t,num);
-//					}
+					if(type ==='liquor')
+					{
+						removeImageDiveliquor_1(t,num);
+					}
+					if(type ==='food')
+					{
+						removeImageDivefood_1(t,num);
+					}
+					if(type ==='other')
+					{
+						removeImageDiveother_1(t,num);
+					}
 				// var cnt=parseInt($('#cnt').val())-1;
 				// $('#cntpro').val(cnt);
 				// $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
@@ -1999,7 +1999,7 @@ function addrows(cnt){
                                                                            html += '</div>';
                                                                            html += '<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />';
                                                                         html +=    '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';	
-                                                                             html +=   '<input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">';
+                                                                             html +=   '<input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">';
                                                                           html +=  '</div>';  
                                                                           html += '<div class="col-sm-1">'; 
                                                                                     html += '<label class="control-label" style="font-size: 16px">Time:</label>';
