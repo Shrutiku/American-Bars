@@ -160,14 +160,6 @@ $('#comment_title').live('click', function(e){
  
 </script>
 
-<script type="text/javascript">
-	 $(document).ready(function ()
-	 {
-		$('#star1').rating('www.url.php', {maxvalue:5});
-		$(".cancel").hide();
-	 });
-</script>
-
 <script language="javascript" type="text/javascript">
 
 
@@ -1273,7 +1265,13 @@ function loadMap()
 //}	
 
 </script>
-
+<script type="text/javascript">
+	 $(document).ready(function ()
+	 {
+		$('#star1').rating('www.url.php', {maxvalue:5});
+		$(".cancel").hide();
+	 });
+</script>
 <script type="text/javascript">
   var geocoder;
   var map;
