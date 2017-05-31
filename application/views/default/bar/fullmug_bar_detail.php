@@ -274,7 +274,7 @@
 				    	</div>
 
 				    	<div>
-                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 47%">
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 46%">
 				    		 	 <!-- <?php // $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
 //								if($cnt_like==2 && get_authenticateUserID()!=''){
@@ -327,7 +327,7 @@
 			     				<?php } ?>
 		     				</div>
                                             <?php if($bar_detail['bar_category']){?>
-                                                <div class="mar_top20 wid50 like-block" style="width:40%">
+                                                <div class="mar_top20 wid50 like-block" style="width:35%">
                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                         <?php
                                                         $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
