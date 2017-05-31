@@ -522,171 +522,149 @@ $('.sorted_table').sortable({
                                                     <div id="inner">  	
                                                         <input type="hidden" name="cntpro" id="cntpro" value="0" />
                                                     <div class="padtb">
-                                                    <div class="col-sm-3 text-right">
-                                                        <label class="control-label">Days : <span class="aestrick"> * </span></label>
+                                                        <div class="col-sm-3 text-right">
+                                                            <label class="control-label">Days : <span class="aestrick"> * </span></label>
+                                                        </div>
+
+                                                        <div class="input_box upload_btn">
+                                                            <select required name="days[]" id="days" class="select_box">
+                                                                <option value="">-- Select Day-- </option>
+                                                                <option value="Monday">Monday</option>
+                                                                <option value="Tuesday">Tuesday</option>
+                                                                <option value="Wednesday">Wednesday</option>
+                                                                <option value="Thursday">Thursday</option>
+                                                                <option value="Friday">Friday</option>
+                                                                <option value="Saturday">Saturday</option>
+                                                                <option value="Sunday">Sunday</option>
+                                                            </select>							
+                                                        </div>
+
+                                                        <div class="input_box upload_user">
+                                                            <img src="" id="img_here" alt="" class="img-responsive"/>
+                                                        </div> 
+                                                        <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                        <div class="input_box pull-left">
+                                                            <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
+                                                        </div> 
+                                                        <div class="clearfix"></div>
                                                     </div>
-	        					        				 	
-                                                    <div class="input_box upload_btn">
-                                                        <select required name="days[]" id="days" class="select_box">
-                                                            <option value="">-- Select Day-- </option>
-                                                            <option value="Monday">Monday</option>
-                                                            <option value="Tuesday">Tuesday</option>
-                                                            <option value="Wednesday">Wednesday</option>
-                                                            <option value="Thursday">Thursday</option>
-                                                            <option value="Friday">Friday</option>
-                                                            <option value="Saturday">Saturday</option>
-                                                            <option value="Sunday">Sunday</option>
-                                                        </select>							
+                                                    <div class="padtb8">
+                                                        <div class="col-sm-3 text-right">
+                                                            <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
+	        				 	</div>
+                                                        <div class="col-sm-4" style="width: 23.5%;">
+                                                            <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                        </div>
+                                                        <div class="col-sm-3 text-right" style="width: 23.5%;">	
+                                                            <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+
+                                                        </div>	
+                                                        <div class="clearfix"></div>
+                                                            <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
                                                     </div>
-	                       		
-	                       		 <div class="input_box upload_user">
-	                           		<img src="" id="img_here" alt="" class="img-responsive"/>
-	                       		</div> 
-	                       			<a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       		 <div class="input_box pull-left">
-	                           		<button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
-	                       		</div> 
-	                       		<div class="clearfix"></div>
-	                       		</div>
-	                       		
-	                       		
-	                       		
-	                       		<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
-	        				 	</div>
-	                       		<div class="col-sm-4" style="width: 23.5%;">
-	                       			<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
-	                       		</div>
-	                       		<div class="col-sm-3 text-right" style="width: 23.5%;">	
-	                       			<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-	                       			
-	                       		</div>	
-	                       			<div class="clearfix"></div>
-	        				 		 <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
-	        				 	</div>
 	        				 	
-	        				 	<input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
-	                       <div id="contbeer" class="mar_top20bot20">
-	                       <div id="innerbeer" >	
-								
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Beers : </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="bid0[]" id="bid_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsbeer form-pad" id="beerid_0"  name="beerid[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="add_rowbeer" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 </div>	
-	        				 	
-	        				 	</div>
+                                                    <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
+                                                    <div id="contbeer" class="mar_top20bot20">
+                                                        <div id="innerbeer" >
+                                                            <div class="padtb8">
+                                                                <div class="col-sm-3 text-right">
+                                                                    <label class="control-label">Beers : </label>
+                                                                </div>
+                                                                <input type="hidden" name="bid0[]" id="bid_0" value="" />
+                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                    <input type="text" class="form-control tagsbeer form-pad" id="beerid_0"  name="beerid[]" value="">
+                                                                </div>	
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                </div>
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                    <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
+                                                                </div>	
+                                                                <a href="javascript://;" id="add_rowbeer" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                <div class="clearfix"></div>
+                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                            </div>
+                                                        </div>	
+                                                    </div>
 	        				 	
 	        				
-	        				 	<input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
-	                       <div id="contcocktail" class="mar_top20bot20">
-	                       <div id="innercocktail" >	
-								
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Cocktails : </label>
-	        				 	</div>
+                                                    <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
+                                                    <div id="contcocktail" class="mar_top20bot20">
+                                                        <div id="innercocktail" >
+                                                            <div class="padtb8">
+                                                                <div class="col-sm-3 text-right">
+                                                                    <label class="control-label">Cocktails : </label>
+                                                                </div>
 	                       		
-                                <input type="hidden" name="cid0[]" id="cid_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagscocktail form-pad" id="cocktailid_0"  name="cocktailid[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="add_rowcocktail" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 </div>	
-	        				 	
-	        				 	</div>
+                                                                <input type="hidden" name="cid0[]" id="cid_0" value="" />
+                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                    <input type="text" class="form-control tagscocktail form-pad" id="cocktailid_0"  name="cocktailid[]" value="">
+                                                                </div>	
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                </div>
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                    <input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">
+                                                                </div>	
+                                                                <a href="javascript://;" id="add_rowcocktail" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                <div class="clearfix"></div>
+                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->
+                                                            </div>
+                                                        </div>	
+                                                    </div>
 	        				 	
 	        				 	
 	        				 	
-	        				 	<input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
-	                       <div id="contliquor" class="mar_top20bot20">
-	                       <div id="innerliquor" >	
-								
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Liquors : </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="lid0[]" id="lid_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsliquor form-pad" id="liquorid_0"  name="liquorid[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="add_rowliquor" name="add_rowliquor" class="add_rowliquor btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 </div>	
-	        				 	
-	        				 	</div>
+                                                    <input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
+                                                    <div id="contliquor" class="mar_top20bot20">
+                                                        <div id="innerliquor" >	
+                                                            <div class="padtb8">
+                                                                <div class="col-sm-3 text-right">
+                                                                    <label class="control-label">Liquors : </label>
+                                                                </div>
+                                                                <input type="hidden" name="lid0[]" id="lid_0" value="" />
+                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                    <input type="text" class="form-control tagsliquor form-pad" id="liquorid_0"  name="liquorid[]" value="">
+                                                                </div>	
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                </div>
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                    <input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">
+                                                                </div>	
+                                                                <a href="javascript://;" id="add_rowliquor" name="add_rowliquor" class="add_rowliquor btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                <div class="clearfix"></div>
+                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->
+                                                            </div>
+                                                        </div>	
+                                                    </div>
 	        				 	
 	        				 	
-	        				 		<input type="hidden" name="cntprofood[]" id="cntprofood" value="0" />
-	                       <div id="contfood" class="mar_top20bot20">
-	                       <div id="innerfood" >	
-								
-	                       	<div class="padtb8">
-	                       		<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Foods : </label>
-	        				 	</div>
-	                       		
-                                <input type="hidden" name="fid0[]" id="fid_0" value="" />
-	                       		<div class="col-sm-3" style="padding-left: 15px;">	
-	                       			<input type="text" class="form-control tagsfood form-pad" id="foodid_0"  name="foodid0[]" value="">
-	                       		</div>	
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-	        				 		<label class="control-label" style="font-size: 16px;">Price : $ </label>
-	        				 	</div>
-	                       		<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-	                       			<input type="text" class="form-control form-pad" id="foodprice" name="foodprice0[]" value="">
-	                       		</div>	
-	                       		<a href="javascript://;" id="add_rowfood" name="add_rowfood" class="add_rowfood btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-	                       			<div class="clearfix"></div>
-	        				 		 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
-	        				 		
-	        				 		
-	        				 	</div>
-	        				 </div>	
+                                                    <input type="hidden" name="cntprofood[]" id="cntprofood" value="0" />
+                                                    <div id="contfood" class="mar_top20bot20">
+                                                        <div id="innerfood" >		
+                                                            <div class="padtb8">
+                                                                <div class="col-sm-3 text-right">
+                                                                    <label class="control-label">Foods : </label>
+                                                                </div>
+                                                                <input type="hidden" name="fid0[]" id="fid_0" value="" />
+                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                    <input type="text" class="form-control tagsfood form-pad" id="foodid_0"  name="foodid0[]" value="">
+                                                                </div>	
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                </div>
+                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                    <input type="text" class="form-control form-pad" id="foodprice" name="foodprice0[]" value="">
+                                                                </div>	
+                                                                <a href="javascript://;" id="add_rowfood" name="add_rowfood" class="add_rowfood btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                <div class="clearfix"></div>
+                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                            </div>
+                                                        </div>	
+                                                    </div>
 	        				 	
-	        				 	</div>
-	        				 	
-	        				 	<input type="hidden" name="cntproother[]" id="cntproother" value="0" />
+                                                    <input type="hidden" name="cntproother[]" id="cntproother" value="0" />
 	                       <div id="contother" class="mar_top20bot20">
 	                       <div id="innerother" >	
 								
