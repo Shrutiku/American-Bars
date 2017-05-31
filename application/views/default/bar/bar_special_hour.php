@@ -700,16 +700,16 @@ $('.sorted_table').sortable({
                                                     <div class="clearfix"></div>
                                                 </div>
      		
-     		<?php } ?>
-     			</form>
-     			</div>
-     			
+                                            <?php } ?>
+                                </form>
+                            </div>
 		     	</div>
-     		</div>
-     	<div class="clearfix"></div>
-     </div>
-   </div>
- </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+</div>
 <link href="<?php echo base_url().getThemeName(); ?>/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="<?php echo base_url().getThemeName();?>/js/jquery_form.js"></script>
