@@ -1265,13 +1265,7 @@ function loadMap()
 //}	
 
 </script>
-<script type="text/javascript">
-	 $(document).ready(function ()
-	 {
-		$('#star1').rating('www.url.php', {maxvalue:5});
-		$(".cancel").hide();
-	 });
-</script>
+
 <script type="text/javascript">
   var geocoder;
   var map;
@@ -1369,7 +1363,13 @@ function initialize()
   }
 
 </script>
-
+<script type="text/javascript">
+	 $(document).ready(function ()
+	 {
+		$('#star1').rating('www.url.php', {maxvalue:5});
+		$(".cancel").hide();
+	 });
+</script>
 <script>
  $(document).ready(function () {
 	$('#total-like').click(function(){
