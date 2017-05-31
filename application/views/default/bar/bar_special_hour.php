@@ -211,7 +211,7 @@ $('.sorted_table').sortable({
                                                                                 <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
                                                                             </div>	
                                                                             <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
-                                                                                <label class="control-label" style="font-size: 16px;">Price: $ </label>
+                                                                                <label class="control-label" style="font-size: 16px;">$: </label>
                                                                             </div>
                                                                             <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
                                                                                 <input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">
