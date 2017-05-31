@@ -326,6 +326,26 @@
 			     				<!--<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>-->
 			     				<?php } ?>
 		     				</div>
+                                            <div class="result_box clearfix mar_top30bot20" style="margin-top: ">
+                                                <div class="login_block br_green_yellow">
+                                                    <div class="result_search">
+                                                             <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                            <i class="strip login_icon"></i><div class="result_search_text">Bar Type :</div>
+                                                    </div>
+                                                    <div class="pad20">
+                                                        <ul class="happy-list">
+
+                                                            <?php
+                                                                $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+
+                                                                foreach($getin1 as $r)
+                                                                {
+                                                                    echo '<li><p style="color:#fff;">'.'&#149; '.getCatname($r).'</p></li>';
+                                                                } ?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
 		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
 								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
 										 $bar_detail['american_p']==1){ ?>
@@ -923,7 +943,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 <div class="modal fade login_pop2" id="opencategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 						<div class="padtb10">
      	<div class="container">
-     		<div class="result_box clearfix mar_top30bot20">
+<!--            <div class="result_box clearfix mar_top30bot20" style="margin-top: ">
      			<div class="login_block br_green_yellow">
      				<div class="result_search">
      					 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
@@ -935,12 +955,12 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
      						<?php
 
 
-													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
-
-					     							  foreach($getin1 as $r)
-													  {
-													  	  echo '<li><p style="color:#fff;">'.'&#149; '.getCatname($r).'</p></li>';
-													} ?>
+//													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+//
+//					     							  foreach($getin1 as $r)
+//													  {
+//													  	  echo '<li><p style="color:#fff;">'.'&#149; '.getCatname($r).'</p></li>';
+//													} ?>
 
 
                         </ul>
@@ -948,7 +968,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 
      				</div>
      			</div>
-     		</div>
+     		</div>-->
      	</div>
      </div>
      			</div>
