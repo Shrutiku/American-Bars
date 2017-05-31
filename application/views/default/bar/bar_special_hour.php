@@ -284,7 +284,7 @@ $('.sorted_table').sortable({
                                                                                 </div>
                                                                                 <!--<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />-->
                                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">	
-                                                                                    <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
+                                                                                    <input type="text" class="form-control tagscocktailrnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>
                                                                                 <div class="col-sm-1"> 
                                                                                     <label class="control-label" style="font-size: 16px">Time:</label>
@@ -299,7 +299,7 @@ $('.sorted_table').sortable({
                                                                                     <label class="control-label" style="font-size: 16px;">$:</label>
                                                                                 </div>
                                                                                 <div class="col-sm-1" style="width: 10%;">	
-                                                                                    <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
+                                                                                    <input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">
                                                                                 </div>
                                                                                 <div class="col-sm-1"></div>
                                                                                 <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
