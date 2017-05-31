@@ -274,7 +274,7 @@
 				    	</div>
 
 				    	<div>
-                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="">
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 47%">
 				    		 	 <!-- <?php // $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
 //								if($cnt_like==2 && get_authenticateUserID()!=''){
@@ -327,31 +327,20 @@
 			     				<?php } ?>
 		     				</div>
                                             <?php if($bar_detail['bar_category']){?>
-						        	<div class="socialicon-right">
-
-
-                                         <h4 class="bar_add mar_bot10">Bar Type :</h4>
-
-
-                                         	<?php
-
-
-													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
-
-													$getin = array_slice($getin1, 0, 3);
-													$getin12 = array_slice($getin1, 3);
-					     							  foreach($getin as $r)
-													  {
-													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
-													} ?>
-
-
-
-                                         <div class="clear"></div>
-                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
-
-                                        </div>
-                                       <?php } ?>
+                                                <div class="like-block mar_top20" style="width:30%">
+                                                    <h4 class="bar_add mar_bot10">Bar Type :</h4>
+                                                        <?php
+                                                        $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+                                                        $getin = array_slice($getin1, 0, 3);
+                                                        $getin12 = array_slice($getin1, 3);
+                                                        foreach($getin as $r)
+                                                        {
+                                                            echo '<p>'.'&#149; '.getCatname($r).'</p>';
+                                                        } ?>
+                                                    <div class="clear"></div>
+                                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
+                                                </div>
+                                            <?php } ?>
 		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
 								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
 										 $bar_detail['american_p']==1){ ?>
