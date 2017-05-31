@@ -274,7 +274,7 @@
 				    	</div>
 
 				    	<div>
-                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 50%; height: 400px">
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 50%;">
 				    		 	 <!-- <?php // $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
 //								if($cnt_like==2 && get_authenticateUserID()!=''){
@@ -304,11 +304,10 @@
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
      								<?php if($r->is_closed!='yes'){ ?>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from))." - " ); } else { echo "test"; }?></div>
-     									<!--<div class="schedule-text dash">-</div>-->
+     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "test"; }?></div>
+     									<div class="schedule-text dash">-</div>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
-     									<div class="schedule-text dash">-</div>
      									<div class="schedule-text">Closed.</div>
      							<?php } ?>
      								<div class="clearfix"></div>
