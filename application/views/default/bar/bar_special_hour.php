@@ -2028,6 +2028,13 @@ function addrows(cnt){
                                                                                      html +=   '<option value="sunday">Sunday</option>';
                                                                                   html +=  '</select>';
                                                                        html +=        ' </div>';
+                                                                      html += '<div class="col-sm-1 text-right">';
+                                                                          html +=      '<label class="control-label">Items: </label>';
+                                                                           html += '</div>';
+                                                                           html += '<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />';
+                                                                        html +=    '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';	
+                                                                             html +=   '<input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">';
+                                                                          html +=  '</div>';
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
 	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
 	   html +=    				 	'</div>';
