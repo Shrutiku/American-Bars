@@ -199,32 +199,32 @@
 						       <div class="clearfix"></div>
 
 						        <div class="mart10 min-height125">
-						        	<?php if($bar_detail['bar_category']){?>
-						        	<div class="socialicon-right">
+						        	<?php // if($bar_detail['bar_category']){?>
+<!--						        	<div class="socialicon-right">
 
 
-                                         <h4 class="bar_add mar_bot10">Bar Type :</h4>
+                                         <h4 class="bar_add mar_bot10">Bar Type :</h4>-->
 
 
                                          	<?php
+//
+//
+//													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+//
+//													$getin = array_slice($getin1, 0, 3);
+//													$getin12 = array_slice($getin1, 3);
+//					     							  foreach($getin as $r)
+//													  {
+//													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
+//													} ?>
 
 
-													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
 
-													$getin = array_slice($getin1, 0, 3);
-													$getin12 = array_slice($getin1, 3);
-					     							  foreach($getin as $r)
-													  {
-													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
-													} ?>
+<!--                                         <div class="clear"></div>
+                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>-->
 
-
-
-                                         <div class="clear"></div>
-                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
-
-                                        </div>
-                                       <?php } ?>
+                                        <!--</div>-->
+                                       <?php // } ?>
 
 						        	<div class="bar_add">
 						        		<i class="strip address"></i>
@@ -326,6 +326,32 @@
 			     				<!--<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>-->
 			     				<?php } ?>
 		     				</div>
+                                            <?php if($bar_detail['bar_category']){?>
+						        	<div class="socialicon-right">
+
+
+                                         <h4 class="bar_add mar_bot10">Bar Type :</h4>
+
+
+                                         	<?php
+
+
+													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+
+													$getin = array_slice($getin1, 0, 3);
+													$getin12 = array_slice($getin1, 3);
+					     							  foreach($getin as $r)
+													  {
+													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
+													} ?>
+
+
+
+                                         <div class="clear"></div>
+                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
+
+                                        </div>
+                                       <?php } ?>
 		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
 								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
 										 $bar_detail['american_p']==1){ ?>
@@ -923,7 +949,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 <div class="modal fade login_pop2" id="opencategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 						<div class="padtb10">
      	<div class="container">
-     		<div class="result_box clearfix mar_top30bot20">
+            <div class="result_box clearfix mar_top30bot20" style="margin-top: ">
      			<div class="login_block br_green_yellow">
      				<div class="result_search">
      					 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
