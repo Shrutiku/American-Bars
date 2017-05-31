@@ -136,9 +136,9 @@ $('.sorted_table').sortable({
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
-<!--                                                                            <div class="col-sm-1">
+                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
-                                                                            </div>-->
+                                                                            </div>
                                                                             <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
                                                                                 <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
                                                                                 <select class="form-control">
