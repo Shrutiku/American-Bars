@@ -287,7 +287,7 @@
 											<?php // } else { ?>
 											<a id="total-like" href="javascript:void(0);" name="1" class="btn btn-lg btn-primary full-btn pull-left">
 											Like This Bar</a>
-								<?php  } ?>
+								<?php //  } ?>
 		     					<div class="bar_add mar_bot10 pull-right">We Liked This Bar</div> -->
 		     					<div class="clearfix"></div>
 		     					<?php
