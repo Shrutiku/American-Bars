@@ -274,7 +274,7 @@
 				    	</div>
 
 				    	<div>
-				    		 <div class="mar_top20 like-block wid50 mar_r15 text-right">
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 72%">
 				    		 	 <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
 								if($cnt_like==2 && get_authenticateUserID()!=''){
@@ -332,7 +332,7 @@
 										 $bar_detail['american_p']==1){ ?>
 
 
-                                            <div class="mar_top20 wid50 like-block" style="width: 24%">
+                                            <div class="mar_top20 wid50 like-block" style="width: 25%">
 		     					<div class="bar_add mar_bot10">Payment Type Accepted :</div>
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
