@@ -142,6 +142,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
                                                                                 <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
                                                                                 <select class="form-control">
+                                                                                    <option value="">-- Select Day-- </option>
                                                                                     <option value="monday">Monday</option>
                                                                                     <option value="tuesday">Tuesday</option>
                                                                                     <option value="wednesday">Wednesday</option>
@@ -156,6 +157,7 @@ $('.sorted_table').sortable({
                                                                             </div>
                                                                             <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">                                                                                  
                                                                                 <select class="form-control">
+                                                                                    <option value="">-- Select Day-- </option>
                                                                                     <option value="monday">Monday</option>
                                                                                     <option value="tuesday">Tuesday</option>
                                                                                     <option value="wednesday">Wednesday</option>
@@ -258,15 +260,16 @@ $('.sorted_table').sortable({
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
                                                                                 <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
-                                                                                <div class="col-sm-1">
+<!--                                                                                <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
-                                                                                </div>
-<!--                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
+                                                                                </div>-->
+<!--                                                                                <input type="hidden" name="cid<?php // echo $i; ?>[]" id="cid_<?php // echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
-                                                                                    <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
+                                                                                    <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php // echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>-->
                                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">
                                                                                     <select class="form-control">
+                                                                                        <option value="">-- Select Day-- </option>
                                                                                         <option value="monday">Monday</option>
                                                                                         <option value="tuesday">Tuesday</option>
                                                                                         <option value="wednesday">Wednesday</option>
@@ -1975,11 +1978,12 @@ function addrows(cnt){
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
 	    
-          html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
-                                                                           html +=         '<label class="control-label">Day:</label>';
-                                                                         html += '       </div>';
+//          html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
+//                                                                           html +=         '<label class="control-label">Day:</label>';
+//                                                                         html += '       </div>';
     html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
                                                                                    html += '<select class="form-control">';
+                                                                                   html += '<option value="">-- Select Day-- </option>';
                                                                                         html += '<option value="monday">Monday</option>';
                                                                                    html+=     '<option value="tuesday">Tuesday</option>';
                                                                                       html +=  '<option value="wednesday">Wednesday</option>';
