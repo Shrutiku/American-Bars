@@ -308,7 +308,7 @@
      									<div class="schedule-text dash">-</div>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
-     									<div class="schedule-text">Closed.</div>
+     									<div class="schedule-text">Closed</div>
      							<?php } ?>
      								<div class="clearfix"></div>
      							</li>
@@ -327,7 +327,7 @@
 			     				<?php } ?>
 		     				</div>
                                             <?php if($bar_detail['bar_category']){?>
-                                                <div class="mar_top20 wid50 like-block" style="width:35%">
+                                                <div class="mar_top20 wid50 like-block" style="width:33%">
                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                         <?php
                                                         $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
@@ -341,17 +341,15 @@
                                                     <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
                                                 </div>
                                             <?php } ?>
-		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
+		     					<?php // if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
 								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
 										 $bar_detail['american_p']==1){ ?>
-
-
-                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 15%">
+                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 15%; text-align: center;">
 		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
 		     						<li><i class="strip cash"></i></li>
-		     						<?php } ?>
+                                                                        <?php } ?>
 		     						<?php if($bar_detail['master_p']==1){?>
 		     						<li><i class="strip master-card"></i></li>
 		     							<?php } ?>
@@ -369,11 +367,11 @@
 		     							<?php } ?>
 		     						<?php if($bar_detail['apple_p']==1){?>
 		     						<li><i class="strip apple-pay"></i></li>
-		     								<?php } ?>
+                                                                        <?php } ?>
 		     					</ul>
 
 	     				  </div>
-	     				  	<?php } ?>
+	     				  	<?php // } ?>
 				    	</div>
      			</div>
      			<div class="modal fade login_pop2" id="openhour" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
