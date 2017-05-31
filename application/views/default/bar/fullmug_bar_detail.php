@@ -304,8 +304,8 @@
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
      								<?php if($r->is_closed!='yes'){ ?>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
-     									<div class="schedule-text dash">-</div>
+     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from))." - " ); } else { echo "test"; }?></div>
+     									<!--<div class="schedule-text dash">-</div>-->
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
      									<div class="schedule-text dash">-</div>
