@@ -524,7 +524,7 @@
 
      		</div>
 
-     		<div class="fullmug_block">
+     		<div class="fullmug_block mart10">
      			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Bar Events</h1>
