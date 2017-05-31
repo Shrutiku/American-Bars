@@ -344,20 +344,20 @@
 		     					<?php // if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
 //								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
 //										 $bar_detail['american_p']==1){ ?>
-                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 15%; text-align: center;">
+                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 15%; text-align: center; height: 250px;">
 		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
 		     						<li><i class="strip cash"></i></li>
                                                                         <?php } ?>
+                                                                <?php if($bar_detail['visa_p']==1){?>
+		     						<li><i class="strip visa"></i></li>
+		     							<?php } ?>
 		     						<?php if($bar_detail['master_p']==1){?>
 		     						<li><i class="strip master-card"></i></li>
 		     							<?php } ?>
 		     						<?php if($bar_detail['american_p']==1){?>
 		     						<li><i class="strip american-express"></i></li>
-		     							<?php } ?>
-		     						<?php if($bar_detail['visa_p']==1){?>
-		     						<li><i class="strip visa"></i></li>
 		     							<?php } ?>
 		     						<?php if($bar_detail['paypal_p']==1){?>
 		     						<li><i class="strip payapl"></i></li>
