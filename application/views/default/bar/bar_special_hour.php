@@ -1758,26 +1758,26 @@ function removeImageDive(id)
 				url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
 				success:function(res){
 					//'removeImageDive'+type(num);
-					if(type=='beer')
-					{
-						removeImageDivebeer_1(t,num);
-					}
+//					if(type=='beer')
+//					{
+//						removeImageDivebeer_1(t,num);
+//					}
 					if(type=='cocktail')
 					{
 						removeImageDivecocktail_1(t,num);
 					}
-					if(type=='liquor')
-					{
-						removeImageDiveliquor_1(t,num);
-					}
-					if(type=='food')
-					{
-						removeImageDivefood_1(t,num);
-					}
-					if(type=='other')
-					{
-						removeImageDiveother_1(t,num);
-					}
+//					if(type=='liquor')
+//					{
+//						removeImageDiveliquor_1(t,num);
+//					}
+//					if(type=='food')
+//					{
+//						removeImageDivefood_1(t,num);
+//					}
+//					if(type=='other')
+//					{
+//						removeImageDiveother_1(t,num);
+//					}
 				// var cnt=parseInt($('#cnt').val())-1;
 				// $('#cntpro').val(cnt);
 				// $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
