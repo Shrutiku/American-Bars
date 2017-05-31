@@ -327,7 +327,7 @@
 			     				<?php } ?>
 		     				</div>
                                             <?php if($bar_detail['bar_category']){?>
-                                                <div class="mar_top20 wid50 like-block" style="width:30%">
+                                                <div class="mar_top20 wid50 like-block" style="width:40%">
                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                         <?php
                                                         $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
@@ -346,7 +346,7 @@
 										 $bar_detail['american_p']==1){ ?>
 
 
-                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 27%">
+                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 15%">
 		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
