@@ -2013,7 +2013,7 @@ function addrows(cnt){
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
 	   html +=    				 		'<label class="control-label " style="font-size: 16px;">$:</label>';
 	   html +=    				 	'</div>';
-	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
+	   html +=                   		'<div class="col-sm-2" style="width: 10%">';	
 	  html +=                    			'<input type="text" class="form-control form-pad timepicker-default" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
 	   html +=                   		'</div>'	;
 	     html +=                 		'<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivecocktail_1('+cnt+','+cntcocktail+')"><span class="glyphicon glyphicon-minus"></span></a>';
