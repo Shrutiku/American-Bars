@@ -1758,14 +1758,14 @@ function removeImageDive(id)
 				url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
 				success:function(res){
 					//'removeImageDive'+type(num);
-					if(type ==='beer')
-					{
-						removeImageDivebeer_1(t,num);
-					}
-//					if(type ==='cocktail')
+//					if(type ==='beer')
 //					{
-//						removeImageDivecocktail_1(t,num);
+//						removeImageDivebeer_1(t,num);
 //					}
+					if(type ==='cocktail')
+					{
+						removeImageDivecocktail_1(t,num);
+					}
 //					if(type=='liquor')
 //					{
 //						removeImageDiveliquor_1(t,num);
@@ -2015,7 +2015,7 @@ function addrows(cnt){
                                                                                     html += '<label class="control-label" style="font-size: 16px;">$:</label>';
                                                                                 html += '</div>';
                                                                                 html += '<div class="col-sm-1" style="width: 10%;">';	
-                                                                                    html += '<input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">';
+                                                                                    html += '<input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">';
                                                                                 html += '</div>';
 //        html +=                       '<div class="col-sm-1" style="width: 10%">';
 //	   html +=    				 		'<label class="control-label " style="font-size: 16px;">$:</label>';
