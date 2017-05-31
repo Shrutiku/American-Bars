@@ -283,10 +283,10 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">	
                                                                                     <input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">
                                                                                 </div>
-<!--                                                                                <div class="col-sm-1"> 
+                                                                                <div class="col-sm-1"> 
                                                                                     <label class="control-label" style="font-size: 16px">Time:</label>
-                                                                                </div>-->
-                                                                                <div class="col-sm-3 pull-left" style="width: 13%" >
+                                                                                </div>
+                                                                                <div class="col-sm-1 pull-left" style="width: 13%" >
                                                                                     <label class="control-label" style="font-size: 16px">Time:</label>
                                                                                     <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                                 </div>
