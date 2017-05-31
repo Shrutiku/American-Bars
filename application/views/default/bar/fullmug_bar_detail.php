@@ -346,7 +346,7 @@
 										 $bar_detail['american_p']==1){ ?>
 
 
-                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 15%">
+                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 14%">
 		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
