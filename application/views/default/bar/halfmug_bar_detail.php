@@ -530,7 +530,90 @@ function piShare()
      			
      			<div class="clearfix"></div>
      		</div>
-     		<?php if($barhours){ ?>
+     		
+                    <div class="review_mainblock padt10 new_review">
+     				<h1 class="productbar_title">
+     					<div class="pull-left mar_top5">Raves and Rants</div> 
+     					<div class="pull-right">
+     						<a href="javascript://" onclick="show_popup()" class="review">Write a Review</a>
+     					</div>
+     					<div class="clearfix"></div>
+     				</h1>
+     				<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
+					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:2; ?>" />
+	     			<div id="responsecomment">
+	     			<ul class="review_block" >
+	     				<?php if($result){
+	     					  foreach($result as $comment){?>
+		     				<li>
+		     					<div class="reult_sub_title"><a class="bar_title"><?php echo $comment->comment_title; ?></a></div>
+		     					<div class="rating_box"><a class="bar_title"><?php echo getDuration($comment->date_added); ?></a></div>
+		     					<div class="clearfix"></div>
+		     					<p class="result_desc"><?php if(strlen($comment->comment)>300) { echo substr($comment->comment,0,300)."..."; } else { echo $comment->comment; }?></p>
+		     					<div class="reult_sub_title"><p class="review_light pull-left"><?php echo $comment->first_name." ".$comment->last_name;?></p></div>
+		     					<div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
+		     					<div class="clearfix"></div>
+		     				</li>
+	     				<?php } } else {?>
+	     					<div class="gallery-default reviewdefault mar_top20">
+     					No Review Available
+     				</div>
+	     					<?php } ?>		  	
+	     			</ul>
+	     			
+	     			<div class="pagination">
+	     				<?php echo $page_link;?>
+     				</div>
+     				<div class="clearfix"></div>
+     			</div>
+     		</div>
+            
+                <div class="review_mainblock padt10 new_review">
+                                    <h1 class="productbar_title">
+                                            <div class="pull-left mar_top5">Raves and Rants</div> 
+                                            <div class="pull-right">
+                                                    <a href="javascript://" onclick="show_popup()" class="review">Write a Review</a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                    </h1>
+                                    <input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
+                                            <input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:2; ?>" />
+                                    <div id="responsecomment">
+                                    <ul class="review_block" >
+                                            <?php if($result){
+                                                      foreach($result as $comment){?>
+                                                    <li>
+                                                            <div class="reult_sub_title"><a class="bar_title"><?php echo $comment->comment_title; ?></a></div>
+                                                            <div class="rating_box"><a class="bar_title"><?php echo getDuration($comment->date_added); ?></a></div>
+                                                            <div class="clearfix"></div>
+                                                            <p class="result_desc"><?php if(strlen($comment->comment)>300) { echo substr($comment->comment,0,300)."..."; } else { echo $comment->comment; }?></p>
+                                                            <div class="reult_sub_title"><p class="review_light pull-left"><?php echo $comment->first_name." ".$comment->last_name;?></p></div>
+                                                            <div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
+                                                            <div class="clearfix"></div>
+                                                    </li>
+                                            <?php } } else {?>
+                                                    <div class="gallery-default reviewdefault mar_top20">
+                                            No Review Available
+                                    </div>
+                                                    <?php } ?>		  	
+                                    </ul>
+
+                                    <div class="pagination">
+                                            <?php echo $page_link;?>
+                                    </div>
+                                    <div class="clearfix"></div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <?php if($barhours){ ?>
      		<div class="pad_lr10">
      			<h1 class="productbar_title mar_top20"><div>Hours We Are Open</div></h1>
      			</div>
@@ -1265,13 +1348,7 @@ function loadMap()
 //}	
 
 </script>
-<script type="text/javascript">
-	 $(document).ready(function ()
-	 {
-		$('#star1').rating('www.url.php', {maxvalue:5});
-		$(".cancel").hide();
-	 });
-</script>
+
 <script type="text/javascript">
   var geocoder;
   var map;
@@ -1369,7 +1446,13 @@ function initialize()
   }
 
 </script>
-
+<script type="text/javascript">
+	 $(document).ready(function ()
+	 {
+		$('#star1').rating('www.url.php', {maxvalue:5});
+		$(".cancel").hide();
+	 });
+</script>
 <script>
  $(document).ready(function () {
 	$('#total-like').click(function(){
