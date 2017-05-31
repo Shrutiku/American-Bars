@@ -531,14 +531,12 @@ function piShare()
      			<div class="clearfix"></div>
      		</div>
      		<?php if($barhours){ ?>
-     		<div class="padt10">
-     			<h1 class="productbar_title mar_top20"><div>Hours We Are Open</div></h1>
-     			</div>
+     			<h1 class="review_mainblock marr4 padt10"><div>Hours We Are Open</div></h1>
             <div class="fullmug-scheduleblock mar_top20" style="width:50%">
      				
      				<!-- <h1 class="reg-title">Opening Hours</h1> -->
-     				<div class="mart10">
-     					<div class="text-left">
+     				<div class="mart10 pull-left">
+                                    <div class="text-left" style="font-size:18px">
      						<ul class="new-hours">
                                 		<?php
 
