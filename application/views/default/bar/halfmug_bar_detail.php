@@ -538,7 +538,7 @@ function piShare()
      				
      				<!-- <h1 class="reg-title">Opening Hours</h1> -->
      				<div class="mart10">
-     					<div class="full-scheduleleft">
+     					<div class="text-left">
      						<ul class="new-hours">
                                 		<?php
 
