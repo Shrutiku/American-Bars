@@ -2000,7 +2000,7 @@ function addrows(cnt){
                                                                            html += '<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />';
                                                                         html +=    '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';	
                                                                              html +=   '<input type="text" class="form-control tagsliquornew form-pad" id="liquorid_<?php echo $i; ?>_0"  name="liquorid[]" value="">';
-                                                                          html +=  '</div>';
+                                                                          html +=  '</div>';  
                                                                           html += '<div class="col-sm-1">'; 
                                                                                     html += '<label class="control-label" style="font-size: 16px">Time:</label>';
                                                                                 html += '</div>';
