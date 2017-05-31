@@ -487,9 +487,9 @@ B.show();
 	        				 	</div>
 	                       		<div class="input_box col-sm-7 text-left padt5">
 	                           		<label for="checkbox-01" class="radio-checkbox label_radio marr_10 r_on"><input type="checkbox" value="1" <?php if($getalldata->cash_p==1){ echo "checked"; }?> name="cash_p" id="cash_p" > <i class="strip small-cash"></i></label>
+	                           		<label for="checkbox-04" class="radio-checkbox label_radio"><input type="checkbox" value="1"  <?php if($getalldata->visa_p==1){ echo "checked"; }?> name="visa_p" id="visa_p" > <i class="strip small-visa"></i></label>
 	                           		<label for="checkbox-02" class="radio-checkbox label_radio"><input type="checkbox" value="1"  <?php if($getalldata->master_p==1){ echo "checked"; }?> name="master_p" id="master_p" > <i class="strip small-master-card"></i></label>
 	                           		<label for="checkbox-03" class="radio-checkbox label_radio"><input type="checkbox" value="1"  <?php if($getalldata->american_p==1){ echo "checked"; }?> name="american_p" id="american_p" > <i class="strip small-american-express"></i></label>
-	                           		<label for="checkbox-04" class="radio-checkbox label_radio"><input type="checkbox" value="1"  <?php if($getalldata->visa_p==1){ echo "checked"; }?> name="visa_p" id="visa_p" > <i class="strip small-visa"></i></label>
 	                           		<label for="checkbox-05" class="radio-checkbox label_radio"><input type="checkbox" value="1"  <?php if($getalldata->paypal_p==1){ echo "checked"; }?> name="paypal_p" id="paypal_p" > <i class="strip small-payapl"></i></label>
 	                           		<label for="checkbox-06" class="radio-checkbox label_radio"><input type="checkbox" value="1"  <?php if($getalldata->bitcoin_p==1){ echo "checked"; }?> name="bitcoin_p" id="bitcoin_p" > <i class="strip small-bit-coin"></i></label>
 	                           		<label for="checkbox-07" class="radio-checkbox label_radio"><input type="checkbox" value="1"  <?php if($getalldata->apple_p==1){ echo "checked"; }?> name="apple_p" id="apple_p" > <i class="strip small-apple-pay"></i></label>
