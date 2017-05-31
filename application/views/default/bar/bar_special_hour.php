@@ -214,7 +214,8 @@ $('.sorted_table').sortable({
                                                                                 <label class="control-label" style="font-size: 16px;">$: </label>
                                                                             </div>
                                                                             <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-                                                                                <input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">
+                                                                                <!--<input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">-->
+                                                                                <input type="text" class="form-control form-pad" value="">
                                                                             </div>	
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>                                                                            <div class="clearfix"></div>
                                                                                 <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
