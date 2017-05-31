@@ -1978,11 +1978,12 @@ function addrows(cnt){
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
 	    
-          html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
-                                                                           html +=         '<label class="control-label">Day:</label>';
-                                                                         html += '       </div>';
+//          html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
+//                                                                           html +=         '<label class="control-label">Day:</label>';
+//                                                                         html += '       </div>';
     html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
                                                                                    html += '<select class="form-control">';
+                                                                                   html += '<option value="">-- Select Day-- </option>';
                                                                                         html += '<option value="monday">Monday</option>';
                                                                                    html+=     '<option value="tuesday">Tuesday</option>';
                                                                                       html +=  '<option value="wednesday">Wednesday</option>';
