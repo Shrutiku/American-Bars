@@ -274,7 +274,7 @@
 				    	</div>
 
 				    	<div>
-                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 50%">
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 50%; height: 400px">
 				    		 	 <!-- <?php // $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
 //								if($cnt_like==2 && get_authenticateUserID()!=''){
@@ -287,7 +287,7 @@
 											<?php // } else { ?>
 											<a id="total-like" href="javascript:void(0);" name="1" class="btn btn-lg btn-primary full-btn pull-left">
 											Like This Bar</a>
-								<?php  } ?>
+								<?php //  } ?>
 		     					<div class="bar_add mar_bot10 pull-right">We Liked This Bar</div> -->
 		     					<div class="clearfix"></div>
 		     					<?php
@@ -299,13 +299,13 @@
                                 		<?php
 
                                 		if($barhours){
-                                		$get =	array_slice($barhours, 0, 3);
+                                		$get =	array_slice($barhours, 0, 7);
      							  foreach($get as $r){ ?>
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
      								<?php if($r->is_closed!='yes'){ ?>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
-     									<div class="schedule-text dash">-</div>
+     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from))." - " ); } else { echo "test"; }?></div>
+     									<!--<div class="schedule-text dash">-</div>-->
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
      									<div class="schedule-text dash">-</div>
@@ -324,7 +324,7 @@
 			     				<div class="clearfix"></div>
 			     				<?php
 									if($barhours){ ?>
-			     				<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>
+			     				<!--<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>-->
 			     				<?php } ?>
 		     				</div>
 		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
