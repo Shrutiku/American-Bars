@@ -308,7 +308,7 @@
      									<div class="schedule-text dash">-</div>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
-     									<div class="schedule-text">Closed.</div>
+     									<div class="schedule-text">Closed</div>
      							<?php } ?>
      								<div class="clearfix"></div>
      							</li>
