@@ -525,7 +525,7 @@
      		</div>
 
      		<div class="fullmug_block">
-     			<div class="col-md-4 col-sm-5 padb20">
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Bar Events</h1>
      					<ul class="bottom_box">
@@ -558,7 +558,7 @@
      				</div>
      			</div>
 
-     			<div class="col-md-4 col-sm-5 padb20">
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Beers Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list">
@@ -566,8 +566,8 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php if($bar_detail['serve_as']=='cocktail'){?>
-     			<div class="col-md-4 col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='cocktail'){?>
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Cocktails Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
@@ -575,10 +575,10 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>
+     		<?php // } ?>
 
-     		<?php if($bar_detail['serve_as']=='liquor'){?>
-     			<div class="col-md-4 col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='liquor'){?>
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
@@ -586,7 +586,7 @@
 	         		<div class="clear"></div></ul><divbeer_state class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>
+     		<?php // } ?>
      			<div class="clearfix"></div>
      		</div>
      		<div>
