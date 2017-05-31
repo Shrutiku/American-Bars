@@ -327,11 +327,11 @@
 			     				<?php } ?>
 		     				</div>
                                             <?php if($bar_detail['bar_category']){?>
-                                                <div class="mar_top20 wid50 like-block" style="width:33%">
+                                                <div class="mar_top20 wid50 like-block" style="width:34%">
                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                         <?php
                                                         $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
-                                                        $getin = array_slice($getin1, 0, 3);
+                                                        $getin = array_slice($getin1, 0, 5);
                                                         $getin12 = array_slice($getin1, 3);
                                                         foreach($getin as $r)
                                                         {
