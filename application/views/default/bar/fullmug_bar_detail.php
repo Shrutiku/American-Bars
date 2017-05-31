@@ -274,17 +274,17 @@
 				    	</div>
 
 				    	<div>
-                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 72%">
-				    		 	 <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 50%">
+				    		 	 <!-- <?php // $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
-								if($cnt_like==2 && get_authenticateUserID()!=''){
+//								if($cnt_like==2 && get_authenticateUserID()!=''){
 								?>
 								<a id="total-like" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn pull-left">Like This Bar</i></a>
 								<?php
-											} elseif(get_authenticateUserID()!='') {?>
-											<a id="total-like" href="javascript:void(0);" name="<?php if($cnt_like==1){ echo $cnt_like=0;} else{ echo $cnt_like=1; } ?>" class="btn btn-lg btn-primary full-btn pull-left">
-											<?php if($cnt_like==1){ echo 'Like This Bar'; } else{ echo 'Already Liked'; } ?></i></a>
-											<?php } else { ?>
+//											} elseif(get_authenticateUserID()!='') {?>
+											<a id="total-like" href="javascript:void(0);" name="<?php // if($cnt_like==1){ echo $cnt_like=0;} else{ echo $cnt_like=1; } ?>" class="btn btn-lg btn-primary full-btn pull-left">
+											<?php // if($cnt_like==1){ echo 'Like This Bar'; } else{ echo 'Already Liked'; } ?></i></a>
+											<?php // } else { ?>
 											<a id="total-like" href="javascript:void(0);" name="1" class="btn btn-lg btn-primary full-btn pull-left">
 											Like This Bar</a>
 								<?php  } ?>
@@ -332,8 +332,8 @@
 										 $bar_detail['american_p']==1){ ?>
 
 
-                                            <div class="mar_top20 wid50 like-block" style="width: 25%">
-		     					<div class="bar_add mar_bot10">Payment Type Accepted :</div>
+                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 30%">
+		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
 		     						<li><i class="strip cash"></i></li>
