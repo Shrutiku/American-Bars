@@ -267,6 +267,7 @@ $('.sorted_table').sortable({
                                                                                 </div>-->
                                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">
                                                                                     <select class="form-control">
+                                                                                        <option value="">-- Select Day-- </option>
                                                                                         <option value="monday">Monday</option>
                                                                                         <option value="tuesday">Tuesday</option>
                                                                                         <option value="wednesday">Wednesday</option>
