@@ -2011,7 +2011,7 @@ function addrows(cnt){
                                                                                     html += '<input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">';
                                                                                 html += '</div>';
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">$:</label>';
 	   html +=    				 	'</div>';
 	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
 	  html +=                    			'<input type="text" class="form-control form-pad timepicker-default" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
