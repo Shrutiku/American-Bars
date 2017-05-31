@@ -301,7 +301,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1" style="width: 10%;">	
                                                                                     <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                                 </div>
-                                                                                <div class="col-sm-1 pull-right"></div>
+                                                                                <div class="col-sm-1"></div>
                                                                                 <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                 <div class="clearfix"></div>
                                                                                         <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
@@ -1974,10 +1974,10 @@ function addrows(cnt){
 		$('#cntprococktail'+cnt).val(cntcocktail);
 		//alert(cnt);
 		var html = '';
-		html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb8">';
-	    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-1 ">';
-	    html +=  '<label class="control-label"></label>';
-	    html +=   '</div>';
+//		html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb8">';
+//	    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-1 ">';
+//	    html +=  '<label class="control-label"></label>';
+//	    html +=   '</div>';
 	    
 //          html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
 //                                                                           html +=         '<label class="control-label">Day:</label>';
@@ -2011,9 +2011,9 @@ function addrows(cnt){
                                                                                     html += '<input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">';
                                                                                 html += '</div>';
         html +=                       '<div class="col-sm-1" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">$:</label>';
 	   html +=    				 	'</div>';
-	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
+	   html +=                   		'<div class="col-sm-2" style="width: 10%">';	
 	  html +=                    			'<input type="text" class="form-control form-pad timepicker-default" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
 	   html +=                   		'</div>'	;
 	     html +=                 		'<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivecocktail_1('+cnt+','+cntcocktail+')"><span class="glyphicon glyphicon-minus"></span></a>';
