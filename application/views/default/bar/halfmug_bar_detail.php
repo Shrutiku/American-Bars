@@ -539,25 +539,29 @@ function piShare()
      				<!-- <h1 class="reg-title">Opening Hours</h1> -->
      				<div class="mart10">
      					<div class="full-scheduleleft">
-     						<ul>
-     						
-     						<?php	  foreach($barhours as $r){?>	
+     						<ul class="new-hours">
+                                		<?php
+
+                                		if($barhours){
+                                		$get =	array_slice($barhours, 0, 7);
+     							  foreach($get as $r){ ?>
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
      								<?php if($r->is_closed!='yes'){ ?>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
-     									<div class="pull-left" style="width: 50px;">-</div>
+     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "test"; }?></div>
+     									<div class="schedule-text dash">-</div>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
-     									<!-- <div class="schedule-text">-</div> -->
-     									<div class="schedule-text">Closed.</div>
-     							<?php } ?>		
+     									<div class="schedule-text">Closed</div>
+     							<?php } ?>
      								<div class="clearfix"></div>
      							</li>
-     						<?php  } ?>	
-     							
-     							<div class="clearfix"></div>
-     						</ul>
+     						<?php } } else { ?>
+     							No bar open hours available.
+     						<?php } ?>
+
+
+                                    </ul>
      					</div>
      					
      					<div class="clearfix"></div>
