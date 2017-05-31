@@ -160,16 +160,6 @@ $('#comment_title').live('click', function(e){
  
 </script>
 
-<script type="text/javascript">
-
-  
-	 $(document).ready(function () 
-	 {
-		$('#star1').rating('www.url.php', {maxvalue:5});
-		$(".cancel").hide();
-	 });
-</script>
-
 <script language="javascript" type="text/javascript">
 
 
@@ -965,7 +955,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 		       		
 		       		if($("#sess_id").val()==1)
 		       		{
-		       		 var retVal = confirm("Are you want to Send Postcard ?");
+		       		 var retVal = confirm("Do you want to send this postcard?");
 					   if( retVal == true ){
 					      //alert("User wants to continue!");
 						  return true;
@@ -1099,7 +1089,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 				$("#rating").val("");
 				$("#desc_post_card").val("");
 				$("#cm-err-main").html("");
-					$.growlUI('<?php echo "Your Review add successfully ."; ?>');
+					$.growlUI('<?php echo "Your review was added successfully ."; ?>');
 			}
 			var data = '';
 			data += '<li>';
@@ -1275,7 +1265,13 @@ function loadMap()
 //}	
 
 </script>
-
+<script type="text/javascript">
+	 $(document).ready(function ()
+	 {
+		$('#star1').rating('www.url.php', {maxvalue:5});
+		$(".cancel").hide();
+	 });
+</script>
 <script type="text/javascript">
   var geocoder;
   var map;
