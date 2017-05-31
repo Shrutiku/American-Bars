@@ -299,7 +299,7 @@
                                 		<?php
 
                                 		if($barhours){
-                                		$get =	array_slice($barhours, 0, 3);
+                                		$get =	array_slice($barhours, 0, 7);
      							  foreach($get as $r){ ?>
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
@@ -324,7 +324,7 @@
 			     				<div class="clearfix"></div>
 			     				<?php
 									if($barhours){ ?>
-			     				<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>
+			     				<!--<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>-->
 			     				<?php } ?>
 		     				</div>
 		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
