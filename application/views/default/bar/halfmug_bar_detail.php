@@ -160,6 +160,16 @@ $('#comment_title').live('click', function(e){
  
 </script>
 
+<script type="text/javascript">
+
+  
+	 $(document).ready(function () 
+	 {
+		$('#star1').rating('www.url.php', {maxvalue:5});
+		$(".cancel").hide();
+	 });
+</script>
+
 <script language="javascript" type="text/javascript">
 
 
@@ -531,35 +541,33 @@ function piShare()
      			<div class="clearfix"></div>
      		</div>
      		<?php if($barhours){ ?>
-     			<h1 class="review_mainblock marr4 padt10"><div>Hours We Are Open</div></h1>
-            <div class="fullmug-scheduleblock mar_top20" style="width:50%">
+     		<div class="pad_lr10">
+     			<h1 class="productbar_title mar_top20"><div>Hours We Are Open</div></h1>
+     			</div>
+     			<div class="fullmug-scheduleblock mar_top20">
      				
      				<!-- <h1 class="reg-title">Opening Hours</h1> -->
-     				<div class="mart10 pull-left">
-                                    <div class="text-left" style="font-size:18px">
-     						<ul class="new-hours">
-                                		<?php
-
-                                		if($barhours){
-                                		$get =	array_slice($barhours, 0, 7);
-     							  foreach($get as $r){ ?>
+     				<div class="mart10">
+     					<div class="full-scheduleleft">
+     						<ul>
+     						
+     						<?php	  foreach($barhours as $r){?>	
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
      								<?php if($r->is_closed!='yes'){ ?>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "test"; }?></div>
-     									<div class="schedule-text dash">-</div>
+     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
+     									<div class="pull-left" style="width: 50px;">-</div>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
-     									<div class="schedule-text">Closed</div>
-     							<?php } ?>
+     									<!-- <div class="schedule-text">-</div> -->
+     									<div class="schedule-text">Closed.</div>
+     							<?php } ?>		
      								<div class="clearfix"></div>
      							</li>
-     						<?php } } else { ?>
-     							No bar open hours available.
-     						<?php } ?>
-
-
-                                    </ul>
+     						<?php  } ?>	
+     							
+     							<div class="clearfix"></div>
+     						</ul>
      					</div>
      					
      					<div class="clearfix"></div>
@@ -1091,7 +1099,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 				$("#rating").val("");
 				$("#desc_post_card").val("");
 				$("#cm-err-main").html("");
-					$.growlUI('<?php echo "Your review was added successfully ."; ?>');
+					$.growlUI('<?php echo "Your Review was added successfully ."; ?>');
 			}
 			var data = '';
 			data += '<li>';
@@ -1267,13 +1275,7 @@ function loadMap()
 //}	
 
 </script>
-<script type="text/javascript">
-	 $(document).ready(function ()
-	 {
-		$('#star1').rating('www.url.php', {maxvalue:5});
-		$(".cancel").hide();
-	 });
-</script>
+
 <script type="text/javascript">
   var geocoder;
   var map;
