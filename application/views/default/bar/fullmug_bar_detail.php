@@ -274,7 +274,7 @@
 				    	</div>
 
 				    	<div>
-                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 50%">
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 50%; height: 400px">
 				    		 	 <!-- <?php // $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
 //								if($cnt_like==2 && get_authenticateUserID()!=''){
