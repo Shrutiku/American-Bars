@@ -1629,7 +1629,7 @@ $(document).ready(function(){
 				$("#rating").val("");
 				$("#desc_post_card").val("");
 				$("#cm-err-main").html("");
-				$.growlUI('<?php echo "Your Review add successfully ."; ?>');
+				$.growlUI('<?php echo "Your review was added successfully ."; ?>');
 			}
 			var data = '';
 			data += '<li>';

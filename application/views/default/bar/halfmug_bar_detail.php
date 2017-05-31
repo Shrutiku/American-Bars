@@ -161,9 +161,7 @@ $('#comment_title').live('click', function(e){
 </script>
 
 <script type="text/javascript">
-
-  
-	 $(document).ready(function () 
+	 $(document).ready(function ()
 	 {
 		$('#star1').rating('www.url.php', {maxvalue:5});
 		$(".cancel").hide();
@@ -1099,7 +1097,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 				$("#rating").val("");
 				$("#desc_post_card").val("");
 				$("#cm-err-main").html("");
-					$.growlUI('<?php echo "Your Review add successfully ."; ?>');
+					$.growlUI('<?php echo "Your review was added successfully ."; ?>');
 			}
 			var data = '';
 			data += '<li>';
