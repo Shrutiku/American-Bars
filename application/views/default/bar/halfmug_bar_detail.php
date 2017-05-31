@@ -530,13 +530,11 @@ function piShare()
      			
      			<div class="clearfix"></div>
      		</div>
-     		
-                    <div class="review_mainblock padt10 new_review">
-     				<h1 class="productbar_title">
-     					<div class="pull-left mar_top5">Hours We Are Open</div> 
-     					<div class="clearfix"></div>
-     				</h1>
-     				<div class="fullmug-scheduleblock mar_top20">
+     		<?php if($barhours){ ?>
+     		<div class="pad_lr10">
+     			<h1 class="productbar_title mar_top20"><div>Hours We Are Open</div></h1>
+     			</div>
+     			<div class="fullmug-scheduleblock mar_top20">
      				
      				<!-- <h1 class="reg-title">Opening Hours</h1> -->
      				<div class="mart10">
@@ -566,93 +564,10 @@ function piShare()
      				</div>
      				
      			</div>
-     				<div class="clearfix"></div>
-     			</div>
-     		</div>
-            
-                <div class="review_mainblock padt10 new_review">
-                                    <h1 class="productbar_title">
-                                            <div class="pull-left mar_top5">Raves and Rants</div> 
-                                            <div class="pull-right">
-                                                    <a href="javascript://" onclick="show_popup()" class="review">Write a Review</a>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                    </h1>
-                                    <input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
-                                            <input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:2; ?>" />
-                                    <div id="responsecomment">
-                                    <ul class="review_block" >
-                                            <?php if($result){
-                                                      foreach($result as $comment){?>
-                                                    <li>
-                                                            <div class="reult_sub_title"><a class="bar_title"><?php echo $comment->comment_title; ?></a></div>
-                                                            <div class="rating_box"><a class="bar_title"><?php echo getDuration($comment->date_added); ?></a></div>
-                                                            <div class="clearfix"></div>
-                                                            <p class="result_desc"><?php if(strlen($comment->comment)>300) { echo substr($comment->comment,0,300)."..."; } else { echo $comment->comment; }?></p>
-                                                            <div class="reult_sub_title"><p class="review_light pull-left"><?php echo $comment->first_name." ".$comment->last_name;?></p></div>
-                                                            <div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
-                                                            <div class="clearfix"></div>
-                                                    </li>
-                                            <?php } } else {?>
-                                                    <div class="gallery-default reviewdefault mar_top20">
-                                            No Review Available
-                                    </div>
-                                                    <?php } ?>		  	
-                                    </ul>
-
-                                    <div class="pagination">
-                                            <?php echo $page_link;?>
-                                    </div>
-                                    <div class="clearfix"></div>
-                            </div>
-                    </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <?php // if($barhours){ ?>
-<!--     		<div class="pad_lr10">
-     			<h1 class="productbar_title mar_top20"><div>Hours We Are Open</div></h1>
-     			</div>
-     			<div class="fullmug-scheduleblock mar_top20">
-     				
-     				 <h1 class="reg-title">Opening Hours</h1> 
-     				<div class="mart10">
-     					<div class="full-scheduleleft">
-     						<ul>
-     						
-     						<?php	  foreach($barhours as $r){?>	
-     							<li>
-     								<div class="schedule-text"><?php echo $r->days;?></div>
-     								<?php if($r->is_closed!='yes'){ ?>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
-     									<div class="pull-left" style="width: 50px;">-</div>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
-     								<?php } else {?>
-     									 <div class="schedule-text">-</div> 
-     									<div class="schedule-text">Closed.</div>
-     							<?php } ?>		
-     								<div class="clearfix"></div>
-     							</li>
-     						<?php  } ?>	
-     							
-     							<div class="clearfix"></div>
-     						</ul>
-     					</div>
-     					
-     					<div class="clearfix"></div>
-     				</div>
-     				
-     			</div>-->
-     		 <?php // } ?>
+     		 <?php } ?>
      		 
      		
-<!--     		<div class="padt10">
+     		<div class="padt10">
      			<div class="review_mainblock marr4 padt10">
      				<h1 class="productbar_title"><div>Send a Bar a Real Post Card</div>
      				</h1>
@@ -680,10 +595,10 @@ function piShare()
 onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_post_card" class="form-control form-pad mart10" rows="3" placeholder="Write Here"></textarea>
      					
      					
-     					 <div class="padtb10 pull-right">
+     					<!-- <div class="padtb10 pull-right">
 							<font size="1">(Maximum characters: 300)<br>
 							You have <input readonly type="text" name="countdown" id="countdown" size="3" value="300"> characters left.</font>
-     					</div> 
+     					</div> -->
      					<div class="clearfix"></div>
      					<div class="post_card_block mar_top15">
 	     					<div class="post_left br_r">
@@ -694,16 +609,16 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 	     						 <label id="title">
 	                                    Your Bar is Awesome!         							
 	        					</label><div class="clearfix"></div>
-	        					 <div class="mar_top20">
+	        					<!-- <div class="mar_top20">
 	        						<a href="#" class="btn btn-lg btn-primary">Upload Image</a>
-	        					</div> 
+	        					</div> -->
 	        					
                         		
                         		
 									<div class="browse1"  id="upload">
 										<input type="file" name="file" id="file" class="browse" value="Upload Image">
 									</div>
-	        						<a href="#" class="btn btn-lg btn-primary">Upload Image</a>
+	        						<!--<a href="#" class="btn btn-lg btn-primary">Upload Image</a>-->
 	        						<div class="stamp_image" id="preview" style="padding: 0;">
 	     							<img id="previewimg" src="" height="50" width="40"/>
 	     						</div>
@@ -846,7 +761,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
      		
      		
      		<div class="clearfix"></div>
-     		</div>-->
+     		</div>
      		
      		
      		 <div class="fullmug_block">
@@ -1350,7 +1265,13 @@ function loadMap()
 //}	
 
 </script>
-
+<script type="text/javascript">
+	 $(document).ready(function ()
+	 {
+		$('#star1').rating('www.url.php', {maxvalue:5});
+		$(".cancel").hide();
+	 });
+</script>
 <script type="text/javascript">
   var geocoder;
   var map;
@@ -1448,13 +1369,7 @@ function initialize()
   }
 
 </script>
-<script type="text/javascript">
-	 $(document).ready(function ()
-	 {
-		$('#star1').rating('www.url.php', {maxvalue:5});
-		$(".cancel").hide();
-	 });
-</script>
+
 <script>
  $(document).ready(function () {
 	$('#total-like').click(function(){
