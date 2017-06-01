@@ -253,11 +253,11 @@ $('.sorted_table').sortable({
                                                                 </div> 
 	        				 	
                                                             <?php } ?>		
-                                                                 <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
-                                                            if(empty($getvalcocktail)){?>	 	
-                                                                <input type="hidden" name="cntprobeer[]" id="cntprococktail" value="0" />
-                                                                <div id="contcocktail" class="mar_top20bot20">
-                                                                    <div id="innercocktail<?php echo $i; ?>" >	
+                                                                 <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
+                                                            if(empty($getval)){?>	 	
+                                                                <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
+                                                                <div id="contbeer" class="mar_top20bot20">
+                                                                    <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
                                                                             <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
                                                                             <div class="col-sm-1">
@@ -322,7 +322,7 @@ $('.sorted_table').sortable({
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	-->
                                                                             <div class="col-sm-1"></div>                   
-                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
+                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
                                                                             <div class="clearfix"></div>
                                                                                 <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
                                                                         </div>
@@ -346,26 +346,26 @@ $('.sorted_table').sortable({
                                                                     </div>
                                                                 </div>
                                                             <?php } else { ?>
-                                                                <input type="hidden" name="cntprococktail[]" id="cntprococktail<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
-                                                                <div id="contcocktail" class="mar_top20bot20">
-                                                                    <div id="innercocktail<?php echo $i; ?>" >
-                                                                        <?php $j=0; foreach($getval as $cocktail){?>	
+                                                                <input type="hidden" name="cntprobeer[]" id="cntprobeer<?php echo $i; ?>" value="<?php echo count($getval); ?>" />
+                                                                <div id="contbeer" class="mar_top20bot20">
+                                                                    <div id="innerbeer<?php echo $i; ?>" >
+                                                                        <?php $j=0; foreach($getval as $beer){?>	
                                                                                 <div class="padtb8" id="imgbeer<?php echo $i; ?>_<?php echo $j; ?>">
                                                                                     <div class="col-sm-3 text-right">
                                                                                         <label class="control-label"><?php if($j==0){?>Beers :<?php } ?>  </label>
                                                                                     </div>
-                                                                                    <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_<?php echo $j; ?>" value="<?php echo $cocktail->sp_cocktail_id; ?>" />
+                                                                                    <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_<?php echo $j; ?>" value="<?php echo $beer->sp_beer_id; ?>" />
                                                                                     <div class="col-sm-3" style="padding-left: 15px;">	
-                                                                                        <input type="text" class="form-control tagsbeernew form-pad" id="cocktailid_<?php echo $i; ?>_<?php echo $j; ?>"  name="cocktailid[]" value="<?php echo getBeernameByID($cocktail->sp_cocktail_id); ?>">
+                                                                                        <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_<?php echo $j; ?>"  name="beerid[]" value="<?php echo getBeernameByID($beer->sp_beer_id); ?>">
                                                                                     </div>	
                                                                                     <div class="col-sm-2" style="width: 5%">
                                                                                         <label class="control-label" style="font-size: 16px;">$:</label>
                                                                                     </div>
                                                                                     <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-                                                                                        <input type="text" class="form-control form-pad" id="cocktailprice_<?php echo $j; ?>" name="cocktailprice<?php echo $i; ?>[]" value="<?php echo $cocktail->sp_cocktail_price; ?>">
+                                                                                        <input type="text" class="form-control form-pad" id="beerprice_<?php echo $j; ?>" name="beerprice<?php echo $i; ?>[]" value="<?php echo $beer->sp_beer_price; ?>">
                                                                                     </div>	
                                                                                     <?php if($j==0){ ?>
-                                                                                        <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                        <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                     <?php }else{ ?>
                                                                                         <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
