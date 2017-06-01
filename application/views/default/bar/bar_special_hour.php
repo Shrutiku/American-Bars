@@ -258,8 +258,9 @@ $('.sorted_table').sortable({
                                                                     <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
-                                                                            <h4><div class="col-sm-20">Daily Specials:</div></h4><br><br>
+                                                                           
                                                                             <div class="padtb8">
+                                                                                 <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
                                                                                
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
@@ -2108,7 +2109,7 @@ function addrows(cnt){
    html +=  '<label class="control-label"></label>';
    html +=   '</div>';
 	    
-    html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
+    html +=  '<div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">';
                                                                         html +=         '<label class="control-label">&nbsp&nbsp&nbspDay:</label>';
                                                                    html += '       </div>';
     html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
