@@ -2102,7 +2102,7 @@ function addrows(cnt){
 		$('#cntprococktail'+cnt).val(cntcocktail);
 		//alert(cnt);
 		var html = '';
-	html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb4">';
+	html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb">';
     html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-1 ">';
    html +=  '<label class="control-label"></label>';
    html +=   '</div>';
