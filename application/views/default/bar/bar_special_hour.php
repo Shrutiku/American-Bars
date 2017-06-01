@@ -253,13 +253,7 @@ $('.sorted_table').sortable({
                                                                 </div> 
 	        				 	
                                                             <?php } ?>		
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 26b4d1fb... minus fixing
-=======
->>>>>>> parent of 26b4d1fb... minus fixing
+
                                                                  <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
@@ -372,23 +366,20 @@ $('.sorted_table').sortable({
                                                                                     </div>	
                                                                                     <?php if($j==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                                                            <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
-                                                                if(empty($getvalcocktail)){?>	 		
+                                                <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
+                                                               if(empty($getvalcocktail)){?>	 		
                                                                     <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
                                                                                 <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
-<!--                                                                                <div class="col-sm-1">
+                                                                                <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
-                                                                                </div>-->
-<!--                                                                                <input type="hidden" name="cid<?php // echo $i; ?>[]" id="cid_<?php // echo $i; ?>_0" value="" />
+                                                                                </div>
+                                                                                <input type="hidden" name="cid<?php echo $i; ?>[]" id="cid_<?php echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
-                                                                                    <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php // echo $i; ?>_0"  name="cocktailid[]" value="">
-                                                                                </div>-->
+                                                                                    <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
+                                                                                </div>
                                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">
                                                                                     <select class="form-control">
                                                                                         <option value="">-- Select Day-- </option>
@@ -404,7 +395,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1 text-right">
                                                                                     <label class="control-label">Items: </label>
                                                                                 </div>
-                                                                                <!--<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />-->
+                                                                                <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">	
                                                                                     <input type="text" class="form-control tagscocktailrnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>
@@ -426,7 +417,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1"></div>
                                                                                 <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                 <div class="clearfix"></div>
-                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                         <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -447,41 +438,23 @@ $('.sorted_table').sortable({
                                                                                         <label class="control-label" style="font-size: 16px;">Price : $ </label>
                                                                                     </div>
                                                                                     <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-                                                                                        <input type="text" class="form-control form-pad" id="cocktailprice_<?php echo $c; ?>" name="cocktailprice<?php echo $i; ?>[]" value="<?php echo $cocktail->sp_cocktail_price; ?>">
+                                                                                        <input type="text" class="form-control form-pad" id="cocktailprice<?php echo $c; ?>" name="cocktailprice<?php echo $i; ?>[]" value="<?php echo $cocktail->sp_cocktail_price; ?>">
                                                                                     </div>
                                                                                     <?php if($c==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
->>>>>>> parent of 531f7217... fixing minus
-=======
->>>>>>> parent of 26b4d1fb... minus fixing
-=======
->>>>>>> parent of 26b4d1fb... minus fixing
                                                                                     <?php }else{ ?>
-                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $cocktail->bar_hour_id ?>','cocktail','<?php echo $c;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
                                                                                     <div class="clearfix"></div>
-<<<<<<< HEAD
                                                                                          <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
-<<<<<<< HEAD
-                                                                                </div>
-                                                                        <?php $j++; } ?>
-                                                                    </div>
-                                                                </div> 
-	        				 	
-                                                            <?php } ?>	
-                                                            	 	
-=======
                                                                                 
                                                                                 </div>
-=======
->>>>>>> parent of 6da66135... fixing minus
-                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
+                                                                                         <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
                                                                                 </div>
                                                                             <?php $c++; } ?>	
                                                                         </div>	
                                                                     </div>
-                                                                <?php } ?>		 	
->>>>>>> parent of 531f7217... fixing minus
+                                                                <?php } ?>	
                                                                 <?php $getvalliquor = getBarSpecialHoursByRand($im->rand,'liquor'); 
                                                                     if(empty($getvalliquor)){?>				 	
                                                                         <input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
