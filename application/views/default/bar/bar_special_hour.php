@@ -283,7 +283,7 @@ $('.sorted_table').sortable({
                                                                                     <label class="control-label">Items: </label>
                                                                                 </div>
                                                                                 <!--<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />-->
-                                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">	
+                                                                                <div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">	
                                                                                     <input type="text" class="form-control tagscocktailrnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>
                                                                                 <div class="col-sm-1"> 
