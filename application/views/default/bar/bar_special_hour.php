@@ -260,9 +260,9 @@ $('.sorted_table').sortable({
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                             <div class="padtb8">
                                                                                 <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
-<!--                                                                                <div class="col-sm-1">
+                                                                                <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
-                                                                                </div>-->
+                                                                                </div>
 <!--                                                                                <input type="hidden" name="cid<?php // echo $i; ?>[]" id="cid_<?php // echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
                                                                                     <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php // echo $i; ?>_0"  name="cocktailid[]" value="">
