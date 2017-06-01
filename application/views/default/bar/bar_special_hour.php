@@ -198,7 +198,7 @@ $('.sorted_table').sortable({
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	-->
                                                                             <div class="col-sm-1"></div>                   
-                                                                            <a href="javascript://;" id="add_rowcocktail" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                            <a href="javascript://;" id="" onclick="addrowss('<?php echo $i; ?>')" name="add_rowbeerr" class="add_rowbeerr btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
                                                                             <div class="clearfix"></div>
                                                                                 <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
                                                                         </div>
@@ -1012,6 +1012,70 @@ $('#add_row').click(function(){
 		      
 		 
 		$('#add_rowbeer'+cnt).click(function(){
+	
+		var cntbeer=parseInt($('#cntprobeer1'+cnt).val())+1;
+		if($('#cntprobeer1'+cnt).val() =='NaN')
+		{
+		    $('#cntprobeer1'+cnt).val('1');
+		    cnt = 1;
+		}
+		$('#cntprobeer1'+cnt).val(cntbeer);
+		//alert(cnt);
+		var html = '';
+		html += '<div class="padtb" id="imgbeer'+cnt+'_'+cntbeer+'"><div class="padtb8">';
+	    html +=  ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntbeer+'" value="" /><div class="col-sm-3 text-right">';
+	    html +=  '<label class="control-label"></label>';
+	    html +=   '</div>';
+	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
+	   html +=                   			'<input type="text" class="form-control form-pad tagsbeer'+cnt+cntbeer+'" id="beerid_'+cntbeer+'"  name="beerid[]" value="">';
+	   html +=                   		'</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Price : $</label>';
+	   html +=    				 	'</div>';
+	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
+	  html +=                    			'<input type="text" class="form-control form-pad timepicker-default" id="beerprice_'+cnt+cntbeer+'" name="beerprice'+cnt+'[]" value="">';
+	   html +=                   		'</div>'	;
+	     html +=                 		'<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivebeer_1('+cnt+','+cntbeer+')"><span class="glyphicon glyphicon-minus"></span></a>';
+	     html +=                 			'<div class="clearfix"></div>';
+	     html +=   '</div></div>';
+		
+		$('#innerbeer'+cnt).append(html);
+		$('.tagsbeer'+cnt+cntbeer).autocomplete({
+		      	source: function( request, response ) {
+		      		$.ajax({
+		      			url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
+		      			dataType: "json",
+						data: {
+						   em: request.term,
+						},
+						 success: function( data ) {
+							 response( $.map( data, function( item ) {
+								return {
+									
+									label: item.label,
+									id: item.id,
+									
+							        value: item.value
+								}
+							}));
+						}
+		      		});
+		      	},
+		      	select: function(event, ui) {
+		      		//alert('dsa');
+		      	//alert($(this).attr('id'));
+		      var row= $(this).attr('id');
+		        var myArray = row.split('_');
+		      // alert(cnt+myArray[1]);
+        $("#bid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+    },
+		      	autoFocus: true,
+		      	minLength: 0      	
+		      });
+		$('#imgbeer_'+cnt+cntbeer).slideDown();
+			
+		});
+                $('#add_rowbeerr'+cnt).click(function(){
 	
 		var cntbeer=parseInt($('#cntprobeer1'+cnt).val())+1;
 		if($('#cntprobeer1'+cnt).val() =='NaN')
@@ -1963,6 +2027,70 @@ function addrows(cnt){
 		$('#imgbeer_'+cnt+cntbeer).slideDown();
 			
 	}
+        function addrowss(cnt){		
+		var cntbeer=parseInt($('#cntprobeer'+cnt).val())+1;
+		if($('#cntprobeer'+cnt).val() =='NaN')
+		{
+		    $('#cntprobeer'+cnt).val('1');
+		    cnt = 1;
+		}
+		$('#cntprobeer'+cnt).val(cntbeer);
+		//alert(cnt);
+		var html = '';
+		html += '<div class="padtb" id="imgbeer'+cnt+'_'+cntbeer+'"><div class="padtb8">';
+	    html +=  ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntbeer+'" value="" /><div class="col-sm-3 text-right">';
+	    html +=  '<label class="control-label"></label>';
+	    html +=   '</div>';
+	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
+	   html +=                   			'<input type="text" class="form-control form-pad tagsbeer'+cnt+cntbeer+'" id="beerid_'+cntbeer+'"  name="beerid[]" value="">';
+	   html +=                   		'</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Priceeeeeee : $</label>';
+	   html +=    				 	'</div>';
+	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
+	  html +=                    			'<input type="text" class="form-control form-pad timepicker-default" id="beerprice_'+cnt+cntbeer+'" name="beerprice'+cnt+'[]" value="">';
+	   html +=                   		'</div>'	;
+	     html +=                 		'<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivebeer_1('+cnt+','+cntbeer+')"><span class="glyphicon glyphicon-minus"></span></a>';
+	     html +=                 			'<div class="clearfix"></div>';
+	     html +=   '</div></div>';
+		
+		$('#innerbeer'+cnt).append(html);
+		$('.tagsbeer'+cnt+cntbeer).autocomplete({
+		      	source: function( request, response ) {
+		      		$.ajax({
+		      			url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
+		      			dataType: "json",
+						data: {
+						   em: request.term,
+						},
+						 success: function( data ) {
+							 response( $.map( data, function( item ) {
+								return {
+									
+									label: item.label,
+									id: item.id,
+									
+							        value: item.value
+								}
+							}));
+						}
+		      		});
+		      	},
+		      	select: function(event, ui) {
+		      		//alert('dsa');
+		      	//alert($(this).attr('id'));
+		      var row= $(this).attr('id');
+		        var myArray = row.split('_');
+		      // alert(cnt+myArray[1]);
+        $("#bid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+    },
+		      	autoFocus: true,
+		      	minLength: 0      	
+		      });
+		$('#imgbeer_'+cnt+cntbeer).slideDown();
+			
+	}
+	
 	
 	function addrows_cocktail(cnt){		
 		var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
