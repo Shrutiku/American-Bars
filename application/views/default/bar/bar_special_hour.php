@@ -2041,7 +2041,7 @@ function addrows(cnt){
 //	    html +=  ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntbeer+'" value="" /><div class="col-sm-3 text-right">';
 //	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
-	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
+	     html +=         		'<div class="col-sm-3" style="padding-left: 0px;">';
 	   html +=                   			'<input type="text" class="form-control form-pad tagsbeer'+cnt+cntbeer+'" id="beerid_'+cntbeer+'"  name="beerid[]" value="">';
 	   html +=                   		'</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
