@@ -2108,7 +2108,7 @@ function addrows(cnt){
    html +=   '</div>';
 	    
     html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
-                                                                        html +=         '<label class="control-label">&nbsp&nbsp&nbspDay:</label>';
+                                                                        html +=         '<label class="control-label">&nbsp&nbsp&nbsp&nbspDay:</label>';
                                                                    html += '       </div>';
     html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
                                                                                    html += '<select class="form-control">';
