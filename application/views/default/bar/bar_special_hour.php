@@ -2038,10 +2038,10 @@ function addrows(cnt){
 		//alert(cnt);
 		var html = '';
 		  html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
-//	    html +=  ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntbeer+'" value="" /><div class="col-sm-3 text-right">';
-//	    html +=  '<label class="control-label"></label>';
+    html +=  ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntbeer+'" value="" /><div class="col-sm-3 text-right">';
+    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
-	     html +=         		'<div class="col-sm-3" style="padding-left: 0px;">';
+	     html +=         		'<div class="col-sm-3" style="padding-left: 2px;">';
 	   html +=                   			'<input type="text" class="form-control form-pad tagsbeer'+cnt+cntbeer+'" id="beerid_'+cntbeer+'"  name="beerid[]" value="">';
 	   html +=                   		'</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
@@ -2102,14 +2102,14 @@ function addrows(cnt){
 		$('#cntprococktail'+cnt).val(cntcocktail);
 		//alert(cnt);
 		var html = '';
-//		html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb8">';
-//	    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-1 ">';
-//	    html +=  '<label class="control-label"></label>';
-//	    html +=   '</div>';
+	html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb8">';
+    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-1 ">';
+   html +=  '<label class="control-label"></label>';
+   html +=   '</div>';
 	    
-//          html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
-//                                                                           html +=         '<label class="control-label">Day:</label>';
-//                                                                         html += '       </div>';
+    html +=  '<div class="col-sm-1"style="padding-left: 0px; padding-right: 0px;">';
+                                                                        html +=         '<label class="control-label">Day:</label>';
+                                                                   html += '       </div>';
     html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
                                                                                    html += '<select class="form-control">';
                                                                                    html += '<option value="">-- Select Day-- </option>';
