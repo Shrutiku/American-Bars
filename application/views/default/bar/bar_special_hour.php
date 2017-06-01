@@ -254,6 +254,9 @@ $('.sorted_table').sortable({
 	        				 	
                                                             <?php } ?>		
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 26b4d1fb... minus fixing
                                                                  <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
@@ -366,6 +369,7 @@ $('.sorted_table').sortable({
                                                                                     </div>	
                                                                                     <?php if($j==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+<<<<<<< HEAD
 =======
                                                             <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
                                                                 if(empty($getvalcocktail)){?>	 		
@@ -444,6 +448,8 @@ $('.sorted_table').sortable({
                                                                                     <?php if($c==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 >>>>>>> parent of 531f7217... fixing minus
+=======
+>>>>>>> parent of 26b4d1fb... minus fixing
                                                                                     <?php }else{ ?>
                                                                                         <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
