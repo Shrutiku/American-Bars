@@ -253,7 +253,11 @@ $('.sorted_table').sortable({
                                                                 </div> 
 	        				 	
                                                             <?php } ?>		
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 67a588a6... fixing
                                                                  <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
@@ -366,8 +370,14 @@ $('.sorted_table').sortable({
                                                                                     </div>	
                                                                                     <?php if($j==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+<<<<<<< HEAD
                                                 <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
                                                                if(empty($getvalcocktail)){?>	 		
+=======
+=======
+                                                            <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
+                                                                if(empty($getvalcocktail)){?>	 		
+>>>>>>> parent of 67a588a6... fixing
                                                                     <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
@@ -442,6 +452,10 @@ $('.sorted_table').sortable({
                                                                                     </div>
                                                                                     <?php if($c==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 531f7217... fixing minus
+>>>>>>> parent of 67a588a6... fixing
                                                                                     <?php }else{ ?>
                                                                                         <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
