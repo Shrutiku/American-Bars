@@ -255,12 +255,15 @@ $('.sorted_table').sortable({
                                                             <?php } ?>		
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
 >>>>>>> parent of 67a588a6... fixing
 =======
 >>>>>>> parent of 67a588a6... fixing
+=======
+>>>>>>> parent of 07a28d00... fixing
                                                                  <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
@@ -375,6 +378,7 @@ $('.sorted_table').sortable({
                                                                                         <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                 <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
                                                                if(empty($getvalcocktail)){?>	 		
 =======
@@ -466,11 +470,14 @@ $('.sorted_table').sortable({
 =======
 >>>>>>> parent of 531f7217... fixing minus
 >>>>>>> parent of 67a588a6... fixing
+=======
+>>>>>>> parent of 07a28d00... fixing
                                                                                     <?php }else{ ?>
                                                                                         <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
                                                                                     <div class="clearfix"></div>
                                                                                          <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+<<<<<<< HEAD
                                                                                 
                                                                                 </div>
                                                                                          <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
@@ -479,6 +486,15 @@ $('.sorted_table').sortable({
                                                                         </div>	
                                                                     </div>
                                                                 <?php } ?>	
+=======
+                                                                                </div>
+                                                                        <?php $j++; } ?>
+                                                                    </div>
+                                                                </div> 
+	        				 	
+                                                            <?php } ?>	
+                                                            	 	
+>>>>>>> parent of 07a28d00... fixing
                                                                 <?php $getvalliquor = getBarSpecialHoursByRand($im->rand,'liquor'); 
                                                                     if(empty($getvalliquor)){?>				 	
                                                                         <input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
