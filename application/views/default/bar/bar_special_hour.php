@@ -2037,9 +2037,9 @@ function addrows(cnt){
 		$('#cntprobeer'+cnt).val(cntbeer);
 		//alert(cnt);
 		var html = '';
-		html += '<div class="padtb" id="imgbeer'+cnt+'_'+cntbeer+'"><div class="padtb8">';
-	    html +=  ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntbeer+'" value="" /><div class="col-sm-3 text-right">';
-	    html +=  '<label class="control-label"></label>';
+		  html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
+//	    html +=  ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntbeer+'" value="" /><div class="col-sm-3 text-right">';
+//	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
 	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
 	   html +=                   			'<input type="text" class="form-control form-pad tagsbeer'+cnt+cntbeer+'" id="beerid_'+cntbeer+'"  name="beerid[]" value="">';
