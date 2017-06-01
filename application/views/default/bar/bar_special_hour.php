@@ -367,19 +367,12 @@ $('.sorted_table').sortable({
                                                                                     <?php if($j==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                     <?php }else{ ?>
-                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $cocktail->bar_hour_id ?>','cocktail','<?php echo $c;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
                                                                                     <div class="clearfix"></div>
-<<<<<<< HEAD
                                                                                          <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
                                                                                 </div>
                                                                         <?php $j++; } ?>
-=======
-                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                                </div>
-                                                                            <?php $c++; } ?>	
-                                                                        </div>	
->>>>>>> parent of 6da66135... fixing minus
                                                                     </div>
                                                                 </div> 
 	        				 	
