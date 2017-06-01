@@ -255,6 +255,9 @@ $('.sorted_table').sortable({
                                                             <?php } ?>		
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 26b4d1fb... minus fixing
 =======
 >>>>>>> parent of 26b4d1fb... minus fixing
                                                                  <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
@@ -370,6 +373,7 @@ $('.sorted_table').sortable({
                                                                                     <?php if($j==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                                                             <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
                                                                 if(empty($getvalcocktail)){?>	 		
@@ -448,6 +452,8 @@ $('.sorted_table').sortable({
                                                                                     <?php if($c==0){ ?>
                                                                                         <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
 >>>>>>> parent of 531f7217... fixing minus
+=======
+>>>>>>> parent of 26b4d1fb... minus fixing
 =======
 >>>>>>> parent of 26b4d1fb... minus fixing
                                                                                     <?php }else{ ?>
