@@ -334,6 +334,13 @@ $('.sorted_table').sortable({
                                                                                     <?php } ?>
                                                                                     <div class="clearfix"></div>
                                                                                          <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                <button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    document.getElementById("myTable").deleteRow(0);
+}
+</script>
                                                                                 </div>
                                                                                         <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
                                                                                 </div>
