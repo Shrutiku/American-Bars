@@ -259,7 +259,6 @@ $('.sorted_table').sortable({
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
-                                                                            <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
