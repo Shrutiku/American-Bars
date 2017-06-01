@@ -457,9 +457,10 @@ $('.sorted_table').sortable({
 =======
 >>>>>>> parent of 26b4d1fb... minus fixing
                                                                                     <?php }else{ ?>
-                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $cocktail->bar_hour_id ?>','cocktail','<?php echo $c;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
                                                                                     <div class="clearfix"></div>
+<<<<<<< HEAD
                                                                                          <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
 <<<<<<< HEAD
                                                                                 </div>
@@ -472,6 +473,8 @@ $('.sorted_table').sortable({
 =======
                                                                                 
                                                                                 </div>
+=======
+>>>>>>> parent of 6da66135... fixing minus
                                                                                         <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
                                                                                 </div>
                                                                             <?php $c++; } ?>	
