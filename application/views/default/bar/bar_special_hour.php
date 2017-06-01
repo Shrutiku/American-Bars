@@ -2127,7 +2127,7 @@ function addrows(cnt){
                                                                           html +=      '<label class="control-label">Items: </label>';
                                                                            html += '</div>';
                                                                            html += '<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />';
-                                                                        html +=    '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';	
+                                                                        html +=    '<div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">';	
                                                                              html +=   '<input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">';
                                                                           html +=  '</div>';  
                                                                           html += '<div class="col-sm-1">'; 
