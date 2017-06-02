@@ -312,10 +312,8 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
       console.log('Usage: InfiniteList.loadData_cocktail(offset, length)');
     } else {
       if (serviceEndpoint === 'local') {
-          console.log('FUCK)');
         getRealData_cocktail(o, l, displayFunction);
       } else {
-          console.log('FUCK)');
         getRealData_cocktail(o, l, displayFunction, serviceEndpoint);
       }
     }

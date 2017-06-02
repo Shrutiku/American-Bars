@@ -199,32 +199,32 @@
 						       <div class="clearfix"></div>
 
 						        <div class="mart10 min-height125">
-						        	<?php if($bar_detail['bar_category']){?>
-						        	<div class="socialicon-right">
+						        	<?php // if($bar_detail['bar_category']){?>
+<!--						        	<div class="socialicon-right">
 
 
-                                         <h4 class="bar_add mar_bot10">Bar Type :</h4>
+                                         <h4 class="bar_add mar_bot10">Bar Type :</h4>-->
 
 
                                          	<?php
+//
+//
+//													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+//
+//													$getin = array_slice($getin1, 0, 3);
+//													$getin12 = array_slice($getin1, 3);
+//					     							  foreach($getin as $r)
+//													  {
+//													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
+//													} ?>
 
 
-													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
 
-													$getin = array_slice($getin1, 0, 3);
-													$getin12 = array_slice($getin1, 3);
-					     							  foreach($getin as $r)
-													  {
-													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
-													} ?>
+<!--                                         <div class="clear"></div>
+                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>-->
 
-
-
-                                         <div class="clear"></div>
-                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
-
-                                        </div>
-                                       <?php } ?>
+                                        <!--</div>-->
+                                       <?php // } ?>
 
 						        	<div class="bar_add">
 						        		<i class="strip address"></i>
@@ -274,20 +274,20 @@
 				    	</div>
 
 				    	<div>
-				    		 <div class="mar_top20 like-block wid50 mar_r15 text-right">
-				    		 	 <!-- <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
+                                            <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width: 47%">
+				    		 	 <!-- <?php // $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
 
-								if($cnt_like==2 && get_authenticateUserID()!=''){
+//								if($cnt_like==2 && get_authenticateUserID()!=''){
 								?>
 								<a id="total-like" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn pull-left">Like This Bar</i></a>
 								<?php
-											} elseif(get_authenticateUserID()!='') {?>
-											<a id="total-like" href="javascript:void(0);" name="<?php if($cnt_like==1){ echo $cnt_like=0;} else{ echo $cnt_like=1; } ?>" class="btn btn-lg btn-primary full-btn pull-left">
-											<?php if($cnt_like==1){ echo 'Like This Bar'; } else{ echo 'Already Liked'; } ?></i></a>
-											<?php } else { ?>
+//											} elseif(get_authenticateUserID()!='') {?>
+											<a id="total-like" href="javascript:void(0);" name="<?php // if($cnt_like==1){ echo $cnt_like=0;} else{ echo $cnt_like=1; } ?>" class="btn btn-lg btn-primary full-btn pull-left">
+											<?php // if($cnt_like==1){ echo 'Like This Bar'; } else{ echo 'Already Liked'; } ?></i></a>
+											<?php // } else { ?>
 											<a id="total-like" href="javascript:void(0);" name="1" class="btn btn-lg btn-primary full-btn pull-left">
 											Like This Bar</a>
-								<?php  } ?>
+								<?php //  } ?>
 		     					<div class="bar_add mar_bot10 pull-right">We Liked This Bar</div> -->
 		     					<div class="clearfix"></div>
 		     					<?php
@@ -299,17 +299,16 @@
                                 		<?php
 
                                 		if($barhours){
-                                		$get =	array_slice($barhours, 0, 3);
+                                		$get =	array_slice($barhours, 0, 7);
      							  foreach($get as $r){ ?>
      							<li>
      								<div class="schedule-text"><?php echo $r->days;?></div>
      								<?php if($r->is_closed!='yes'){ ?>
-     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "Closed"; }?></div>
+     								<div class="schedule-text"><?php if($r->is_closed!='yes'){  print( date("g:i a", strtotime($r->start_from)) ); } else { echo "test"; }?></div>
      									<div class="schedule-text dash">-</div>
      								<div class="schedule-text"><?php if($r->is_closed!='yes'){ print( date("g:i a", strtotime($r->start_to)) ); } else { echo "Closed"; }?></div>
      								<?php } else {?>
-     									<div class="schedule-text dash">-</div>
-     									<div class="schedule-text">Closed.</div>
+     									<div class="schedule-text">Closed</div>
      							<?php } ?>
      								<div class="clearfix"></div>
      							</li>
@@ -324,28 +323,41 @@
 			     				<div class="clearfix"></div>
 			     				<?php
 									if($barhours){ ?>
-			     				<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>
+			     				<!--<a  href="#openhour" data-toggle='modal' class="mar_top5">View All </a>-->
 			     				<?php } ?>
 		     				</div>
-		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
-								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
-										 $bar_detail['american_p']==1){ ?>
-
-
-		     				<div class="mar_top20 wid50 like-block">
-		     					<div class="bar_add mar_bot10">Payment Type Accepted :</div>
+                                            <?php if($bar_detail['bar_category']){?>
+                                                <div class="mar_top20 wid50 like-block" style="width:34%; height: 250px">
+                                                    <h4 class="bar_add mar_bot10">Bar Type :</h4>
+                                                        <?php
+                                                        $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+                                                        $getin = array_slice($getin1, 0, 5);
+                                                        $getin12 = array_slice($getin1, 3);
+                                                        foreach($getin as $r)
+                                                        {
+                                                            echo '<p>'.'&#149; '.getCatname($r).'</p>';
+                                                        } ?>
+                                                    <div class="clear"></div>
+                                                    <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
+                                                </div>
+                                            <?php } ?>
+		     					<?php // if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
+//								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
+//										 $bar_detail['american_p']==1){ ?>
+                                            <div class="mar_top20 wid50 like-block pull-right" style="width: 15%; text-align: center; height: 250px;">
+		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
 		     						<li><i class="strip cash"></i></li>
-		     						<?php } ?>
+                                                                        <?php } ?>
+                                                                <?php if($bar_detail['visa_p']==1){?>
+		     						<li><i class="strip visa"></i></li>
+		     							<?php } ?>
 		     						<?php if($bar_detail['master_p']==1){?>
 		     						<li><i class="strip master-card"></i></li>
 		     							<?php } ?>
 		     						<?php if($bar_detail['american_p']==1){?>
 		     						<li><i class="strip american-express"></i></li>
-		     							<?php } ?>
-		     						<?php if($bar_detail['visa_p']==1){?>
-		     						<li><i class="strip visa"></i></li>
 		     							<?php } ?>
 		     						<?php if($bar_detail['paypal_p']==1){?>
 		     						<li><i class="strip payapl"></i></li>
@@ -355,11 +367,11 @@
 		     							<?php } ?>
 		     						<?php if($bar_detail['apple_p']==1){?>
 		     						<li><i class="strip apple-pay"></i></li>
-		     								<?php } ?>
+                                                                        <?php } ?>
 		     					</ul>
 
 	     				  </div>
-	     				  	<?php } ?>
+	     				  	<?php // } ?>
 				    	</div>
      			</div>
      			<div class="modal fade login_pop2" id="openhour" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -512,8 +524,8 @@
 
      		</div>
 
-     		<div class="fullmug_block">
-     			<div class="col-md-4 col-sm-5 padb20">
+     		<div class="fullmug_block mart10">
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Bar Events</h1>
      					<ul class="bottom_box">
@@ -546,7 +558,7 @@
      				</div>
      			</div>
 
-     			<div class="col-md-4 col-sm-5 padb20">
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Beers Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list">
@@ -554,8 +566,8 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php if($bar_detail['serve_as']=='cocktail'){?>
-     			<div class="col-md-4 col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='cocktail'){?>
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Cocktails Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-cocktail">
@@ -563,10 +575,10 @@
 	         		<div class="clear"></div></ul><div class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>
+     		<?php // } ?>
 
-     		<?php if($bar_detail['serve_as']=='liquor'){?>
-     			<div class="col-md-4 col-sm-5 padb20">
+     		<?php // if($bar_detail['serve_as']=='liquor'){?>
+     			<div class="col-md-3 padb20">
      				<div class="bar_bg">
      					<h1 class="box_title">Liquors Served at Bar</h1>
      					<ul class="bottom_box" id="infinite-list-liquor">
@@ -574,7 +586,7 @@
 	         		<div class="clear"></div></ul><divbeer_state class="clear"></div>
      				</div>
      			</div>
-     		<?php } ?>
+     		<?php // } ?>
      			<div class="clearfix"></div>
      		</div>
      		<div>
@@ -924,7 +936,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 <div class="modal fade login_pop2" id="opencategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 						<div class="padtb10">
      	<div class="container">
-     		<div class="result_box clearfix mar_top30bot20">
+            <div class="result_box clearfix mar_top30bot20" style="margin-top: ">
      			<div class="login_block br_green_yellow">
      				<div class="result_search">
      					 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
@@ -1454,7 +1466,7 @@ $(document).ready(function(){
 
 		       		if($("#sess_id").val()==1)
 		       		{
-		       		 var retVal = confirm("Are you want to Send Postcard ?");
+		       		 var retVal = confirm("Do you want to send this postcard?");
 					   if( retVal == true ){
 					      //alert("User wants to continue!");
 						  return true;
@@ -1617,7 +1629,7 @@ $(document).ready(function(){
 				$("#rating").val("");
 				$("#desc_post_card").val("");
 				$("#cm-err-main").html("");
-				$.growlUI('<?php echo "Your Review add successfully ."; ?>');
+				$.growlUI('<?php echo "Your review was added successfully ."; ?>');
 			}
 			var data = '';
 			data += '<li>';
