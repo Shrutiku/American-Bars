@@ -740,7 +740,7 @@ function fbShare(){
 	     		<div class="result_search_text">Beer Details</div>
      		</div>
      		<div class="br_bott_yellow">
-     			<div class="bar_details">
+     			<div class="bar_details lol4">
      				<div class="media">
      						<div class="pull-left wid215">
 							    <a  href="javascript:void(0);">

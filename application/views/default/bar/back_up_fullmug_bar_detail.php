@@ -155,7 +155,7 @@ $('#comment_title').live('click', function(e){
 	             <div class="clearfix"></div>
      		</div>
      		<div class="br_bott_yellow">
-     			<div class="bar_details">
+     			<div class="bar_details lol3">
      				<div class="media">
 						    <a class="pull-left widheig120" href="#">
 						      	<img src="<?php echo base_url().'default'?>/images/120x120_img.png" />

@@ -78,7 +78,7 @@
      		</div>
      		<div class="br_bott_yellow">
      			<div>
-     			<div class="bar_details">
+     			<div class="bar_details lol1">
      				<div class="media">
      					<div class="pull-left left-img">
 						    <a class="widheig120 mar_bot10" href="#">
@@ -1178,7 +1178,7 @@ span.required {
 	   useCSS: false,
 	   preloadImages:'all',
 	   speed: 1500,
-	   auto:false,
+	   auto:false
 	});
 	$('.bxsliderp').bxSlider({
 		// mode: 'horizontal',

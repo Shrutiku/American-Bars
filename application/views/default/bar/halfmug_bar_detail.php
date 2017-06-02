@@ -266,7 +266,7 @@ function piShare()
 	             <div class="clearfix"></div>
      		</div>
      		<div class="br_bott_yellow">
-     			<div class="bar_details">
+     			<div class="bar_details lol2">
      				<div class="media">
 						    <div class="pull-left left-img">
 						    <a class="widheig120 mar_bot10" href="#">
