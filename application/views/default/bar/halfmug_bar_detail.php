@@ -382,7 +382,7 @@ function piShare()
 		    		 					</ul>
 		    		 				</div>	
 						       		<div class="clearfix"></div>
-						       <!-- <div class="rating_box">
+						        <div class="rating_box">
 						       	<?php
 						    		 if($this->session->userdata('user_type')!='bar_owner')
 		{
@@ -400,7 +400,7 @@ function piShare()
 											<?php } else { ?>
 												<a id="total-fav" class="favourite_text" href="javascript:void(0);" name="1" ><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>
 											<?php } }?>	
-						       	</div> -->
+						       	</div> 
 						       <div class="clearfix"></div>
 						    
 						       
@@ -413,32 +413,32 @@ function piShare()
 						        <?php } else {?> -
 						        	<?php } ?>		</p> -->
 						        	
-						        <?php if($bar_detail['bar_category']){?>	
-						        	<div class="socialicon-right">
+						        <?php // if($bar_detail['bar_category']){?>	
+<!--						        	<div class="socialicon-right">
 						        		
 						        		
                                          <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                          
-                                         
+                                         -->
                                          	<?php
-					     							
-													
-													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
-					     							
-													$getin = array_slice($getin1, 0, 3);
-													$getin12 = array_slice($getin1, 3);
-					     							  foreach($getin as $r)
-													  {
-													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
-													} ?>
+//					     							
+//													
+//													 $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+//					     							
+//													$getin = array_slice($getin1, 0, 3);
+//													$getin12 = array_slice($getin1, 3);
+//					     							  foreach($getin as $r)
+//													  {
+//													  	  echo '<p>'.'&#149; '.getCatname($r).'</p>';
+//													} ?>
 													
 													  
 													
-                                         <div class="clear"></div>
+<!--                                         <div class="clear"></div>
                                     <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
 		    		 									       
-                                        </div>
-                                       <?php } ?> 
+                                        </div>-->
+                                       <?php // } ?> 
 						        	<div class="bar_add">
 						        		<i class="strip address"></i>
 						        		<div class="address-strip">
@@ -510,6 +510,25 @@ function piShare()
 			     				<a class="more" href="javascript://" id="view-all">View All </a>
 			     				<?php } ?>
 						    </div>
+                                                    <?php if($bar_detail['bar_category']){?>	
+						        	<!--<div class="socialicon-right">-->
+                                                                <div class="mar_top20 like-block wid50 mar_r15 text-right pull-right">
+                                                                    <h4 class="bar_add mar_bot10">Bar Type :</h4>
+                                                                           <?php
+                                                                                    $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
+
+                                                                                   $getin = array_slice($getin1, 0, 3);
+                                                                                   $getin12 = array_slice($getin1, 3);
+                                                                             foreach($getin as $r)
+                                                                                     {
+                                                                                             echo '<p>'.'&#149; '.getCatname($r).'</p>';
+                                                                                   } ?>
+                                                                    <div class="clear"></div>
+                                                               <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
+
+                                                                   </div>
+                                                                  <?php } ?>
+                                                    
 				    		<div class="clearfix"></div>
      			</div>
      			<div class="right_gallery_block">
