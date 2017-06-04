@@ -161,8 +161,6 @@ $('#comment_title').live('click', function(e){
 </script>
 
 <script type="text/javascript">
-
-  
 	 $(document).ready(function () 
 	 {
 		$('#star1').rating('www.url.php', {maxvalue:5});
