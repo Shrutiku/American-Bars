@@ -1638,12 +1638,12 @@ $('#add_row').click(function(){
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
             
-             html +=                       '  <div class="col-sm-1">';
-             html+=                       '<label class="control-label" style="font-size: 16px;">Dayssss:</label>';
-             html+='</div>';
-	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
-	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail" id="cocktailid_'+cnt+'"  name="cocktailid[]" value="">';
-	   html +=                   		'</div>';
+//             html +=                       '  <div class="col-sm-1">';
+//             html+=                       '<label class="control-label" style="font-size: 16px;">Dayssss:</label>';
+//             html+='</div>';
+//	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
+//	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail" id="cocktailid_'+cnt+'"  name="cocktailid[]" value="">';
+//	   html +=                   		'</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
 	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Daysss : $</label>';
 	   html +=    				 	'</div>';
