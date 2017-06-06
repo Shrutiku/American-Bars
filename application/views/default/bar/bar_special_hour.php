@@ -563,11 +563,15 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label pull-right" style="font-size: 16px;">  Time:</label>
                                                                 </div>
                                                                 <div class="col-sm-1" style="width: 13%" >
-                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                    <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                 </div>
                                                                 <div class="col-sm-1"  style="width: 13%">	
-                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                                                </div>
+                                                                    <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                </div> 
+                                                                <div class="col-sm-1"></div>                   
+                                                                    <a href="javascript://;" id="" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
+                                                                <div class="clearfix"></div>
+                                                                <br>
 <!--                                                                <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
                                                                 </div>
@@ -1634,12 +1638,12 @@ $('#add_row').click(function(){
 	    html +=  '<label class="control-label"></label>';
 	    html +=   '</div>';
             
-             html +=                       '  <div class="col-sm-1">';
-             html+=                       '<label class="control-label" style="font-size: 16px;">Dayssss:</label>';
-             html+='</div>';
-	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
-	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail" id="cocktailid_'+cnt+'"  name="cocktailid[]" value="">';
-	   html +=                   		'</div>';
+//             html +=                       '  <div class="col-sm-1">';
+//             html+=                       '<label class="control-label" style="font-size: 16px;">Dayssss:</label>';
+//             html+='</div>';
+//	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
+//	   html +=                   			'<input type="text" class="form-control form-pad tagscocktail" id="cocktailid_'+cnt+'"  name="cocktailid[]" value="">';
+//	   html +=                   		'</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
 	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Daysss : $</label>';
 	   html +=    				 	'</div>';
