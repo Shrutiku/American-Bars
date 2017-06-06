@@ -488,6 +488,8 @@ function getRealData_cocktail(offset, limit, callback, serviceEndpoint) {
   pub.loadData_favorite_cocktail = loadData_favorite_cocktail;
   pub.loadData_favorite_liquor = loadData_favorite_liquor;
   
+  pub.getRealData = getRealData;
+  
 
   return pub;
 }());
