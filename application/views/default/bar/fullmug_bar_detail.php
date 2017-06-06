@@ -1925,11 +1925,11 @@ function loadTaxi()
     						 setTimeout(function() {
 					       loadData_taxi(0,15);
 					       check();
-//					       $('#infinite-favorite-taxi').slimscroll({
-//		        alwaysVisible: true,
-//		        height: 200,
-//		        color: '#f19d12',
-//		        opacity: .8
+					       $('#infinite-favorite-taxi').slimscroll({
+		        alwaysVisible: true,
+		        height: 200,
+		        color: '#f19d12',
+		        opacity: .8
 		      });
 						}, 200);
 		   	});
