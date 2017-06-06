@@ -891,7 +891,7 @@ $('#add_row').click(function(){
 //	    html += '</div>';
 
 //            html += '<input type="hidden" name="cntpro" id="cntpro" value="0" />';
-            html += '<div class="padtb">';
+            html += '<div class="padtb" id="img_'+cnt+'" style="display:none;">';
                 html += '<div class="col-sm-1">';
                     html += '<label class="control-label" style="font-size: 16px;">Days:</label>';
                 html += '</div>';
@@ -911,7 +911,7 @@ $('#add_row').click(function(){
                     html += '<label class="control-label" style="font-size: 16px;">to</label>';
                 html += '</div>';
                 html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;"> ';                                                                                 
-                    html += '<select class="form-control">''
+                    html += '<select class="form-control">';
                         html += '<option value="">-- Select Day-- </option>';
                         html += '<option value="monday">Monday</option>';
                         html += '<option value="tuesday">Tuesday</option>';
@@ -930,6 +930,9 @@ $('#add_row').click(function(){
                 html += '</div>';
                 html += '<div class="col-sm-1"  style="width: 13%">';	
                     html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">';
+                html += '</div>';
+                html += '<div class="span3">';
+                    html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
                 html += '</div>';
             html += '</div>';
 
