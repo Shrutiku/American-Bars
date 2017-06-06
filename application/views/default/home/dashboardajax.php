@@ -95,6 +95,7 @@ span.required {
 		     				<div class="map_mainblock">
 		     					<div class="dashboard_beer_detail">
 		     						<ul class="dashboard_list">
+                                                                    <?php $name = @$getbar['first_name']." ".@$getbar['last_name'];?>
                                                                     <li><span class="marr_10">Bar Name: </span> <?php echo @$getbar['bar_title']; ?></li>
                                                                     <li><span class="marr_10">Bar Owner: </span> <?php echo $name; ?></li>
                                                                     <!--<li><span class="marr_10">Bar Owner First Name: </span> <?php //echo @$getbar['first_name']; ?></li>-->
