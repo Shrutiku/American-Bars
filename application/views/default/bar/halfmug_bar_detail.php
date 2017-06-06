@@ -486,7 +486,7 @@ function piShare()
 											<a id="total-like" href="javascript:void(0);" name="1" class="btn btn-lg btn-primary full-btn pull-left">
 											Like This Bar</a>
 								<?php  } ?>
-		     					<div class="bar_add mar_bot10 pull-right">We Liked This Bar</div>
+                                                                <div class="bar_add mar_bot10 pull-right" style="width:45%;height:250px;">We Liked This Bar</div>
 		     					<div class="clearfix"></div>
 			     				<ul class="likeduser marl_0 mart10">
 									<?php 
@@ -510,7 +510,7 @@ function piShare()
 						    </div>
                                                     <?php if($bar_detail['bar_category']){?>	
 						        	<!--<div class="socialicon-right">-->
-                                                                <div class="mar_top20 like-block wid50 mar_r15" style="width:33%">
+                                                                <div class="mar_top20 like-block wid50 mar_r15" style="width:33%; height:250px">
                                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                                            <?php
                                                                                     $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
