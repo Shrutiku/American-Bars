@@ -470,7 +470,7 @@ function piShare()
 						    </div>
 						    <div class="clearfix"></div>
                               
-						    <div class="mar_top20 like-block wid50 mar_r15 text-right">
+                                                    <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width:45%;height:250px;">
 						    	
 						    	
 						    	   <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
@@ -486,7 +486,7 @@ function piShare()
 											<a id="total-like" href="javascript:void(0);" name="1" class="btn btn-lg btn-primary full-btn pull-left">
 											Like This Bar</a>
 								<?php  } ?>
-                                                                <div class="bar_add mar_bot10 pull-right" style="width:45%;height:250px;">We Liked This Bar</div>
+                                                                <div class="bar_add mar_bot10 pull-right" style="">We Liked This Bar</div>
 		     					<div class="clearfix"></div>
 			     				<ul class="likeduser marl_0 mart10">
 									<?php 
