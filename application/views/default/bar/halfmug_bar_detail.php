@@ -510,7 +510,7 @@ function piShare()
 						    </div>
                                                     <?php if($bar_detail['bar_category']){?>	
 						        	<!--<div class="socialicon-right">-->
-                                                                <div class="mar_top20 like-block wid50 mar_r15 pull-right" style="width:45%">
+                                                                <div class="mar_top20 like-block wid50 mar_r15" style="width:33%">
                                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                                            <?php
                                                                                     $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
@@ -526,7 +526,33 @@ function piShare()
 
                                                                    </div>
                                                                   <?php } ?>
-                                                    
+                                                    <div class="mar_top20 wid50 like-block pull-right" style="width: 15%; text-align: center; height: 250px;">
+		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
+		     					<ul class="cashicon-list">
+		     						<?php if($bar_detail['cash_p']==1){?>
+		     						<li><i class="strip cash"></i></li>
+                                                                        <?php } ?>
+                                                                <?php if($bar_detail['visa_p']==1){?>
+		     						<li><i class="strip visa"></i></li>
+		     							<?php } ?>
+		     						<?php if($bar_detail['master_p']==1){?>
+		     						<li><i class="strip master-card"></i></li>
+		     							<?php } ?>
+		     						<?php if($bar_detail['american_p']==1){?>
+		     						<li><i class="strip american-express"></i></li>
+		     							<?php } ?>
+		     						<?php if($bar_detail['paypal_p']==1){?>
+		     						<li><i class="strip payapl"></i></li>
+		     							<?php } ?>
+		     						<?php if($bar_detail['bitcoin_p']==1){?>
+		     						<li><i class="strip bit-coin"></i></li>
+		     							<?php } ?>
+		     						<?php if($bar_detail['apple_p']==1){?>
+		     						<li><i class="strip apple-pay"></i></li>
+                                                                        <?php } ?>
+		     					</ul>
+
+                                                    </div>
 				    		<div class="clearfix"></div>
      			</div>
      			<div class="right_gallery_block">

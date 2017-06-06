@@ -1926,10 +1926,10 @@ function loadTaxi()
 					       loadData_taxi(0,15);
 					       check();
 //					       $('#infinite-favorite-taxi').slimscroll({
-		        alwaysVisible: true,
-		        height: 200,
-		        color: '#f19d12',
-		        opacity: .8
+//		        alwaysVisible: true,
+//		        height: 200,
+//		        color: '#f19d12',
+//		        opacity: .8
 		      });
 						}, 200);
 		   	});
@@ -1992,7 +1992,6 @@ function getBarSpecialHours(day)
 	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
 	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
 	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
-
 </script>
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
