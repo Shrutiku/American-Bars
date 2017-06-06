@@ -567,7 +567,8 @@ $('.sorted_table').sortable({
                                                                 </div>
                                                                 <div class="col-sm-1"  style="width: 13%">	
                                                                     <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                                                </div>
+                                                                </div> 
+                                                                <br>
 <!--                                                                <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
                                                                 </div>
