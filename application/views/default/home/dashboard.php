@@ -359,7 +359,7 @@ B.show();
 	                       	</div>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">First Name : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Owner First Name : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" name="first_name" id="first_name" value="<?php echo @$getalldata->first_name; ?>">
@@ -368,7 +368,7 @@ B.show();
 	                       	</div>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Last Name : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Owner Last Name : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="last_name" name="last_name" value="<?php echo @$getalldata->last_name; ?>">
@@ -378,7 +378,7 @@ B.show();
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Email : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Owner Email : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="email" name="email" value="<?php echo @$getalldata->email; ?>">
@@ -388,22 +388,15 @@ B.show();
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Address : <span class="aestrick"> * </span></label>
+	        				 		<label class="control-label">Street Address : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<textarea rows="3" placeholder="Address" name="address" id="address" class="form-control form-pad"><?php echo @$getalldata->address; ?></textarea>
+                                            <input type="text" placeholder="Address" name="address" id="address" class="form-control form-pad" value="<?php echo @$getalldata->address; ?>">
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
-	                       	<div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Description :</label>
-	        				 	</div>
-	                       		<div class="input_box col-sm-7">
-	                           		<textarea rows="10" placeholder="Description" name="desc" id="desc" class="form-control form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
-	                       		</div>
-	                       		<div class="clearfix"></div>
-	                       	</div>
+                                 
+	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">City : <span class="aestrick"> * </span></label>
@@ -431,6 +424,16 @@ B.show();
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
+                                 
+                                <div class="padtb">
+	        				 	<div class="col-sm-3 text-right">
+	        				 		<label class="control-label">Bar Description :</label>
+	        				 	</div>
+	                       		<div class="input_box col-sm-7">
+	                           		<textarea rows="10" placeholder="Description" name="desc" id="desc" class="form-control form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
+	                       		</div>
+	                       		<div class="clearfix"></div>
+	                       	</div>
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
@@ -455,7 +458,7 @@ B.show();
 	                       	<?php if($getbar['bar_type']=='full_mug'){?>
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Bar Video Link : </label>
+	        				 		<label class="control-label">Video Link : </label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7" >
 	                           		<input type="text" class="form-control form-pad" id="bar_video_link" name="bar_video_link" value="<?php echo @$getalldata->bar_video_link; ?>">
