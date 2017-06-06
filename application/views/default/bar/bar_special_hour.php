@@ -570,7 +570,7 @@ $('.sorted_table').sortable({
                                                                 </div> 
                                                                 <br>
                                                                 <div class="col-sm-1"></div>                   
-                                                                    <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
+                                                                    <a href="javascript://;" id="" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
                                                                 <div class="clearfix"></div>
 <!--                                                                <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
