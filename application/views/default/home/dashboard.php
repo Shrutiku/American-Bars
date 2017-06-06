@@ -269,7 +269,7 @@ B.show();
 		     							<!--<li><span class="marr_10">Bar Owner Last Name: </span> <?php //echo @$getbar['last_name']; ?></li>-->
 		     							<li><span class="marr_10">Owner Email: </span> <?php echo @$getbar['email']; ?></li>
 		     							 									
-		     							<!--<li><span class="marr_10">Gender : </span> <?php echo @$getbar['gender']; ?></li>-->
+		     							<!--<li><span class="marr_10">Gender : </span> <?php// echo @$getbar['gender']; ?></li>-->
 		     							<!-- <li><span class="marr_10">Address : </span> <?php echo @$getbar['address']; ?></li>
 		     							<li><span class="marr_10">City : </span> <?php echo @$getbar['city']; ?></li>
 		     							<li><span class="marr_10">State : </span> <?php echo @$getbar['state']; ?></li>

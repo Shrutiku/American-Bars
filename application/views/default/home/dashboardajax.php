@@ -95,26 +95,50 @@ span.required {
 		     				<div class="map_mainblock">
 		     					<div class="dashboard_beer_detail">
 		     						<ul class="dashboard_list">
-		     							<li><span class="marr_10">Bar Name : </span> <?php echo @$getbar['bar_title']; ?></li>
-		     							<li><span class="marr_10">Bar Owner First Name  : </span> <?php echo @$getbar['first_name']; ?></li>
-		     							<li><span class="marr_10">Bar Owner Last Name  : </span> <?php echo @$getbar['last_name']; ?></li>
-		     							<li><span class="marr_10">Bar Owner Email : </span> <?php echo @$getbar['email']; ?></li>
+                                                                    <li><span class="marr_10">Bar Name: </span> <?php echo @$getbar['bar_title']; ?></li>
+                                                                    <li><span class="marr_10">Bar Owner: </span> <?php echo $name; ?></li>
+                                                                    <!--<li><span class="marr_10">Bar Owner First Name: </span> <?php //echo @$getbar['first_name']; ?></li>-->
+                                                                    <!--<li><span class="marr_10">Bar Owner Last Name: </span> <?php //echo @$getbar['last_name']; ?></li>-->
+                                                                    <li><span class="marr_10">Owner Email: </span> <?php echo @$getbar['email']; ?></li>
+
+                                                                    <!--<li><span class="marr_10">Gender : </span> <?php// echo @$getbar['gender']; ?></li>-->
+                                                                    <!-- <li><span class="marr_10">Address : </span> <?php echo @$getbar['address']; ?></li>
+                                                                    <li><span class="marr_10">City : </span> <?php echo @$getbar['city']; ?></li>
+                                                                    <li><span class="marr_10">State : </span> <?php echo @$getbar['state']; ?></li>
+                                                                    <li><span class="marr_10">Zip Code : </span> <?php echo @$getbar['zipcode']; ?></li> -->
+
+
+                                                                    <!--<li><span class="marr_10">Address: </span> <?php // echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>-->
+                                                                    <li><span class="marr_10">Address: </span> <?php echo @$getbar['address'].' '.@$getbar['city'].', '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
+
+                                                                    <?php if($getbar['phone']){?>
+                                                                    <li><span class="marr_10">Phone: </span> <?php echo @$getbar['phone']; ?></li>
+                                                                            <?php } ?>   
+                                                                                    <?php if($getbar['website']){?>
+                                                                    <li><span class="marr_10">Web Site: </span> <?php echo @$getbar['website']; ?></li>
+                                                                            <?php } ?>  
+                                                                    <li class="marr_10"><span class="marr_10" style="height: 114px;">Description:</span><p><?php if(strip_tags(strlen($getbar['bar_desc'])>350)){ echo substr(strip_tags($getbar['bar_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($getbar['bar_desc']); } ?></p></li> 
+		     						
+<!--		     							<li><span class="marr_10">Bar Name : </span> <?php // echo @$getbar['bar_title']; ?></li>
+		     							<li><span class="marr_10">Bar Owner First Name  : </span> <?php // echo @$getbar['first_name']; ?></li>
+		     							<li><span class="marr_10">Bar Owner Last Name  : </span> <?php // echo @$getbar['last_name']; ?></li>
+		     							<li><span class="marr_10">Bar Owner Email : </span> <?php // echo @$getbar['email']; ?></li>
 		     							 									
-		     							<li><span class="marr_10">Gender : </span> <?php echo @$getbar['gender']; ?></li>
-		     							<!-- <li><span class="marr_10">Address : </span> <?php echo @$getbar['address']; ?></li>
-		     							<li><span class="marr_10">City : </span> <?php echo @$getbar['city']; ?></li>
-		     							<li><span class="marr_10">State : </span> <?php echo @$getbar['state']; ?></li>
-		     							<li><span class="marr_10">Zip Code : </span> <?php echo @$getbar['zipcode']; ?></li> -->
+		     							<li><span class="marr_10">Gender : </span> <?php // echo @$getbar['gender']; ?></li>
+		     							 <li><span class="marr_10">Address : </span> <?php // echo @$getbar['address']; ?></li>
+		     							<li><span class="marr_10">City : </span> <?php // echo @$getbar['city']; ?></li>
+		     							<li><span class="marr_10">State : </span> <?php // echo @$getbar['state']; ?></li>
+		     							<li><span class="marr_10">Zip Code : </span> <?php // echo @$getbar['zipcode']; ?></li> 
 		     							
 		     							
-		     							<li><span class="marr_10">Address : </span> <?php echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
+		     							<li><span class="marr_10">Address : </span> <?php // echo @$getbar['address'].'<br><span class="pull-left" style="margin-left:69px;">'.@$getbar['city'].' , '.@$getbar['state'].' '.@$getbar['zipcode']; ?></span><div class="clearfix"></div></li>
 		     							
-		     							<?php if($getbar['phone']){?>
-		     							<li><span class="marr_10">Phone : </span> <?php echo @$getbar['phone']; ?></li>
-		  								<?php } ?>   
-		  									<?php if($getbar['website']){?>
-		     							<li><span class="marr_10">Website : </span> <?php echo @$getbar['website']; ?></li>
-		  								<?php } ?>  
+		     							<?php // if($getbar['phone']){?>
+		     							<li><span class="marr_10">Phone : </span> <?php // echo @$getbar['phone']; ?></li>
+		  								<?php // } ?>   
+		  									<?php // if($getbar['website']){?>
+		     							<li><span class="marr_10">Website : </span> <?php // echo @$getbar['website']; ?></li>
+		  								<?php // } ?>  -->
 		     							<!-- <li><span class="marr_10">Description : </span> Erich</li> -->
 		     						</ul>
 		     					</div>
