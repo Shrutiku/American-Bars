@@ -1003,7 +1003,7 @@ span.required {
 </style>
  <!--------------Scroll ------------------->
 	<link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
-	<script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
+	<!--<script src="<?php // echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>-->
 	<script src="<?php echo base_url().getThemeName(); ?>/js/prettify.js"></script>
 	<script type="text/javascript">
 //		$(function(){
@@ -1066,23 +1066,6 @@ span.required {
 
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-
-<?php $theme_url = $urls= base_url().getThemeName();?>
-<script>
-	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
-
-</script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/image_script.js"></script>
-<script type="text/javascript" src="<?php echo $theme_url; ?>/js/jquery_form.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/js/rating.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
- <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
- <script type="text/javascript">InfiniteList.loadData(0,100); InfiniteList.loadData_cocktail(0,100);InfiniteList.loadData_liquor(0,100);</script>
 
 <script>
  $(document).ready(function () {
@@ -1942,7 +1925,7 @@ function loadTaxi()
     						 setTimeout(function() {
 					       loadData_taxi(0,15);
 					       check();
-					       $('#infinite-favorite-taxi').slimscroll({
+//					       $('#infinite-favorite-taxi').slimscroll({
 		        alwaysVisible: true,
 		        height: 200,
 		        color: '#f19d12',
@@ -2004,6 +1987,22 @@ function getBarSpecialHours(day)
 </div>  -->
 
 
+<?php $theme_url = $urls= base_url().getThemeName();?>
+<script>
+	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
+	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
+	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
+
+</script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/image_script.js"></script>
+<script type="text/javascript" src="<?php echo $theme_url; ?>/js/jquery_form.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/js/rating.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
+ <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
+ <script type="text/javascript">InfiniteList.loadData(0,100); InfiniteList.loadData_cocktail(0,100);InfiniteList.loadData_liquor(0,100);</script>
 
 
 
