@@ -925,7 +925,26 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 		$contentstring1 = '<html><body><div><p><b>Bar Name :</b>'.mysql_real_escape_string($bar_detail['bar_title']).'</p><p><b>Bar Address :</b> '.$bar_detail['address'].", ".$bar_detail['state']." ".$bar_detail['zipcode'].'</p></div></body></html>'	;
 		
 		?>
-   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>        
+   
+
+<?php $theme_url = $urls= base_url().getThemeName();?>
+<script>
+	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
+	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
+	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
+</script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/image_script.js"></script>
+<script type="text/javascript" src="<?php echo $theme_url; ?>/js/jquery_form.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/js/rating.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
+ <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
+ <script type="text/javascript">InfiniteList.loadData(0,100); InfiniteList.loadData_cocktail(0,100);InfiniteList.loadData_liquor(0,100);</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>        
 <script type="text/javascript">
 
 	
@@ -1603,24 +1622,6 @@ function initialize()
     overflow-y: scroll;
 }
 </style>	
-
-	
-
-<?php $theme_url = $urls= base_url().getThemeName();?>
-<script>
-	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
-	var base_url_liquor = '<?php echo site_url('bar/getmoreliquor/?bar_id='.$bar_detail['bar_id']); ?>';
-</script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/rating.js"></script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/image_script.js"></script>
-<script type="text/javascript" src="<?php echo $theme_url; ?>/js/jquery_form.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/js/rating.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/jquery.bxslider.css" />
- <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/infiniteScroll.js"></script>
- <script type="text/javascript">InfiniteList.loadData(0,100); InfiniteList.loadData_cocktail(0,100);InfiniteList.loadData_liquor(0,100);</script>
 
 
 
