@@ -1258,7 +1258,7 @@ $(".pagination li a").click(function() {
     
     
      
-    map.fitBounds(bounds);
+//    map.fitBounds(bounds);
     	directionsDisplay.setMap(map);
 		google.maps.event.trigger(map, 'resize');
 	}
