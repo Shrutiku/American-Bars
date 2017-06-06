@@ -891,7 +891,7 @@ $('#add_row').click(function(){
 //	    html += '</div>';
 
 //            html += '<input type="hidden" name="cntpro" id="cntpro" value="0" />';
-            html += '<div class="padtb">';
+            html += '<div class="padtb" id="img_'+cnt+'" style="display:none;">';
                 html += '<div class="col-sm-1">';
                     html += '<label class="control-label" style="font-size: 16px;">Days:</label>';
                 html += '</div>';
