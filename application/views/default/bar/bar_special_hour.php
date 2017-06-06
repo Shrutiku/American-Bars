@@ -259,16 +259,16 @@ $('.sorted_table').sortable({
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
                                                                            
-                                                                            <div class="padtb8">
+<!--                                                                            <div class="padtb8">
                                                                                  <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
                                                                                
                                                                                 <div class="col-sm-1">
                                                                                     <label class="control-label">Day:</label>
                                                                                 </div>
-<!--                                                                                <input type="hidden" name="cid<?php // echo $i; ?>[]" id="cid_<?php // echo $i; ?>_0" value="" />
+                                                                                <input type="hidden" name="cid<?php // echo $i; ?>[]" id="cid_<?php // echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-2" style="padding-left: 15px;">	
                                                                                     <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php // echo $i; ?>_0"  name="cocktailid[]" value="">
-                                                                                </div>-->
+                                                                                </div>
                                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">
                                                                                     <select class="form-control">
                                                                                         <option value="">-- Select Day-- </option>
@@ -284,7 +284,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1 text-right">
                                                                                     <label class="control-label">Items: </label>
                                                                                 </div>
-                                                                                <!--<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />-->
+                                                                                <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
                                                                                 <div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">	
                                                                                     <input type="text" class="form-control tagscocktailrnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
                                                                                 </div>
@@ -306,8 +306,8 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-1"></div>
                                                                                 <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                 <div class="clearfix"></div>
-                                                                                        <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                            </div>
+                                                                                         <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                            </div>-->
                                                                         </div>
                                                                     </div>
                                                                 <?php } else {?>
@@ -528,7 +528,47 @@ $('.sorted_table').sortable({
                                                         <div id="inner">  	
                                                             <input type="hidden" name="cntpro" id="cntpro" value="0" />
                                                             <div class="padtb">
-                                                                <div class="col-sm-3 text-right">
+                                                                <div class="col-sm-1">
+                                                                    <label class="control-label" style="font-size: 16px;">Days:</label>
+                                                                </div>
+                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
+                                                                    <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
+                                                                    <select class="form-control">
+                                                                        <option value="">-- Select Day-- </option>
+                                                                        <option value="monday">Monday</option>
+                                                                        <option value="tuesday">Tuesday</option>
+                                                                        <option value="wednesday">Wednesday</option>
+                                                                        <option value="thursday">Thursday</option>
+                                                                        <option value="friday">Friday</option>
+                                                                        <option value="saturday">Saturday</option>
+                                                                        <option value="sunday">Sunday</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-sm-1 text-center">
+                                                                    <label class="control-label" style="font-size: 16px;">to</label>
+                                                                </div>
+                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">                                                                                  
+                                                                    <select class="form-control">
+                                                                        <option value="">-- Select Day-- </option>
+                                                                        <option value="monday">Monday</option>
+                                                                        <option value="tuesday">Tuesday</option>
+                                                                        <option value="wednesday">Wednesday</option>
+                                                                        <option value="thursday">Thursday</option>
+                                                                        <option value="friday">Friday</option>
+                                                                        <option value="saturday">Saturday</option>
+                                                                        <option value="sunday">Sunday</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-sm-1">
+                                                                    <label class="control-label pull-right" style="font-size: 16px;">  Time:</label>
+                                                                </div>
+                                                                <div class="col-sm-1" style="width: 13%" >
+                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                </div>
+                                                                <div class="col-sm-1"  style="width: 13%">	
+                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                </div>
+<!--                                                                <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
                                                                 </div>
 
@@ -566,8 +606,8 @@ $('.sorted_table').sortable({
 
                                                                 </div>	
                                                                 <div class="clearfix"></div>
-                                                                    <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
-                                                            </div>
+                                                                    <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
+                                                            </div>-->
 
                                                             <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                             <div id="contbeer" class="mar_top20bot20">
