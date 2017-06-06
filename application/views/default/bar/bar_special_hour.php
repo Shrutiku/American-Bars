@@ -926,10 +926,10 @@ $('#add_row').click(function(){
                     html += '<label class="control-label pull-right" style="font-size: 16px;">  Time:</label>';
                 html += '</div>';
                 html += '<div class="col-sm-1" style="width: 13%" >';
-                    html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">';
+                    html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from'+cnt+'">';
                 html += '</div>';
                 html += '<div class="col-sm-1"  style="width: 13%">';	
-                    html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">';
+                    html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to'+cnt+'">';
                 html += '</div>';
                 html += '<div class="span3">';
                     html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
