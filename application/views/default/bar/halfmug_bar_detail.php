@@ -510,7 +510,7 @@ function piShare()
 						    </div>
                                                     <?php if($bar_detail['bar_category']){?>	
 						        	<!--<div class="socialicon-right">-->
-                                                                <div class="mar_top20 like-block wid50 mar_r15" style="width:36%; height:250px">
+                                                                <div class="mar_top20 like-block wid50 mar_r15" style="width:35%; height:250px">
                                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                                            <?php
                                                                                     $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
