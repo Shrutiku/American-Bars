@@ -1429,7 +1429,7 @@ function initialize()
 //            infowindow.open(map, this);
 //        });
 //    }
-//    map.fitBounds(bounds);
+    map.fitBounds(bounds);
     	directionsDisplay.setMap(map);
 		google.maps.event.trigger(map, 'resize');
   }
