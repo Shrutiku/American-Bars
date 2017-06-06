@@ -934,6 +934,7 @@ $('#add_row').click(function(){
                 html += '<div class="span3">';
                     html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
                 html += '</div>';
+                html += '<div class="clearfix"></div>';
             html += '</div>';
 
 	    
