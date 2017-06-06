@@ -1521,29 +1521,29 @@ function initialize()
 	<script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
 	<script src="<?php echo base_url().getThemeName(); ?>/js/prettify.js"></script>
 	<script type="text/javascript">
-		$(function(){
-		      $('#infinite-list').slimscroll({
-		        alwaysVisible: true,
-		        height: 410,
-		        color: '#f19d12',
-		        opacity: .8
-		      });
-		      
-		        $('#infinite-list-cocktail').slimscroll({
-		        alwaysVisible: true,
-		        height: 410,
-		        color: '#f19d12',
-		        opacity: .8
-		      });
-		      
-		      $('#infinite-list-liquor').slimscroll({
-		        alwaysVisible: true,
-		        height: 410,
-		        color: '#f19d12',
-		        opacity: .8
-		      });
-		
-		  });
+//		$(function(){
+//		      $('#infinite-list').slimscroll({
+//		        alwaysVisible: true,
+//		        height: 410,
+//		        color: '#f19d12',
+//		        opacity: .8
+//		      });
+//		      
+//		        $('#infinite-list-cocktail').slimscroll({
+//		        alwaysVisible: true,
+//		        height: 410,
+//		        color: '#f19d12',
+//		        opacity: .8
+//		      });
+//		      
+//		      $('#infinite-list-liquor').slimscroll({
+//		        alwaysVisible: true,
+//		        height: 410,
+//		        color: '#f19d12',
+//		        opacity: .8
+//		      });
+//		
+//		  });
 	</script>
 	<!--------------End Scroll ------------------->
 <style>
