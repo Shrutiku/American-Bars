@@ -1003,7 +1003,7 @@ span.required {
 </style>
  <!--------------Scroll ------------------->
 	<link rel="stylesheet" href="<?php echo base_url().getThemeName(); ?>/css/prettify.css">
-	<script src="<?php echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>
+	<!--<script src="<?php // echo base_url().getThemeName(); ?>/js/jquery.slimscroll.js"></script>-->
 	<script src="<?php echo base_url().getThemeName(); ?>/js/prettify.js"></script>
 	<script type="text/javascript">
 //		$(function(){
@@ -1925,7 +1925,7 @@ function loadTaxi()
     						 setTimeout(function() {
 					       loadData_taxi(0,15);
 					       check();
-					       $('#infinite-favorite-taxi').slimscroll({
+//					       $('#infinite-favorite-taxi').slimscroll({
 		        alwaysVisible: true,
 		        height: 200,
 		        color: '#f19d12',
