@@ -911,7 +911,7 @@ $('#add_row').click(function(){
                     html += '<label class="control-label" style="font-size: 16px;">to</label>';
                 html += '</div>';
                 html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;"> ';                                                                                 
-                    html += '<select class="form-control">''
+                    html += '<select class="form-control">';
                         html += '<option value="">-- Select Day-- </option>';
                         html += '<option value="monday">Monday</option>';
                         html += '<option value="tuesday">Tuesday</option>';
