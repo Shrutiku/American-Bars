@@ -149,7 +149,7 @@ $('.sorted_table').sortable({
                                                                             <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	
-                                                                            <a href="javascript://;" id="" onclick="addrows_beer('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                             <div class="clearfix"></div>
                                                                                 <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
                                                                         </div>
@@ -972,7 +972,7 @@ $('#add_row').click(function(){
 //            html += '</div>';
 	    
 	    html += '<input type="hidden" name="cntprobeer[]" id="cntprobeer1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contbeer'+cnt+'"><div id="innerbeer'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Beers : </label></div>';
-	    html += '<input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+'" value="" />'
+	    html += '<input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+'" value="" />';
 	    html += '<div class="col-sm-3" style="padding-left: 15px;">';	
 	    html += '<input type="text" class="form-control tagsbeer'+cnt+' form-pad" id="beerid_'+cnt+'"  name="beerid[]" value=""></div>';	
 	    html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
@@ -984,7 +984,7 @@ $('#add_row').click(function(){
 	    html += '</div></div>';
 	    
 	      html += '<input type="hidden" name="cntprococktail[]" id="cntprococktail1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contcocktail'+cnt+'"><div id="innercocktail'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Cocktails : </label></div>';
-	    html += '<input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+'" value="" />'
+	    html += '<input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+'" value="" />';
 	    html += '<div class="col-sm-3" style="padding-left: 15px;">';	
 	    html += '<input type="text" class="form-control tagscocktail'+cnt+' form-pad" id="cocktailid_'+cnt+'"  name="cocktailid[]" value=""></div>';	
 	    html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
