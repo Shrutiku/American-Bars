@@ -311,7 +311,7 @@ function piShare()
 											} elseif(get_authenticateUserID()!=''){?>
                                                    
 											<a id="total-fav" href="javascript:void(0);" name="<?php if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="btn btn-lg btn-primary full-btn mart10">
-											 <?php if($cnt_fav==1){ echo 'Add to My Bar List'; } else{ echo 'Remove Favorite'; } ?></a>
+											 <?php if($cnt_fav==1){ echo 'Add to My List'; } else{ echo 'Remove Favorite'; } ?></a>
 											<?php } else { ?>
 												<a id="total-fav" class="btn btn-lg btn-primary full-btn mart10" href="javascript:void(0);" name="1" >Add to My Bar List</a>
 											<?php } }?>	
