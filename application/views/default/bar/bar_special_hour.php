@@ -135,7 +135,24 @@ $('.sorted_table').sortable({
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >
-                                                                        
+                                                                        <div class="padtb8">
+                                                                            <div class="col-sm-3 text-right">
+                                                                                <label class="control-label">Beers : </label>
+                                                                            </div>
+                                                                            <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
+                                                                            <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
+                                                                            </div>	
+                                                                            <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                            </div>
+                                                                            <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
+                                                                            </div>	
+                                                                            <a href="javascript://;" id="" onclick="addrows_beer('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                            <div class="clearfix"></div>
+                                                                                <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                                        </div>
 <!--                                                                        <div class="padtb8">
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
@@ -259,7 +276,24 @@ $('.sorted_table').sortable({
                                                                     <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
-                                                                           
+                                                                           <div class="padtb8">
+                                                                                <div class="col-sm-3 text-right">
+                                                                                    <label class="control-label">Cocktails : </label>
+                                                                                </div>
+                                                                                <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
+                                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                    <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
+                                                                                </div>	
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                </div>
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                    <input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">
+                                                                                </div>	
+                                                                                <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                <div class="clearfix"></div>
+                                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                                            </div>
 <!--                                                                            <div class="padtb8">
                                                                                  <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
                                                                                
