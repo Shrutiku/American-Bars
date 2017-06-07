@@ -1191,14 +1191,14 @@ span.required {
 	});
 	$('.bxslider').bxSlider({
 		mode: 'horizontal',
-		infiniteLoop:false,
-	   pagerCustom: '#bx-pager',
-	   controls:true,
-	   useCSS: false,
-	   preloadImages:'all',
-	   speed: 1500,
-	   auto:false,
-           captions: false,
+		infiniteLoop:true,
+                pagerCustom: '#bx-pager',
+                controls:false,
+                useCSS: false,
+                preloadImages:'all',
+                speed: 1500,
+                auto:true,
+                captions: false,
 	});
 	$('.bxsliderp').bxSlider({
 		// mode: 'horizontal',
