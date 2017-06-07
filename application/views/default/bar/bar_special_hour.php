@@ -474,7 +474,7 @@ $('.sorted_table').sortable({
                                                                                                 </div>	
                                                                                                 <a href="javascript://;" id="" onclick="addrows_other('<?php echo $i; ?>')" name="add_rowother" class="add_rowother btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                                 <div class="clearfix"></div>
-                                                                                                     <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                                     <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
