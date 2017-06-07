@@ -78,12 +78,9 @@ $('.sorted_table').sortable({
         	        				 	<div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
                                                                 </div>
-
-                                                                <div class="input_box upload_btn">
-                                                                    <select required name="days[]" id="days<?php //echo $im->bar_hour_id; ?>" class="select_box">
+	        					        				 	
                                                             <div class="input_box upload_btn">
                                                                     <select required name="days[]" id="days<?php echo $im->bar_hour_id; ?>" class="select_box">
-
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="Monday" <?php echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
                                                                         <option value="Tuesday" <?php echo $im->days=="Tuesday" ? 'selected':'';?>>Tuesday</option>
@@ -94,10 +91,7 @@ $('.sorted_table').sortable({
                                                                         <option value="Sunday" <?php echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
                                                                     </select>
                                                                 </div>
-                    <!--                                        <form action="">
-=======
 <!--                                                            <form action="">
->>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
                                                                     <input type="checkbox" name="day" value="Wednesday"> W
@@ -107,27 +101,15 @@ $('.sorted_table').sortable({
                                                                     <input type="checkbox" name="day" value="Sunday"> Sun
                                                                 </form>-->
 	                       		
-<<<<<<< HEAD
-                                                                <div class="input_box upload_user">
-                                                                    <img src="" id="img_here" alt="" class="img-responsive"/>
-                                                                </div> 
-                                                                <div class="span3">
-                                                                    <?php // if($i==0){ ?>
-=======
                                                                  <div class="input_box upload_user">
                                                                         <img src="" id="img_here" alt="" class="img-responsive"/>
                                                                 </div> 
                                                             <div class="span3">
                                                                     <?php if($i==0){ ?>
->>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                     <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                     <?php }else{ ?>
                                                                     <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
-<<<<<<< HEAD
-                                                                    <?php // } ?>		
-=======
                                                                     <?php } ?>		
->>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                 </div>
                                                                  <div class="input_box pull-left">
                                                                     <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
@@ -136,11 +118,7 @@ $('.sorted_table').sortable({
                                                             </div>
                                                         
                                                             <div class="padtb8">
-<<<<<<< HEAD
-                                                                <div class="col-sm-3 text-right">
-=======
                                                             <div class="col-sm-3 text-right">
->>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
                                                                 </div>
                                                                 <div class="col-sm-4" style="width: 23.5%" >
@@ -149,35 +127,20 @@ $('.sorted_table').sortable({
                                                                 <div class="col-sm-3 text-right"  style="width: 23.5%">	
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
-<<<<<<< HEAD
-<!--                                                                <div class="clearfix"></div>
-                                                                     <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
-                                                            </div>-->
-=======
                                                                 <div class="clearfix"></div>
-<<<<<<< HEAD
-                                                                    <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
-=======
                                                                      <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
->>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                             </div>
->>>>>>> 8caa3ee3b0c59779836a3cabdeec09d7825b3d6a
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
-<<<<<<< HEAD
                                                                         <div class="padtb8">
-<!--                                                                            <div class="col-sm-1">
-=======
-<!--                                                                        <div class="padtb8">
                                                                             <div class="col-sm-1">
->>>>>>> 8caa3ee3b0c59779836a3cabdeec09d7825b3d6a
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
                                                                             <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
-                                                                                <label class="control-label" style="font-size: 16px;">Days:</label>
+                                                                                <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
                                                                                 <select class="form-control">
                                                                                     <option value="">-- Select Day-- </option>
                                                                                     <option value="monday">Monday</option>
@@ -203,13 +166,8 @@ $('.sorted_table').sortable({
                                                                                     <option value="saturday">Saturday</option>
                                                                                     <option value="sunday">Sunday</option>
                                                                                 </select>
-<<<<<<< HEAD
                                                                             </div>
-                                                                         -->
-=======
-                                                                            </div>-->
                                                                          
->>>>>>> 8caa3ee3b0c59779836a3cabdeec09d7825b3d6a
 <!--                                                                            <div class="col-sm-2" style="padding-left: 15px">	
                                                                                
                                                                             </div>-->
@@ -224,7 +182,7 @@ $('.sorted_table').sortable({
                                                                                     <input type="checkbox" name="day" value="Sunday"> Su
                                                                                 </form>
                                                                             </div>-->
-<!--                                                                            <div class="col-sm-1">
+                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label pull-right" style="font-size: 16px;">  Time:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 13%" >
@@ -232,16 +190,16 @@ $('.sorted_table').sortable({
                                                                             </div>
                                                                             <div class="col-sm-1"  style="width: 13%">	
                                                                                 <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                                                            </div>	-->
+                                                                            </div>	
 <!--                                                                            <div class="col-sm-1" style="width: 5%">
                                                                                 <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 13%">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	-->
-<!--                                                                            <div class="col-sm-1"></div>                   
+                                                                            <div class="col-sm-1"></div>                   
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
-                                                                            <div class="clearfix"></div>-->
+                                                                            <div class="clearfix"></div>
                                                                                 <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
                                                                         </div>
 <!--                                                                        <div class="padtb8">
@@ -931,7 +889,6 @@ $('#add_row').click(function(){
 	    html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to'+cnt+'"></div><div class="clearfix"></div>';
 	    html += '</div>';
 	    html += '</div>';
-
 //            html += '<input type="hidden" name="cntpro" id="cntpro" value="0" />';
 //            html += '<div class="padtb" id="img_'+cnt+'" style="display:none;">';
 //                html += '<div class="col-sm-1">';
@@ -978,7 +935,6 @@ $('#add_row').click(function(){
 //                html += '</div>';
 //                html += '<div class="clearfix"></div>';
 //            html += '</div>';
-
 	    
 	    html += '<input type="hidden" name="cntprobeer[]" id="cntprobeer1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contbeer'+cnt+'"><div id="innerbeer'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Beers : </label></div>';
 	    html += '<input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+'" value="" />'
@@ -2687,4 +2643,3 @@ function addrows(cnt){
 		      	minLength: 0      	
 		      });
 	</script>
-	
