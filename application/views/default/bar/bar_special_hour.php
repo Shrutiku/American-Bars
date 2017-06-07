@@ -135,30 +135,24 @@ $('.sorted_table').sortable({
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >
-                                                                        <?php $j=0; foreach($getval as $beer){?>	
-                                                                            <div class="padtb8" id="imgbeer<?php echo $i; ?>_<?php echo $j; ?>">
-                                                                                <div class="col-sm-3 text-right">
-                                                                                    <label class="control-label"><?php if($j==0){?>Beers :<?php } ?>  </label>
-                                                                                </div>
-                                                                                <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_<?php echo $j; ?>" value="<?php echo $beer->sp_beer_id; ?>" />
-                                                                                <div class="col-sm-3" style="padding-left: 15px;">	
-                                                                                    <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_<?php echo $j; ?>"  name="beerid[]" value="<?php echo getBeernameByID($beer->sp_beer_id); ?>">
-                                                                                </div>	
-                                                                                <div class="col-sm-2" style="width: 5%">
-                                                                                    <label class="control-label" style="font-size: 16px;">Price : $</label>
-                                                                                </div>
-                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-                                                                                    <input type="text" class="form-control form-pad" id="beerprice_<?php echo $j; ?>" name="beerprice<?php echo $i; ?>[]" value="<?php echo $beer->sp_beer_price; ?>">
-                                                                                </div>	
-                                                                                <?php if($j==0){ ?>
-                                                                                    <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-                                                                                <?php }else{ ?>
-                                                                                    <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
-                                                                                <?php } ?>
-                                                                                <div class="clearfix"></div>
-                                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                                        <div class="padtb8">
+                                                                            <div class="col-sm-3 text-right">
+                                                                                <label class="control-label">Beers : </label>
                                                                             </div>
-                                                                        <?php $j++; } ?>
+                                                                            <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
+                                                                            <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_0"  name="beerid[]" value="">
+                                                                            </div>	
+                                                                            <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                            </div>
+                                                                            <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
+                                                                            </div>	
+                                                                            <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                            <div class="clearfix"></div>
+                                                                                <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                                        </div>
 <!--                                                                        <div class="padtb8">
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
@@ -250,28 +244,28 @@ $('.sorted_table').sortable({
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >
                                                                         <?php $j=0; foreach($getval as $beer){?>	
-                                                                                <div class="padtb8" id="imgbeer<?php echo $i; ?>_<?php echo $j; ?>">
-                                                                                    <div class="col-sm-3 text-right">
-                                                                                        <label class="control-label"><?php if($j==0){?>Beers :<?php } ?>  </label>
-                                                                                    </div>
-                                                                                    <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_<?php echo $j; ?>" value="<?php echo $beer->sp_beer_id; ?>" />
-                                                                                    <div class="col-sm-3" style="padding-left: 15px;">	
-                                                                                        <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_<?php echo $j; ?>"  name="beerid[]" value="<?php echo getBeernameByID($beer->sp_beer_id); ?>">
-                                                                                    </div>	
-                                                                                    <div class="col-sm-2" style="width: 5%">
-                                                                                        <label class="control-label" style="font-size: 16px;">Price : $</label>
-                                                                                    </div>
-                                                                                    <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
-                                                                                        <input type="text" class="form-control form-pad" id="beerprice_<?php echo $j; ?>" name="beerprice<?php echo $i; ?>[]" value="<?php echo $beer->sp_beer_price; ?>">
-                                                                                    </div>	
-                                                                                    <?php if($j==0){ ?>
-                                                                                        <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-                                                                                    <?php }else{ ?>
-                                                                                        <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
-                                                                                    <?php } ?>
-                                                                                    <div class="clearfix"></div>
-                                                                                        <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                                            <div class="padtb8" id="imgbeer<?php echo $i; ?>_<?php echo $j; ?>">
+                                                                                <div class="col-sm-3 text-right">
+                                                                                    <label class="control-label"><?php if($j==0){?>Beers :<?php } ?>  </label>
                                                                                 </div>
+                                                                                <input type="hidden" name="bid<?php echo $i; ?>[]" id="bid_<?php echo $i; ?>_<?php echo $j; ?>" value="<?php echo $beer->sp_beer_id; ?>" />
+                                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                    <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_<?php echo $j; ?>"  name="beerid[]" value="<?php echo getBeernameByID($beer->sp_beer_id); ?>">
+                                                                                </div>	
+                                                                                <div class="col-sm-2" style="width: 5%">
+                                                                                    <label class="control-label" style="font-size: 16px;">Price : $</label>
+                                                                                </div>
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                    <input type="text" class="form-control form-pad" id="beerprice_<?php echo $j; ?>" name="beerprice<?php echo $i; ?>[]" value="<?php echo $beer->sp_beer_price; ?>">
+                                                                                </div>	
+                                                                                <?php if($j==0){ ?>
+                                                                                    <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                <?php }else{ ?>
+                                                                                    <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $beer->bar_hour_id ?>','beer','<?php echo $j?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                                <?php } ?>
+                                                                                <div class="clearfix"></div>
+                                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                                            </div>
                                                                         <?php $j++; } ?>
                                                                     </div>
                                                                 </div> 
@@ -282,7 +276,24 @@ $('.sorted_table').sortable({
                                                                     <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
                                                                     <div id="contcocktail" class="mar_top20bot20">
                                                                         <div id="innercocktail<?php echo $i; ?>" >
-                                                                           
+                                                                           <div class="padtb8">
+                                                                                <div class="col-sm-3 text-right">
+                                                                                    <label class="control-label">Cocktails : </label>
+                                                                                </div>
+                                                                                <input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />
+                                                                                <div class="col-sm-3" style="padding-left: 15px;">	
+                                                                                    <input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">
+                                                                                </div>	
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
+                                                                                    <label class="control-label" style="font-size: 16px;">Price : $ </label>
+                                                                                </div>
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">	
+                                                                                    <input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">
+                                                                                </div>	
+                                                                                <a href="javascript://;" id="" onclick="addnewrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="add_rowcocktail btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                <div class="clearfix"></div>
+                                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
+                                                                            </div>
 <!--                                                                            <div class="padtb8">
                                                                                  <h4><div class="col-sm-12">Daily Specials:</div></h4><br><br>
                                                                                
@@ -961,7 +972,7 @@ $('#add_row').click(function(){
 //            html += '</div>';
 	    
 	    html += '<input type="hidden" name="cntprobeer[]" id="cntprobeer1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contbeer'+cnt+'"><div id="innerbeer'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Beers : </label></div>';
-	    html += '<input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+'" value="" />'
+	    html += '<input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+'" value="" />';
 	    html += '<div class="col-sm-3" style="padding-left: 15px;">';	
 	    html += '<input type="text" class="form-control tagsbeer'+cnt+' form-pad" id="beerid_'+cnt+'"  name="beerid[]" value=""></div>';	
 	    html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
@@ -973,7 +984,7 @@ $('#add_row').click(function(){
 	    html += '</div></div>';
 	    
 	      html += '<input type="hidden" name="cntprococktail[]" id="cntprococktail1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contcocktail'+cnt+'"><div id="innercocktail'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Cocktails : </label></div>';
-	    html += '<input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+'" value="" />'
+	    html += '<input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+'" value="" />';
 	    html += '<div class="col-sm-3" style="padding-left: 15px;">';	
 	    html += '<input type="text" class="form-control tagscocktail'+cnt+' form-pad" id="cocktailid_'+cnt+'"  name="cocktailid[]" value=""></div>';	
 	    html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
@@ -2333,6 +2344,67 @@ function addrows(cnt){
 		$('#imgbeer_'+cnt+cntbeer).slideDown();
 			
 	}
+        function addnewrows_cocktail(cnt) {
+            var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
+		if($('#cntprococktail'+cnt).val() =='NaN')
+		{
+		    $('#cntprococktail'+cnt).val('1');
+		    cnt = 1;
+		}
+		$('#cntprococktail'+cnt).val(cntcocktail);
+		//alert(cnt);
+		var html = '';
+                
+                html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb8">';
+                html += ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-3 text-right">';
+                html += '<label class="control-label"></label>';
+                html += '</div>';
+                html += '<div class="col-sm-3" style="padding-left: 15px;">';
+                html += '<input type="text" class="form-control form-pad tagscocktail'+cnt+cntcocktail+'" id="cocktailid_'+cntcocktail+'"  name="cocktailid[]" value="">';
+                html += '</div>';
+                html += '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+                html += '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+                html += '</div>';
+                html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
+                html += '<input type="text" class="form-control form-pad timepicker-default" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
+                html += '</div>';
+                html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivecocktail_1('+cnt+','+cntcocktail+')"><span class="glyphicon glyphicon-minus"></span></a>';
+                html += '<div class="clearfix"></div>';
+                html += '</div></div>';
+
+		$('#innercocktail'+cnt).append(html);
+		$('.tagscocktail'+cnt+cntcocktail).autocomplete({
+                    source: function( request, response ) {
+                        $.ajax({
+                            url : '<?php echo site_url('cocktail/auto_suggest_cocktail/');?>',
+                            dataType: "json",
+                                data: {
+                                   em: request.term
+                                },
+                                success: function( data ) {
+                                    response( $.map( data, function( item ) {
+                                        return {
+                                            label: item.label,
+                                            id: item.id,
+                                            value: item.value
+                                        };
+                                   }));
+                                }
+                        });
+                    },
+                    select: function(event, ui) {
+                        //alert('dsa');
+		      	//alert($(this).attr('id'));
+                        var row= $(this).attr('id');
+		        var myArray = row.split('_');
+                        // alert(cnt+myArray[1]);
+                        $("#bid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+                    },
+                    autoFocus: true,
+                    minLength: 0      	
+                });
+		$('#imgcocktail_'+cnt+cntcocktail).slideDown();
+        }
 	
 	
 	function addrows_cocktail(cnt){		
