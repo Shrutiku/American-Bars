@@ -1197,7 +1197,8 @@ span.required {
 	   useCSS: false,
 	   preloadImages:'all',
 	   speed: 1500,
-	   auto:false
+	   auto:false,
+           captions: false,
 	});
 	$('.bxsliderp').bxSlider({
 		// mode: 'horizontal',
@@ -1228,6 +1229,7 @@ span.required {
 	  	maxSlides: 5,
 	  	slideWidth: 65,
 	 	pager: false,
+                captions:false,
 });
 
 
