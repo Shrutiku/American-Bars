@@ -1195,7 +1195,7 @@ span.required {
                 pagerCustom: '#bx-pager',
                 controls:false,
                 useCSS: false,
-                preloadImages:'all',
+                preloadImages:'visible',
                 speed: 1500,
                 auto:true,
                 captions: false,
@@ -1222,7 +1222,7 @@ span.required {
 	 	useCSS: false,
 	 	infiniteLoop:false,
 	 	mode: 'horizontal',
-	 	preloadImages:'all',
+	 	preloadImages:'visible',
 	 	controls:true,
 
 		minSlides: 5,
@@ -1230,6 +1230,7 @@ span.required {
 	  	slideWidth: 65,
 	 	pager: false,
                 captions:false,
+                
 });
 
 
