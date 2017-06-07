@@ -362,7 +362,7 @@ $('.sorted_table').sortable({
                                                                                         </div>	
                                                                                         <a href="javascript://;" id="" onclick="addrows_liquor('<?php echo $i; ?>')" name="add_rowliquor" class="add_rowliquor btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                         <div class="clearfix"></div>
-                                                                                             <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                            <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
                                                                                     </div>
                                                                                 </div>	
                                                                             </div>
@@ -391,7 +391,7 @@ $('.sorted_table').sortable({
                                                                                             <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $liquor->bar_hour_id ?>','liquor','<?php echo $l; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                         <?php } ?>
                                                                                         <div class="clearfix"></div>
-                                                                                             <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                            <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
                                                                                     </div>
                                                                                 <?php $l++;} ?> 	
                                                                             </div>
@@ -418,7 +418,7 @@ $('.sorted_table').sortable({
                                                                                         </div>	
                                                                                         <a href="javascript://;" id="" onclick="addrows_food('<?php echo $i; ?>')" name="add_rowfood" class="add_rowfood btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                         <div class="clearfix"></div>
-                                                                                             <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                            <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
                                                                                     </div>
                                                                                 </div>	
                                                                             </div>
@@ -447,7 +447,7 @@ $('.sorted_table').sortable({
                                                                                                     <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $food->bar_hour_id ?>','food','<?php echo $f; ?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
 												<?php } ?>
                                                                                                 <div class="clearfix"></div>
-                                                                                                     <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                                                    <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">--> 
                                                                                             </div>
                                                                                         <?php $f++; } ?>
                                                                                     </div>
