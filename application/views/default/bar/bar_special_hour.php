@@ -78,20 +78,26 @@ $('.sorted_table').sortable({
         	        				 	<div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
                                                                 </div>
-	        					        				 	
+
                                                                 <div class="input_box upload_btn">
                                                                     <select required name="days[]" id="days<?php //echo $im->bar_hour_id; ?>" class="select_box">
+                                                            <div class="input_box upload_btn">
+                                                                    <select required name="days[]" id="days<?php echo $im->bar_hour_id; ?>" class="select_box">
+
                                                                         <option value="">-- Select Day-- </option>
-                                                                        <option value="Monday" <?php // echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
-                                                                        <option value="Tuesday" <?php // echo $im->days=="Tuesday" ? 'selected':'';?>>Tuesday</option>
-                                                                        <option value="Wednesday" <?php // echo $im->days=="Wednesday" ? 'selected':'';?>>Wednesday</option>
-                                                                        <option value="Thursday" <?php // echo $im->days=="Thursday" ? 'selected':'';?>>Thursday</option>
-                                                                        <option value="Friday" <?php // echo $im->days=="Friday" ? 'selected':'';?>>Friday</option>
-                                                                        <option value="Saturday" <?php // echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
-                                                                        <option value="Sunday" <?php // echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
+                                                                        <option value="Monday" <?php echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
+                                                                        <option value="Tuesday" <?php echo $im->days=="Tuesday" ? 'selected':'';?>>Tuesday</option>
+                                                                        <option value="Wednesday" <?php echo $im->days=="Wednesday" ? 'selected':'';?>>Wednesday</option>
+                                                                        <option value="Thursday" <?php echo $im->days=="Thursday" ? 'selected':'';?>>Thursday</option>
+                                                                        <option value="Friday" <?php echo $im->days=="Friday" ? 'selected':'';?>>Friday</option>
+                                                                        <option value="Saturday" <?php echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
+                                                                        <option value="Sunday" <?php echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
                                                                     </select>
                                                                 </div>
                     <!--                                        <form action="">
+=======
+<!--                                                            <form action="">
+>>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
                                                                     <input type="checkbox" name="day" value="Wednesday"> W
@@ -101,15 +107,27 @@ $('.sorted_table').sortable({
                                                                     <input type="checkbox" name="day" value="Sunday"> Sun
                                                                 </form>-->
 	                       		
+<<<<<<< HEAD
                                                                 <div class="input_box upload_user">
                                                                     <img src="" id="img_here" alt="" class="img-responsive"/>
                                                                 </div> 
                                                                 <div class="span3">
                                                                     <?php // if($i==0){ ?>
+=======
+                                                                 <div class="input_box upload_user">
+                                                                        <img src="" id="img_here" alt="" class="img-responsive"/>
+                                                                </div> 
+                                                            <div class="span3">
+                                                                    <?php if($i==0){ ?>
+>>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                     <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-                                                                    <?php // }else{ ?>
+                                                                    <?php }else{ ?>
                                                                     <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
+<<<<<<< HEAD
                                                                     <?php // } ?>		
+=======
+                                                                    <?php } ?>		
+>>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                 </div>
                                                                  <div class="input_box pull-left">
                                                                     <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
@@ -118,17 +136,25 @@ $('.sorted_table').sortable({
                                                             </div>
                                                         
                                                             <div class="padtb8">
+<<<<<<< HEAD
                                                                 <div class="col-sm-3 text-right">
+=======
+                                                            <div class="col-sm-3 text-right">
+>>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
                                                                 </div>
                                                                 <div class="col-sm-4" style="width: 23.5%" >
-                                                                    <input required type="text" value="<?php // echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
                                                                 </div>
                                                                 <div class="col-sm-3 text-right"  style="width: 23.5%">	
-                                                                    <input required type="text" value="<?php // echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
                                                                 <div class="clearfix"></div>
+<<<<<<< HEAD
                                                                     <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
+=======
+                                                                     <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
+>>>>>>> 55b478617f3fa7ae3c4bc9e770c77c721d06c169
                                                             </div>
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
