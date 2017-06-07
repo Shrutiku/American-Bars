@@ -229,7 +229,7 @@
 						        	<div class="bar_add">
 						        		<i class="strip address"></i>
 						        		<div class="address-strip">
-						        			<a onclick="loadMap()"><?php echo @$bar_detail['address']."<br>";?>
+						        			<a href="javascript://" onclick="loadMap()"><?php echo @$bar_detail['address']."<br>";?>
 
 						        			<?php echo  @$bar_detail['city'].", ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?></a>
 						        		</div>
