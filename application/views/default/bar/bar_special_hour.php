@@ -127,20 +127,20 @@ $('.sorted_table').sortable({
                                                                 <div class="col-sm-3 text-right"  style="width: 23.5%">	
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
-                                                                <div class="clearfix"></div>
+<!--                                                                <div class="clearfix"></div>
                                                                      <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
-                                                            </div>
+                                                            </div>-->
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
                                                                         <div class="padtb8">
-                                                                            <div class="col-sm-1">
+<!--                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
                                                                             <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
-                                                                                <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
+                                                                                <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
                                                                                     <option value="">-- Select Day-- </option>
                                                                                     <option value="monday">Monday</option>
@@ -167,7 +167,7 @@ $('.sorted_table').sortable({
                                                                                     <option value="sunday">Sunday</option>
                                                                                 </select>
                                                                             </div>
-                                                                         
+                                                                         -->
 <!--                                                                            <div class="col-sm-2" style="padding-left: 15px">	
                                                                                
                                                                             </div>-->
