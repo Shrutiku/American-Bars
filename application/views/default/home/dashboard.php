@@ -391,7 +391,7 @@ B.show();
 	        				 		<label class="control-label">Street Address : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-                                            <input type="text" placeholder="Address" name="address" id="address" class="form-control form-pad" value="<?php echo @$getalldata->address; ?>">
+                                            <textarea rows="1" placeholder="Address" name="address" id="address" class="form-control form-pad" value="<?php echo @$getalldata->address; ?>"></textarea>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
