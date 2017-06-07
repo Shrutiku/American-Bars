@@ -75,11 +75,11 @@ $('.sorted_table').sortable({
                                                     <div id="pi_<?php echo $im->bar_hour_id ?>">	
                                                         <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
                                                             <div class="padtb">
-        <!--	        				 	<div class="col-sm-3 text-right">
+        	        				 	<div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
-                                                                </div>-->
+                                                                </div>
 	        					        				 	
-                    <!--                                        <div class="input_box upload_btn">
+                                                                <div class="input_box upload_btn">
                                                                     <select required name="days[]" id="days<?php //echo $im->bar_hour_id; ?>" class="select_box">
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="Monday" <?php // echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
@@ -90,7 +90,7 @@ $('.sorted_table').sortable({
                                                                         <option value="Saturday" <?php // echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
                                                                         <option value="Sunday" <?php // echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
                                                                     </select>
-                                                                </div>-->
+                                                                </div>
                     <!--                                        <form action="">
                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
@@ -101,24 +101,24 @@ $('.sorted_table').sortable({
                                                                     <input type="checkbox" name="day" value="Sunday"> Sun
                                                                 </form>-->
 	                       		
-                                                                <!-- <div class="input_box upload_user">
-                                                                        <img src="" id="img_here" alt="" class="img-responsive"/>
-                                                                </div> -->
-    <!--                                                        <div class="span3">
+                                                                <div class="input_box upload_user">
+                                                                    <img src="" id="img_here" alt="" class="img-responsive"/>
+                                                                </div> 
+                                                                <div class="span3">
                                                                     <?php // if($i==0){ ?>
                                                                     <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                     <?php // }else{ ?>
                                                                     <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                     <?php // } ?>		
-                                                                </div>-->
-                                                                <!-- <div class="input_box pull-left">
+                                                                </div>
+                                                                 <div class="input_box pull-left">
                                                                     <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
-                                                                </div> -->
+                                                                </div> 
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                         
-<!--                                                            <div class="padtb8">
-                                                            <div class="col-sm-3 text-right">
+                                                            <div class="padtb8">
+                                                                <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
                                                                 </div>
                                                                 <div class="col-sm-4" style="width: 23.5%" >
@@ -128,19 +128,19 @@ $('.sorted_table').sortable({
                                                                     <input required type="text" value="<?php // echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
                                                                 <div class="clearfix"></div>
-                                                                     <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
-                                                            </div>-->
+                                                                    <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
+                                                            </div>
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
-                                                                        <div class="padtb8">
+<!--                                                                        <div class="padtb8">
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
                                                                             <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
-                                                                                <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
+                                                                                <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                                 <select class="form-control">
                                                                                     <option value="">-- Select Day-- </option>
                                                                                     <option value="monday">Monday</option>
@@ -166,7 +166,7 @@ $('.sorted_table').sortable({
                                                                                     <option value="saturday">Saturday</option>
                                                                                     <option value="sunday">Sunday</option>
                                                                                 </select>
-                                                                            </div>
+                                                                            </div>-->
                                                                          
 <!--                                                                            <div class="col-sm-2" style="padding-left: 15px">	
                                                                                
@@ -182,7 +182,7 @@ $('.sorted_table').sortable({
                                                                                     <input type="checkbox" name="day" value="Sunday"> Su
                                                                                 </form>
                                                                             </div>-->
-                                                                            <div class="col-sm-1">
+<!--                                                                            <div class="col-sm-1">
                                                                                 <label class="control-label pull-right" style="font-size: 16px;">  Time:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 13%" >
@@ -190,16 +190,16 @@ $('.sorted_table').sortable({
                                                                             </div>
                                                                             <div class="col-sm-1"  style="width: 13%">	
                                                                                 <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                                                            </div>	
+                                                                            </div>	-->
 <!--                                                                            <div class="col-sm-1" style="width: 5%">
                                                                                 <label class="control-label" style="font-size: 16px;">$:</label>
                                                                             </div>
                                                                             <div class="col-sm-1" style="width: 13%">	
                                                                                 <input type="text" class="form-control form-pad" id="beerprice" name="beerprice0[]" value="">
                                                                             </div>	-->
-                                                                            <div class="col-sm-1"></div>                   
+<!--                                                                            <div class="col-sm-1"></div>                   
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
-                                                                            <div class="clearfix"></div>
+                                                                            <div class="clearfix"></div>-->
                                                                                 <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
                                                                         </div>
 <!--                                                                        <div class="padtb8">
