@@ -341,9 +341,9 @@
                                                     <a  href="#opencategory" data-toggle='modal' class="mar_top5 pull-right">View All </a>
                                                 </div>
                                             <?php } ?>
-		     					<?php // if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
-//								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
-//										 $bar_detail['american_p']==1){ ?>
+		     					<?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
+								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
+										 $bar_detail['american_p']==1){ ?>
                                             <div class="mar_top20 wid50 like-block pull-right" style="width: 15%; text-align: center; height: 250px;">
 		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
@@ -371,7 +371,7 @@
 		     					</ul>
 
 	     				  </div>
-	     				  	<?php // } ?>
+	     				  	<?php } ?>
 				    	</div>
      			</div>
      			<div class="modal fade login_pop2" id="openhour" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
