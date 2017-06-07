@@ -111,9 +111,9 @@ $('.sorted_table').sortable({
                                                                     <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                     <?php } ?>		
                                                                 </div>
-                                                                 <div class="input_box pull-left">
+<!--                                                                 <div class="input_box pull-left">
                                                                     <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
-                                                                </div> 
+                                                                </div> -->
                                                                 <div class="clearfix"></div>
                                                             </div>
                                                         
