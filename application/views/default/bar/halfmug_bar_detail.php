@@ -437,14 +437,19 @@ function piShare()
 		    		 									       
                                         </div>-->
                                        <?php // } ?> 
-						        	<div class="bar_add">
+                                                                <div class="bar_add" style="margin-bottom: 5px">
 						        		<i class="strip address"></i>
 						        		<div class="address-strip">
-						        			<?php echo @$bar_detail['address']."<br>";?>
-						        			<p><?php echo  @$bar_detail['city'].", ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?></p>
+						        			<a href="javascript://" onclick="loadMap()"><?php echo @$bar_detail['address']."<br>";?>
+						        			<?php echo  @$bar_detail['city'].", ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?></a>
 						        		</div>
 						        	</div>
-						        	
+						        	<p class="bar_add">
+						        		<?php if($bar_detail['website']!='' && $bar_detail['website']!='0'){?>
+						        		<i class="strip url"></i><a onclick="window.open('<?php echo @$bar_detail['website'];?>', '_blank', 'width=800,height=600,scrollbars=yes,status=yes,resizable=yes,screenx=0,screeny=0');" href="javascript:void(0);"><?php echo @$bar_detail['website'];?></a>
+
+                                                                        <?php }?>		
+                                                                </p>
 						        	<div>
 						        		<div class="bar_phone pull-left reult_sub_title min-height25"><?php echo $bar_detail['phone']!='' ? '<i class="strip smallphone"></i>'.$bar_detail['phone']:'' ;?></div>
 						        		

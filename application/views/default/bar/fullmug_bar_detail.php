@@ -226,7 +226,7 @@
                                         <!--</div>-->
                                        <?php // } ?>
 
-						        	<div class="bar_add">
+						        	<div class="bar_add" style="margin-bottom: 5px">
 						        		<i class="strip address"></i>
 						        		<div class="address-strip">
 						        			<a href="javascript://" onclick="loadMap()"><?php echo @$bar_detail['address']."<br>";?>
@@ -238,7 +238,8 @@
 						        		<?php if($bar_detail['website']!='' && $bar_detail['website']!='0'){?>
 						        		<i class="strip url"></i><a onclick="window.open('<?php echo @$bar_detail['website'];?>', '_blank', 'width=800,height=600,scrollbars=yes,status=yes,resizable=yes,screenx=0,screeny=0');" href="javascript:void(0);"><?php echo @$bar_detail['website'];?></a>
 
-						        <?php }?>		</p>
+                                                                        <?php }?>		
+                                                                </p>
 
 
 						        		<!-- <a  href="<?php echo @$bar_detail['website'];?>" class="bar_title">  <?php echo @$bar_detail['website'];?></a></p> -->
