@@ -1919,7 +1919,7 @@ else
 			$getcat = '';
 		}	
 		  $data_insert = array('event_title'=>$this->input->post('event_title'),
-		                       'event_desc'=>$this->input->post('event_title'),
+		                       'event_desc'=>$this->input->post('event_desc'),
 							    // 'start_date'=> date('Y-m-d' ,strtotime($this->input->post('start_date'))),
 							   // 'end_date' =>  date('Y-m-d' ,strtotime($this->input->post('end_date'))),
 							   // 'start_time'=>$this->input->post('start_time'),

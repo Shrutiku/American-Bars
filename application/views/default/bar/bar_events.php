@@ -191,7 +191,7 @@
 	        				 		<label class="control-label">Description :  <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
-	                           		<textarea rows="5" name="event_desc" id="event_desc" placeholder="Description" class="form-control form-pad"></textarea>
+	                           		<textarea rows="5" name="event_desc" id="event_desc" placeholder="Description" class="form-control form-pad" value=""></textarea>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
@@ -380,7 +380,7 @@
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Buy Ticket : </label>
+	        				 		<label class="control-label">Purchase Ticket : </label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="buy_ticket" name="buy_ticket" value="">
