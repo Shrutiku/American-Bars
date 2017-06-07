@@ -1,5 +1,5 @@
 <?php
-
+?>
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,7 +22,6 @@
     }
 </style>
 
-<?php } ?>
 <div class="wrapper row5 beer-list" style="border:<?php echo $v == 0 ? 'none' : ''; ?>">
     <div class="container">
         <div class="result_box clearfix mar_top30bot20">
@@ -72,4 +71,3 @@ if ($error != "") {
     </div>
 </div>
 <!-- ************************************************************************ -->
-?>

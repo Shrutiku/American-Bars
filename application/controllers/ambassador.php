@@ -156,17 +156,17 @@ class Ambassador extends SPACULLUS_Controller {
                     $data["error"] = "";
                 }
             } else {
-                if ($bar_info != NULL) {
-                    $code = 'test'
-
-                    if ($code == $this->input->post('code')) {
-                        redirect('ambssador'));
-                    } else {
-                        $data["error"] = "Invalid verification code.";
-                    }
-                } else {
-                    $data["error"] = "Internal Error";
-                }
+//                if ($bar_info != NULL) {
+//                    $code = 'test'
+//
+//                    if ($code == $this->input->post('code')) {
+//                        redirect('ambssador'));
+//                    } else {
+//                        $data["error"] = "Invalid verification code.";
+//                    }
+//                } else {
+//                    $data["error"] = "Internal Error";
+//                }
             }
         }
 
