@@ -1032,7 +1032,7 @@ span.required {
 	</script>
 	<!--------------End Scroll ------------------->
 
-<?php $theme_url = $urls= base_url().getThemeName();?>
+        <?php $theme_url = $urls= base_url().getThemeName();?>
 <script>
 	var base_url = '<?php echo site_url('bar/getmorebeer/?bar_id='.$bar_detail['bar_id']); ?>';
 	var base_url_cocktail = '<?php echo site_url('bar/getmorecocktail/?bar_id='.$bar_detail['bar_id']); ?>';
