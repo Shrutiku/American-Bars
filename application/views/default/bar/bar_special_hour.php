@@ -135,7 +135,7 @@ $('.sorted_table').sortable({
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                                 <div id="contbeer" class="mar_top20bot20">
                                                                     <div id="innerbeer<?php echo $i; ?>" >	
-<!--                                                                        <div class="padtb8">
+                                                                        <div class="padtb8">
                                                                             <div class="col-sm-1">
                                                                                 <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                             </div>
@@ -201,7 +201,7 @@ $('.sorted_table').sortable({
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
                                                                             <div class="clearfix"></div>
                                                                                  <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 	 		
-                                                                        </div>-->
+                                                                        </div>
 <!--                                                                        <div class="padtb8">
                                                                             <div class="col-sm-3 text-right">
                                                                                 <label class="control-label">Items: </label>
