@@ -443,7 +443,7 @@
      			</div>
      			<div class="right_gallery_block newadded">
                 	<a  href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary">Happy Hours & Specials</a>
-     				<a href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadTaxi()">Call a Taxi</a>
+     				<!--<a href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadTaxi()">Call a Taxi</a>-->
 		    		<!-- <a href="javascript://" class="btn-lg btn-primary text-center mar_top5 marl_10" onclick="loadTaxi()">Yelp Reviews</a> -->
 
      				<div class="text-center mar_top15">
