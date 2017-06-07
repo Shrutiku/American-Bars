@@ -1242,23 +1242,23 @@ $(".pagination li a").click(function() {
             infowindow.open(map, this);
         });
         
-    for (var i in LocationData)
-    {
-        var p = LocationData[i];
-        var latlng = new google.maps.LatLng(p[0], p[1]);
-        bounds.extend(latlng);
-         
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            title: p[2]
-        });
-     
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(this.title);
-            infowindow.open(map, this);
-        });
-    }
+//    for (var i in LocationData)
+//    {
+//        var p = LocationData[i];
+//        var latlng = new google.maps.LatLng(p[0], p[1]);
+//        bounds.extend(latlng);
+//         
+//        var marker = new google.maps.Marker({
+//            position: latlng,
+//            map: map,
+//            title: p[2]
+//        });
+//     
+//        google.maps.event.addListener(marker, 'click', function() {
+//            infowindow.setContent(this.title);
+//            infowindow.open(map, this);
+//        });
+//    }
     
     
      
