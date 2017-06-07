@@ -202,7 +202,7 @@ $('.sorted_table').sortable({
                                                                             <div class="clearfix"></div>
                                                                                 <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 		
                                                                         </div>
-                                                                        <div class="padtb8">
+<!--                                                                        <div class="padtb8">
                                                                             <div class="col-sm-3 text-right">
                                                                                 <label class="control-label">Items: </label>
                                                                             </div>
@@ -217,8 +217,8 @@ $('.sorted_table').sortable({
                                                                                 <input type="text" class="form-control form-pad" id="liquorprice" name="liquorprice0[]" value="">
                                                                             </div>
                                                                             <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>                                                                            <div class="clearfix"></div>
-                                                                                <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->
-                                                                        </div>
+                                                                                 <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> 
+                                                                        </div>-->
                                                                     </div>
                                                                 </div>
                                                             <?php } else { ?>
