@@ -83,7 +83,7 @@ span.required {
 			   }
 			   else{
 				  $('#total-fav').attr('name','1');
-				   $('#total-fav').html('Add to My Bar List');
+				   $('#total-fav').html('Add to My List');
 				   $( "#total-fav" ).removeClass( "active" );
 				}
 		    } 
@@ -306,14 +306,14 @@ function piShare()
 	
 											if($cnt_fav==2 && get_authenticateUserID()!=''){
 											?>
-											<a id="total-fav" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn mart10">Add to My Bar List</a>
+											<a id="total-fav" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary full-btn mart10">Add to My List</a>
 											<?php
 											} elseif(get_authenticateUserID()!=''){?>
                                                    
 											<a id="total-fav" href="javascript:void(0);" name="<?php if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="btn btn-lg btn-primary full-btn mart10">
-											 <?php if($cnt_fav==1){ echo 'Add to My Bar List'; } else{ echo 'Remove Favorite'; } ?></a>
+											 <?php if($cnt_fav==1){ echo 'Add to My List'; } else{ echo 'Remove Favorite'; } ?></a>
 											<?php } else { ?>
-												<a id="total-fav" class="btn btn-lg btn-primary full-btn mart10" href="javascript:void(0);" name="1" >Add to My Bar List</a>
+												<a id="total-fav" class="btn btn-lg btn-primary full-btn mart10" href="javascript:void(0);" name="1" >Add to My List</a>
 											<?php } }?>	
 											<div class="clearfix"></div>
                                                                  
