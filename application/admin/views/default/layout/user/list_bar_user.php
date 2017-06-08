@@ -135,7 +135,7 @@ function setaction(elename, actionval, actionmsg, formname) {
         if(elem[i].checked) vchkcnt++;	
     }
     if(vchkcnt === 0) {
-        alert('Please select a record')
+        alert('Please select a record');
     } else {
         if(confirm(actionmsg))
         {
@@ -191,7 +191,7 @@ function changePassword(id,limit,offset)
                             },
                             complete : function() {
                                 unblockUI('#setPstat');
-                            },
+                            }
                         });		
                 });   		
             }).modal();;
