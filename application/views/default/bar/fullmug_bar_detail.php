@@ -469,7 +469,6 @@
      			</div>
      			<div class="right_gallery_block newadded">
                 	<a  href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left"><i class="glyphicon glyphicon-glass"></i></a>
-					<div></div>
 					<?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
 						  <a href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-picture"></i></a>
@@ -508,9 +507,9 @@
      				<div class="margin-top-80">
      				 <?php if($bar_gallery){ ?>
      					<!-- <div class="pull-left view-gallery">
-						   <a href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-picture"></i></a>
+						   <a href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-picture"></i></a> -->
 						   <!-- <div class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div> -->
-						</div> -->
+						<!-- </div> -->
 					<?php } ?>
      					<ul class="social_icon pull-right">
      						<li>Share : </li>
