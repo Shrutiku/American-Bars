@@ -104,7 +104,7 @@
      	<div class="container">
       <div class="text-center clearfix">
       
-       <a class="" href="javascript://" onclick="searchmodal()">Helloooo<div class="col-md-3 col-sm-4 padb20 ">
+       <a class="" href="javascript://" onclick="searchmodal()"><div class="col-md-3 col-sm-4 padb20 ">
         	<div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/bar-icon.png"/>
@@ -112,7 +112,9 @@
 		        <h2 class="directory-item">Bar Search</h2>
           	</div>
         </div></a><!-- /.col-lg-3 -->
+        <button onclick="myFunction()">Try it</button>
         
+        <div id="myDiv">
         <a href="<?php echo site_url('beer'); ?>">
         <div class="col-md-3 col-sm-4 padb20">
          <div class="directory_box">
@@ -240,7 +242,7 @@
           	</div>
         </div><!-- /.col-lg-3 -->
         </a>
-       
+        </div>
      	
      </div>
    </div>
@@ -431,6 +433,16 @@
 
 
 
+<script>
+function myFunction() {
+    var x = document.getElementById('myDIV');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
 
 
 	
