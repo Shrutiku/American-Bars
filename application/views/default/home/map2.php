@@ -23,8 +23,8 @@
 </style>
 <script>
 	
-//	var LocationData = <?php echo $var; ?>;
-//	var LocationData1 = <?php echo $var1; ?>;
+//	var LocationData = <?php // echo $var; ?>;
+//	var LocationData1 = <?php // echo $var1; ?>;
 	
 </script>
 <script>
