@@ -112,7 +112,7 @@ function newFn() {
 
     </div>
 
-<div id="myDiv" style="display:none" class="collapse">
+<div id="myDiv"  class="collapse">
 <a class="anchor" id="below-video"></a>
      <div class="wrapper row5">
      	<div class="container">
