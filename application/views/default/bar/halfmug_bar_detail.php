@@ -590,7 +590,7 @@ function piShare()
 				    		<div class="clearfix"></div>
      			</div>
      			<div class="right_gallery_block">
-     				<a href="javascript://" class="btn-lg btn-primary" onclick="loadMap()">Get Directions</a>
+     				<a title="Get Directions" href="javascript://" class="btn-lg btn-primary" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
      				<!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>-->
 		     			<div class="br_map mart10 ">
 		     				
