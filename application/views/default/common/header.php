@@ -47,7 +47,7 @@ $(function(){
           <ul class="nav navbar-nav">
           	  <?php
 		  if(check_user_authentication ()== ''){ ?>
-            <li><a href="<?php echo site_url('home/bar_owner_register')?>" class="yellowlink">Submit Your Bar</a></li>
+            <!--<li><a href="<?php // echo site_url('home/bar_owner_register')?>" class="yellowlink">Submit Your Bar</a></li>-->
             <?php } ?>
 
             <div class="clearfix"></div>
