@@ -37,11 +37,11 @@ function newFn() {
                 <source src="<?php echo base_url()?>upload/1.mp4" type="video/mp4">
             </video>
             <div class="preloader">
-                <p id="intro-scroll-button" onclick="newFn()" data-toggle="dropdown">
+                <p id="intro-scroll-button" onclick="newFn()" data-toggle="collapse">
                     <a class="scroll-down" >
            	        <h1 class="sony"></h1>
-                    <span class="scroll-message" onclick="newFn()" data-toggle="dropdown">CLICK HERE TO EXPLORE </span>
-                    <i class="glyphicon glyphicon-menu-down" onclick="newFn()" data-toggle="dropdown"></i></a>
+                    <span class="scroll-message" onclick="newFn()" data-toggle="collapse">CLICK HERE TO EXPLORE </span>
+                    <i class="glyphicon glyphicon-menu-down" onclick="newFn()" data-toggle="collapse"></i></a>
                 </p>
             </div>
         </section>
