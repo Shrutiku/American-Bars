@@ -251,6 +251,7 @@ function changePassword(id,limit,offset)
                                             </select>
                                     <div class="clear"></div>
                             </div>
+                </div>
                             <div class="portlet-body form">
                                 <?php 
                                 if($keyword !== '1V1') {
