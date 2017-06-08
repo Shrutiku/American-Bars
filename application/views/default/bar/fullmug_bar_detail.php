@@ -236,7 +236,7 @@
 						        		<?php if($bar_detail['website']!='' && $bar_detail['website']!='0'){?>
 						        		<i class="strip url"></i><a onclick="window.open('<?php echo @$bar_detail['website'];?>', '_blank', 'width=800,height=600,scrollbars=yes,status=yes,resizable=yes,screenx=0,screeny=0');" href="javascript:void(0);"><?php echo @$bar_detail['website'];?></a>
 
-                                                                        <?php }?>		
+                                                                        <?php }?>
                                                                 </p>
 
 
@@ -501,7 +501,7 @@
      				<div class="margin-top-80">
      				 <?php if($bar_gallery){ ?>
      					<div class="pull-left view-gallery">
-						   <a href="javascript://"  onclick="see_gal();" class="btn-lg btn-primary">View All Galleries</a>
+						   <a href="javascript://"  onclick="see_gal();" class="btn-lg btn-primary"><span class="glyphicon icon-picture"></span></a>
 						</div>
 					<?php } ?>
      					<ul class="social_icon pull-right">
@@ -1080,7 +1080,7 @@ span.required {
 
 
 
-        
+
         <style>
 	#gmap_marker {
     height: 370px;
@@ -1256,7 +1256,7 @@ span.required {
 	  	slideWidth: 65,
 	 	pager: false,
                 captions:false,
-                
+
 });
 
 
