@@ -128,7 +128,7 @@ $theme_url = $urls= base_url().getThemeName();
 						<div class="result_search_text pull-left">Search Result for <?php echo htmlentities($keyword); ?></div>
 						<?php } ?>
 					</div>
-					<div class="col-sm-5">
+					<div class="col-sm-6">
 						   <div class="form-group pull-left">
 								<label for="inputEmail3" class="control-label">Results Per Page :</label>
 								<select class="select_box" name="limit" id="limit" onchange="limitsubmit(this.value);">
