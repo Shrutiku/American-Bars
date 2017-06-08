@@ -380,22 +380,22 @@ function piShare()
 						       		<div class="clearfix"></div>
 						        <div class="rating_box">
 						       	<?php
-						    		 if($this->session->userdata('user_type')!='bar_owner')
-		{
-						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
-									 
-									
-											if($cnt_fav==2 && get_authenticateUserID()!=''){
+//						    		 if($this->session->userdata('user_type')!='bar_owner')
+//		{
+//						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
+//									 
+//									
+//											if($cnt_fav==2 && get_authenticateUserID()!=''){
 											?>
-											<a id="total-fav" href="javascript:void(0);" name="2" class="favourite_text"><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>
+											<!--<a id="total-fav" href="javascript:void(0);" name="2" class="favourite_text"><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>-->
 											<?php
-											} elseif(get_authenticateUserID()!=''){?>
+//											} elseif(get_authenticateUserID()!=''){?>
 												
-											<a id="total-fav" href="javascript:void(0);" name="<?php if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="favourite_text <?php if($cnt_fav==1){ echo ''; } else{ echo 'active'; } ?>">
-											<i class="glyphicon glyphicon-heart"></i> <?php if($cnt_fav==1){ echo 'Add To My Favorites'; } else{ echo 'Remove From My Favorites'; } ?></a>
-											<?php } else { ?>
-												<a id="total-fav" class="favourite_text" href="javascript:void(0);" name="1" ><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>
-											<?php } }?>	
+											<!--<a id="total-fav" href="javascript:void(0);" name="<?php // if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="favourite_text <?php // if($cnt_fav==1){ echo ''; } else{ echo 'active'; } ?>">-->
+											<!--<i class="glyphicon glyphicon-heart"></i> <?php // if($cnt_fav==1){ echo 'Add To My Favorites'; } else{ echo 'Remove From My Favorites'; } ?></a>-->
+											<?php // } else { ?>
+												<!--<a id="total-fav" class="favourite_text" href="javascript:void(0);" name="1" ><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>-->
+											<?php // } }?>	
 						       	</div> 
 						       <div class="clearfix"></div>
 						    
@@ -403,8 +403,8 @@ function piShare()
 						        <div class="mart10 min-height125">
 						       
 						        	<!-- <p class="bar_add">Website :
-						        		<?php if($bar_detail['website']!='' && $bar_detail['website']!='0'){?>
-						        		<a onclick="window.open('<?php echo @$bar_detail['website'];?>', '_blank', 'width=800,height=600,scrollbars=yes,status=yes,resizable=yes,screenx=0,screeny=0');" href="javascript:void(0);"><?php echo @$bar_detail['website'];?></a>
+						        		<?php // if($bar_detail['website']!='' && $bar_detail['website']!='0'){?>
+						        		<a onclick="window.open('<?php // echo @$bar_detail['website'];?>', '_blank', 'width=800,height=600,scrollbars=yes,status=yes,resizable=yes,screenx=0,screeny=0');" href="javascript:void(0);"><?php // echo @$bar_detail['website'];?></a>
 						        		
 						        <?php } else {?> -
 						        	<?php } ?>		</p> -->

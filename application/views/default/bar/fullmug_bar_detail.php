@@ -176,23 +176,23 @@
 						       <!-- <div class="rating_box"><a href="#"><img src="images/rating.png"/></a></div> -->
 						       <!-- <div class="rating_box">
 						       	<?php
-						    		 if($this->session->userdata('user_type')!='bar_owner')
-									{
-						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
-
-
-											if($cnt_fav==2 && get_authenticateUserID()!=''){
+//						    		 if($this->session->userdata('user_type')!='bar_owner')
+//									{
+//						    		 $cnt_fav = fav_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id'));
+//
+//
+//											if($cnt_fav==2 && get_authenticateUserID()!=''){
 											?>
 											<a id="total-fav" href="javascript:void(0);" name="2" class="favourite_text"><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>
 											<a id="total-like" href="javascript:void(0);" name="2" class="btn btn-lg btn-primary">Like</i></a>
 											<?php
-											} elseif(get_authenticateUserID()!=''){?>
+//											} elseif(get_authenticateUserID()!=''){?>
 
-											<a id="total-fav" href="javascript:void(0);" name="<?php if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="favourite_text <?php if($cnt_fav==1){ echo ''; } else{ echo 'active'; } ?>">
-											<i class="glyphicon glyphicon-heart"></i> <?php if($cnt_fav==1){ echo 'Add To My Favorites'; } else{ echo 'Remove From My Favorites'; } ?></a>
-											<?php } else { ?>
+											<a id="total-fav" href="javascript:void(0);" name="<?php // if($cnt_fav==1){ echo $cnt_fav=0;} else{ echo $cnt_fav=1; } ?>" class="favourite_text <?php // if($cnt_fav==1){ echo ''; } else{ echo 'active'; } ?>">
+											<i class="glyphicon glyphicon-heart"></i> <?php // if($cnt_fav==1){ echo 'Add To My Favorites'; } else{ echo 'Remove From My Favorites'; } ?></a>
+											<?php // } else { ?>
 												<a id="total-fav" class="favourite_text" href="javascript:void(0);" name="1" ><i class="glyphicon glyphicon-heart"></i> Add To My Favorites</a>
-											<?php } }?>
+											<?php // } }?>
 						       	</div> -->
 						       <div class="clearfix"></div>
 
