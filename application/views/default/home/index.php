@@ -110,7 +110,7 @@ function newFn() {
    		
 
     </div>
-   <div id="myDiv">
+<div id="myDiv" style="display:none">
 <a class="anchor" id="below-video"></a>
      <div class="wrapper row5">
      	<div class="container">
@@ -124,7 +124,7 @@ function newFn() {
 		        <h2 class="directory-item">Bar Search</h2>
           	</div>
         </div></a><!-- /.col-lg-3 -->
-        <button onclick="myFunction()">Try it</button>
+       
         
         
         <a href="<?php echo site_url('beer'); ?>">
