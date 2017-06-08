@@ -238,7 +238,16 @@
 
                                                                         <?php }?>		
                                                                 </p>
-                                                                <p>
+
+
+						        		<!-- <a  href="<?php // echo @$bar_detail['website'];?>" class="bar_title">  <?php // echo @$bar_detail['website'];?></a></p> -->
+						        	<!-- <p class="bar_add"><?php // echo @$bar_detail['address'].", ".@$bar_detail['city'].", ".@$bar_detail['zipcode'].", ".@$bar_detail['state'];?></p> -->
+						        	<div>
+						        		<div class="bar_phone pull-left reult_sub_title min-height25" style="width: 60%;"><?php echo $bar_detail['phone']!='' ? '<i class="strip smallphone"></i>'.$bar_detail['phone']:'' ;?></div>
+
+		    		 					<div class="clearfix"></div>
+						        	</div>
+                                                                <div>
                                                                     <ul class="social_icon">
                                                                         <?php
                                                                         if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>
@@ -264,16 +273,7 @@
                                                                         <?php } ?>
                                                                         <div class="clearfix"></div>
                                                                     </ul>
-                                                                </p>
-
-
-						        		<!-- <a  href="<?php // echo @$bar_detail['website'];?>" class="bar_title">  <?php // echo @$bar_detail['website'];?></a></p> -->
-						        	<!-- <p class="bar_add"><?php // echo @$bar_detail['address'].", ".@$bar_detail['city'].", ".@$bar_detail['zipcode'].", ".@$bar_detail['state'];?></p> -->
-						        	<div>
-						        		<div class="bar_phone pull-left reult_sub_title min-height25" style="width: 60%;"><?php echo $bar_detail['phone']!='' ? '<i class="strip smallphone"></i>'.$bar_detail['phone']:'' ;?></div>
-
-		    		 					<div class="clearfix"></div>
-						        	</div>
+                                                                </div>
 						         </div>
 
 						       <div class="result_desc mar_top5 margin-left-5">
