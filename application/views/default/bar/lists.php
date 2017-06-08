@@ -222,7 +222,7 @@ $(document).ready(function(){
 							       </div> 
 							       <div class="clearfix"></div>
 							       <div class="padt8">
-                                                                   <div><p><a class="result_date"><i class="strip address-gray" onclick="loadMap('<?php echo $rs->bar_id;?>')"></i> <?php echo $rs->address.', '.$rs->city.', '.$rs->state.' '.$rs->zipcode; ?></a></p></div>
+                                                                   <div><p><a class="result_date" onclick="loadMap('<?php echo $rs->bar_id;?>')"><i class="strip address-gray"></i> <?php echo $rs->address.', '.$rs->city.', '.$rs->state.' '.$rs->zipcode; ?></a></p></div>
 						        	<p class="result_date"><?php if($rs->phone!=''){?><i class="strip phone-gray"></i> <?php }?><?php echo $rs->phone;?></p>
 		    		 				<div class="clearfix"></div>
 						        </div>
