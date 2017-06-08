@@ -211,7 +211,7 @@ $(document).ready(function(){
 							<?php } ?>
 						    </a>
 						    <div class="media-body">
-						       <div class="reult_sub_title"><h4 class="media-heading bar-newname"><p><a href="<?php echo site_url("bar/details/".$rs->bar_slug);?>" class="listing-title mar_r5"><?php echo $rs->bar_title; ?></a> <a href="javascript://" class="btn btn-lg btn-primary" onclick="loadMap('<?php echo $rs->bar_id;?>')">Get Directions</a></p></h4>
+						       <div class="reult_sub_title"><h4 class="media-heading bar-newname"><p><a href="<?php echo site_url("bar/details/".$rs->bar_slug);?>" class="listing-title mar_r5"><?php echo $rs->bar_title; ?></a> <!--<a href="javascript://" class="btn btn-lg btn-primary" onclick="loadMap('<?php // echo $rs->bar_id;?>')">Get Directions</a>--></p></h4>
 						       	<div class="clearfix"></div>
 							       	<div class="result_desc mar_top5">
 							       	<div> <!-- class="bar-listnew" -->
@@ -222,7 +222,7 @@ $(document).ready(function(){
 							       </div> 
 							       <div class="clearfix"></div>
 							       <div class="padt8">
-						        	<div><p class="result_date"><i class="strip address-gray"></i> <?php echo $rs->address.', '.$rs->city.', '.$rs->state.' '.$rs->zipcode; ?></p></div>
+                                                                   <div><p><a class="result_date" onclick="loadMap('<?php echo $rs->bar_id;?>')"><i class="strip address-gray"></i> <?php echo $rs->address.', '.$rs->city.', '.$rs->state.' '.$rs->zipcode; ?></a></p></div>
 						        	<p class="result_date"><?php if($rs->phone!=''){?><i class="strip phone-gray"></i> <?php }?><?php echo $rs->phone;?></p>
 		    		 				<div class="clearfix"></div>
 						        </div>
