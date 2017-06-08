@@ -1218,7 +1218,7 @@ $(".pagination li a").click(function() {
 	var directionDisplay;
 	var directionsService = new google.maps.DirectionsService();
 	var map;
-        var LocationData = <?php echo $var; ?>;
+//        var LocationData = <?php echo $var; ?>;
 	function initialize() {
 	var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
         var map = new google.maps.Map(document.getElementById('gmap_marker'));
