@@ -501,7 +501,7 @@
      				<div class="margin-top-80">
      				 <?php if($bar_gallery){ ?>
      					<div class="pull-left view-gallery">
-						   <a href="javascript://"  onclick="see_gal();" class="btn-lg btn-primary"><i class="glyphicon glyphicon-picture"></i></a>
+						   <a href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-picture"></i></a>
 						   <!-- <div class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div> -->
 						</div>
 					<?php } ?>
