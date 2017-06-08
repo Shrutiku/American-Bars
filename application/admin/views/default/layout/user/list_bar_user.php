@@ -236,7 +236,7 @@ function changePassword(id,limit,offset)
                                 <span class="sspan fl_left ">Show</span>
                                     <?php 
                                         if($search_type=='normal') { ?>
-                                            <select name="limit" id="limit" onchange="getlimit(this.value)" style="width:80px; margin-top:5px;"></select> <?php 
+                                            <select name="limit" id="limit" onchange="getlimit(this.value)" style="width:80px; margin-top:5px;"> <?php 
                                         } if($search_type=='search') { ?>
                                             <select name="limit" id="limit" onchange="getsearchlimit(this.value)" style="width:80px; margin-top:5px;"> <?php 
                                         } ?>
