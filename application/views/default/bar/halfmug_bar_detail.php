@@ -592,7 +592,16 @@ function piShare()
      			<div class="right_gallery_block">
      				<a title="Get Directions" href="javascript://" class="btn-lg btn-primary" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
      				<!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>-->
-		     			<div class="br_map mart10 ">
+		     		<ul class="social_icon pull-right">
+                                    <li>Share : </li>
+                                        <li><a href="javascript://" onclick="fbShare()" ><img src="<?php echo base_url().'default'?>/images/result_fb.png"></a></li>
+                                        <li><a onclick="twShare()" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_twitt.png"></a></li>
+                                        <li><a onclick="gPlusShare1('<?php echo site_url().'bar/details/'.$bar_detail['bar_id']; ?>','<?php echo $bar_detail['bar_title']; ?>')" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_google.png"></a></li>
+                                        <li><a  href="javascript://" onclick="piShare()"><img src="<?php echo base_url().'default'?>/images/result_p.png"></a></li>
+
+                                        <div class="clearfix"></div>
+                                </ul>	
+                                <div class="br_map mart10 ">
 		     				
 		     				<div class="portlet-body">
 		     					
@@ -603,7 +612,7 @@ function piShare()
 		     			</div>
 		     			
 		     			<div class="" style="margin-top: 20px;">
-     					<ul class="social_icon">
+<!--     					<ul class="social_icon">
      						<li>Share : </li>
 						    <li><a href="javascript://" onclick="fbShare()" ><img src="<?php echo base_url().'default'?>/images/result_fb.png"></a></li>
 						    <li><a onclick="twShare()" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_twitt.png"></a></li>
@@ -611,7 +620,7 @@ function piShare()
 						    <li><a  href="javascript://" onclick="piShare()"><img src="<?php echo base_url().'default'?>/images/result_p.png"></a></li>
 						    
 						    <div class="clearfix"></div>
-		    		 	</ul><div class="clear"></div>
+		    		 	</ul><div class="clear"></div>-->
      				</div>
      			</div>
      			
