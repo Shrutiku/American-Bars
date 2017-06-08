@@ -104,10 +104,10 @@
      	<div class="container">
       <div class="text-center clearfix">
       
-       <a class="" href="javascript://" onclick="searchmodal()"><div class="col-md-3 col-sm-4 padb20 ">
+       <a class="" href="javascript://" onclick="searchmodal()">Helloooo<div class="col-md-3 col-sm-4 padb20 ">
         	<div class="directory_box">
         		<div class="simple_box">
-		          
+		          <img src="<?php echo $theme_url; ?>/images/bar-icon.png"/>
 		        </div>
 		        <h2 class="directory-item">Bar Search</h2>
           	</div>
