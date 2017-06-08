@@ -36,10 +36,10 @@ function newFn() {
                 <source src="<?php echo base_url()?>upload/1.mp4" type="video/mp4">
             </video>
             <div class="preloader">
-                <p id="intro-scroll-button">
+                <p id="intro-scroll-button" onclick="newFn()">
                     <a class="scroll-down" >
            	        <h1 class="sony"></h1>
-                    <span class="scroll-message">SCROLL DOWN TO EXPLORE</span>
+                    <span class="scroll-message" onclick="newFn()">SCROLL DOWN TO EXPLORE</span>
                     <i class="glyphicon glyphicon-menu-down" onclick="newFn()"></i></a>
                 </p>
             </div>
