@@ -144,35 +144,33 @@
 
 						    <div class="media-body favourite-box">
 						       <div class="barnew-title"><h4 class="media-heading"><a href="" class="bar_title"><i class="strip fullmug"></i> <?php echo ucwords(@$bar_detail['bar_title']); ?></a></h4></div>
-						      <div class="taxi-right">
-						       <ul class="social_icon">
-							         		<?php
-
-
-							         		if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>
-							    		 		<li><a href="<?php echo $bar_detail['facebook_link']; ?>" target="_blank" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_fb-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_fb.png'" /></a></li>
-							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['twitter_link']!='' && $bar_detail['twitter_link']!='0'){?>
-							    		 		<li><a target="_blank" href="<?php echo $bar_detail['twitter_link']; ?>" ><img src="<?php echo base_url().'default'?>/images/result_twitt.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_twitt-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_twitt.png'" /></a></li>
-							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['linkedin_link']!='' && $bar_detail['linkedin_link']!='0'){?>
-							    		 		<li><a target="_blank" href="<?php echo $bar_detail['linkedin_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_linkln.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_linkln-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_linkln.png'" /></a></li>
-							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['google_plus_link']!='' && $bar_detail['google_plus_link']!='0'){?>
-							    		 		<li><a target="_blank" href="<?php echo $bar_detail['google_plus_link']; ?>" "><img src="<?php echo base_url().'default'?>/images/result_google.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_google-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_google.png'" /></a></li>
-							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['pinterest_link']!='' && $bar_detail['pinterest_link']!='0'){?>
-							    		 		<li><a target="_blank" href="<?php echo $bar_detail['pinterest_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_p.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_p-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_p.png'" /></a></li>
-							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['dribble_link']!='' && $bar_detail['dribble_link']!='0'){?>
-							    		 		<li><a target="_blank" href="<?php echo $bar_detail['dribble_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_circle_white.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_circle-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_circle.png'" /></a></li>
-							    		 	<?php } ?>
-							    		 	<?php if($bar_detail['instagram_link']!='' && $bar_detail['instagram_link']!='0'){?>
-							    		 		<li><a target="_blank" href="<?php echo $bar_detail['instagram_link']; ?>"><img src="<?php echo base_url().'default'?>/images/instagram2.png" onmouseover="this.src='<?php echo base_url();?>default/images/instagram2_hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/instagram2.png'" /></a></li>
-							    		 	<?php } ?>
-							    		 	<div class="clearfix"></div>
-		    		 					</ul>
-		    		 				</div>
+                                                        <div class="taxi-right">
+<!--                                                            <ul class="social_icon">
+                                                                <?php
+                                                                if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>
+                                                                        <li><a href="<?php echo $bar_detail['facebook_link']; ?>" target="_blank" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_fb-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_fb.png'" /></a></li>
+                                                                <?php } ?>
+                                                                <?php if($bar_detail['twitter_link']!='' && $bar_detail['twitter_link']!='0'){?>
+                                                                        <li><a target="_blank" href="<?php echo $bar_detail['twitter_link']; ?>" ><img src="<?php echo base_url().'default'?>/images/result_twitt.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_twitt-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_twitt.png'" /></a></li>
+                                                                <?php } ?>
+                                                                <?php if($bar_detail['linkedin_link']!='' && $bar_detail['linkedin_link']!='0'){?>
+                                                                        <li><a target="_blank" href="<?php echo $bar_detail['linkedin_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_linkln.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_linkln-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_linkln.png'" /></a></li>
+                                                                <?php } ?>
+                                                                <?php if($bar_detail['google_plus_link']!='' && $bar_detail['google_plus_link']!='0'){?>
+                                                                        <li><a target="_blank" href="<?php echo $bar_detail['google_plus_link']; ?>" "><img src="<?php echo base_url().'default'?>/images/result_google.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_google-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_google.png'" /></a></li>
+                                                                <?php } ?>
+                                                                <?php if($bar_detail['pinterest_link']!='' && $bar_detail['pinterest_link']!='0'){?>
+                                                                        <li><a target="_blank" href="<?php echo $bar_detail['pinterest_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_p.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_p-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_p.png'" /></a></li>
+                                                                <?php } ?>
+                                                                <?php if($bar_detail['dribble_link']!='' && $bar_detail['dribble_link']!='0'){?>
+                                                                        <li><a target="_blank" href="<?php echo $bar_detail['dribble_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_circle_white.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_circle-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_circle.png'" /></a></li>
+                                                                <?php } ?>
+                                                                <?php if($bar_detail['instagram_link']!='' && $bar_detail['instagram_link']!='0'){?>
+                                                                        <li><a target="_blank" href="<?php echo $bar_detail['instagram_link']; ?>"><img src="<?php echo base_url().'default'?>/images/instagram2.png" onmouseover="this.src='<?php echo base_url();?>default/images/instagram2_hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/instagram2.png'" /></a></li>
+                                                                <?php } ?>
+                                                                <div class="clearfix"></div>
+                                                            </ul>-->
+                                                        </div>
 						       		<div class="clearfix"></div>
 
 						       <!-- <div class="rating_box"><a href="#"><img src="images/rating.png"/></a></div> -->
@@ -242,13 +240,40 @@
                                                                 </p>
 
 
-						        		<!-- <a  href="<?php echo @$bar_detail['website'];?>" class="bar_title">  <?php echo @$bar_detail['website'];?></a></p> -->
-						        	<!-- <p class="bar_add"><?php echo @$bar_detail['address'].", ".@$bar_detail['city'].", ".@$bar_detail['zipcode'].", ".@$bar_detail['state'];?></p> -->
+						        		<!-- <a  href="<?php // echo @$bar_detail['website'];?>" class="bar_title">  <?php // echo @$bar_detail['website'];?></a></p> -->
+						        	<!-- <p class="bar_add"><?php // echo @$bar_detail['address'].", ".@$bar_detail['city'].", ".@$bar_detail['zipcode'].", ".@$bar_detail['state'];?></p> -->
 						        	<div>
 						        		<div class="bar_phone pull-left reult_sub_title min-height25" style="width: 60%;"><?php echo $bar_detail['phone']!='' ? '<i class="strip smallphone"></i>'.$bar_detail['phone']:'' ;?></div>
 
 		    		 					<div class="clearfix"></div>
 						        	</div>
+                                                                <div>
+                                                                    <ul class="social_icon">
+                                                                        <?php
+                                                                        if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>
+                                                                                <li><a href="<?php echo $bar_detail['facebook_link']; ?>" target="_blank" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_fb-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_fb.png'" /></a></li>
+                                                                        <?php } ?>
+                                                                        <?php if($bar_detail['twitter_link']!='' && $bar_detail['twitter_link']!='0'){?>
+                                                                                <li><a target="_blank" href="<?php echo $bar_detail['twitter_link']; ?>" ><img src="<?php echo base_url().'default'?>/images/result_twitt.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_twitt-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_twitt.png'" /></a></li>
+                                                                        <?php } ?>
+                                                                        <?php if($bar_detail['linkedin_link']!='' && $bar_detail['linkedin_link']!='0'){?>
+                                                                                <li><a target="_blank" href="<?php echo $bar_detail['linkedin_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_linkln.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_linkln-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_linkln.png'" /></a></li>
+                                                                        <?php } ?>
+                                                                        <?php if($bar_detail['google_plus_link']!='' && $bar_detail['google_plus_link']!='0'){?>
+                                                                                <li><a target="_blank" href="<?php echo $bar_detail['google_plus_link']; ?>" "><img src="<?php echo base_url().'default'?>/images/result_google.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_google-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_google.png'" /></a></li>
+                                                                        <?php } ?>
+                                                                        <?php if($bar_detail['pinterest_link']!='' && $bar_detail['pinterest_link']!='0'){?>
+                                                                                <li><a target="_blank" href="<?php echo $bar_detail['pinterest_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_p.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_p-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_p.png'" /></a></li>
+                                                                        <?php } ?>
+                                                                        <?php if($bar_detail['dribble_link']!='' && $bar_detail['dribble_link']!='0'){?>
+                                                                                <li><a target="_blank" href="<?php echo $bar_detail['dribble_link']; ?>"><img src="<?php echo base_url().'default'?>/images/result_circle_white.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_circle-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_circle.png'" /></a></li>
+                                                                        <?php } ?>
+                                                                        <?php if($bar_detail['instagram_link']!='' && $bar_detail['instagram_link']!='0'){?>
+                                                                                <li><a target="_blank" href="<?php echo $bar_detail['instagram_link']; ?>"><img src="<?php echo base_url().'default'?>/images/instagram2.png" onmouseover="this.src='<?php echo base_url();?>default/images/instagram2_hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/instagram2.png'" /></a></li>
+                                                                        <?php } ?>
+                                                                        <div class="clearfix"></div>
+                                                                    </ul>
+                                                                </div>
 						         </div>
 
 						       <div class="result_desc mar_top5 margin-left-5">
