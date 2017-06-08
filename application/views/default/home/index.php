@@ -11,6 +11,17 @@
     	 	$("#zipcode11").val('');
     	 	    	 });
     </script>
+    <script>
+function newFn() {
+    var x = document.getElementById('myDiv');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
+
     <?php
 ?>
 <?php 
@@ -26,10 +37,10 @@
             </video>
             <div class="preloader">
                 <p id="intro-scroll-button">
-                    <a class="scroll-down" href="#below-video">
+                    <a class="scroll-down" >
            	        <h1 class="sony"></h1>
                     <span class="scroll-message">SCROLL DOWN TO EXPLORE</span>
-                    <i class="glyphicon glyphicon-menu-down"></i></a>
+                    <i class="glyphicon glyphicon-menu-down" onclick="newFn()"></i></a>
                 </p>
             </div>
         </section>
