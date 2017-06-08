@@ -468,6 +468,7 @@
      </div>
      			</div>
      			<div class="right_gallery_block newadded">
+				<div style="margin-right:5px">
                 	<a href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-glass"></i></a>
 					<?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
@@ -486,6 +487,7 @@
 
 						<div class="clearfix"></div>
 					</ul>
+				</div>
      				<div class="text-center mar_top15">
 
 	     				 <?php if($bar_gallery){ ?><ul class="bxslider">
