@@ -249,8 +249,9 @@ function changePassword(id,limit,offset)
                                                 <option value="75" <?php if($limit==75){?> selected="selected"<?php }?>>75</option>
                                                 <option value="100" <?php if($limit==100){?> selected="selected"<?php }?>>100</option>     
                                             </select>
-                                    <div class="clear"></div>
                             </div>
+
+                                            <div class="clear"></div>
                 </div>
                             <div class="portlet-body form">
                                 <?php 
@@ -384,8 +385,8 @@ function changePassword(id,limit,offset)
                                     </div>
                                 </form>				
                             </div>			
-                </div>
             </div>
         </div>
     </div>
+</div>
 </div>
