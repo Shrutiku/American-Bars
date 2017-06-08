@@ -470,10 +470,10 @@
      			<div class="right_gallery_block newadded">
 				<div style="margin-bottom:5px">
                                     <a title="Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-glass"></i></a>
-                                    <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
+                                    <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
                                         <?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
-						  <a title="View More Galleries" href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-picture"></i></a>
+						  <a title="View More Galleries" href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block" style="margin-right:5px;"><i class="glyphicon glyphicon-picture"></i></a>
 						  <!-- <div class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div> -->
 					   </div>
 				   <?php } ?>
