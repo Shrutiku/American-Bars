@@ -247,7 +247,7 @@
 
 		    		 					<div class="clearfix"></div>
 						        	</div>
-                                                                <div>
+                                                                <div style="margin-top:5px">
                                                                     <ul class="social_icon">
                                                                         <?php
                                                                         if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>

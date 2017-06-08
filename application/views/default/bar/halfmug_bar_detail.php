@@ -456,7 +456,7 @@ function piShare()
                                         
                                          
 						        	</div>
-                                                                <div>
+                                                                <div style="margin-top:5px">
                                                                     <ul class="social_icon">
                                                                         <?php
                                                                         if($bar_detail['facebook_link']!='' && $bar_detail['facebook_link']!='0'){?>
@@ -1243,7 +1243,7 @@ $(".pagination li a").click(function() {
 	var directionDisplay;
 	var directionsService = new google.maps.DirectionsService();
 	var map;
-//        var LocationData = <?php echo $var; ?>;
+//        var LocationData = <?php // echo $var; ?>;
 	function initialize() {
 	var iconBase = '<?php echo base_url().getThemeName(); ?>/images/marker.png';
         var map = new google.maps.Map(document.getElementById('gmap_marker'));
