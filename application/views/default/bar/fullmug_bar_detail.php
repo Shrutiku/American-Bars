@@ -501,7 +501,7 @@
      				<div class="margin-top-80">
      				 <?php if($bar_gallery){ ?>
      					<div class="pull-left view-gallery">
-						   <a href="javascript://"  onclick="see_gal();" class="btn-lg btn-primary glyphicon icon-picture"></a>
+						   <button href="javascript://"  onclick="see_gal();" class="btn-lg btn-primary"><span class="glyphicon icon-picture"></span></button>
 						</div>
 					<?php } ?>
      					<ul class="social_icon pull-right">
