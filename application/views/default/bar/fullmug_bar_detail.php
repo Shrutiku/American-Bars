@@ -468,7 +468,7 @@
      </div>
      			</div>
      			<div class="right_gallery_block newadded">
-                	<a  href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left"><i class="glyphicon glyphicon-glass"></i></a>
+                	<a href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-glass"></i></a>
 					<?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
 						  <a href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-picture"></i></a>
@@ -477,7 +477,15 @@
 				   <?php } ?>
      				<!--<a href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadTaxi()">Call a Taxi</a>-->
 		    		<!-- <a href="javascript://" class="btn-lg btn-primary text-center mar_top5 marl_10" onclick="loadTaxi()">Yelp Reviews</a> -->
+					<ul class="social_icon pull-right">
+						<li>Share : </li>
+						<li><a href="javascript://" onclick="fbShare()" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_fb-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_fb.png'" /></a></li>
+						<li><a onclick="twShare()" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_twitt.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_twitt-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_twitt.png'" /></a></li>
+						<li><a onclick="gPlusShare1('<?php echo site_url().'bar/details/'.$bar_detail['bar_id']; ?>','<?php echo $bar_detail['bar_title']; ?>')" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_google.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_google-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_google.png'" /></a></li>
+						<li><a  href="javascript://" onclick="piShare()"><img src="<?php echo base_url().'default'?>/images/result_p.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_p-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_p.png'" /></a></li>
 
+						<div class="clearfix"></div>
+					</ul>
      				<div class="text-center mar_top15">
 
 	     				 <?php if($bar_gallery){ ?><ul class="bxslider">
