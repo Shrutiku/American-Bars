@@ -406,8 +406,8 @@ function piShare()
 						        		<?php // if($bar_detail['website']!='' && $bar_detail['website']!='0'){?>
 						        		<a onclick="window.open('<?php // echo @$bar_detail['website'];?>', '_blank', 'width=800,height=600,scrollbars=yes,status=yes,resizable=yes,screenx=0,screeny=0');" href="javascript:void(0);"><?php // echo @$bar_detail['website'];?></a>
 						        		
-						        <?php } else {?> -
-						        	<?php } ?>		</p> -->
+						        <?php // } else {?> -
+						        	<?php // } ?>		</p> -->
 						        	
 						        <?php // if($bar_detail['bar_category']){?>	
 <!--						        	<div class="socialicon-right">
