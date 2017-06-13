@@ -1839,12 +1839,12 @@ function loadMap()
     map = new google.maps.Map(document.getElementById("gmap_marker"), myOptions);
     if (geocoder) {
       geocoder.geocode( { 'address': address}, function(results, status) {
+      id = results[0].place_id;
+      console.log(id);
         if (status == google.maps.GeocoderStatus.OK) {
           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
           map.setCenter(results[0].geometry.location);
-          
-          id = results[0].place_id;
-
+       
             var infowindow = new google.maps.InfoWindow(
                 { content: '<b>'+address+'</b>',
                   size: new google.maps.Size(150,50)
@@ -1860,7 +1860,7 @@ function loadMap()
             });
 
           }
-         }
+        }
       });
     }
   }
