@@ -898,7 +898,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 		     				</li>
 	     				<?php } } else {?>
 	     					<div class="gallery-default reviewdefault mar_top20">
-     					No Review Available
+                                                    <div id="google-reviews"></div>
      				</div>
 	     					<?php } ?>
 	     			</ul>
