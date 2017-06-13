@@ -2048,13 +2048,25 @@ function getBarSpecialHours(day)
 </script>
     
     <script>
-$(document).ready(function() { 
-    $("#google-reviews").googlePlaces({
-            placeId: results[0].id
-          , render: ['reviews']
-          , min_rating: 4
-          , max_rows:5
-    });
+$(document).ready(function() {
+    var geocoder;
+    var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
+    geocoder = new google.maps.Geocoder();
+    if (geocoder) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            $("#google-reviews").googlePlaces({
+                    placeId: results[0].id
+                  , render: ['reviews']
+                  , min_rating: 4
+                  , max_rows:5
+            });
+
+          }
+         }
+      });
+    }
 });
     </script>
 
