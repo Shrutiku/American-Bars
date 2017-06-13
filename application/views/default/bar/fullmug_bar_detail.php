@@ -1951,7 +1951,7 @@ function opengallery(id)
 			   },
 			   complete: function(){
 			     $('#dvLoading').fadeOut('slow');
-			   },google
+			   },
 			         success: function(response) {
 
 			           			           	 //$('#myModalnew_ajax').on('show.bs.modal', function (e) {
