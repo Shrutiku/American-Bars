@@ -111,7 +111,7 @@
           var map = new google.maps.Map(document.getElementById('map-plug'));
 
           var request = {
-            placeId: plugin.settings.placeId
+            placeId: c.placeId
           };
 
           var service = new google.maps.places.PlacesService(map);
