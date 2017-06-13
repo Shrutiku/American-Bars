@@ -211,19 +211,30 @@
 
         var renderStars = function(rating){
           var stars = "<div class='review-stars'><ul>";
-                            
+          
+            if(rating == 1) {
+                stars = "<li><i class='starrating1'></i></li>"
+            } else if(rating == 2) {
+                stars = "<li><i class='starrating2'></i></li>"
+            } else if(rating == 3) {
+                stars = "<li><i class='starrating3'></i></li>"
+            } else if(rating == 4) {
+                stars = "<li><i class='starrating4'></i></li>"
+            } else {
+                stars = "<li><i class='starrating5'></i></li>"
+            }
           // fill in gold stars
-          for (var i = 0; i < rating; i++) {
-            stars = stars+"<li><i class='star'></i></li>";
-          };
-
-          // fill in empty stars
-          if(rating < 5){
-            for (var i = 0; i < (5 - rating); i++) {
-              stars = stars+"<li><i class='star inactive'></i></li>";
-            };
-          }
-          stars = stars+"</ul></div>";
+//          for (var i = 0; i < rating; i++) {
+//            stars = stars+"<li><i class='star'></i></li>";
+//          };
+//
+//          // fill in empty stars
+//          if(rating < 5){
+//            for (var i = 0; i < (5 - rating); i++) {
+//              stars = stars+"<li><i class='star inactive'></i></li>";
+//            };
+//          }
+//          stars = stars+"</ul></div>";
           return stars;
         }
 
