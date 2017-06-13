@@ -145,7 +145,7 @@
         }
 
         var renderReviews = function(reviews){
-//          reviews = sort_by_date(reviews);
+          reviews = sort_by_date(reviews);
           reviews = filter_minimum_rating(reviews);
           var html = "";
           var row_count = (plugin.settings.max_rows > 0)? plugin.settings.max_rows - 1 : reviews.length - 1;
