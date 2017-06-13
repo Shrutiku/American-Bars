@@ -898,7 +898,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 		     				</li>
 	     				<?php } } else {?>
                                                 <!--<div class="gallery-default reviewdefault mar_top20" style="font-size:12px; text-align: left; max-height: 574px; vertical-align: top;">-->
-                                                    <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 574px;overflow-y:scroll;"></div>
+                                                <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 574px;overflow-y:scroll;"><br><br></div>
      				<!--</div>-->
 	     					<?php } ?>
 	     			</ul>
@@ -2058,7 +2058,11 @@ function loadGoogRev(pid) {
                 , min_rating: 3
                 , max_rows: 5
                 , schema: {
-                    middleText: "<hr>"
+                    displayElement: '#schema' // optional, will use "#schema" by default
+                  , beforeText: 'Googlers rated'
+                  , middleText: '<hr>'
+                  , afterText: ''
+                  , type: ''
                 }
           });
 }
