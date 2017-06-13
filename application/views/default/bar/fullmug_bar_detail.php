@@ -2054,7 +2054,7 @@ function getBarSpecialHours(day)
     
     <script>
 function loadGoogRev(pid) {
-    console.log(pid);
+//    console.log(pid);
     $("#google-reviews").googlePlaces({
                   placeId: pid
                 , render: ['reviews']
