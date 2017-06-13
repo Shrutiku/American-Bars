@@ -2050,7 +2050,7 @@ function getBarSpecialHours(day)
     <script>
 $(document).ready(function() { 
     $("#google-reviews").googlePlaces({
-            placeId: 'ChIJa2uI-Nt4bIcR5cvnOxD4cFg'
+            placeId: results[0].id
           , render: ['reviews']
           , min_rating: 4
           , max_rows:5
