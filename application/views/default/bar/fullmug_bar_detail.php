@@ -2055,7 +2055,7 @@ function loadGoogRev(pid) {
     $("#google-reviews").googlePlaces({
                   placeId: pid
                 , render: ['reviews']
-                , min_rating: 4
+                , min_rating: 3
                 , max_rows:5
           });
 }
