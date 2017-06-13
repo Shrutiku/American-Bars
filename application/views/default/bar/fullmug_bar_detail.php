@@ -868,6 +868,10 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
      	</div>
      </div>
 </div>
+ 
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/application/bower_components/google-places/google-places.css" />
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/application/bower_components/google-places/google-places.js"></script>              
+
      			<div class="review_mainblock padt10 new_review">
      				<h1 class="productbar_title">
      					<div class="pull-left mar_top5">Raves and Rants</div>
