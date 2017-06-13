@@ -1822,8 +1822,7 @@ function loadMap()
   var geocoder;
   var map;
   var address ="<?php echo @mysql_real_escape_string($bar_detail['address'])." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-  var id;
-  
+  id = "";
   function initialize_map()
   {
     geocoder = new google.maps.Geocoder();
