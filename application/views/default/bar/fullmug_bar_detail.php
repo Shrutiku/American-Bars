@@ -2050,7 +2050,7 @@ function getBarSpecialHours(day)
     <script>
 $(document).ready(function() {
     var placeId;
-        address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
+    address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
     geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': address}, function(results, status) {
           placeId = results[0].place_id;
