@@ -2056,7 +2056,7 @@ function getBarSpecialHours(day)
 function loadGoogRev(pid) {
     console.log(pid);
     $("#google-reviews").googlePlaces({
-                  placeId: 'ChIJa2uI-Nt4bIcR5cvnOxD4cFg'
+                  placeId: 'ChIJq2ype9fkMIgRTLJIIp7N4to'
                 , render: ['reviews']
                 , min_rating: 3
                 , max_rows: 5
