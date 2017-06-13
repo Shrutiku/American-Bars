@@ -898,7 +898,11 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 		     				</li>
 	     				<?php } } else {?>
                                                 <!--<div class="gallery-default reviewdefault mar_top20" style="font-size:12px; text-align: left; max-height: 574px; vertical-align: top;">-->
+<<<<<<< HEAD
   <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 574px;overflow-y:scroll;border:solid;border-color:red;"></div>
+=======
+                                                    <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 574px;overflow-y:scroll;"></div>
+>>>>>>> origin/sandbox
      				<!--</div>-->
 	     					<?php } ?>
 	     			</ul>
@@ -1951,7 +1955,7 @@ function opengallery(id)
 			   },
 			   complete: function(){
 			     $('#dvLoading').fadeOut('slow');
-			   },
+			   },googl
 			         success: function(response) {
 
 			           			           	 //$('#myModalnew_ajax').on('show.bs.modal', function (e) {
