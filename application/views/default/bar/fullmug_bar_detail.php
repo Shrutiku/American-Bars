@@ -897,8 +897,8 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 		     					<div class="clearfix"></div>
 		     				</li>
 	     				<?php } } else {?>
-                                                <div class="gallery-default reviewdefault mar_top20" style="font-size:12px; text-align: left; height: 574px">
-                                                    <div id="google-reviews"></div>
+                                                <div class="gallery-default reviewdefault mar_top20" style="font-size:12px; text-align: left; max-height: 574px">
+                                                    <div id="google-reviews" style="margin-top:0px;"></div>
      				</div>
 	     					<?php } ?>
 	     			</ul>
