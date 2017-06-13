@@ -210,18 +210,18 @@
         }
 
         var renderStars = function(rating){
-          var stars = "<div class='review-stars'><ul>";
+          var stars = "<div class='review-stars'></div>";
           
             if(rating == 1) {
-                stars = "<li><i class='starrating1'></i></li>"
+                stars = "<div class='rating_box starrating1'></div>"
             } else if(rating == 2) {
-                stars = "<li><i class='starrating2'></i></li>"
+                stars = "<div class='rating_box starrating1'></div>"
             } else if(rating == 3) {
-                stars = "<li><i class='starrating3'></i></li>"
+                stars = "<div class='rating_box starrating1'></div>"
             } else if(rating == 4) {
-                stars = "<li><i class='starrating4'></i></li>"
+                stars = "<div class='rating_box starrating1'></div>"
             } else {
-                stars = "<li><i class='starrating5'></i></li>"
+                stars = "<div class='rating_box starrating1'></div>"
             }
           // fill in gold stars
 //          for (var i = 0; i < rating; i++) {
@@ -234,7 +234,7 @@
 //              stars = stars+"<li><i class='star inactive'></i></li>";
 //            };
 //          }
-//          stars = stars+"</ul></div>";
+//          stars = stars+"</div>";
           return stars;
         }
 
