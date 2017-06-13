@@ -884,7 +884,6 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
      				<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:5; ?>" />
 	     			<div id="responsecomment">
-                                    <br>
 	     			<ul class="review_block" >
                                     <br>
 	     				<?php if($result){
@@ -898,9 +897,10 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 		     					<div class="rating_box starrating<?php echo $comment->bar_rating; ?>"><a href="javascript"></a></div>
 		     					<div class="clearfix"></div>
 		     				</li>
-	     				<?php } } else {?> <br>
+	     				<?php } } else {?>
+                                                <h3>Reviews from Google</h3>
                                                 <!--<div class="gallery-default reviewdefault mar_top20" style="font-size:12px; text-align: left; max-height: 574px; vertical-align: top;">-->
-                                                <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 574px;overflow-y:scroll;padding: 3px"><br><br></div>
+                                                <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 574px;overflow-y:scroll;padding: 3px; "><br><br></div>
      				<!--</div>-->
 	     					<?php } ?>
 	     			</ul>
@@ -2059,13 +2059,6 @@ function loadGoogRev(pid) {
                 , render: ['reviews']
                 , min_rating: 3
                 , max_rows: 5
-                , schema: {
-                    displayElement: '#schema' // optional, will use "#schema" by default
-                  , beforeText: 'Googlers rated'
-                  , middleText: '<hr>'
-                  , afterText: ''
-                  , type: ''
-                }
           });
 }
     </script>
