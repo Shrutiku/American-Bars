@@ -1822,6 +1822,21 @@ function loadMap()
   var geocoder;
   var map;
   var address ="<?php echo @mysql_real_escape_string($bar_detail['address'])." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
+  
+    
+    geocoder = new google.maps.Geocoder();
+        if (geocoder) {
+            geocoder.geocode( { 'address': address}, function(results, status) {
+                $("#google-reviews").googlePlaces({
+                    placeId: results[0].id
+                  , render: ['reviews']
+                  , min_rating: 4
+                  , max_rows:5
+                  , rotateTime:5000
+              });
+            }
+        }
+    
   function initialize_map()
   {
     geocoder = new google.maps.Geocoder();
@@ -2045,6 +2060,35 @@ function getBarSpecialHours(day)
 	   }
 
 </script>
+
+<script>
+    $("#google-reviews").googlePlaces({
+    placeId: 'ChIJa2uI-Nt4bIcR5cvnOxD4cFg'
+  , render: ['reviews']
+  , min_rating: 4
+  , max_rows:5
+  , rotateTime:5000
+  , schema: {
+            displayElement: '#schema' // optional, will use "#schema" by default
+          , beforeText: 'Googlers rated'
+          , middleText: 'based on'
+          , afterText: 'awesome reviewers.'
+          , type: 'Hostel'
+      }
+  , address:{
+    displayElement: "#custom-address-id" // optional, will use "#google-address" by default
+  }
+  , phone:{
+    displayElement: "#custom-phone-id" // optional, will use "#google-phone" by default
+  }
+  , staticMap:{
+      displayElement: "#google-static-map" // optional, will use "#google-static-map" by default
+  }
+  , hours:{
+      displayElement: "#google-hours" // optional, will use "#google-hours" by default
+  }
+});
+    </script>
 
 <!--
 
