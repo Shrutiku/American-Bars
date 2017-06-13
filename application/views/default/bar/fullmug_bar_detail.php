@@ -2058,7 +2058,7 @@ function loadGoogRev(pid) {
                 , min_rating: 3
                 , max_rows: 5
                 , schema: {
-                    middleText: "<hr>"
+                    middleText: "<div class="clearfix"></div>"
                 }
           });
 }
