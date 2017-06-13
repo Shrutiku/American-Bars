@@ -152,7 +152,7 @@
           for (var i = row_count; i >= 0; i--) {
             var stars = renderStars(reviews[i].rating);
             var date = convertTime(reviews[i].time);
-            html = html+"<div class='review-item'><div class='review-meta'><span class='review-author'>"+reviews[i].author_name+"</span><span class='review-sep'>, </span><span class='review-date'>"+date+"</span></div>"+stars+"<p class='review-text'>"+reviews[i].text+"</p></div>"
+            html = html+"<div class='review-item'><div class='review-meta'><span class='review-author' style='font-size:16; color='#DEB863'>"+reviews[i].author_name+"</span><span class='review-sep pull left' style='font-size:16; color='#DEB863'>, </span><span class='review-date'>"+date+"</span></div>"+stars+"<p class='review-text'>"+reviews[i].text+"</p></div>"
           };
           $element.append(html);
         }
