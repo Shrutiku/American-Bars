@@ -2049,19 +2049,16 @@ function getBarSpecialHours(day)
     
     <script>
 $(document).ready(function() {
-    var othergeocoder;
     var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-    othergeocoder = new google.maps.Geocoder();
-    if (othergeocoder) {
-      othergeocoder.geocode( { 'address': address}, function(results, status) {
-            $("#google-reviews").googlePlaces({
-                    placeId: results[0].id
-                  , render: ['reviews']
-                  , min_rating: 4
-                  , max_rows:5
-            });
-      });
-    }
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+          $("#google-reviews").googlePlaces({
+                  placeId: results[0].id
+                , render: ['reviews']
+                , min_rating: 4
+                , max_rows:5
+          });
+    });
 });
     </script>
 
