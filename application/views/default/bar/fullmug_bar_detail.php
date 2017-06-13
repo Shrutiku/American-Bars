@@ -900,7 +900,7 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
 	     				<?php } } else {?>
                                                 <h3 style="margin-bottom: 3px">Reviews from Google</h3><hr style="border-color: grey;">
                                                 <!--<div class="gallery-default reviewdefault mar_top20" style="font-size:12px; text-align: left; max-height: 574px; vertical-align: top;">--> 
-                                                <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 465px;overflow-y:scroll;padding: 3px;border:solid;border-color:red "><br><br></div>
+                                                <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 465px;overflow-y:scroll;padding: 3px; "><br><br></div>
 
      				<!--</div>-->
 	     					<?php } ?>
