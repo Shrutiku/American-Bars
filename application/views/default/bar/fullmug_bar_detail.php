@@ -1841,7 +1841,7 @@ function loadMap()
     map = new google.maps.Map(document.getElementById("gmap_marker"), myOptions);
     if (geocoder) {
       geocoder.geocode( { 'address': address}, function(results, status) {
-      id = results[0].id;
+      id = results[1].place_id;
       loadGoogRev(id);
         if (status == google.maps.GeocoderStatus.OK) {
           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
@@ -2054,7 +2054,7 @@ function getBarSpecialHours(day)
     
     <script>
 function loadGoogRev(pid) {
-//    console.log(pid);
+    console.log(pid);
     $("#google-reviews").googlePlaces({
                   placeId: pid
                 , render: ['reviews']
