@@ -2053,7 +2053,7 @@ $(document).ready(function() {
     geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': address}, function(results, status) {
           $("#google-reviews").googlePlaces({
-                  placeId: results[0].id
+                  placeId: results[0].place_id
                 , render: ['reviews']
                 , min_rating: 4
                 , max_rows:5
