@@ -1822,7 +1822,8 @@ function loadMap()
   var geocoder;
   var map;
   var address ="<?php echo @mysql_real_escape_string($bar_detail['address'])." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-    
+  var id;
+  
   function initialize_map()
   {
     geocoder = new google.maps.Geocoder();
@@ -1841,6 +1842,8 @@ function loadMap()
         if (status == google.maps.GeocoderStatus.OK) {
           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
           map.setCenter(results[0].geometry.location);
+          
+          id = results[0].place_id;
 
             var infowindow = new google.maps.InfoWindow(
                 { content: '<b>'+address+'</b>',
@@ -2049,14 +2052,6 @@ function getBarSpecialHours(day)
     
     <script>
 $(document).ready(function() {
-    var id;
-    address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-    geocoder = new google.maps.Geocoder();
-    geocoder.geocode( { 'address': address}, function(results, status) {
-          placeId = results[0].place_id;
-          console.log(placeId);
-          console.log(results[0].place_id);
-    });
     $("#google-reviews").googlePlaces({
                   placeId: id
                 , render: ['reviews']
