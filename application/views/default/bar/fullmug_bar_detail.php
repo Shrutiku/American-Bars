@@ -2055,10 +2055,7 @@ $(document).ready(function() {
           , min_rating: 4
           , max_rows:5
     });
-})
-    
-    
-    
+});
     </script>
 
 <!--
