@@ -1839,7 +1839,7 @@ function loadMap()
     if (geocoder) {
       geocoder.geocode( { 'address': address}, function(results, status) {
       id = results[0].place_id;
-      console.log(id);
+      loadGoogRev(id);
         if (status == google.maps.GeocoderStatus.OK) {
           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
           map.setCenter(results[0].geometry.location);
@@ -1862,13 +1862,6 @@ function loadMap()
         }
       });
     }
-    console.log(id);
-    $("#google-reviews").googlePlaces({
-                  placeId: id
-                , render: ['reviews']
-                , min_rating: 4
-                , max_rows:5
-          });
   }
 
 function fbShare(){
@@ -2057,10 +2050,9 @@ function getBarSpecialHours(day)
 </script>
     
     <script>
-function loadGoogRev() {
-    console.log(id);
+function loadGoogRev(pid) {
     $("#google-reviews").googlePlaces({
-                  placeId: id
+                  placeId: pid
                 , render: ['reviews']
                 , min_rating: 4
                 , max_rows:5
