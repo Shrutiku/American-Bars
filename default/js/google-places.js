@@ -48,12 +48,12 @@
           initialize_place(function(place){
             plugin.place_data = place;
             // render specified sections
-            if(plugin.settings.render.indexOf('reviews') > -1){
-              renderReviews(plugin.place_data.reviews);
-              if(!!plugin.settings.rotateTime) {
-                  initRotation();
-              }
-            }
+//            if(plugin.settings.render.indexOf('reviews') > -1){
+//              renderReviews(plugin.place_data.reviews);
+//              if(!!plugin.settings.rotateTime) {
+//                  initRotation();
+//              }
+//            }
             if(plugin.settings.render.indexOf('address') > -1){
               renderAddress(
                   capture_element(plugin.settings.address.displayElement)
