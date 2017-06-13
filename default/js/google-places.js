@@ -113,6 +113,7 @@
           var request = {
             placeId: plugin.settings.placeId
           };
+          console.log(plugin.settings.placeId);
 
           var service = new google.maps.places.PlacesService(map);
 
