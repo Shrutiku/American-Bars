@@ -2058,7 +2058,11 @@ function loadGoogRev(pid) {
                 , min_rating: 3
                 , max_rows: 5
                 , schema: {
-                    middleText: "<hr>"
+                    displayElement: '#schema' // optional, will use "#schema" by default
+                  , beforeText: 'Googlers rated'
+                  , middleText: '<hr>'
+                  , afterText: ''
+                  , type: ''
                 }
           });
 }
