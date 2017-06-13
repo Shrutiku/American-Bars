@@ -2056,7 +2056,10 @@ function loadGoogRev(pid) {
                   placeId: 'ChIJa2uI-Nt4bIcR5cvnOxD4cFg'
                 , render: ['reviews']
                 , min_rating: 3
-                , max_rows:5
+                , max_rows: 5
+                , schema: {
+                    middleText: "<hr>"
+                }
           });
 }
     </script>
