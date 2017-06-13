@@ -1863,6 +1863,12 @@ function loadMap()
         }
       });
     }
+    $("#google-reviews").googlePlaces({
+                  placeId: id
+                , render: ['reviews']
+                , min_rating: 4
+                , max_rows:5
+          });
   }
 
 function fbShare(){
@@ -2051,7 +2057,7 @@ function getBarSpecialHours(day)
 </script>
     
     <script>
-$(document).ready(function() {
+function loadGoogRev() {
     console.log(id);
     $("#google-reviews").googlePlaces({
                   placeId: id
@@ -2059,7 +2065,7 @@ $(document).ready(function() {
                 , min_rating: 4
                 , max_rows:5
           });
-});
+}
     </script>
 
 <!--
