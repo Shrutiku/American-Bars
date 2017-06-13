@@ -2049,14 +2049,16 @@ function getBarSpecialHours(day)
     
     <script>
 $(document).ready(function() {
-    var placeId;
+    var id;
     address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
     geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': address}, function(results, status) {
           placeId = results[0].place_id;
+          console.log(placeId);
+          console.log(results[0].place_id);
     });
     $("#google-reviews").googlePlaces({
-                  placeId: placeId
+                  placeId: id
                 , render: ['reviews']
                 , min_rating: 4
                 , max_rows:5
