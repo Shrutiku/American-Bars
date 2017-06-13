@@ -215,13 +215,13 @@
             if(rating == 1) {
                 stars = "<div class='rating_box starrating1'></div>"
             } else if(rating == 2) {
-                stars = "<div class='rating_box starrating1'></div>"
+                stars = "<div class='rating_box starrating2'></div>"
             } else if(rating == 3) {
-                stars = "<div class='rating_box starrating1'></div>"
+                stars = "<div class='rating_box starrating3'></div>"
             } else if(rating == 4) {
-                stars = "<div class='rating_box starrating1'></div>"
+                stars = "<div class='rating_box starrating4'></div>"
             } else {
-                stars = "<div class='rating_box starrating1'></div>"
+                stars = "<div class='rating_box starrating5'></div>"
             }
           // fill in gold stars
 //          for (var i = 0; i < rating; i++) {
