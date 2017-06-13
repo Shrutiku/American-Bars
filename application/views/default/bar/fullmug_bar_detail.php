@@ -1822,7 +1822,7 @@ function loadMap()
   var geocoder;
   var map;
   var address ="<?php echo @mysql_real_escape_string($bar_detail['address'])." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-  id = "";
+  var id = "";
   function initialize_map()
   {
     geocoder = new google.maps.Geocoder();
@@ -1839,6 +1839,7 @@ function loadMap()
     if (geocoder) {
       geocoder.geocode( { 'address': address}, function(results, status) {
       id = results[0].place_id;
+      console.log(id);
         if (status == google.maps.GeocoderStatus.OK) {
           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
           map.setCenter(results[0].geometry.location);
