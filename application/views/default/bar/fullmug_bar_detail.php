@@ -884,7 +884,6 @@ onKeyUp="limitText(event,this.form.desc_post_card,this.form.countdown,700 );" id
      				<input type="hidden" name="offset" id="offset" value="<?php echo ($offset!='')?$offset:0; ?>" />
 					<input type="hidden" name="limit" id="limit" value="<?php echo ($limit>0)?$limit:5; ?>" />
 	     			<div id="responsecomment">
-                                    <br>
 	     			<ul class="review_block" >
                                     <br>
 	     				<?php if($result){
