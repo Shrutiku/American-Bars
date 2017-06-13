@@ -45,15 +45,16 @@
           plugin.settings = $.extend({}, defaults, options);
           plugin.settings.schema = $.extend({}, defaults.schema, options.schema);
           $element.html("<div id='map-plug'></div>"); // create a plug for google to load data into
+          console.log(place);
           initialize_place(function(place){
             plugin.place_data = place;
             // render specified sections
-//            if(plugin.settings.render.indexOf('reviews') > -1){
-//              renderReviews(plugin.place_data.reviews);
-//              if(!!plugin.settings.rotateTime) {
-//                  initRotation();
-//              }
-//            }
+            if(plugin.settings.render.indexOf('reviews') > -1){
+              renderReviews(plugin.place_data.reviews);
+              if(!!plugin.settings.rotateTime) {
+                  initRotation();
+              }
+            }
             if(plugin.settings.render.indexOf('address') > -1){
               renderAddress(
                   capture_element(plugin.settings.address.displayElement)
