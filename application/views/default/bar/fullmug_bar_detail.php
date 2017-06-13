@@ -1822,20 +1822,6 @@ function loadMap()
   var geocoder;
   var map;
   var address ="<?php echo @mysql_real_escape_string($bar_detail['address'])." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-  
-    
-    geocoder = new google.maps.Geocoder();
-        if (geocoder) {
-            geocoder.geocode( { 'address': address}, function(results, status) {
-                $("#google-reviews").googlePlaces({
-                    placeId: results[0].id
-                  , render: ['reviews']
-                  , min_rating: 4
-                  , max_rows:5
-                  , rotateTime:5000
-              });
-            }
-        }
     
   function initialize_map()
   {
