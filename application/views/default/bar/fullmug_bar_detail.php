@@ -1841,7 +1841,7 @@ function loadMap()
     map = new google.maps.Map(document.getElementById("gmap_marker"), myOptions);
     if (geocoder) {
       geocoder.geocode( { 'address': address}, function(results, status) {
-      id = results[1].place_id;
+      id = results[0].place_id;
       loadGoogRev(id);
         if (status == google.maps.GeocoderStatus.OK) {
           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
