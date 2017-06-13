@@ -10,7 +10,7 @@
 
 .review-stars ul li i {
   color: #E4B248;
-  font-size: 12px;
+  font-size: 5px;
 }
 /*color: #E4B248;*/
 .review-stars ul li i.inactive {
@@ -18,4 +18,11 @@
 }
 .star:after {
   content: "\2605";
+}
+.review_block{
+    font-size: 5px;
+}
+.gallery-default reviewdefault mar_top20
+{
+    font-size: 5px;
 }
