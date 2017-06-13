@@ -2075,6 +2075,20 @@ function getBarSpecialHours(day)
   }
 });
     </script>
+    
+    <script>
+$(document).ready(function() { 
+    $("#google-reviews").googlePlaces({
+            placeId: 'ChIJa2uI-Nt4bIcR5cvnOxD4cFg'
+          , render: ['reviews']
+          , min_rating: 4
+          , max_rows:5
+    });
+})
+    
+    
+    
+    </script>
 
 <!--
 
