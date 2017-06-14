@@ -121,12 +121,6 @@
             if (status == google.maps.places.PlacesServiceStatus.OK) {
               c(place);
             }
-            if (status == google.maps.places.PlacesServiceStatus.REQUEST_DENIED) {
-              console.log("REQ DENY");
-            }
-            if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
-              console.log("OVER_QUERY_LIMIT");
-            }
           });
         }
 
