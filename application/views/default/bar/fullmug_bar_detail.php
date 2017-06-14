@@ -1141,7 +1141,7 @@ span.required {
 
 
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places"></script>
 
 <script>
  $(document).ready(function () {
