@@ -74,58 +74,12 @@ $('.sorted_table').sortable({
                                                 <?php $i=0; foreach($getbar_hour as $im){ ?>
                                                     <div id="pi_<?php echo $im->bar_hour_id ?>">	
                                                         <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
-                                                            <div class="padtb8">
-                                                                <div class="col-sm-1">
-                                                                    <label class="control-label" style="font-size: 16px;">Days:</label>
-                                                                </div>
-                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
-                                                                    <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
-                                                                    <select class="form-control">
-                                                                        <option value="">-- Select Day-- </option>
-                                                                        <option value="monday">Monday</option>
-                                                                        <option value="tuesday">Tuesday</option>
-                                                                        <option value="wednesday">Wednesday</option>
-                                                                        <option value="thursday">Thursday</option>
-                                                                        <option value="friday">Friday</option>
-                                                                        <option value="saturday">Saturday</option>
-                                                                        <option value="sunday">Sunday</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-sm-1 text-center">
-                                                                    <label class="control-label" style="font-size: 16px;">to</label>
-                                                                </div>
-                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">                                                                                  
-                                                                    <select class="form-control">
-                                                                        <option value="">-- Select Day-- </option>
-                                                                        <option value="monday">Monday</option>
-                                                                        <option value="tuesday">Tuesday</option>
-                                                                        <option value="wednesday">Wednesday</option>
-                                                                        <option value="thursday">Thursday</option>
-                                                                        <option value="friday">Friday</option>
-                                                                        <option value="saturday">Saturday</option>
-                                                                        <option value="sunday">Sunday</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-sm-1">
-                                                                    <label class="control-label pull-right" style="font-size: 16px;">  Time:</label>
-                                                                </div>
-                                                                <div class="col-sm-1" style="width: 13%" >
-                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
-                                                                </div>
-                                                                <div class="col-sm-1"  style="width: 13%">	
-                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-                                                                </div>
-                                                                <div class="col-sm-1"></div>                   
-                                                                <a href="javascript://;" id="" onclick="addrows('<?php echo $i; ?>')" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
-                                                                <div class="clearfix"></div>
-                                                                    <!-- <input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>"> -->	 	
-                                                            </div>
-                                                            <!--<div class="padtb">-->
-<!--        	        				 	<div class="col-sm-3 text-right">
+                                                            <div class="padtb">
+        	        				 	<div class="col-sm-3 text-right">
                                                                     <label class="control-label">Days : <span class="aestrick"> * </span></label>
                                                                 </div>
 	        					        				 	
-                                                                <div class="input_box upload_btn">
+                                                            <div class="input_box upload_btn">
                                                                     <select required name="days[]" id="days<?php echo $im->bar_hour_id; ?>" class="select_box">
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="Monday" <?php echo $im->days=="Monday" ? 'selected':'';?>>Monday</option>
@@ -136,7 +90,7 @@ $('.sorted_table').sortable({
                                                                         <option value="Saturday" <?php echo $im->days=="Saturday" ? 'selected':'';?>>Saturday</option>
                                                                         <option value="Sunday" <?php echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
                                                                     </select>
-                                                                </div>-->
+                                                                </div>
 <!--                                                            <form action="">
                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
@@ -147,24 +101,24 @@ $('.sorted_table').sortable({
                                                                     <input type="checkbox" name="day" value="Sunday"> Sun
                                                                 </form>-->
 	                       		
-<!--                                                                <div class="input_box upload_user">
-                                                                    <img src="" id="img_here" alt="" class="img-responsive"/>
+                                                                 <div class="input_box upload_user">
+                                                                        <img src="" id="img_here" alt="" class="img-responsive"/>
                                                                 </div> 
-                                                                <div class="span3">
+                                                            <div class="span3">
                                                                     <?php if($i==0){ ?>
                                                                     <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                     <?php }else{ ?>
                                                                     <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                     <?php } ?>		
-                                                                </div>-->
+                                                                </div>
 <!--                                                                 <div class="input_box pull-left">
                                                                     <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
                                                                 </div> -->
-                                                                <!--<div class="clearfix"></div>-->
-                                                            <!--</div>-->
+                                                                <div class="clearfix"></div>
+                                                            </div>
                                                         
-<!--                                                            <div class="padtb8">
-                                                                <div class="col-sm-3 text-right">
+                                                            <div class="padtb8">
+                                                            <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
                                                                 </div>
                                                                 <div class="col-sm-4" style="width: 23.5%" >
@@ -174,8 +128,8 @@ $('.sorted_table').sortable({
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>	
                                                                 <div class="clearfix"></div>
-                                                                    <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
-                                                            </div>-->
+                                                                    <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
+                                                            </div>
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>	 	
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
@@ -1923,66 +1877,68 @@ $('#add_row').click(function(){
 		
 		$('#add_rowother').click(function(){
 	
-                    var cnt=parseInt($('#cntproother').val())+1;
-                    if($('#cntproother').val() === 'NaN')
-                    {
-                        $('#cntproother').val('1');
-                        cnt = 1;
-                    }
-                    $('#cntproother').val(cnt);
-
-                    var html = '';
-                    html += '<div class="padtb" id="imgother_'+cnt+'"><div class="padtb8">';
-                    html += ' <input type="hidden" name="oid0[]" id="oid_'+cnt+'" value="" /><div class="col-sm-3 text-right">';
-                    html += '<label class="control-label"></label>';
-                    html += '</div>';
-                    html += '<div class="col-sm-3" style="padding-left: 15px;">';
-                    html += '<input type="text" class="form-control form-pad tagsother" id="otherid_'+cnt+'"  name="otherid0[]" value="">';
-                    html += '</div>';
-                    html += '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-                    html += '<label class="control-label " style="font-size: 16px;">Price : $</label>';
-                    html += '</div>';
-                    html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
-                    html += '<input type="text" class="form-control form-pad " id="otherprice_'+cnt+'" name="otherprice0[]" value="">';
-                    html += '</div>';
-                    html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveother(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
-                    html += '<div class="clearfix"></div>';
-                    html += '</div></div>';
-
-                    $('#innerother').append(html);
-                    $('#imgother_'+cnt).slideDown();
+		var cnt=parseInt($('#cntproother').val())+1;
+		if($('#cntproother').val() =='NaN')
+		{
+		    $('#cntproother').val('1');
+		    cnt = 1;
+		}
+		$('#cntproother').val(cnt);
+		
+		var html = '';
+		html += '<div class="padtb" id="imgother_'+cnt+'"><div class="padtb8">';
+	    html +=  ' <input type="hidden" name="oid0[]" id="oid_'+cnt+'" value="" /><div class="col-sm-3 text-right">';
+	    html +=  '<label class="control-label"></label>';
+	    html +=   '</div>';
+	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
+	   html +=                   			'<input type="text" class="form-control form-pad tagsother" id="otherid_'+cnt+'"  name="otherid0[]" value="">';
+	   html +=                   		'</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Price : $</label>';
+	   html +=    				 	'</div>';
+	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
+	  html +=                    			'<input type="text" class="form-control form-pad " id="otherprice_'+cnt+'" name="otherprice0[]" value="">';
+	   html +=                   		'</div>'	;
+	     html +=                 		'<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveother(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
+	     html +=                 			'<div class="clearfix"></div>';
+	     html +=   '</div></div>';
+		
+		$('#innerother').append(html);
+		$('#imgother_'+cnt).slideDown();
 			
 		});
+		
+		
 	});		
 	function removeImageDivebeer(id)
 	{
-            var cnt=parseInt($('#cntprobeer').val())-1;
-            $('#cntprobeer').val(cnt);
-            $('#imgbeer_'+id).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntprobeer').val())-1;
+		$('#cntprobeer').val(cnt);
+		$('#imgbeer_'+id).slideUp('normal',function(){	$(this).remove(); });
 	}
 	function removeImageDivebeer_1(id,num)
 	{
-            var cnt=parseInt($('#cntprobeer'+id).val())-1;
-            $('#cntprobeer'+id).val(cnt);
-            $('#imgbeer'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntprobeer'+id).val())-1;
+		$('#cntprobeer'+id).val(cnt);
+		$('#imgbeer'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
 	}
 	function removeImageDivecocktail_1(id,num)
 	{
-            var cnt=parseInt($('#cntprococktail'+id).val())-1;
-            $('#cntprococktail'+id).val(cnt);
-            $('#imgcocktail'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntprococktail'+id).val())-1;
+		$('#cntprococktail'+id).val(cnt);
+		$('#imgcocktail'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
 	}
 	function removeImageDiveliquor_1(id,num)
 	{
-            var cnt=parseInt($('#cntproliquor'+id).val())-1;
-            $('#cntproliquor'+id).val(cnt);
-            $('#imgliquor'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntproliquor'+id).val())-1;
+		$('#cntproliquor'+id).val(cnt);
+		$('#imgliquor'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
 	}
 	function removeImageDivefood_1(id,num)
 	{
-            var cnt=parseInt($('#cntprofood'+id).val())-1;
-            $('#cntprofood'+id).val(cnt);
-            $('#imgfood'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntprofood'+id).val())-1;
+		$('#cntprofood'+id).val(cnt);
+		$('#imgfood'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
 	}
 	function removeImageDiveother_1(id,num)
 	{
@@ -1992,94 +1948,102 @@ $('#add_row').click(function(){
 	}
 	function removeImageDivecocktail(id)
 	{
-            var cnt=parseInt($('#cntprococktail').val())-1;
-            $('#cntprococktail').val(cnt);
-            $('#imgcocktail_'+id).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntprococktail').val())-1;
+		$('#cntprococktail').val(cnt);
+		$('#imgcocktail_'+id).slideUp('normal',function(){	$(this).remove(); });
 	}
 	function removeImageDiveliquor(id)
 	{
-            var cnt=parseInt($('#cntproliquor').val())-1;
-            $('#cntproliquor').val(cnt);
-            $('#imgliquor_'+id).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntproliquor').val())-1;
+		$('#cntproliquor').val(cnt);
+		$('#imgliquor_'+id).slideUp('normal',function(){	$(this).remove(); });
 	}
 	function removeImageDivefood(id)
 	{
-            var cnt=parseInt($('#cntprofood').val())-1;
-            $('#cntprofood').val(cnt);
-            $('#imgfood_'+id).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntprofood').val())-1;
+		$('#cntprofood').val(cnt);
+		$('#imgfood_'+id).slideUp('normal',function(){	$(this).remove(); });
 	}
 	
 	function removeImageDiveother(id)
 	{
-            var cnt=parseInt($('#cntproother').val())-1;
-            $('#cntproother').val(cnt);
-            $('#imgother_'+id).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntproother').val())-1;
+		$('#cntproother').val(cnt);
+		$('#imgother_'+id).slideUp('normal',function(){	$(this).remove(); });
 	}
 function removeImageDive(id)
 	{
-            var cnt=parseInt($('#cntpro').val())-1;
-            $('#cntpro').val(cnt);
-            $('#img_'+id).slideUp('normal',function(){$(this).remove(); });
+		var cnt=parseInt($('#cntpro').val())-1;
+		$('#cntpro').val(cnt);
+		$('#img_'+id).slideUp('normal',function(){	$(this).remove(); });
 	}
 	
-	function removeImageDiveAjax(id,num) {
+	function removeImageDiveAjax(id,num)
+	{
 	     //   alert("removeImageDiveAjax");
 	      //  alert(id);
-            alertify.confirm("Are you sure you want to delete this bar hours?", function (e) {
-                if (e) {
-                    $.ajax({
-                        url:'<?php echo site_url('bar/removebarhoursall') ?>/'+num,
-                        success:function(res){
-
-                        var cnt=parseInt($('#cnt').val())-1;
-                            $('#cntpro').val(cnt);
-                            $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
-                                $.growlUI('Your bar hour deleted successfully .'); 
-                        }
-                    });	
-                } else {
-                    return false;
-                }
-            });	
+		alertify.confirm("Are you sure you want to delete this bar hours?", function (e) {
+			if (e) {
+			$.ajax({
+				url:'<?php echo site_url('bar/removebarhoursall') ?>/'+num,
+				success:function(res){
+					
+				var cnt=parseInt($('#cnt').val())-1;
+				$('#cntpro').val(cnt);
+				$('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
+					$.growlUI('Your bar hour deleted successfully .'); 
+				}
+			});	
+		}else{
+			return false;
+		}
+		
+	});	
 	}
 	
 	
 	
-	function removerow(id,type,num,t) {
+	function removerow(id,type,num,t)
+	{
 	     //   alert("removeImageDiveAjax");
 	     // alert(num);
-            alertify.confirm("Are you sure you want to delete this record ?", function (e) {
-                if (e) {
-                    $.ajax({
-                        url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
-                        success:function(res){
-                                //'removeImageDive'+type(num);
-                            if(type ==='beer') {
-                                removeImageDivebeer_1(t,num);
-                            }
-                            if(type ==='cocktail') {
-                                removeImageDivecocktail_1(t,num);
-                            }
-                            if(type ==='liquor') {
-                                removeImageDiveliquor_1(t,num);
-                            }
-                            if(type ==='food') {
-                                removeImageDivefood_1(t,num);
-                            }
-                            if(type ==='other') {
-                                removeImageDiveother_1(t,num);
-                            }
-                            // var cnt=parseInt($('#cnt').val())-1;
-                            // $('#cntpro').val(cnt);
-                            // $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
-                            $.growlUI('Your record deleted successfully .'); 
-                        }
-                    });	
-		} else {
-                    return false;
+		alertify.confirm("Are you sure you want to delete this record ?", function (e) {
+			if (e) {
+			$.ajax({
+				url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
+				success:function(res){
+					//'removeImageDive'+type(num);
+					if(type ==='beer')
+					{
+						removeImageDivebeer_1(t,num);
+					}
+					if(type ==='cocktail')
+					{
+						removeImageDivecocktail_1(t,num);
+					}
+					if(type ==='liquor')
+					{
+						removeImageDiveliquor_1(t,num);
+					}
+					if(type ==='food')
+					{
+						removeImageDivefood_1(t,num);
+					}
+					if(type ==='other')
+					{
+						removeImageDiveother_1(t,num);
+					}
+				// var cnt=parseInt($('#cnt').val())-1;
+				// $('#cntpro').val(cnt);
+				// $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
+					$.growlUI('Your record deleted successfully .'); 
+				}
+			});	
+		}else{
+			return false;
 		}
 		
-            });	
+	});	
 	}
 	
 	
@@ -2090,7 +2054,7 @@ function removeImageDive(id)
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/new-timepicker.css" />
-<link href="<?php echo base_url().getThemeName(); ?>/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+				<link href="<?php echo base_url().getThemeName(); ?>/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/new-bootstrap-timepicker.js"></script>
 <script>
 function validate(){
@@ -2099,7 +2063,7 @@ function validate(){
 	
 		for (i=0; i<eduInput.length; i++)
 			{
-			 if (eduInput[i].value === "")
+			 if (eduInput[i].value == "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all days field.</p>"
@@ -2113,7 +2077,7 @@ function validate(){
 	
 		for (i=0; i<eduInput1.length; i++)
 			{
-			 if (eduInput1[i].value === "")
+			 if (eduInput1[i].value == "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all from hours field.</p>";
@@ -2129,7 +2093,7 @@ function validate(){
 	
 		for (i=0; i<eduInput2.length; i++)
 			{
-			 if (eduInput2[i].value === "")
+			 if (eduInput2[i].value == "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all to hours field.</p>";
@@ -2145,7 +2109,7 @@ function validate(){
 	
 		for (i=0; i<eduInput3.length; i++)
 			{
-			 if (eduInput3[i].value === "")
+			 if (eduInput3[i].value == "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all price field.</p>";
@@ -2161,7 +2125,7 @@ function validate(){
 	
 		for (i=0; i<eduInput4.length; i++)
 			{
-			 if (eduInput4[i].value === "")
+			 if (eduInput4[i].value == "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all speciality field.</p>";
@@ -2193,7 +2157,7 @@ function validate(){
 		});
 function addrows(cnt){		
 		var cntbeer=parseInt($('#cntprobeer'+cnt).val())+1;
-		if($('#cntprobeer'+cnt).val() === 'NaN')
+		if($('#cntprobeer'+cnt).val() =='NaN')
 		{
 		    $('#cntprobeer'+cnt).val('1');
 		    cnt = 1;
@@ -2319,7 +2283,7 @@ function addrows(cnt){
 	}
         function addrowsss(cnt){		
 		var cntbeer=parseInt($('#cntprobeer'+cnt).val())+1;
-		if($('#cntprobeer'+cnt).val() === 'NaN')
+		if($('#cntprobeer'+cnt).val() =='NaN')
 		{
 		    $('#cntprobeer'+cnt).val('1');
 		    cnt = 1;
@@ -2380,10 +2344,9 @@ function addrows(cnt){
 		$('#imgbeer_'+cnt+cntbeer).slideDown();
 			
 	}
-
         function addnewrows_cocktail(cnt) {
             var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
-		if($('#cntprococktail'+cnt).val() === 'NaN')
+		if($('#cntprococktail'+cnt).val() =='NaN')
 		{
 		    $('#cntprococktail'+cnt).val('1');
 		    cnt = 1;
@@ -2446,7 +2409,7 @@ function addrows(cnt){
 	
 	function addrows_cocktail(cnt){		
 		var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
-		if($('#cntprococktail'+cnt).val() === 'NaN')
+		if($('#cntprococktail'+cnt).val() =='NaN')
 		{
 		    $('#cntprococktail'+cnt).val('1');
 		    cnt = 1;
@@ -2547,7 +2510,7 @@ function addrows(cnt){
 	
 	function addrows_liquor(cnt){		
 		var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
-		if($('#cntproliquor'+cnt).val() === 'NaN')
+		if($('#cntproliquor'+cnt).val() =='NaN')
 		{
 		    $('#cntproliquor'+cnt).val('1');
 		    cnt = 1;
@@ -2612,7 +2575,7 @@ function addrows(cnt){
 	
 	function addrows_food(cnt){		
 		var cntfood=parseInt($('#cntprofood'+cnt).val())+1;
-		if($('#cntprofood'+cnt).val() === 'NaN')
+		if($('#cntprofood'+cnt).val() =='NaN')
 		{
 		    $('#cntprofood'+cnt).val('1');
 		    cnt = 1;
@@ -2644,7 +2607,7 @@ function addrows(cnt){
 	
 	function addrows_other(cnt){		
 		var cntother=parseInt($('#cntproother'+cnt).val())+1;
-		if($('#cntproother'+cnt).val() === 'NaN')
+		if($('#cntproother'+cnt).val() =='NaN')
 		{
 		    $('#cntproother'+cnt).val('1');
 		    cnt = 1;
@@ -2775,4 +2738,4 @@ function addrows(cnt){
 		      	autoFocus: true,
 		      	minLength: 0      	
 		      });
-</script>
+	</script>
