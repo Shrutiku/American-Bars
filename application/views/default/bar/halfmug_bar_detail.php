@@ -1493,8 +1493,8 @@ function initialize()
   
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        console.log(results[0]);
-        console.log(results[1]);
+//        console.log(results[0]);
+//        console.log(results[1]);
         var barname = "<?php echo $bar_detail['bar_title'];?>";
         if (barname == results[1].name) {
             var placeid = results[1].place_id;
@@ -1507,7 +1507,7 @@ function initialize()
 }
 
 function loadGoogRev(pid) {
-    console.log(pid);
+//    console.log(pid);
     $("#google-reviews").googlePlaces({
                   placeId: pid
                 , render: ['reviews']

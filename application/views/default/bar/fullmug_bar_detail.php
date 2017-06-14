@@ -1880,13 +1880,19 @@ function loadMap()
   
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        var placeid = results[0].place_id;
-        loadGoogRev(placeid);
+        var barname = "<?php echo $bar_detail['bar_title'];?>";
+        if (barname == results[1].name) {
+            var placeid = results[1].place_id;
+            loadGoogRev(placeid);
+        }   else {
+            var placeid = results[0].place_id;
+            loadGoogRev(placeid);
+        }
     }
 }
 
 function loadGoogRev(pid) {
-    console.log(pid);
+//    console.log(pid);
     $("#google-reviews").googlePlaces({
                   placeId: pid
                 , render: ['reviews']
