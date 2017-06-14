@@ -1494,6 +1494,7 @@ function initialize()
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log(results[0]);
+        console.log(results[1]);
         var placeid = results[0].place_id;
         loadGoogRev(placeid);
     }
