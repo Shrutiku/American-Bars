@@ -846,6 +846,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 		     					<div class="clearfix"></div>
 		     				</li>
 	     				<?php } } else {?>
+                                                <h3 style="margin-bottom: 3px">Reviews from Google</h3><hr style="border-color: grey;">
                                                 <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 465px;overflow-y:scroll;padding: 3px; "><br><br></div>
 <!--	     					<div class="gallery-default reviewdefault mar_top20">
      					No Review Available
@@ -1435,9 +1436,7 @@ function initialize()
           }
           var request = {
                 location: results[0].geometry.location,
-                radius: '500',
-                type: ['bar'],
-
+                radius: '1',
                 };
 
                 service = new google.maps.places.PlacesService(map);

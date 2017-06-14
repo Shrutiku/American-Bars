@@ -1867,9 +1867,7 @@ function loadMap()
           }
             var request = {
                 location: results[0].geometry.location,
-                radius: '500',
-                type: ['bar'],
-
+                radius: '1',
                 };
 
                 service = new google.maps.places.PlacesService(map);
