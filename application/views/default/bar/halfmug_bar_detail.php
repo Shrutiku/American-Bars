@@ -818,7 +818,11 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
      	</div>
      </div>	
 </div>
-     			<div class="review_mainblock padt10 new_review">
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().getThemeName(); ?>/css/google-places.css" />
+<script type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/js/google-places.js"></script> 
+
+                            <div class="review_mainblock padt10 new_review">
      				<h1 class="productbar_title">
      					<div class="pull-left mar_top5">Raves and Rants</div> 
      					<div class="pull-right">
@@ -988,7 +992,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
  <script type="text/javascript">InfiniteList.loadData(0,100); InfiniteList.loadData_cocktail(0,100);InfiniteList.loadData_liquor(0,100);</script>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>        
+<script src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places"></script>        
 <script type="text/javascript">
 
 	
