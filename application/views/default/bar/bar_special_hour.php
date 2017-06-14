@@ -2099,7 +2099,7 @@ function validate(){
 	
 		for (i=0; i<eduInput.length; i++)
 			{
-			 if (eduInput[i].value == "")
+			 if (eduInput[i].value === "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all days field.</p>"
@@ -2113,7 +2113,7 @@ function validate(){
 	
 		for (i=0; i<eduInput1.length; i++)
 			{
-			 if (eduInput1[i].value == "")
+			 if (eduInput1[i].value === "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all from hours field.</p>";
@@ -2129,7 +2129,7 @@ function validate(){
 	
 		for (i=0; i<eduInput2.length; i++)
 			{
-			 if (eduInput2[i].value == "")
+			 if (eduInput2[i].value === "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all to hours field.</p>";
@@ -2145,7 +2145,7 @@ function validate(){
 	
 		for (i=0; i<eduInput3.length; i++)
 			{
-			 if (eduInput3[i].value == "")
+			 if (eduInput3[i].value === "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all price field.</p>";
@@ -2161,7 +2161,7 @@ function validate(){
 	
 		for (i=0; i<eduInput4.length; i++)
 			{
-			 if (eduInput4[i].value == "")
+			 if (eduInput4[i].value === "")
 				{
 			 	 // alert('Complete all the days fields');	
 			 	    htm += "<p>Please fill all speciality field.</p>";
@@ -2319,7 +2319,7 @@ function addrows(cnt){
 	}
         function addrowsss(cnt){		
 		var cntbeer=parseInt($('#cntprobeer'+cnt).val())+1;
-		if($('#cntprobeer'+cnt).val() =='NaN')
+		if($('#cntprobeer'+cnt).val() === 'NaN')
 		{
 		    $('#cntprobeer'+cnt).val('1');
 		    cnt = 1;
@@ -2383,7 +2383,7 @@ function addrows(cnt){
 
         function addnewrows_cocktail(cnt) {
             var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
-		if($('#cntprococktail'+cnt).val() =='NaN')
+		if($('#cntprococktail'+cnt).val() === 'NaN')
 		{
 		    $('#cntprococktail'+cnt).val('1');
 		    cnt = 1;
@@ -2446,7 +2446,7 @@ function addrows(cnt){
 	
 	function addrows_cocktail(cnt){		
 		var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
-		if($('#cntprococktail'+cnt).val() =='NaN')
+		if($('#cntprococktail'+cnt).val() === 'NaN')
 		{
 		    $('#cntprococktail'+cnt).val('1');
 		    cnt = 1;
@@ -2547,7 +2547,7 @@ function addrows(cnt){
 	
 	function addrows_liquor(cnt){		
 		var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
-		if($('#cntproliquor'+cnt).val() =='NaN')
+		if($('#cntproliquor'+cnt).val() === 'NaN')
 		{
 		    $('#cntproliquor'+cnt).val('1');
 		    cnt = 1;
@@ -2612,7 +2612,7 @@ function addrows(cnt){
 	
 	function addrows_food(cnt){		
 		var cntfood=parseInt($('#cntprofood'+cnt).val())+1;
-		if($('#cntprofood'+cnt).val() =='NaN')
+		if($('#cntprofood'+cnt).val() === 'NaN')
 		{
 		    $('#cntprofood'+cnt).val('1');
 		    cnt = 1;
@@ -2644,7 +2644,7 @@ function addrows(cnt){
 	
 	function addrows_other(cnt){		
 		var cntother=parseInt($('#cntproother'+cnt).val())+1;
-		if($('#cntproother'+cnt).val() =='NaN')
+		if($('#cntproother'+cnt).val() === 'NaN')
 		{
 		    $('#cntproother'+cnt).val('1');
 		    cnt = 1;
