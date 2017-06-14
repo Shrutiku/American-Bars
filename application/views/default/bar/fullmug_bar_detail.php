@@ -1789,6 +1789,7 @@ $(".pagination li a").click(function() {
 		google.maps.event.trigger(map, 'resize');
 		directionsDisplay.setMap(map);
 	}
+    }
         
         function callback(results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
