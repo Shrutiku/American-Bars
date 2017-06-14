@@ -1867,7 +1867,7 @@ function loadMap()
           }
             var request = {
                 location: results[0].geometry.location,
-                radius: '1',
+                radius: '50',
                 type: ['bar'],
                 };
 
