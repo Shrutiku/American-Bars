@@ -1437,6 +1437,7 @@ function initialize()
           var request = {
                 location: results[0].geometry.location,
                 radius: '1',
+                type: ['bar'],
                 };
 
                 service = new google.maps.places.PlacesService(map);
