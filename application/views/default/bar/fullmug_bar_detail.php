@@ -1741,6 +1741,7 @@ $(".pagination li a").click(function() {
 	var directionDisplay;
 	var directionsService = new google.maps.DirectionsService();
 	var map;
+        var service;
 
 	function initialize() {
 	var address ="<?php echo @$bar_detail['address']." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
@@ -1754,32 +1755,47 @@ $(".pagination li a").click(function() {
 
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			if (geocoder) {
-      		geocoder.geocode( { 'address': address}, function(results, status) {
-	        if (status == google.maps.GeocoderStatus.OK) {
-                    if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
-                    map.setCenter(results[0].geometry.location);
+                            geocoder.geocode( { 'address': address}, function(results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+                                map.setCenter(results[0].geometry.location);
 
-                      var infowindow = new google.maps.InfoWindow(
-                          { content: '<b>'+address+'</b>',
-                            size: new google.maps.Size(150,50)
-                          });
+                                        var infowindow = new google.maps.InfoWindow(
+                                            { content: '<b>'+address+'</b>',
+                                              size: new google.maps.Size(150,50)
+                                            });
 
-                      var marker = new google.maps.Marker({
-                          position: results[0].geometry.location,
-                          map: map,
-                          title:address
-                      });
-                      google.maps.event.addListener(marker, 'click', function() {
-                          infowindow.open(map,marker);
-                      });
+                                        var marker = new google.maps.Marker({
+                                            position: results[0].geometry.location,
+                                            map: map,
+                                            title:address
+                                        });
+                                        google.maps.event.addListener(marker, 'click', function() {
+                                            infowindow.open(map,marker);
+                                        });
+                                        
+                                        var request = {
+                                            location: results[0].geometry.location,
+                                            radius: '500',
+                                            type: ['bar'],
 
-                    }
-	        }
-          });
-        }
+                                        };
+                                        
+                                        service = new google.maps.places.PlacesService(map);
+                                        service.nearbySearch(request, callback);
+                                  }
+                            });
+                          }
 		google.maps.event.trigger(map, 'resize');
 		directionsDisplay.setMap(map);
 	}
+        
+        function callback(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                var place = results[0];
+                loadGoogRev(place);
+            }
+        }
 
 function loadMap()
 {
@@ -1825,7 +1841,7 @@ function loadMap()
   var geocoder;
   var map;
   var address ="<?php echo @mysql_real_escape_string($bar_detail['address'])." ".@$bar_detail['city']." ".@$bar_detail['state']." ".@$bar_detail['zipcode'];?>";
-  var id = "";
+//  var id = "";
   function initialize_map()
   {
     geocoder = new google.maps.Geocoder();
@@ -1841,8 +1857,8 @@ function loadMap()
     map = new google.maps.Map(document.getElementById("gmap_marker"), myOptions);
     if (geocoder) {
       geocoder.geocode( { 'address': address}, function(results, status) {
-      id = results[0].place_id;
-      loadGoogRev(id);
+//      id = results[0].place_id;
+//      loadGoogRev(id);
         if (status == google.maps.GeocoderStatus.OK) {
           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
           map.setCenter(results[0].geometry.location);
@@ -2053,6 +2069,7 @@ function getBarSpecialHours(day)
 </script>
     
     <script>
+    
 function loadGoogRev(pid) {
     console.log(pid);
     $("#google-reviews").googlePlaces({
