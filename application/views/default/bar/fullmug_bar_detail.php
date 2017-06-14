@@ -1784,8 +1784,8 @@ $(".pagination li a").click(function() {
                                         service = new google.maps.places.PlacesService(map);
                                         service.nearbySearch(request, callback);
                                   }
-                            });
-                          }
+                            }
+                          });
 		google.maps.event.trigger(map, 'resize');
 		directionsDisplay.setMap(map);
 	}
