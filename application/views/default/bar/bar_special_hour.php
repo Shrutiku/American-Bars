@@ -2037,7 +2037,7 @@ function removeImageDive(id)
                                 $.growlUI('Your bar hour deleted successfully .'); 
                         }
                     });	
-                }else {
+                } else {
                     return false;
                 }
             });	
@@ -2045,47 +2045,41 @@ function removeImageDive(id)
 	
 	
 	
-	function removerow(id,type,num,t)
-	{
+	function removerow(id,type,num,t) {
 	     //   alert("removeImageDiveAjax");
 	     // alert(num);
-		alertify.confirm("Are you sure you want to delete this record ?", function (e) {
-			if (e) {
-			$.ajax({
-				url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
-				success:function(res){
-					//'removeImageDive'+type(num);
-					if(type ==='beer')
-					{
-						removeImageDivebeer_1(t,num);
-					}
-					if(type ==='cocktail')
-					{
-						removeImageDivecocktail_1(t,num);
-					}
-					if(type ==='liquor')
-					{
-						removeImageDiveliquor_1(t,num);
-					}
-					if(type ==='food')
-					{
-						removeImageDivefood_1(t,num);
-					}
-					if(type ==='other')
-					{
-						removeImageDiveother_1(t,num);
-					}
-				// var cnt=parseInt($('#cnt').val())-1;
-				// $('#cntpro').val(cnt);
-				// $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
-					$.growlUI('Your record deleted successfully .'); 
-				}
-			});	
-		}else{
-			return false;
+            alertify.confirm("Are you sure you want to delete this record ?", function (e) {
+                if (e) {
+                    $.ajax({
+                        url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
+                        success:function(res){
+                                //'removeImageDive'+type(num);
+                            if(type ==='beer') {
+                                removeImageDivebeer_1(t,num);
+                            }
+                            if(type ==='cocktail') {
+                                removeImageDivecocktail_1(t,num);
+                            }
+                            if(type ==='liquor') {
+                                removeImageDiveliquor_1(t,num);
+                            }
+                            if(type ==='food') {
+                                removeImageDivefood_1(t,num);
+                            }
+                            if(type ==='other') {
+                                removeImageDiveother_1(t,num);
+                            }
+                            // var cnt=parseInt($('#cnt').val())-1;
+                            // $('#cntpro').val(cnt);
+                            // $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
+                            $.growlUI('Your record deleted successfully .'); 
+                        }
+                    });	
+		} else {
+                    return false;
 		}
 		
-	});	
+            });	
 	}
 	
 	
