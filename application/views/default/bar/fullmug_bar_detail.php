@@ -469,7 +469,7 @@
      			</div>
      			<div class="right_gallery_block newadded">
 				<div>
-                                    <a title="Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 15px"><i class="glyphicon glyphicon-glass"></i></a>
+                                    <a title="Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 5px"><i class="glyphicon glyphicon-glass"></i></a>
                                     <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5 pull-left" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
                                         <?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
