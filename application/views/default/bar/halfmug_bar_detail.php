@@ -842,9 +842,10 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 		     					<div class="clearfix"></div>
 		     				</li>
 	     				<?php } } else {?>
-	     					<div class="gallery-default reviewdefault mar_top20">
+                                                <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 465px;overflow-y:scroll;padding: 3px; "><br><br></div>
+<!--	     					<div class="gallery-default reviewdefault mar_top20">
      					No Review Available
-                                                </div>
+                                                </div>-->
 	     					<?php } ?>		  	
 	     			</ul>
 	     			
@@ -1428,6 +1429,15 @@ function initialize()
             });
 
           }
+          var request = {
+                location: results[0].geometry.location,
+                radius: '500',
+                type: ['bar'],
+
+                };
+
+                service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback);
          }
       });
     };
@@ -1474,8 +1484,25 @@ function initialize()
 //    }
 //    map.fitBounds(bounds);
     	directionsDisplay.setMap(map);
-		google.maps.event.trigger(map, 'resize');
+	google.maps.event.trigger(map, 'resize');
   }
+  
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        var placeid = results[0].place_id;
+        loadGoogRev(placeid);
+    }
+}
+
+function loadGoogRev(pid) {
+    console.log(pid);
+    $("#google-reviews").googlePlaces({
+                  placeId: pid
+                , render: ['reviews']
+                , min_rating: 3
+                , max_rows: 5
+          });
+}
 
 </script>
 
