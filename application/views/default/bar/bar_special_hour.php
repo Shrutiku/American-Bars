@@ -106,6 +106,15 @@ $('.sorted_table').sortable({
                                                                         <option value="sunday">Sunday</option>
                                                                     </select>
                                                                 </div>
+                                                                <div class="col-sm-1">
+                                                                    <label class="control-label pull-right" style="font-size: 16px;">  Time:</label>
+                                                                </div>
+                                                                <div class="col-sm-1" style="width: 13%" >
+                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                </div>
+                                                                <div class="col-sm-1"  style="width: 13%">	
+                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                </div>
                                                             </div>
                                                             <!--<div class="padtb">-->
 <!--        	        				 	<div class="col-sm-3 text-right">
