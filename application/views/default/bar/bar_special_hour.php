@@ -1923,68 +1923,66 @@ $('#add_row').click(function(){
 		
 		$('#add_rowother').click(function(){
 	
-		var cnt=parseInt($('#cntproother').val())+1;
-		if($('#cntproother').val() =='NaN')
-		{
-		    $('#cntproother').val('1');
-		    cnt = 1;
-		}
-		$('#cntproother').val(cnt);
-		
-		var html = '';
-		html += '<div class="padtb" id="imgother_'+cnt+'"><div class="padtb8">';
-	    html +=  ' <input type="hidden" name="oid0[]" id="oid_'+cnt+'" value="" /><div class="col-sm-3 text-right">';
-	    html +=  '<label class="control-label"></label>';
-	    html +=   '</div>';
-	     html +=         		'<div class="col-sm-3" style="padding-left: 15px;">';
-	   html +=                   			'<input type="text" class="form-control form-pad tagsother" id="otherid_'+cnt+'"  name="otherid0[]" value="">';
-	   html +=                   		'</div>';
-        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-	   html +=    				 		'<label class="control-label " style="font-size: 16px;">Price : $</label>';
-	   html +=    				 	'</div>';
-	   html +=                   		'<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
-	  html +=                    			'<input type="text" class="form-control form-pad " id="otherprice_'+cnt+'" name="otherprice0[]" value="">';
-	   html +=                   		'</div>'	;
-	     html +=                 		'<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveother(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
-	     html +=                 			'<div class="clearfix"></div>';
-	     html +=   '</div></div>';
-		
-		$('#innerother').append(html);
-		$('#imgother_'+cnt).slideDown();
+                    var cnt=parseInt($('#cntproother').val())+1;
+                    if($('#cntproother').val() === 'NaN')
+                    {
+                        $('#cntproother').val('1');
+                        cnt = 1;
+                    }
+                    $('#cntproother').val(cnt);
+
+                    var html = '';
+                    html += '<div class="padtb" id="imgother_'+cnt+'"><div class="padtb8">';
+                    html += ' <input type="hidden" name="oid0[]" id="oid_'+cnt+'" value="" /><div class="col-sm-3 text-right">';
+                    html += '<label class="control-label"></label>';
+                    html += '</div>';
+                    html += '<div class="col-sm-3" style="padding-left: 15px;">';
+                    html += '<input type="text" class="form-control form-pad tagsother" id="otherid_'+cnt+'"  name="otherid0[]" value="">';
+                    html += '</div>';
+                    html += '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+                    html += '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+                    html += '</div>';
+                    html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';	
+                    html += '<input type="text" class="form-control form-pad " id="otherprice_'+cnt+'" name="otherprice0[]" value="">';
+                    html += '</div>';
+                    html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveother(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
+                    html += '<div class="clearfix"></div>';
+                    html += '</div></div>';
+
+                    $('#innerother').append(html);
+                    $('#imgother_'+cnt).slideDown();
 			
 		});
-		
-		
 	});		
 	function removeImageDivebeer(id)
 	{
-		var cnt=parseInt($('#cntprobeer').val())-1;
-		$('#cntprobeer').val(cnt);
-		$('#imgbeer_'+id).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntprobeer').val())-1;
+            $('#cntprobeer').val(cnt);
+            $('#imgbeer_'+id).slideUp('normal',function(){$(this).remove(); });
 	}
 	function removeImageDivebeer_1(id,num)
 	{
-		var cnt=parseInt($('#cntprobeer'+id).val())-1;
-		$('#cntprobeer'+id).val(cnt);
-		$('#imgbeer'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntprobeer'+id).val())-1;
+            $('#cntprobeer'+id).val(cnt);
+            $('#imgbeer'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
 	}
 	function removeImageDivecocktail_1(id,num)
 	{
-		var cnt=parseInt($('#cntprococktail'+id).val())-1;
-		$('#cntprococktail'+id).val(cnt);
-		$('#imgcocktail'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntprococktail'+id).val())-1;
+            $('#cntprococktail'+id).val(cnt);
+            $('#imgcocktail'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
 	}
 	function removeImageDiveliquor_1(id,num)
 	{
-		var cnt=parseInt($('#cntproliquor'+id).val())-1;
-		$('#cntproliquor'+id).val(cnt);
-		$('#imgliquor'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntproliquor'+id).val())-1;
+            $('#cntproliquor'+id).val(cnt);
+            $('#imgliquor'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
 	}
 	function removeImageDivefood_1(id,num)
 	{
-		var cnt=parseInt($('#cntprofood'+id).val())-1;
-		$('#cntprofood'+id).val(cnt);
-		$('#imgfood'+id+'_'+num).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntprofood'+id).val())-1;
+            $('#cntprofood'+id).val(cnt);
+            $('#imgfood'+id+'_'+num).slideUp('normal',function(){$(this).remove(); });
 	}
 	function removeImageDiveother_1(id,num)
 	{
@@ -1994,57 +1992,55 @@ $('#add_row').click(function(){
 	}
 	function removeImageDivecocktail(id)
 	{
-		var cnt=parseInt($('#cntprococktail').val())-1;
-		$('#cntprococktail').val(cnt);
-		$('#imgcocktail_'+id).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntprococktail').val())-1;
+            $('#cntprococktail').val(cnt);
+            $('#imgcocktail_'+id).slideUp('normal',function(){$(this).remove(); });
 	}
 	function removeImageDiveliquor(id)
 	{
-		var cnt=parseInt($('#cntproliquor').val())-1;
-		$('#cntproliquor').val(cnt);
-		$('#imgliquor_'+id).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntproliquor').val())-1;
+            $('#cntproliquor').val(cnt);
+            $('#imgliquor_'+id).slideUp('normal',function(){$(this).remove(); });
 	}
 	function removeImageDivefood(id)
 	{
-		var cnt=parseInt($('#cntprofood').val())-1;
-		$('#cntprofood').val(cnt);
-		$('#imgfood_'+id).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntprofood').val())-1;
+            $('#cntprofood').val(cnt);
+            $('#imgfood_'+id).slideUp('normal',function(){$(this).remove(); });
 	}
 	
 	function removeImageDiveother(id)
 	{
-		var cnt=parseInt($('#cntproother').val())-1;
-		$('#cntproother').val(cnt);
-		$('#imgother_'+id).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntproother').val())-1;
+            $('#cntproother').val(cnt);
+            $('#imgother_'+id).slideUp('normal',function(){$(this).remove(); });
 	}
 function removeImageDive(id)
 	{
-		var cnt=parseInt($('#cntpro').val())-1;
-		$('#cntpro').val(cnt);
-		$('#img_'+id).slideUp('normal',function(){	$(this).remove(); });
+            var cnt=parseInt($('#cntpro').val())-1;
+            $('#cntpro').val(cnt);
+            $('#img_'+id).slideUp('normal',function(){$(this).remove(); });
 	}
 	
-	function removeImageDiveAjax(id,num)
-	{
+	function removeImageDiveAjax(id,num) {
 	     //   alert("removeImageDiveAjax");
 	      //  alert(id);
-		alertify.confirm("Are you sure you want to delete this bar hours?", function (e) {
-			if (e) {
-			$.ajax({
-				url:'<?php echo site_url('bar/removebarhoursall') ?>/'+num,
-				success:function(res){
-					
-				var cnt=parseInt($('#cnt').val())-1;
-				$('#cntpro').val(cnt);
-				$('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
-					$.growlUI('Your bar hour deleted successfully .'); 
-				}
-			});	
-		}else{
-			return false;
-		}
-		
-	});	
+            alertify.confirm("Are you sure you want to delete this bar hours?", function (e) {
+                if (e) {
+                    $.ajax({
+                        url:'<?php echo site_url('bar/removebarhoursall') ?>/'+num,
+                        success:function(res){
+
+                        var cnt=parseInt($('#cnt').val())-1;
+                            $('#cntpro').val(cnt);
+                            $('#pi_'+id).slideUp('normal',function(){	$(this).remove(); });	 
+                                $.growlUI('Your bar hour deleted successfully .'); 
+                        }
+                    });	
+                }else {
+                    return false;
+                }
+            });	
 	}
 	
 	
@@ -2203,7 +2199,7 @@ function validate(){
 		});
 function addrows(cnt){		
 		var cntbeer=parseInt($('#cntprobeer'+cnt).val())+1;
-		if($('#cntprobeer'+cnt).val() =='NaN')
+		if($('#cntprobeer'+cnt).val() === 'NaN')
 		{
 		    $('#cntprobeer'+cnt).val('1');
 		    cnt = 1;
