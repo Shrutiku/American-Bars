@@ -2392,13 +2392,13 @@ function addrows(cnt){
 	}
         
         function addnewrows(cnt) {
-            var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
-		if($('#cntprococktail'+cnt).val() === 'NaN')
+            var cntbeer=parseInt($('#cntprobeer'+cnt).val())+1;
+		if($('#cntprobeer'+cnt).val() === 'NaN')
 		{
-		    $('#cntprococktail'+cnt).val('1');
+		    $('#cntprobeer'+cnt).val('1');
 		    cnt = 1;
 		}
-		$('#cntprococktail'+cnt).val(cntcocktail);
+		$('#cntprobeer'+cnt).val(cntbeer);
 		//alert(cnt);
 		var html = '';
                 
@@ -2450,11 +2450,11 @@ function addrows(cnt){
                 html += '<div class="clearfix"></div>';
                 
 
-		$('#innercocktail'+cnt).append(html);
-		$('.tagscocktail'+cnt+cntcocktail).autocomplete({
+		$('#innerbeer'+cnt).append(html);
+		$('.tagsbeer'+cnt+cntbeer).autocomplete({
                     source: function( request, response ) {
                         $.ajax({
-                            url : '<?php echo site_url('cocktail/auto_suggest_cocktail/');?>',
+                            url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
                             dataType: "json",
                                 data: {
                                    em: request.term
@@ -2481,7 +2481,7 @@ function addrows(cnt){
                     autoFocus: true,
                     minLength: 0      	
                 });
-		$('#imgcocktail_'+cnt+cntcocktail).slideDown();
+		$('#imgbeer_'+cnt+cntbeer).slideDown();
         }
 
         function addnewrows_cocktail(cnt) {
