@@ -1496,7 +1496,7 @@ function initialize()
         console.log(results[0]);
         console.log(results[1]);
         var barname = '<?php echo $bar_detail['bar_title'];?>';
-        if (barname.equals(results[1].name)) {
+        if (barname == results[1].name) {
             var placeid = results[1].place_id;
             loadGoogRev(placeid);
         }   else {
