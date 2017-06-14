@@ -1792,9 +1792,19 @@ $(".pagination li a").click(function() {
         
         function callback(results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                var place = results[0];
-                loadGoogRev(place);
+                var placeid = results[0].place_id;
+                loadGoogRev(placeid);
             }
+        }
+        
+        function loadGoogRev(pid) {
+            console.log(pid);
+            $("#google-reviews").googlePlaces({
+                          placeId: pid
+                        , render: ['reviews']
+                        , min_rating: 3
+                        , max_rows: 5
+                  });
         }
 
 function loadMap()
@@ -2069,16 +2079,6 @@ function getBarSpecialHours(day)
 </script>
     
     <script>
-    
-function loadGoogRev(pid) {
-    console.log(pid);
-    $("#google-reviews").googlePlaces({
-                  placeId: 'ChIJa2uI-Nt4bIcR5cvnOxD4cFg'
-                , render: ['reviews']
-                , min_rating: 3
-                , max_rows: 5
-          });
-}
     </script>
 
 <!--
