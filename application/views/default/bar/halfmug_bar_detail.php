@@ -1495,8 +1495,14 @@ function initialize()
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log(results[0]);
         console.log(results[1]);
-        var placeid = results[0].place_id;
-        loadGoogRev(placeid);
+        var barname = '<?php echo $bar_detail['bar_title'];?>';
+        if (barname.equals(results[1].name)) {
+            var placeid = results[1].place_id;
+            loadGoogRev(placeid);
+        }   else {
+            var placeid = results[0].place_id;
+            loadGoogRev(placeid);
+        }
     }
 }
 
