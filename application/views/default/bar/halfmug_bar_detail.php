@@ -846,7 +846,7 @@ onKeyUp="limitText(this.form.desc_post_card,this.form.countdown,300);" id="desc_
 		     					<div class="clearfix"></div>
 		     				</li>
 	     				<?php } } else {?>
-                                                <h3 style="margin-bottom: 3px">Reviews from Google</h3><hr style="border-color: grey;">
+                                                <h4 style="margin-bottom: 3px">Reviews from Google</h4><hr style="border-color: grey;">
                                                 <div id="google-reviews" style="font-size:14px; text-align: left; max-height: 465px;overflow-y:scroll;padding: 3px; "><br><br></div>
 <!--	     					<div class="gallery-default reviewdefault mar_top20">
      					No Review Available
