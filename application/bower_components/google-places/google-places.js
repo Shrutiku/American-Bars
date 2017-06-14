@@ -112,6 +112,8 @@
             placeId: plugin.settings.placeId
           };
 
+            console.log("evan test" + placeId);
+
           var service = new google.maps.places.PlacesService(map);
 
           service.getDetails(request, function(place, status) {
