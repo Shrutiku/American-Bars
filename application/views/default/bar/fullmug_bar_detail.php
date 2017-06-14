@@ -1773,16 +1773,7 @@ $(".pagination li a").click(function() {
                                         google.maps.event.addListener(marker, 'click', function() {
                                             infowindow.open(map,marker);
                                         });
-                                        
-                                        var request = {
-                                            location: results[0].geometry.location,
-                                            radius: '500',
-                                            type: ['bar'],
-
-                                        };
-                                        
-                                        service = new google.maps.places.PlacesService(map);
-                                        service.nearbySearch(request, callback);
+                                       
                                   }
                             }
                           });
@@ -1791,22 +1782,7 @@ $(".pagination li a").click(function() {
 	}
     }
         
-        function callback(results, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                var placeid = results[0].place_id;
-                loadGoogRev(placeid);
-            }
-        }
         
-        function loadGoogRev(pid) {
-            console.log(pid);
-            $("#google-reviews").googlePlaces({
-                          placeId: pid
-                        , render: ['reviews']
-                        , min_rating: 3
-                        , max_rows: 5
-                  });
-        }
 
 function loadMap()
 {
@@ -1889,10 +1865,36 @@ function loadMap()
             });
 
           }
+            var request = {
+                location: results[0].geometry.location,
+                radius: '500',
+                type: ['bar'],
+
+                };
+
+                service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback);
         }
       });
     }
   }
+  
+function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        var placeid = results[0].place_id;
+        loadGoogRev(placeid);
+    }
+}
+
+function loadGoogRev(pid) {
+    console.log(pid);
+    $("#google-reviews").googlePlaces({
+                  placeId: pid
+                , render: ['reviews']
+                , min_rating: 3
+                , max_rows: 5
+          });
+}
 
 function fbShare(){
 	window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('<?php echo site_url('bar/details/'.$bar_detail['bar_slug']); ?>'),'facebook-share-dialog','width=626,height=436');
