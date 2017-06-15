@@ -442,30 +442,26 @@
      			</div>
 
      			<div class="modal fade login_pop2" id="hourmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-						<div class="padtb10">
-     	<div class="container">
-     		<div class="result_box clearfix mar_top30bot20">
-     			<div class="login_block br_green_yellow">
-     				<div class="result_search">
-     					 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-	     				<i class="strip login_icon"></i><div class="result_search_text">Happy Hours & Specials</div>
-     				</div>
-     				<div class="pad20">
-     					<ul class="happy-list">
+                            <div class="padtb10">
+                                <div class="container">
+                                        <div class="result_box clearfix mar_top30bot20">
+                                                <div class="login_block br_green_yellow">
+                                                        <div class="result_search">
+                                                                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                                <i class="strip login_icon"></i><div class="result_search_text">Happy Hours & Specials</div>
+                                                        </div>
+                                                        <div class="pad20">
+                                                                <ul class="happy-list">
+                                                                <div id="displayhours"></div>
+                                                                </li>
+                                                                </ul>
 
 
-
-
-     						 	<div id="displayhours"></div>
-                            </li>
-                        </ul>
-
-
-     				</div>
-     			</div>
-     		</div>
-     	</div>
-     </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </div>
      			</div>
      			<div class="right_gallery_block newadded">
 				<div>
