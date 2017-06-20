@@ -137,7 +137,7 @@ $('.sorted_table').sortable({
                                                                         <option value="Sunday" <?php echo $im->days=="Sunday" ? 'selected':'';?>>Sunday</option>
                                                                     </select>
                                                                 </div>
-                                                                <form action="">
+<!--                                                                <form action="">
                                                                     <input type="checkbox" name="day" value="Monday"> M
                                                                     <input type="checkbox" name="day" value="Tuesday"> Tu
                                                                     <input type="checkbox" name="day" value="Wednesday"> W
@@ -145,7 +145,7 @@ $('.sorted_table').sortable({
                                                                     <input type="checkbox" name="day" value="Friday"> F
                                                                     <input type="checkbox" name="day" value="Saturday"> Sat
                                                                     <input type="checkbox" name="day" value="Sunday"> Sun
-                                                                </form>
+                                                                </form>-->
                                 
                                                                 <div class="input_box upload_user">
                                                                     <img src="" id="img_here" alt="" class="img-responsive"/>
