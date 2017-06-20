@@ -160,10 +160,10 @@ $('.sorted_table').sortable({
 <!--                                                                 <div class="input_box pull-left">
                                                                     <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
                                                                 </div> -->
-                                                                <!--<div class="clearfix"></div>-->
-                                                            <!--</div>-->
+                                                                <div class="clearfix"></div>
+                                                            </div>
                                                         
-<!--                                                            <div class="padtb8">
+                                                            <div class="padtb8">
                                                                 <div class="col-sm-3 text-right">
                                                                     <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
                                                                 </div>
@@ -175,7 +175,7 @@ $('.sorted_table').sortable({
                                                                 </div>  
                                                                 <div class="clearfix"></div>
                                                                     <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
-                                                            </div>-->
+                                                            </div>
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>       
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
