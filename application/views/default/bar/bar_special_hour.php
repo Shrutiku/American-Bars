@@ -174,7 +174,7 @@ $('.sorted_table').sortable({
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>  
                                                                 <div class="clearfix"></div>
-                                                                    <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
+                                                                    <!--<input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="">--> 
                                                             </div>
                                                             <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>       
