@@ -62,7 +62,7 @@
                                         <div class="col-sm-6 pull-right" style="margin-top:10px;">
                                             <label class="control-label">Can't find a beer?</label>
                                             <!--<div class="pull-right">-->
-                                                <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary">Suggest New Beer</a>
+                                                <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:5px;">Suggest New Beer</a>
                                             <!--</div>-->
                                             <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
                                                 <?php echo $this->load->view(getThemeName().'/bar/beer_suggest');?>
