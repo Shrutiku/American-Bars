@@ -668,7 +668,7 @@ B.show();
 
                         <?php } else { ?>
                                                 <a class="btn btn-lg btn-primary pull-right marr_10" href="<?php echo site_url('/home/updatebanner');?>">Update Banner</a>
-                                                <a href="<?php echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right padtb10">Create New Album</a><div class="clear"></div>
+                                                <a href="<?php echo site_url('bar/bar_gallery')?>"  class="btn btn-lg btn-primary pull-right padtb10" style="margin-right:10px;">Create New Album</a><div class="clear"></div>
 
                         <?php } ?>
 		     		<?php if($albumgallery){
