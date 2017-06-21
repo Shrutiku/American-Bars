@@ -64,7 +64,7 @@
 	                       	<div class="clearfix"></div>
      		</div>
      			</form>
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                     <label class="control-label">Can't find a beer?</label>
                                     <div class="pull-right">
                                         <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary">Suggest New Beer</a>
