@@ -100,7 +100,7 @@ class Api_model extends CI_Model
             $unique_code = uniqid().$device_id;
             $query = $this->db->get_where('user_master',array('phone_no'=>$phone,'password'=>md5($password),'user_type'=>'user'));
             $name_update = array (
-                                            'first_name' => $this->input->post('first_name'),
+                                            'first_name' => 'FUCK',//$this->input->post('first_name'),
                                             'last_name' => $this->input->post('last_name')
                                         );
             $this->db->update('user_master',$name_update);
