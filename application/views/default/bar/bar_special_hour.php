@@ -961,6 +961,7 @@ $('#add_row').click(function(){
         var html = '';
         
         html += '<input type="hidden" name="incr" id="incr_'+cnt+'" value="'+cnt+'" />';
+        html += '<div id="hap_'+cnt+'" style="display:none;">'
         html += '<div class="padtb" id="img_'+cnt+'" style="display:none;"><div class="padtb"><div class="col-sm-3 text-right"><label class="control-label">Days  : <span class="aestrick"> * </span></label></div>';                                               
         html += '<div class="input_box upload_btn">';
         html += '<select required name="days[]" id="days'+cnt+'" class="select_box"><option value="">-- Select Day-- </option><option value="Monday">Monday</option><option value="Tuesday">Tuesday</option><option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option><option value="Friday">Friday</option><option value="Saturday">Saturday</option><option value="Sunday">Sunday</option></select></div><div class="span3"><a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a></div><div class="clearfix"></div></div>';
@@ -1080,6 +1081,7 @@ $('#add_row').click(function(){
         
         
         html += '<div class="line"></div></div></div></div><div class="clear"></div>';
+        html += '</div>'
         $('#inner').append(html);
         
         
@@ -1396,7 +1398,7 @@ $('#add_row').click(function(){
        html +=                              '<input type="text" class="form-control form-pad tagscocktail'+cnt+cntcocktail+'" id="cocktailid_'+cntcocktail+'"  name="cocktailid[]" value="">';
        html +=                          '</div>';
         html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-       html +=                          '<label class="control-label " style="font-size: 16px;">Priceee : $</label>';
+       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
        html +=                      '</div>';
        html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
       html +=                               '<input type="text" class="form-control form-pad" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
@@ -2019,12 +2021,8 @@ function removeImageDive(id)
     {
             var cnt=parseInt($('#cntpro').val())-1;
             $('#cntpro').val(cnt);
-            $('#img_'+id).slideUp('normal',function(){$(this).remove(); });
-            removeImageDivebeer_1(1,1);
-            removeImageDivecocktail_1(1,1);
-            removeImageDiveliquor_1(1,1);
-            removeImageDivefood_1(1,1);
-            removeImageDiveother_1(1,1);
+            $('#hap_'+id).slideUp('normal',function(){$(this).remove(); });
+//            $('#img_'+id).slideUp('normal',function(){$(this).remove(); });
             
     }
     
