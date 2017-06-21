@@ -207,16 +207,25 @@
 	                       	
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-3"></div>
-	                       		<div class="col-sm-7 mart10 text-left">
+	                       		<div class="col-sm-3 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
 	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('home/drink_menu');?>" >Cancel</a>
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
-                                <div class="col-sm-3">
+<!--                                <div class="col-sm-3">
                                     <label class="control-label">Can't find a beer?</label>
                                     <div class="pull-right">
                                         <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary">Suggest New Beer</a>
+                                    </div>
+                                </div>-->
+                                <div class="col-sm-6 pull-right" style="margin-top:10px;">
+                                    <label class="control-label">Can't find a beer?</label>
+                                    <!--<div class="pull-right">-->
+                                        <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Beer</a>
+                                    <!--</div>-->
+                                    <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                                        <?php echo $this->load->view(getThemeName().'/bar/beer_suggest');?>
                                     </div>
                                 </div>
 	                       	<div class="clearfix"></div>
