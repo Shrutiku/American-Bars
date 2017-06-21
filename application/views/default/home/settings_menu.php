@@ -32,7 +32,7 @@
                                             <a class="btn btn-lg btn-primary marr_10"  href="<?php echo site_url('/home/changepassword');?>">Change Password</a>
                                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/domainmanagement');?>">Domain Management</a>
                                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/barlistings');?>">Bar Listings</a>
-                                            <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/updatebanner');?>">Update Banner</a>
+                                            <!--<a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/updatebanner');?>">Update Banner</a>-->
                                             <a class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('/home/updatecard');?>">Update Credit Card</a>
                                         </div>
 <!--                                </div>-->
