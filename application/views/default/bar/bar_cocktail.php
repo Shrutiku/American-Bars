@@ -174,7 +174,7 @@
 	                       	
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-3"></div>
-	                       		<div class="col-sm-7 mart10 text-left">
+	                       		<div class="col-sm-3 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
 	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('home/drink_menu');?>" >Cancel</a>
 	                       		</div>
