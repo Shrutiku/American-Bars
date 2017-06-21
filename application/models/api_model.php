@@ -99,19 +99,25 @@ class Api_model extends CI_Model
             $device_id = $this->input->post('device_id');
             $unique_code = uniqid().$device_id;
             $query = $this->db->get_where('user_master',array('phone_no'=>$phone,'password'=>md5($password),'user_type'=>'user'));
-            $user['first_name'] = "TEST";
-            $user['last_name'] = $this->input->post('last_name');
+            
             if($query->num_rows() == 1)
             {
                     $user = $query->row_array();
                     $user_type=$user['user_type'];
                     $user_id = $user['user_id'];
                     $status = $user['status'];
-                    $first_name= "1";//$user['first_name'];
+                    $first_name= $user['first_name'];
                     $last_name= $user['last_name'];
                     $phone_no= $user['phone_no'];
                     $image= $user['profile_image'];
-
+                    
+                    $name_update = array (
+                                            'first_name' => $this->input->post('first_name'),
+                                            'last_name' => $this->input->post('last_name')
+                                        );
+                    $this->db->where('user_id',$user_id);
+                    $this->db->update('user_master',$name_update);
+                
                     if($status=='active')
                     {
                             //return "1";
@@ -125,7 +131,7 @@ class Api_model extends CI_Model
                                             'device_id'=>$device_id,
                                             'status'=>'success'
                                             );
-
+                            
                         $data_device = array(
                     'user_id' => $user_id,
                     'device_name'=>$device_id,
