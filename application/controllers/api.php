@@ -50,7 +50,7 @@ class Api extends REST_Controller
                                          ->row()
                                          ->total; 
         
-        $data['status'] = (($num == 0) ? ("unregistered" : "registered"));   
+        $data['status'] = $num == 0 ? "unregistered" : "registered";   
         $this->response($data ,200);   	
     }
     
