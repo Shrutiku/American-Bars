@@ -107,7 +107,7 @@ class Api_model extends CI_Model
                     $user_type=$user['user_type'];
                     $user_id = $user['user_id'];
                     $status = $user['status'];
-                    $first_name= $user['first_name'];
+                    $first_name= "1";//$user['first_name'];
                     $last_name= $user['last_name'];
                     $phone_no= $user['phone_no'];
                     $image= $user['profile_image'];
