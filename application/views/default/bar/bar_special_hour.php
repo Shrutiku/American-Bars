@@ -961,7 +961,7 @@ $('#add_row').click(function(){
         var html = '';
         
         html += '<input type="hidden" name="incr" id="incr_'+cnt+'" value="'+cnt+'" />';
-        html += '<div id="hap_'+cnt+'" style="display:none;">'
+        html += '<div id="hap_'+cnt+'" style="display:none;">';
         html += '<div class="padtb" id="img_'+cnt+'" style="display:none;"><div class="padtb"><div class="col-sm-3 text-right"><label class="control-label">Days  : <span class="aestrick"> * </span></label></div>';                                               
         html += '<div class="input_box upload_btn">'; 
         html += '<select required name="days[]" id="days'+cnt+'" class="select_box"><option value="">-- Select Day-- </option><option value="Monday">Monday</option><option value="Tuesday">Tuesday</option><option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option><option value="Friday">Friday</option><option value="Saturday">Saturday</option><option value="Sunday">Sunday</option></select></div><div class="span3"><a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a></div><div class="clearfix"></div></div>';
