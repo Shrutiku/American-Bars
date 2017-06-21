@@ -298,7 +298,7 @@ $('.sorted_table').sortable({
                                                                                 <div class="col-sm-3" style="padding-left: 15px;">  
                                                                                     <input type="text" class="form-control tagsbeernew form-pad" id="beerid_<?php echo $i; ?>_<?php echo $j; ?>"  name="beerid[]" value="<?php echo getBeernameByID($beer->sp_beer_id); ?>">
                                                                                 </div>  
-                                                                                <div class="col-sm-2" style="width: 5%">
+                                                                                <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">
                                                                                     <label class="control-label" style="font-size: 16px;">Price : $</label>
                                                                                 </div>
                                                                                 <div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">  
