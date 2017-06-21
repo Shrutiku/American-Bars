@@ -2020,6 +2020,12 @@ function removeImageDive(id)
             var cnt=parseInt($('#cntpro').val())-1;
             $('#cntpro').val(cnt);
             $('#img_'+id).slideUp('normal',function(){$(this).remove(); });
+            removeImageDivebeer_1(1,1);
+            removeImageDivecocktail_1(1,1);
+            removeImageDiveliquor_1(1,1);
+            removeImageDivefood_1(1,1);
+            removeImageDiveother_1(1,1);
+            
     }
     
     function removeImageDiveAjax(id,num) {
