@@ -216,7 +216,7 @@
                                 <div class="col-sm-3">
                                     <label class="control-label">Can't find a beer?</label>
                                     <div class="pull-right">
-                                        <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary extra_cls">Suggest New Beer</a>
+                                        <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary">Suggest New Beer</a>
                                     </div>
                                 </div>
 	                       	<div class="clearfix"></div>
