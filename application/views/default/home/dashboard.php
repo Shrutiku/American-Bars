@@ -427,7 +427,7 @@ B.show();
                                  
                                 <div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Bar Description :</label>
+	        				 		<label class="control-label">Bar Description : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<textarea rows="10" placeholder="Description" name="desc" id="desc" class="form-control form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
