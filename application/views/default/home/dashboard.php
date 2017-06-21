@@ -427,7 +427,7 @@ B.show();
                                  
                                 <div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Bar Description :</label>
+	        				 		<label class="control-label">Bar Description : <span class="aestrick"> * </span></label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<textarea rows="10" placeholder="Description" name="desc" id="desc" class="form-control form-pad"><?php echo @$getalldata->bar_desc; ?></textarea>
@@ -542,7 +542,7 @@ B.show();
 	                       	</div>
                                  <div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Facebook Account (ex. "americanbars"):</label>
+	        				 		<label class="control-label">Facebook Link :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="facebook_link" name="facebook_link" value="<?php echo @$getalldata->facebook_link;?>">
@@ -552,7 +552,7 @@ B.show();
 	                       	
 	                       	<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Twitter Account (ex. "americanbars"):</label>
+	        				 		<label class="control-label">Twitter Link :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="twitter_link" name="twitter_link" value="<?php echo @$getalldata->twitter_link;?>">
@@ -562,7 +562,7 @@ B.show();
 	                       	
 	                       		<div class="padtb">
 	        				 	<div class="col-sm-3 text-right">
-	        				 		<label class="control-label">Instagram Account (e.x americanbars) :</label>
+	        				 		<label class="control-label">Instagram Link :</label>
 	        				 	</div>
 	                       		<div class="input_box col-sm-7">
 	                           		<input type="text" class="form-control form-pad" id="instagram_link" name="instagram_link" value="<?php echo @$getalldata->instagram_link;?>">
