@@ -201,9 +201,9 @@
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       	</div> -->
-                                <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+<!--                                <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
                                     <?php echo $this->load->view(getThemeName().'/bar/beer_suggest');?>
-                                </div>
+                                </div>-->
 	                       	
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-3"></div>
