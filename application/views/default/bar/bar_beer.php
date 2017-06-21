@@ -208,6 +208,12 @@
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
 	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('home/drink_menu');?>" >Cancel</a>
 	                       		</div>
+                                        <div ckass="col-sm-3">
+                                            <label class="control-label">Can't find a beer?</label>
+                                            <div class="pull-right" style="width: 27%;">
+                                                <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary extra_cls">Suggest New Beer</a>
+                                            </div>
+                                        </div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
 	                       	<div class="clearfix"></div>
