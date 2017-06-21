@@ -55,11 +55,11 @@
 	                       	
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-3"></div>
-	                       		<div class="col-sm-7 mart10 text-left">
+	                       		<div class="col-sm-3 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
 	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/add_drink');?>" >Cancel</a>
 	                       		</div>
-                                        <div class="col-sm-3 pull-right">
+                                        <div class="col-sm-6 pull-right">
                                             <label class="control-label">Can't find a beer?</label>
                                             <!--<div class="pull-right">-->
                                                 <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary">Suggest New Beer</a>
