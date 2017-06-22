@@ -676,7 +676,7 @@ $('.sorted_table').sortable({
                                                                 </div> 
                                                                 <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                 <div class="input_box pull-left">
-                                                                    <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
+                                                                    <!--<button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button>--> 
                                                                 </div> 
                                                                 <div class="clearfix"></div>
                                                             </div>

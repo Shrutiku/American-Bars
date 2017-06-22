@@ -44,7 +44,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-3 mart10 text-left" style="margin-left:1%; margin-right:-8%">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/bar_liquor');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" href="" >Cancel</a>
 	                       		</div>
                                             
                                         </div>
@@ -53,8 +53,8 @@
 	                       	<div class="clearfix"></div>-->
                                 <div class="padtb8">
                                     <div class="col-sm-3"></div>
-                                    <div class="col-sm-3 mart10 text-left">
-                                            <button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
+                                    <div class="col-sm-3 mart10 text-left" style="margin-left:1%; margin-right:-8%">
+                                            <button type="submit" class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/bar_liquor');?>">Save</button> 
                                             <a  class="btn btn-lg btn-primary marr_10" style="margin-left:2%; margin-right:-9%" href="<?php echo site_url('bar/bar_liquor');?>" >Cancel</a>
                                     </div>
 <!--                                        <div class="col-sm-4" style="margin-top:10px;">
@@ -64,15 +64,15 @@
                                                 <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Beer</a>
                                             </div>
                                             <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-                                                <?php //echo $this->load->view(getThemeName().'/bar/beer_suggest');?>
+                                               
                                             </div>
                                         </div>
                                     </div>-->
-                                    <div class="col-sm-6 pull-right" style="margin-top:10px;">
-                                        <label class="control-label">Can't find a liquor?</label>
-                                        <!--<div class="pull-right">-->
-                                            <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Liquor</a>
-                                        <!--</div>-->
+                                    <div class="col-sm-5" style="margin-top:10px;">
+                                        <div class="pull-right">
+                                            <label class="control-label">Can't find a liquor?</label>
+                                                <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Liquor</a>
+                                        </div>
                                     </div>
                                     <div class="clearfix"></div>
 	                       	</div>
@@ -88,13 +88,8 @@
    </div>
  </div>
     <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-<<<<<<< HEAD
         <?php echo $this->load->view(getThemeName().'/bar/liquor_suggest');?>
     </div>
-=======
-                                                <?php echo $this->load->view(getThemeName().'/bar/liquor_suggest');?> 
-                                            </div>
->>>>>>> 4393bc7b9d653a60ebfe9905188bfed491f6ee3a
 <script type="text/javascript" src="<?php echo base_url().getThemeName();?>/js/jquery_form.js"></script>
     <script>
    
@@ -258,8 +253,7 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
     	 // $.ajax({
 	       // type: "POST",
-		   // url: "<?php //echo site_url('bar/getallliquorbybar')?>",
-		   // data : {id:<?php //echo  $getbar['bar_id']; ?>},
+		 
 		   // dataType : 'json',
 		   // success: function(response) {
 		   	// $("#liquor_id").empty();
@@ -498,7 +492,7 @@ $(document).ready(function(){
 }
 var base_url = "<?php echo base_url();?>";
  $('#tokenize').tokenize({
-	  // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
+	  
 	     datas: ""+base_url+"bar/getallliquorbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
 	});
 </script>
