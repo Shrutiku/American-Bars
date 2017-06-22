@@ -79,7 +79,7 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                 </div>
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
-                                                                    <label class="control-label" style="font-size: 16px;">Days:</label>
+                                                                    <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
                                                                     <select class="form-control">
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="monday">Monday</option>
@@ -115,8 +115,20 @@ $('.sorted_table').sortable({
                                                                 <div class="col-sm-1"  style="width: 13%">  
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div>
+<<<<<<< HEAD
                                                                 <div class="col-sm-1"></div>                   
                                                                 <a href="javascript://;" id="" onclick="addrows_new('<?php echo $i; ?>')" name="add_rownew" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
+=======
+                                                                <div class="col-sm-1"></div>
+                                                                <div class="span3">
+                                                                    <?php if($i==0){ ?>
+                                                                    <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                    <?php }else{ ?>
+                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
+                                                                    <?php } ?>      
+                                                                </div>
+                                                                <!--<a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>--> 
+>>>>>>> origin/sandbox
                                                                 <div class="clearfix"></div>
                                                                      <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->         
                                                             </div>
