@@ -207,15 +207,15 @@
 	                       	
 	                       	<div class="padtb8">
 	                       		<div class="col-sm-3"></div>
-	                       		<div class="col-sm-3 mart10 text-left">
+	                       		<div class="col-sm-3 mart10 text-left" style="margin-left:1%; margin-right:-8%">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
 	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/bar_beer');?>" >Cancel</a>
 	                       		</div>
-                                        <div class="col-sm-6 pull-right" style="margin-top:10px;">
-                                            <label class="control-label">Can't find a beer?</label>
-                                            <!--<div class="pull-right">-->
-                                                <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Beer</a>
-                                            <!--</div>-->
+                                        <div class="col-sm-5" style="margin-top:10px;">
+                                            <div class="pull-right">
+                                                <label class="control-label">Can't find a beer?</label>
+                                                    <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Beer</a>
+                                            </div>
                                         </div>
 	                       		<div class="clearfix"></div>
 	                       	</div>
