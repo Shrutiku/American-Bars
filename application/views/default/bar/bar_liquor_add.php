@@ -68,11 +68,11 @@
                                             </div>
                                         </div>
                                     </div>-->
-                                    <div class="col-sm-6 pull-right" style="margin-top:10px;">
-                                        <label class="control-label">Can't find a liquor?</label>
-                                        <!--<div class="pull-right">-->
-                                            <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Liquor</a>
-                                        <!--</div>-->
+                                    <div class="col-sm-5" style="margin-top:10px;">
+                                        <div class="pull-right">
+                                            <label class="control-label">Can't find a liquor?</label>
+                                                <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Liquor</a>
+                                        </div>
                                     </div>
                                     <div class="clearfix"></div>
 	                       	</div>
