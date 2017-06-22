@@ -253,8 +253,7 @@ $(document).ready(function(){
 						$("#cm-err-main1").html("");
     	 // $.ajax({
 	       // type: "POST",
-		   // url: "<?php //echo site_url('bar/getallliquorbybar')?>",
-		   // data : {id:<?php //echo  $getbar['bar_id']; ?>},
+		 
 		   // dataType : 'json',
 		   // success: function(response) {
 		   	// $("#liquor_id").empty();
@@ -493,7 +492,7 @@ $(document).ready(function(){
 }
 var base_url = "<?php echo base_url();?>";
  $('#tokenize').tokenize({
-	  // datas: '<?php //echo base_url(); ?>+"advertisement/getAllCityOrZipcode/city/"'
+	  
 	     datas: ""+base_url+"bar/getallliquorbybar_new/?bar_id=<?php echo $getbar['bar_id'];?>/"
 	});
 </script>
