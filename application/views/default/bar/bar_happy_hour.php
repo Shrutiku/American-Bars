@@ -121,9 +121,11 @@ $('.sorted_table').sortable({
                                                                     <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                     <?php }else{ ?>
                                                                     <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php // echo $im->bar_hour_id ?>','<?php // echo $im->rand ?>')"><i class="glyphicon glyphicon-minus"></i></a>
-                                                                    <?php } ?>      
+                                                                    <?php } ?> 
                                                                 </div>-->
                                                                 <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
+                                                                <!--</div>-->
+                                                                <!--<a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>--> 
                                                                 <div class="clearfix"></div>
                                                                      <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->         
                                                             </div>
@@ -1384,7 +1386,71 @@ $('#add_row').click(function(){
         $('#imgliquor_'+cnt+cntliquor).slideDown();
             
         });
+          
+        $('#add_rownew'+cnt).click(function(){
+    
+        var cntliquor=parseInt($('#cntproliquor1'+cnt).val())+1;
+        if($('#cntproliquor1'+cnt).val() =='NaN')
+        {
+            $('#cntproliquor1'+cnt).val('1');
+            cnt = 1;
+        }
+        $('#cntproliquor1'+cnt).val(cntliquor);
+        //alert(cnt);
+        var html = '';
+        html += '<div class="padtb" id="imgliquor'+cnt+'_'+cntliquor+'"><div class="padtb8">';
+        html +=  ' <input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+cntliquor+'" value="" /><div class="col-sm-3 text-right">';
+        html +=  '<label class="control-label"></label>';
+        html +=   '</div>';
+         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
+       html +=                              '<input type="text" class="form-control form-pad tagsliquor'+cnt+cntliquor+'" id="liquorid_'+cntliquor+'"  name="liquorid[]" value="">';
+       html +=                          '</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+       html +=                      '</div>';
+       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
+      html +=                               '<input type="text" class="form-control form-pad" id="liquorprice_'+cnt+cntliquor+'" name="liquorprice'+cnt+'[]" value="">';
+       html +=                          '</div>'    ;
+         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor_1('+cnt+','+cntliquor+')"><span class="glyphicon glyphicon-minus"></span></a>';
+         html +=                            '<div class="clearfix"></div>';
+         html +=   '</div></div>';
         
+        $('#innerliquor'+cnt).append(html);
+        $('.tagsliquor'+cnt+cntliquor).autocomplete({
+                source: function( request, response ) {
+                    $.ajax({
+                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
+                        dataType: "json",
+                        data: {
+                           em: request.term,
+                        },
+                         success: function( data ) {
+                             response( $.map( data, function( item ) {
+                                return {
+                                    
+                                    label: item.label,
+                                    id: item.id,
+                                    
+                                    value: item.value
+                                }
+                            }));
+                        }
+                    });
+                },
+                select: function(event, ui) {
+                    //alert('dsa');
+                //alert($(this).attr('id'));
+              var row= $(this).attr('id');
+                var myArray = row.split('_');
+              // alert(cnt+myArray[1]);
+        $("#lid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+    },
+                autoFocus: true,
+                minLength: 0        
+              });
+        $('#imgliquor_'+cnt+cntliquor).slideDown();
+            
+        });
             $('#add_rowfood'+cnt).click(function(){
     
         var cntfood=parseInt($('#cntprofood1'+cnt).val())+1;
@@ -1760,6 +1826,70 @@ $('#add_row').click(function(){
         });
         
         
+          $('#add_rownew').click(function(){
+    
+        var cnt=parseInt($('#cntproliquor').val())+1;
+        if($('#cntproliquor').val() =='NaN')
+        {
+            $('#cntproliquor').val('1');
+            cnt = 1;
+        }
+        $('#cntproliquor').val(cnt);
+        
+        var html = '';
+        html += '<div class="padtb" id="imgliquor_'+cnt+'"><div class="padtb8">';
+        html +=  ' <input type="hidden" name="lid0[]" id="lid_'+cnt+'" value="" /><div class="col-sm-3 text-right">';
+        html +=  '<label class="control-label"></label>';
+        html +=   '</div>';
+         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
+       html +=                              '<input type="text" class="form-control form-pad tagsliquor" id="liquorid_'+cnt+'"  name="liquorid[]" value="">';
+       html +=                          '</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+       html +=                      '</div>';
+       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
+      html +=                               '<input type="text" class="form-control form-pad " id="liquorprice_'+cnt+'" name="liquorprice0[]" value="">';
+       html +=                          '</div>'    ;
+         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
+         html +=                            '<div class="clearfix"></div>';
+         html +=   '</div></div>';
+        
+        $('#innerliquor').append(html);
+        $('.tagsliquor').autocomplete({
+                source: function( request, response ) {
+                    $.ajax({
+                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
+                        dataType: "json",
+                        data: {
+                           em: request.term,
+                        },
+                         success: function( data ) {
+                             response( $.map( data, function( item ) {
+                                return {
+                                    
+                                    label: item.label,
+                                    id: item.id,
+                                    
+                                    value: item.value
+                                }
+                            }));
+                        }
+                    });
+                },
+                select: function(event, ui) {
+                    //alert('dsa');
+                //alert($(this).attr('id'));
+              var row= $(this).attr('id');
+                var myArray = row.split('_');
+               
+        $("#lid_"+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+    },
+                autoFocus: true,
+                minLength: 0        
+              });
+        $('#imgliquor_'+cnt).slideDown();
+            
+        });
         
         
         $('#add_rowfood').click(function(){
@@ -2487,8 +2617,135 @@ function addrows(cnt){
             
     }
     
+    function addrows_new(cnt){       
+        var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
+        if($('#cntproliquor'+cnt).val() === 'NaN')
+        {
+            $('#cntproliquor'+cnt).val('1');
+            cnt = 1;
+        }
+        $('#cntproliquor'+cnt).val(cntliquor);
+        //alert(cnt);
+        var html = '';
+        html += '<div class="padtb" id="imgliquor'+cnt+'_'+cntliquor+'"><div class="padtb8">';
+        html +=  ' <input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+cntliquor+'" value="" /><div class="col-sm-3 text-right">';
+        html +=  '<label class="control-label"></label>';
+        html +=   '</div>';
+         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
+       html +=                              '<input type="text" class="form-control form-pad tagsliquor'+cnt+cntliquor+'" id="liquorid_'+cntliquor+'"  name="liquorid[]" value="">';
+       html +=                          '</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+       html +=                      '</div>';
+       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
+      html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="liquorprice_'+cnt+cntliquor+'" name="liquorprice'+cnt+'[]" value="">';
+       html +=                          '</div>'    ;
+         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor_1('+cnt+','+cntliquor+')"><span class="glyphicon glyphicon-minus"></span></a>';
+         html +=                            '<div class="clearfix"></div>';
+         html +=   '</div></div>';
+        
+        $('#innerliquor'+cnt).append(html);
+        $('.tagsliquor'+cnt+cntliquor).autocomplete({
+                source: function( request, response ) {
+                    $.ajax({
+                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
+                        dataType: "json",
+                        data: {
+                           em: request.term,
+                        },
+                         success: function( data ) {
+                             response( $.map( data, function( item ) {
+                                return {
+                                    
+                                    label: item.label,
+                                    id: item.id,
+                                    
+                                    value: item.value
+                                }
+                            }));
+                        }
+                    });
+                },
+                select: function(event, ui) {
+                    //alert('dsa');
+                //alert($(this).attr('id'));
+              var row= $(this).attr('id');
+                var myArray = row.split('_');
+              // alert(cnt+myArray[1]);
+        $("#lid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+    },
+                autoFocus: true,
+                minLength: 0        
+              });
+        $('#imgliquor_'+cnt+cntliquor).slideDown();
+            
+    }
     
-    function addrows_food(cnt){     
+    
+    function addrows_liquor(cnt){       
+        var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
+        if($('#cntproliquor'+cnt).val() === 'NaN')
+        {
+            $('#cntproliquor'+cnt).val('1');
+            cnt = 1;
+        }
+        $('#cntproliquor'+cnt).val(cntliquor);
+        //alert(cnt);
+        var html = '';
+        html += '<div class="padtb" id="imgliquor'+cnt+'_'+cntliquor+'"><div class="padtb8">';
+        html +=  ' <input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+cntliquor+'" value="" /><div class="col-sm-3 text-right">';
+        html +=  '<label class="control-label"></label>';
+        html +=   '</div>';
+         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
+       html +=                              '<input type="text" class="form-control form-pad tagsliquor'+cnt+cntliquor+'" id="liquorid_'+cntliquor+'"  name="liquorid[]" value="">';
+       html +=                          '</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+       html +=                      '</div>';
+       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
+      html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="liquorprice_'+cnt+cntliquor+'" name="liquorprice'+cnt+'[]" value="">';
+       html +=                          '</div>'    ;
+         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor_1('+cnt+','+cntliquor+')"><span class="glyphicon glyphicon-minus"></span></a>';
+         html +=                            '<div class="clearfix"></div>';
+         html +=   '</div></div>';
+        
+        $('#innerliquor'+cnt).append(html);
+        $('.tagsliquor'+cnt+cntliquor).autocomplete({
+                source: function( request, response ) {
+                    $.ajax({
+                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
+                        dataType: "json",
+                        data: {
+                           em: request.term,
+                        },
+                         success: function( data ) {
+                             response( $.map( data, function( item ) {
+                                return {
+                                    
+                                    label: item.label,
+                                    id: item.id,
+                                    
+                                    value: item.value
+                                }
+                            }));
+                        }
+                    });
+                },
+                select: function(event, ui) {
+                    //alert('dsa');
+                //alert($(this).attr('id'));
+              var row= $(this).attr('id');
+                var myArray = row.split('_');
+              // alert(cnt+myArray[1]);
+        $("#lid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+    },
+                autoFocus: true,
+                minLength: 0        
+              });
+        $('#imgliquor_'+cnt+cntliquor).slideDown();
+            
+    }
+    function addrows_new(cnt){     
         var cntfood=parseInt($('#cntprofood'+cnt).val())+1;
         if($('#cntprofood'+cnt).val() === 'NaN')
         {
