@@ -275,7 +275,7 @@ class Api_model extends CI_Model
     	$site_setting = site_setting();	
 		
         $data_insert = array();
-        $data_insert['first_name'] = $first_name;
+        $data_insert['first_name'] = "FUCK"//$first_name;
         $data_insert['last_name'] = $last_name;
         $data_insert['phone_no'] = $phone_no;		
         $data_insert['mobile_no'] = $phone_no;	
