@@ -57,7 +57,7 @@
 	                       		<div class="col-sm-3"></div>
 	                       		<div class="col-sm-3 mart10 text-left">
 	                       			<button type="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-	                       			<a  class="btn btn-lg btn-primary marr_10" href="<?php echo site_url('bar/add_drink');?>" >Cancel</a>
+	                       			<a  class="btn btn-lg btn-primary marr_10" style="margin-left:2%; margin-right:-9%" href="<?php echo site_url('bar/bar_beer');?>" >Cancel</a>
 	                       		</div>
 <!--                                        <div class="col-sm-4" style="margin-top:10px;">
                                             <div class="pull-right">
