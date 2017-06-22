@@ -148,7 +148,7 @@
                             <div>
                                 <h2  style="align: center;">Liquors
                                     <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Edit</a>
-                                    <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/bar_liquor');?>">Add</a>
+                                    <a class="btn btn-lg btn-primary marr_10 pull-right" id="drink-btn" href="<?php echo site_url('/bar/choose_liquor');?>">Add</a>
                                 </h2>
 
                                 <?php			// BEGIN SMALL LIQUOR TABLE 
