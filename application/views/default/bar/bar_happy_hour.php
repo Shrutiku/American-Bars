@@ -797,7 +797,7 @@ $('#add_row').click(function(){
         html += '<label class="control-label" style="font-size: 16px;">Price : $ </label></div>';
         html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right: 24px;">';   
         html += '<input type="text" class="form-control form-pad" id="beerprice'+cnt+'" name="beerprice'+cnt+'[]" value="">';
-        html += '</div><a href="javascript://;" id="add_rowbeer'+cnt+'" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>';
+//        html += '</div><a href="javascript://;" id="add_rowbeer'+cnt+'" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>';
         html += '<div class="clearfix"></div></div>';
         html += '</div></div>';
         
