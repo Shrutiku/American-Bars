@@ -327,7 +327,7 @@ class Api_model extends CI_Model
             'last_name'=> $last_name
                 );
         
-        $this->db->where('user_id',$phone);
+        $this->db->where('user_id',$phone_no);
         $this->db->update('user_master',$name_update);
         
         return $name_update;
