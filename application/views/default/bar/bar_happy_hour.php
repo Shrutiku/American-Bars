@@ -66,8 +66,8 @@ $('.sorted_table').sortable({
                         <div>
                             <div id="list_show">
                                 <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
-                                <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hour.php'); ?>" onsubmit="return validate()" autocomplete="off">
-                                    <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hour.php'); ?>" >
+                                <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" onsubmit="return validate()" autocomplete="off">
+                                    <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" >
                     <?php // print_r($imageGallery);die;
                                             if($getbar_hour!=''){?>
                                                 <div class="" id="inner">
