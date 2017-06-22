@@ -112,12 +112,6 @@ class Api extends REST_Controller
             
                 $data = $this->api_model->user_phone_register_api($first_name,$last_name,$phone);
             }
-            if($num == 1) { 
-                $first_name = $this->input->post('first_name'); //"NOTZERO";
-                $last_name = $this->input->post('last_name');
-            
-                $data = $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
-            }
             else
             {
                 $this->load->model('user_model');
@@ -171,8 +165,8 @@ class Api extends REST_Controller
                                              ->row()
                                              ->total;
             
-            $first_name = ""; // $this->input->post('first_name'); //"NOTZERO";
-            $last_name = ""; // $this->input->post('last_name');
+            $first_name = $this->input->post('first_name'); //"NOTZERO";
+            $last_name = $this->input->post('last_name');
 
             $data = $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
 
