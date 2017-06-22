@@ -2475,7 +2475,7 @@ function getallliquorbybar_new()
 //                   $this->template->write_view ('content_center', $theme.'/bar/bar_liquor', $data, TRUE);	
 //                }
 		
-		$this->template->write_view ('content_center', $theme.'/bar/bar_liquor', $data, TRUE);
+		$this->template->write_view ('content_center', $theme.'/bar/bar_liquor_add', $data, TRUE);
                 $this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
 		$this->template->render ();
 		}
