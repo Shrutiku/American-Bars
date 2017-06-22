@@ -123,6 +123,11 @@ class Api extends REST_Controller
                     $data['user_id'] = $user['user_id']; 
                     $data['status']= 'success';
                 }
+                if($user['first_name'] == "") {
+                    $first_name = $this->input->post('first_name'); //"NOTZERO";
+                    $last_name = $this->input->post('last_name');
+                       $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone); 
+                    }
             }
             
             if (!$data['user_id']) {
