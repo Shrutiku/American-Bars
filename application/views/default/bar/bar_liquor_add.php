@@ -52,7 +52,7 @@
                                                 <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Liquor</a>
                                             <!--</div>-->
                                             <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-                                                <?php echo $this->load->view(getThemeName().'/bar/liquor_suggest');?>
+                                                <?php echo $this->load->view(getThemeName().'/bar/liquor_suggest');?> 
                                             </div>
                                         </div>
 	                       		<div class="clearfix"></div>
