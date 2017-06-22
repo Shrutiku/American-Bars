@@ -4779,6 +4779,57 @@ function deletefavbar()
 			}
 	}
 	
+        function bar_happy_hours($msg='')
+	{
+		// print_r($_POST);
+		// die;
+		if($this->session->userdata('user_type')!='bar_owner')
+		{
+			redirect('home');
+		}
+		if(get_authenticateUserID()=='')
+		{
+			redirect('home');
+		}
+
+		$data = array();
+		$data['msg'] = $msg;
+		$theme = getThemeName ();
+		$this->template->set_master_template ($theme.'/template.php');
+		$this->load->library('pagination');
+		$page_detail=meta_setting();
+		$pageTitle=$page_detail->title;
+		$metaDescription=$page_detail->meta_description;
+		$metaKeyword=$page_detail->meta_keyword;
+		
+		$data['error'] = '';
+		$data['site_setting'] = site_setting ();
+        $data['active_menu']='home';
+        $this->template->write ('pageTitle', $pageTitle, TRUE);
+		$this->template->write ('metaDescription', $metaDescription, TRUE);
+		$this->template->write ('metaKeyword', $metaKeyword, TRUE);
+        $data['getbar'] = $this->home_model->get_bar_info(get_authenticateUserID());
+		
+		
+		if($data['getbar']['bar_type']=='half_mug')
+		{
+			redirect('home/registration_step3_upgrade/'.base64_encode(@$data['getbar']['bar_id']));
+		}
+		$data['getbar_hour'] = $this->bar_model->get_bar_hour(@$data['getbar']['bar_id']);
+		if($this->input->post('submit')=="Submit")
+		{
+		
+			$this->bar_model->bar_hours_update($data['getbar']['bar_id']);			
+				$data["msg"] = "success";	
+//			redirect("bar/bar_special_hours/update");	
+			redirect("bar/bar_special_hours");	
+		}
+		$this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
+		$this->template->write_view ('content_center', $theme.'/bar/bar_shappy_hour', $data, TRUE);
+		$this->template->write_view ('footer', $theme.'/common/footer', $data, TRUE);
+		$this->template->render ();
+	}
+        
 	function bar_special_hours($msg='')
 	{
 		// print_r($_POST);
