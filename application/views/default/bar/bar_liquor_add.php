@@ -88,13 +88,8 @@
    </div>
  </div>
     <div class="modal fade login_pop2" id="suggestmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-<<<<<<< HEAD
         <?php echo $this->load->view(getThemeName().'/bar/liquor_suggest');?>
     </div>
-=======
-                                                <?php echo $this->load->view(getThemeName().'/bar/liquor_suggest');?> 
-                                            </div>
->>>>>>> 4393bc7b9d653a60ebfe9905188bfed491f6ee3a
 <script type="text/javascript" src="<?php echo base_url().getThemeName();?>/js/jquery_form.js"></script>
     <script>
    
