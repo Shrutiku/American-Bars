@@ -79,7 +79,7 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label" style="font-size: 16px;">Days:</label>
                                                                 </div>
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
-                                                                    <label class="control-label" style="font-size: 16px;">Days:</label>
+                                                                    <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
                                                                     <select class="form-control">
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="monday">Monday</option>
