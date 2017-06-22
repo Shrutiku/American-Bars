@@ -465,46 +465,6 @@ $('.sorted_table').sortable({
                                                                     <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                 <div class="clearfix"></div>
                                                                 <br>
-<!--                                                                <div class="col-sm-3 text-right">
-                                                                    <label class="control-label">Days : <span class="aestrick"> * </span></label>
-                                                                </div>
-
-                                                                <div class="input_box upload_btn">
-                                                                    <select required name="days[]" id="days" class="select_box">
-                                                                        <option value="">-- Select Day-- </option>
-                                                                        <option value="Monday">Monday</option>
-                                                                        <option value="Tuesday">Tuesday</option>
-                                                                        <option value="Wednesday">Wednesday</option>
-                                                                        <option value="Thursday">Thursday</option>
-                                                                        <option value="Friday">Friday</option>
-                                                                        <option value="Saturday">Saturday</option>
-                                                                        <option value="Sunday">Sunday</option>
-                                                                    </select>                           
-                                                                </div>
-
-                                                                <div class="input_box upload_user">
-                                                                    <img src="" id="img_here" alt="" class="img-responsive"/>
-                                                                </div> 
-                                                                <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-                                                                <div class="input_box pull-left">
-                                                                    <button type="submit" class="btn btn-lg btn-primary " href="#">Upload</button> 
-                                                                </div> 
-                                                                <div class="clearfix"></div>
-                                                            </div>
-                                                            <div class="padtb8">
-                                                                <div class="col-sm-3 text-right">
-                                                                    <label class="control-label">Select Hours  : <span class="aestrick"> * </span></label>
-                                                                </div>
-                                                                <div class="col-sm-4" style="width: 23.5%;">
-                                                                    <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
-                                                                </div>
-                                                                <div class="col-sm-3 text-right" style="width: 23.5%;"> 
-                                                                    <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
-
-                                                                </div>  
-                                                                <div class="clearfix"></div>
-                                                                    <input required type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value=""> 
-                                                            </div>-->
 
                                                             <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                             <div id="contbeer" class="mar_top20bot20">
