@@ -152,6 +152,26 @@ class Api extends REST_Controller
             
             $this->response($data ,200);			
 	}
+        
+        function user_update_names_post() {
+            
+            $phone_str = $this->input->post('phone');
+            $phone_dash = filter_var($phone_str, FILTER_SANITIZE_NUMBER_INT);
+            $phone = str_replace(array('+','-', '.'), '', $phone_dash);
+            $num	=	$this->db->select('count(user_id) AS total')
+                                             ->where("phone_no",$phone)
+                                             ->where("user_type",'user')
+                                             ->get("user_master")
+                                             ->row()
+                                             ->total;
+            
+            $first_name = ""; // $this->input->post('first_name'); //"NOTZERO";
+            $last_name = ""; // $this->input->post('last_name');
+
+            $data = $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
+
+            $this->response($data ,200);
+        }
 
 	function user_edit_post()
 		{

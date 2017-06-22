@@ -320,6 +320,19 @@ class Api_model extends CI_Model
         return $data;
     }
 
+    function user_phone_update_name_api($first_name,$last_name,$phone_no) {
+        
+        $name_update = array ( 
+            'first_name'=> $first_name, 
+            'last_name'=> $last_name
+                );
+        
+        $this->db->where('user_id',$phone);
+        $this->db->update('user_master',$name_update);
+        
+        return $name_update;
+    }
+    
 	function user_edit_api($user_id)
 	{
 		 $this->load->library('upload');
