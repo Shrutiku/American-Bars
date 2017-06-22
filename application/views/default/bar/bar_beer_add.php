@@ -70,7 +70,7 @@
                                                 </div>
                                             </div>
                                         </div>-->
-                                        <div class="col-sm-5 pull-right" style="margin-top:10px;">
+                                        <div class="col-sm-5" style="margin-top:10px;">
                                             <div class="pull-right">
                                                 <label class="control-label">Can't find a beer?</label>
                                                     <a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary" style="margin-right:10px;">Suggest New Beer</a>
