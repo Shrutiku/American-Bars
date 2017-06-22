@@ -2458,10 +2458,10 @@ function getallliquorbybar_new()
 		//	$data['result'] = $this->bar_model->getAllComments($bar_id,$offset,$limit);	
             $data['offset'] = $offset;
             $data['limit'] = $limit;
-            $data['redirect_page']='bar_cocktail';
+            $data['redirect_page']='bar_liquor';
 		
             if($this->input->is_ajax_request()){
-                    echo $this->load->view($theme .'/bar/bar_cocktail_ajax',$data,TRUE);die;
+                    echo $this->load->view($theme .'/bar/bar_liquor_ajax',$data,TRUE);die;
 
             }
             else {
