@@ -107,8 +107,8 @@ class Api extends REST_Controller
                                              ->total;          
 
             if($num == 0) { 
-                $first_name = ""; // $this->input->post('first_name'); //"NOTZERO";
-                $last_name = ""; // $this->input->post('last_name');
+                $first_name = "n/a"; // $this->input->post('first_name'); //"NOTZERO";
+                $last_name = "n/a"; // $this->input->post('last_name');
             
                 $data = $this->api_model->user_phone_register_api($first_name,$last_name,$phone);
             }
@@ -123,8 +123,8 @@ class Api extends REST_Controller
                     $data['user_id'] = $user['user_id']; 
                     $data['status']= 'success';
                 }
-                if($user['user_id']['first_name'] == "") {
-                    $first_name = $this->input->post('first_name'); //"NOTZERO";
+                if($user['user_id']['first_name'] == "n/a") {
+                    $first_name = "test";//$this->input->post('first_name'); //"NOTZERO";
                     $last_name = $this->input->post('last_name');
                        $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone); 
                     }
