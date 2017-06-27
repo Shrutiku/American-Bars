@@ -5107,7 +5107,9 @@ function getAllBarResult11()
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
-						'days'=>$datatick['days'][$key],
+//						'days'=>$datatick['days'][$key],
+                                            'day_from'=>$datatick['day_from'][$key],
+                                            'day_to'=>$datatick['day_to'][$key],
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'sp_liquor_price' => isset($liquorprice[$i]) ? $liquorprice[$i]:'',
