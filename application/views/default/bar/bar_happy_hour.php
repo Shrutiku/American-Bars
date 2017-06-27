@@ -750,7 +750,7 @@ $('#add_row').click(function(){
                     html += '<label class="control-label" style="font-size: 16px;">Days:</label>';
                 html += '</div>';
                 html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;"> '; 
-                html += '<input required value="" name="day_from[]" id="day_from'+cnt+'">';
+                html += '<input required type="text" value="" name="day_from[]" id="day_from'+cnt+'">';
                     html += '<select class="form-control">';
                         html += '<option value="">-- Select Day-- </option>';
                         html += '<option value="monday">Monday</option>';
@@ -766,7 +766,7 @@ $('#add_row').click(function(){
                     html += '<label class="control-label" style="font-size: 16px;">to</label>';
                 html += '</div>';
                 html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;"> '; 
-                html += '<input required value="" name="day_to[]" id="day_to'+cnt+'">';
+                html += '<input required type="text" value="" name="day_to[]" id="day_to'+cnt+'">';
                     html += '<select class="form-control">';
                         html += '<option value="">-- Select Day-- </option>';
                         html += '<option value="monday">Monday</option>';
