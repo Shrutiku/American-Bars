@@ -120,7 +120,13 @@ $('.sorted_table').sortable({
                                                                     <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>-->
                                                                 </div>
                                                                 <div class="col-sm-1"></div>
-                                                                <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
+                                                                
+                                                                <?php if($i==0) {?>
+                                                                <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                <?php} else { ?>
+                                                                <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
+                                                                <?php } ?>
+                                                                
                                                                 <div class="clearfix"></div>
                                                                      <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->         
                                                             </div>
