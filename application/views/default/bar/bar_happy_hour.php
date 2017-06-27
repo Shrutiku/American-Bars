@@ -121,7 +121,7 @@ $('.sorted_table').sortable({
                                                                 </div>
                                                                 <div class="col-sm-1"></div>
                                                                 
-                                                                <?php if($i<1) {?>
+                                                                <?php if($i==0) {?>
                                                                 <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                 <?php} else { ?>
                                                                 <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
