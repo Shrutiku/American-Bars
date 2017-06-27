@@ -597,7 +597,7 @@ $('.sorted_table').sortable({
                                                                         </div>  
                                                                         <a href="javascript://;" id="add_rowother" name="add_rowother" class="add_rowother btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                         <div class="clearfix"></div>
-                                                                            <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->
+                                                                            <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php //echo @$email; ?>">-->
                                                                     </div>
                                                                 </div>
                                                             </div>  
@@ -639,7 +639,7 @@ $(document).ready(function(){
                         url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -649,7 +649,7 @@ $(document).ready(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -673,7 +673,7 @@ $(document).ready(function(){
                         url : '<?php echo site_url('cocktail/auto_suggest_cocktail/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -683,7 +683,7 @@ $(document).ready(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -707,7 +707,7 @@ $(document).ready(function(){
                         url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -717,7 +717,7 @@ $(document).ready(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -875,7 +875,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -885,7 +885,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -909,7 +909,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('cocktail/auto_suggest_cocktail/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -919,7 +919,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -942,7 +942,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -952,7 +952,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -973,7 +973,7 @@ $('#add_row').click(function(){
         $('#add_rowbeer'+cnt).click(function(){
     
         var cntbeer=parseInt($('#cntprobeer1'+cnt).val())+1;
-        if($('#cntprobeer1'+cnt).val() =='NaN')
+        if($('#cntprobeer1'+cnt).val() === 'NaN')
         {
             $('#cntprobeer1'+cnt).val('1');
             cnt = 1;
@@ -1005,7 +1005,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -1015,7 +1015,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -1037,7 +1037,7 @@ $('#add_row').click(function(){
                 $('#add_rowbeerr'+cnt).click(function(){
     
         var cntbeer=parseInt($('#cntprobeer1'+cnt).val())+1;
-        if($('#cntprobeer1'+cnt).val() =='NaN')
+        if($('#cntprobeer1'+cnt).val() === 'NaN')
         {
             $('#cntprobeer1'+cnt).val('1');
             cnt = 1;
@@ -1069,7 +1069,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -1079,7 +1079,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -1101,7 +1101,7 @@ $('#add_row').click(function(){
                 $('#add_rowbeerrr'+cnt).click(function(){
     
         var cntbeer=parseInt($('#cntprobeer1'+cnt).val())+1;
-        if($('#cntprobeer1'+cnt).val() =='NaN')
+        if($('#cntprobeer1'+cnt).val() === 'NaN')
         {
             $('#cntprobeer1'+cnt).val('1');
             cnt = 1;
@@ -1133,7 +1133,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('beer/auto_suggest_beer/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -1143,7 +1143,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -1166,7 +1166,7 @@ $('#add_row').click(function(){
         $('#add_rowcocktail'+cnt).click(function(){
     
         var cntcocktail=parseInt($('#cntprococktail1'+cnt).val())+1;
-        if($('#cntprococktail1'+cnt).val() =='NaN')
+        if($('#cntprococktail1'+cnt).val() === 'NaN')
         {
             $('#cntprococktail1'+cnt).val('1');
             cnt = 1;
@@ -1198,7 +1198,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('cocktail/auto_suggest_cocktail/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -1208,7 +1208,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -1233,7 +1233,7 @@ $('#add_row').click(function(){
         $('#add_rowliquor'+cnt).click(function(){
     
         var cntliquor=parseInt($('#cntproliquor1'+cnt).val())+1;
-        if($('#cntproliquor1'+cnt).val() =='NaN')
+        if($('#cntproliquor1'+cnt).val() === 'NaN')
         {
             $('#cntproliquor1'+cnt).val('1');
             cnt = 1;
@@ -1265,7 +1265,7 @@ $('#add_row').click(function(){
                         url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
                         dataType: "json",
                         data: {
-                           em: request.term,
+                           em: request.term
                         },
                          success: function( data ) {
                              response( $.map( data, function( item ) {
@@ -1275,7 +1275,7 @@ $('#add_row').click(function(){
                                     id: item.id,
                                     
                                     value: item.value
-                                }
+                                };
                             }));
                         }
                     });
@@ -1299,7 +1299,7 @@ $('#add_row').click(function(){
             $('#add_rowfood'+cnt).click(function(){
     
         var cntfood=parseInt($('#cntprofood1'+cnt).val())+1;
-        if($('#cntprofood1'+cnt).val() =='NaN')
+        if($('#cntprofood1'+cnt).val() === 'NaN')
         {
             $('#cntprofood1'+cnt).val('1');
             cnt = 1;
@@ -1332,7 +1332,7 @@ $('#add_row').click(function(){
         $('#add_rowother'+cnt).click(function(){
     
         var cntother=parseInt($('#cntproother1'+cnt).val())+1;
-        if($('#cntproother1'+cnt).val() =='NaN')
+        if($('#cntproother1'+cnt).val() === 'NaN')
         {
             $('#cntproother1'+cnt).val('1');
             cnt = 1;
