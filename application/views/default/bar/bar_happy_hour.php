@@ -2328,7 +2328,7 @@ function addrows(cnt){
     }
     
     
-    function addrows_liquor(cnt){       
+    function addrows_liquor_bad(cnt){       
         var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
         if($('#cntproliquor'+cnt).val() === 'NaN')
         {
