@@ -485,7 +485,7 @@
 						<div class="clearfix"></div>
 					</ul>
 				</div>
-                            <div class="text-center mar_top15" style="margin-top:30px">
+                            <div class="text-center mar_top15" id="gallerywrapper" style="margin-top:30px; display:none;">
 
 	     				 <?php if($bar_gallery){ ?><ul class="bxslider">
 
@@ -1140,7 +1140,12 @@ span.required {
 <script src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places"></script>
 
 <script>
- $(document).ready(function () {
+$(window).load(function(){
+//  $(".loading").fadeOut("slow");
+  $(".gallerywrapper").fadeIn("slow");
+});
+    
+    $(document).ready(function () {
 	$('#total-like').click(function(){
 		 <?php if($this->session->userdata('user_type')=='taxi_owner'){?>
   	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
