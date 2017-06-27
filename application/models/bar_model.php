@@ -5069,7 +5069,7 @@ function getAllBarResult11()
 					     'rand' => $rand,
 					     'bar_id' => $bar_id,
 						);
-						$this->db->insert('bar_special_hours',$dataticket);	
+						$this->db->insert('bar_happy_hour',$dataticket);	
 					  $i++; }
 				 }
 				 
@@ -5094,7 +5094,7 @@ function getAllBarResult11()
 					     'cat' => 'cocktail',
 					     'bar_id' => $bar_id,
 						);
-						$this->db->insert('bar_special_hours',$dataticket);	
+						$this->db->insert('bar_happy_hour',$dataticket);	
 					  $i++; }
 				 }
 				 
@@ -5116,7 +5116,7 @@ function getAllBarResult11()
 					     'rand' => $rand,
 					     'bar_id' => $bar_id,
 						);
-						$this->db->insert('bar_special_hours',$dataticket);	
+						$this->db->insert('bar_happy_hour',$dataticket);	
 					  $i++; }
 				 }
 				 
@@ -5140,7 +5140,7 @@ function getAllBarResult11()
 					     'cat' => 'food',
 					     'bar_id' => $bar_id,
 						);
-						$this->db->insert('bar_special_hours',$dataticket);	
+						$this->db->insert('bar_happy_hour',$dataticket);	
 					  $i++; }
 				 }
 				 
@@ -5164,7 +5164,7 @@ function getAllBarResult11()
 					     'rand' => $rand,
 					     'bar_id' => $bar_id,
 						);
-						$this->db->insert('bar_special_hours',$dataticket);	
+						$this->db->insert('bar_happy_hour',$dataticket);	
 					  $i++; }
 				 }
 				// die;d
