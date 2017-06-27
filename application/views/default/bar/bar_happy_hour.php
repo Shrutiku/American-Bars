@@ -112,10 +112,12 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label pull-right" style="font-size: 16px;">  Time:</label>
                                                                 </div>
                                                                 <div class="col-sm-1" style="width: 13%" >
-                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">
+                                                                    <input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from" defaultTime="3:00 PM">
+                                                                    <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>-->
                                                                 </div>
                                                                 <div class="col-sm-1"  style="width: 13%">  
-                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
+                                                                    <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to" defaultTime="3:00 PM">
+                                                                    <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>-->
                                                                 </div>
                                                                 <div class="col-sm-1"></div>
                                                                 <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a> 
