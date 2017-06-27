@@ -4954,6 +4954,242 @@ function getAllBarResult11()
 		}
 		 return '';
 	}
+        
+        function bar_happy_hours_update($bar_id)
+	{
+		$this -> db -> where('bar_id', $bar_id);
+  		$this -> db -> delete('bar_special_hours');
+		$datatick['days']=$this->input->post('days');
+		$datatick['hour_from']=$this->input->post('hour_from');
+		$datatick['hour_to']=$this->input->post('hour_to');
+		$datatick['price']=$this->input->post('price');
+		$datatick['speciality']=$this->input->post('speciality');
+		$datatick['bar_hour_id']=$this->input->post('bar_hour_id');
+		$datatick['beerid']=$this->input->post('beerid');
+		$datatick['beerprice']=$this->input->post('beerprice');
+		$datatick['cocktailid']=$this->input->post('cocktailid');
+		$datatick['cocktailprice']=$this->input->post('cocktailprice');
+		$datatick['liquorid']=$this->input->post('liquorid');
+		$datatick['liquorprice']=$this->input->post('liquorprice');
+		$datatick['foodid']=$this->input->post('foodid');
+		$datatick['foodprice']=$this->input->post('foodprice');
+		$datatick['otherid']=$this->input->post('otherid');
+		$datatick['otherprice']=$this->input->post('otherprice');
+		$datatick['cntprobeer']=$this->input->post('cntprobeer');
+		
+		
+		//echo 
+		
+		// echo "<pre>";
+		// print_r($_POST);
+		// die;
+		
+		
+		 if( isset( $datatick['days'] ) && is_array( $datatick['days'] ) ){
+			foreach( $datatick['days'] as $key => $each ){
+				
+					$d = '';
+					if($datatick['days'][$key]=="Monday")
+					{
+						$d = 1;
+					}
+					if($datatick['days'][$key]=="Tuesday")
+					{
+						$d = 2;
+					}
+					if($datatick['days'][$key]=="Wednesday")
+					{
+						$d = 3;
+					}
+					if($datatick['days'][$key]=="Thursday")
+					{
+						$d = 4;
+					}
+					if($datatick['days'][$key]=="Friday")
+					{
+						$d = 5;
+					}
+					if($datatick['days'][$key]=="Saturday")
+					{
+						$d = 6;
+					}
+					if($datatick['days'][$key]=="Sunday")
+					{
+						$d = 7;
+					}
+				
+					
+					 
+				//$datatick['beer_id'] = $this->input->post('')
+				//if($thi)
+				//$datatick['otherprice']=$this->input->post('otherprice');
+				 // $countbeer =  $datatick['cntprobeer'][$key]+1;
+// 				 
+				 // //foreach($countbeer)
+				 // if($countbeer)
+				 // {
+				 	// foreach($countbeer as $beer)
+					// {
+						// $dataticket=array(
+					// 'days'=>$datatick['days'][$key],
+				    // 'hour_from' => $datatick['hour_from'][$key],
+				    // 'hour_to' => $datatick['hour_to'][$key],
+				    // 'bar_id' => $bar_id,
+				     // 'rand' => $rand,
+				     // 'beer' => $datatick['speciality'][$key],
+					// );
+					// $this->db->insert('bar_special_hours',$dataticket);	
+					// }
+				 // }
+				 
+				$beer =$this->input->post('bid'.$key);
+				$beerprice =$this->input->post('beerprice'.$key);
+				
+				//echo count($beer)."test";
+				//echo count($beer);
+				//print_r($beer);
+				$rand = rand('1111','9999');
+				 if(count($beer))
+				 {
+				 	 $i=0; foreach($beer as $b)
+					 {
+					 	
+					 	//echo $b;
+					 	$dataticket=array(
+						'days'=>$datatick['days'][$key],
+					    'hour_from' => $datatick['hour_from'][$key],
+					    'hour_to' => $datatick['hour_to'][$key],
+					    'sp_beer_price' => isset($beerprice[$i]) ? $beerprice[$i]:'',
+					    'sp_beer_id' => $b,
+					    'cat' => 'beer',
+					     'rand' => $rand,
+					     'bar_id' => $bar_id,
+						);
+						$this->db->insert('bar_special_hours',$dataticket);	
+					  $i++; }
+				 }
+				 
+				 
+				 $cocktail =$this->input->post('cid'.$key);
+				$cocktailprice =$this->input->post('cocktailprice'.$key);
+				
+				 if(count($cocktail))
+				 {
+				 	 $i=0; foreach($cocktail as $c)
+					 {
+					 	//echo $b;
+					 	$dataticket=array(
+						'days'=>$datatick['days'][$key],
+					    'hour_from' => $datatick['hour_from'][$key],
+					    'hour_to' => $datatick['hour_to'][$key],
+					    'sp_cocktail_price' => isset($cocktailprice[$i]) ? $cocktailprice[$i]:'',
+					    'sp_cocktail_id' => $c,
+					     'rand' => $rand,
+					     'cat' => 'cocktail',
+					     'bar_id' => $bar_id,
+						);
+						$this->db->insert('bar_special_hours',$dataticket);	
+					  $i++; }
+				 }
+				 
+				  $liquor =$this->input->post('lid'.$key);
+				$liquorprice =$this->input->post('liquorprice'.$key);
+				
+				 if(count($liquor))
+				 {
+				 	 $i=0; foreach($liquor as $b)
+					 {
+					 	//echo $b;
+					 	$dataticket=array(
+						'days'=>$datatick['days'][$key],
+					    'hour_from' => $datatick['hour_from'][$key],
+					    'hour_to' => $datatick['hour_to'][$key],
+					    'sp_liquor_price' => isset($liquorprice[$i]) ? $liquorprice[$i]:'',
+					    'sp_liquor_id' => $b,
+					    'cat' => 'liquor',
+					     'rand' => $rand,
+					     'bar_id' => $bar_id,
+						);
+						$this->db->insert('bar_special_hours',$dataticket);	
+					  $i++; }
+				 }
+				 
+				   $foodid =$this->input->post('foodid'.$key);
+				$foodprice =$this->input->post('foodprice'.$key);
+				
+				 if(count($foodid))
+				 {
+				 	 $i=0; foreach($foodid as $b)
+					 {
+					 	//echo $b;
+					 	$dataticket=array(
+						'days'=>$datatick['days'][$key],
+					    'hour_from' => $datatick['hour_from'][$key],
+					    'hour_to' => $datatick['hour_to'][$key],
+					    'food_price' => isset($foodprice[$i]) ? $foodprice[$i]:'',
+					    'food_name' => $b,
+					     'rand' => $rand,
+					     'cat' => 'food',
+					     'bar_id' => $bar_id,
+						);
+						$this->db->insert('bar_special_hours',$dataticket);	
+					  $i++; }
+				 }
+				 
+				  $otherid =$this->input->post('otherid'.$key);
+				$otherprice =$this->input->post('otherprice'.$key);
+				
+				 if(count($otherid))
+				 {
+				 	 $i=0; foreach($otherid as $b)
+					 {
+					 	//echo $b;
+					 	$dataticket=array(
+						'days'=>$datatick['days'][$key],
+					    'hour_from' => $datatick['hour_from'][$key],
+					    'hour_to' => $datatick['hour_to'][$key],
+					    'other_price' => isset($otherprice[$i]) ? $otherprice[$i]:'',
+					    'other_name' => $b,
+					    'cat' => 'other',
+					     'rand' => $rand,
+					     'bar_id' => $bar_id,
+						);
+						$this->db->insert('bar_special_hours',$dataticket);	
+					  $i++; }
+				 }
+				// die;d
+					// $dataticket=array(
+					// 'days'=>$datatick['days'][$key],
+				    // 'hour_from' => $datatick['hour_from'][$key],
+				    // 'hour_to' => $datatick['hour_to'][$key],
+				    // 'bar_id' => $bar_id,
+				    // 'day' => $d,
+				     // 'price' =>$datatick['price'][$key],
+				     // 'speciality' => $datatick['speciality'][$key],
+					// );
+					// $this->db->insert('bar_special_hours',$dataticket);	
+			}
+		 }
+	}
+
+    function get_bar_happy_hour($bar_id)
+	{
+		$this->db->select("*");
+        $this->db->from("bar_special_hours");
+		$this->db->where('bar_id',$bar_id);
+		$this->db->order_by('bar_hour_id','desc');
+		$this->db->group_by('rand');
+		//$this->db->order_by('days', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+        $query =  $this->db->get();
+		//echo $this->db->last_query();
+       
+		// die;
+		if($query->num_rows()>0)
+		{
+			 return $query->result();
+		}
+		 return '';
+	}
 	
     function getBarProductcount($bar_id,$keyword)
 	{

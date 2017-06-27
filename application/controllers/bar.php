@@ -4815,11 +4815,11 @@ function deletefavbar()
 		{
 			redirect('home/registration_step3_upgrade/'.base64_encode(@$data['getbar']['bar_id']));
 		}
-		$data['getbar_hour'] = $this->bar_model->get_bar_hour(@$data['getbar']['bar_id']);
+		$data['getbar_hour'] = $this->bar_model->get_bar_happy_hour(@$data['getbar']['bar_id']);
 		if($this->input->post('submit')=="Submit")
 		{
 		
-			$this->bar_model->bar_hours_update($data['getbar']['bar_id']);			
+			$this->bar_model->bar_happy_hours_update($data['getbar']['bar_id']);			
 				$data["msg"] = "success";	
 //			redirect("bar/bar_special_hours/update");	
 			redirect("bar/bar_happy_hours");	
