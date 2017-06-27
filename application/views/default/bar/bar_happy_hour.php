@@ -83,13 +83,13 @@ $('.sorted_table').sortable({
                                                                     <select required name="day_from[]" id="day_from<?php echo $im->day_from; ?>" class="select_box">
                                                                     <!--<select class="form-control">-->
                                                                         <option value="">-- Select Day-- </option>
-                                                                        <option value="monday">Monday</option>
-                                                                        <option value="tuesday">Tuesday</option>
-                                                                        <option value="wednesday">Wednesday</option>
-                                                                        <option value="thursday">Thursday</option>
-                                                                        <option value="friday">Friday</option>
-                                                                        <option value="saturday">Saturday</option>
-                                                                        <option value="sunday">Sunday</option>
+                                                                        <option value="Monday" <?php echo $im->day_from=="Monday" ? 'selected':'';?>>Monday</option>
+                                                                        <option value="Tuesday" <?php echo $im->day_from=="Tuesday" ? 'selected':'';?>>Tuesday</option>
+                                                                        <option value="Wednesday" <?php echo $im->day_from=="Wednesday" ? 'selected':'';?>>Wednesday</option>
+                                                                        <option value="Thursday" <?php echo $im->day_from=="Thursday" ? 'selected':'';?>>Thursday</option>
+                                                                        <option value="Friday" <?php echo $im->day_from=="Friday" ? 'selected':'';?>>Friday</option>
+                                                                        <option value="Saturday" <?php echo $im->day_from=="Saturday" ? 'selected':'';?>>Saturday</option>
+                                                                        <option value="Sunday" <?php echo $im->day_from=="Sunday" ? 'selected':'';?>>Sunday</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-sm-1 text-center">
@@ -99,13 +99,13 @@ $('.sorted_table').sortable({
                                                                     <select required name="day_to[]" id="day_to<?php echo $im->day_to; ?>" class="select_box">
                                                                     <!--<select class="form-control">-->
                                                                         <option value="">-- Select Day-- </option>
-                                                                        <option value="monday">Monday</option>
-                                                                        <option value="tuesday">Tuesday</option>
-                                                                        <option value="wednesday">Wednesday</option>
-                                                                        <option value="thursday">Thursday</option>
-                                                                        <option value="friday">Friday</option>
-                                                                        <option value="saturday">Saturday</option>
-                                                                        <option value="sunday">Sunday</option>
+                                                                        <option value="Monday" <?php echo $im->day_to=="Monday" ? 'selected':'';?>>Monday</option>
+                                                                        <option value="Tuesday" <?php echo $im->day_to=="Tuesday" ? 'selected':'';?>>Tuesday</option>
+                                                                        <option value="Wednesday" <?php echo $im->day_to=="Wednesday" ? 'selected':'';?>>Wednesday</option>
+                                                                        <option value="Thursday" <?php echo $im->day_to=="Thursday" ? 'selected':'';?>>Thursday</option>
+                                                                        <option value="Friday" <?php echo $im->day_to=="Friday" ? 'selected':'';?>>Friday</option>
+                                                                        <option value="Saturday" <?php echo $im->day_to=="Saturday" ? 'selected':'';?>>Saturday</option>
+                                                                        <option value="Sunday" <?php echo $im->day_to=="Sunday" ? 'selected':'';?>>Sunday</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-sm-1">
