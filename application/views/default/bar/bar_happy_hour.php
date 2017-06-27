@@ -80,8 +80,8 @@ $('.sorted_table').sortable({
                                                                 </div>
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
                                                                     <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
-                                                                    <input required name="day_from[]" id="day_from<?php echo $im->day_from; ?>" class="select_box">
-                                                                    <select class="form-control">
+                                                                    <select required name="day_from[]" id="day_from<?php echo $im->day_from; ?>" class="select_box">
+                                                                    <!--<select class="form-control">-->
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="monday">Monday</option>
                                                                         <option value="tuesday">Tuesday</option>
@@ -96,8 +96,8 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label" style="font-size: 16px;">to</label>
                                                                 </div>
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">     
-                                                                    <input required name="day_to[]" id="day_to<?php echo $im->day_to; ?>" class="select_box">
-                                                                    <select class="form-control">
+                                                                    <select required name="day_to[]" id="day_to<?php echo $im->day_to; ?>" class="select_box">
+                                                                    <!--<select class="form-control">-->
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="monday">Monday</option>
                                                                         <option value="tuesday">Tuesday</option>
