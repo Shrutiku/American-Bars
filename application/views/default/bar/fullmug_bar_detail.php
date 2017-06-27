@@ -1142,7 +1142,7 @@ span.required {
 <script>
 $(window).load(function(){
 //  $(".loading").fadeOut("slow");
-  $("#gallerywrapper").fadeIn("slow");
+  $("#gallerywrapper").fadeIn(2000);
 });
     
     $(document).ready(function () {
