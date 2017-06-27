@@ -120,7 +120,7 @@ $('.sorted_table').sortable({
                                                                 <div class="clearfix"></div>
                                                                      <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->         
                                                             </div>
-                                                            <?php $getval = getBarSpecialHoursByRand($im->rand,'beer'); 
+                                                            <?php $getval = getBarHappyHoursByRand($im->rand,'beer'); 
                                                             if(empty($getval)){?>       
                                                                 <input type="hidden" name="cntprobeer[]" id="cntprobeer" value="0" />
                                                                 <div id="contbeer" class="mar_top20bot20">
@@ -177,7 +177,7 @@ $('.sorted_table').sortable({
                                                                 </div> 
                                 
                                                             <?php } ?>      
-                                                            <?php $getvalcocktail = getBarSpecialHoursByRand($im->rand,'cocktail'); 
+                                                            <?php $getvalcocktail = getBarHappyHoursByRand($im->rand,'cocktail'); 
                                                                 if(empty($getvalcocktail)){?>           
                                                                     <input type="hidden" name="cntprococktail[]" id="cntprococktail" value="0" />
                                                                     <div id="contcocktail" class="mar_top20bot20">
@@ -233,7 +233,7 @@ $('.sorted_table').sortable({
                                                                         </div>  
                                                                     </div>
                                                                 <?php } ?>          
-                                                                <?php $getvalliquor = getBarSpecialHoursByRand($im->rand,'liquor'); 
+                                                                <?php $getvalliquor = getBarHappyHoursByRand($im->rand,'liquor'); 
                                                                     if(empty($getvalliquor)){?>                 
                                                                         <input type="hidden" name="cntproliquor[]" id="cntproliquor" value="0" />
                                                                             <div id="contliquor" class="mar_top20bot20">
@@ -289,7 +289,7 @@ $('.sorted_table').sortable({
                                                                             </div>
                                                                         </div>
                                                                     <?php } ?>   
-                                                                    <?php $getvalfood = getBarSpecialHoursByRand($im->rand,'food'); 
+                                                                    <?php $getvalfood = getBarHappyHoursByRand($im->rand,'food'); 
                                                                         if(empty($getvalfood)){?>   
                                                                             <input type="hidden" name="cntprofood[]" id="cntprofood" value="<?php echo count($getvalfood); ?>" />
                                                                             <div id="contfood" class="mar_top20bot20">
@@ -345,7 +345,7 @@ $('.sorted_table').sortable({
                                                                                     </div>
                                                                                 </div>
                                                                         <?php } ?>
-                                                                        <?php $getvalother = getBarSpecialHoursByRand($im->rand,'other'); 
+                                                                        <?php $getvalother = getBarHappyHoursByRand($im->rand,'other'); 
                                                                             if(empty($getvalother)){?>  
                                                                                 <input type="hidden" name="cntproother[]" id="cntproother" value="0" />
                                                                                     <div id="contother" class="mar_top20bot20">

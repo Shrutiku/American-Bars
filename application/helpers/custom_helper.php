@@ -3459,7 +3459,37 @@ function getcocktailname($cocktail_id){
    	  
    }
    
-   
+   function getBarHappyHoursByRand($rand,$type)
+   {
+   	 	 $CI =& get_instance();
+		$CI->db->select('*');
+		$CI->db->from('bar_happy_hour');
+		$CI->db->where('rand',$rand);
+		if($type=='beer'){
+		$CI->db->where('sp_beer_id !=',0);
+		}
+		if($type=='cocktail'){
+		$CI->db->where('sp_cocktail_id !=',0);
+		}
+		if($type=='liquor'){
+		$CI->db->where('sp_liquor_id !=',0);
+		}
+		if($type=='food'){
+		$CI->db->where('food_name !=','');
+		}
+		if($type=='other'){
+		$CI->db->where('other_name !=','');
+		}
+		$query = $CI->db->get();
+		//prd($CI->db->last_query());
+		
+		
+		if($query->num_rows()>0){
+			return $query->result();
+		} else {
+			return '';
+		}              
+    }
    
    function getBarSpecialHoursByRand($rand,$type)
    {
@@ -3490,8 +3520,8 @@ function getcocktailname($cocktail_id){
 			return $query->result();
 		} else {
 			return '';
-		}
-   }
+		}              
+    }
    
     function getBeernameByID($id)
    {
