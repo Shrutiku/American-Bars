@@ -822,7 +822,7 @@ $('#add_row').click(function(){
         
         
         html += '<input type="hidden" name="cntproliquor[]" id="cntproliquor1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contliquor'+cnt+'"><div id="innerliquor'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Liquors : </label></div>';
-        html += '<input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+'" value="" />'
+        html += '<input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+'" value="" />';
         html += '<div class="col-sm-3" style="padding-left: 15px;">';   
         html += '<input type="text" class="form-control tagsliquor'+cnt+' form-pad" id="liquorid_'+cnt+'"  name="liquorid[]" value=""></div>';  
         html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
