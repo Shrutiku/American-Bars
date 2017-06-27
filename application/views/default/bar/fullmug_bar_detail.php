@@ -1146,6 +1146,7 @@ $(window).load(function(){
 });
     
     $(document).ready(function () {
+        $("#gallerywrapper").hide();
 	$('#total-like').click(function(){
 		 <?php if($this->session->userdata('user_type')=='taxi_owner'){?>
   	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
