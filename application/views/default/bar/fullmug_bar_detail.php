@@ -485,7 +485,7 @@
 						<div class="clearfix"></div>
 					</ul>
 				</div>
-                            <div class="text-center mar_top15" id="gallerywrapper" style="margin-top:30px; display:none;">
+                            <div class="text-center mar_top15" id="gallerywrapper" style="margin-top:30px;">
 
 	     				 <?php if($bar_gallery){ ?><ul class="bxslider">
 
