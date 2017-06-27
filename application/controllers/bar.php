@@ -4822,7 +4822,7 @@ function deletefavbar()
 			$this->bar_model->bar_happy_hours_update($data['getbar']['bar_id']);			
 				$data["msg"] = "success";	
 //			redirect("bar/bar_special_hours/update");	
-			redirect("bar/bar_happy_hours");	
+			redirect("bar/bar_happy_hours/update");	
 		}
 		$this->template->write_view ('header', $theme.'/common/header', $data, TRUE);
 		$this->template->write_view ('content_center', $theme.'/bar/bar_happy_hour', $data, TRUE);
