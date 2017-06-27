@@ -4958,9 +4958,11 @@ function getAllBarResult11()
         function bar_happy_hours_update($bar_id)
 	{
 		$this -> db -> where('bar_id', $bar_id);
-  		$this -> db -> delete('bar_special_hours');
-		$datatick['days']=$this->input->post('days');
-		$datatick['hour_from']=$this->input->post('hour_from');
+  		$this -> db -> delete('bar_happy_hour');
+//		$datatick['days']=$this->input->post('days');
+		$datatick['day_from']= $this->input->post('day_from');
+                $datatick['day_to']= $this->input->post('day_to');
+                $datatick['hour_from']=$this->input->post('hour_from');
 		$datatick['hour_to']=$this->input->post('hour_to');
 		$datatick['price']=$this->input->post('price');
 		$datatick['speciality']=$this->input->post('speciality');
@@ -4985,35 +4987,35 @@ function getAllBarResult11()
 		// die;
 		
 		
-		 if( isset( $datatick['days'] ) && is_array( $datatick['days'] ) ){
-			foreach( $datatick['days'] as $key => $each ){
+		 if( isset( $datatick['day_from'] ) && is_array( $datatick['day_from'] ) ){
+			foreach( $datatick['day_from'] as $key => $each ){
 				
 					$d = '';
-					if($datatick['days'][$key]=="Monday")
+					if($datatick['day_from'][$key]=="Monday")
 					{
 						$d = 1;
 					}
-					if($datatick['days'][$key]=="Tuesday")
+					if($datatick['day_from'][$key]=="Tuesday")
 					{
 						$d = 2;
 					}
-					if($datatick['days'][$key]=="Wednesday")
+					if($datatick['day_from'][$key]=="Wednesday")
 					{
 						$d = 3;
 					}
-					if($datatick['days'][$key]=="Thursday")
+					if($datatick['day_from'][$key]=="Thursday")
 					{
 						$d = 4;
 					}
-					if($datatick['days'][$key]=="Friday")
+					if($datatick['day_from'][$key]=="Friday")
 					{
 						$d = 5;
 					}
-					if($datatick['days'][$key]=="Saturday")
+					if($datatick['day_from'][$key]=="Saturday")
 					{
 						$d = 6;
 					}
-					if($datatick['days'][$key]=="Sunday")
+					if($datatick['day_from'][$key]=="Sunday")
 					{
 						$d = 7;
 					}
@@ -5056,7 +5058,9 @@ function getAllBarResult11()
 					 	
 					 	//echo $b;
 					 	$dataticket=array(
-						'days'=>$datatick['days'][$key],
+//						'days'=>$datatick['days'][$key],
+                                            'day_from'=>$datatick['day_from'][$key],
+                                            'day_to'=>$datatick['day_to'][$key],
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'sp_beer_price' => isset($beerprice[$i]) ? $beerprice[$i]:'',
@@ -5079,7 +5083,9 @@ function getAllBarResult11()
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
-						'days'=>$datatick['days'][$key],
+//						'days'=>$datatick['days'][$key],
+                                            'day_from'=>$datatick['day_from'][$key],
+                                            'day_to'=>$datatick['day_to'][$key],
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'sp_cocktail_price' => isset($cocktailprice[$i]) ? $cocktailprice[$i]:'',
@@ -5123,7 +5129,9 @@ function getAllBarResult11()
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
-						'days'=>$datatick['days'][$key],
+//						'days'=>$datatick['days'][$key],
+                                            'day_from'=>$datatick['day_from'][$key],
+                                            'day_to'=>$datatick['day_to'][$key],
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'food_price' => isset($foodprice[$i]) ? $foodprice[$i]:'',
@@ -5145,7 +5153,9 @@ function getAllBarResult11()
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
-						'days'=>$datatick['days'][$key],
+//						'days'=>$datatick['days'][$key],
+                                            'day_from'=>$datatick['day_from'][$key],
+                                            'day_to'=>$datatick['day_to'][$key],
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'other_price' => isset($otherprice[$i]) ? $otherprice[$i]:'',
@@ -5172,23 +5182,23 @@ function getAllBarResult11()
 		 }
 	}
 
-    function get_bar_happy_hour($bar_id)
-	{
-		$this->db->select("*");
-        $this->db->from("bar_special_hours");
-		$this->db->where('bar_id',$bar_id);
-		$this->db->order_by('bar_hour_id','desc');
-		$this->db->group_by('rand');
-		//$this->db->order_by('days', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
-        $query =  $this->db->get();
-		//echo $this->db->last_query();
-       
-		// die;
-		if($query->num_rows()>0)
-		{
-			 return $query->result();
-		}
-		 return '';
+        function get_bar_happy_hour($bar_id)
+        {
+            $this->db->select("*");
+            $this->db->from("bar_happy_hour");
+            $this->db->where('bar_id',$bar_id);
+            $this->db->order_by('bar_hour_id','desc');
+            $this->db->group_by('rand');
+            //$this->db->order_by('days', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+            $query =  $this->db->get();
+            //echo $this->db->last_query();
+
+            // die;
+            if($query->num_rows()>0)
+            {
+                     return $query->result();
+            }
+             return '';
 	}
 	
     function getBarProductcount($bar_id,$keyword)
