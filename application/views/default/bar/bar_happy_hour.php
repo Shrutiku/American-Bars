@@ -808,7 +808,7 @@ $('#add_row').click(function(){
         html += '<div class="clearfix"></div></div>';
         html += '</div></div>';
         
-          html += '<input type="hidden" name="cntprococktail[]" id="cntprococktail1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contcocktail'+cnt+'"><div id="innercocktail'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Cocktails : </label></div>';
+        html += '<input type="hidden" name="cntprococktail[]" id="cntprococktail1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contcocktail'+cnt+'"><div id="innercocktail'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Cocktails : </label></div>';
         html += '<input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+'" value="" />';
         html += '<div class="col-sm-3" style="padding-left: 15px;">';   
         html += '<input type="text" class="form-control tagscocktail'+cnt+' form-pad" id="cocktailid_'+cnt+'"  name="cocktailid[]" value=""></div>';    
