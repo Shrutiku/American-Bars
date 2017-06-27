@@ -1142,11 +1142,11 @@ span.required {
 <script>
 $(window).load(function(){
 //  $(".loading").fadeOut("slow");
-  $("#gallerywrapper").fadeIn(2000);
+//  $("#gallerywrapper").fadeIn(2000);
 });
     
     $(document).ready(function () {
-        $("#gallerywrapper").hide();
+//        $("#gallerywrapper").hide();
 	$('#total-like').click(function(){
 		 <?php if($this->session->userdata('user_type')=='taxi_owner'){?>
   	    	  $.growlUI('<?php echo NO_RIGHT; ?>');
