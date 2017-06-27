@@ -80,6 +80,7 @@ $('.sorted_table').sortable({
                                                                 </div>
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">      
                                                                     <!--<label class="control-label" style="font-size: 16px;">Days:</label>-->
+                                                                    <input required type="text" value="<?php echo $im->day_from; ?>" name="day_from[]" id="day_from">
                                                                     <select class="form-control">
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="monday">Monday</option>
@@ -94,7 +95,8 @@ $('.sorted_table').sortable({
                                                                 <div class="col-sm-1 text-center">
                                                                     <label class="control-label" style="font-size: 16px;">to</label>
                                                                 </div>
-                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">                                                                                  
+                                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">     
+                                                                    <input required type="text" value="<?php echo $im->day_to; ?>" name="day_to[]" id="day_to">
                                                                     <select class="form-control">
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="monday">Monday</option>
