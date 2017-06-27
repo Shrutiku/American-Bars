@@ -1960,7 +1960,7 @@ function validate(){
     }
     
     $('.timepicker-default').timepicker({
-               // defaultTime : false
+//                defaultTime : false
             });
         jQuery(document).ready(function() {       
                 <?php if($msg=='update'){?>
