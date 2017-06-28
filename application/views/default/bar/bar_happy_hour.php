@@ -69,10 +69,10 @@ $('.sorted_table').sortable({
                                 <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" onsubmit="return validate()" autocomplete="off">
                                     <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" >
                                         <div class="pull-right">
-                                            <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                            <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
                                         </div>
                                         <div class="pull-right">
-                                            <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
+                                            <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                         </div>
                                         <?php // print_r($imageGallery);die;
                                             
@@ -621,13 +621,13 @@ $('.sorted_table').sortable({
                                                 <div class="line"></div>
                                                         </div>
                                                 
-                                                    <div class="padtb8">
+<!--                                                    <div class="padtb8">
                                                         <div class="col-sm-3"></div>
                                                         <div class="col-sm-7 mart10 text-left">
                                                             <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
                                                         </div>
                                                         <div class="clearfix"></div>
-                                                    </div>
+                                                    </div>-->
                                                     <div class="clearfix"></div>
                                                 </div>
                                             </div>
