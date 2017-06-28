@@ -430,12 +430,12 @@ $('.sorted_table').sortable({
                                                 <input type="hidden" name="cntpro" id="cntpro" value="<?php echo $i-1; ?>" />                                                               
                                                 </div>                          
                                                 <div class="padtb8">
-                                                    <div class="col-sm-3"></div>
+<!--                                                    <div class="col-sm-3"></div>
                                                         <div class="col-sm-7 mart10 text-left">
                                                             <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
                                                         </div>
                                                         <div class="clearfix"></div>
-                                                    </div>                                                      
+                                                    </div>                                                      -->
                                             <?php } else {?>
                                         
                                                 <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="" />
