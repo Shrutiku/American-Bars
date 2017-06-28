@@ -232,7 +232,7 @@ $('.sorted_table').sortable({
                                                                                         <input type="text" class="form-control form-pad" id="cocktailprice_<?php echo $c; ?>" name="cocktailprice<?php echo $i; ?>[]" value="<?php echo $cocktail->sp_cocktail_price; ?>">
                                                                                     </div>
                                                                                     <?php if($c==0){ ?>
-                                                                                        <a href="javascript://;" id="" onclick="addrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                                        <a href="javascript://;" id="" onclick="addnewrows_cocktail('<?php echo $i; ?>')" name="add_rowcocktail" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                                                                     <?php }else{ ?>
                                                                                         <a href="javascript://"  class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removerow('<?php echo $cocktail->bar_hour_id ?>','cocktail','<?php echo $c;?>','<?php echo $i?>')"><i class="glyphicon glyphicon-minus"></i></a>
                                                                                     <?php } ?>
