@@ -119,13 +119,12 @@ $('.sorted_table').sortable({
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to" defaultTime="3:00 PM">
                                                                     <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>-->
                                                                 </div>
-                                                                <div class="col-sm-1"></div>
-                                                                
-                                                                <?php if($i==0) {?>
-                                                                <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
-                                                                <?php} else { ?>
-                                                                <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
-                                                                <?php } ?>
+                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
+                                                                <!--<div class="col-sm-1">-->
+                                                                    <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                <!--</div>-->
+                                                                <!--<div class="col-sm-1">-->
+                                                                <!--</div>-->
                                                                 
                                                                 <div class="clearfix"></div>
                                                                      <!--<input type="password" class="form-control form-pad" id="email" placeholder="New Password" name="email" value="<?php echo @$email; ?>">-->         
@@ -741,17 +740,18 @@ $('#add_row').click(function(){
         
         var html = '';
         
-//        html += '<input type="hidden" name="incr" id="incr_'+cnt+'" value="'+cnt+'" />';
-        html += '<div id="hap_'+cnt+'" style="">';
-//        html += '<div class="padtb" id="img_'+cnt+'" style="display:none;"><div class="padtb"><div class="col-sm-3 text-right"><label class="control-label">Days  : <span class="aestrick"> * </span></label></div>';                                               
-//        html += '<div class="input_box upload_btn">'; 
-//        html += '<select required name="days[]" id="days'+cnt+'" class="select_box"><option value="">-- Select Day-- </option><option value="Monday">Monday</option><option value="Tuesday">Tuesday</option><option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option><option value="Friday">Friday</option><option value="Saturday">Saturday</option><option value="Sunday">Sunday</option></select></div><div class="span3"><a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a></div><div class="clearfix"></div></div>';
-//        html += '<div class="padtb8"><div class="col-sm-3 text-right">';
-//        html += '<label class="control-label">Select Hours  : <span class="aestrick"> * </span></label></div>';
-//        html += '<div class="col-sm-4"  style="width: 23.5%"><input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from'+cnt+'"></div><div class="col-sm-3 text-right"  style="width: 23.5%">';    
-//        html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to'+cnt+'"></div><div class="clearfix"></div>';
-//        html += '</div>';
-//        html += '</div>';
+//      html += '<input type="hidden" name="incr" id="incr_'+cnt+'" value="'+cnt+'" />';
+            
+//      html += '<div class="padtb" id="img_'+cnt+'" style="display:none;"><div class="padtb"><div class="col-sm-3 text-right"><label class="control-label">Days  : <span class="aestrick"> * </span></label></div>';                                               
+//      html += '<div class="input_box upload_btn">'; 
+//      html += '<select required name="days[]" id="days'+cnt+'" class="select_box"><option value="">-- Select Day-- </option><option value="Monday">Monday</option><option value="Tuesday">Tuesday</option><option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option><option value="Friday">Friday</option><option value="Saturday">Saturday</option><option value="Sunday">Sunday</option></select></div><div class="span3"><a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a></div><div class="clearfix"></div></div>';
+//      html += '<div class="padtb8"><div class="col-sm-3 text-right">';
+//      html += '<label class="control-label">Select Hours  : <span class="aestrick"> * </span></label></div>';
+//      html += '<div class="col-sm-4"  style="width: 23.5%"><input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from'+cnt+'"></div><div class="col-sm-3 text-right"  style="width: 23.5%">';    
+//      html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to'+cnt+'"></div><div class="clearfix"></div>';
+//      html += '</div>';
+//      html += '</div>';
+            html += '<div id="hap_'+cnt+'" style="">';
             html += '<input type="hidden" name="cntpro" id="cntpro" value="0" />';
             html += '<div class="padtb" id="img_'+cnt+'" style="display:none;">';
                 html += '<div class="col-sm-1">';
@@ -760,15 +760,15 @@ $('#add_row').click(function(){
                 html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;"> '; 
                 html += '<select required name="day_from[]" id="day_from'+cnt+'" class="select_box">';
                     //html += '<select class="form-control">';
-                        html += '<option value="">-- Select Day-- </option>';
-                        html += '<option value="monday">Monday</option>';
-                        html += '<option value="tuesday">Tuesday</option>';
-                        html += '<option value="wednesday">Wednesday</option>';
-                        html += '<option value="thursday">Thursday</option>';
-                        html += '<option value="friday">Friday</option>';
-                        html += '<option value="saturday">Saturday</option>';
-                        html += '<option value="sunday">Sunday</option>';
-                    html += '</select>';
+                    html += '<option value="">-- Select Day-- </option>';
+                    html += '<option value="monday">Monday</option>';
+                    html += '<option value="tuesday">Tuesday</option>';
+                    html += '<option value="wednesday">Wednesday</option>';
+                    html += '<option value="thursday">Thursday</option>';
+                    html += '<option value="friday">Friday</option>';
+                    html += '<option value="saturday">Saturday</option>';
+                    html += '<option value="sunday">Sunday</option>';
+                html += '</select>';
                 html += '</div>';
                 html += '<div class="col-sm-1 text-center">';
                     html += '<label class="control-label" style="font-size: 16px;">to</label>';
@@ -776,15 +776,15 @@ $('#add_row').click(function(){
                 html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;"> '; 
                 html += '<select required name="day_to[]" id="day_to'+cnt+'" class="select_box">';
 //                    html += '<select class="form-control">';
-                        html += '<option value="">-- Select Day-- </option>';
-                        html += '<option value="monday">Monday</option>';
-                        html += '<option value="tuesday">Tuesday</option>';
-                        html += '<option value="wednesday">Wednesday</option>';
-                        html += '<option value="thursday">Thursday</option>';
-                        html += '<option value="friday">Friday</option>';
-                        html += '<option value="saturday">Saturday</option>';
-                        html += '<option value="sunday">Sunday</option>';
-                    html += '</select>';
+                    html += '<option value="">-- Select Day-- </option>';
+                    html += '<option value="monday">Monday</option>';
+                    html += '<option value="tuesday">Tuesday</option>';
+                    html += '<option value="wednesday">Wednesday</option>';
+                    html += '<option value="thursday">Thursday</option>';
+                    html += '<option value="friday">Friday</option>';
+                    html += '<option value="saturday">Saturday</option>';
+                    html += '<option value="sunday">Sunday</option>';
+                html += '</select>';
                 html += '</div>';
                 html += '<div class="col-sm-1">';
                     html += '<label class="control-label pull-right" style="font-size: 16px;">  Time:</label>';
@@ -795,10 +795,11 @@ $('#add_row').click(function(){
                 html += '<div class="col-sm-1"  style="width: 13%">'; 
                     html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to'+cnt+'">';
                 html += '</div>';
-                html += '<div class="col-sm-1"></div>';
-                html += '<div class="span3">';
+//                html += '<div class="col-sm-1"></div>';
+//                html += '<div class="span3">';
                     html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
-                html += '</div>';
+//                html += '</div>';
+                    html += '<a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>';
                 html += '<div class="clearfix"></div>';
             html += '</div>';
         
@@ -840,7 +841,7 @@ $('#add_row').click(function(){
         html += '</div></div>';
         
         html += '<input type="hidden" name="cntprofood[]" id="cntprofood1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contfood'+cnt+'"><div id="innerfood'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Foods : </label></div>';
-        html += '<input type="hidden" name="fid'+cnt+'[]" id="fid0_'+cnt+'" value="" />' 
+        html += '<input type="hidden" name="fid'+cnt+'[]" id="fid0_'+cnt+'" value="" />'; 
         html += '<div class="col-sm-3" style="padding-left: 15px;">';   
         html += '<input type="text" class="form-control tagsfood'+cnt+' form-pad" id="foodid_'+cnt+'"  name="foodid'+cnt+'[]" value=""></div>'; 
         html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
