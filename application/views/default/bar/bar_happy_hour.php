@@ -876,7 +876,7 @@ $('#add_row').click(function(){
         html += '</div></div>';
         
          html += '<input type="hidden" name="cntproother[]" id="cntproother1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contother'+cnt+'"><div id="innerother'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Others : </label></div>';
-        html += '<input type="hidden" name="oid'+cnt+'[]" id="oid0_'+cnt+'" value="" />'
+        html += '<input type="hidden" name="oid'+cnt+'[]" id="oid0_'+cnt+'" value="" />';
         html += '<div class="col-sm-3" style="padding-left: 15px;">';   
         html += '<input type="text" class="form-control tagsother'+cnt+' form-pad" id="otherid_'+cnt+'"  name="otherid'+cnt+'[]" value=""></div>';  
         html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
@@ -889,7 +889,7 @@ $('#add_row').click(function(){
         
         
         html += '<div class="line"></div></div></div></div><div class="clear"></div>';
-        html += '</div>'
+        html += '</div>';
         $('#inner').append(html);
         
         
