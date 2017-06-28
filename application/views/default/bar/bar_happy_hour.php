@@ -795,10 +795,11 @@ $('#add_row').click(function(){
                 html += '<div class="col-sm-1"  style="width: 13%">'; 
                     html += '<input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to'+cnt+'">';
                 html += '</div>';
-                html += '<div class="col-sm-1"></div>';
-                html += '<div class="span3">';
+//                html += '<div class="col-sm-1"></div>';
+//                html += '<div class="span3">';
                     html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
-                html += '</div>';
+//                html += '</div>';
+                    html += '<a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>';
                 html += '<div class="clearfix"></div>';
             html += '</div>';
         
