@@ -1840,7 +1840,7 @@ function removeImageDive(id)
                             $('#cntpro').val(cnt);
                             $('#hap_'+id).slideUp('normal',function(){$(this).remove(); });
 //                            $('#pi_'+id).slideUp('normal',function(){   $(this).remove(); });    
-                                $.growlUI('The section was deleted successfully.'); 
+                                $.growlUI('The section was deleted successfully. Press save to lock in your changes.'); 
                         }
                     }); 
                 } else {
@@ -1878,7 +1878,7 @@ function removeImageDive(id)
                             // var cnt=parseInt($('#cnt').val())-1;
                             // $('#cntpro').val(cnt);
                             // $('#pi_'+id).slideUp('normal',function(){    $(this).remove(); });    
-                            $.growlUI('Your record was deleted successfully.'); 
+                            $.growlUI('Your record was deleted successfully. Press save to lock in your changes.'); 
                         }
                     }); 
         } else {
