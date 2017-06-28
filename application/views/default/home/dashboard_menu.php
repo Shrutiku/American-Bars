@@ -29,7 +29,7 @@
                                                             Happy Hours
                                                     </a>
                                             </li>
-                                            <li title="Add your bar's happy hours here." class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?>">
+                                            <li title="Add your bar's happy hours here." class="<?php echo $this->uri->segment(2)=='bar_happy_hours' ? 'active':'';?>">
                                                     <a href="<?php echo site_url('bar/bar_happy_hours')?>">
                                                             <i class="strip bar-special"></i>
                                                             New Happy
