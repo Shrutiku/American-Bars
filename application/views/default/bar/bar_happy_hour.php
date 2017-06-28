@@ -68,8 +68,13 @@ $('.sorted_table').sortable({
                                 <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
                                 <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" onsubmit="return validate()" autocomplete="off">
                                     <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" >
-                                        <div class="pull-right">
-                                            <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                        <div class="row">
+                                            <div class="pull-right">
+                                                <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
+                                            </div>
+                                            <div class="pull-right">
+                                                <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                            </div>
                                         </div>
                                         <?php // print_r($imageGallery);die;
                                             
@@ -618,13 +623,13 @@ $('.sorted_table').sortable({
                                                 <div class="line"></div>
                                                         </div>
                                                 
-                                                    <div class="padtb8">
+<!--                                                    <div class="padtb8">
                                                         <div class="col-sm-3"></div>
                                                         <div class="col-sm-7 mart10 text-left">
                                                             <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
                                                         </div>
                                                         <div class="clearfix"></div>
-                                                    </div>
+                                                    </div>-->
                                                     <div class="clearfix"></div>
                                                 </div>
                                             </div>
@@ -871,7 +876,7 @@ $('#add_row').click(function(){
         html += '</div></div>';
         
          html += '<input type="hidden" name="cntproother[]" id="cntproother1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contother'+cnt+'"><div id="innerother'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Others : </label></div>';
-        html += '<input type="hidden" name="oid'+cnt+'[]" id="oid0_'+cnt+'" value="" />'
+        html += '<input type="hidden" name="oid'+cnt+'[]" id="oid0_'+cnt+'" value="" />';
         html += '<div class="col-sm-3" style="padding-left: 15px;">';   
         html += '<input type="text" class="form-control tagsother'+cnt+' form-pad" id="otherid_'+cnt+'"  name="otherid'+cnt+'[]" value=""></div>';  
         html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
@@ -884,7 +889,7 @@ $('#add_row').click(function(){
         
         
         html += '<div class="line"></div></div></div></div><div class="clear"></div>';
-        html += '</div>'
+        html += '</div>';
         $('#inner').append(html);
         
         
