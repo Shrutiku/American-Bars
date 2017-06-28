@@ -2528,7 +2528,7 @@ function addrows(cnt){
             
     }
   
-    function addrows_other(cnt){        
+    function addrows_food(cnt){        
         var cntother=parseInt($('#cntprofood'+cnt).val())+1;
         if($('#cntprofood'+cnt).val() === 'NaN')
         {
