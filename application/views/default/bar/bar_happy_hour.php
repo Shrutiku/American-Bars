@@ -68,7 +68,11 @@ $('.sorted_table').sortable({
                                 <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
                                 <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" onsubmit="return validate()" autocomplete="off">
                                     <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" >
-                    <?php // print_r($imageGallery);die;
+                                        <div class="pull-right">
+                                            <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                        </div>
+                                        <?php // print_r($imageGallery);die;
+                                            
                                             if($getbar_hour!=''){?>
                                         
                                                 <div class="" id="inner">
@@ -123,7 +127,7 @@ $('.sorted_table').sortable({
                                                                 </div>
                                                                     <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
                                                                 <!--<div class="col-sm-1">-->
-                                                                    <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+<!--                                                                    <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>-->
                                                                 <!--</div>-->
                                                                 <!--<div class="col-sm-1">-->
                                                                 <!--</div>-->
@@ -810,7 +814,7 @@ $('#add_row').click(function(){
 //                html += '<div class="span3">';
                     html += '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive(\''+cnt+'\')"><span class="glyphicon glyphicon-minus"></span></a>';
 //                html += '</div>';
-                    html += '<a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>';
+//                    html += '<a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>';
                 html += '<div class="clearfix"></div>';
             html += '</div>';
         
