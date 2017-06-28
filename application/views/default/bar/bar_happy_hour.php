@@ -481,9 +481,10 @@ $('.sorted_table').sortable({
                                                                 <div class="col-sm-1"  style="width: 13%">  
                                                                     <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div> 
-                                                                <div class="col-sm-1"></div>                   
+                                                                <div class="col-sm-1"></div>
+                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a>
                                                                     <!--<a href="javascript://;" id="" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>--> 
-                                                                    <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                    <!--<a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>-->
                                                                 <div class="clearfix"></div>
                                                                 <br>
 
