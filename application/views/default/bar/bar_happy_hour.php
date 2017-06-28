@@ -71,6 +71,9 @@ $('.sorted_table').sortable({
                                         <div class="pull-right">
                                             <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
                                         </div>
+                                        <div class="pull-right">
+                                            <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
+                                        </div>
                                         <?php // print_r($imageGallery);die;
                                             
                                             if($getbar_hour!=''){?>
