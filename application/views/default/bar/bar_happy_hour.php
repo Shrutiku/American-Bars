@@ -841,7 +841,7 @@ $('#add_row').click(function(){
         html += '</div></div>';
         
         html += '<input type="hidden" name="cntprofood[]" id="cntprofood1'+cnt+'" value="0" /><div class="mar_top20bot20" id="contfood'+cnt+'"><div id="innerfood'+cnt+'" ><div class="padtb8"><div class="col-sm-3 text-right"><label class="control-label">Foods : </label></div>';
-        html += '<input type="hidden" name="fid'+cnt+'[]" id="fid0_'+cnt+'" value="" />' 
+        html += '<input type="hidden" name="fid'+cnt+'[]" id="fid0_'+cnt+'" value="" />'; 
         html += '<div class="col-sm-3" style="padding-left: 15px;">';   
         html += '<input type="text" class="form-control tagsfood'+cnt+' form-pad" id="foodid_'+cnt+'"  name="foodid'+cnt+'[]" value=""></div>'; 
         html += '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px;; padding-left: 5px; padding-right: 5px;">';
