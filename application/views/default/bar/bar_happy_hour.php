@@ -2234,234 +2234,234 @@ function addrows(cnt){
         }
     
     
-    function addrows_cocktail(cnt){     
-        var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
-        if($('#cntprococktail'+cnt).val() === 'NaN')
-        {
-            $('#cntprococktail'+cnt).val('1');
-            cnt = 1;
-        }
-        $('#cntprococktail'+cnt).val(cntcocktail);
-        //alert(cnt);
-        var html = '';
-    html += '<div  id="imgcocktail'+cnt+'_'+cntcocktail+'" style="padding-left: 0px; padding-right: 0px;"><div  style="padding-left: 0px; padding-right: 0px;">';
-    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div >';
-   html +=  '<label class="control-label"></label>';
-   html +=   '</div>';
-        
-    html +=  '<div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">';
-                                                                        html +=         '<label class="control-label">&nbsp&nbsp&nbspDay:</label>';
-                                                                   html += '       </div>';
-    html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
-                                                                                   html += '<select class="form-control">';
-                                                                                   html += '<option value="">-- Select Day-- </option>';
-                                                                                        html += '<option value="monday">Monday</option>';
-                                                                                   html+=     '<option value="tuesday">Tuesday</option>';
-                                                                                      html +=  '<option value="wednesday">Wednesday</option>';
-                                                                                     html +=   '<option value="thursday">Thursday</option>';
-                                                                                      html +=  '<option value="friday">Friday</option>';
-                                                                                      html +=  '<option value="saturday">Saturday</option>';
-                                                                                     html +=   '<option value="sunday">Sunday</option>';
-                                                                                  html +=  '</select>';
-                                                                       html +=        ' </div>';
-                                                                      html += '<div class="col-sm-1 text-right">';
-                                                                          html +=      '<label class="control-label">Items: </label>';
-                                                                           html += '</div>';
-                                                                           html += '<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />';
-                                                                        html +=    '<div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">'; 
-                                                                             html +=   '<input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">';
-                                                                          html +=  '</div>';  
-                                                                          html += '<div class="col-sm-1">'; 
-                                                                                    html += '<label class="control-label" style="font-size: 16px">Time:</label>';
-                                                                                html += '</div>';
-                                                                                html += '<div class="col-sm-1 pull-left" style="width: 13%" >';
-                                                                                    html += '<input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">';
-                                                                                html += '</div>';
-                                                                                html += '<div class="col-sm-1 pull-left"  style="width: 13%">'; 
-                                                                                    html += '<input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">';
-                                                                                html += '</div>';
-//                                                                                priceeee
-                                                                                html += '<div class="col-sm-1" style="width: 2%;padding-left: 3px; padding-right: 3px;">';
-                                                                                    html += '<label class="control-label" style="font-size: 16px;">$:</label>';
-                                                                                html += '</div>';
-                                                                                html += '<div class="col-sm-1" style="width: 10%;">';   
-                                                                                    html += '<input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">';
-                                                                                html += '</div>';
-//        html +=                       '<div class="col-sm-1" style="width: 10%">';
-//     html +=                          '<label class="control-label " style="font-size: 16px;">$:</label>';
-//     html +=                      '</div>';
-//     html +=                          '<div class="col-sm-2" style="width: 10%">';    
-//    html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
-//     html +=                          '</div>'    ;
-         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivecocktail_1('+cnt+','+cntcocktail+')"><span class="glyphicon glyphicon-minus"></span></a>';
-         html +=                            '<div class="clearfix"></div>';
-         html +=   '</div></div>';
-        
-        $('#innercocktail'+cnt).append(html);
-        $('.tagscocktail'+cnt+cntcocktail).autocomplete({
-                source: function( request, response ) {
-                    $.ajax({
-                        url : '<?php echo site_url('cocktail/auto_suggest_cocktail/');?>',
-                        dataType: "json",
-                        data: {
-                           em: request.term,
-                        },
-                         success: function( data ) {
-                             response( $.map( data, function( item ) {
-                                return {
-                                    
-                                    label: item.label,
-                                    id: item.id,
-                                    
-                                    value: item.value
-                                }
-                            }));
-                        }
-                    });
-                },
-                select: function(event, ui) {
-                    //alert('dsa');
-                //alert($(this).attr('id'));
-              var row= $(this).attr('id');
-                var myArray = row.split('_');
-              // alert(cnt+myArray[1]);
-        $("#cid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
-    },
-                autoFocus: true,
-                minLength: 0        
-              });
-        $('#imgcocktail_'+cnt+cntcocktail).slideDown();
-            
-    }
+//    function addrows_cocktail(cnt){     
+//        var cntcocktail=parseInt($('#cntprococktail'+cnt).val())+1;
+//        if($('#cntprococktail'+cnt).val() === 'NaN')
+//        {
+//            $('#cntprococktail'+cnt).val('1');
+//            cnt = 1;
+//        }
+//        $('#cntprococktail'+cnt).val(cntcocktail);
+//        //alert(cnt);
+//        var html = '';
+//    html += '<div  id="imgcocktail'+cnt+'_'+cntcocktail+'" style="padding-left: 0px; padding-right: 0px;"><div  style="padding-left: 0px; padding-right: 0px;">';
+//    html +=  ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div >';
+//   html +=  '<label class="control-label"></label>';
+//   html +=   '</div>';
+//        
+//    html +=  '<div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">';
+//                                                                        html +=         '<label class="control-label">&nbsp&nbsp&nbspDay:</label>';
+//                                                                   html += '       </div>';
+//    html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">';
+//                                                                                   html += '<select class="form-control">';
+//                                                                                   html += '<option value="">-- Select Day-- </option>';
+//                                                                                        html += '<option value="monday">Monday</option>';
+//                                                                                   html+=     '<option value="tuesday">Tuesday</option>';
+//                                                                                      html +=  '<option value="wednesday">Wednesday</option>';
+//                                                                                     html +=   '<option value="thursday">Thursday</option>';
+//                                                                                      html +=  '<option value="friday">Friday</option>';
+//                                                                                      html +=  '<option value="saturday">Saturday</option>';
+//                                                                                     html +=   '<option value="sunday">Sunday</option>';
+//                                                                                  html +=  '</select>';
+//                                                                       html +=        ' </div>';
+//                                                                      html += '<div class="col-sm-1 text-right">';
+//                                                                          html +=      '<label class="control-label">Items: </label>';
+//                                                                           html += '</div>';
+//                                                                           html += '<input type="hidden" name="lid<?php echo $i; ?>[]" id="lid_<?php echo $i; ?>_0" value="" />';
+//                                                                        html +=    '<div class="col-sm-1" style="padding-left: 0px; padding-right: 0px;">'; 
+//                                                                             html +=   '<input type="text" class="form-control tagscocktailnew form-pad" id="cocktailid_<?php echo $i; ?>_0"  name="cocktailid[]" value="">';
+//                                                                          html +=  '</div>';  
+//                                                                          html += '<div class="col-sm-1">'; 
+//                                                                                    html += '<label class="control-label" style="font-size: 16px">Time:</label>';
+//                                                                                html += '</div>';
+//                                                                                html += '<div class="col-sm-1 pull-left" style="width: 13%" >';
+//                                                                                    html += '<input required type="text" value="<?php echo $im->hour_from; ?>"  class="timepicker-default form-control form-pad" name="hour_from[]" id="hour_from">';
+//                                                                                html += '</div>';
+//                                                                                html += '<div class="col-sm-1 pull-left"  style="width: 13%">'; 
+//                                                                                    html += '<input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">';
+//                                                                                html += '</div>';
+////                                                                                priceeee
+//                                                                                html += '<div class="col-sm-1" style="width: 2%;padding-left: 3px; padding-right: 3px;">';
+//                                                                                    html += '<label class="control-label" style="font-size: 16px;">$:</label>';
+//                                                                                html += '</div>';
+//                                                                                html += '<div class="col-sm-1" style="width: 10%;">';   
+//                                                                                    html += '<input type="text" class="form-control form-pad" id="cocktailprice" name="cocktailprice0[]" value="">';
+//                                                                                html += '</div>';
+////        html +=                       '<div class="col-sm-1" style="width: 10%">';
+////     html +=                          '<label class="control-label " style="font-size: 16px;">$:</label>';
+////     html +=                      '</div>';
+////     html +=                          '<div class="col-sm-2" style="width: 10%">';    
+////    html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="cocktailprice_'+cnt+cntcocktail+'" name="cocktailprice'+cnt+'[]" value="">';
+////     html +=                          '</div>'    ;
+//         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivecocktail_1('+cnt+','+cntcocktail+')"><span class="glyphicon glyphicon-minus"></span></a>';
+//         html +=                            '<div class="clearfix"></div>';
+//         html +=   '</div></div>';
+//        
+//        $('#innercocktail'+cnt).append(html);
+//        $('.tagscocktail'+cnt+cntcocktail).autocomplete({
+//                source: function( request, response ) {
+//                    $.ajax({
+//                        url : '<?php echo site_url('cocktail/auto_suggest_cocktail/');?>',
+//                        dataType: "json",
+//                        data: {
+//                           em: request.term,
+//                        },
+//                         success: function( data ) {
+//                             response( $.map( data, function( item ) {
+//                                return {
+//                                    
+//                                    label: item.label,
+//                                    id: item.id,
+//                                    
+//                                    value: item.value
+//                                }
+//                            }));
+//                        }
+//                    });
+//                },
+//                select: function(event, ui) {
+//                    //alert('dsa');
+//                //alert($(this).attr('id'));
+//              var row= $(this).attr('id');
+//                var myArray = row.split('_');
+//              // alert(cnt+myArray[1]);
+//        $("#cid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+//    },
+//                autoFocus: true,
+//                minLength: 0        
+//              });
+//        $('#imgcocktail_'+cnt+cntcocktail).slideDown();
+//            
+//    }
     
     
-    function addrows_liquor_bad(cnt){       
-        var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
-        if($('#cntproliquor'+cnt).val() === 'NaN')
-        {
-            $('#cntproliquor'+cnt).val('1');
-            cnt = 1;
-        }
-        $('#cntproliquor'+cnt).val(cntliquor);
-        //alert(cnt);
-        var html = '';
-        html += '<div class="padtb" id="imgliquor'+cnt+'_'+cntliquor+'"><div class="padtb8">';
-        html +=  ' <input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+cntliquor+'" value="" /><div class="col-sm-3 text-right">';
-        html +=  '<label class="control-label"></label>';
-        html +=   '</div>';
-         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
-       html +=                              '<input type="text" class="form-control form-pad tagsliquor'+cnt+cntliquor+'" id="liquorid_'+cntliquor+'"  name="liquorid[]" value="">';
-       html +=                          '</div>';
-        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
-       html +=                      '</div>';
-       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
-      html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="liquorprice_'+cnt+cntliquor+'" name="liquorprice'+cnt+'[]" value="">';
-       html +=                          '</div>'    ;
-         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor_1('+cnt+','+cntliquor+')"><span class="glyphicon glyphicon-minus"></span></a>';
-         html +=                            '<div class="clearfix"></div>';
-         html +=   '</div></div>';
-        
-        $('#innerliquor'+cnt).append(html);
-        $('.tagsliquor'+cnt+cntliquor).autocomplete({
-                source: function( request, response ) {
-                    $.ajax({
-                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
-                        dataType: "json",
-                        data: {
-                           em: request.term,
-                        },
-                         success: function( data ) {
-                             response( $.map( data, function( item ) {
-                                return {
-                                    
-                                    label: item.label,
-                                    id: item.id,
-                                    
-                                    value: item.value
-                                }
-                            }));
-                        }
-                    });
-                },
-                select: function(event, ui) {
-                    //alert('dsa');
-                //alert($(this).attr('id'));
-              var row= $(this).attr('id');
-                var myArray = row.split('_');
-              // alert(cnt+myArray[1]);
-        $("#lid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
-    },
-                autoFocus: true,
-                minLength: 0        
-              });
-        $('#imgliquor_'+cnt+cntliquor).slideDown();
-            
-    }
+//    function addrows_liquor_bad(cnt){       
+//        var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
+//        if($('#cntproliquor'+cnt).val() === 'NaN')
+//        {
+//            $('#cntproliquor'+cnt).val('1');
+//            cnt = 1;
+//        }
+//        $('#cntproliquor'+cnt).val(cntliquor);
+//        //alert(cnt);
+//        var html = '';
+//        html += '<div class="padtb" id="imgliquor'+cnt+'_'+cntliquor+'"><div class="padtb8">';
+//        html +=  ' <input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+cntliquor+'" value="" /><div class="col-sm-3 text-right">';
+//        html +=  '<label class="control-label"></label>';
+//        html +=   '</div>';
+//         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
+//       html +=                              '<input type="text" class="form-control form-pad tagsliquor'+cnt+cntliquor+'" id="liquorid_'+cntliquor+'"  name="liquorid[]" value="">';
+//       html +=                          '</div>';
+//        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+//       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+//       html +=                      '</div>';
+//       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
+//      html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="liquorprice_'+cnt+cntliquor+'" name="liquorprice'+cnt+'[]" value="">';
+//       html +=                          '</div>'    ;
+//         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor_1('+cnt+','+cntliquor+')"><span class="glyphicon glyphicon-minus"></span></a>';
+//         html +=                            '<div class="clearfix"></div>';
+//         html +=   '</div></div>';
+//        
+//        $('#innerliquor'+cnt).append(html);
+//        $('.tagsliquor'+cnt+cntliquor).autocomplete({
+//                source: function( request, response ) {
+//                    $.ajax({
+//                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
+//                        dataType: "json",
+//                        data: {
+//                           em: request.term,
+//                        },
+//                         success: function( data ) {
+//                             response( $.map( data, function( item ) {
+//                                return {
+//                                    
+//                                    label: item.label,
+//                                    id: item.id,
+//                                    
+//                                    value: item.value
+//                                }
+//                            }));
+//                        }
+//                    });
+//                },
+//                select: function(event, ui) {
+//                    //alert('dsa');
+//                //alert($(this).attr('id'));
+//              var row= $(this).attr('id');
+//                var myArray = row.split('_');
+//              // alert(cnt+myArray[1]);
+//        $("#lid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+//    },
+//                autoFocus: true,
+//                minLength: 0        
+//              });
+//        $('#imgliquor_'+cnt+cntliquor).slideDown();
+//            
+//    }
     
-    function addrows_new(cnt){       
-        var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
-        if($('#cntproliquor'+cnt).val() === 'NaN')
-        {
-            $('#cntproliquor'+cnt).val('1');
-            cnt = 1;
-        }
-        $('#cntproliquor'+cnt).val(cntliquor);
-        //alert(cnt);
-        var html = '';
-        html += '<div class="padtb" id="imgliquor'+cnt+'_'+cntliquor+'"><div class="padtb8">';
-        html +=  ' <input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+cntliquor+'" value="" /><div class="col-sm-3 text-right">';
-        html +=  '<label class="control-label"></label>';
-        html +=   '</div>';
-         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
-       html +=                              '<input type="text" class="form-control form-pad tagsliquor'+cnt+cntliquor+'" id="liquorid_'+cntliquor+'"  name="liquorid[]" value="">';
-       html +=                          '</div>';
-        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
-       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
-       html +=                      '</div>';
-       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
-      html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="liquorprice_'+cnt+cntliquor+'" name="liquorprice'+cnt+'[]" value="">';
-       html +=                          '</div>'    ;
-         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor_1('+cnt+','+cntliquor+')"><span class="glyphicon glyphicon-minus"></span></a>';
-         html +=                            '<div class="clearfix"></div>';
-         html +=   '</div></div>';
-        
-        $('#innerliquor'+cnt).append(html);
-        $('.tagsliquor'+cnt+cntliquor).autocomplete({
-                source: function( request, response ) {
-                    $.ajax({
-                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
-                        dataType: "json",
-                        data: {
-                           em: request.term,
-                        },
-                         success: function( data ) {
-                             response( $.map( data, function( item ) {
-                                return {
-                                    
-                                    label: item.label,
-                                    id: item.id,
-                                    
-                                    value: item.value
-                                }
-                            }));
-                        }
-                    });
-                },
-                select: function(event, ui) {
-                    //alert('dsa');
-                //alert($(this).attr('id'));
-              var row= $(this).attr('id');
-                var myArray = row.split('_');
-              // alert(cnt+myArray[1]);
-        $("#lid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
-    },
-                autoFocus: true,
-                minLength: 0        
-              });
-        $('#imgliquor_'+cnt+cntliquor).slideDown();
-            
-    }
+//    function addrows_new(cnt){       
+//        var cntliquor=parseInt($('#cntproliquor'+cnt).val())+1;
+//        if($('#cntproliquor'+cnt).val() === 'NaN')
+//        {
+//            $('#cntproliquor'+cnt).val('1');
+//            cnt = 1;
+//        }
+//        $('#cntproliquor'+cnt).val(cntliquor);
+//        //alert(cnt);
+//        var html = '';
+//        html += '<div class="padtb" id="imgliquor'+cnt+'_'+cntliquor+'"><div class="padtb8">';
+//        html +=  ' <input type="hidden" name="lid'+cnt+'[]" id="lid0_'+cnt+cntliquor+'" value="" /><div class="col-sm-3 text-right">';
+//        html +=  '<label class="control-label"></label>';
+//        html +=   '</div>';
+//         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
+//       html +=                              '<input type="text" class="form-control form-pad tagsliquor'+cnt+cntliquor+'" id="liquorid_'+cntliquor+'"  name="liquorid[]" value="">';
+//       html +=                          '</div>';
+//        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+//       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+//       html +=                      '</div>';
+//       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
+//      html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="liquorprice_'+cnt+cntliquor+'" name="liquorprice'+cnt+'[]" value="">';
+//       html +=                          '</div>'    ;
+//         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveliquor_1('+cnt+','+cntliquor+')"><span class="glyphicon glyphicon-minus"></span></a>';
+//         html +=                            '<div class="clearfix"></div>';
+//         html +=   '</div></div>';
+//        
+//        $('#innerliquor'+cnt).append(html);
+//        $('.tagsliquor'+cnt+cntliquor).autocomplete({
+//                source: function( request, response ) {
+//                    $.ajax({
+//                        url : '<?php echo site_url('liquor/auto_suggest_liquor/');?>',
+//                        dataType: "json",
+//                        data: {
+//                           em: request.term,
+//                        },
+//                         success: function( data ) {
+//                             response( $.map( data, function( item ) {
+//                                return {
+//                                    
+//                                    label: item.label,
+//                                    id: item.id,
+//                                    
+//                                    value: item.value
+//                                }
+//                            }));
+//                        }
+//                    });
+//                },
+//                select: function(event, ui) {
+//                    //alert('dsa');
+//                //alert($(this).attr('id'));
+//              var row= $(this).attr('id');
+//                var myArray = row.split('_');
+//              // alert(cnt+myArray[1]);
+//        $("#lid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+//    },
+//                autoFocus: true,
+//                minLength: 0        
+//              });
+//        $('#imgliquor_'+cnt+cntliquor).slideDown();
+//            
+//    }
     
     
     function addrows_liquor(cnt){       
@@ -2528,6 +2528,37 @@ function addrows(cnt){
             
     }
   
+    function addrows_other(cnt){        
+        var cntother=parseInt($('#cntprofood'+cnt).val())+1;
+        if($('#cntprofood'+cnt).val() === 'NaN')
+        {
+            $('#cntprofood'+cnt).val('1');
+            cnt = 1;
+        }
+        $('#cntproother'+cnt).val(cntfood);
+        //alert(cnt);
+        var html = '';
+        html += '<div class="padtb" id="imgfood'+cnt+'_'+cntother+'"><div class="padtb8">';
+        html +=  ' <input type="hidden" name="fid'+cnt+'[]" id="fid0_'+cnt+cntother+'" value="" /><div class="col-sm-3 text-right">';
+        html +=  '<label class="control-label"></label>';
+        html +=   '</div>';
+         html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
+       html +=                              '<input type="text" class="form-control form-pad tagsother'+cnt+cntfood+'" id="foodid_'+cntfood+'"  name="foodid'+cnt+'[]" value="">';
+       html +=                          '</div>';
+        html +=                       '<div class="col-sm-3" style="width: 10%; padding-left: 5px; padding-right: 5px;">';
+       html +=                          '<label class="control-label " style="font-size: 16px;">Price : $</label>';
+       html +=                      '</div>';
+       html +=                          '<div class="col-sm-2" style="width: 10%;  padding-left: 5px; padding-right: 5px; margin-right:24px; ">';   
+      html +=                               '<input type="text" class="form-control form-pad timepicker-default" id="foodprice_'+cnt+cntfood+'" name="foodprice'+cnt+'[]" value="">';
+       html +=                          '</div>'    ;
+         html +=                        '<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDivefood_1('+cnt+','+cntfood+')"><span class="glyphicon glyphicon-minus"></span></a>';
+         html +=                            '<div class="clearfix"></div>';
+         html +=   '</div></div>';
+        
+        $('#innerfood'+cnt).append(html);
+        $('#imgfood_'+cnt+cntother).slideDown();
+            
+    }
     
     function addrows_other(cnt){        
         var cntother=parseInt($('#cntproother'+cnt).val())+1;
