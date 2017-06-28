@@ -1830,7 +1830,7 @@ function removeImageDive(id)
     function removeImageDiveAjax(id,num) {
          //   alert("removeImageDiveAjax");
           //  alert(id);
-            alertify.confirm("Are you sure you want to delete this bar hours?", function (e) {
+            alertify.confirm("Are you sure you want to delete this section?", function (e) {
                 if (e) {
                     $.ajax({
                         url:'<?php echo site_url('bar/removebarhoursall') ?>/'+num,
@@ -1840,7 +1840,7 @@ function removeImageDive(id)
                             $('#cntpro').val(cnt);
                             $('#hap_'+id).slideUp('normal',function(){$(this).remove(); });
 //                            $('#pi_'+id).slideUp('normal',function(){   $(this).remove(); });    
-                                $.growlUI('Your bar hour deleted successfully .'); 
+                                $.growlUI('The section was deleted successfully.'); 
                         }
                     }); 
                 } else {
@@ -1854,7 +1854,7 @@ function removeImageDive(id)
     function removerow(id,type,num,t) {
          //   alert("removeImageDiveAjax");
          // alert(num);
-            alertify.confirm("Are you sure you want to delete this record ?", function (e) {
+            alertify.confirm("Are you sure you want to delete this record?", function (e) {
                 if (e) {
                     $.ajax({
                         url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
@@ -1878,7 +1878,7 @@ function removeImageDive(id)
                             // var cnt=parseInt($('#cnt').val())-1;
                             // $('#cntpro').val(cnt);
                             // $('#pi_'+id).slideUp('normal',function(){    $(this).remove(); });    
-                            $.growlUI('Your record deleted successfully .'); 
+                            $.growlUI('Your record was deleted successfully.'); 
                         }
                     }); 
         } else {
