@@ -432,11 +432,12 @@ $('.sorted_table').sortable({
                                                         <div class="clearfix"></div>
                                                     </div>                                                      
                                             <?php } else {?>
-                                        <div id="hap_0" style="">
+                                        
                                                 <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="" />
                                                 <div class="text-center pad_t15b20">
                                                     <div id="hide_edit">
-                                                        <div id="inner">    
+                                                        <div id="inner"> 
+                                                        <div id="hap_0" style="">
                                                             <input type="hidden" name="cntpro" id="cntpro" value="0" />
                                                             <div class="padtb">
                                                                 <div class="col-sm-1">
