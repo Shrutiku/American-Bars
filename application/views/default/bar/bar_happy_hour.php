@@ -741,7 +741,7 @@ $('#add_row').click(function(){
         
         var html = '';
         
-//        html += '<input type="hidden" name="incr" id="incr_'+cnt+'" value="'+cnt+'" />';
+        html += '<input type="hidden" name="incr" id="incr_'+cnt+'" value="'+cnt+'" />';
         html += '<div id="hap_'+cnt+'" style="">';
 //        html += '<div class="padtb" id="img_'+cnt+'" style="display:none;"><div class="padtb"><div class="col-sm-3 text-right"><label class="control-label">Days  : <span class="aestrick"> * </span></label></div>';                                               
 //        html += '<div class="input_box upload_btn">'; 
