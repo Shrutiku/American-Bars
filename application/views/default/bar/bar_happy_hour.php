@@ -76,7 +76,9 @@ $('.sorted_table').sortable({
                                                 <div id="hap_<?php echo $i;?>" style="">
                                                     <div id="pi_<?php echo $im->bar_hour_id ?>">    
                                                         <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
-                                                            <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                            <div class="pull-right">
+                                                                <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                            </div>
                                                             <div class="padtb8">
                                                                 <div class="col-sm-1">
                                                                     <label class="control-label" style="font-size: 16px;">Days:</label>
