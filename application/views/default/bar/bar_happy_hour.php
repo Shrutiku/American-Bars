@@ -80,7 +80,7 @@ $('.sorted_table').sortable({
                                         
                                                 <div class="" id="inner">
                                                 <?php $i=0; foreach($getbar_hour as $im){ ?>
-                                                <div id="hap_<?php echo $i;?>" style="">
+                                                <!--<div id="hap_<?php echo $i;?>" style="">-->
                                                     <div id="pi_<?php echo $im->bar_hour_id ?>">    
                                                         <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
                                                             <div class="padtb8">
@@ -128,7 +128,7 @@ $('.sorted_table').sortable({
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to" defaultTime="3:00 PM">
                                                                     <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>-->
                                                                 </div>
-                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
+                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
                                                                 <!--<div class="col-sm-1">-->
 <!--                                                                    <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>-->
                                                                 <!--</div>-->
@@ -421,7 +421,7 @@ $('.sorted_table').sortable({
                                                                             <?php } ?>    
                                                                             <div class="line"></div>
                                                         </div>
-                                                    </div>
+                                                    <!--</div>-->
                                                 <?php $i++; } ?>
                                             
                                         </div>
@@ -435,11 +435,12 @@ $('.sorted_table').sortable({
                                                         <div class="clearfix"></div>
                                                     </div>                                                      
                                             <?php } else {?>
-                                        <div id="hap_0" style="">
+                                        
                                                 <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="" />
                                                 <div class="text-center pad_t15b20">
                                                     <div id="hide_edit">
-                                                        <div id="inner">    
+                                                        <div id="inner"> 
+                                                        <div id="hap_0" style="">
                                                             <input type="hidden" name="cntpro" id="cntpro" value="0" />
                                                             <div class="padtb">
                                                                 <div class="col-sm-1">
@@ -484,9 +485,10 @@ $('.sorted_table').sortable({
                                                                 <div class="col-sm-1"  style="width: 13%">  
                                                                     <input required type="text" value=""  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to">
                                                                 </div> 
-                                                                <div class="col-sm-1"></div>                   
+                                                                <div class="col-sm-1"></div>
+                                                                    <!--<a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('0')"><span class="glyphicon glyphicon-minus"></span></a>-->
                                                                     <!--<a href="javascript://;" id="" name="add_rowbeer" class="add_rowbeer btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>--> 
-                                                                    <a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                                                    <!--<a href="javascript://;" id="add_row" name="add_row" class="btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>-->
                                                                 <div class="clearfix"></div>
                                                                 <br>
 
@@ -616,8 +618,9 @@ $('.sorted_table').sortable({
                                                                 </div>
                                                             </div>  
                                                         </div>
-                                                    </div>
                                                 <div class="line"></div>
+                                                        </div>
+                                                
                                                     <div class="padtb8">
                                                         <div class="col-sm-3"></div>
                                                         <div class="col-sm-7 mart10 text-left">
@@ -1833,7 +1836,7 @@ function removeImageDive(id)
     function removeImageDiveAjax(id,num) {
          //   alert("removeImageDiveAjax");
           //  alert(id);
-            alertify.confirm("Are you sure you want to delete this bar hours?", function (e) {
+            alertify.confirm("Are you sure you want to delete this section?", function (e) {
                 if (e) {
                     $.ajax({
                         url:'<?php echo site_url('bar/removebarhoursall') ?>/'+num,
@@ -1841,8 +1844,9 @@ function removeImageDive(id)
 
                         var cnt=parseInt($('#cnt').val())-1;
                             $('#cntpro').val(cnt);
-                            $('#pi_'+id).slideUp('normal',function(){   $(this).remove(); });    
-                                $.growlUI('Your bar hour deleted successfully .'); 
+                            $('#hap_'+id).slideUp('normal',function(){$(this).remove(); });
+//                            $('#pi_'+id).slideUp('normal',function(){   $(this).remove(); });    
+                                $.growlUI('The section was deleted successfully. Press save to lock in your changes.'); 
                         }
                     }); 
                 } else {
@@ -1856,7 +1860,7 @@ function removeImageDive(id)
     function removerow(id,type,num,t) {
          //   alert("removeImageDiveAjax");
          // alert(num);
-            alertify.confirm("Are you sure you want to delete this record ?", function (e) {
+            alertify.confirm("Are you sure you want to delete this record?", function (e) {
                 if (e) {
                     $.ajax({
                         url:'<?php echo site_url('bar/removebarhours') ?>/'+id,
@@ -1880,7 +1884,7 @@ function removeImageDive(id)
                             // var cnt=parseInt($('#cnt').val())-1;
                             // $('#cntpro').val(cnt);
                             // $('#pi_'+id).slideUp('normal',function(){    $(this).remove(); });    
-                            $.growlUI('Your record deleted successfully .'); 
+                            $.growlUI('Your record was deleted successfully. Press save to lock in your changes.'); 
                         }
                     }); 
         } else {
