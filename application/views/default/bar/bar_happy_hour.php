@@ -2556,7 +2556,7 @@ function addrows(cnt){
          html +=   '</div></div>';
         
         $('#innerfood'+cnt).append(html);
-        $('#imgfood_'+cnt+cntother).slideDown();
+        $('#imgfood_'+cnt+cntfood).slideDown();
             
     }
     
