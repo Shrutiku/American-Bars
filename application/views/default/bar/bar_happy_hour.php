@@ -77,7 +77,7 @@ $('.sorted_table').sortable({
                                         
                                                 <div class="" id="inner">
                                                 <?php $i=0; foreach($getbar_hour as $im){ ?>
-                                                <div id="hap_<?php echo $i;?>" style="">
+                                                <!--<div id="hap_<?php echo $i;?>" style="">-->
                                                     <div id="pi_<?php echo $im->bar_hour_id ?>">    
                                                         <input type="hidden" name="bar_hour_id[]" id="bar_hour_id" value="<?php echo $im->bar_hour_id; ?>" />
                                                             <div class="padtb8">
@@ -418,7 +418,7 @@ $('.sorted_table').sortable({
                                                                             <?php } ?>    
                                                                             <div class="line"></div>
                                                         </div>
-                                                    </div>
+                                                    <!--</div>-->
                                                 <?php $i++; } ?>
                                             
                                         </div>
