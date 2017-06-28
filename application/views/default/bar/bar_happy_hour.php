@@ -68,11 +68,13 @@ $('.sorted_table').sortable({
                                 <div class="error1 hide1 center" id="cm-err-main1">&nbsp;</div>
                                 <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" onsubmit="return validate()" autocomplete="off">
                                     <form name="add_event" id="product_type" method="post" enctype="multipart/form-data" action="<?php echo site_url('bar/bar_happy_hours'); ?>" >
-                                        <div class="pull-right" style="margin-bottom: 30px;">
-                                            <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
-                                        </div>
-                                        <div class="pull-right" style="margin-bottom: 30px;">
-                                            <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                        <div class="row">
+                                            <div class="pull-right">
+                                                <button type="submit" value="Submit" name="submit" class="btn btn-lg btn-primary marr_10" >Save</button> 
+                                            </div>
+                                            <div class="pull-right">
+                                                <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>
+                                            </div>
                                         </div>
                                         <?php // print_r($imageGallery);die;
                                             
