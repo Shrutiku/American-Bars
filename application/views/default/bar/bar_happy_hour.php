@@ -1834,7 +1834,8 @@ function removeImageDive(id)
 
                         var cnt=parseInt($('#cnt').val())-1;
                             $('#cntpro').val(cnt);
-                            $('#pi_'+id).slideUp('normal',function(){   $(this).remove(); });    
+                            $('#hap_'+id).slideUp('normal',function(){$(this).remove(); });
+//                            $('#pi_'+id).slideUp('normal',function(){   $(this).remove(); });    
                                 $.growlUI('Your bar hour deleted successfully .'); 
                         }
                     }); 
