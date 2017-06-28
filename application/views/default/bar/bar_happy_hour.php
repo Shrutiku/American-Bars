@@ -2538,8 +2538,8 @@ function addrows(cnt){
         $('#cntproother'+cnt).val(cntfood);
         //alert(cnt);
         var html = '';
-        html += '<div class="padtb" id="imgfood'+cnt+'_'+cntother+'"><div class="padtb8">';
-        html +=  ' <input type="hidden" name="fid'+cnt+'[]" id="fid0_'+cnt+cntother+'" value="" /><div class="col-sm-3 text-right">';
+        html += '<div class="padtb" id="imgfood'+cnt+'_'+cntfood+'"><div class="padtb8">';
+        html +=  ' <input type="hidden" name="fid'+cnt+'[]" id="fid0_'+cnt+cntfood+'" value="" /><div class="col-sm-3 text-right">';
         html +=  '<label class="control-label"></label>';
         html +=   '</div>';
          html +=                '<div class="col-sm-3" style="padding-left: 15px;">';
