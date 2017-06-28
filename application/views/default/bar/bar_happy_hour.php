@@ -125,7 +125,7 @@ $('.sorted_table').sortable({
                                                                     <input required type="text" value="<?php echo $im->hour_to; ?>"  class="timepicker-default form-control form-pad" name="hour_to[]" id="hour_to" defaultTime="3:00 PM">
                                                                     <!--<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>-->
                                                                 </div>
-                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDive('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
+                                                                    <a href="javascript://" class="btn btn-lg btn-primary search marr_10 pull-left" onclick="removeImageDiveAjax('<?php echo $i; ?>')"><span class="glyphicon glyphicon-minus"></span></a> 
                                                                 <!--<div class="col-sm-1">-->
 <!--                                                                    <a href="javascript://;" id="add_row" name="add_row" class="add_row btn btn-lg btn-primary search marr_10 pull-left"><span class="glyphicon glyphicon-plus "></span></a>-->
                                                                 <!--</div>-->
