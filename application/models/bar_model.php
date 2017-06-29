@@ -5079,7 +5079,7 @@ function getAllBarResult11()
 				
 				 if(count($cocktail))
 				 {
-				 	 $i=0; foreach($cocktail as $c)
+				 	 $i=0; foreach($cocktail as $b)
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
@@ -5089,7 +5089,7 @@ function getAllBarResult11()
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'sp_cocktail_price' => isset($cocktailprice[$i]) ? $cocktailprice[$i]:'',
-					    'sp_cocktail_id' => $c,
+					    'sp_cocktail_id' => $b,
 					     'rand' => $rand,
 					     'cat' => 'cocktail',
 					     'bar_id' => $bar_id,
