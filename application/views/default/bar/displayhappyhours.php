@@ -59,10 +59,10 @@
 					}	
 					if($row->sp_beer_price!=''){
 //                				echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Beer Name :</span><a href='".site_url("beer/detail/".$row->beer_slug)."'>" .$bn. "</a></div><div class=' col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>Price : </span> $ $row->sp_beer_price </div><div class='clearfix'></div></div><br>";
-                                                echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("beer/detail/".$row->beer_slug)."'>" .$bn. "</a></div><div class=' col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>$ $row->sp_beer_price </span> </div><div class='clearfix'></div></div><br>";
+                                                echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>&#x1f37a; </span><a href='".site_url("beer/detail/".$row->beer_slug)."'>" .$bn. "</a></div><div class=' col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>$ $row->sp_beer_price </span> </div><div class='clearfix'></div></div><br>";
 				
                                         }else {
-                                            echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("beer/detail/".$row->beer_slug)."'>" .$bn. "</a></div><div class='clearfix'></div></div><br>";
+                                            echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>&#x1f37a; </span><a href='".site_url("beer/detail/".$row->beer_slug)."'>" .$bn. "</a></div><div class='clearfix'></div></div><br>";
                                         }
                                 }
 				break;
