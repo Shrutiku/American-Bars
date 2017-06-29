@@ -463,9 +463,35 @@
                                 </div>
                             </div>
      			</div>
+                            
+                        <div class="modal fade login_pop2" id="hourmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                            <div class="padtb10">
+                                <div class="container">
+                                        <div class="result_box clearfix mar_top30bot20">
+                                                <div class="login_block br_green_yellow">
+                                                        <div class="result_search">
+                                                                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                                <i class="strip login_icon"></i><div class="result_search_text">New Happy Hours & Specials</div>
+                                                        </div>
+                                                        <div class="pad20">
+                                                                <ul class="happy-list">
+                                                                <div id="displayhappyhours"></div>
+                                                                </li>
+                                                                </ul>
+
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </div>
+     			</div>
+                            
+                            
      			<div class="right_gallery_block newadded">
 				<div>
                                     <a title="Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
+                                    <a title="NEW Happy Hours & Specials" href="#hhmodal" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
                                     <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5 pull-left" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
                                         <?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
@@ -2078,6 +2104,30 @@ function getBarSpecialHours(day)
 		   },
 		   success: function(response) {
 		   	$('#displayhours').html(response);
+		    //$('#mapmodal').one('show.bs.modal', function (e) {
+		    	//$('#myModalnew').one('shown.bs.modal', function (e) {
+
+
+		  }
+	   });
+	   }
+           
+           
+function getBarHappyHours()
+{
+	$.ajax({
+	       type: "POST",
+		   url: "<?php  echo site_url('bar/getBarHappyHoursByID')?>",
+		   data: {id:<?php echo $bar_detail["bar_id"]; ?>},
+		   dataType : 'html',
+		     beforeSend : function() {
+		   		$('#dvLoading').fadeIn('slow');
+		   },
+		    complete : function() {
+		   		$('#dvLoading').fadeOut('slow');
+		   },
+		   success: function(response) {
+		   	$('#displayhappyhours').html(response);
 		    //$('#mapmodal').one('show.bs.modal', function (e) {
 		    	//$('#myModalnew').one('shown.bs.modal', function (e) {
 

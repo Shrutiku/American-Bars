@@ -5243,6 +5243,17 @@ function removebarhoursall($id=0)
 		
 		$theme = getThemeName ();
 		echo $this->load->view($theme .'/bar/displayhours',$data,TRUE);die;
-	}	 
+	}
+        
+        function getBarHappyHoursByID()
+	{
+//		$data['cur'] =  $this->input->post('day');
+		$data['getbarhour'] = $this->bar_model->getBarHappyHoursByBarID($this->input->post('id')); 
+		//print_r($getbarhour);
+		//die;
+		
+		$theme = getThemeName ();
+		echo $this->load->view($theme .'/bar/displayhappyhours',$data,TRUE);die;
+	}
 }
 ?>
