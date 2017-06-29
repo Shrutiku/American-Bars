@@ -5788,5 +5788,26 @@ function getBarSpecialHoursByID($rand)
 			return ''; 
 		}
 	}
+        
+        function getBarHappyHoursByRAND($rand)
+	{
+		$this->db->select('bar_happy_hour.*, beer_directory.beer_name, beer_directory.beer_slug, cocktail_directory.cocktail_slug, liquors.liquor_slug, cocktail_directory.cocktail_name, liquors.liquor_title');
+		$this->db->from('bar_happy_hour');
+		$this->db->join('beer_directory','beer_directory.beer_id=bar_happy_hour.sp_beer_id','left');
+		$this->db->join('cocktail_directory','cocktail_directory.cocktail_id=bar_happy_hour.sp_cocktail_id','left');
+		$this->db->join('liquors','liquors.liquor_id=bar_happy_hour.sp_liquor_id','left');
+		$this->db->where(array('bar_happy_hour.rand'=>$rand));
+		$query = $this->db->get();
+
+		//echo $this->db->last_query();die;
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		}
+		else
+		{
+			return ''; 
+		}
+	}
 }	
 ?>
