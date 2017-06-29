@@ -5764,6 +5764,9 @@ function getBarSpecialHoursByID($rand)
 		$this->db->join('beer_directory','beer_directory.beer_id=bar_happy_hour.sp_beer_id','left');
 		$this->db->join('cocktail_directory','cocktail_directory.cocktail_id=bar_happy_hour.sp_cocktail_id','left');
 		$this->db->join('liquors','liquors.liquor_id=bar_happy_hour.sp_liquor_id','left');
+//		
+		$this->db->where(array('bar_special_hours.bar_id'=>$id));
+//		
 //		if($days!='viewall')
 //		{
 //			$this->db->where(array('bar_special_hours.days'=>$days,'bar_special_hours.bar_id'=>$id));
