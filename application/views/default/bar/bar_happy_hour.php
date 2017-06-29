@@ -2208,7 +2208,7 @@ function addrows(cnt){
         var html = '';
                 
                 html += '<div class="padtb" id="imgcocktail'+cnt+'_'+cntcocktail+'"><div class="padtb8">';
-                html += ' <input type="hidden" name="bid'+cnt+'[]" id="bid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-3 text-right">';
+                html += ' <input type="hidden" name="cid'+cnt+'[]" id="cid0_'+cnt+cntcocktail+'" value="" /><div class="col-sm-3 text-right">';
                 html += '<label class="control-label"></label>';
                 html += '</div>';
                 html += '<div class="col-sm-3" style="padding-left: 15px;">';
