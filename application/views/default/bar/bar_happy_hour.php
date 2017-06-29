@@ -2250,7 +2250,7 @@ function addrows(cnt){
                         var row= $(this).attr('id');
                 var myArray = row.split('_');
                         // alert(cnt+myArray[1]);
-                        $("#bid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
+                        $("#cid0_"+cnt+myArray[1]).val(ui.item.id);  // ui.item.value contains the id of the selected label
                     },
                     autoFocus: true,
                     minLength: 0        
