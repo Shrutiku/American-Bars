@@ -5,7 +5,7 @@
 }
 </style>
 <div class="padtb">
-	        				 	<div class="col-sm-3 text-right">
+<!--	        				 	<div class="col-sm-3 text-right">
 	        				 		<label class="control-label">Select Day: </label>
 	        				 	</div>
 	        					        				 	
@@ -24,13 +24,14 @@
 	                       		</div>
 	                       		<div class="clearfix"></div>
 	                       		</div>	
+-->
 
 <?php if($getbarhour){
 	
 	 foreach($getbarhour as $row1)
 	   { ?>
 	 
-	 <li><h4><?php echo "<span class='yellow_text'>Day :</span>" . $row1->days; ?> <span class='yellow_text'>Time</span> : <?php echo $row1->hour_from ." To ". $row1->hour_to; ?></h4><br> 	
+	 <li><h4><?php echo "<span class='yellow_text'>Days : </span>" . $row1->day_from . " - " . $row1->day_to; ?> <span class='yellow_text'>From </span> : <?php echo $row1->hour_from ." To ". $row1->hour_to; ?></h4><br> 	
 		
 <?php		$getbarhourrand = $this->bar_model->getBarHappyHoursByBarID($row1->rand);
 	   	
