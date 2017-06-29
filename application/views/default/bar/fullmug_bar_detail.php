@@ -464,7 +464,7 @@
                             </div>
      			</div>
                             
-                        <div class="modal fade login_pop2" id="hourmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                        <div class="modal fade login_pop2" id="hhmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
                             <div class="padtb10">
                                 <div class="container">
                                         <div class="result_box clearfix mar_top30bot20">
