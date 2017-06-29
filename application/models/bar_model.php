@@ -5079,7 +5079,7 @@ function getAllBarResult11()
 				
 				 if(count($cocktail))
 				 {
-				 	 $i=0; foreach($cocktail as $b)
+				 	 $i=0; foreach($cocktail as $c)
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
@@ -5089,7 +5089,7 @@ function getAllBarResult11()
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'sp_cocktail_price' => isset($cocktailprice[$i]) ? $cocktailprice[$i]:'',
-					    'sp_cocktail_id' => $b,
+					    'sp_cocktail_id' => $c,
 					     'rand' => $rand,
 					     'cat' => 'cocktail',
 					     'bar_id' => $bar_id,
@@ -5103,7 +5103,7 @@ function getAllBarResult11()
 				
 				 if(count($liquor))
 				 {
-				 	 $i=0; foreach($liquor as $b)
+				 	 $i=0; foreach($liquor as $l)
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
@@ -5113,7 +5113,7 @@ function getAllBarResult11()
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'sp_liquor_price' => isset($liquorprice[$i]) ? $liquorprice[$i]:'',
-					    'sp_liquor_id' => $b,
+					    'sp_liquor_id' => $l,
 					    'cat' => 'liquor',
 					     'rand' => $rand,
 					     'bar_id' => $bar_id,
@@ -5127,7 +5127,7 @@ function getAllBarResult11()
 				
 				 if(count($foodid))
 				 {
-				 	 $i=0; foreach($foodid as $b)
+				 	 $i=0; foreach($foodid as $f)
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
@@ -5137,7 +5137,7 @@ function getAllBarResult11()
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'food_price' => isset($foodprice[$i]) ? $foodprice[$i]:'',
-					    'food_name' => $b,
+					    'food_name' => $f,
 					     'rand' => $rand,
 					     'cat' => 'food',
 					     'bar_id' => $bar_id,
@@ -5151,7 +5151,7 @@ function getAllBarResult11()
 				
 				 if(count($otherid))
 				 {
-				 	 $i=0; foreach($otherid as $b)
+				 	 $i=0; foreach($otherid as $o)
 					 {
 					 	//echo $b;
 					 	$dataticket=array(
@@ -5161,7 +5161,7 @@ function getAllBarResult11()
 					    'hour_from' => $datatick['hour_from'][$key],
 					    'hour_to' => $datatick['hour_to'][$key],
 					    'other_price' => isset($otherprice[$i]) ? $otherprice[$i]:'',
-					    'other_name' => $b,
+					    'other_name' => $o,
 					    'cat' => 'other',
 					     'rand' => $rand,
 					     'bar_id' => $bar_id,
