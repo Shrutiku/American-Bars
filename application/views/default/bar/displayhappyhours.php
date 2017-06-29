@@ -82,7 +82,7 @@
 //                                                    echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Cocktail Name :</span><a href='".site_url("cocktail/detail/".$row->cocktail_slug)."'>" .$cn. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>Price : </span> $ $row->sp_cocktail_price </div><div class='clearfix'></div></div><br>";
                                                     echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("cocktail/detail/".$row->cocktail_slug)."'>" .$cn. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>$ $row->sp_cocktail_price </span> </div><div class='clearfix'></div></div><br>";
                                         }else {
-                                            echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("cocktail/detail/".$row->cocktail_slug)."'>" .$cn. "</a></div>";
+                                            echo "<div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("cocktail/detail/".$row->cocktail_slug)."'>" .$cn. "</a></div></div><br>";
                                         }
                                                     
                                         }	
@@ -102,7 +102,7 @@
 //        						echo "<div><div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Liquor Name :</span><a href='".site_url("liquor/detail/".$row->liquor_slug)."'>" .$ln. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>Price : </span> $ $row->sp_liquor_price </div><div class='clearfix'></div></div><br>";
                                                 echo "<div><div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("liquor/detail/".$row->liquor_slug)."'>" .$ln. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>$ $row->sp_liquor_price </span> </div><div class='clearfix'></div></div><br>";
                                         }else {
-                                            echo "<div><div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("liquor/detail/".$row->liquor_slug)."'>" .$ln. "</a></div>";
+                                            echo "<div><div style='width:100%;'><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>· </span><a href='".site_url("liquor/detail/".$row->liquor_slug)."'>" .$ln. "</a></div></div><br>";
                                         }
                                 }	
 					
@@ -114,7 +114,7 @@
 //					echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Food Name :</span><a>" .$row->food_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>Price : </span> $ $row->food_price </div><div class='clearfix'></div></div><br>";
 					echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Food: </span><a>" .$row->food_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>$ $row->food_price </span> </div><div class='clearfix'></div></div><br>";
                             } else {
-                                echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Food: </span><a>" .$row->food_name. "</a></div>";
+                                echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Food: </span><a>" .$row->food_name. "</a></div></div><br>";
                             }
                                         
                         }	
@@ -126,7 +126,7 @@
   //							echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other Name :</span><a>" .$row->other_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin respo-margin'>Price : </span> $ $row->other_price </div><div class='clearfix'></div></div><br>";
                                           echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other: </span><a>" .$row->other_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin respo-margin'>$ $row->other_price </span> </div><div class='clearfix'></div></div><br>";
                             } else {
-                                echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other: </span><a>" .$row->other_name. "</a></div>";
+                                echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other: </span><a>" .$row->other_name. "</a></div></div><br>";
                             }
                                         
                         }
