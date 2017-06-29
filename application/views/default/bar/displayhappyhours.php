@@ -32,7 +32,7 @@
 	 
 	 <li><h4><?php echo "<span class='yellow_text'>Day :</span>" . $row1->days; ?> <span class='yellow_text'>Time</span> : <?php echo $row1->hour_from ." To ". $row1->hour_to; ?></h4><br> 	
 		
-<?php		$getbarhourrand = $this->bar_model->getBarSpecialHoursByID($row1->rand);
+<?php		$getbarhourrand = $this->bar_model->getBarHappyHoursByBarID($row1->rand);
 	   	
 		//echo $row->rand;
 		
