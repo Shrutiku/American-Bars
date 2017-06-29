@@ -96,17 +96,27 @@
 				break;	
 			case "food":
 			if($row->food_name!='')
-				{
+			{
+                            if($row->food_price!=''){
 //					echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Food Name :</span><a>" .$row->food_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>Price : </span> $ $row->food_price </div><div class='clearfix'></div></div><br>";
 					echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Food: </span><a>" .$row->food_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin'>$ $row->food_price </span> </div><div class='clearfix'></div></div><br>";
-				}	
+                            } else {
+                                echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Food: </span><a>" .$row->food_name. "</a></div>";
+                            }
+                                        
+                        }	
 				break;
 			case "other":
 			if($row->other_name!='')
-					{
-//					echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other Name :</span><a>" .$row->other_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin respo-margin'>Price : </span> $ $row->other_price </div><div class='clearfix'></div></div><br>";
-					echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other: </span><a>" .$row->other_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin respo-margin'>$ $row->other_price </span> </div><div class='clearfix'></div></div><br>";
-					}
+                        {
+                            if($row->other_price!=''){
+  //							echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other Name :</span><a>" .$row->other_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin respo-margin'>Price : </span> $ $row->other_price </div><div class='clearfix'></div></div><br>";
+                                          echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other: </span><a>" .$row->other_name. "</a></div><div class='col-md-4 col-sm-4 padding-0'><span class='yellow_text marlr25 respo-margin respo-margin'>$ $row->other_price </span> </div><div class='clearfix'></div></div><br>";
+                            } else {
+                                echo "<div><div class='result_search_text col-md-8 col-sm-8 padding-0' style='font-size:15px;'><span class='yellow_text'>Other: </span><a>" .$row->other_name. "</a></div>";
+                            }
+                                        
+                        }
 				break;	
 		}
 	   	?>
