@@ -31,7 +31,11 @@
 	 foreach($getbarhour as $row1)
 	   { ?>
 	 
+<<<<<<< HEAD
 	 <li><h3><?php echo "<span class='yellow_text'></span>" . $row1->day_from . " - " . $row1->day_to; ?> <span class='yellow_text'>From </span> : <?php echo $row1->hour_from ." To ". $row1->hour_to; ?></h3><br> 	
+=======
+	 <li><h4><?php echo "<span class='yellow_text'>Days : </span>" . $row1->day_from . " - " . $row1->day_to; ?> <span class='yellow_text'>From </span> : <?php echo $row1->hour_from ." to ". $row1->hour_to; ?></h4><br> 	
+>>>>>>> aebac673681b6f12f95c4f7fdc2d85a7fd2ad849
 		
 <?php		$getbarhourrand = $this->bar_model->getBarHappyHoursByRAND($row1->rand);
 	   	
