@@ -490,8 +490,8 @@
                             
      			<div class="right_gallery_block newadded">
 				<div>
-                                    <a title="Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
-                                    <a title="NEW Happy Hours & Specials" href="#hhmodal" onclick="callhhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
+                                    <!--<a title="OLD Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>-->
+                                    <a title="Happy Hours & Specials" href="#hhmodal" onclick="callhhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
                                     <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5 pull-left" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
                                         <?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
@@ -2150,7 +2150,7 @@ function getBarHappyHours()
 <!--
 
 <div itemscope itemtype="http://schema.org/LocalBusiness" style="display:none;>
-<a itemprop="url" href="<?php echo site_url('bar/bar/'.$bar_detail['bar_slug']);?>"><div itemprop="name"><strong><?php echo $bar_detail['bar_title']; ?></strong></div>
+<a itemprop="url" href="<?php // echo site_url('bar/bar/'.$bar_detail['bar_slug']);?>"><div itemprop="name"><strong><?php // echo $bar_detail['bar_title']; ?></strong></div>
 </a>
 <div itemprop="description"> Get a free consultation with an experienced Scottsdale attorney, Adam Davis. Speak directly to Adam Davis (480) 421-1000! No fee unless you get paid!
 </div>
