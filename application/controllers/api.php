@@ -124,7 +124,7 @@ class Api extends REST_Controller
                     $data['status']= 'success';
                 }
                 
-                if($user['first_name'] === "n/a") {
+                if($user && $user['first_name'] && $user['first_name'] === "n/a") {
                     $first_name = $this->input->post('first_name'); //"test";
                     $last_name = $this->input->post('last_name');
 
