@@ -123,18 +123,20 @@ class Api extends REST_Controller
                     $data['user_id'] = $user['user_id']; 
                     $data['status']= 'success';
                     
-                    $name_update = array ( 
-                        'first_name'=> $this->input->post('first_name'), 
-                        'last_name'=> $this->input->post('last_name')
-                            );
+                    if ($this->input->post('first_name') == 0) {
+                        $name_update = array ( 
+                            'first_name'=> $this->input->post('first_name'), 
+                            'last_name'=> $this->input->post('last_name')
+                                );
 
-                    $this->db->where('user_name',$phone);
-                    $this->db->update('user_master',$name_update);
-                    
-                    $data['first_name'] = $name_update['first_name'];
-                    $data['last_name'] = $name_update['last_name'];
+                        $this->db->where('user_name',$phone);
+                        $this->db->update('user_master',$name_update);
 
-                    $this->response($data ,200);
+                        $data['first_name'] = $name_update['first_name'];
+                        $data['last_name'] = $name_update['last_name'];
+
+                        $this->response($data ,200);
+                    }
                     
                 }
                 
