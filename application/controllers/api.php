@@ -128,7 +128,7 @@ class Api extends REST_Controller
                         'last_name'=> $this->input->post('last_name')
                             );
 
-                    $this->db->where('user_id',$phone);
+                    $this->db->where('user_name',$phone);
                     $this->db->update('user_master',$name_update);
                     
                     $data['first_name'] = $name_update['first_name'];
