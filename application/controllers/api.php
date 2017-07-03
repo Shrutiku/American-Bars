@@ -126,11 +126,13 @@ class Api extends REST_Controller
                 
 //                if($user && $user['first_name'] && ($user['first_name'] === "not given")) {
                 if($user) {
-                    $first_name = "direct input works"; //$this->input->post('first_name'); //"test";
-                    $last_name = $this->input->post('last_name');
+                    $name=array(
+                        $first_name = "direct input works", //; //$this->input->post('first_name'); //"test";
+                        $last_name = $this->input->post('last_name')
+                            );
 
-                    $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
-
+//                    $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
+                    $user->user_model->update_name($name);
                     $data['first_name'] = $this->input->post('first_name');
                     $data['last_name'] = $this->input->post('last_name');
 
