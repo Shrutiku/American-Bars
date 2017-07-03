@@ -131,8 +131,8 @@ class Api extends REST_Controller
 
                     $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
 
-                    $data['first_name'] = $user['first_name'];
-                    $data['last_name'] = $user['last_name'];
+                    $data['first_name'] = $this->input->post('first_name');
+                    $data['last_name'] = $this->input->post('last_name');
 
                     $this->response($data ,200);
 
