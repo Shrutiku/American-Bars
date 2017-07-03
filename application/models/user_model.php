@@ -70,7 +70,7 @@ class User_model extends CI_Model {
 		//update user details
 		$data=array(
 			'first_name'=>$res['first_name'],
-			'last_name'=>$res['last_name'],
+			'last_name'=>$res['last_name']
 		);
 		$this->db->where('user_id',get_authenticateUserID());
 		$this->db->update('user_master',$data);
