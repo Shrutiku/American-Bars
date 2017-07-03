@@ -124,8 +124,8 @@ class Api extends REST_Controller
                     $data['status']= 'success';
                 }
                 
-                if($user && $user['first_name'] && $user['first_name'] === "n/a") {
-                    $first_name = $this->input->post('first_name'); //"test";
+                if($user && $user['first_name'] && ($user['first_name'] === "n/a")) {
+                    $first_name = "direct input"; //$this->input->post('first_name'); //"test";
                     $last_name = $this->input->post('last_name');
 
                     $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
@@ -135,7 +135,7 @@ class Api extends REST_Controller
 
                     $this->response($data ,200);
 
-                    return;
+//                    return;
                     }
             }
             
