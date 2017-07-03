@@ -127,6 +127,8 @@ class Api extends REST_Controller
                         $first_name = "test";//$this->input->post('first_name'); //"NOTZERO";
                         $last_name = $this->input->post('last_name');
                            $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone); 
+                           $this->response($data ,200);
+                           return;
                         }
 //                }
             }
