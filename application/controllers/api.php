@@ -123,7 +123,7 @@ class Api extends REST_Controller
                     $data['user_id'] = $user['user_id']; 
                     $data['status']= 'success';
                     
-                    if ($this->input->post('first_name') == 0) {
+                    if ($this->input->post('first_name')) {
                         $name_update = array ( 
                             'first_name'=> $this->input->post('first_name'), 
                             'last_name'=> $this->input->post('last_name')
