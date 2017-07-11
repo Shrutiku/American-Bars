@@ -32,7 +32,7 @@
                                             <li title="Add your bar's happy hours here." class="<?php echo $this->uri->segment(2)=='bar_happy_hours' ? 'active':'';?>">
                                                     <a href="<?php echo site_url('bar/bar_happy_hours')?>">
                                                             <i class="strip bar-special"></i>
-                                                            Happy Happy
+                                                            Happy Hours
                                                     </a>
                                             </li>
                                             <li title="Notify your fans of events." class="<?php echo $this->uri->segment(2)=='socialshare' || $this->uri->segment(2)=='twitterpost' || $this->uri->segment(2)=='facebookpost' || $this->uri->segment(2)=='instagrampost' ? 'active':'';?>">
