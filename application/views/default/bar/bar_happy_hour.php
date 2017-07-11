@@ -108,7 +108,7 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label" style="font-size: 16px;">to</label>
                                                                 </div>
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">     
-                                                                    <select required name="day_to[]" id="day_to<?php echo $im->day_to; ?>" class="select_box">
+                                                                    <select name="day_to[]" id="day_to<?php echo $im->day_to; ?>" class="select_box">
                                                                     <!--<select class="form-control">-->
                                                                         <option value="" <?php echo $im->day_from=="Everyday" ? 'selected':'';?>>-- Select Day-- </option>
                                                                         <option value="Monday" <?php echo $im->day_to=="Monday" ? 'selected':'';?>>Monday</option>
@@ -468,7 +468,7 @@ $('.sorted_table').sortable({
                                                                     <label class="control-label" style="font-size: 16px;">to</label>
                                                                 </div>
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">     
-                                                                    <select required name="day_to[]" id="day_to" class="select_box">
+                                                                    <select name="day_to[]" id="day_to" class="select_box">
                                                                     <!--<select class="form-control">-->
                                                                         <option value="">-- Select Day-- </option>
                                                                         <option value="Monday">Monday</option>
@@ -801,7 +801,7 @@ $('#add_row').click(function(){
                     html += '<label class="control-label" style="font-size: 16px;">to</label>';
                 html += '</div>';
                 html += '<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;"> '; 
-                html += '<select required name="day_to[]" id="day_to'+cnt+'" class="select_box">';
+                html += '<select name="day_to[]" id="day_to'+cnt+'" class="select_box">';
 //                    html += '<select class="form-control">';
                     html += '<option value="">-- Select Day-- </option>';
                     html += '<option value="Monday">Monday</option>';
