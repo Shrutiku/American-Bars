@@ -1917,6 +1917,11 @@ function callback(results, status) {
                 var placeid = results[i].place_id;
                 loadGoogRev(placeid);
                 break;
+            } 
+            if (i == results.length-1) {
+                var placeid = results[0].place_id;
+                loadGoogRev(placeid);
+                break;
             }
         }
     }
