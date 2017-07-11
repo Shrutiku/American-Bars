@@ -1911,12 +1911,12 @@ function loadMap()
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         var barname = "<?php echo $bar_detail['bar_title'];?>";
-        if (barname == results[1].name) {
-            var placeid = results[1].place_id;
+        
+        for (var i = 0; i < results.length; i++) {
+            if (barname == results[i].name) {
+            var placeid = results[i].place_id;
             loadGoogRev(placeid);
-        }   else {
-            var placeid = results[0].place_id;
-            loadGoogRev(placeid);
+            break;
         }
     }
 }
