@@ -46,7 +46,7 @@
           plugin.settings.schema = $.extend({}, defaults.schema, options.schema);
           $element.html("<div id='map-plug'></div>"); // create a plug for google to load data into
           initialize_place(function(place){
-                        console.log(place);
+//                        console.log(place);
 
             plugin.place_data = place;
             // render specified sections
@@ -113,7 +113,7 @@
           var request = {
             placeId: plugin.settings.placeId
           };
-          console.log(plugin.settings.placeId);
+//          console.log(plugin.settings.placeId);
 
           var service = new google.maps.places.PlacesService(map);
 
