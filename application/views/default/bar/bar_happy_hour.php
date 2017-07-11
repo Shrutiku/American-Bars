@@ -118,7 +118,7 @@ $('.sorted_table').sortable({
                                                                         <option value="Friday" <?php echo $im->day_to=="Friday" ? 'selected':'';?>>Friday</option>
                                                                         <option value="Saturday" <?php echo $im->day_to=="Saturday" ? 'selected':'';?>>Saturday</option>
                                                                         <option value="Sunday" <?php echo $im->day_to=="Sunday" ? 'selected':'';?>>Sunday</option>
-                                                                        <option value="" <?php echo $im->day_from=="Everyday" ? 'selected':'';?>>Everyday</option>
+                                                                        <option value="" <?php echo $im->day_from=="Everyday" ? 'selected':'';?>></option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-sm-1">
