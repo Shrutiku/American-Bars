@@ -1895,8 +1895,10 @@ function loadMap()
           }
             var request = {
                 location: results[0].geometry.location,
-                radius: '50',
-                type: ['bar'],
+                //radius: '50',
+                keyword: "<?php echo $bar_detail['bar_title'];?>",
+                rankBy: google.maps.places.RankBy.DISTANCE,
+                //type: ['bar'],
                 };
 
                 service = new google.maps.places.PlacesService(map);
