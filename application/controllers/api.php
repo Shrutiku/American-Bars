@@ -107,8 +107,8 @@ class Api extends REST_Controller
                                              ->total;          
 
             if($num == 0) { 
-                $first_name = "n/a"; // $this->input->post('first_name'); //"NOTZERO";
-                $last_name = "n/a"; // $this->input->post('last_name');
+                $first_name = "not given"; // $this->input->post('first_name'); //"NOTZERO";
+                $last_name = "not given"; // $this->input->post('last_name');
             
                 $data = $this->api_model->user_phone_register_api($first_name,$last_name,$phone);
             }
@@ -122,12 +122,41 @@ class Api extends REST_Controller
                 {
                     $data['user_id'] = $user['user_id']; 
                     $data['status']= 'success';
-                }
-                if($user['user_id']['first_name'] === "n/a") {
-                    $first_name = "test";//$this->input->post('first_name'); //"NOTZERO";
-                    $last_name = $this->input->post('last_name');
-                       $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone); 
+                    
+                    if ($this->input->post('first_name')) {
+                        $name_update = array ( 
+                            'first_name'=> $this->input->post('first_name'), 
+                            'last_name'=> $this->input->post('last_name')
+                                );
+
+                        $this->db->where('user_name',$phone);
+                        $this->db->update('user_master',$name_update);
+
+                        $data['first_name'] = $name_update['first_name'];
+                        $data['last_name'] = $name_update['last_name'];
+
+                        $this->response($data ,200);
                     }
+                    
+                }
+                
+//                if($user && $user['first_name'] && ($user['first_name'] === "not given")) {
+//                if($user) {
+//                    $name=array(
+//                        $first_name = "direct input works", //; //$this->input->post('first_name'); //"test";
+//                        $last_name = $this->input->post('last_name')
+//                            );
+//
+////                    $this->api_model->user_phone_update_name_api($first_name,$last_name,$phone);
+////                    $user->user_model->update_name($name);
+//                    $data['user'] = $user;
+//                    $data['first_name'] = $this->input->post('first_name');
+//                    $data['last_name'] = $this->input->post('last_name');
+//
+//                    $this->response($data ,200);
+//
+////                    return;
+//                    }
             }
             
             if (!$data['user_id']) {
