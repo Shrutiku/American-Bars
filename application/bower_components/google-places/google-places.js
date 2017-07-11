@@ -112,7 +112,7 @@
             placeId: plugin.settings.placeId
           };
 
-            console.log("evan test" + placeId);
+//            console.log("evan test" + placeId);
 
           var service = new google.maps.places.PlacesService(map);
 
