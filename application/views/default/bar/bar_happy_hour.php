@@ -101,6 +101,7 @@ $('.sorted_table').sortable({
                                                                         <option value="Friday" <?php echo $im->day_from=="Friday" ? 'selected':'';?>>Friday</option>
                                                                         <option value="Saturday" <?php echo $im->day_from=="Saturday" ? 'selected':'';?>>Saturday</option>
                                                                         <option value="Sunday" <?php echo $im->day_from=="Sunday" ? 'selected':'';?>>Sunday</option>
+                                                                        <option value="Everyday" <?php echo $im->day_from=="Everyday" ? 'selected':'';?>>Everyday</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-sm-1 text-center">
@@ -109,7 +110,7 @@ $('.sorted_table').sortable({
                                                                 <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px;">     
                                                                     <select required name="day_to[]" id="day_to<?php echo $im->day_to; ?>" class="select_box">
                                                                     <!--<select class="form-control">-->
-                                                                        <option value="">-- Select Day-- </option>
+                                                                        <option value="" <?php echo $im->day_from=="Everyday" ? 'selected':'';?>>-- Select Day-- </option>
                                                                         <option value="Monday" <?php echo $im->day_to=="Monday" ? 'selected':'';?>>Monday</option>
                                                                         <option value="Tuesday" <?php echo $im->day_to=="Tuesday" ? 'selected':'';?>>Tuesday</option>
                                                                         <option value="Wednesday" <?php echo $im->day_to=="Wednesday" ? 'selected':'';?>>Wednesday</option>
@@ -460,6 +461,7 @@ $('.sorted_table').sortable({
                                                                         <option value="Friday">Friday</option>
                                                                         <option value="Saturday">Saturday</option>
                                                                         <option value="Sunday">Sunday</option>
+                                                                        <option value="Everyday">Everyday</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-sm-1 text-center">
@@ -792,6 +794,7 @@ $('#add_row').click(function(){
                     html += '<option value="friday">Friday</option>';
                     html += '<option value="saturday">Saturday</option>';
                     html += '<option value="sunday">Sunday</option>';
+                    html += '<option value="Everyday">Everyday</option>';
                 html += '</select>';
                 html += '</div>';
                 html += '<div class="col-sm-1 text-center">';

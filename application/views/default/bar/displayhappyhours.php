@@ -30,9 +30,12 @@
 	
 	 foreach($getbarhour as $row1)
 	   { ?>
-	 
-	 <li><h3><?php echo "<span class='yellow_text'></span>" . $row1->day_from . " - " . $row1->day_to; ?> <span class='yellow_text'> · </span> <?php echo $row1->hour_from ." - ". $row1->hour_to; ?></h3><br> 	
-		
+<?php	if ($row1->day_from == "Everyday") {    ?>
+            <li><h3><?php echo "<span class='yellow_text'></span>" . $row1->day_from; ?> <span class='yellow_text'> · </span> <?php echo $row1->hour_from ." - ". $row1->hour_to; ?></h3><br>
+<?php   }  else {   ?>
+            <li><h3><?php echo "<span class='yellow_text'></span>" . $row1->day_from . " - " . $row1->day_to; ?> <span class='yellow_text'> · </span> <?php echo $row1->hour_from ." - ". $row1->hour_to; ?></h3><br> 	
+<?php   } ?>
+             
 <?php		$getbarhourrand = $this->bar_model->getBarHappyHoursByRAND($row1->rand);
 	   	
 		//echo $row->rand;
