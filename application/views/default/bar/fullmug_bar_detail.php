@@ -1914,9 +1914,10 @@ function callback(results, status) {
         
         for (var i = 0; i < results.length; i++) {
             if (barname == results[i].name) {
-            var placeid = results[i].place_id;
-            loadGoogRev(placeid);
-            break;
+                var placeid = results[i].place_id;
+                loadGoogRev(placeid);
+                break;
+            }
         }
     }
 }
