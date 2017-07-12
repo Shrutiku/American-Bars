@@ -883,12 +883,14 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 			
 			
 		
-		$this->db->select('bar_special_hours.*');
-		
+//		$this->db->select('bar_special_hours.*');
+                $this->db->select('bar_happy_hour.*');
+                
 		$this->db->from("bars");
 		//if($days!= "")
 		//{
-			$this->db->join("bar_special_hours",'bar_special_hours.bar_id=bars.bar_id');
+//			$this->db->join("bar_special_hours",'bar_special_hours.bar_id=bars.bar_id');
+                        $this->db->join("bar_happy_hour",'bar_happy_hour.bar_id=bars.bar_id');
 		//}
 		//$this->db->join("sss_bar_comment",'sss_bar_comment.bar_id=bars.bar_id','left');
 		
