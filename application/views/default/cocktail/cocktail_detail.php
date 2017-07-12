@@ -864,10 +864,10 @@ function fbShare(){
 					     				</div>
 					     				<div class="mar_top20">
                                                                             <div class="yellow_title" style="margin-bottom:10px;">How to Make it:</div>
-                                                                                <!--<div class="result_desc">-->
-                                                                                    <label class="result_desc">
+                                                                                <div class="result_desc">
+                                                                                    <!--<p class="result_desc">-->
 					     						<?php // if(strip_tags(strlen($cocktail_detail['how_to_make_it'])>350)){ echo substr(strip_tags($cocktail_detail['how_to_make_it']),0,350).'...<a class="morelink1 more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($cocktail_detail['how_to_make_it']); } ?>
-					     						<?php echo strip_tags($cocktail_detail['how_to_make_it']); ?>
+					     						<?php echo $cocktail_detail['how_to_make_it']; ?>
                                                                                         <?php //echo $cocktail_detail['how_to_make_it'];?>
 					     						<!-- <ul class="howto-make">
 					     							<li>tesrt</li>
@@ -877,8 +877,8 @@ function fbShare(){
 					     							<li>tesrt</li>
 					     							<div class="clearfix"></div>
 					     						</ul> -->
-                                                                                    </label>>
-					     					<!--</div>-->
+                                                                                    <!--</p>-->
+					     					</div>
 					     				</div>
 				     				</div>
 				     				<div class="clearfix"></div>
