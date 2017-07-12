@@ -839,26 +839,26 @@ function fbShare(){
 					     							
 													$getin = array_slice($getin1, 0, 5);
 													$getin12 = array_slice($getin1, 5);
-					     							  foreach($getin as $r)
+					     							  foreach($getin1 as $r)
 													  {
 													  	  echo '<p>'.'&#149; '.$r.'</p>';
 													} ?>
 													<div class="shahrukh" style="display:none;" >
 													  <?php 
-													      foreach($getin12 as $r)
-													  {
-													  	  echo '<p>'.'&#149; '.$r.'</p>';
-													}
-													  if($getin12){
-													  	echo  '<a href="javascript://" class="chanki pull-left btn btn-lg btn-primary">View Less</a>';
-													  }
+//													      foreach($getin12 as $r)
+//													  {
+//													  	  echo '<p>'.'&#149; '.$r.'</p>';
+//													}
+//													  if($getin12){
+//													  	echo  '<a href="javascript://" class="chanki pull-left btn btn-lg btn-primary">View Less</a>';
+//													  }
 													  ?>
 													</div>
 													  
-													<?php   if(count($getin1)>5)
-													  {
-													  	echo  '<a href="javascript://" class="sallu pull-left btn btn-lg btn-primary">Show More</a>';
-													  }
+													<?php //   if(count($getin1)>5)
+//													  {
+//													  	echo  '<a href="javascript://" class="sallu pull-left btn btn-lg btn-primary">Show More</a>';
+//													  }
 					     							?>
                                                                         </div>
 					     				</div>
