@@ -129,19 +129,19 @@
                                                 
                                             <?php } else { // halfmug disabled buttons ?>
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_special_hours' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-                                                <a href="<?php echo site_url('bar/bar_special_hours')?>">
+                                                <a href="<?php echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">
                                                         <i class="strip bar-special"></i>
                                                         Happy Hours
                                                 </a>
                                             </li>
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='socialshare' || $this->uri->segment(2)=='twitterpost' || $this->uri->segment(2)=='facebookpost' || $this->uri->segment(2)=='instagrampost' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-                                                    <a href="<?php echo site_url('home/socialshare')?>">
+                                                    <a href="<?php echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/managed');?>">
                                                             <i class="strip social_share"></i>
                                                             Be Social
                                                     </a>
                                             </li>
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_events' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-                                                    <a href="<?php echo site_url('bar/bar_events')?>">
+                                                    <a href="<?php echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">
                                                             <!--<i class="strip events"></i>-->
                                                         <i class='glyphicon glyphicon-calendar' style="color:'#FFF'; display: block; font-size: 46px; vertical-align: middle; margin: auto;"></i>    
                                                         Events
@@ -149,13 +149,13 @@
                                             </li>
 
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='bar_gallery' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-                                                    <a href="<?php echo site_url('bar/bar_gallery')?>">
+                                                    <a href="<?php echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">
                                                             <i class="strip gallery"></i>
                                                             My Albums
                                                     </a>
                                             </li>
                                             <li title="<?php if($getbarinfo->bar_type=='half_mug'){ ?>Please upgrade your account from Half Mug to Full Mug bar for access to this feature.<?php } ?>" class="<?php echo $this->uri->segment(2)=='comments' ? 'active':'';?> <?php if($getbarinfo->bar_type=='half_mug'){ echo "gray_bg"; }?>">
-                                                    <a href="<?php echo site_url('bar/comments')?>">
+                                                    <a href="<?php echo site_url('home/registration_step3_upgrade/'.base64_encode($getbar['bar_id']).'/fullmug');?>">
                                                             <i class="strip comments"></i>
                                                             Comments
                                                     </a>
