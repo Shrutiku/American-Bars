@@ -1747,6 +1747,24 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 		}
 		return array();
 	}
+        
+        function getHappyHourByRAND($id)
+	{
+		//$this->db->select("*");
+		$this->db->select("bar_happy_hour.*,beer_directory.beer_name,beer_directory.beer_name,cocktail_directory.cocktail_name,liquors.liquor_title as liquor_name");
+		$this->db->from("bar_happy_hour");
+		$this->db->join("beer_directory",'beer_directory.beer_id=bar_happy_hour.sp_beer_id','left');
+		$this->db->join("cocktail_directory",'cocktail_directory.cocktail_id=bar_happy_hour.sp_cocktail_id','left');
+		$this->db->join("liquors",'liquors.liquor_id=bar_happy_hour.sp_liquor_id','left');
+		$this->db->where("bar_happy_hour.rand",$id);
+		$query = $this->db->get();
+		if($query->num_rows()>0)
+		{
+			return $query->result_array();
+		}
+		return array();
+	}
+        
 	function getBeerDetails($beer_id='',$user_id='')
 	{
 		
@@ -3072,6 +3090,28 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 		$this->db->join("liquors",'liquors.liquor_id=bar_special_hours.sp_liquor_id','left');
 		$this->db->where('bar_special_hours.bar_id',$bar_id);
 		$this->db->order_by('day','asc');
+		$this->db->group_by('rand');
+		//$this->db->order_by('days', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+        $query =  $this->db->get();
+		//echo $this->db->last_query();
+       
+		// die;
+		if($query->num_rows()>0)
+		{
+			 return $query->result_array();
+		}
+		 return array();
+	}
+        
+        function get_bar_happy_hour($bar_id)
+	{
+		$this->db->select("bar_happy_hour.*,beer_directory.beer_name,beer_directory.beer_name,cocktail_directory.cocktail_name,liquors.liquor_title as liquor_name");
+        $this->db->from("bar_happy_hour");
+		$this->db->join("beer_directory",'beer_directory.beer_id=bar_happy_hour.sp_beer_id','left');
+		$this->db->join("cocktail_directory",'cocktail_directory.cocktail_id=bar_happy_hour.sp_cocktail_id','left');
+		$this->db->join("liquors",'liquors.liquor_id=bar_happy_hour.sp_liquor_id','left');
+		$this->db->where('bar_happy_hour.bar_id',$bar_id);
+//		$this->db->order_by('day','asc');
 		$this->db->group_by('rand');
 		//$this->db->order_by('days', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
         $query =  $this->db->get();

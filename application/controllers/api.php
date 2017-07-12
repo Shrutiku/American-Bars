@@ -475,7 +475,8 @@ class Api extends REST_Controller
 		$data['liquorserved'] = $this->api_model->getLiquorServedAtBar($bar_id,$limit,$offset);
 		$data['getbargallery'] = $this->api_model->getBarGallery($bar_id);
 		$data['barhours'] =  $this->api_model->getBarHours($bar_id);
-		$get_bar_hour = $this->api_model->get_bar_hour($bar_id);
+//		$get_bar_hour = $this->api_model->get_bar_hour($bar_id);
+                $get_bar_hour = $this->api_model->get_bar_happy_hour($bar_id);
 		$data["barevent"] = $this->api_model->getBarEvent($bar_id,$limit,$offset);
 		
 		$data['get_bar_hour'] = array();
@@ -484,7 +485,8 @@ class Api extends REST_Controller
 		{
 			 foreach($get_bar_hour as $r)
 			 {
-			 	  $v = $this->api_model->getHourByID($r['rand']);
+//			 	  $v = $this->api_model->getHourByID($r['rand']);
+                                  $v = $this->api_model->getHappyHourByRAND($r['rand']);
 			 	  $data['get_bar_hour'][$r['rand']] = $v;
 			 }
 		}
