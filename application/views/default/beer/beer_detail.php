@@ -834,7 +834,7 @@ function fbShare(){
 								echo $text;?>
 						       	   
 						       </div>  -->
-						       <div class="yellow_title">Description:</div>
+                                                        <div class="yellow_title" style="margin-bottom:10px;">Description:</div>
 						       <div class="result_desc">
 						       	<?php // if(strip_tags(strlen($beer_detail['beer_desc'])>350)){ echo substr(strip_tags($beer_detail['beer_desc']),0,350).'...<a class="morelink more pull-right" href="javascript://"><i class="strip arrow_down"></i>Show more</a>' ; } else { echo strip_tags($beer_detail['beer_desc']); } ?>
 						       	 <?php echo $beer_detail['beer_desc']; ?>
