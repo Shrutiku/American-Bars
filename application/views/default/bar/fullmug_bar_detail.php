@@ -499,7 +499,7 @@
                                                         <div class="pad20">
                                                             <?php // echo $bar_detail['lat']; ?><?php // echo $bar_detail['lang']; ?>
                                                             <p>
-                                                                <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<?php echo $bar_detail['lat'];?>,<?php echo $bar_detail['lang'];?>&pitch=0" border="1px">
+                                                                <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<?php echo $bar_detail['lat'];?>,<?php echo $bar_detail['lang'];?>&pitch=0key=AIzaSyCaR-yEveHScBem2Pe2belL47G7vhbUmGA" border="1px">
 "                                                           </p>
 
                                                         </div>
