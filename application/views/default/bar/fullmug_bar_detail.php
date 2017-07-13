@@ -388,12 +388,12 @@
 		     						<?php if($bar_detail['paypal_p']==1){?>
 		     						<li><i class="strip payapl"></i></li>
 		     							<?php } ?>
-		     						<?php if($bar_detail['bitcoin_p']==1){?>
-		     						<li><i class="strip bit-coin"></i></li>
-		     							<?php } ?>
-		     						<?php if($bar_detail['apple_p']==1){?>
-		     						<li><i class="strip apple-pay"></i></li>
-                                                                        <?php } ?>
+		     						<?php // if($bar_detail['bitcoin_p']==1){?>
+		     						<!--<li><i class="strip bit-coin"></i></li>-->
+		     							<?php // } ?>
+		     						<?php // if($bar_detail['apple_p']==1){?>
+		     						<!--<li><i class="strip apple-pay"></i></li>-->
+                                                                        <?php // } ?>
 		     					</ul>
 
 	     				  </div>
@@ -487,12 +487,35 @@
                             </div>
      			</div>
                             
+                            <div class="modal fade login_pop2" id="streetviewmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                            <div class="padtb10">
+                                <div class="container">
+                                        <div class="result_box clearfix mar_top30bot20">
+                                                <div class="login_block br_green_yellow">
+                                                        <div class="result_search">
+                                                                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                                <i class="strip login_icon"></i><div class="result_search_text">Street View</div>
+                                                        </div>
+                                                        <div class="pad20">
+                                                            <?php // echo $bar_detail['lat']; ?><?php // echo $bar_detail['lang']; ?>
+                                                            <p>
+                                                                <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<?php echo $bar_detail['lat'];?>,<?php echo $bar_detail['lang'];?>&pitch=0" border="1px">
+"                                                           </p>
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </div>
+     			</div>
+                            
                             
      			<div class="right_gallery_block newadded">
 				<div>
                                     <!--<a title="OLD Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>-->
                                     <a title="Happy Hours & Specials" href="#hhmodal" onclick="callhhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
                                     <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5 pull-left" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
+                                    <a title="Street View" href="#streetviewmodal" class="btn-lg btn-primary text-center mar_top5 pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
                                         <?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
 						  <a title="View More Galleries" href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block" style="margin-right:5px;"><i class="glyphicon glyphicon-picture"></i></a>
