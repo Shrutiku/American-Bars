@@ -591,7 +591,8 @@ function piShare()
      			</div>
      			<div class="right_gallery_block">
      				<a title="Get Directions" href="javascript://" class="btn-lg btn-primary" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
-     				<!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>-->
+     				<a title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn-lg btn-primary text-center mar_top5 pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                <!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>-->
 		     		<ul class="social_icon pull-right">
                                     <li>Share : </li>
                                         <li><a href="javascript://" onclick="fbShare()" ><img src="<?php echo base_url().'default'?>/images/result_fb.png"></a></li>
@@ -1705,6 +1706,26 @@ function loadGoogRev(pid) {
 }
 </style>	
 
+<div class="modal fade login_pop2" id="streetviewmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                            <div class="padtb10">
+                                <div class="container">
+                                        <div class="result_box clearfix mar_top30bot20">
+                                                <div class="login_block br_green_yellow">
+                                                        <div class="result_search">
+                                                                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                                <i class="strip login_icon"></i><div class="result_search_text">Street View</div>
+                                                        </div>
+                                                        <div class="pad20">
+                                                            <?php // echo $bar_detail['lat']; ?><?php // echo $bar_detail['lang']; ?>
+                                                            <p>
+                                                                <img src="//maps.googleapis.com/maps/api/streetview?size=600x300&location=<?php echo $bar_detail['lat'];?>,<?php echo $bar_detail['lang'];?>&pitch=0&key=AIzaSyA3USy3JEMB1_mCg_ud0UDKYrzEa8657Uo" border="1px">
+"                                                           </p>
 
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </div>
+     			</div>
 
 

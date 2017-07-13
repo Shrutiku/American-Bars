@@ -515,7 +515,7 @@
                                     <!--<a title="OLD Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>-->
                                     <a title="Happy Hours & Specials" href="#hhmodal" onclick="callhhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
                                     <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5 pull-left" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
-                                    <a title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn-lg btn-primary text-center mar_top5 pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
+                                    <a title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn-lg btn-primary text-center mar_top5 pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-eye-open"></i></a>
                                         <?php if($bar_gallery){ ?>
 					   <div class="pull-left view-gallery">
 						  <a title="View More Galleries" href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block" style="margin-right:5px;"><i class="glyphicon glyphicon-picture"></i></a>
