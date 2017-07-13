@@ -256,7 +256,7 @@ function offsetMap() {
      			<div class="login_block br_green_yellow">
      			 	<div class="result_search">
      					 <button type="button" onclick="removemapdata()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	     				<i class="strip login_icon"></i><div class="result_search_text" >Search Direction</div>
+	     				<i class="glyphicon glyphicon-map-marker"></i><div class="result_search_text" >Get Directions</div>
 	     				
      				</div>
      				
