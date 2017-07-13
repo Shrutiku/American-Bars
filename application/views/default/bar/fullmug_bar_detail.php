@@ -471,7 +471,7 @@
                                                 <div class="login_block br_green_yellow">
                                                         <div class="result_search">
                                                                  <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                                                <i class="glyphicon glyphicon-glass"></i><div class="result_search_text">Happy Hours & Specials</div>
+                                                                <i class=""></i><div class="result_search_text">Happy Hours & Specials</div>
                                                         </div>
                                                         <div class="pad20">
                                                                 <ul class="happy-list">
@@ -494,7 +494,7 @@
                                                 <div class="login_block br_green_yellow">
                                                         <div class="result_search">
                                                                  <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                                                <i class="strip login_icon"></i><div class="result_search_text">Street View</div>
+                                                                <i class=""></i><div class="result_search_text">Street View</div>
                                                         </div>
                                                         <div class="pad20">
                                                             <?php // echo $bar_detail['lat']; ?><?php // echo $bar_detail['lang']; ?>

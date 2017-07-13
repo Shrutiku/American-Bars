@@ -1713,7 +1713,7 @@ function loadGoogRev(pid) {
                                                 <div class="login_block br_green_yellow">
                                                         <div class="result_search">
                                                                  <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                                                <i class="glyphicon glyphicon-eye-open"></i><div class="result_search_text">Street View</div>
+                                                                <i class=""></i><div class="result_search_text">Street View</div>
                                                         </div>
                                                         <div class="pad20">
                                                             <?php // echo $bar_detail['lat']; ?><?php // echo $bar_detail['lang']; ?>
