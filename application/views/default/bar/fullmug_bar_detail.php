@@ -1186,7 +1186,7 @@ span.required {
 
 
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&key=AIzaSyA3USy3JEMB1_mCg_ud0UDKYrzEa8657Uo"></script>
+<script src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places"></script>
 
 <script>
 $(window).load(function(){
