@@ -2593,7 +2593,8 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 		return array();
 	}
 	function user_logout($user_id,$device_id,$unique_code){
-			$this->db->delete('device_master',array('user_id'=>$user_id,'device_name'=>$device_id,'unique_code'=>$unique_code));
+//			$this->db->delete('device_master',array('user_id'=>$user_id,'device_name'=>$device_id,'unique_code'=>$unique_code));
+                        $this->db->delete('device_master',array('user_id'=>$user_id,'device_name'=>$device_id));
 			return 1;
 	 }
 	
