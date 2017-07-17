@@ -101,8 +101,8 @@ $(function(){
     	<div class="header clearfix">
     		 <!-- <div class="container-fluid"> -->
     		 	<div class="container">
-        			<div class="logo">
-            			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_dark.png" alt="American Bars" class="logo_img"/></a>
+        			<div class="logo" style="margin-top:5px">
+            			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_dark.png" alt="American Bars" style="height:60px"/></a>
             		</div>
             		<!-- <div class="row"> -->
                 		<div  class="search_box">
