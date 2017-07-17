@@ -47,7 +47,7 @@ function newFn() {
         </section>
     </div>
         	
-        <div class="barbox clearfix">
+    <!--    <div class="barbox clearfix">
         	<h1 class="box_title">Find a Bar! &nbsp;&nbsp; Search by any field below ! </h1>
           
      				<span id="clickall123" for="zipcode" class="help-inline" style="display: none; text-align: center;">Please fill atleast one field .</span>
@@ -57,7 +57,6 @@ function newFn() {
                        <label class="col-sm-3 control-label" for="inputEmail3">Search By Name :</label>
                        <div class="col-sm-8 input_box">
                            <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input onkeydown="if (event.keyCode == 13) { click11('one'); return false; }" type="text" placeholder="Start typing name..." class="form-control form-pad tags2222 search-control ui-autocomplete-input" id="bar_title11" name="bar_title" autocomplete="off">
-                           <!-- <a onclick="click11('one')" class="btn btn-lg btn-primary search-icon" name="" ><i class="glyphicon glyphicon-search"></i></a> -->
                            <div class="clearfix"></div>
                        <span id="click11" for="bar_title11" class="help-inline" style="display: none;">This field is required.</span>
                        </div>
@@ -66,7 +65,6 @@ function newFn() {
                        <label class="col-sm-3 control-label" for="inputEmail3">Search By State :</label>
                        <div class="col-sm-8 input_box">
                            <input type="text" onkeydown="if (event.keyCode == 13) { click11('two'); return false; }" placeholder="State" class="form-control form-pad search-control" id="state11" name="state">
-                           <!-- <a  onclick="click11('two')" class="btn btn-lg btn-primary search-icon" name="" ><i class="glyphicon glyphicon-search"></i></a> -->
                            <div class="clearfix"></div>
                        <span id="click22" for="state" class="help-inline" style="display: none;">This field is required.</span>
                        </div>
@@ -75,7 +73,6 @@ function newFn() {
                        <label class="col-sm-3 control-label" for="inputEmail3">Search By City :</label>
                        <div class="col-sm-8 input_box">
                            <input type="text" onkeydown="if (event.keyCode == 13) { click11('three'); return false; }" placeholder="City" id="city11" name="city" class="form-control form-pad search-control">
-                           <!-- <a onclick="click11('three')" class="btn btn-lg btn-primary search-icon" name="" ><i class="glyphicon glyphicon-search"></i></a> -->
                            <div class="clearfix"></div>
                        <span id="click33" for="city11" class="help-inline" style="display: none;">This field is required.</span>
                        </div>
@@ -84,7 +81,6 @@ function newFn() {
                        <label class="col-sm-3 control-label" for="inputEmail3">Search By Zip Code :</label>
                        <div class="col-sm-8 input_box">
                            <input type="text" placeholder="Zip Code" onkeydown="if (event.keyCode == 13) { click11('four'); return false; }" id="zipcode11" name="zipcode" class="form-control form-pad search-control">
-                           <!-- <a onclick="click11('four')" class="btn btn-lg btn-primary search-icon" name="" ><i class="glyphicon glyphicon-search"></i></a> -->
                            <div class="clearfix"></div>
                        <span id="click44" for="zipcode11" class="help-inline" style="display: none;">This field is required.</span>
                        </div>
@@ -105,7 +101,7 @@ function newFn() {
                    
               </form>
 	        			
-   	</div>
+   	</div> -->
    	</div>
       </div>
    		
