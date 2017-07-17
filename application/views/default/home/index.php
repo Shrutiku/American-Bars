@@ -165,16 +165,16 @@ function newFn() {
         </a>
         
       
-        <div class="col-md-3 col-sm-4 padb20">
-          <a href="<?php echo site_url('taxiowner/lists'); ?>">
+<!--        <div class="col-md-3 col-sm-4 padb20">
+          <a href="<?php // echo site_url('taxiowner/lists'); ?>">
          <div class="directory_box">
         		<div class="simple_box">
-		          <img src="<?php echo $theme_url; ?>/images/taxi_icon.png"/>
+		          <img src="<?php // echo $theme_url; ?>/images/taxi_icon.png"/>
 		        </div>
 		        <h2 class="directory-item">Taxi Directory</h2>
           </div>
-        </div><!-- /.col-lg-3 -->
-        </a>
+        </div> /.col-lg-3 -->
+        <!--</a>-->
         
          <a href="<?php echo site_url('bar/gallery'); ?>">
         <div class="col-md-3 col-sm-4 padb20">
@@ -187,16 +187,16 @@ function newFn() {
         </div><!-- /.col-lg-3 -->
         </a>
         
-         <a href="<?php echo site_url('forum'); ?>">
+<!--         <a href="<?php // echo site_url('forum'); ?>">
         <div class="col-md-3 col-sm-4 padb20 ">
           <div class="directory_box">
         		<div class="simple_box">
-		          <img src="<?php echo $theme_url; ?>/images/forum_icon.png"/>
+		          <img src="<?php // echo $theme_url; ?>/images/forum_icon.png"/>
 		        </div>
 		        <h2 class="directory-item">Groups</h2>
           	</div>
         </div>
-        </a>
+        </a>-->
         
          <a href="<?php echo site_url('home/news'); ?>">
         <div class="col-md-3 col-sm-4 padb20">
@@ -209,17 +209,17 @@ function newFn() {
         </div>
         </a>
         
-        <a href="<?php echo site_url('shopping/products'); ?>">
+<!--        <a href="<?php // echo site_url('shopping/products'); ?>">
         <div class="col-md-3 col-sm-4 padb20">
         	<div class="directory_box">
         		<div class="simple_box">
-		          <img src="<?php echo $theme_url; ?>/images/products_icon.png"/>
-		          <!-- <i class="strip bardir"></i> -->
+		          <img src="<?php // echo $theme_url; ?>/images/products_icon.png"/>
+		           <i class="strip bardir"></i> 
 		        </div>
 		        <h2 class="directory-item">Products</h2>
           	</div>
-        </div><!-- /.col-lg-3 -->
-         </a>
+        </div> /.col-lg-3 
+         </a>-->
          
          <a href="<?php echo site_url('event'); ?>">
         <div class="col-md-3 col-sm-4 padb20">
@@ -233,17 +233,17 @@ function newFn() {
         </div><!-- /.col-lg-3 -->
         </a>
         
-        <a href="<?php echo site_url('home/barcriteria'); ?>">
+<!--        <a href="<?php // echo site_url('home/barcriteria'); ?>">
         <div class="col-md-3 col-sm-4 padb20">
           <div class="directory_box">
         		<div class="simple_box">
-		          <img src="<?php echo $theme_url; ?>/images/dive-bar.png"/>
-		          <!-- <i class="strip bardir"></i> -->
+		          <img src="<?php // echo $theme_url; ?>/images/dive-bar.png"/>
+		           <i class="strip bardir"></i> 
 		        </div>
 		        <h2 class="directory-item">In a Dive Bar</h2>
           	</div>
-        </div><!-- /.col-lg-3 -->
-        </a>
+        </div> /.col-lg-3 
+        </a>-->
         
          <a href="<?php echo site_url('trivia'); ?>">
         <div class="col-md-3 col-sm-4 padb20">
