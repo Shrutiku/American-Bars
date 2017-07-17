@@ -327,7 +327,7 @@ function newFn() {
         <div class="col-lg-4 col-sm-4">
          	<div class="bott_box_bg">
 	        	<!-- <h1 class="box_title">Latest News And Events</h1> -->
-	         		<ul class="bottom_box3">
+	         		<ul class="bottom_box3" style="height:251px">
 	         			<a class="box_yellow"><li  class="active">Shortcuts</li></a>
 	         			 <a  class="box_yellow" href="javascript://" onclick="searchmodal()"><li>Find a Bar!  &nbsp;Search Here!</li></a>
 	         			<a href="<?php echo site_url('bar/suggest_bar')?>" class="box_yellow"><li>Suggest a Bar</li></a>
@@ -588,7 +588,7 @@ function myFunction() {
 });
 		      $('#infinite-list').slimscroll({
 		        alwaysVisible: true,
-		        height: 370,
+		        height: 200,
 		        wheelSpeed:1,
 		        color: '#f19d12',
 		        opacity: .8
@@ -597,14 +597,14 @@ function myFunction() {
 		        $('#infinite-list-cocktail').slimscroll({
 		        alwaysVisible: true,
 		        wheelSpeed:1,
-		        height: 370,
+		        height: 200,
 		        color: '#f19d12',
 		        opacity: .8
 		      });
 		      
 		      $('#infinite-list-liquor').slimscroll({
 		        alwaysVisible: true,
-		        height: 370,
+		        height: 200,
 		        wheelSpeed:1,
 		        color: '#f19d12',
 		        opacity: .8
@@ -623,14 +623,14 @@ function myFunction() {
  	color:#000000;
  }
  #infinite-list {
-    height: 370px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 #infinite-list-cocktail {
-    height: 370px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden;
