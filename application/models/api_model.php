@@ -132,14 +132,14 @@ class Api_model extends CI_Model
                                             );
                             
                         $data_device = array(
-                    'user_id' => $user_id,
-                    'device_name'=>$device_id,
-                    'unique_code' => $unique_code,
-                    'created_on'=> date('Y-m-d H:i:s')
-            );
-                            $this->db->insert('device_master',$data_device);	
+                                'user_id' => $user_id,
+                                'device_name'=>$device_id,
+                                'unique_code' => $unique_code,
+                                'created_on'=> date('Y-m-d H:i:s')
+                        );
+                        $this->db->insert('device_master',$data_device);	
 
-                            return $data;
+                        return $data;
 
 
 
