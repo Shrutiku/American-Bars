@@ -150,7 +150,7 @@ $(function(){
           			<li><a href="<?php echo site_url('beer')?>">Beer Directory</a></li>
           			<li><a href="<?php echo site_url('cocktail')?>">Cocktail Recipes</a></li>
           			<li><a href="<?php echo site_url('liquor')?>">Liquor Directory</a></li>
-          			<li><a href="<?php echo site_url('taxiowner')?>">Taxi Directory</a></li>
+          			<!--<li><a href="<?php // echo site_url('taxiowner')?>">Taxi Directory</a></li>-->
                     <li><a href="<?php echo site_url('bar/gallery')?>">Photo Gallery</a></li>
           		</ul>
           	</li>
@@ -161,28 +161,28 @@ $(function(){
           		 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education<b class="caret"></b></a>
           		  <ul class="sub-menu">
                  <li><a href="<?php echo site_url("article"); ?>" class="active">Articles</a></li>
-                  <li><a href="<?php echo site_url('bar/dictionary')?>">Dictionary</a></li>
-                  <li><a href="<?php echo site_url('home/barcriteria')?>">In a Dive Bar? Fun Quiz</a></li>
+                  <!--<li><a href="<?php // echo site_url('bar/dictionary')?>">Dictionary</a></li>-->
+                  <!--<li><a href="<?php // echo site_url('home/barcriteria')?>">In a Dive Bar? Fun Quiz</a></li>-->
                   <li><a href="<?php echo site_url('resource')?>">Resources</a></li>
                   <!-- <li><a href="<?php echo site_url('forum')?>">Groups</a></li> -->
                 </ul>
 
           	</li>
           	<!-- <li><a href="javascript:void(0);">Forum <span class="menu_slash">/</span class="menu_slash"></a></li> -->
-          		<li class="dropdown">
+<!--          		<li class="dropdown">
           		 <a href="javascript://" class="dropdown-toggle" data-toggle="dropdown">Groups<b class="caret"></b></a>
           		  <ul class="sub-menu">
           		  		<?php
-          		  		$category = get_category();
-          		  		if($category){
-     								   foreach($category as $cat){?>
-     							 <li><a href="<?php echo site_url('forum/forums/'.$cat->forum_category_id);?>"><?php echo $cat->forum_category_name;?></a></li>
-     					<?php } } ?>
+//          		  		$category = get_category();
+//          		  		if($category){
+//     								   foreach($category as $cat){?>
+     							 <li><a href="<?php // echo site_url('forum/forums/'.$cat->forum_category_id);?>"><?php // echo $cat->forum_category_name;?></a></li>
+     					<?php // } } ?>
 
 
                 </ul>
 
-          	</li>
+          	</li>-->
           	<li><a class="<?php if($method=='home' && $function=='contact_us'){?>active<?php } ?>" href="<?php echo site_url('home/contact_us')?>">Contact Us</a></li>
           </ul>
           <!-- <ul class="nav navbar-nav navbar-right">

@@ -158,8 +158,8 @@ $(function(){
           		 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Education<b class="caret"></b></a>
           		  <ul class="sub-menu">
                   <li><a href="<?php echo site_url("article"); ?>" class="active">Articles</a></li>
-                  <li><a href="<?php echo site_url('bar/dictionary')?>">Dictionary</a></li>
-                  <li><a href="<?php echo site_url('home/barcriteria')?>">In A Dive Bar?</a></li>
+                  <!--<li><a href="<?php // echo site_url('bar/dictionary')?>">Dictionary</a></li>-->
+                  <!--<li><a href="<?php // echo site_url('home/barcriteria')?>">In A Dive Bar?</a></li>-->
                   <li><a href="<?php echo site_url('resource')?>">Resources</a></li>
                 </ul>
 
