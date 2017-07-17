@@ -1717,7 +1717,7 @@ function loadGoogRev(pid) {
                                                         </div>
                                                         <div class="pad20">
                                                             <?php // echo $bar_detail['lat']; ?><?php // echo $bar_detail['lang']; ?>
-                                                            <p style="text-align:center;>
+                                                            <p style="text-align:center;">
                                                                 <img src="//maps.googleapis.com/maps/api/streetview?size=600x300&location=<?php echo $bar_detail['lat'];?>,<?php echo $bar_detail['lang'];?>&pitch=0&key=AIzaSyA3USy3JEMB1_mCg_ud0UDKYrzEa8657Uo" border="1px">
                                                                 <img src="//maps.googleapis.com/maps/api/streetview?size=600x300&location=<?php echo $bar_detail['address'];?> <?php echo $bar_detail['city'];?>, <?php echo $bar_detail['state'];?> <?php echo $bar_detail['zipcode'];?>&pitch=0&key=AIzaSyA3USy3JEMB1_mCg_ud0UDKYrzEa8657Uo" border="1px">
                                                             </p>
