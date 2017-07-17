@@ -152,7 +152,6 @@ $(function(){
           		</ul>
           	</li>
 
-          <li><a href="<?php echo site_url("trivia"); ?>" class="<?php if($method=='trivia' && ($function=='' || $function=='start')){?>active<?php } ?>">Bar Trivia Game</a></li>
 
           	<li class="dropdown">
           		 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Education<b class="caret"></b></a>
@@ -164,6 +163,9 @@ $(function(){
                 </ul>
 
           	</li>
+                
+            <li><a href="<?php echo site_url("trivia"); ?>" class="<?php if($method=='trivia' && ($function=='' || $function=='start')){?>active<?php } ?>">Bar Trivia Game</a></li>
+
 
 <!--          		<li class="dropdown">
           		 <a href="javascript://" class="dropdown-toggle" data-toggle="dropdown">Discussions<b class="caret"></b></a>

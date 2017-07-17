@@ -155,11 +155,10 @@ $(function(){
           		</ul>
           	</li>
 
-          		<li><a href="<?php echo site_url("trivia"); ?>" class="<?php if($method=='trivia' && ($function=='' || $function=='start')){?>active<?php } ?>">Bar Trivia Game</a></li>
           	<!-- <li><a href="javascript:void(0);">Media <span class="menu_slash">/</span class="menu_slash"></a></li> -->
-          		<li class="dropdown">
-          		 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education<b class="caret"></b></a>
-          		  <ul class="sub-menu">
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education<b class="caret"></b></a>
+                  <ul class="sub-menu">
                  <li><a href="<?php echo site_url("article"); ?>" class="active">Articles</a></li>
                   <!--<li><a href="<?php // echo site_url('bar/dictionary')?>">Dictionary</a></li>-->
                   <!--<li><a href="<?php // echo site_url('home/barcriteria')?>">In a Dive Bar? Fun Quiz</a></li>-->
@@ -168,6 +167,9 @@ $(function(){
                 </ul>
 
           	</li>
+                
+                <li><a href="<?php echo site_url("trivia"); ?>" class="<?php if($method=='trivia' && ($function=='' || $function=='start')){?>active<?php } ?>">Bar Trivia Game</a></li>
+
           	<!-- <li><a href="javascript:void(0);">Forum <span class="menu_slash">/</span class="menu_slash"></a></li> -->
 <!--          		<li class="dropdown">
           		 <a href="javascript://" class="dropdown-toggle" data-toggle="dropdown">Groups<b class="caret"></b></a>
