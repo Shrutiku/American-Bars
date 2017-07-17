@@ -265,13 +265,13 @@ function newFn() {
 	        
         <div class="row">
         <div class="col-lg-4 col-sm-4">
-         	<div class="bott_box_bg new_review">
+         	<div class="bott_box_bg new_review" style="height:251px">
 	        	<h1 class="productbar_title">
 	        		<div class="pull-left mar_top5">Latest News</div>
      					<a href="<?php echo site_url('home/news'); ?>" class="white pull-right review" onclick="loadMap()">View All</a>
      					<div class="clearfix"></div>
 	        	</h1>
-	         		<ul class="bottom_box" id="infinite-list">
+	         		<ul class="bottom_box" id="infinite-list" style="height:200px">
 	         			<?php if($latest_news){
 	         				  foreach($latest_news as $news){?>
 	         			<li>
@@ -294,14 +294,14 @@ function newFn() {
 	         
         </div> <!-- /.col-lg-4 -->
         <div class="col-lg-4 col-sm-4">
-         	<div class="bott_box_bg new_review">
+         	<div class="bott_box_bg new_review" style="height:251px">
 	         		<h1 class="productbar_title">
 	        		<div class="pull-left mar_top5">Events & Festivals</div>
      					<a href="<?php echo site_url('event'); ?>" class="white pull-right review">View All</a>
      					<div class="clearfix"></div>
 	        	</h1>
 	         		
-	         		 <ul class="bottom_box" id="infinite-list-cocktail">
+	         		 <ul class="bottom_box" id="infinite-list-cocktail" style="height:251px">
 	         		 		<?php if($latest_event){
 	         				 foreach($latest_event as $news){?>
 	         			<li>
