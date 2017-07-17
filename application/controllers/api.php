@@ -1454,7 +1454,7 @@ class Api extends REST_Controller
 		$user_id =   $_POST['user_id'];
 		$device_id = $_POST['device_id'];
 		$unique_code = $_POST['unique_code'];
-		$this->response("here");
+		$this->response(array('user_id'=>$user_id, 'device_id'=>$device_id,'unique_code'=>$unique_code),200);
                 $logout = $this->api_model->user_logout($user_id,$device_id,$unique_code);
                 $this->response($logout);
 		if($logout){
