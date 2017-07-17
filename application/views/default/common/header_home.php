@@ -141,7 +141,7 @@ $(function(){
         <div class="navbar-collapse collapse" id="b-menu-2">
           <ul class="nav navbar-nav">
 
-          	<li><a href="<?php echo site_url("home"); ?>" class="<?php if($method=='home' && $function==''){?>active<?php } ?>">Home</a></li>
+          	<!--<li><a href="<?php // echo site_url("home"); ?>" class="<?php // if($method=='home' && $function==''){?>active<?php // } ?>">Home</a></li>-->
           	<li><a onclick="searchmodal()" href="javascript://"  class="<?php if($method=='bar' && ($function=='lists' || $function=='details')){?>active<?php } ?>">Find a Bar</a></li>
 			<!-- <li><a href="<?php echo site_url("beer"); ?>" class="<?php if($method=='beer' && ($function=='lists' || $function=='detail')){?>active<?php } ?>">beer directory </a></li> -->
           	<li class="dropdown">
