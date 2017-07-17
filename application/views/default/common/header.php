@@ -147,7 +147,7 @@ $(function(){
           			<li><a href="<?php echo site_url('beer')?>">Beer Directory</a></li>
           			<li><a href="<?php echo site_url('cocktail')?>">Cocktail Recipes</a></li>
           			<li><a href="<?php echo site_url('liquor')?>">Liquor Directory</a></li>
-          			<li><a href="<?php echo site_url('taxiowner')?>">Taxi Directory</a></li>
+          			<!--<li><a href="<?php echo site_url('taxiowner')?>">Taxi Directory</a></li>-->
                     <li><a href="<?php echo site_url('bar/gallery')?>">Photo Gallery</a></li>
           		</ul>
           	</li>
@@ -165,20 +165,20 @@ $(function(){
 
           	</li>
 
-          		<li class="dropdown">
+<!--          		<li class="dropdown">
           		 <a href="javascript://" class="dropdown-toggle" data-toggle="dropdown">Discussions<b class="caret"></b></a>
           		  <ul class="sub-menu">
           		  		<?php
-          		  		$category = get_category();
-          		  		if($category){
-     								   foreach($category as $cat){?>
-     							 <li><a href="<?php echo site_url('forum/forums/'.$cat->forum_category_id);?>"><?php echo $cat->forum_category_name;?></a></li>
-     					<?php } } ?>
+//          		  		$category = get_category();
+//          		  		if($category){
+//     								   foreach($category as $cat){?>
+     							 <li><a href="<?php // echo site_url('forum/forums/'.$cat->forum_category_id);?>"><?php // echo $cat->forum_category_name;?></a></li>
+     					<?php // } } ?>
 
 
                 </ul>
 
-          	</li>
+          	</li>-->
           	<li><a class="<?php if($method=='home' && $function=='contact_us'){?>active<?php } ?>" href="<?php echo site_url('home/contact_us')?>">contact us</a></li>
           </ul>
           <!-- <ul class="nav navbar-nav navbar-right">

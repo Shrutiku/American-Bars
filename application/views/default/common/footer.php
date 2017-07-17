@@ -47,7 +47,7 @@
 			    		 		<li><a href="<?php echo site_url('beer'); ?>">- Beer Directory</a></li>
 			    		 		<li><a href="<?php echo site_url('cocktail'); ?>">- Cocktail Recipes</a></li>
 			    		 		<li><a href="<?php echo site_url('liquor/lists')?>">- Liquor Directory</a></li>
-			    		 		<li><a href="<?php echo site_url('taxiowner/lists')?>">- Taxi Directory</a></li>
+			    		 		<!--<li><a href="<?php echo site_url('taxiowner/lists')?>">- Taxi Directory</a></li>-->
 			    		 		<li><a href="<?php echo site_url('trivia')?>">- Bar Trivia Game</a></li>
 			    		 		<li><a href="<?php echo site_url('article')?>">- Articles</a></li>
 			    		 		
@@ -61,9 +61,9 @@
 			    		 		<li><a href="<?php echo site_url('bar/dictionary')?>">- Bar Dictionary</a></li>
 			    		 		<li><a href="<?php echo site_url('bar/suggest_bar')?>">- Suggest a Bar</a></li>
 			    		 		<li><a href="<?php echo site_url('resource')?>">- Resources</a></li>
-			    		 		<li><a href="<?php echo site_url('forum')?>">- Group Discussions</a></li>
+			    		 		<!--<li><a href="<?php echo site_url('forum')?>">- Group Discussions</a></li>-->
 			    		 		<li><a href="<?php echo site_url('home/contact_us')?>">- Contact American Bars</a></li>
-			    		 		<li><a href="<?php echo site_url('home/sitemap')?>">- Sitemap</a></li>
+			    		 		<!--<li><a href="<?php echo site_url('home/sitemap')?>">- Sitemap</a></li>-->
 			    		 		
 			    		 	</ul>
 			    		 </div>
