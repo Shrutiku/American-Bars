@@ -47,7 +47,7 @@ function newFn() {
         </section>
     </div>
         	
-        <div class="barbox clearfix" style="right:28%">
+        <div class="barbox clearfix">
         	<h1 class="box_title">Find a Bar! &nbsp;&nbsp; Search by any field below ! </h1>
           
      				<span id="clickall123" for="zipcode" class="help-inline" style="display: none; text-align: center;">Please fill atleast one field .</span>
