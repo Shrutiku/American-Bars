@@ -325,9 +325,9 @@ function newFn() {
 	         </div>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4 col-sm-4">
-         	<div class="bott_box_bg">
+         	<div class="bott_box_bg" style="height:251px">
 	        	<!-- <h1 class="box_title">Latest News And Events</h1> -->
-	         		<ul class="bottom_box3" style="height:251px">
+	         		<ul class="bottom_box3">
 	         			<a class="box_yellow"><li  class="active">Shortcuts</li></a>
 	         			 <a  class="box_yellow" href="javascript://" onclick="searchmodal()"><li>Find a Bar!  &nbsp;Search Here!</li></a>
 	         			<a href="<?php echo site_url('bar/suggest_bar')?>" class="box_yellow"><li>Suggest a Bar</li></a>
