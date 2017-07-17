@@ -301,7 +301,7 @@ function newFn() {
      					<div class="clearfix"></div>
 	        	</h1>
 	         		
-	         		 <ul class="bottom_box" id="infinite-list-cocktail" style="height:251px">
+	         		 <ul class="bottom_box" id="infinite-list-cocktail" style="height:200px">
 	         		 		<?php if($latest_event){
 	         				 foreach($latest_event as $news){?>
 	         			<li>
