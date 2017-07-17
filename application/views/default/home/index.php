@@ -331,13 +331,13 @@ function newFn() {
 	         			<a class="box_yellow"><li  class="active">Shortcuts</li></a>
 	         			 <a  class="box_yellow" href="javascript://" onclick="searchmodal()"><li>Find a Bar!  &nbsp;Search Here!</li></a>
 	         			<a href="<?php echo site_url('bar/suggest_bar')?>" class="box_yellow"><li>Suggest a Bar</li></a>
-	         			<a href="<?php echo site_url('forum')?>" class="box_yellow"><li>Group Discussions</li></a>
-	         			<a href="<?php echo site_url('home/barcriteria')?>" class="box_yellow"><li>In a Dive Bar? Fun Quiz</li></a>
-	         			<a href="<?php echo site_url('home/news')?>" class="box_yellow"><li>Bar News</li></a>
+	         			<!--<a href="<?php // echo site_url('forum')?>" class="box_yellow"><li>Group Discussions</li></a>-->
+	         			<!--<a href="<?php // echo site_url('home/barcriteria')?>" class="box_yellow"><li>In a Dive Bar? Fun Quiz</li></a>-->
+	         			<!--<a href="<?php // echo site_url('home/news')?>" class="box_yellow"><li>Bar News</li></a>-->
 	         			<a href="<?php echo site_url('trivia')?>" class="box_yellow"><li>Bar Trivia Game</li></a>
 	         			<a href="<?php echo site_url('bar/gallery')?>" class="box_yellow"><li>American Bars Gallery</li></a>
 	         			<a href="<?php echo site_url('event'); ?>" class="box_yellow"><li>American Bars Events</li></a>
-	         			<a href="<?php echo site_url('shopping/products'); ?>" class="box_yellow"><li>American Bars Products</li></a>
+	         			<!--<a href="<?php // echo site_url('shopping/products'); ?>" class="box_yellow"><li>American Bars Products</li></a>-->
 	         			
          
 	         		</ul>         		
