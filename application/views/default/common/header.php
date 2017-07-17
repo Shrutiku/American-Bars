@@ -179,7 +179,7 @@ $(function(){
                 </ul>
 
           	</li>-->
-          	<li><a class="<?php if($method=='home' && $function=='contact_us'){?>active<?php } ?>" href="<?php echo site_url('home/contact_us')?>">contact us</a></li>
+          	<!--<li><a class="<?php // if($method=='home' && $function=='contact_us'){?>active<?php // } ?>" href="<?php // echo site_url('home/contact_us')?>">contact us</a></li>-->
           </ul>
           <!-- <ul class="nav navbar-nav navbar-right">
             <li><a href="#" class="yellowlink">Login</a></li>
