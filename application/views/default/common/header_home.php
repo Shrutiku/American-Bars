@@ -101,7 +101,7 @@ $(function(){
     	<div class="header clearfix">
     		 <!-- <div class="container-fluid"> -->
     		 	<div class="container">
-        			<div class="logo" style="margin-top:5px">
+        			<div class="logo" style="margin-top:5px; margin-bottom:5px;">
             			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light.png" alt="American Bars" style="height:70px"/></a>-->
             			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_b.png" alt="American Bars" style="height:70px"/></a>-->
             			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_gold.png" alt="American Bars" style="height:70px"/></a>
