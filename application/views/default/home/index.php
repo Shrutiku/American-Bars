@@ -33,9 +33,10 @@ function newFn() {
    				
    				<div id="container">
         <section>
-            <video style="width: 100%; height: 100%;" autoplay="true" class="video" loop>
-                <source src="<?php echo base_url()?>upload/1.mp4" type="video/mp4">
-            </video>
+<!--            <video style="width: 100%; height: 100%;" autoplay="true" class="video" loop>
+                <source src="<?php // echo base_url()?>upload/1.mp4" type="video/mp4">
+            </video>-->
+<img src="<?php echo base_url()?>images/mainpageimg-restaurant-690569.jpg" style="width: 100%;">
             <div class="preloader">
                 <p id="intro-scroll-button"  data-toggle="collapse" data-target="#myDiv">
                     <a class="scroll-down" >
