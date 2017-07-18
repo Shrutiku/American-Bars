@@ -2597,6 +2597,11 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
                         $this->db->delete('device_master',array('device_name'=>$device_id, 'unique_code'=>$unique_code));
 			return 1;
 	 }
+         
+         function user_logout_hotfix($device_id,$unique_code){
+                        $this->db->delete('device_master',array('device_name'=>$device_id, 'unique_code'=>$unique_code));
+			return 1;
+	 }
 	
 	function auto_suggest_bar($q){
 		$this->db->like('bar_title',$q,'after');
