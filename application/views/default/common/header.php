@@ -102,10 +102,10 @@ $(function(){
     		 <!-- <div class="container-fluid"> -->
     		 	<div class="container">
         			<div class="logo">
-            			<a href="<?php echo site_url("home"); ?>"><img height="115"  width="489" src="<?php echo $theme_url; ?>/images/americanbars.png" alt="American Bars" class="logo_img"/></a>
+            			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_dark.png" alt="American Bars" style="height:60px"/></a>
             		</div>
             		<!-- <div class="row"> -->
-                		<div  class="search_box ">
+                		<div  class="search_box" style="margin-top:-10px">
                 			<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
                 				<div class="pull-left mar_r10"><input type="text" name="bar_title_new" id="bar_title_new" value="<?php echo @base64_decode($bar_title_new); ?>" class="form-control bar_title_new" placeholder="Name, City Or Zip"></div>
                 				<input type="hidden" name="limit" id="limit" value="20" />
