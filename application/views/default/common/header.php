@@ -103,7 +103,10 @@ $(function(){
     		 	<div class="container">
         			<div class="logo">
             			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_dark.png" alt="American Bars" style="height:60px"/></a>
-            		</div>
+            			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_light_b.png" alt="American Bars" style="height:60px"/></a>-->
+            			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_light_gold.png" alt="American Bars" style="height:60px"/></a>-->
+
+                        </div>
             		<!-- <div class="row"> -->
                 		<div  class="search_box" style="margin-top:-10px">
                 			<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
