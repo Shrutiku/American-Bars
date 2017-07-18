@@ -36,7 +36,7 @@ function newFn() {
 <!--            <video style="width: 100%; height: 100%;" autoplay="true" class="video" loop>
                 <source src="<?php // echo base_url()?>upload/1.mp4" type="video/mp4">
             </video>-->
-<img src="<?php echo $theme_url;?>/images/mainpageimg-restaurant-690569.jpg" style="width: 100%;">
+<img src="<?php echo $theme_url;?>/images/-restaurant-690569.jpg" style="width: 100%;">
             <div class="preloader">
                 <p id="intro-scroll-button"  data-toggle="collapse" data-target="#myDiv">
                     <a class="scroll-down" >
