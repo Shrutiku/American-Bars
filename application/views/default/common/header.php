@@ -102,9 +102,9 @@ $(function(){
     		 <!-- <div class="container-fluid"> -->
     		 	<div class="container">
         			<div class="logo">
-            			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_dark.png" alt="American Bars" style="height:70px"/></a>
+            			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_dark.png" alt="American Bars" style="height:70px"/></a>-->
             			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_b.png" alt="American Bars" style="height:70px"/></a>-->
-            			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_gold.png" alt="American Bars" style="height:70px"/></a>-->
+            			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_gold.png" alt="American Bars" style="height:70px"/></a>
 
                         </div>
             		<!-- <div class="row"> -->
