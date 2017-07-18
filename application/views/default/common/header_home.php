@@ -102,7 +102,9 @@ $(function(){
     		 <!-- <div class="container-fluid"> -->
     		 	<div class="container">
         			<div class="logo" style="margin-top:5px">
-            			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_dark.png" alt="American Bars" style="height:60px"/></a>
+            			<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_light.png" alt="American Bars" style="height:60px"/></a>
+            			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_light_b.png" alt="American Bars" style="height:60px"/></a>-->
+            			<!--<a href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_americanbars_logo_light_gold.png" alt="American Bars" style="height:60px"/></a>-->
             		</div>
             		<!-- <div class="row"> -->
                 		<div  class="search_box" style="margin-top:-10px">
