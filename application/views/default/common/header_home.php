@@ -106,7 +106,7 @@ $(function(){
         			<div class="logo" style="margin-top:5px; margin-bottom:5px;">
             			<!--<a id="ablogo" href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light.png" alt="American Bars" style="height:70px"/></a>-->
             			<!--<a id="ablogo" href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_b.png" alt="American Bars" style="height:70px"/></a>-->
-            			<a id="ablogo" href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_gold.png" alt="American Bars" style="height:70px"/></a>
+            			<a id="ablogo" href="<?php echo site_url("home"); ?>"><img src="<?php echo $theme_url; ?>/images/new_ab_logo_light_gold.png" alt="American Bars"/></a>
             		</div>
             		<!-- <div class="row"> -->
                 		<div  class="search_box" style="margin-top:10px;">
@@ -259,7 +259,9 @@ $(function(){
 
 
 <style>
-    
+    #ablogo {
+        height:70px;
+    }
 @media screen and (max-width: 980px) {
   #playlink {
     visibility: hidden;
