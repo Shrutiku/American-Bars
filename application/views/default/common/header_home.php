@@ -51,6 +51,11 @@ $(function(){
 
 <?php $method = $this->uri->segment(1);
       $function = $this->uri->segment(2); ?>
+
+<div class="navbar navbar-default">
+    <a href="#loginmodal" data-toggle='modal' class="yellowlink pull-right">Login or Register</a>
+</div>
+
 <div class="wrapper row1" id="webnav">
   		<!-- <div  class="top-header">  -->
   			  <!-- Fixed navbar -->
