@@ -51,7 +51,7 @@ $(function(){
 
 <?php $method = $this->uri->segment(1);
       $function = $this->uri->segment(2); ?>
-<div class="wrapper row1">
+<div class="wrapper row1" id="webnav">
   		<!-- <div  class="top-header">  -->
   			  <!-- Fixed navbar -->
     <div class="navbar navbar-default" role="navigation">
@@ -156,7 +156,7 @@ $(function(){
   <div class="wrapper row3">
 
 
-    <div id="webnav" class="navbar navbar-default" role="navigation" >
+    <div class="navbar navbar-default" role="navigation" >
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-2">
