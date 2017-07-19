@@ -50,7 +50,7 @@ $(function(){
 
         <div class="navbar-collapse collapse-in" id="b-menu-1">
 
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" id="mobilelogin">
                <?php
 		  if(check_user_authentication ()== ''){ ?>
               <form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
@@ -284,10 +284,9 @@ $(function(){
     visibility: hidden;
     display: none;
   }
-  #mobilelogin {
-    visibility: visible;
-    display: inline;
-  }*/
+*/  #mobilelogin {
+    text-align: right;
+  }
 }
     
 </style>
