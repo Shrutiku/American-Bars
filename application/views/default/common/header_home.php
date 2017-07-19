@@ -156,7 +156,7 @@ $(function(){
   <div class="wrapper row3">
 
 
-    <div class="navbar navbar-default" role="navigation" id="webnav">
+    <div id="webnav" class="navbar navbar-default" role="navigation" >
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-2">
