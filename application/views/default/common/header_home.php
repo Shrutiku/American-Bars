@@ -22,7 +22,7 @@ $(function(){
     display: none;
   }
   #ablogo {
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 }
