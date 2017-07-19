@@ -25,6 +25,9 @@ $(function(){
     max-width: 100%;
     height: auto;
   }
+  #search-box {
+    width: 100%;
+  }
 }
     
 </style>
