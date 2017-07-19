@@ -42,7 +42,7 @@ function newFn() {
                     <a class="scroll-down" >
            	        <h1 class="sony"></h1>
                     <span class="scroll-message"  data-toggle="collapse" data-target="#myDiv" style="font-weight:bold; font-size:20px; color: #FFFFFF;">CLICK HERE TO EXPLORE </span>
-                    <i class="glyphicon glyphicon-menu-down"  data-toggle="collapse" data-target="#myDiv" style="font-weight:bold; font-size:20px; color: #FFFFFF;"></i></a>
+                    <i class="glyphicon glyphicon-menu-down"  data-toggle="collapse" data-target="#myDiv" style="font-weight:bold; font-size:20px; color: #FFFFFF; background: rgba(200, 54, 54, 0.5);"></i></a>
                 </p>
             </div>
         </section>
