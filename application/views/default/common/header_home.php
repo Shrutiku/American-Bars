@@ -12,7 +12,7 @@ $(function(){
 
 <style>
     
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 980px) {
   #playlink {
     visibility: hidden;
     display: none;
