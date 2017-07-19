@@ -1,4 +1,3 @@
-
 <?php $method = $this->uri->segment(1);
       $function = $this->uri->segment(2); ?>
 <script  type="text/javascript" src="<?php echo base_url().getThemeName(); ?>/assets/plugins/jquery-validation/dist/jquery.validate.js"></script>
@@ -10,6 +9,21 @@ $(function(){
 	$.placeholder.shim();
 });
 </script>
+
+<style>
+    
+@media screen and (max-width: 600px) {
+  #playlink {
+    visibility: hidden;
+    display: none;
+  }
+  #applelink {
+    visibility: hidden;
+    display: none;
+  }
+}
+    
+</style>
 
 <div class="modal fade" id="helpfindbar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<?php //echo $this->load->view(getThemeName().'/bar/bar_suggest');?>
@@ -85,8 +99,8 @@ $(function(){
 	        <li><a href="<?php echo site_url("home/logout"); ?>" class="yellowlink">Logout</a></li>
 			<?php
 			}else{ ?>
-                <li ><a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/google_play_button.png"/></a></li>
-		  <li><a href="https://itunes.apple.com/in/app/american-bars/id1090377977?mt=8" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/app-store-logo.png" /></a></li>
+                <li id="playlink"><a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/google_play_button.png"/></a></li>
+		  <li id="applelink"><a href="https://itunes.apple.com/in/app/american-bars/id1090377977?mt=8" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/app-store-logo.png" /></a></li>
             <li><a href="#loginmodal" data-toggle='modal' class="yellowlink">Login or Register</a></li>
 			<?php } ?>
 			<?php if(check_user_authentication ()== '' or check_user_authentication()== 0){ ?>
