@@ -280,14 +280,14 @@ $(function(){
     visibility: hidden;
     display: none;
   }
-  #webnav {
+/*  #webnav {
     visibility: hidden;
     display: none;
   }
   #mobilelogin {
     visibility: visible;
     display: inline;
-  }
+  }*/
 }
     
 </style>
