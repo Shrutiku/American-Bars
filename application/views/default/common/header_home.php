@@ -109,7 +109,7 @@ $(function(){
             			<a id="ablogo" href="<?php echo site_url("home"); ?>"><img id="ablogo" src="<?php echo $theme_url; ?>/images/new_ab_logo_light_gold.png" alt="American Bars"/></a>
             		</div>
             		<!-- <div class="row"> -->
-                		<div  class="search_box" style="margin-top:10px;">
+                		<div class="search_box" id="search_box">
                 			<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
                 				<div style="width:86%" class="pull-left mar_r10"><input type="text" name="bar_title_new" id="bar_title_new" value="<?php echo @base64_decode($bar_title_new); ?>" class="form-control bar_title_new" placeholder="Name, City Or Zip"></div>
                 				<input type="hidden" name="limit" id="limit" value="20" />
@@ -276,7 +276,7 @@ $(function(){
     height: auto;
   }
   #search_box {
-    width: 100%;
+    margin-top: 10px;
   }
   #side-subscribe {
     visibility: hidden;
