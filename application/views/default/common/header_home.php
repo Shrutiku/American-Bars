@@ -53,7 +53,54 @@ $(function(){
       $function = $this->uri->segment(2); ?>
 
 <div class="navbar navbar-default">
-    <a href="#loginmodal" data-toggle='modal' class="yellowlink pull-right">Login or Register</a>
+    <div class="navbar-collapse collapse-in" id="b-menu-1">
+
+          <ul class="nav navbar-nav">
+               <?php
+		  if(check_user_authentication ()== ''){ ?>
+              <form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
+                			<!-- <div class="pull-left"><input type="text" name="bar_title_new" id="bar_title_new" class="form-control bar_title_new" placeholder="By Name, City Or Zip"></div> -->
+                    			<!-- <div class="pull-left"><button class="btn" style="background-color: #4CAF50;" type="submit">Claim Your Bar Now!</button></div> -->
+              </form>
+            <?php } ?>
+            <?php if($this->session->userdata('user_type')=='bar_owner' && check_user_authentication()){?>
+            <li><a href="<?php echo site_url('home/dashboard')?>" class="yellowlink">Profile</a></li>
+            <?php }  elseif(check_user_authentication()) {?>
+            <li><a href="<?php echo site_url('home/user_dashboard')?>" class="yellowlink">Profile</a></li>
+            <?php } ?>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	  <?php
+		  if(check_user_authentication ()!= ''){ $uinfo = get_user_info(get_authenticateUserID()); ?>
+		  <li class="user-name"><?php echo "Welcome,&nbsp&nbsp" . $uinfo->first_name; ?> </li>
+
+		  	<?php } ?>
+           <?php
+		  if(check_user_authentication ()!= ''){ ?>
+          	<li><a href="<?php echo site_url('shopping/cart');?>" class="adjcarticon"><img src="<?php echo base_url().'default'?>/images/cart.png"/><span id="cartcount">
+			           				<?php
+			           					$cartcount =  count($this->cart->contents());
+										if($cartcount >0){ echo '<span class="itemcart">'.$cartcount.'</span>';}
+			           				?>
+			           				</span></a> </li>
+
+			           				<?php } ?>
+            <?php
+		  if(check_user_authentication ()!= ''){ ?>
+
+	        <li><a href="<?php echo site_url("home/logout"); ?>" class="yellowlink">Logout</a></li>
+			<?php
+			}else{ ?>
+                <li id="playlink"><a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/google_play_button.png"/></a></li>
+		  <li id="applelink"><a href="https://itunes.apple.com/in/app/american-bars/id1090377977?mt=8" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/app-store-logo.png" /></a></li>
+            <li><a href="#loginmodal" data-toggle='modal' class="yellowlink">Login or Register</a></li>
+			<?php } ?>
+			<?php if(check_user_authentication ()== '' or check_user_authentication()== 0){ ?>
+            <!-- <li class="active"><a href="<?php echo site_url("home/signup"); ?>" class="yellow_white">Register</a></li> -->
+			<?php } ?>
+          </ul>
+        </div>
 </div>
 
 <div class="wrapper row1" id="webnav">
