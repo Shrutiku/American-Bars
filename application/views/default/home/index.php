@@ -115,7 +115,7 @@ function newFn() {
      	<div class="container">
       <div class="text-center clearfix">
       
-       <a class="" href="javascript://" onclick="searchmodal()"><div class="col-md-3 col-sm-3 col-xs-6 ">
+       <a class="" href="javascript://" onclick="searchmodal()"><div class="col-md-3 col-sm-3 col-xs-6 padb20 ">
         	<div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/bar-icon.png"/>
@@ -127,7 +127,7 @@ function newFn() {
         
         
         <a href="<?php echo site_url('beer'); ?>">
-        <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="col-md-3 col-sm-3 col-xs-6 col-xs-6 padb20">
          <div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/beer_icon.png"/>
@@ -139,7 +139,7 @@ function newFn() {
         </a>
         
          <a href="<?php echo site_url('cocktail'); ?>">
-        <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="col-md-3 col-sm-3 col-xs-6 padb20">
         	<div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/cocktail-icon.png"/>
@@ -150,7 +150,7 @@ function newFn() {
         </a>
         
          <a href="<?php echo site_url('liquor'); ?>">
-        <div class="col-md-3 col-sm-3 col-xs-6 ">
+        <div class="col-md-3 col-sm-3 col-xs-6 padb20 ">
           <div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/liquor.png"/>
@@ -174,7 +174,7 @@ function newFn() {
         <!--</a>-->
         
          <a href="<?php echo site_url('bar/gallery'); ?>">
-        <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="col-md-3 col-sm-3 col-xs-6 padb20">
           <div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/gallery_icon.png"/>
@@ -196,7 +196,7 @@ function newFn() {
         </a>-->
         
          <a href="<?php echo site_url('home/news'); ?>">
-        <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="col-md-3 col-sm-3 col-xs-6 padb20">
           <div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/news-development.png"/>
@@ -219,7 +219,7 @@ function newFn() {
          </a>-->
          
          <a href="<?php echo site_url('event'); ?>">
-        <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="col-md-3 col-sm-3 col-xs-6 padb20">
           <div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/events-development.png"/>
@@ -243,7 +243,7 @@ function newFn() {
         </a>-->
         
          <a href="<?php echo site_url('trivia'); ?>">
-        <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="col-md-3 col-sm-3 col-xs-6 padb20">
           <div class="directory_box">
         		<div class="simple_box">
 		          <img src="<?php echo $theme_url; ?>/images/bar-statistcs.png"/>
