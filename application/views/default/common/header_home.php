@@ -32,6 +32,10 @@ $(function(){
     visibility: hidden;
     display: none;
   }
+  #webnav {
+    visibility: hidden;
+    display: none;
+  }
 }
     
 </style>
@@ -152,7 +156,7 @@ $(function(){
   <div class="wrapper row3">
 
 
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-default" role="navigation" id="webnav">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-2">
