@@ -41,8 +41,8 @@ function newFn() {
                 <p id="intro-scroll-button"  data-toggle="collapse" data-target="#myDiv" id="scrollbtn">
                     <a class="scroll-down" >
            	        <h1 class="sony"></h1>
-                    <span class="scroll-message"  data-toggle="collapse" data-target="#myDiv">CLICK HERE TO EXPLORE </span>
-                    <i class="glyphicon glyphicon-menu-down"  data-toggle="collapse" data-target="#myDiv"></i></a>
+                    <span id="scrollbtn" class="scroll-message"  data-toggle="collapse" data-target="#myDiv">CLICK HERE TO EXPLORE </span>
+                    <i id="scrollbtn" class="glyphicon glyphicon-menu-down"  data-toggle="collapse" data-target="#myDiv"></i></a>
                 </p>
             </div>
         </section>
