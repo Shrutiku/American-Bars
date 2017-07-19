@@ -25,7 +25,7 @@ $(function(){
     max-width: 100%;
     height: auto;
   }
-  #search-box {
+  #search_box {
     width: 100%;
   }
   #side-subscribe {
