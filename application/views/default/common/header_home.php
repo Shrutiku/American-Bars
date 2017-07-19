@@ -28,6 +28,10 @@ $(function(){
   #search-box {
     width: 100%;
   }
+  #side-subscribe {
+    visibility: hidden;
+    display: none;
+  }
 }
     
 </style>
