@@ -38,11 +38,11 @@ function newFn() {
             </video>-->
 <img src="<?php echo $theme_url;?>/images/mainpageimg-restaurant-690569.jpg" style="width: 100%;">
             <div class="preloader">
-                <p id="intro-scroll-button"  data-toggle="collapse" data-target="#myDiv">
+                <p id="intro-scroll-button"  data-toggle="collapse" data-target="#myDiv" id="scrollbtn">
                     <a class="scroll-down" >
            	        <h1 class="sony"></h1>
-                    <span class="scroll-message"  data-toggle="collapse" data-target="#myDiv" style="font-weight:bold; font-size:20px; color: #FFFFFF; background: rgba(200, 200, 200, 0.5);">CLICK HERE TO EXPLORE </span>
-                    <i class="glyphicon glyphicon-menu-down"  data-toggle="collapse" data-target="#myDiv" style="font-weight:bold; font-size:20px; color: #FFFFFF;"></i></a>
+                    <span class="scroll-message"  data-toggle="collapse" data-target="#myDiv">CLICK HERE TO EXPLORE </span>
+                    <i class="glyphicon glyphicon-menu-down"  data-toggle="collapse" data-target="#myDiv"></i></a>
                 </p>
             </div>
         </section>
@@ -636,5 +636,15 @@ function myFunction() {
     margin-right: auto;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+#scrollbtn {
+    font-weight:bold; 
+    font-size:20px; 
+    color: #FFFFFF;
+}
+@media screen and (max-width: 980px) {
+    #scrollbtn {    
+        background: rgba(200, 200, 200, 0.5);
+    }
 }
 </style>	
