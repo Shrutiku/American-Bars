@@ -52,8 +52,13 @@ $(function(){
 <?php $method = $this->uri->segment(1);
       $function = $this->uri->segment(2); ?>
 
-<div class="navbar navbar-default">
-    <div class="navbar-collapse collapse-in" id="b-menu-1">
+
+
+<div class="wrapper row1">
+    
+    
+    <div class="navbar navbar-default">
+        <div class="navbar-collapse collapse-in" id="b-menu-1">
 
           <ul class="nav navbar-nav">
                <?php
@@ -101,12 +106,13 @@ $(function(){
 			<?php } ?>
           </ul>
         </div>
-</div>
-
-<div class="wrapper row1" id="webnav">
+    </div>
+    
+    
+    
   		<!-- <div  class="top-header">  -->
   			  <!-- Fixed navbar -->
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-default" role="navigation" id="webnav">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-1">
