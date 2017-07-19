@@ -138,7 +138,7 @@ $(function(){
             		<!-- <div class="row"> -->
                 		<div  class="search_box" style="margin-top:10px;">
                 			<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
-                				<div style="width:85%" class="pull-left mar_r10"><input type="text" name="bar_title_new" id="bar_title_new" value="<?php echo @base64_decode($bar_title_new); ?>" class="form-control bar_title_new" placeholder="Name, City Or Zip"></div>
+                				<div style="width:87%" class="pull-left mar_r10"><input type="text" name="bar_title_new" id="bar_title_new" value="<?php echo @base64_decode($bar_title_new); ?>" class="form-control bar_title_new" placeholder="Name, City Or Zip"></div>
                 				<input type="hidden" name="limit" id="limit" value="20" />
                     			<div class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div>
                     			<div class="clearfix"></div>
