@@ -36,6 +36,10 @@ $(function(){
     visibility: hidden;
     display: none;
   }
+  #mobilelogin {
+    visibility: visible;
+    display: inline;
+  }
 }
     
 </style>
@@ -57,7 +61,7 @@ $(function(){
 <div class="wrapper row1">
     
     
-    <div class="navbar navbar-default">
+    <div class="navbar navbar-default" id="mobilelogin" style="visibility:hidden; display:none;">
         <div class="navbar-collapse collapse-in" id="b-menu-1">
 
           <ul class="nav navbar-nav">
