@@ -27,7 +27,7 @@ $(function(){
 <div class="wrapper row1"> 
   		<!-- <div  class="top-header">  -->
   			  <!-- Fixed navbar -->
-    <div class="navbar navbar-default" role="navigation" id="webnav">
+    <div class="navbar navbar-default" role="navigation">
       <div class="container">
 <!--        <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-1">
@@ -48,9 +48,9 @@ $(function(){
           <a class="navbar-brand" href="http://www.youtube.com/channel/UCWMZID-7tH4Ft1VjG6jWACg" target="_blank"><img src="https://americanbars.com/default/images/youtube.png" alt="Youtube Page" /></a> -->
         <!--</div>-->
 
-        <div class="navbar-collapse collapse-in" id="b-menu-1">
+        <div class="navbar-collapse collapse-in pull-right" id="b-menu-1">
 
-          <ul class="nav navbar-nav" id="mobilelogin">
+          <ul class="nav navbar-nav">
                <?php
 		  if(check_user_authentication ()== ''){ ?>
               <form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
