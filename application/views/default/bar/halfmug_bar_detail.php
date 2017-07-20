@@ -500,7 +500,7 @@ function piShare()
 						    </div>
 						    <div class="clearfix"></div>
                               
-                                                    <div class="mar_top20 like-block wid50 mar_r15 text-right" style="width:45%;height:250px;">
+                                                    <div class="mar_top20 like-block wid50 mar_r15 text-right" id="barlikes">
 						    	
 						    	
 						    	   <?php $cnt_like = like_checker_bar($bar_detail['bar_id'],$this->session->userdata('user_id')); 
@@ -540,7 +540,7 @@ function piShare()
 						    </div>
                                                     <?php if($bar_detail['bar_category']){?>	
 						        	<!--<div class="socialicon-right">-->
-                                                                <div class="mar_top20 like-block wid50 mar_r15" style="width:35%; height:250px">
+                                                                <div class="mar_top20 like-block wid50 mar_r15" id="barcategory">
                                                                     <h4 class="bar_add mar_bot10">Bar Type :</h4>
                                                                            <?php
                                                                                     $getin1 = explode(',',strip_tags($bar_detail['bar_category']));
@@ -560,7 +560,7 @@ function piShare()
                                                                 <?php if($bar_detail['cash_p']==1 || $bar_detail['visa_p']==1 || $bar_detail['bitcoin_p']==1 ||
 								         $bar_detail['master_p']==1 || $bar_detail['paypal_p']==1 || $bar_detail['apple_p']==1 ||
 										 $bar_detail['american_p']==1){ ?>
-                                                                <div class="mar_top20 wid50 like-block pull-right" style="width: 15%; text-align: center; height: 250px;">
+                                                                <div class="mar_top20 wid50 like-block pull-right" id="paymentaccept">
 		     					<!--<div class="bar_add mar_bot10">Payment Type Accepted :</div>-->
 		     					<ul class="cashicon-list">
 		     						<?php if($bar_detail['cash_p']==1){?>
@@ -1729,7 +1729,7 @@ function loadGoogRev(pid) {
                             </div>
      			</div>
 <style>
-#barhours {
+#shareicons {
     width: 47%;
     height:250px
 }
@@ -1748,7 +1748,7 @@ function loadGoogRev(pid) {
     }
 
 @media screen and (max-width: 980px) {
-    #barhours {
+    #shareicons {
         width: 100%;
         height:auto;
     }
