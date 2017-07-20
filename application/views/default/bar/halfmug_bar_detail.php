@@ -590,10 +590,10 @@ function piShare()
 				    		<div class="clearfix"></div>
      			</div>
      			<div class="right_gallery_block">
-     				<a title="Get Directions" href="javascript://" class="btn-lg btn-primary" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
-     				<a title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn-lg btn-primary text-center mar_top5 pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-eye-open"></i></a>
+     				<a id="bttn" title="Get Directions" href="javascript://" class="btn btn-lg btn-primary btn-block" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
+     				<a id="bttn" title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-eye-open"></i></a>
                                 <!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>-->
-		     		<ul class="social_icon pull-right">
+		     		<ul class="social_icon pull-right" id="shareicons">
                                     <li>Share : </li>
                                         <li><a href="javascript://" onclick="fbShare()" ><img src="<?php echo base_url().'default'?>/images/result_fb.png"></a></li>
                                         <li><a onclick="twShare()" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_twitt.png"></a></li>
@@ -1728,5 +1728,46 @@ function loadGoogRev(pid) {
                                 </div>
                             </div>
      			</div>
+<style>
+#barhours {
+    width: 47%;
+    height:250px
+}
+#barcategory {
+    width:34%; 
+    height: 250px
+}
+#paymentaccept {
+    width:15%; 
+    height: 250px
+}
+#bttn {
+     margin-right:5px; 
+     margin-bottom: 10px;
+     margin-top:5px;
+    }
 
-
+@media screen and (max-width: 980px) {
+    #barhours {
+        width: 100%;
+        height:auto;
+    }
+    #barcategory {
+        width: 50%;
+    }
+    #paymentaccept {
+        width: 50%;
+    }
+    #shareicons {
+        visibility: hidden;
+        display: none;
+    }
+    #bttn {
+     margin-right:0px; 
+     margin-bottom: 10px   
+    }
+    #bttndiv {
+        text-justify: auto;
+    }
+}
+</style>
