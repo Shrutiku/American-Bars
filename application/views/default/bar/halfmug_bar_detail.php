@@ -1747,7 +1747,7 @@ function loadGoogRev(pid) {
      margin-top:5px;
     }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 800px) {
     #barlikers {
         width: 100%;
         height:auto;

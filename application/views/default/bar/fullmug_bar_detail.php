@@ -2281,7 +2281,7 @@ function getBarHappyHours()
      margin-top:5px;
     }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 800px) {
     #barhours {
         width: 100%;
         height:auto;
