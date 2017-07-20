@@ -10,6 +10,41 @@ $(function(){
 });
 </script>
 
+<style>
+    #ablogo {
+        height:70px;
+    }
+@media screen and (max-width: 980px) {
+  #playlink {
+    visibility: hidden;
+    display: none;
+  }
+  #applelink {
+    visibility: hidden;
+    display: none;
+  }
+  #ablogo {
+    max-width: 100%;
+    height: auto;
+  }
+  #search_box {
+    margin-top: 10px;
+  }
+  #side-subscribe {
+    visibility: hidden;
+    display: none;
+  }
+/*  #webnav {
+    visibility: hidden;
+    display: none;
+  }
+*/  #mobilelogin {
+    text-align: right;
+  }
+}
+    
+</style>
+
 <div class="modal fade" id="helpfindbar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<?php //echo $this->load->view(getThemeName().'/bar/bar_suggest');?>
 </div>
@@ -111,9 +146,9 @@ $(function(){
             		<!-- <div class="row"> -->
                 		<div class="search_box" id="search_box">
                 			<form class=""  role="form" action="<?php echo site_url("bar/lists") ?>" method="post">
-                				<div style="width:86%" class="pull-left mar_r10"><input type="text" name="bar_title_new" id="bar_title_new" value="<?php echo @base64_decode($bar_title_new); ?>" class="form-control bar_title_new" placeholder="Name, City Or Zip"></div>
+                				<div style="width:83%; margin-right:2%;" class="pull-left"><input type="text" name="bar_title_new" id="bar_title_new" value="<?php echo @base64_decode($bar_title_new); ?>" class="form-control bar_title_new" placeholder="Name, City Or Zip"></div>
                 				<input type="hidden" name="limit" id="limit" value="20" />
-                    			<div class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div>
+                    			<div style="width:15%;" class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div>
                     			<div class="clearfix"></div>
                     		</form>
                     		<!-- <div class="clearfix"></div> -->
@@ -256,39 +291,3 @@ $(function(){
         });
     });
 </script>
-
-
-<style>
-    #ablogo {
-        height:70px;
-    }
-@media screen and (max-width: 980px) {
-  #playlink {
-    visibility: hidden;
-    display: none;
-  }
-  #applelink {
-    visibility: hidden;
-    display: none;
-  }
-  #ablogo {
-    max-width: 100%;
-    height: auto;
-  }
-  #search_box {
-    margin-top: 10px;
-  }
-  #side-subscribe {
-    visibility: hidden;
-    display: none;
-  }
-/*  #webnav {
-    visibility: hidden;
-    display: none;
-  }
-*/  #mobilelogin {
-    text-align: right;
-  }
-}
-    
-</style>

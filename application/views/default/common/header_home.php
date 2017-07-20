@@ -10,6 +10,41 @@ $(function(){
 });
 </script>
 
+<style>
+    #ablogo {
+        height:70px;
+    }
+@media screen and (max-width: 980px) {
+  #playlink {
+    visibility: hidden;
+    display: none;
+  }
+  #applelink {
+    visibility: hidden;
+    display: none;
+  }
+  #ablogo {
+    max-width: 100%;
+    height: auto;
+  }
+  #search_box {
+    margin-top: 10px;
+  }
+  #side-subscribe {
+    visibility: hidden;
+    display: none;
+  }
+/*  #webnav {
+    visibility: hidden;
+    display: none;
+  }
+*/  #mobilelogin {
+    text-align: right;
+  }
+}
+    
+</style>
+
 <div class="modal fade" id="helpfindbar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<?php //echo $this->load->view(getThemeName().'/bar/bar_suggest');?>
 </div>
@@ -256,39 +291,3 @@ $(function(){
         });
     });
 </script>
-
-
-<style>
-    #ablogo {
-        height:70px;
-    }
-@media screen and (max-width: 980px) {
-  #playlink {
-    visibility: hidden;
-    display: none;
-  }
-  #applelink {
-    visibility: hidden;
-    display: none;
-  }
-  #ablogo {
-    max-width: 100%;
-    height: auto;
-  }
-  #search_box {
-    margin-top: 10px;
-  }
-  #side-subscribe {
-    visibility: hidden;
-    display: none;
-  }
-/*  #webnav {
-    visibility: hidden;
-    display: none;
-  }
-*/  #mobilelogin {
-    text-align: right;
-  }
-}
-    
-</style>
