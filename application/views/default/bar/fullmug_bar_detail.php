@@ -518,10 +518,10 @@
                                     <a title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5 pull-left" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
                                     <a title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn-lg btn-primary text-center mar_top5 pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-eye-open"></i></a>
                                         <?php if($bar_gallery){ ?>
-					   <div class="pull-left view-gallery">
+<!--					   <div class="pull-left view-gallery">-->
 						  <a title="View More Galleries" href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block" style="margin-right:5px;"><i class="glyphicon glyphicon-picture"></i></a>
 						  <!-- <div class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div> -->
-					   </div>
+					   <!--</div>-->
 				   <?php } ?>
      				<!--<a href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadTaxi()">Call a Taxi</a>-->
 		    		<!-- <a href="javascript://" class="btn-lg btn-primary text-center mar_top5 marl_10" onclick="loadTaxi()">Yelp Reviews</a> -->
