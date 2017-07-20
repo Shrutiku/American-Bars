@@ -1770,6 +1770,8 @@ function loadGoogRev(pid) {
     #bttndiv {
         text-justify: auto;
     }
+}
+@media screen and (max-width: 600px) {
     #container {
         text-align: center;
     }
