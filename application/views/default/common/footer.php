@@ -85,7 +85,7 @@
 		    		 	</ul>
 		    		 	<div class="clearfix"></div>
 		    		 	<div class="padtb10">
-		    		 		<a href="<?php echo site_url('home');?>"><img src="<?php echo $theme_url  ?>/images/footer-americanbars.png"/></a>
+		    		 		<a style="width:100%;" href="<?php echo site_url('home');?>"><img src="<?php echo $theme_url  ?>/images/new_ab_logo_light_gold.png"/></a>
 		    		 	</div>
 		    		 	<div>
 		    		 		<label class="copy br_top padt8">Copyright © 2017 American Bars, All Rights Reserved.</label>
