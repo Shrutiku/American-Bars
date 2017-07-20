@@ -133,7 +133,7 @@ $theme_url = $urls= base_url().getThemeName();
 				</div>
 				</div>
 				<div class="pull-right" style="width: 27%;">
-					<a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary extra_cls" style="width: 100%; height:auto; white-space: normal;">Suggest New Cocktail</a>
+					<a href="#suggestmodal" onclick="blank()"  data-toggle="modal" class="btn btn-lg btn-primary extra_cls" style="width: 100%; height:auto; white-space: normal;">Suggest New Drink</a>
 				</div>	  <div class="clearfix"></div>
 				
 				<?php 
