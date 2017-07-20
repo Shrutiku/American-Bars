@@ -514,12 +514,12 @@
      			<div class="right_gallery_block newadded">
 				<div id="bttndiv">
                                     <!--<a title="OLD Happy Hours & Specials" href="#hourmodal" onclick="callhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>-->
-                                    <a id="bttn" title="Happy Hours & Specials" href="#hhmodal" onclick="callhhour()" data-toggle='modal'  class="btn-lg btn-primary pull-left" style="margin-right:5px; margin-bottom: 10px"><i class="glyphicon glyphicon-glass"></i></a>
-                                    <a id="bttn" title="Get Directions" href="javascript://" class="btn-lg btn-primary text-center mar_top5 pull-left" onclick="loadMap()" style="margin-right:5px;"><i class="glyphicon glyphicon-map-marker"></i></a>
-                                    <a id="bttn" title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn-lg btn-primary text-center mar_top5 pull-left" style="margin-right:5px;"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                    <a id="bttn" title="Happy Hours & Specials" href="#hhmodal" onclick="callhhour()" data-toggle='modal'  class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-glass"></i></a>
+                                    <a id="bttn" title="Get Directions" href="javascript://" class="btn btn-lg btn-primary btn-block" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
+                                    <a id="bttn" title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-eye-open"></i></a>
                                         <?php if($bar_gallery){ ?>
 <!--					   <div class="pull-left view-gallery">-->
-						  <a id="bttn" title="View More Galleries" href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block" style="margin-right:5px;"><i class="glyphicon glyphicon-picture"></i></a>
+						  <a id="bttn" title="View More Galleries" href="javascript://"  onclick="see_gal();" class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-picture"></i></a>
 						  <!-- <div class="pull-left"><button class="btn btn-lg btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-search"></span></button></div> -->
 					   <!--</div>-->
 				   <?php } ?>
@@ -2275,6 +2275,11 @@ function getBarHappyHours()
     width:15%; 
     height: 250px
 }
+#bttn {
+     margin-right:5px; 
+     margin-bottom: 10px;
+     margin-top:5px;
+    }
 
 @media screen and (max-width: 980px) {
     #barhours {
@@ -2292,7 +2297,8 @@ function getBarHappyHours()
         display: none;
     }
     #bttn {
-        
+     margin-right:0px; 
+     margin-bottom: 10px   
     }
     #bttndiv {
         text-justify: auto;
