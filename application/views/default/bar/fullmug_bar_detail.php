@@ -43,7 +43,7 @@
        </div>
    </div>
        <div class="wrapper row5">
-     	<div class="container">
+     	<div class="container" id="container">
      		<div class="result_search">
      			<div class="pull-left">
                             <div class="result_search_text">
@@ -2302,6 +2302,9 @@ function getBarHappyHours()
     }
     #bttndiv {
         text-justify: auto;
+    }
+    #container {
+        text-align: center;
     }
 }
 </style>

@@ -244,7 +244,7 @@ function piShare()
 <!-- ########################################################################################### -->
     
     <div class="wrapper row5">
-      <div class="container">
+      <div class="container" id="container">
       	<div class="full_mug">
      		<div class="result_search">
      			<div class="pull-left">
@@ -1769,6 +1769,9 @@ function loadGoogRev(pid) {
     }
     #bttndiv {
         text-justify: auto;
+    }
+    #container {
+        text-align: center;
     }
 }
 </style>
