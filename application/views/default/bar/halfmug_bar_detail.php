@@ -590,8 +590,8 @@ function piShare()
 				    		<div class="clearfix"></div>
      			</div>
      			<div class="right_gallery_block">
-     				<a id="bttn" title="Get Directions" href="javascript://" class="btn btn-lg btn-primary btn-block" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
-     				<a id="bttn" title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn btn-lg btn-primary btn-block"><i class="glyphicon glyphicon-eye-open"></i></a>
+     				<a id="bttn" title="Get Directions" href="javascript://" class="btn btn-lg btn-primary" onclick="loadMap()"><i class="glyphicon glyphicon-map-marker"></i></a>
+     				<a id="bttn" title="Street View" href="#streetviewmodal" data-toggle='modal' class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-eye-open"></i></a>
                                 <!--<a href="javascript://" class="btn-lg btn-primary" onclick="loadTaxi()">Find a Taxi</a><div class="clearfix"></div>-->
 		     		<ul class="social_icon pull-right" id="shareicons">
                                     <li>Share : </li>
@@ -1763,6 +1763,7 @@ function loadGoogRev(pid) {
         display: none;
     }
     #bttn {
+     width:48%;
      margin-right:0px; 
      margin-bottom: 10px   
     }
