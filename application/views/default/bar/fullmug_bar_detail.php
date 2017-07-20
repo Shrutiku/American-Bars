@@ -525,7 +525,7 @@
 				   <?php } ?>
      				<!--<a href="javascript://" class="btn-lg btn-primary text-center mar_top5" onclick="loadTaxi()">Call a Taxi</a>-->
 		    		<!-- <a href="javascript://" class="btn-lg btn-primary text-center mar_top5 marl_10" onclick="loadTaxi()">Yelp Reviews</a> -->
-					<ul class="social_icon pull-right">
+					<ul class="social_icon pull-right" id="shareicons">
 						<li>Share : </li>
 						<li><a href="javascript://" onclick="fbShare()" ><img src="<?php echo base_url().'default'?>/images/result_fb.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_fb-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_fb.png'" /></a></li>
 						<li><a onclick="twShare()" href="javascript://"><img src="<?php echo base_url().'default'?>/images/result_twitt.png" onmouseover="this.src='<?php echo base_url();?>default/images/result_twitt-hover.png'" onmouseout="this.src='<?php echo base_url();?>default/images/result_twitt.png'" /></a></li>
@@ -2286,6 +2286,10 @@ function getBarHappyHours()
     }
     #paymentaccept {
         width: 50%;
+    }
+    #shareicons {
+        visibility: hidden;
+        display: none;
     }
 }
 </style>
