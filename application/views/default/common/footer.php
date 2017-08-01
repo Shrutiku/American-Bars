@@ -13,7 +13,7 @@
 <div class="wrapper row7">
     <div class="container">
         <footer class="footer clearfix">
-            <div class="col-md-4" style="margin-bottom:10px;">
+            <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Legal Notices & Contact Information</h1>
                 <ul class="joinus customizemenu">
                     <li><a href="<?php echo site_url('home/page/terms-of-use')?>">- Terms of Use</a></li>
@@ -37,7 +37,7 @@
                 </ul>
              </div>
 
-             <div class="col-md-4" style="margin-bottom:10px;">
+             <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom:20px;">
                 <h1 class="br_bottom">Quick Links</h1>
                 <div class="row">
                     <div class="col-sm-6">
@@ -67,7 +67,7 @@
                 </div>
                 <hr class="joinus">
             </div>
-            <div class="col-md-4" style="margin-bottom:10px;">
+            <div class="col-md-4 col-sm-12" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Social Media Channels</h1>
                 <ul class="social_icon">
                     <li><a href="https://www.facebook.com/AmericanBars" target="_blank"><img src="<?php echo $theme_url  ?>/images/fb_icon.png"></a></li>
@@ -86,8 +86,8 @@
                     <label class="copy br_top padt8">Copyright © 2017 American Bars, All Rights Reserved.</label>
                 </div>
                 <div class="margin-top-10"> 
-                    <a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/google_play_button.png" /></a>
-                    <a href="https://itunes.apple.com/in/app/american-bars/id1090377977?mt=8" class="padding-top-bpttom"><img src="<?php echo $theme_url; ?>/images/app-store-logo.png" /></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.spaculus.americanbars&hl=en" class="padding-top-bpttom"><img style="width:49%" src="<?php echo $theme_url; ?>/images/google_play_button.png" /></a>
+                    <a href="https://itunes.apple.com/in/app/american-bars/id1090377977?mt=8" class="padding-top-bpttom"><img style="width:49%" src="<?php echo $theme_url; ?>/images/app-store-logo.png" /></a>
                 </div>
             </div>
         </footer>
