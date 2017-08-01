@@ -32,7 +32,7 @@
                     </li> -->
                     <hr class="joinus">
                     <li style="width: 200px;" class="no-bg">
-                        <div class="fb-like" data-href="https://www.facebook.com/AmericanDiveBars" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+                        <div id="fblikebtn" class="fb-like" data-href="https://www.facebook.com/AmericanDiveBars" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
                     </li>
                 </ul>
              </div>
@@ -91,6 +91,9 @@
 </div>
 <style>
     @media screen and (max-width: 980px) {
-        
+        #fblikebtn {
+            visibility: hidden;
+            display: none;
+        }
     }
 </style>
