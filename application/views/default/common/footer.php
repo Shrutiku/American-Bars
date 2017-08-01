@@ -65,6 +65,7 @@
                         </ul>
                     </div>
                 </div>
+                <hr class="joinus">
             </div>
             <div class="col-md-4" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Social Media Channels</h1>
