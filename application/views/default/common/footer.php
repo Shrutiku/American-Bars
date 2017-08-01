@@ -37,7 +37,7 @@
                 </ul>
              </div>
 
-             <div class="col-md-5" style="margin-bottom:10px;">
+             <div class="col-md-4" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Quick Links</h1>
                 <div class="row">
                     <div class="col-sm-6">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3" style="margin-bottom:10px;">
+            <div class="col-md-4" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Social Media Channels</h1>
                 <ul class="social_icon">
                     <li><a href="https://www.facebook.com/AmericanBars" target="_blank"><img src="<?php echo $theme_url  ?>/images/fb_icon.png"></a></li>
