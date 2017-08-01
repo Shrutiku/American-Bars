@@ -48,11 +48,12 @@
                         <li><a href="<?php echo site_url('liquor/lists')?>">- Liquor Directory</a></li>
                         <!--<li><a href="<?php echo site_url('taxiowner/lists')?>">- Taxi Directory</a></li>-->
                         <li><a href="<?php echo site_url('trivia')?>">- Bar Trivia Game</a></li>
-                        <li><a href="<?php echo site_url('article')?>">- Articles</a></li>
+<!--                        <li><a href="<?php echo site_url('article')?>">- Articles</a></li>-->
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="customizemenu">
+                        <li><a href="<?php echo site_url('article')?>">- Articles</a></li>
                         <li><a href="<?php echo site_url('bar/gallery')?>">- Photo Gallery</a></li>
                         <li><a href="<?php echo site_url('bar/dictionary')?>">- Bar Dictionary</a></li>
                         <li><a href="<?php echo site_url('bar/suggest_bar')?>">- Suggest a Bar</a></li>
@@ -90,7 +91,7 @@
     </div>
 </div>
 <style>
-    @media screen and (max-width: 980px) {
+    @media screen and (max-width: 1200px) {
         #fblikebtn {
             visibility: hidden;
             display: none;
