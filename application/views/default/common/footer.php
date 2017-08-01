@@ -13,7 +13,7 @@
 <div class="wrapper row7">
     <div class="container">
         <footer class="footer clearfix">
-            <div class="col-lg-4" style="margin-bottom:10px;">
+            <div class="col-md-4" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Legal Notices & Contact Information</h1>
                 <ul class="joinus customizemenu">
                     <li><a href="<?php echo site_url('home/page/terms-of-use')?>">- Terms of Use</a></li>
@@ -37,34 +37,36 @@
                 </ul>
              </div>
 
-             <div class="col-lg-5" style="margin-bottom:10px;">
+             <div class="col-md-5" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Quick Links</h1>
-                <div class="col-sm-6">
-                    <ul class="customizemenu">
-                        <li><a href="<?php echo site_url('home'); ?>" >- Home</a></li>
-                        <li><a class="" href="javascript://" onclick="searchmodal()">- Find a Bar</a></li>
-                        <li><a href="<?php echo site_url('beer'); ?>">- Beer Directory</a></li>
-                        <li><a href="<?php echo site_url('cocktail'); ?>">- Cocktail Recipes</a></li>
-                        <li><a href="<?php echo site_url('liquor/lists')?>">- Liquor Directory</a></li>
-                        <!--<li><a href="<?php echo site_url('taxiowner/lists')?>">- Taxi Directory</a></li>-->
-                        <li><a href="<?php echo site_url('trivia')?>">- Bar Trivia Game</a></li>
-<!--                        <li><a href="<?php echo site_url('article')?>">- Articles</a></li>-->
-                    </ul>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="customizemenu">
-                        <li><a href="<?php echo site_url('article')?>">- Articles</a></li>
-                        <li><a href="<?php echo site_url('bar/gallery')?>">- Photo Gallery</a></li>
-                        <li><a href="<?php echo site_url('bar/dictionary')?>">- Bar Dictionary</a></li>
-                        <li><a href="<?php echo site_url('bar/suggest_bar')?>">- Suggest a Bar</a></li>
-                        <li><a href="<?php echo site_url('resource')?>">- Resources</a></li>
-                        <!--<li><a href="<?php echo site_url('forum')?>">- Group Discussions</a></li>-->
-                        <li><a href="<?php echo site_url('home/contact_us')?>">- Contact American Bars</a></li>
-                        <!--<li><a href="<?php echo site_url('home/sitemap')?>">- Sitemap</a></li>-->
-                    </ul>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="customizemenu">
+                            <li><a href="<?php echo site_url('home'); ?>" >- Home</a></li>
+                            <li><a class="" href="javascript://" onclick="searchmodal()">- Find a Bar</a></li>
+                            <li><a href="<?php echo site_url('beer'); ?>">- Beer Directory</a></li>
+                            <li><a href="<?php echo site_url('cocktail'); ?>">- Cocktail Recipes</a></li>
+                            <li><a href="<?php echo site_url('liquor/lists')?>">- Liquor Directory</a></li>
+                            <!--<li><a href="<?php echo site_url('taxiowner/lists')?>">- Taxi Directory</a></li>-->
+                            <li><a href="<?php echo site_url('trivia')?>">- Bar Trivia Game</a></li>
+    <!--                        <li><a href="<?php echo site_url('article')?>">- Articles</a></li>-->
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="customizemenu">
+                            <li><a href="<?php echo site_url('article')?>">- Articles</a></li>
+                            <li><a href="<?php echo site_url('bar/gallery')?>">- Photo Gallery</a></li>
+                            <li><a href="<?php echo site_url('bar/dictionary')?>">- Bar Dictionary</a></li>
+                            <li><a href="<?php echo site_url('bar/suggest_bar')?>">- Suggest a Bar</a></li>
+                            <li><a href="<?php echo site_url('resource')?>">- Resources</a></li>
+                            <!--<li><a href="<?php echo site_url('forum')?>">- Group Discussions</a></li>-->
+                            <li><a href="<?php echo site_url('home/contact_us')?>">- Contact American Bars</a></li>
+                            <!--<li><a href="<?php echo site_url('home/sitemap')?>">- Sitemap</a></li>-->
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3" style="margin-bottom:10px;">
+            <div class="col-md-3" style="margin-bottom:10px;">
                 <h1 class="br_bottom">Social Media Channels</h1>
                 <ul class="social_icon">
                     <li><a href="https://www.facebook.com/AmericanBars" target="_blank"><img src="<?php echo $theme_url  ?>/images/fb_icon.png"></a></li>
