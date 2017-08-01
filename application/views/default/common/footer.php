@@ -40,7 +40,7 @@
 		    		 
 		    		 <div class="col-lg-5">
 		    		 	<h1 class="br_bottom">Quick Links</h1>
-		    		 	<div class="col-lg-6">
+		    		 	<div class="col-sm-6">
 			    		 	<ul class="customizemenu">
 			    		 		<li><a href="<?php echo site_url('home'); ?>" >- Home</a></li>
 			    		 		<li><a class="" href="javascript://" onclick="searchmodal()">- Find a Bar</a></li>
@@ -54,7 +54,7 @@
 			    		 		
 			    		 	</ul>
 			    		 </div>
-			    		<div class="col-lg-6">
+			    		<div class="col-sm-6">
 			    		 	<ul class="customizemenu">
 			    		 		
 			    		 		<li><a href="<?php echo site_url('bar/gallery')?>">- Photo Gallery</a></li>
@@ -99,3 +99,8 @@
 	    	</div>
     	</div>
    	</div>
+<style>
+    @media screen and (max-width: 980px) {
+        
+    }
+</style>
