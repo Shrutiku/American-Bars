@@ -1458,10 +1458,10 @@ class Api extends REST_Controller
 //                $logout = $this->api_model->user_logout($user_id,$device_id,$unique_code);
                 $logout = $this->api_model->user_logout_hotfix($device_id,$unique_code);
 //                $this->response($logout);
-		if($logout < 1){
-			$this->response(array('status'=>'fail'),200);
-		} else {
+		if($logout){
 			$this->response(array('status'=>'success'),200);
+		} else {
+			$this->response(array('status'=>'fail'),200);
 		}
 	}
 	 
