@@ -1455,10 +1455,10 @@ class Api extends REST_Controller
 		$device_id = $_POST['device_id'];
 		$unique_code = $_POST['unique_code'];
 //		$this->response(array('user_id'=>$user_id, 'device_id'=>$device_id,'unique_code'=>$unique_code),200);
-//                $logout = $this->api_model->user_logout($user_id,$device_id,$unique_code);
+//		logout = $this->api_model->user_logout($user_id,$device_id,$unique_code);
                 $logout = $this->api_model->user_logout_hotfix($device_id,$unique_code);
-//                $this->response($logout);
-		if($logout){
+                $this->response("logout var value: " + $logout);
+		if($logout == '1'){
 			$this->response(array('status'=>'success'),200);
 		} else {
 			$this->response(array('status'=>'fail'),200);

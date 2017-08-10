@@ -2598,14 +2598,14 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 //	 }
          
          function user_logout_hotfix($device_id,$unique_code){
-             $old_count = $this->db->count_all('device_master');
+//             $old_count = $this->db->count_all('device_master');
              
-             $this->db->delete('device_master' , array('device_name'=>$device_id, 'unique_code'=>$unique_code));
+            $this->db->delete('device_master' , array('device_name'=>$device_id, 'unique_code'=>$unique_code));
 
-             $new_count = $this->db->count_all('device_master');
+//             $new_count = $this->db->count_all('device_master');
              
-             return $new_count > $old_count;
-//                return $this->db->affected_rows();
+//             return $new_count > $old_count;
+            return $this->db->affected_rows();
          }
 	
 	function auto_suggest_bar($q){
