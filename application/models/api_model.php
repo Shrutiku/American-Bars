@@ -2601,7 +2601,7 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
             $old_count = $this->db->count_all('device_master');
             $this->db->delete('device_master' , array('device_name'=>$device_id, 'unique_code'=>$unique_code));
             $new_count = $this->db->count_all('device_master');
-            $ret = $new_count - $old_count;
+            $ret = $old_count - $new_count;
             return $ret;
          }
 	
