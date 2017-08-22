@@ -1434,20 +1434,20 @@ class Api extends REST_Controller
 	
 	function get_gallery_by_id_post()
 	{
-		$data = array();
-		$id = $this->input->post('bar_gallery_id');
-		$data['gal'] = $this->api_model->getGalByID($id);
-		
-		//$data["one_bar_gallery"] = $this->api_model->getBarGalleryAll123();
-		if($data)
-        {
-        		$data['status'] = "success";
-            $this->response($data, 200); // 200 being the HTTP response code
-        }
-        else
-        {
-            $this->response(NULL, 404);
-        }
+            $data = array();
+            $id = $this->input->post('bar_gallery_id');
+            $data['gal'] = $this->api_model->getGalByID($id);
+
+            //$data["one_bar_gallery"] = $this->api_model->getBarGalleryAll123();
+            if($data)
+            {
+                            $data['status'] = "success";
+                $this->response($data, 200); // 200 being the HTTP response code
+            }
+            else
+            {
+                $this->response(NULL, 404);
+            }
 	}	
 	
 	 function user_logout_post(){
