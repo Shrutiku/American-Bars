@@ -15,6 +15,14 @@
  */
 abstract class REST_Controller extends CI_Controller
 {
+    const HTTP_OK = 200;
+    
+    const HTTP_NOT_FOUND = 404;
+    
+    const HTTP_INTERNAL_SERVER_ERROR = 500;
+    
+    
+    
     /**
      * This defines the rest format.
      *
@@ -489,7 +497,7 @@ abstract class REST_Controller extends CI_Controller
         // If not greater than zero, then set the HTTP status code as 200 by default
         // Though perhaps 500 should be set instead, for the developer not passing a
         // correct HTTP status code
-        $http_code > 0 || $http_code = self::HTTP_INTERNAL_SERVER_ERROR;//HTTP_OK;
+        $http_code > 0 || $http_code = self::HTTP_OK;
         $this->output->set_status_header($http_code);
         // JC: Log response code only if rest logging enabled
         if ($this->config->item('rest_enable_logging') === TRUE)
