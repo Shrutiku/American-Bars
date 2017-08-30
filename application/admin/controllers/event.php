@@ -255,7 +255,7 @@ class Event extends  CI_Controller {
 			
 			
 			$data["event_category"] = $this->input->post('event_category');
-			$data['imageGallery']=$this->event_model->getImageEvent($this->input->post('event_id'));
+//			$data['imageGallery']=$this->event_model->getImageEvent($this->input->post('event_id'));
 		$data["event_id"] = $this->input->post('event_id');
 		$data['getallbar'] = $this->event_model->getallbar();
 		$data["event_title"] = $this->input->post('event_title');
