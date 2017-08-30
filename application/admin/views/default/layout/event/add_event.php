@@ -489,7 +489,7 @@ $("#usualValidate").validate({
 										<label class="control_label">Status:<i style="color: #7D2A1C;">*</i></label>
 										<div class="controls" >
 											<select class="m_wrap wid360" name="status" required id="status"> 
-												<option value="">--Select--</option>
+												<!--<option value="">--Select--</option>-->
 												<option value="active" <?php echo ($status=='active')?'selected="selected"':''; ?> >Active</option>
 												<option value="inactive" <?php echo ($status=='inactive')?'selected="selected"':''; ?> >Inactive</option>
 											</select>											
