@@ -783,11 +783,7 @@ if(file_exists(base_path().'upload/bar_eventgallery_thumb_250by150/'.$preImg[$ke
 		{
 			$date = explode('to',$date);
 			$start_date  = date("Y-m-d",strtotime($date[0]));
-			if (array_key_exists ( 1 , $date )) {
-                            $end_date= date("Y-m-d",strtotime($date[1]));
-                        } else {
-                            $end_date= $start_date;
-                        }
+			$end_date= date("Y-m-d",strtotime($date[1]));
 			$this->db->where('eventdate >=', $start_date);
 			$this->db->where('eventdate <=', $end_date);
 			//$this->db->where('eventdate',$event_date );
@@ -845,11 +841,8 @@ if($date!='1V1' && $date!='' && $date!='0')
 			
 			$date = explode('to',$date);
 			$start_date  = date("Y-m-d",strtotime($date[0]));
-                        if (array_key_exists ( 1 , $date )) {
-                            $end_date= date("Y-m-d",strtotime($date[1]));
-                        } else {
-                            $end_date= $start_date;
-                        }			$this->db->where('eventdate >=', $start_date);
+			$end_date= date("Y-m-d",strtotime($date[1]));
+			$this->db->where('eventdate >=', $start_date);
 			$this->db->where('eventdate <=', $end_date);
 			//$this->db->where('eventdate',$event_date );
 		}
