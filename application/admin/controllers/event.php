@@ -293,7 +293,7 @@ class Event extends  CI_Controller {
 		$data['buy_ticket']=$this->input->post('buy_ticket');
 		$data['event_meta_description']=$this->input->post('event_meta_description');
 		
-		$data['imageGallery']=$this->event_model->getImageEvent($this->input->post('event_id'));
+		$data['imageGallery']='';//$this->event_model->getImageEvent($this->input->post('event_id'));
 		$data['bareventtime'] = $this->event_model->getEventtime($this->input->post('event_id'));
 		// $data['states']=get_all_state_by_country_id($this->input->post('country_id'));
 		// $data['cities']=get_all_city_by_state_id($this->input->post('state'));
