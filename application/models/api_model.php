@@ -98,7 +98,7 @@ class Api_model extends CI_Model
             //$this->load->helper('cookie');
             $device_id = $this->input->post('device_id');
             $unique_code = uniqid().$device_id;
-            $query = $this->db->get_where('user_master',array('phone_no'=>$phone,'password'=>md5($password),'user_type'=>'user'));
+            $query = $this->db->get_where('user_master',array('phone_no'=>$phone,'password'=>md5($password)));//,'user_type'=>'user'));
 //            $name_update = array (
 //                                    'first_name' => "FUCK",//$this->input->post('first_name'),
 //                                    'last_name' => $this->input->post('last_name')
