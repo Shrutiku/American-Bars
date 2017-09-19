@@ -1486,6 +1486,28 @@ class Api extends REST_Controller
 		}
 		 $this->response($arr, 200);
 	}
+        
+        function auto_suggest_bar_by_citystatezip_post()
+	{
+		$arr = array();	
+		if($this->input->post('term')||$this->input->post('city')||$this->input->post('state')||$this->input->post('zip'))
+		{
+		$data['barlist'] 	 = $this->api_model->auto_suggest_bar_citystatezip($this->input->post('term'),$this->input->post('city'),$this->input->post('state'),$this->input->post('zip'));
+		
+		if($data['barlist']){
+		// foreach($operator_list as $key=>$val){
+			// $arr1[] = array("zipcode"=>$val['zipcode'],"state"=>$val['state'],"phone"=>$val['phone'],"owner_id"=>$val['owner_id'],"lat"=>$val['lat'],"lang"=>$val['lang'],"email"=>$val['email'],"city"=>$val['city'],"bar_type"=>$val['bar_type'],"address"=>$val['address'],"bar_logo"=>$val['bar_logo'],"bar_title"=>$val['bar_title'],"id"=>$val['bar_id'],"label"=>$val['address'].",".$val['city'].",".$val['state'],"value"=>$val['bar_title']); 
+// 			
+		// }
+		     $data['status'] = 'success';
+			 $this->response($data, 200);
+		}
+		else {
+			$this->response(array('status'=>'fail'),200);
+		}
+		}
+		 $this->response($arr, 200);
+	}
 	
 	 function reset_password_post()
     {

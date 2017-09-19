@@ -2625,6 +2625,42 @@ $minLon = $lang - rad2deg($rad/$R/cos(deg2rad($lat)));
 		}
 		return  array();
 	}
+        
+        function auto_suggest_bar_citystatezip($name,$city,$state,$zip){
+                if ($name == '') {
+                    $name = '*';
+                }
+                if ($city == '') {
+                    $city = '*';
+                }
+                if ($state == '') {
+                    $state = '*';
+                }
+                if ($zip == '') {
+                    $zip = '*';
+                }
+                $arr = array('bar_title' => $name, 'city' => $city, 'state' => $state, 'zip' => $zip);
+            
+                $this->db->like($arr);
+		//$this->db->select('bar_title,bar_id,bar_type,address,city,state,zipcode,phone,owner_id,lat,lang,email,bar_type,bar_logo');
+		
+		$this->db->select('bars.lat,bars.lang,bars.bar_title,bars.bar_id,bars.bar_type,bars.bar_desc,bars.owner_id,bars.address,bars.city,bars.state,bars.phone,bars.zipcode,bars.email,
+		                   bars.bar_logo, (SELECT sum(bar_rating) AS rat FROM sss_bar_comment  WHERE sss_bar_comment.bar_id = sss_bars.bar_id and sss_bar_comment.status="active" and bar_rating) as total_rating, (SELECT count(*) AS rat FROM sss_bar_comment  WHERE sss_bar_comment.bar_id = sss_bars.bar_id and sss_bar_comment.status="active") as total_commnets');
+		
+		$this->db->from('bars');
+		$this->db->where('status','active');
+		$this->db->limit(4);
+		$query = $this->db->get();
+		
+		// echo $this->db->last_query();
+		// die;
+		
+		if ($query->num_rows() > 0) {
+			return $query->result_array();
+		}
+		return  array();
+	}
+        
      function reset_password($forget_password_code,$password)
 	  {
 	        $query = $this->db->get_where('user_master',array('forget_password_code'=>$forget_password_code));
